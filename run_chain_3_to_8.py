@@ -2,12 +2,13 @@
 """
 run_chain_3_to_8.py
 
-Relance dans l'ordre les Etages 3 -> 4 -> 5 -> 6 -> 7 -> 8 de TRACE, chacun avec son runner,
+Relance dans l'ordre les Etages 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 8b de TRACE, chacun avec son runner,
 et s'arrete a la premiere erreur. A utiliser apres fix_etage3_input.py, puis lancer l'ablation.
 
     python run_chain_3_to_8.py --dry-run     # liste les runners trouves, ne lance rien
     python run_chain_3_to_8.py               # lance toute la chaine
     python run_chain_3_to_8.py --from 5      # reprend a l'Etage 5
+    python run_chain_3_to_8.py --from 8b     # relance seulement le grounding gate
 
 Les journaux sont ecrits dans <projet>\\run_logs_chaine\\.
 """
@@ -27,7 +28,14 @@ STAGES = [
     (6, "temporal Etage 6", None),
     (7, "negation Etage 7", "run_negation.py"),
     (8, "confidence Etage 8", "run_confidence.py"),
+    ("8b", "grounding_gate Etage 8b", "grounding_gate.py"),
 ]
+
+
+def stage_order(num):
+    """8 < 8b < 9 : un suffixe lettre place l'etage juste apres son numero."""
+    s = str(num)
+    return (int(s.rstrip("abcdefghijklmnopqrstuvwxyz")), s[len(s.rstrip("abcdefghijklmnopqrstuvwxyz")):])
 
 
 def find_project():
@@ -55,16 +63,16 @@ def find_runner(folder: Path, expected):
 
 def main():
     dry = "--dry-run" in sys.argv
-    start_at = 3
+    start_at = stage_order(3)
     if "--from" in sys.argv:
-        start_at = int(sys.argv[sys.argv.index("--from") + 1])
+        start_at = stage_order(sys.argv[sys.argv.index("--from") + 1])
 
     project = find_project()
     if project is None:
         print("ERREUR : projet introuvable (dossier 'document_grounding Etage 3' absent).")
         return 2
     print("=" * 100)
-    print("TRACE - CHAINE ETAGES 3 -> 8")
+    print("TRACE - CHAINE ETAGES 3 -> 8b")
     print("=" * 100)
     print(f"Projet : {project}\nPython : {sys.executable}\n")
 
@@ -94,7 +102,7 @@ def main():
     env = dict(os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
     t_all = time.perf_counter()
     for num, folder_name, runner in plan:
-        if num < start_at:
+        if stage_order(num) < start_at:
             continue
         print("\n" + "=" * 100)
         print(f"ETAGE {num} - {folder_name}")
@@ -116,7 +124,7 @@ def main():
         print(f"\n[OK] Etage {num} - {secs:.0f} s")
 
     print("\n" + "=" * 100)
-    print(f"CHAINE 3 -> 8 TERMINEE - {time.perf_counter() - t_all:.0f} s")
+    print(f"CHAINE 3 -> 8b TERMINEE - {time.perf_counter() - t_all:.0f} s")
     print("=" * 100)
     print("Etape suivante :")
     print('  cd "' + str(project / "Evaluation" / "TRACE_Ablation_F1") + '"')

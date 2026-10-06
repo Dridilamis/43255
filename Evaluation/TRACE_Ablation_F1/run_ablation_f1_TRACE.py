@@ -53,6 +53,9 @@ STAGES = [
 
     ("08_CONFIDENCE",
      RED / "confidence Etage 8" / "confidence_assessed_safe"),
+
+    ("08b_GROUNDING_GATE",
+     RED / "grounding_gate Etage 8b" / "grounding_gate_safe"),
 ]
 
 OUT = RED / "evaluation_ablation_F1_TRACE"
