@@ -1,0 +1,492 @@
+{
+  "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 7,
+  "status_counts": {
+    "AMBIGUOUS": 6,
+    "MISSING_RELATION": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E008",
+        "type": "TRAITEMENT",
+        "name": "HYDROCORTISONE",
+        "preuve": "HYDROCORTISONE 10 mg/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "HYDROCORTISONE 10 mg/j | HYDROCORTISONE | corticoide",
+      "detected_components": {
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E033",
+        "P1_E037"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E033",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E034",
+          "target_name": "150 mg",
+          "target_preuve": "150 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E035",
+          "target_name": "5mg",
+          "target_preuve": "5mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E022",
+        "type": "TRAITEMENT",
+        "name": "Oslif breezhaler",
+        "preuve": "Oslif breezhaler 150 mg 2 inhalations",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Oslif breezhaler 150 mg 2 inhalations | Oslif breezhaler | autre",
+      "detected_components": {
+        "dose": [
+          "150 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E034"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E034",
+          "target_name": "150 mg",
+          "target_preuve": "150 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E033",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E035",
+          "target_name": "5mg",
+          "target_preuve": "5mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E023",
+        "type": "TRAITEMENT",
+        "name": "Exforge",
+        "preuve": "Exforge 5mg/80mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Exforge 5mg/80mg | Exforge | autre",
+      "detected_components": {
+        "dose": [
+          "5mg",
+          "80mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E035",
+        "P1_E036"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E035",
+          "target_name": "5mg",
+          "target_preuve": "5mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.325,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E036",
+          "target_name": "80mg",
+          "target_preuve": "80mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.325,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E033",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E024",
+        "type": "TRAITEMENT",
+        "name": "Inexium",
+        "preuve": "Inexium 40 mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Inexium 40 mg | Inexium | autre",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E038"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E038",
+          "target_name": "40 mg",
+          "target_preuve": "40 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E033",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E034",
+          "target_name": "150 mg",
+          "target_preuve": "150 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E025",
+        "type": "TRAITEMENT",
+        "name": "Actiskénan",
+        "preuve": "Actiskénan 800 mg/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Actiskénan 800 mg/j | Actiskénan | antalgique",
+      "detected_components": {
+        "dose": [
+          "800 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E039"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E039",
+          "target_name": "800 mg",
+          "target_preuve": "800 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E049",
+          "target_name": "800 mg",
+          "target_preuve": "800 mg",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E033",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E017",
+        "type": "TRAITEMENT",
+        "name": "Noradrénaline",
+        "preuve": "Noradrénaline à 1 mg/h",
+        "valeur": 1,
+        "page": 4
+      },
+      "detection_text": "Noradrénaline à 1 mg/h | Noradrénaline | 1 | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": {
+        "target_id": "P4_E018",
+        "target_name": "2 jours",
+        "target_preuve": "Noradrénaline à 1 mg/h pendant 2 jours",
+        "target_page": 4,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P4_E018",
+          "target_name": "2 jours",
+          "target_preuve": "Noradrénaline à 1 mg/h pendant 2 jours",
+          "target_page": 4,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P4_E008",
+          "target_name": "VT 650",
+          "target_preuve": "VT 650",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P4_E009",
+          "target_name": "FR 20",
+          "target_preuve": "FR 20",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E035",
+        "type": "TRAITEMENT",
+        "name": "morphine",
+        "preuve": "doses initialement élevées de morphine à 12 mg/h",
+        "valeur": 12,
+        "page": 4
+      },
+      "detection_text": "doses initialement élevées de morphine à 12 mg/h | morphine | 12 | analgesique",
+      "detected_components": {
+        "rate": [
+          "12 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P4_E036"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P4_E008",
+          "target_name": "VT 650",
+          "target_preuve": "VT 650",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P4_E009",
+          "target_name": "FR 20",
+          "target_preuve": "FR 20",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P4_E010",
+          "target_name": "FiO2 100%",
+          "target_preuve": "FiO2 100%",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

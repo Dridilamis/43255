@@ -1,0 +1,704 @@
+{
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "purpose": "Audit des cas actionnables avant toute correction.",
+  "total_actionable_cases": 20,
+  "status_counts": {
+    "MISSING_RELATION": 10,
+    "CONFIRMED_PATTERN_A": 10
+  },
+  "cases_with_component_overlap_warning": 6,
+  "instructions": {
+    "LINK": "Vérifier que la POSOLOGIE cible appartient bien au même traitement.",
+    "SPLIT": "Vérifier que les informations posologiques sont explicitement contenues dans le TRAITEMENT et qu'une POSOLOGIE séparée est réellement attendue.",
+    "component_overlap_warning": "Vérifier si deux catégories regex correspondent en réalité à une même expression posologique.",
+    "manual_decision_allowed": [
+      "APPROVE",
+      "REJECT",
+      "AMBIGUOUS"
+    ]
+  },
+  "cases": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E024",
+      "traitement_name": "Primperanlasilix",
+      "traitement_preuve": "Primperanlasilix à 40 mg",
+      "detection_text": "Primperanlasilix à 40 mg | Primperanlasilix | 40 | autre",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "detected_components_text": "dose=40 mg",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P2_E025",
+      "target_posology_name": "40 mg",
+      "target_posology_preuve": "Primperanlasilix à 40 mg",
+      "target_posology_page": 2,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 1.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.95,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E020",
+      "traitement_name": "Tahor",
+      "traitement_preuve": "Tahor 10mg 0-0-1",
+      "detection_text": "Tahor 10mg 0-0-1 | Tahor | antibiotique",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "10mg"
+        ]
+      },
+      "detected_components_text": "dose=10mg",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P2_E021",
+      "target_posology_name": "10mg",
+      "target_posology_preuve": "Tahor 10mg 0-0-1",
+      "target_posology_page": 2,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 1.0,
+      "proof_overlap": 0.6667,
+      "final_match_score": 0.9667,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E008",
+      "traitement_name": "VANCOMYCINE",
+      "traitement_preuve": "VANCOMYCINE 2g /24H",
+      "detection_text": "VANCOMYCINE 2g /24H | VANCOMYCINE | 2g /24H | antibiotique",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "rate": [
+          "2g /24H"
+        ],
+        "dose": [
+          "2g"
+        ]
+      },
+      "detected_components_text": "rate=2g /24H | dose=2g",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [
+        "nested_text:rate<->dose:2g /24h<->2g"
+      ],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E010",
+      "traitement_name": "TIÉNAM",
+      "traitement_preuve": "TIÉNAM 3g/24H",
+      "detection_text": "TIÉNAM 3g/24H | TIÉNAM | 3g/24H | antibiotique",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "rate": [
+          "3g/24H"
+        ],
+        "dose": [
+          "3g"
+        ]
+      },
+      "detected_components_text": "rate=3g/24H | dose=3g",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [
+        "nested_text:rate<->dose:3g/24h<->3g"
+      ],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E029",
+      "traitement_name": "MIDAZOLAM",
+      "traitement_preuve": "MIDAZOLAM 10mg /h",
+      "detection_text": "MIDAZOLAM 10mg /h | MIDAZOLAM | 10mg /h | sedatif",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "rate": [
+          "10mg /h"
+        ],
+        "dose": [
+          "10mg"
+        ]
+      },
+      "detected_components_text": "rate=10mg /h | dose=10mg",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [
+        "nested_text:rate<->dose:10mg /h<->10mg"
+      ],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E030",
+      "traitement_name": "FENTANYL",
+      "traitement_preuve": "FENTANYL 300 µg /h",
+      "detection_text": "FENTANYL 300 µg /h | FENTANYL | 300 µg /h | sedatif",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "rate": [
+          "300 µg /h"
+        ],
+        "dose": [
+          "300 µg"
+        ]
+      },
+      "detected_components_text": "rate=300 µg /h | dose=300 µg",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [
+        "nested_text:rate<->dose:300 µg /h<->300 µg"
+      ],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E034",
+      "traitement_name": "Hypnovel",
+      "traitement_preuve": "Hypnovel 10 mg/h",
+      "detection_text": "Hypnovel 10 mg/h | Hypnovel | 10 mg/h | sedatif",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "rate": [
+          "10 mg/h"
+        ],
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "detected_components_text": "rate=10 mg/h | dose=10 mg",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [
+        "nested_text:rate<->dose:10 mg/h<->10 mg"
+      ],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E035",
+      "traitement_name": "Keppra",
+      "traitement_preuve": "Keppra 500 mg : 1-0-1",
+      "detection_text": "Keppra 500 mg : 1-0-1 | Keppra | 500 mg | traitement_habituel",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "detected_components_text": "dose=500 mg",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P1_E005",
+      "target_posology_name": "500 mg",
+      "target_posology_preuve": "Keppra 500 mg : 1 - 0 - 1",
+      "target_posology_page": 1,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 0.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.8,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E041",
+      "traitement_name": "Vimpat",
+      "traitement_preuve": "Vimpat 100 mg : 1-0-1",
+      "detection_text": "Vimpat 100 mg : 1-0-1 | Vimpat | 100 mg | traitement_habituel",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "100 mg"
+        ]
+      },
+      "detected_components_text": "dose=100 mg",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P1_E010",
+      "target_posology_name": "100 mg",
+      "target_posology_preuve": "Vimpat 100 mg : 1 - 0 - 1",
+      "target_posology_page": 1,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 0.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.8,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E017",
+      "traitement_name": "CALCIPARINE",
+      "traitement_preuve": "CALCIPARINE SC",
+      "detection_text": "CALCIPARINE SC | CALCIPARINE | antibiotique",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "route": [
+          "SC"
+        ]
+      },
+      "detected_components_text": "route=SC",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P2_E018",
+      "target_posology_name": "3/J",
+      "target_posology_preuve": "CALCIPARINE SC 0.2 ML*3/J",
+      "target_posology_page": 2,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 1.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.95,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E024",
+      "traitement_name": "VANCOMYCINE",
+      "traitement_preuve": "VANCOMYCINE 0.5G/J",
+      "detection_text": "VANCOMYCINE 0.5G/J | VANCOMYCINE | antibiotique",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "0.5G"
+        ]
+      },
+      "detected_components_text": "dose=0.5G",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P2_E025",
+      "target_posology_name": "0.5G",
+      "target_posology_preuve": "VANCOMYCINE 0.5G/J",
+      "target_posology_page": 2,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 1.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.95,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E011",
+      "traitement_name": "Pentothal",
+      "traitement_preuve": "bolus de Pentotal 500 mg et mise sous 500 mg/h en relais",
+      "detection_text": "bolus de Pentotal 500 mg et mise sous 500 mg/h en relais | Pentothal | sedatif",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "rate": [
+          "500 mg/h"
+        ],
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "detected_components_text": "rate=500 mg/h | dose=500 mg",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [
+        "nested_text:rate<->dose:500 mg/h<->500 mg"
+      ],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 1,
+      "source_entity_id": "P1_E030",
+      "traitement_name": "Lasilix",
+      "traitement_preuve": "Lasilix 40 mg 1/j",
+      "detection_text": "Lasilix 40 mg 1/j | Lasilix | diuretique",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "detected_components_text": "frequency=1/j | dose=40 mg",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 4,
+      "source_entity_id": "P4_E017",
+      "traitement_name": "Noradrénaline",
+      "traitement_preuve": "Noradrénaline à 1 mg/h",
+      "detection_text": "Noradrénaline à 1 mg/h | Noradrénaline | 1 | vasopresseur",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "rate": [
+          "1 mg/h"
+        ]
+      },
+      "detected_components_text": "rate=1 mg/h",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P4_E018",
+      "target_posology_name": "2 jours",
+      "target_posology_preuve": "Noradrénaline à 1 mg/h pendant 2 jours",
+      "target_posology_page": 4,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 1.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.95,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E008",
+      "traitement_name": "CLAVENTIN",
+      "traitement_preuve": "CLAVENTIN 3g",
+      "detection_text": "CLAVENTIN 3g | CLAVENTIN | antibiotique",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "3g"
+        ]
+      },
+      "detected_components_text": "dose=3g",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P1_E028",
+      "target_posology_name": "3g",
+      "target_posology_preuve": "claventin 3g",
+      "target_posology_page": 1,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 0.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.8,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E009",
+      "traitement_name": "AMIKLIN",
+      "traitement_preuve": "AMIKLIN 500 mg",
+      "detection_text": "AMIKLIN 500 mg | AMIKLIN | antibiotique",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "detected_components_text": "dose=500 mg",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P1_E029",
+      "target_posology_name": "500 mg",
+      "target_posology_preuve": "500 mg d'amiklin",
+      "target_posology_page": 1,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 0.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.8,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E028",
+      "traitement_name": "Specialfodine IV",
+      "traitement_preuve": "Specialfodine IV 5 mg",
+      "detection_text": "Specialfodine IV 5 mg | Specialfodine IV | autre",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "dose": [
+          "5 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "detected_components_text": "dose=5 mg | route=IV",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 2,
+      "source_entity_id": "P2_E031",
+      "traitement_name": "Venofer",
+      "traitement_preuve": "Venofer IV 300 mg : 1/semaine",
+      "detection_text": "Venofer IV 300 mg : 1/semaine | Venofer | autre",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "dose": [
+          "300 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "detected_components_text": "dose=300 mg | route=IV",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 5,
+      "source_entity_id": "P5_E025",
+      "traitement_name": "ZELITrex",
+      "traitement_preuve": "ZELITrex 500 mg 1/j",
+      "detection_text": "ZELITrex 500 mg 1/j | ZELITrex | autre",
+      "signal_strength": "MEDIUM",
+      "number_component_types": 2,
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "detected_components_text": "frequency=1/j | dose=500 mg",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "proposed_action": "SPLIT",
+      "target_posology_id": null,
+      "target_posology_name": null,
+      "target_posology_preuve": null,
+      "target_posology_page": null,
+      "medication_anchor": null,
+      "component_overlap": null,
+      "same_page_score": null,
+      "proof_overlap": null,
+      "final_match_score": null,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "page": 6,
+      "source_entity_id": "P6_E022",
+      "traitement_name": "Kcl",
+      "traitement_preuve": "Kcl 2g/j",
+      "detection_text": "Kcl 2g/j | Kcl | 2 | autre",
+      "signal_strength": "WEAK",
+      "number_component_types": 1,
+      "detected_components": {
+        "dose": [
+          "2g"
+        ]
+      },
+      "detected_components_text": "dose=2g",
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "proposed_action": "LINK",
+      "target_posology_id": "P6_E023",
+      "target_posology_name": "2g",
+      "target_posology_preuve": "Kcl 2g/j",
+      "target_posology_page": 6,
+      "medication_anchor": 1.0,
+      "component_overlap": 1.0,
+      "same_page_score": 1.0,
+      "proof_overlap": 0.5,
+      "final_match_score": 0.95,
+      "component_overlap_warning": [],
+      "needs_manual_review": true,
+      "manual_decision": "",
+      "manual_comment": ""
+    }
+  ]
+}

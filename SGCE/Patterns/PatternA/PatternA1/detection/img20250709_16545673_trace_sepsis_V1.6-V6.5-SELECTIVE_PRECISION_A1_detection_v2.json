@@ -1,0 +1,54 @@
+{
+  "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 44,
+  "number_candidates": 2,
+  "signal_counts": {
+    "WEAK": 2
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P3_E029",
+        "type": "TRAITEMENT",
+        "name": "Augmentin",
+        "preuve": "relais à J2 par Augmentin IV",
+        "valeur": null,
+        "page": 3
+      },
+      "detection_text": "relais à J2 par Augmentin IV | Augmentin | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E024",
+        "type": "TRAITEMENT",
+        "name": "alimentation orale",
+        "preuve": "alimentation orale",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "alimentation orale | nutrition_enterale",
+      "detected_components": {
+        "route": [
+          "orale"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

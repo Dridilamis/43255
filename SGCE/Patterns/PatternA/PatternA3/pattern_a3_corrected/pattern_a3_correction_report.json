@@ -1,0 +1,34 @@
+{
+  "pattern": "A3",
+  "name": "IMAGERIE_PROCEDURE + FOYER_INFECTIEUX",
+  "relation": "imagerie_objective_foyer",
+  "input_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA2\\pattern_a2_corrected",
+  "validation_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA3\\pattern_a3_validation\\pattern_a3_validation_report.json",
+  "output_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA3\\pattern_a3_corrected",
+  "summary": {
+    "validated_candidates": 1,
+    "operations_total": 1,
+    "link": 1,
+    "split": 0,
+    "skip": 0,
+    "documents_copied": 43,
+    "documents_modified": 1,
+    "nonclinical_json_skipped": 1,
+    "errors": 0
+  },
+  "operations": [
+    {
+      "operation": "LINK",
+      "source_entity_id": "P4_E035",
+      "target_entity_id": "P4_E013",
+      "relation_id": "P4_R001",
+      "relation_type": "imagerie_objective_foyer",
+      "modified": true,
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a2_correction_report.json"
+  ],
+  "errors": []
+}

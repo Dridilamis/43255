@@ -1,0 +1,455 @@
+﻿# -*- coding: utf-8 -*-
+"""
+root_cause_entity_safe_corrector.py
+===================================
+
+TRACE / SGCE â€” Root-Cause Entity Safe Corrector
+
+Applique uniquement :
+  final_status == SAFE_RETYPE
+
+Source :
+  SGCE/MultiAgent/corrected
+
+Sortie :
+  document_grounding Etage 3/root_cause/root_cause_entity_safe_corrected
+
+Les fichiers sources ne sont jamais modifiÃ©s.
+"""
+
+import json
+import shutil
+from collections import Counter
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent
+STAGE3_DIR = ROOT.parent
+REDUCTION_DIR = STAGE3_DIR.parent
+SGCE_DIR = REDUCTION_DIR / "SGCE"
+
+# EntrÃ©e officielle de l'Ã©tage 3 : sortie finale SGCE / Multi-Agent.
+
+GUIDELINE_CANDIDATES = [
+    REDUCTION_DIR.parent / "ontologie_sepsis_graph_v1.6.json",
+    REDUCTION_DIR / "ontologie_sepsis_graph_v1.6.json",
+    Path(r"C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\ontologie_sepsis_graph_v1.6.json"),
+]
+
+INPUT_FILE = ROOT / "outputs" / "root_cause_entity_validated.json"
+INPUT_DIR = Path(__file__).resolve().parents[2] / "SGCE" / "MultiAgent" / "corrected"
+SOURCE_DIR = INPUT_DIR
+OUTPUT_DIR = ROOT / "root_cause_entity_safe_corrected"
+REPORT_FILE = OUTPUT_DIR / "root_cause_entity_correction_report.json"
+
+def load_json(path):
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_json(path, data):
+    path.write_text(
+        json.dumps(
+            data,
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+
+def entity_id(entity):
+    return (
+        entity.get("identifiant_entite")
+        or entity.get("id")
+        or entity.get("entity_id")
+    )
+
+
+def entity_type(entity):
+    return (
+        entity.get("categorie")
+        or entity.get("type")
+        or entity.get("entity_type")
+        or ""
+    )
+
+
+def entity_lists(doc):
+    lists = []
+
+    if isinstance(doc.get("global_entities"), list):
+        lists.append(doc["global_entities"])
+
+    for page in doc.get("pages", []) or []:
+        if isinstance(page.get("entities"), list):
+            lists.append(page["entities"])
+
+    return lists
+
+
+def set_entity_type(
+    entity,
+    new_type,
+):
+    if "categorie" in entity:
+        entity["categorie"] = new_type
+    elif "entity_type" in entity:
+        entity["entity_type"] = new_type
+    else:
+        entity["type"] = new_type
+
+
+def retype_everywhere(
+    doc,
+    target_id,
+    new_type,
+):
+    changed = 0
+
+    previous_types = set()
+
+    for entities in entity_lists(doc):
+        for entity in entities:
+            if str(entity_id(entity)) != str(target_id):
+                continue
+
+            previous_types.add(
+                entity_type(entity)
+            )
+
+            if entity_type(entity) != new_type:
+                set_entity_type(
+                    entity,
+                    new_type,
+                )
+
+                changed += 1
+
+    return {
+        "changed":
+            changed,
+
+        "previous_types":
+            sorted(
+                x
+                for x in previous_types
+                if x
+            ),
+    }
+
+
+def main():
+    payload = load_json(
+        INPUT_FILE
+    )
+
+    safe = [
+        item
+        for item in payload.get(
+            "validated",
+            [],
+        )
+        if item.get(
+            "final_status"
+        )
+        == "SAFE_RETYPE"
+    ]
+
+    if OUTPUT_DIR.exists():
+        shutil.rmtree(
+            OUTPUT_DIR
+        )
+
+    OUTPUT_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    copied = 0
+
+    for src in SOURCE_DIR.glob("*.json"):
+        if src.name.endswith("_report.json"):
+            continue
+
+        try:
+            doc = load_json(src)
+
+            if not (
+                isinstance(doc, dict)
+                and any(
+                    key in doc
+                    for key in (
+                        "pages",
+                        "global_entities",
+                        "global_relations",
+                    )
+                )
+            ):
+                continue
+
+        except Exception:
+            continue
+
+        shutil.copy2(
+            src,
+            OUTPUT_DIR / src.name,
+        )
+
+        copied += 1
+
+    modified_documents = set()
+
+    operations = []
+
+    counts = Counter()
+
+    errors = 0
+
+    for item in safe:
+        document = item.get(
+            "document"
+        )
+
+        target_id = item.get(
+            "entity_id"
+        )
+
+        new_type = item.get(
+            "proposed_type"
+        )
+
+        path = (
+            OUTPUT_DIR
+            / str(document)
+        )
+
+        if not path.exists():
+            errors += 1
+
+            operations.append({
+                "candidate_id":
+                    item.get("candidate_id"),
+
+                "document":
+                    document,
+
+                "entity_id":
+                    target_id,
+
+                "new_type":
+                    new_type,
+
+                "status":
+                    "ERROR",
+
+                "reason":
+                    "DOCUMENT_NOT_FOUND",
+            })
+
+            continue
+
+        try:
+            doc = load_json(
+                path
+            )
+
+            result = retype_everywhere(
+                doc,
+                target_id,
+                new_type,
+            )
+
+            if result[
+                "changed"
+            ] <= 0:
+                operations.append({
+                    "candidate_id":
+                        item.get("candidate_id"),
+
+                    "document":
+                        document,
+
+                    "entity_id":
+                        target_id,
+
+                    "new_type":
+                        new_type,
+
+                    "status":
+                        "SKIP",
+
+                    "reason":
+                        "NO_CHANGE",
+                })
+
+                continue
+
+            save_json(
+                path,
+                doc,
+            )
+
+            modified_documents.add(
+                document
+            )
+
+            counts[
+                "RETYPE_ENTITY"
+            ] += 1
+
+            operations.append({
+                "candidate_id":
+                    item.get("candidate_id"),
+
+                "document":
+                    document,
+
+                "entity_id":
+                    target_id,
+
+                "old_types":
+                    result[
+                        "previous_types"
+                    ],
+
+                "new_type":
+                    new_type,
+
+                "support_count":
+                    item.get(
+                        "support_count"
+                    ),
+
+                "support_ratio":
+                    item.get(
+                        "support_ratio"
+                    ),
+
+                "occurrences_changed":
+                    result[
+                        "changed"
+                    ],
+
+                "status":
+                    "APPLIED",
+
+                "reason":
+                    "SAFE_RETYPE",
+            })
+
+        except Exception as exc:
+            errors += 1
+
+            operations.append({
+                "candidate_id":
+                    item.get("candidate_id"),
+
+                "document":
+                    document,
+
+                "entity_id":
+                    target_id,
+
+                "new_type":
+                    new_type,
+
+                "status":
+                    "ERROR",
+
+                "reason":
+                    repr(exc),
+            })
+
+    report = {
+        "corrector":
+            "root_cause_entity_safe_corrector",
+
+        "source_directory":
+            str(SOURCE_DIR),
+
+        "output_directory":
+            str(OUTPUT_DIR),
+
+        "summary": {
+            "documents_copied":
+                copied,
+
+            "safe_retype_received":
+                len(safe),
+
+            "operations_applied":
+                counts.get(
+                    "RETYPE_ENTITY",
+                    0,
+                ),
+
+            "documents_modified":
+                len(
+                    modified_documents
+                ),
+
+            "errors":
+                errors,
+        },
+
+        "modified_documents":
+            sorted(
+                modified_documents
+            ),
+
+        "operations":
+            operations,
+    }
+
+    save_json(
+        REPORT_FILE,
+        report,
+    )
+
+    print("=" * 104)
+    print("TRACE / SGCE - ROOT CAUSE ENTITY SAFE CORRECTOR")
+    print("=" * 104)
+
+    print(
+        f"SAFE_RETYPE reÃ§us                    : {len(safe)}"
+    )
+
+    print(
+        f"Documents copiÃ©s                     : {copied}"
+    )
+
+    print(
+        f"Retypages appliquÃ©s                  : "
+        f"{counts.get('RETYPE_ENTITY', 0)}"
+    )
+
+    print(
+        f"Documents modifiÃ©s                   : "
+        f"{len(modified_documents)}"
+    )
+
+    print(
+        f"Erreurs                              : {errors}"
+    )
+
+    print()
+
+    print(
+        f"Sortie clinique                      : {OUTPUT_DIR}"
+    )
+
+    print(
+        f"Rapport                              : {REPORT_FILE}"
+    )
+
+    print()
+
+    print(
+        "Les fichiers sources n'ont pas Ã©tÃ© modifiÃ©s."
+    )
+
+
+if __name__ == "__main__":
+    main()
+

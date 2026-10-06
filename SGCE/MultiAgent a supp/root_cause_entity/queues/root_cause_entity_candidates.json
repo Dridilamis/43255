@@ -1,0 +1,2299 @@
+[
+  {
+    "candidate_id": "RCE_000001",
+    "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P2_E038",
+    "entity_text": "Le patient | patient",
+    "current_type": "DONNEE_PATIENT",
+    "proposed_type": "SYMPTOME",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "SYMPTOME": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00107",
+        "relation_type": "presente_symptome",
+        "role": "TARGET",
+        "current_type": "DONNEE_PATIENT",
+        "expected_type": "SYMPTOME"
+      },
+      {
+        "relation_id": "R_V69K_00108",
+        "relation_type": "presente_symptome",
+        "role": "TARGET",
+        "current_type": "DONNEE_PATIENT",
+        "expected_type": "SYMPTOME"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000002",
+    "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P2_E034",
+    "entity_text": "Le patient | patient",
+    "current_type": "SYMPTOME",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 12,
+    "total_mismatch_relations": 13,
+    "support_ratio": 0.9231,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 12,
+      "COMORBIDITE_ANTECEDENT": 1
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00007",
+        "relation_type": "traitement_administre_a",
+        "role": "TARGET",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00008",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00009",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00011",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00012",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00013",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00014",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00015",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00016",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00017",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00103",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00107",
+        "relation_type": "a_pour_contexte_acquisition",
+        "role": "SOURCE",
+        "current_type": "SYMPTOME",
+        "expected_type": "COMORBIDITE_ANTECEDENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000003",
+    "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P5_E015",
+    "entity_text": "Le patient | patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 11,
+    "total_mismatch_relations": 11,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 11
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00060",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00061",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00063",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00064",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00066",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00067",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00071",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00073",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00074",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00075",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000004",
+    "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E015",
+    "entity_text": "PROTEUS VULGARIS | proteus_mirabilis",
+    "current_type": "FOYER_INFECTIEUX",
+    "proposed_type": "MICRO_ORGANISME",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "MICRO_ORGANISME": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00055",
+        "relation_type": "micro_organisme_isole_dans",
+        "role": "SOURCE",
+        "current_type": "FOYER_INFECTIEUX",
+        "expected_type": "MICRO_ORGANISME"
+      },
+      {
+        "relation_id": "R_V69K_00091",
+        "relation_type": "micro_organisme_isole_dans",
+        "role": "SOURCE",
+        "current_type": "FOYER_INFECTIEUX",
+        "expected_type": "MICRO_ORGANISME"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000005",
+    "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E034",
+    "entity_text": "hémocultures | hemocultures",
+    "current_type": "IMAGERIE_PROCEDURE",
+    "proposed_type": "FOYER_INFECTIEUX",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "FOYER_INFECTIEUX": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00090",
+        "relation_type": "micro_organisme_isole_dans",
+        "role": "TARGET",
+        "current_type": "IMAGERIE_PROCEDURE",
+        "expected_type": "FOYER_INFECTIEUX"
+      },
+      {
+        "relation_id": "R_V69K_00091",
+        "relation_type": "micro_organisme_isole_dans",
+        "role": "TARGET",
+        "current_type": "IMAGERIE_PROCEDURE",
+        "expected_type": "FOYER_INFECTIEUX"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000006",
+    "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P1_E004",
+    "entity_text": "Carcinome épidermoïde larynx (paroi gauche) T3N2M0",
+    "current_type": "COMORBIDITE_ANTECEDENT",
+    "proposed_type": "LABEL_NOSOLOGIQUE",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "LABEL_NOSOLOGIQUE": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00083",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "role": "TARGET",
+        "current_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "LABEL_NOSOLOGIQUE"
+      },
+      {
+        "relation_id": "R_V69K_00084",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "role": "TARGET",
+        "current_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "LABEL_NOSOLOGIQUE"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000007",
+    "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P6_E001",
+    "entity_text": "Pneumopathie lobaire inférieure gauche communautaire | pneumopathie_communautaire",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "FOYER_INFECTIEUX",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "FOYER_INFECTIEUX": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00101",
+        "relation_type": "micro_organisme_isole_dans",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "FOYER_INFECTIEUX"
+      },
+      {
+        "relation_id": "R_V69K_00102",
+        "relation_type": "micro_organisme_isole_dans",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "FOYER_INFECTIEUX"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000008",
+    "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P2_E061",
+    "entity_text": "Mr Kokolo | age",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 15,
+    "total_mismatch_relations": 15,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 15
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00106",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00107",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00113",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00114",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00115",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00116",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00117",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00119",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00120",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00121",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00122",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00123",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00124",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00125",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000009",
+    "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P2_E059",
+    "entity_text": "acidose métabolique | metabolique",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DEFAILLANCE_ORGANE",
+    "support_count": 3,
+    "total_mismatch_relations": 3,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DEFAILLANCE_ORGANE": 3
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      },
+      {
+        "relation_id": "R_V69K_00128",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      },
+      {
+        "relation_id": "R_V69K_00129",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000010",
+    "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P5_E046",
+    "entity_text": "La patiente | patient",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 8,
+    "total_mismatch_relations": 8,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 8
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00049",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00060",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00061",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00063",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00064",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000011",
+    "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P5_E034",
+    "entity_text": "choc septique à point de départ pulmonaire | cardiovasculaire",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "LABEL_NOSOLOGIQUE",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "LABEL_NOSOLOGIQUE": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00066",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE"
+      },
+      {
+        "relation_id": "R_V69K_00067",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000012",
+    "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P5_E042",
+    "entity_text": "patient",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 13,
+    "total_mismatch_relations": 13,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 13
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00075",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00077",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00080",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00081",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00082",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00083",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00084",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00085",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00086",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00087",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00088",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00090",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000013",
+    "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P6_E025",
+    "entity_text": "Patient | patient",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 9,
+    "total_mismatch_relations": 9,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 9
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00102",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00103",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00104",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00105",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00106",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00107",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00108",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00109",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00110",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000014",
+    "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E036",
+    "entity_text": "La patiente | patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 11,
+    "total_mismatch_relations": 11,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 11
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00040",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00041",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00042",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00054",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00055",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00057",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00059",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00060",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00061",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": null,
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000015",
+    "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E032",
+    "entity_text": "patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 6,
+    "total_mismatch_relations": 6,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 6
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00045",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00046",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000016",
+    "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E022",
+    "entity_text": "douleurs articulaires | douleurs_articulaires",
+    "current_type": "COMORBIDITE_ANTECEDENT",
+    "proposed_type": "SYMPTOME",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "SYMPTOME": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00164",
+        "relation_type": "presente_symptome",
+        "role": "TARGET",
+        "current_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "SYMPTOME"
+      },
+      {
+        "relation_id": "R_V69K_00165",
+        "relation_type": "presente_symptome",
+        "role": "TARGET",
+        "current_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "SYMPTOME"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000017",
+    "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P2_E060",
+    "entity_text": "patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 14,
+    "total_mismatch_relations": 14,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 14
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00028",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00029",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00030",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00034",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00035",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00036",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00037",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00038",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00039",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00051",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00052",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00054",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00055",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000018",
+    "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P6_E036",
+    "entity_text": "Patient | patient",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 12,
+    "total_mismatch_relations": 13,
+    "support_ratio": 0.9231,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 12,
+      "COMORBIDITE_ANTECEDENT": 1
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00104",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00105",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00106",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00107",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00108",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00109",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00110",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00113",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00114",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00116",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00132",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00133",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00135",
+        "relation_type": "a_pour_contexte_acquisition",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "COMORBIDITE_ANTECEDENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000019",
+    "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P1_E034",
+    "entity_text": "Patient | patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 7,
+    "total_mismatch_relations": 7,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 7
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00001",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00002",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00003",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00004",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00088",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00094",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": null,
+        "relation_type": "traitement_administre_a",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000020",
+    "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E032",
+    "entity_text": "patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 13,
+    "total_mismatch_relations": 13,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 13
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00050",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00051",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00052",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00053",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00057",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00064",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00066",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00067",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00068",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00069",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00070",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00071",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000021",
+    "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P2_E040",
+    "entity_text": "patient | age",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 24,
+    "total_mismatch_relations": 24,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 24
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00011",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00012",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00013",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00014",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00015",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00016",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00017",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00019",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00020",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00021",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00022",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00023",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00024",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00025",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00026",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00027",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00028",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00029",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00030",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00031",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00037",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00038",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00039",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000022",
+    "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P5_E020",
+    "entity_text": "patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 12,
+    "total_mismatch_relations": 12,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 12
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00053",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00054",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00055",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00056",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00057",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00059",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00069",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00070",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00071",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00072",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": null,
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000023",
+    "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P3_E056",
+    "entity_text": "patient",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 11,
+    "total_mismatch_relations": 11,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 11
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00049",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00050",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00051",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00052",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00053",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00054",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00055",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00056",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00057",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000024",
+    "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E043",
+    "entity_text": "patiente | patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 15,
+    "total_mismatch_relations": 15,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 15
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00077",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00078",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00079",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00080",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00081",
+        "relation_type": "traitement_administre_a",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00086",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00087",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00088",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00090",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00091",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00092",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00093",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00094",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00095",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000025",
+    "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E010",
+    "entity_text": "Poursuite Catécholamine | vasopresseur",
+    "current_type": "POSOLOGIE",
+    "proposed_type": "TRAITEMENT",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "TRAITEMENT": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00081",
+        "relation_type": "traitement_administre_a",
+        "role": "SOURCE",
+        "current_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT"
+      },
+      {
+        "relation_id": "R_V69K_00125",
+        "relation_type": "traitement_a_pour_posologie",
+        "role": "SOURCE",
+        "current_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000026",
+    "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E029",
+    "entity_text": "anurie | renal",
+    "current_type": "SYMPTOME",
+    "proposed_type": "DEFAILLANCE_ORGANE",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DEFAILLANCE_ORGANE": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00085",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "role": "TARGET",
+        "current_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      },
+      {
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "TARGET",
+        "current_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000027",
+    "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P5_E017",
+    "entity_text": "la patiente | patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 7,
+    "total_mismatch_relations": 7,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 7
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00113",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00114",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00116",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00117",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00119",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00120",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000028",
+    "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P6_E039",
+    "entity_text": "poids de sortie = 76 kg | 76 | poids_kg",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 5,
+    "total_mismatch_relations": 5,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 5
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00105",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00106",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00107",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00110",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00111",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000029",
+    "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E030",
+    "entity_text": "patiente | patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 7,
+    "total_mismatch_relations": 7,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 7
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00025",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00026",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00027",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00028",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00029",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00030",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00031",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000030",
+    "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P5_E058",
+    "entity_text": "La patiente | patient",
+    "current_type": "DEFAILLANCE_ORGANE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 16,
+    "total_mismatch_relations": 16,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 16
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00041",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00042",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00043",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00051",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00052",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00053",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00054",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00059",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00060",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00063",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00064",
+        "relation_type": "presente_symptome",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00067",
+        "relation_type": "patient_a_pour_evolution",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00068",
+        "relation_type": "presente_suspicion_infection",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00069",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00070",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00071",
+        "relation_type": "service_medical_accueille",
+        "role": "TARGET",
+        "current_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  },
+  {
+    "candidate_id": "RCE_000031",
+    "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E030",
+    "entity_text": "Patient | patient",
+    "current_type": "LABEL_NOSOLOGIQUE",
+    "proposed_type": "DONNEE_PATIENT",
+    "support_count": 6,
+    "total_mismatch_relations": 6,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DONNEE_PATIENT": 6
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00045",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00046",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00061",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      },
+      {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "SOURCE",
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT"
+      }
+    ]
+  }
+]

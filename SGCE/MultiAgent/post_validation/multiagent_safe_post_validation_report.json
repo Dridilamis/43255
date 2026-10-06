@@ -1,0 +1,50 @@
+{
+  "validator": "multiagent_safe_general_post_validator",
+  "summary": {
+    "documents_verified": 43,
+    "expected_modified": 4,
+    "actually_modified": 4,
+    "unexpected_modifications": 0,
+    "expected_corrections_absent": 0,
+    "anomalies_before": 52,
+    "anomalies_after": 47,
+    "new_anomalies": 0,
+    "resolved_anomalies": 5,
+    "missing_documents": 0,
+    "extra_documents": 0,
+    "final_status": "PASS"
+  },
+  "new_anomalies": [],
+  "resolved_anomalies": [
+    [
+      "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "ORPHAN_SOURCE",
+      "R_V69K_00018",
+      "P2_E044"
+    ],
+    [
+      "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "ORPHAN_SOURCE",
+      "R_V69K_00019",
+      "P2_E044"
+    ],
+    [
+      "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "ORPHAN_TARGET",
+      "R_V69K_00065",
+      "P5_E014"
+    ],
+    [
+      "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "ORPHAN_SOURCE",
+      "R_V69K_00048",
+      "P5_E024"
+    ],
+    [
+      "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "ORPHAN_SOURCE",
+      "R_V69K_00044",
+      "P2_E031"
+    ]
+  ]
+}

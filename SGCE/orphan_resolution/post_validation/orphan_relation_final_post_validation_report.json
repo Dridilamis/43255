@@ -1,0 +1,26 @@
+{
+  "stage": "ORPHAN_RELATION_FINAL_POST_VALIDATION",
+  "status": "PASS",
+  "before_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\safe_corrected",
+  "after_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\corrected",
+  "summary": {
+    "documents_before": 43,
+    "documents_after": 43,
+    "orphan_relations_before": 11,
+    "orphan_relations_after": 11,
+    "unresolved_relations_routed_to_multi_agent": 11,
+    "documents_changed_by_residual_router": 0,
+    "missing_documents": 0,
+    "extra_documents": 0
+  },
+  "controls": {
+    "all_documents_preserved": true,
+    "residual_orphan_count_preserved": true,
+    "all_residual_orphans_routed": true,
+    "no_clinical_mutation_by_residual_router": true,
+    "no_residual_orphan_deleted_before_multi_agent": true
+  },
+  "changed_documents": [],
+  "missing_documents": [],
+  "extra_documents": []
+}

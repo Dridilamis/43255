@@ -1,0 +1,146 @@
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                   : 43
+Relations orphelines candidates      : 16
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\queues\orphan_relation_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION RESOLVER
+========================================================================================================
+Cas reçus                             : 16
+
+DECISIONS
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 11
+CORRECT                                         : 5
+
+ACTIONS PROPOSEES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 11
+REMOVE_INVALID_RELATION                         : 3
+RELINK_EXISTING_ENTITY                          : 2
+
+Sortie                                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\outputs\orphan_relation_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION DECISION VALIDATOR
+========================================================================================================
+Décisions reçues                      : 16
+
+STATUTS FINAUX
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 11
+ACCEPT                                          : 5
+
+ACTIONS FINALES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 11
+REMOVE_INVALID_RELATION                         : 3
+RELINK_EXISTING_ENTITY                          : 2
+
+Sortie                                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\outputs\orphan_relation_validated_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION SAFE CORRECTOR
+========================================================================================================
+Actions ACCEPT reçues                 : 5
+Documents copiés                      : 43
+Opérations appliquées                 : 5
+Documents modifiés                    : 5
+Erreurs                               : 0
+
+ACTIONS APPLIQUEES
+--------------------------------------------------------------------------------------------------------
+REMOVE_INVALID_RELATION                         : 3
+RELINK_EXISTING_ENTITY                          : 2
+
+Sortie clinique                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\safe_corrected
+Rapport                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\safe_corrected\orphan_relation_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+================================================================================================================
+TRACE / SGCE - ORPHAN RELATION RESIDUAL ROUTER
+================================================================================================================
+Documents traités                   : 43
+Relations orphelines résiduelles    : 11
+Documents concernés                 : 9
+Relations résiduelles supprimées    : 0
+Erreurs                             : 0
+
+POLITIQUE
+----------------------------------------------------------------------------------------------------------------
+PRESERVE_AND_ROUTE_TO_MULTI_AGENT
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Queue Multi-Agent                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\outputs\orphan_relation_unresolved_queue.json
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected\orphan_relation_residual_routing_report.json
+
+Les relations REVIEW sont conservées; aucune suppression résiduelle automatique n'est effectuée.
+================================================================================================================
+TRACE / SGCE - ORPHAN RELATION FINAL POST-VALIDATION
+================================================================================================================
+Documents AVANT                    : 43
+Documents APRES                    : 43
+Relations orphelines AVANT         : 11
+Relations orphelines APRES         : 11
+Résiduelles routées Multi-Agent    : 11
+Docs modifiés par routeur résiduel : 0
+
+CONTROLES
+----------------------------------------------------------------------------------------------------------------
+all_documents_preserved                                     : PASS
+residual_orphan_count_preserved                             : PASS
+all_residual_orphans_routed                                 : PASS
+no_clinical_mutation_by_residual_router                     : PASS
+no_residual_orphan_deleted_before_multi_agent               : PASS
+
+STATUT FINAL ORPHAN RELATION       : PASS
+Rapport                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\post_validation\orphan_relation_final_post_validation_report.json
+
+Aucune relation REVIEW n'est supprimée avant le Multi-Agent.
+============================================================================================================
+TRACE / SGCE - ORPHAN RELATIONS COMPLET
+============================================================================================================
+Entrée : relation_repair/corrected
+Sortie : orphan_resolution/corrected (20 REVIEW conservés et routés vers Multi-Agent)
+
+============================================================================================================
+RUNNING : orphan_relation_candidate_builder.py
+============================================================================================================
+[OK] orphan_relation_candidate_builder.py (0.81 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_resolver.py
+============================================================================================================
+[OK] orphan_relation_resolver.py (0.19 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_decision_validator.py
+============================================================================================================
+[OK] orphan_relation_decision_validator.py (1.10 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_safe_corrector.py
+============================================================================================================
+[OK] orphan_relation_safe_corrector.py (1.71 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_residual_corrector.py
+============================================================================================================
+[OK] orphan_relation_residual_corrector.py (1.61 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_post_validator.py
+============================================================================================================
+[OK] orphan_relation_post_validator.py (2.12 sec)
+
+============================================================================================================
+ORPHAN RELATIONS TERMINÉ AVEC SUCCÈS
+============================================================================================================
+Durée totale            : 7.55 sec
+Sortie clinique finale  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Post-validation         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\post_validation

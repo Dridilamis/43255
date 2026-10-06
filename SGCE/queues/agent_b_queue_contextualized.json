@@ -1,0 +1,2186 @@
+[
+  {
+    "task_id": "agent_pattern_b::BB1_000001",
+    "candidate_id": "BB1_000001",
+    "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite maxillaire gauche aiguë"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E044",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 31,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+      "page_number": 2,
+      "page_text": "du lobe moyen droit\n\nLe 24/02/2015, le patient présente une récidive fébrile, traité par Pristinamycine par son médecin\ntraitant.\n\nMr Kauffmann est hospitalisé le 6/03/2015 à Raymond Poincaré dans le service de maladies\ninfectieuses et tropicales pour bilan d’une altération de l’état général dans un contexte fébrile. Les\nmultiples hémocultures reviennent négatives ainsi que les sérologies virales hépatiques. Un scanner\nmaxillo-facial réalisé le 10/03/2015 objective une sinusite maxillaire gauche aiguë avec comblement\nliquidien associé à des signes de sinusite chronique en rapport avec une interruption focale du\nplancher par des racines dentaires avec présence d’au moins un granulome apical sur une prémolaire.\nL’avis stomatologique (Louis Mourier) recommande des extractions dentaires et remplacement par\nune prothèse mandibulaire et maxillaire.\n\nSur le plan métabolique, le patient présente une hyponatrémie hypotonique associée à une\nhyperosmolarité urinaire, en l’absence de prise récente de diurétiques et compte tenu de la présence\nd’un nodule pulmonaire non-exploré, le tableau est compatible avec le diagnostic de SIADH.\n\nDe nouveau le patient est hospitalisé à STELL du 30 avril 2015 au 15 Mai 2015 pour une fièvre\noscillante. Le bilan conclut à une pansinusite traitée par augmentin puis Rovamycine et Flagyl. Durant\nl’hospitalisation, le patient présente des diarrhées qui reviennent positives à C. difficile, un traitement\npar métronidazole IV est entrepris. Le patient est adressé à Garches dans le service de maladies\ninfectieuses et tropicales pour suite de prise en charge. A l’admission, le patient présente un tableau\nde sepsis sévère qui justifie un traitement antibiotique part Claforan, 1g x 3 par jour, et d’Amiklin\npendant 5 jours.\n\nSur le plan métabolique, la natrémie est mesurée à 130 mmol/L s’aggravant jusqu’à 115 mmol/L au\ncours du séjour malgré le traitement.\n\nLe 22/05/2015, le patient est adressé en réanimation pour confusion compliquant une hyponatrémie.\n\nnb : dernier bilan hépatopathie en janvier : pas de lésion hépatique, alpha-foeto-protéine normale\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :\nSérum phy 1500 par jour\nRestriction hydrique à 50 ml/jour\nAcupan\nPrimpéranlasilix à 40 mg le matin\nLovenox\n\nExamen clinique d’admission\n\nSignes généraux et vitaux\nTemp °C : 37,2\nTA (mmHg) : 140/80 FC (bpm) : 122\nFR (c/mn) : 25 SaO2 (%) : 98% sous 3L O2\n\nExamen cardio-vasculaire\nBDC régulier pas de souffle audible. Pouls périphériques perçus mous souples et indolores pas de\nsigne d’insuffisance circulatoire périphérique\n\nExamen respiratoire\nEupnéique, pas de signe de lutte\nHoquet persistant\nMV +/- pas de foyer, abolition en base droite, quelques crépitants à gauche.\n\nExamen neurologique\nGlasgow 12-13 (Y4 V3-4 M6)\nContusion",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000002",
+    "candidate_id": "BB1_000002",
+    "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00019",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E053"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E053",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite chronique"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E044",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 31,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+      "page_number": 2,
+      "page_text": "du lobe moyen droit\n\nLe 24/02/2015, le patient présente une récidive fébrile, traité par Pristinamycine par son médecin\ntraitant.\n\nMr Kauffmann est hospitalisé le 6/03/2015 à Raymond Poincaré dans le service de maladies\ninfectieuses et tropicales pour bilan d’une altération de l’état général dans un contexte fébrile. Les\nmultiples hémocultures reviennent négatives ainsi que les sérologies virales hépatiques. Un scanner\nmaxillo-facial réalisé le 10/03/2015 objective une sinusite maxillaire gauche aiguë avec comblement\nliquidien associé à des signes de sinusite chronique en rapport avec une interruption focale du\nplancher par des racines dentaires avec présence d’au moins un granulome apical sur une prémolaire.\nL’avis stomatologique (Louis Mourier) recommande des extractions dentaires et remplacement par\nune prothèse mandibulaire et maxillaire.\n\nSur le plan métabolique, le patient présente une hyponatrémie hypotonique associée à une\nhyperosmolarité urinaire, en l’absence de prise récente de diurétiques et compte tenu de la présence\nd’un nodule pulmonaire non-exploré, le tableau est compatible avec le diagnostic de SIADH.\n\nDe nouveau le patient est hospitalisé à STELL du 30 avril 2015 au 15 Mai 2015 pour une fièvre\noscillante. Le bilan conclut à une pansinusite traitée par augmentin puis Rovamycine et Flagyl. Durant\nl’hospitalisation, le patient présente des diarrhées qui reviennent positives à C. difficile, un traitement\npar métronidazole IV est entrepris. Le patient est adressé à Garches dans le service de maladies\ninfectieuses et tropicales pour suite de prise en charge. A l’admission, le patient présente un tableau\nde sepsis sévère qui justifie un traitement antibiotique part Claforan, 1g x 3 par jour, et d’Amiklin\npendant 5 jours.\n\nSur le plan métabolique, la natrémie est mesurée à 130 mmol/L s’aggravant jusqu’à 115 mmol/L au\ncours du séjour malgré le traitement.\n\nLe 22/05/2015, le patient est adressé en réanimation pour confusion compliquant une hyponatrémie.\n\nnb : dernier bilan hépatopathie en janvier : pas de lésion hépatique, alpha-foeto-protéine normale\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :\nSérum phy 1500 par jour\nRestriction hydrique à 50 ml/jour\nAcupan\nPrimpéranlasilix à 40 mg le matin\nLovenox\n\nExamen clinique d’admission\n\nSignes généraux et vitaux\nTemp °C : 37,2\nTA (mmHg) : 140/80 FC (bpm) : 122\nFR (c/mn) : 25 SaO2 (%) : 98% sous 3L O2\n\nExamen cardio-vasculaire\nBDC régulier pas de souffle audible. Pouls périphériques perçus mous souples et indolores pas de\nsigne d’insuffisance circulatoire périphérique\n\nExamen respiratoire\nEupnéique, pas de signe de lutte\nHoquet persistant\nMV +/- pas de foyer, abolition en base droite, quelques crépitants à gauche.\n\nExamen neurologique\nGlasgow 12-13 (Y4 V3-4 M6)\nContusion",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000003",
+    "candidate_id": "BB1_000003",
+    "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00100",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": null,
+        "source_value": "P6_E039",
+        "target_value": "P6_E010"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E010",
+        "resolved_entity_type": "POSOLOGIE",
+        "resolved_entity_name": "0,3/ 0,8 mg/h de NA"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P6_E039",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 778,
+          "schema_purity": 0.9987,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+      "page_number": 6,
+      "page_text": "développement d’un choc septique puis d’une défaillance multiviscérale. Au cours de la mise en condition survenue de deux arrêts cardiaques (sans No Flow - 2 x 2 mg d’adrénaline).\n\nSur le plan respiratoire, devant la gravité de l’hypoxémie (P/F à 139), une ventilation protectrice est débutée. Sur le plan hémodynamique après normalisation de la précharge, la noradrénaline est augmentée. De plus apparition d’une insuffisance rénale et d’une dégradation de la fonction hépatique (TP à 23%). Sur le plan étiologique, après réalisation des prélèvements bactériologiques l’antibiothérapie est élargie (Amiklin + Tiénam + Vancomycine). La famille est prévenue de la gravité de l’état du patient, elle est présente à son chevet. A noter la survenue d’un hématome de la cuisse droite lors de la pose des cathéters.\nL’évolution est marquée par une amélioration progressive de la défaillance multiviscérale : Régression de l’insuffisance rénale, diminution NAD, diminution cytolyse, Hb et lactates stables.\n\nLe 10 juin persistance d’une dépendance modeste à la noradrénaline (0,3/ 0,8 mg/h de NA) justifiant de réaliser des hémocultures répétées, une surveillance de l’hématome ainsi qu’un dosage des éosinophiles (éventualité d’une allergie).\n\nLe 13 juin instauration d’une hémofiltration afin de permettre une déplétion progressive. La famille est informée de la précarité de la situation et ne souhaite pas d’acharnement thérapeutique. De l’hémisuccinate d’hydrocortisone est prescrit (malgré l’inclusion dans le protocole APPROCHE) associé à l’administration de G10 compte tenu de la survenue d’hypoglycémies.\n\nDurant cette période, dégradation de l’hémodynamique (augmentation de la noradrénaline de 0.4 à 3 mg/h) associée à une augmentation du syndrome inflammatoire (GB augmentés de 8 000 à 18 000) ce qui fait évoquer un nouvel épisode de choc septique de point de départ indéterminé (=> PDP + ECU Ponction d’ascite + hémoculture périphérique) initiation d’une antibiothérapie par amykacine + vancomycine + tienam. En parallèle tableau d’insuffisance hépatocellulaire sévère associé à une CIVD.\n\nLe 15 juin au soir survenue d’une anisocorie : mydriase droite dans un contexte de troubles de l’hémostase importants. Simultanément dégradation importante de l’hémodynamique rapidement suivie du décès du patient.\n\nCONCLUSION\n\nHyponatrémie symptomatique.\nPneumopathie d’inhalation compliquée de choc septique et défaillance multiviscérale.\nDeuxième épisode de choc septique de point de départ indéterminé.\nProbable AVC hémorragique.",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P6_E039",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000004",
+    "candidate_id": "BB1_000004",
+    "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00117",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "page": null,
+        "source_value": "P2_E025",
+        "target_value": "P5_E033"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E033",
+        "resolved_entity_type": "DEFAILLANCE_ORGANE",
+        "resolved_entity_name": "Acidose respiratoire sévère"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E025",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "BIOMARQUEUR",
+          "schema_support": 101,
+          "schema_purity": 0.9902,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16154161_brut.txt",
+      "page_number": 2,
+      "page_text": "Le patient est intubé le 14/12/2014 sur un encombrement résistant aux séances de kinésithérapie. Les prélèvements bactériologiques ne retrouvent pas de germes, on conclut à un encombrement bronchique. La fonction respiratoire s’améliore et permet l’extubation du patient le 22/12/2014, il est progressivement sevré de l’oxygène chez ce patient insuffisant respiratoire avec comme objectif de saturation 88-95%. L’encombrement bronchique s’améliore mais le patient requiert toujours de la kinésithérapie respiratoire et une VNI nocturne.\n\nSur le plan infectieux :\nLe patient présente le 24/12/2014 un érysipèle du bras gauche sans thrombose sur un abord veineux traité par amoxicilline 10jours.\nLe 27/12/2014 il présente un épisode septique avec encombrement bronchique franc, les expectorations isolent un Citrobacter Koseri, le patient est traité par Tazocilline puis Claforan pendant 7jours.\nLe patient présente une hyperglycémie motivant la mise en route d’un traitement par NPH associé à un traitement par insuline rapide, relayé par une infirmière à domicile.\nSur le plan de la myopathie, le Docteur AUBERT objective un trouble de la propulsion et une hypersalivation en faveur de la pose d’une gastrostomie, accepté par le patient.\n\nLe patient a été transféré depuis le secteur 4 devant une détresse respiratoire brutale sur “encombrement sans facteur déclenchant rapporté par les infirmières. Il est en acidose respiratoire sévère à l’arrivée (pH 7,12, PCO2 à 10,4 et PO2 à 11) qui se normalise partiellement après une heure de VNI (pH à 7,35, PCO2 5,3 et PO2 12,2)\nDevant le syndrome inflammatoire, la dégradation respiratoire et le portage de SARM, une antibiothérapie par Tazocilline, Amiklin et Vancomycine est débutée.\n\nTraitements à l’entrée de l’épisode actuel\n\nMédicaments :\n\nAutres :\nOxygène seulement au repos 6L/min\n\nExamen clinique d’admission\n\nSignes généraux et vitaux\nPoids (kg) : Taille (m) : BMI :\nTemp °C : 36,2\nTA (mmHg) : 172/127 FC (bpm) : 120\nFR (c/mn) : 47 SaO2 (%) : 97%\n\nExamen cardio-vasculaire\nMrabrures des 2 genoux, TRC > 3 sec, extrémités chaudes\nBdc réguliers sans souffle perçus\nPouls périphériques bilatéraux et symétriques\nPas de signe d’insuffisance cardiaque droite ou gauche\nMollets souples Homan négatif",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E025",
+        "expected_type": "BIOMARQUEUR",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000005",
+    "candidate_id": "BB1_000005",
+    "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00089",
+        "relation_type": "traitement_administre_a",
+        "page": null,
+        "source_value": "P5_E060",
+        "target_value": "P5_E033"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E033",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient de 57 ans"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P5_E060",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16183704_brut.txt",
+      "page_number": 5,
+      "page_text": "CONCLUSION INITIALE\n\nPatient de 57 ans avec myopathie de Steinert présentant un épisode de décompensation respiratoire avec épisodes de désaturation à répétition, encombrement et balancement thoraco-abdominal après prise en charge d’une chute d’origine syncopale ayant entraîné une fracture du péroné gauche.\nDevant un syndrome infectieux évoluant depuis le 29/11/14, le patient est mis sous Augmentin le 01/12/14 pour une durée de 7 jours.\n\nEVOLUTION\n\nSur le plan respiratoire:\nLe patient présente une amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antibiothérapie mais conserve un encombrement léger et une oxygénodépendance.\nDevant l’amélioration clinique il est transféré en secteur de post-réanimation pour la suite de la prise en charge. Dès l’admission le patient reste encombré, il s’aggrave progressivement malgré les séances de kinésithérapie puis est intubé le 14/12/2014 sur une désaturation non améliorée par les séances de kinésithérapie. Les prélèvements bactériologiques ne retrouvent pas de germes, la radiographie est inchangée, on conclut donc à un encombrement bronchique.\nLa fonction respiratoire s’améliore et permet l’extubation du patient le 22/12/2014, le patient reste oxygénodépendant avec persistance de la VNI diurne et nocturne puis uniquement nocturne, il est progressivement sevré de l’oxygène chez ce patient insuffisant respiratoire avec comme objectif de saturation 88-95%. L’encombrement bronchique s’améliore mais le patient requiert toujours de la kinésithérapie respiratoire.\n\nSur le plan infectieux:\nLes examens initiaux n’isolent pas de germe, cependant le patient est traité par augmentin de façon probabiliste pendant 7jours.\nA son retour en réanimation,\nLe patient présente le 24/12/2014 un érysipèle du bras gauche sans thrombose sur un abord veineux traité par amoxicilline 10jours.\nLe 27/12/2014 il présente un épisode septique avec encombrement bronchique franc, les expectorations isolent un CITROBACTER KOSERI, le patient est traité par TAZOCILLINE puis CLAFORAN pendant 7jours.\n\nSur le plan endocrinien:\nLe patient présente une hyperglycémie motivant la mise en route d’un traitement par NPH associé à un traitement par insuline rapide.\n\nSur le plan de la myopathie:\nLe patient est informé de la probable nécessité de mise en place d’une gastrostomie devant la persistance de ses troubles de la déglutition qui seront objectivé le 9/1/2015 par le Dr AUBERT.\n\nCONCLUSION\n\nPRESCRIPTION DE SORTIE\n\nDANS le service :\n- Transfusion sanguine :\n- Infection nosocomiale :\n- Produits ou dérivés sanguins utilisés :\n- Portage de bactéries multirésistantes :\n\n\n================================================================================\nPAGES EN ÉCHEC\n================================================================================\n\nPage 6 : Transcription visuelle vide, illisible ou en erreur",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P5_E060",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000006",
+    "candidate_id": "BB1_000006",
+    "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E014",
+        "target_value": "P2_E074"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E014",
+        "resolved_entity_type": "IMAGERIE_PROCEDURE",
+        "resolved_entity_name": "Echo-doppler veineux des membres inférieurs (28/06/12)"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E074",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "COMORBIDITE_ANTECEDENT",
+          "schema_support": 11,
+          "schema_purity": 0.6471,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16201504_brut.txt",
+      "page_number": 2,
+      "page_text": "Le patient rentre à domicile au décours avec poursuite de la quadrithérapie anti-comitiale.\n\nLe 19/06/12, le patient est hospitalisé à l’hôpital des Quatre Villes (Saint-Cloud) pour pneumopathie d’inhalation après être longtemps resté au sol à la suite d’une nouvelle crise convulsive.\nSur le plan infectieux, le patient est traité par AUGMENTIN du 19/06/12 au 03/07/12, TAVANIC du 21/06/12 au 03/07/12, VANCOMYCINE 2g /24H du 03/06/12 au 05/06/12 et TIÉNAM 3g/24H du 03/06/12 au 05/06/12.\nLes examens suivant retrouvent :\n- EEG (23/06/12) : Tracé légèrement ralenti ; très discrète surcharge lente antérieure droite ; pas d’activité de la série comitiale.\n- TDM cérébrale (25/06/12) : atrophie cortico sous corticale sus et sous tentorielle. Pas d’anomalie du parenchyme ni du tronc cérébral.\n- TDM thoracique (28/06/12) : condensation rétractile de la pyramide basale gauche avec scissurite.\n- Echo-doppler veineux des membres inférieurs (28/06/12) : pas de thrombose profonde ni superficielle aux membres inférieurs en particulier gauche.\n- Fibroscopie bronchique (03/07/12) : pus abondant provenant de la LIG emplissant l’arbre bronchique gauche se renouvelant après aspiration. Pas de corps étranger ni d’obstacle endobronchique.\n\nLe 05/07/12, le patient présente une détresse respiratoire aiguë fébrile à 40° avec signes de lutte, désaturation sous 9l/min d’O2 au masque et troubles de la conscience motivant l’appel du SAMU.\nGDS : Ph 7.51, PCO2 22.4 mmHg, PO2 43.4 mmHg, bicarbonates 18 mmol /l, Leucocytes 21 300 /m3 dont 90% PNN, CRP 182 mg /l\nIonogramme normal.\n\nA l’arrivée du SAMU : patient somnolent, SpO2 à 85% sous 15L/min d’O2, tachycardie à 130 bpm, PA 150/100 mmHg, pas de signe de choc ou de signe d’insuffisance cardiaque droite, signes de lutte respiratoire avec balancement thoraco-abdominal.\nLe patient est sédaté (MIDAZOLAM 10mg /h + FENTANYL 300 µg /h) et intubé/ventilé mécaniquement. Le patient reçoit 3 x 500ml de sérum physiologique en pré-hospitalier.\n\nTransfert à Garches en réanimation.\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :\n- Hypnovel 10 mg/h\n- Fentanyl 300 µg /h\n- Keppra 500 mg : 1-0-1\n- Rivotril : 1/4-0-1/2\n- Depakine 500 mg : 3-0-3\n- Vimpat 100 mg : 1-0-1\n- Vancomycine 2g/24h\n- Tienam 500 mg : 3x/j\n- Aérosols Atrovent 4/j\n- Lovenox 0.4/j\n- Perfalgan 1gx4/j si douleurs*\n\n- Kinésithérapie respiratoire et motrice\n\nExamen clinique d’admission\nSignes généraux et vitaux\nPoids (kg) : 70 Taille (m) : 1.65 BMI : 25.7\nTemp °C : 38.9",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P2_E074",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000007",
+    "candidate_id": "BB1_000007",
+    "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00065",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_value": "P5_E015",
+        "target_value": "P5_E014"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E015",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E014",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "schema_support": 236,
+          "schema_purity": 0.944,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+      "page_number": 5,
+      "page_text": "TICARPEN.\n\nL'évolution est une nouvelle fois favorable. Le patient est sevré en cathécholamines le 16/07 et les sédations sont arrêtées.\nIl réalise des épreuves de respiration libre satisfaisantes.\nDevant une prise de poids de 10 kg pendant la réanimation on réintroduit des diurétiques qui permettent le retour à son poids d'entrée en 72h. Un traitement par IEC est également repris.\nLe patient est alors conscient et orienté.\n\nLe 20/07, il présente brutalement un vomissement et une perte de contact de quelques secondes avec un retour normal à la conscience, les constantes restent stables initialement.\nIl apparaît quelques minutes plus tard une seconde perte de contact avec une bradycardie sinusale puis un IDM massif évoluant rapidement vers un ACR.\nLe patient est réanimé pendant 50 minutes sans succès.\n\nCONCLUSION\nPneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.\nEvolution vers un ACR sur IDM massif.\nDécès.\n\nDANS le service :\n- Transfusion sanguine : non\n- Infection nosocomiale : non\n- Produits ou dérivés sanguins utilisés : non\n- Portage de bactéries multirésistantes : non",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P5_E014",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000008",
+    "candidate_id": "BB1_000008",
+    "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "micro_organisme_isole_dans",
+        "page": 4,
+        "source_value": "P4_E026",
+        "target_value": "P4_E024"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E024",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Pneumopathie bilatérale"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E026",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "MICRO_ORGANISME",
+          "schema_support": 46,
+          "schema_purity": 0.9388,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+      "page_number": 4,
+      "page_text": "Leucocytes 3.40 10^9/l (4.00<10)\nHématies 2.79 10^12/l (4.50<5.80)\nHémoglobine 9.3 g/dl (13<18)\nHématocrite 28.3 % (40<54)\nV.G.M. 101.4 fl (82<98)\nT.G.M.H. 33.2 pg (27<32)\nC.C.M.H. 32.7 % (32<36)\nPlaquettes 19 10^9/l (150<400)\nV.M. Plaq. 10.9 fl (7.00<9.00)\nPNeutroph. 0.68 10^9/l (1.80<7.50)\nPEosinoph. 0.00 10^9/l (0.04<0.80)\nPBasophiles 0.00 10^9/l (0.00<0.20)\nLymphocytes 0.61 10^9/l (1.00<4.50)\nMonocytes 0.14 10^9/l (0.20<1.00)\nMétamyéloc. 34.0 % (0.00<0.00)\nMyélocytes 24.0 % (0.00<0.00)\nErythrobl. 9 /100 GB (0.00<10)\nMacrocytose +\n\nHEMOSTASE\nTQ M 41.20 secondes (11.5<14.5)\nTQ T 13.00 secondes (11.5<14.5)\nActivité 18 % (70<120)\n\nCOFACTEURS\nF V 26 % (65<120)\nF VII+X 15 % (65<120)\nF II 22 % (65<120)\nTCA M 73.7 secondes (28<38)\nTCA T 33.0 secondes (28<36)\nRatio M/T 2.23 (0.80<1.20)\n\nT.THROMBINE\nTT M 14.2 secondes (16<22)\nTT T 19.0 secondes (16<22)\n\nFIBRINOGENE\nFibrinogène 1.93 g/l (2.00<4.00)\n\nD-DIMERES\nDDI 2.68 µg/ml (0.00<0.40)\n\nPrélèvements infectieux :\nTrès nombreux BGN au direct au PDP et quelques levures.\n\nECG\nACFA.\n\nRadiographie pulmonaire\nOpacités bilatérales des bases. Pas de cardiomégalie.\n\nScanner\nPneumopathie bilatérale. Hypertrophie bilatérale des surrénales. Diverticulose sigmoidienne.",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P4_E026",
+        "expected_type": "MICRO_ORGANISME",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000009",
+    "candidate_id": "BB1_000009",
+    "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00074",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 5,
+        "source_value": "P5_E020",
+        "target_value": "P5_E036"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E020",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "remplissage de 5L"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E036",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+      "page_number": 5,
+      "page_text": "Anomalies importantes à surveiller\nCIVD/Hypokaliémie/acidose métabolique/insuffisance rénale/\n\nCONCLUSION INITIALE\n\nChoc septique à point de départ pulmonaire chez un patient de 71 ans sous chimiothérapie pour un carcinome épidermoïde.\n\nPRISE EN CHARGE\n\nPatient arrivé en état de choc septique avec PAM à 60-65mmHg après 3.5l de remplissage par voluven et sérum physiologique\nLe patient est en acidose métabolique avec pH à 6.91, sous Noradrénaline 1mg/heure sur voie périphérique.\nMise en condition par pose de cathéter veineux jugulaire droit et artériel fémoral droit. Monitorage par PICCO.\n\nEVOLUTION\n\nSur le plan respiratoire et infectieux :\nA son arrivée, le patient est mis sous Tienam et Amiklin.\nLe PDP réalisé revient avec un direct positif à BGN et levure.\nRéalisation d’un scanner cervico-thoraco-abdominal dans l’après midi qui retrouve une pneumopathie postéro-basale bilatérale, pas d’épanchement pleural, une diverticulose sigmoidienne non compliquée, une hypertrophie surrénalienne bilatérale\n\nSur le plan hématologique :\nLe bilan d’entrée retrouve une CIVD biologique sans signes cliniques hémorragiques.\nApparition dans l’après midi, de saignement aux points de ponction et en endotrachéal -> transfusion d’un culot plaquettaire avec bon rendement transfusionnel ( 17000 plq à 37000plq)\nPatient initialement avec des leucocytes à 3500/mm3. Leucopénie à 900/mm3 à minuit, dans un contexte de chimiothérapie récente -> isolement protecteur mis en place\n\nSur le plan métabolique :\nDepuis son arrivée, lactatémie persistante à 14 mmol/l, insuffisance rénale fonctionnelle, aggravation et majoration lente de l’hyperkaliémie -> décision d’introduire la prisma (dialyse) devant l’acidose métabolique menaçante et la défaillance rénale\n\nSur le plan hémodynamique :\nPatient initialement stable à son arrivée sous Noradrénaline 1mg/heure avec des PAM vers 65 mmHg\nDans l’après midi, dégradation de l’état hémodynamique malgré remplissage de 5L au total avec nécessité d’augmenter les doses de Noradrénaline\nEvolution vers la dégradation avec nécessité dans la nuit d’introduire de l’Adrénaline avec besoin accru et constant, sans amélioration de la perfusion tissulaire\nDans la matinée du 17/08, dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’Adrénaline jusqu’à 30 mg/h sans efficacité sur la perfusion du patient :\nLe 17/08 à 11h27min, décès du patient dans un contexte de défaillance multiviscérale\n\nCONCLUSION",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P5_E036",
+        "expected_type": "POSOLOGIE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000010",
+    "candidate_id": "BB1_000010",
+    "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_symptome",
+        "page": 5,
+        "source_value": "P5_E038",
+        "target_value": "P5_E035"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E035",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SYMPTOME",
+          "schema_support": 744,
+          "schema_purity": 0.96,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16271908_brut.txt",
+      "page_number": 5,
+      "page_text": "Le PDP retrouve un staphylocoque aureus multisensible.\nLes autres prélèvements (hémocultures, ECBU) sont négatifs. Les antigénuries Légionelles et\nPneumocoques et les sérologies Légionelles sont également négatives.\n\nL’évolution est favorable avec obtention d’une apyréxie et régression du syndrome inflammatoire\nbiologique.\n\n- Au niveau respiratoire :\nTableau initial de SDRA (P/F minimal à 280) motivant une ventilation protectrice . Evolution favorable\navec amélioration de l’hématose permettant une extubation le 24/08 sans complication au décours.\n\n- Au niveau ORL :\nIl persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de\nBUDENOSIDE permettant une amélioration clinique.\n\nConsultation ORL le 28.08 (Dr Guilleré en l’absence du Dr Wagner - Hopital Foch) : hemilarynx droit\nimmobile, bonne mobilité à gauche, avec affrontement des cordes vocales correct. Pas de trouble de\ndéglutition. Bonne sensibilité du larynx.\nPoursuite des aérosol de corticoide et de la kinésithérapie.\nRendez vous de consultation le 07/08 à 11h, pour décision de suite de prise en charge, soit\ncordotomie droite pour amélioration du confort respiratoire soit trachéotomie.\n\n- Au niveau hémodynamique :\nEvolution favorable permettant un arrêt des vasopresseurs le 22/08, puis une ablation des cathers\nveineux le 23/08 et artériel le 24/08 (culture négative).\nA noter une hémoculture positive à Staphylocoque épidermidis (contamination).\n\nPar ailleurs, reprise du traitement anticoagulant progressive (début des AVK le 27.08) à poursuivre car\ntraitement par anti VEGF en cours.\n\nMr C. est transféré en service de médecine Widal 2 pour suite de prise en charge et reprise d’une\nautonomie.\n\nA noter patient souhaite être suivi à gargues pour le syndrome de Strumpell Lorrain (possibilité de\nsuivi en réeducation par le Dr JOURDAN ou le Dr BEN SMAÏL)\n\nPatient inclu dans les protocoles APPROCH 2, POGNES, CAPTAIN, AWAR, FROG-ICU..\n\nCONCLUSION\n\nChoc septique a point de départ pulmonaire d’évolution favorable\n\nPRESCRIPTION DE SORTIE\n\naugmentin 1g *3/j jusqu’au 28/08 inclu\npreviscan 3/4 de cp (premier INR à prévoir le 30.08)\nlevothyrox 100 1.75 cp par jour\nhydrosol 25 gouttes par jour\ndafalgan si besoin\nmovicol si besoin\naérosol de budésonide 1mg toutes les 6h",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P5_E035",
+        "expected_type": "SYMPTOME",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000011",
+    "candidate_id": "BB1_000011",
+    "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00069",
+        "relation_type": "service_medical_accueille",
+        "page": 1,
+        "source_value": "P1_E020",
+        "target_value": "P1_E017"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P1_E017",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P1_E020",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SERVICE_MEDICAL",
+          "schema_support": 136,
+          "schema_purity": 0.9927,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16271908_brut.txt",
+      "page_number": 1,
+      "page_text": "CRH réanimation de Bover Marc\n\nPatient : CHI [?] FRA [?]\n\nMotif de l’hospitalisation\n\nChoc septique sur pneumopathie chez un patient de 69 ans aux antécédents de cancer rénal métastasé.\n\nMédicaux\n\nAntécédents\n\n- Cancer du rein droit en 1992 : carcinome à cellules claires avec thrombus remontant dans la VCI (traité par néphrectomie droite élargie avec surrénalectomie et exérèse de la VCI).\n- Métastases thyroïdiennes découvertes en 2005, traitées par thyroidectomie totale avec curage ganglionnaire récurrentiel droit et résection anastomique trachéale partielle.\n- Récidive en 2007 avec découverte de plusieurs nodules cervicaux ; surveillance simple, puis introduction en novembre 2007 d’un traitement par SUTENT (jusqu’à fin 2008). Persistance de nodules para thyroïdien, dont les cytoponctions sont non contributives.\nNouvelle récidive en 2010 sous forme de métastases para trachéale et para œsophagiennes traitées par radiothérapie (après trachéotomie protectrice). Reprise du SUTENT jusqu’en janvier 2011 (arrêté devant une mauvaise tolérance) puis de l’AFINITOR\n\n- Embolie pulmonaire en 2006 traitée par Previscan (traitement conservé car prise concomitante d’anti angiogéniques)\n- Maladie de Strumpell Lorrain (mutation gène SPG4 Spastine) suivi par Dr Anglejan et Professeur Fontaine au CHUPS\n- Péricardite\n- Méningite à l’âge de 12 ans\n\nChirurgicaux\n\n- Hernies bilatérales\n- 1993 Tendons ? (2 pieds)\n- 2000 Genou Prothèse unicompartimentale\n- 2005 Thyroidectomie totale\n- 2010 Trachéotomie en juin 2010 par Dr Wagner à l’hôpital Foch\n- 2010 Prostatectomie Dr Bronstein\n- 2011 Suppression de la canule de trachéotomie le 13 décembre\n- 2012 Cataracte Oeil gauche en avril\n\nFamiliaux\nnon connues\n\nAllergies\naucune\n\nMode de vie\nVit à domicile avec sa femme\nAutonome",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P1_E020",
+        "expected_type": "SERVICE_MEDICAL",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000012",
+    "candidate_id": "BB1_000012",
+    "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00029",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 2,
+        "source_value": "P2_E027",
+        "target_value": "P2_E028"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E027",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "G5"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E028",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+      "page_number": 2,
+      "page_text": "contamination du LCR.\n\nEn 2010, apparition d’une collection sous cutanée avec fistulisation cutanée.\nPrélèvement positif à STAPHYLOCOQUE AUREUS.\n\nDepuis l’été 2012 apparition d’une altération de l’état général avec secondairement survenue d’une fièvre.\nRéalisation d’un prélèvement de l’écoulement lombaire qui retrouve un STAPHYLOCOQUE AUREUS METI S. Patient mis sous PYOSTACINE.\nDepuis environ 2 semaines présence d’un essoufflement et douleur thoracique.\n\nAdressé le 24/10 aux urgences de l’hôpital H. Mondor par SOS médecin.\nA l’arrivée :\n- patient légèrement confus,\n- tachycardie, hypotendu à 90/50 répondant bien au remplissage\n- syndrome pleural gauche.\nTDM thoraco-abdomino-pelvien : pleurésie gauche de grande abondance compressive, une ostéolyse T11-T12-L1 accompagnée d’abcès multiloculé des psoas, un foie cirrhotique avec thrombose portale complète, ascite de moyenne abondance et des varices oesophagiennes.\n\nTransfert en réanimation médicale devant le sepsis sévère associé à un épanchement pleural.\nEn réanimation\n- ETT du 25/10/2012 : pas d’argument en faveur d’une endocardite infectieuse\n- TDM cérébral : pas d’abcès retrouvé\n- Drainage pleural ramenant 3500 cc d’un liquide trouble de type exsudatif avec\n- Ponction d’ascite : 500 cc stérile\n- Ponction d’abcès du psoas : purulent, retrouvant du SARM\n- Hémocultures négative\nIntroduction d’une tri-antibiothérapie par VANCOMYCINE, BRISTOPEN, GENTAMICINE puis VANCOMYCINE seule après résultats de l’antibiogramme.\n\nTransfert en réanimation à Garches le 29/10/2012 pour suite de la prise en charge et discussion d’une prise en charge orthopédique avec reprise chirurgicale.\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :\n- G5 2.000mL/24h + NaCl16g/24h + KCl 4g/24h\n- Sérumphysiologique\n- Déxan ampoule/jour\n- Cernevit ampoule/jour\n- Vitamine B1 1000 mg/jour\n- Vitamine B6 500 mg/jour\n- Vitamine PP 250mg/jour\n- Folates 50mg/jour\n- Vancomycine 1g x2/jour ivl\n- Calciparine 0.2mL x2/jour SC\n- Valium 5mg\n- Atarax 50mg ivl le soir\n- eupanthol 40mg/jour\n\nAutres :\nisolement contact BMR\n\nExamen clinique d’admission",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P2_E028",
+        "expected_type": "POSOLOGIE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000013",
+    "candidate_id": "BB1_000013",
+    "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00092",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 6,
+        "source_value": "P6_E047",
+        "target_value": "P6_E005"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E047",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P6_E005",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "schema_support": 230,
+          "schema_purity": 0.9312,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+      "page_number": 6,
+      "page_text": "2 Cicatrices (lombaire et crête iliaque droite) inflammatoires depuis le 9/11 dont une avec écoulement séreux à surveiller (vu par l’orthopédiste).\n\n- Au niveau neurologique\nPrésence initialement d’une encéphalopathie hépatique avec ralentissement psychomoteur et flapping tremor.\nAmélioration progressive avec retour à l’état de consciente antérieur à partir du 31/10/12.\nNouvel épisode de confusion le 08/11/2012 avec scanner cérébral sans anomalie apparue au décours d’une hémorragie digestif. Suspicion d’ Encéphalopathie hépatique.\n\n- Au niveau hépatique :\nDécompensation oedémato ascitique. La Ponction d’ascite exploratrice ne retrouve pas de germes.\nUne ponction évacuatrice de 3L a été réalisé avec supplémentation en albumine avec 2 flacon d’albumine à 20%.\nTrouble de l’hémostase dans le cadre de l’insuffisance hépatique nécessitant la transfusion de PFC.\n\n- Au niveau gastro entérologique\nEpisode de méléna sans déglobulisation qui a nécessité la mise en route d’un traitement par sandostatine et Inipomp. Hémoglobine stable à 13g/dl. La fibroscopie gastrique retrouve des varices oesophagiennes de grade 2. Mise en route d’un traitement par Avlocardyl.\n\n- Au niveau rénal :\nPrésence d’une insuffisance rénale aiguë d’allure fonctionnelle. Persistance d’une insuffisance rénale modérée avec une créatinine à 120.\n\nCONCLUSION\n\nSepsis sévère à SARM sur matériel d’arthrodèse avec pleurésie purulente et abcès des psoas.\nEvolution favorable sous antibiothérapie et après reprise chirurgicale.\nEpisode de méléna sur varices oesophagienne grade II sans déglobulisation chez un patient avec cirrhose VHC+OH stade Child C. Suspicion d’Encéphalopathie hépatique au décours. Pas d’argument pour ILA.\n\nPRESCRIPTION DE SORTIE\nPariet 10 mg 0-0-1\nMovicol 0-0-1\ndiffu K 2-2-2-2\npropanolol 40 1/2-0-0\nlactulose 2-2-2\nlederfoline 1-0-0\naldactone 1-0-0\ncalciparine 5000ui /0.2 ml 1-0-1\nVancomycine 500 mg toutes les 8h depuis le 05/11/2012 à poursuivre pendant 3 semaines\nhydrosol polyvit 25 gouttes le midi\nPerfusion Glucose 5% 1000 cc + 1000 mg bevitine + 500 mg pyridoxine +3 ampoules de potassium 10 % 10 ml\n\nDANS le service :\n- Transfusion sanguine : non\n- Infection nosocomiale : non\n- Produits ou dérivés sanguins utilisés : PFC 2Culots\n- Portage de bactéries multirésistantes : oui SARM",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P6_E005",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000014",
+    "candidate_id": "BB1_000014",
+    "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00144",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": null,
+        "source_value": "P2_E031",
+        "target_value": "P2_E028"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E031",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "KCl"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E028",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+      "page_number": 2,
+      "page_text": "contamination du LCR.\n\nEn 2010, apparition d’une collection sous cutanée avec fistulisation cutanée.\nPrélèvement positif à STAPHYLOCOQUE AUREUS.\n\nDepuis l’été 2012 apparition d’une altération de l’état général avec secondairement survenue d’une fièvre.\nRéalisation d’un prélèvement de l’écoulement lombaire qui retrouve un STAPHYLOCOQUE AUREUS METI S. Patient mis sous PYOSTACINE.\nDepuis environ 2 semaines présence d’un essoufflement et douleur thoracique.\n\nAdressé le 24/10 aux urgences de l’hôpital H. Mondor par SOS médecin.\nA l’arrivée :\n- patient légèrement confus,\n- tachycardie, hypotendu à 90/50 répondant bien au remplissage\n- syndrome pleural gauche.\nTDM thoraco-abdomino-pelvien : pleurésie gauche de grande abondance compressive, une ostéolyse T11-T12-L1 accompagnée d’abcès multiloculé des psoas, un foie cirrhotique avec thrombose portale complète, ascite de moyenne abondance et des varices oesophagiennes.\n\nTransfert en réanimation médicale devant le sepsis sévère associé à un épanchement pleural.\nEn réanimation\n- ETT du 25/10/2012 : pas d’argument en faveur d’une endocardite infectieuse\n- TDM cérébral : pas d’abcès retrouvé\n- Drainage pleural ramenant 3500 cc d’un liquide trouble de type exsudatif avec\n- Ponction d’ascite : 500 cc stérile\n- Ponction d’abcès du psoas : purulent, retrouvant du SARM\n- Hémocultures négative\nIntroduction d’une tri-antibiothérapie par VANCOMYCINE, BRISTOPEN, GENTAMICINE puis VANCOMYCINE seule après résultats de l’antibiogramme.\n\nTransfert en réanimation à Garches le 29/10/2012 pour suite de la prise en charge et discussion d’une prise en charge orthopédique avec reprise chirurgicale.\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :\n- G5 2.000mL/24h + NaCl16g/24h + KCl 4g/24h\n- Sérumphysiologique\n- Déxan ampoule/jour\n- Cernevit ampoule/jour\n- Vitamine B1 1000 mg/jour\n- Vitamine B6 500 mg/jour\n- Vitamine PP 250mg/jour\n- Folates 50mg/jour\n- Vancomycine 1g x2/jour ivl\n- Calciparine 0.2mL x2/jour SC\n- Valium 5mg\n- Atarax 50mg ivl le soir\n- eupanthol 40mg/jour\n\nAutres :\nisolement contact BMR\n\nExamen clinique d’admission",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P2_E028",
+        "expected_type": "POSOLOGIE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000015",
+    "candidate_id": "BB1_000015",
+    "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00037",
+        "relation_type": "service_medical_accueille",
+        "page": 2,
+        "source_value": "P2_E006",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E006",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SERVICE_MEDICAL",
+          "schema_support": 136,
+          "schema_purity": 0.9927,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt",
+      "page_number": 2,
+      "page_text": "de genou gauche.\n\nHospitalisation en dermatologie entre mars et avril 2012: conclusion de lichen plan et non de toxidermie et donc poursuite de la Dalacine et Clamoxyl.\n\nAdresse le 20/06 par son médecin traitant au Dr Bauer (chirurgie orthopédique A.Paré) pour 2 eme avis.\nLe patient est vu le 21/08: décision de dépose de PTG et repose en 2eme temps.\n\nDépose PTG le 21/09 à A.Paré. La bactériologie retrouve une flore polymorphe avec streptocoque B et staphylocoque capitis, pyocyanique, serratia et staphylocoque epidermidis. Mis en route d’une antibiothérapie à large spectre devant les multiples germes. (VANCOMYCINE, TAZOCILLINE, CIFLOX)\nMr Kokolo présente un DRESS pris en charge en soins continus A.Paré le 5/10 pour lequel les antibiotiques sont arrêtés.\nPar ailleurs, la chirurgie est compliquée d’une lésion de l’artère poplitée gauche => nécrose progressive des orteils à gauche, pas de geste vasculaire après 3 avis de chirurgien vasculaire et attente de mofification pour amputation associé à geste de reperfusion de fémoral superficielle.\n\nLe 07/10 septicémie à candida sur picc line => ablation et ttt fluconazole compliqué d’une encéphalopathie liée soit à un surdosage en fluconazole, soit à un nouveau DRESS (absence d’endocardite évidente à l’ETT (10/10)).\n\nL’amputation du pied gauche se discute devant la persistance de germes dans l’os non éradiquable car tout traitement antibiotique est risqué chez ce patient multiallergique, un mauvais état général du patient dénutri et fatigué de cette infection chronique.\n\nLe 13/10 : découverte d’un portage asymptomatique digestif d’Enterocoque Résistant à la Vancomycine (retrouvé dans les selles). Le patient est aussi porteur d’un Enterobacter cloacae BLSE. Un isolement septique est indispensable => transfert en service de maladies infectieuses à Garches (Widal 2)\n\nArrivée à W2 Raymond Poincaré le 15/10.\nArrêt de toute antibiothérapie osseuse, nécessité de réévaluer l’indication d’une chirurgie pour la cure de l’ostéite et reperfusion de la jambe gauche.\nExploration sur les antibiotiques autorisés possibles chez ce patient au terrain atopique : C3G, Ofloxacine, Dalacine, Rifampicine.\n\nDans la nuit du 4-5 nov : le patient présente un pic fébrile à 39.4, TA 9/6, FC68, frissons, encombrement bronchique et DRA ave tirage sus claviculaire et BTA, sat O2 70% en AA, mis sous O2 5L puis masque haute concentration 15L, trouble de la conscience, ne répond pas aux ordres (par ailleurs diminution de la communication depuis 5 jours). Auscultation retrouve ronchis diffus même après aspirations bronchiques, pas de foyer de crépitants. A l’aspiration, sécrétions jaunâtres épaisses.\n\nExamens réalisés en urgence : hémocultures, Radio thorax\nGDS pH 7.22, PaCO2 4.27, bicar 12.5, PO2 4.2\nNa 162, K 7.1, urée 61, créat 924 (191 le 29/10), glucose 8.6, LDH 334, bilan hépatique perturbé, CRP 196.9 (à 109 le 29/10), leuco 24 200 (16 000 le 29/10), Hb 8.6\n\n=> transfert en réanimation devant sepsis sévère avec déshydratation globale du patient, acidose métabolique, DRA, défaillance multiviscérale.\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E006",
+        "expected_type": "SERVICE_MEDICAL",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000016",
+    "candidate_id": "BB1_000016",
+    "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "traitement_administre_a",
+        "page": 5,
+        "source_value": "P5_E024",
+        "target_value": "P5_E049"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E049",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P5_E024",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16340712_brut.txt",
+      "page_number": 5,
+      "page_text": "bronchique.\nSevrage progressif de la ventilation après amélioration clinique et gazométrique avec rapport P/F à 350 et nette diminution de l’épanchement pleural gauche à la radiographie pulmonaire.\nAblation du drain thoracique le 21/02.\nExtubation le 26/02.\n\nSur le plan hémodynamique\nPatient initialement en choc septique ayant nécessité la mise en route d’un remplissage et catécholamines (noradrénaline), sevrage progressif de la noradrénaline avec arrêt le 11/02.\nEpisodes d’AC/FA paroxystique brefs, pas de nécessité de mise en route d’une anticoagulation.\nBonne diurèse, pas d’altérations de la fonction rénale.\n\nsur le plan infectieux :\nPDP positif à Pneumocoque.\nAntigénurie pneumocoque, légionnaire négative.\nPonction pleurale du 07/02 : exsudat (prot = 59 gr/l) avec au direct, nombreux PNN et absence de germe.\nPonction lombaire le 09/02 : pas de cellule, pas de germe au direct et pas d’Ag pneumocoque.\nPrélèvement grippe négatif.\n=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.\n\nSur le plan neurologique\nPatient sédaté avec des doses importantes d’hypno+ suf+ diprivan, sevrage progressif de la sédation et arrêt le 26/02/13\nA j13 d’hospitalisation : suspicion d’embolie gazeuse sur déconnexion du KTC => sédation + caisson => réveil progressif sans déficit neurologique et EEG réactif.\n\nSur le plan hématologique\nAnémie à 7.5 normocytaire arégénérative (rétic à 61 000) puis déglobulisation à 6.3\n=> Transfusion 2 culot globulaires avec NFS de contrôle : Hb = 9.7\n=> Fibroscopie gastrique : pas de saignement actif.\n\nSur le plan métabolique:\nDéséquilibre diabétique ayant nécessité la mise en route d’UMULINE rapide à la PSE, sevrage progressif et reprise de la Lantus à 20 UI le soir.\nHyponatrémie à 126 corrigée après restriction hydrique.\n\nSur le plan digestif:\nEchographie abdominale faite le 18/02 devant une cytolyse avec cholestase => pas d’anomalie notable.\n\nSur le plan rénale:\nGlobe ayant nécessité la repose de la sonde urinaire.\nIntroduction du Xatral, avant tentative de désondage.\nFonction rénale normale.\nNotion d’adénome prostatique.\n\nTransfert le 28/02 en post-réanimation\n\nEvolution en post réanimation\n- Sur le plan respiratoire\nSevrage de l’oxygène. Eupnéique. Crépitants et diminution du murmure vésiculaire base gauche. Toux efficace. Il reste un épanchement cloisonné gauche, qui a été ponctionné le 14/03 après repérage",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P5_E024",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000017",
+    "candidate_id": "BB1_000017",
+    "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E021",
+        "target_value": "P2_E012"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E012",
+        "resolved_entity_type": "COMORBIDITE_ANTECEDENT",
+        "resolved_entity_name": "suivi pour myotonie de Steinert"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E021",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 17,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16344492_brut.txt",
+      "page_number": 2,
+      "page_text": "VENTILATEUR utilisée : PR1 PHILIPS\nASSOCIATION : ADEP\nMODE : BIPAP - Mode AVAPS\nVt cible : 480 ml\nIPAP max ( cm H2O ) : 25 - IPAP min : 10\nEPAP : 4\nFréquence ( c /min ) : 12\nTi (s) : 1,4 sec\nTemps de montée : 1\nType de Tuyau : 22\nDurée de la ventilation ( H ) Prescrite : 8 heures\nFiO2 : 21 %\nAlarme désactivée sauf débranchement\nMasque nasal : Fisher Paykel HC407\n\nHISTOIRE DE LA MALADIE\n\nPatient de 50 ans suivi pour myotonie de Steinert.\nEFR révélant un syndrome restrictif majoré. La CV retrouvée est de 30%, les gaz du sang relèvent une hypoxémie à 72.8 mmHg associée à une hypercapnie à 46.8mmHg. La saturation était de 95.4%.\nLe patient se ventile quelques jours dans la semaine à cause des problèmes de manque d’auxiliaire de vie qui ne passe pas tous les jours.\n\nExamen clinique d’admission\n\nSignes généraux et vitaux\nPoids : 67kg\nTemp °C : 36,2\nTA (mmHg) : 107/72\nFC (bpm) : 82\nSO2 (%) : 99\n\nExamen cardio-vasculaire\nBruits du coeur réguliers.\nPas de souffle perçu.\nPas de signe de choc.\nPas de signe d’insuffisance cardiaque droite ni gauche.\nPort d’un défibrillateur.\n\nExamen respiratoire\nPatient sous 2L d’O2 en attente VNI.\nToux grasse productive.\nMurmures bilatéraux et symétriques.\nRonchis bilatéraux.\n\nExamen neurologique",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E021",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000018",
+    "candidate_id": "BB1_000018",
+    "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00044",
+        "relation_type": "traitement_administre_a",
+        "page": 2,
+        "source_value": "P2_E031",
+        "target_value": "P2_E052"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E052",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E031",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+      "page_number": 2,
+      "page_text": "thrombopénie, leucopénie, hypothermie dans un contexte de surinfection pulmonaire à pyocyanique et serratia et sinusite maxillaire droite à morganelle morgani drainé.\nAllongement isolé du TCA attribué à l’augmentation du fibrinogène.\nAprès traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.\n\nDébut de l’épisode actuel avec apparition dans la journée du 16/01/13, d’écoulements au niveau de la trachéotomie. Essai de consultation du médecin traitant mais pas de place disponible avant le lundi. Aggravation de la symptomatologie durant le week-end avec une asthénie, donc appel du Samu le lundi qui le transfert à Garches.\nPremier épisode de trouble de conscience lors de la séance de kinésithérapie respiratoire, récupération après reprise au ballon alors qu’il se trouvait au secteur 3.\nNouvel épisode 30 minutes plus tard de coma d’origine respiratoire (fuite très importante malgré la ventilation mécanique sur son ventilateur de domicile sans ballonnet), reprise de conscience après ventilation au ballon pendant 1 à 2 min. L’hypothèse retenu est celle d’une mauvaise ventilation sur un encombrement.\n\nSéquence des événements : le patient se plaint de ne pas être ventilé (en l’absence de dysfonctionnement de son ventilateur).\nPerte de connaissance.\nSon voisin prévient l’infirmière.\nLe patient est livide et inconscient.\nReprise au ballon avec une reprise de conscience en 1 minute.\n\nOn décide de changer sa canule pour une canule avec ballonnet, on reventile le patient, ballonnet gonflé\nil est aspiré et est effectivement encombré.\nLe patient est transféré en réanimation.\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments\nBuspirone 10 : 0-0-1\nPerindopril 4 : 1/2-0-0\nFluoxetine 20 : 1-0-0\nForlax, transipeg, selon transit.\n\nVentilation\nVentilateur utilisé : éole3\nAssociation : adep\nMode : VAC\nVC (mL) : 470 ml peep : 3\nFréquence (c/mn) : 14\nRapport I/E : 1/2\nTrigger : -0.3\nPente : 1\nAlarme haute pression (mbar) : 50 Alarme basse pression (mbar) : 5\nDurée de ventilation (H) prescrite : 12 h au lit\nHumidificateur : oui chauffage : oui\nFiO2 : 21%\nMasque ou canule de trachéotomie : tracoe N8\n\nVentilateur : LÉGENDAIR\nMode : VAC Vt 470 ml FR 14 cpm\nI/E : 1/2 PEP 3 Pente 1\nTG 1",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E031",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000019",
+    "candidate_id": "BB1_000019",
+    "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00108",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 4,
+        "source_value": "P4_E041",
+        "target_value": "P4_E035"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E035",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Doute sur un foyer en base droite"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E041",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 31,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+      "page_number": 4,
+      "page_text": "Saturat. O2 98.8 % (96 - 99)\nHb réduite 1.2 %\n\nIONO.SANG\nLactate 0.8 mmol/l (0.7 - 2.4)\nSodium 136 mmol/l (135 - 142)\nPotassium 5.4 mmol/l (3.7 - 4.7)\nChlorures 105 mmol/l (95 - 105)\nCO2 total 25 mmol/l (24 - 29)\nProtides 70 g/l (72 - 82)\nUrée 5.7 mmol/l (3.0 - 6.0)\nCréatinine <20 µmol/l (40 - 110)\nGlucose 4.4 mmol/l (4.0 - 6.0)\nCalcium 2.44 mmol/l (2.20 - 2.60)\nPhosphore 1.44 mmol/l (0.80 - 1.45)\nMagnésium 0.73 mmol/l (0.70 - 1.05)\n\nENZY.SUB.SG\nBili totale 5 µmol/l (3 - 20)\nASAT H 50 UI/l (6 - 37)\nALAT H 69 UI/l (30 - 65)\nPAL H 179 UI/l (50 - 136)\nG.G.T. 24 UI/l (15 - 85)\n\nPROT.SANG\nAlbumine B 25.0 g/l (41.8 - 51.1)\nPréalbumine B 0.160 g/l (0.203 - 0.351)\nC.R.P. 205.8 mg/l (<3)\n\nHORMONES\nHeure T0 18H00\n\nHEMOST. GARDE\nTQ activité 84 % (70 - 110)\nTCA Malade 50 sec (deja présent)\nTCA Témoin 31 sec\n\nNUM.GARDE\nLeucocytes 3.0 109/l (4.0 - 10.0)\nHématies B 3.77 1012/l (4.50 - 5.50)\nHémoglobine 10.4 g/dl (13.0 - 17.0)\nHématocrite 32.1 % (40.0 - 54.0)\nV.G.M. 85.2 fl (80.0 - 100.0)\nT.G.M.H. 27.7 pg (27.0 - 32.0)\nC.C.M.H. 32.5 % (31.0 - 36.0)\nPlaquettes 10 109/l (150 - 450)\nV.M. Plaq. 11.1 fl (7.0 - 11.0)\n\nECG\nRythme sinusal, régulier, bloc de branche droit complet.\nPas de signe majeur : hyperkaliémie.\n\nRadiographie pulmonaire\nDoute sur un foyer en base droite.",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P4_E041",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000020",
+    "candidate_id": "BB1_000020",
+    "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00124",
+        "relation_type": "traitement_administre_a",
+        "page": null,
+        "source_value": "P4_E062",
+        "target_value": "P5_E046"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E046",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E062",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16381567_brut.txt",
+      "page_number": 4,
+      "page_text": "CONCLUSION INITIALE\n\nAsthme aigu grave chez un patient asthmatique connu. Facteur déclenchant : à priori grippe.\n\nPRISE EN CHARGE\n- Patient sédaté intubé ventilé en VAC VT 650 FR 20 100% FiO2 PEP 5 à 1h30\n- Solumédrol IV\n- Nébulisations fréquentes\n- PDP et ATB par Tienam Amiklin\n\nEVOLUTION\n\nSur le plan hémodynamique :\nChoc septique initialement, hypotension artérielle et instabilité hémodynamique ne répondant pas au remplissage nécessitant de la Noradrénaline à 1 mg/h pendant 2 jours\n\nSur le plan respiratoire :\nSyndrome de défaillance respiratoire aiguë sur grippe A surinfectée à pneumocoque et haemophilus.\nPatient intubé, ventilé, curarisé, sédaté.\nSur le plan ventilatoire : Pression de plateau à 25, PEP : 16, FiO2:70%, PaO2/FiO2 : 150\nVentilation haute fréquence et Décubitus Ventral\nDiminution progressive de la FiO2 à 30%\nArrêt des curares le 02/04/13\nExtubation le 14/05/13 sans complication\n\nSur le plan cardiologique :\nAC/FA lente à l’ECG, bien toléré.\n\nSur le plan de la sédation\nSevrage progressif en Tranxene et hypnovel.\nMaintien de doses initialement élevées de morphine à 12 mg/h puis sevrage progressif à 2 mg/h avec bolus en cas de douleur (consommation chronique de morphiniques)\nRelais per os avec Skenan et Actiskenan à partir du 23/05/13\n\nSur le plan rénal :\nInsuffisance rénale aiguë initiale avec plusieurs séances d’hémodialyse (créat à 456 urée 23.2)\nRécupération d’une fonction rénale stable avec une clairance à 50 ml/min (urée à 14.3 et créatinine à 122 le 24/04/13) avec diurèse conservée à 1850 cc\n\nSur le plan infectieux :\nSDRA sur grippe A surinfectée à pneumocoque et haemophilus.\nAntibiothérapie initiale probabiliste par Tienam Amiklin puis adaptation secondaire par Augmentin, Rovamycine et Tamiflu.\nPatient apyrétique sous antibiothérapie puis surinfection à enterobacter aerogenes, reprise de l’antibiothérapie par tienam amiklin le 04/04/13\n\nSur le plan psychologique :\nAnxiété et angoisse majeure, consultation avec le Dr Toro psychiatre\nThymie dépressive réactionnelle avec beaucoup d’angoisse.\nPrescription d’EFFEXOR 37.5 pour son aspect thymique, anxiolytique et antalgique.\nAvec le temps il serait peut être intéressant de réévaluer la prise en charge de la douleur bien qu’il ait fait plusieurs centres par le passé.\nSuivi par Dr Toro",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P4_E062",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000021",
+    "candidate_id": "BB1_000021",
+    "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00139",
+        "relation_type": "micro_organisme_isole_dans",
+        "page": null,
+        "source_value": "P6_E005",
+        "target_value": "P5_E077"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E005",
+        "resolved_entity_type": "MICRO_ORGANISME",
+        "resolved_entity_name": "bactéroides fragilis"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E077",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "FOYER_INFECTIEUX",
+          "schema_support": 42,
+          "schema_purity": 0.8571,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16393818_brut.txt",
+      "page_number": 5,
+      "page_text": "Patient intubé, ventilé en VAC (VC:430, PEEP:8, FiO2:40%) avec amélioration du P/Fà 210 après traitement par tazocilline, tamiflu et rovamycine. La recherche étiologique ne retrouve pas d'agent pathogène. Le scanner thoracique réalisé retrouve un épanchement pleural bilatéral avec un foyer de condensation à la base droite.\nDes séances de respiration libre sont réalisées pendant 12h avec GDS au décours retrouvant une alcalose respiratoire.\nL'extubation est réalisée le 15/05 sans incident, patient stable sur le plan respiratoire depuis (saturation à 96% à AA) avec kinésithérapie respiratoire de désencombrement 2*/jr.\n\nSur le plan neurologique:\n=> Patient réveillé, Glasgow à 10 après arrêt des sédations le 15/04.\nLe patient est extubé le 15/05 reste fluctuant sur le plan de la vigilance avec confusion intermittente (CAM-ICU positif):\n- Le scanner cérébral ne retrouve pas d'anomalie en dehors d'une pansinusite initialement traitée par augmentin.\n- IRM: leucoencéphalopathie, pas d'image de lacunes, pas de nouveau épisode ischémique.\n- EEG: Souffrance cérébrale de moyenne importance.\n=> Le patient présente une tétraparésie pour laquelle un EMG est réalisé le 22/05 objectivant: polyneuropathie des 4 membres, sensitivo-motrice axonale compatible avec une neuropathie acquise en réanimation.\n=> Le patient présente par ailleurs des douleurs à la mobilisation des différentes articulations notamment à la mobilisation du rachis cervical=> radio + IRM objectivant une arthrose cervicale=> Antalgique: Acupan+ dafalgan.\n\nSur le plan hémodynamique:\nInitialement le patient présente une défaillance hémodynamique et cardiaque pour laquelle il est successivement mis sous NAD puis NAD+Dobutamine avec switch rapide à l'adrénaline\nLe patient est sevré de catécholamines depuis le 13/04/2013 avec bonne stabilité hémodynamique.\n\nSur le plan rénal:\nle patient a été dialysé pendant 4 jours. Prise de poids de 20 kg. Amélioration de la fonction rénale avec reprise de la diurèse (2200 ml/24h) et normalisation de l'urée (5.3 mmol/l) et créatinine (60 mmol/l). Le patient a été mis sous lasilix pour améliorer la diurèse avec arrêt du lasilix le 18/04/2013 devant la majoration d'une hyponatrémie à 129 mmol. Restriction hydrique et supplémentation en NaCl=> Amélioration de la natrémie avec Na 132 le 30/04/2013.\n\nSur le plan infectieux:\n=> Pneumopathie hypoxémiante bilatérale non documentée traitée par bithérapie: Augmentin+ Rovamycine.\n=> Le patient a été pris en charge pour un abcès de la marge anale le 17/04/2013 à Ambroise Paré avec drainage, mise en place de mèche et soins locaux. une hémoculture à Bacteroides Fragilis.\nL'échographie cardiaque ne retrouve pas de végétation, FEVG conservée, IM minime.\n=> Le patient présente par ailleurs une angiocholite avec cholestase ictérique nécessitant la mise en route d'une antibiothérapie par Tiénam j14 (protocole de service) couvrant à la fois la sinusite, l'abcès anal et l'angiocholite. Le scanner retrouve une vésicule lithiasique avec sur le bilan biologique Bili totale H 195 µmol/l Bili directe 167 µmol/l ASAT H 122 UI/l ALAT H 66 UI/l PAL H 291 UI/l G.G.T. H 642 UI/l Lipase H 499 UI/l\nL'EEG réalisé à Cochin ne retrouve pas de lithiase (probable migration lithiasique)\nAmélioration du bilan hépatique au décours.\nA noter : retrait des lames au niveau de l'abcès de la marge anale le 26/04, avec culture positive à pyocyanique sans indication de traitement.\n\nDécision de transfert en gériatrie=> Accord Gériatrie Hôpital Ambroise Paré Boulogne",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P5_E077",
+        "expected_type": "FOYER_INFECTIEUX",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000022",
+    "candidate_id": "BB1_000022",
+    "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 1,
+        "source_value": "P1_E027",
+        "target_value": "P1_E029"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P1_E027",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P1_E029",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "schema_support": 230,
+          "schema_purity": 0.9312,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16414914_brut.txt",
+      "page_number": 1,
+      "page_text": "CRH réanimation de Bover Marc\n\nPatient : HIM [?]\n\nMotif de l’hospitalisation\n\nPatient de 50 ans hospitalisé pour coma.\n\nAntécédents\n\nMédicaux\n- HTA\n- Obésité\n- Toxicomanie (Héroïne, Néocodéine ; sous subutex)\n  - VHC 1a (1980), non traitée, pas de suivi jusque 2012 (Dr GAYNO)\n  - Cirrhose CHILD C, MELD 21\n    - Insuffisance hépatique cellulaire (Bloc Beta-Gamma, Hypoalb., Facteur V bas)\n    - HTP\n      - Varice Oesophagienne grade II/III (sous beta bloquant)\n      - Gastropathie d’HTP\n      - Ponction d’ascite itérative\n      - 1 décompensation en 01/2013\n      - Pas de CHC (pas de nodule, AFP normale)\n      - Inscrit sur liste de Transplantation (Dr Samuel)\n  - OH sevré il y a 20 ans\n  - Insuffisance respiratoire Chronique\n    - Restrictif sur Obésité\n    - BPCO sur asthme vieilli, Tabac favorisé par les Beta bloquant\n\nChirurgicaux\n0\n\nFamiliaux\n\n0\n\nAllergies\n0\n\nMode de vie\nMariée\n\nTraitements habituels\nMédicaments :\naugmentin\nlasilix\navlocardyl\nramipril\nlexamipidine",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P1_E029",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000023",
+    "candidate_id": "BB1_000023",
+    "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00080",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 4,
+        "source_value": "P4_E025",
+        "target_value": "P4_E026"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E025",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "Glucosé 5%"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P4_E026",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16510509_brut.txt",
+      "page_number": 4,
+      "page_text": "Transfert à WIDAL 2 pour poursuite de la prise en charge.\nMaintien du lavage vésical introduit à l’entrée devant des urines hématuriques avec caillotage.\nPatient sous calciparine (pradaxa arrêté à l’entrée) sans surdosage au contrôle du TCA. A noter que ce patient de 86 est également sous kardegic. Lavage clair pendant 48h avec réapparition de l’hématurie depuis 24h. Pas de déglobulisation franche associée (Hb 9,5g/dL)\n\nA noter que ce patient est contact Acinétobacter (épidémie au secteur de WIDAL 3).\n\nCONCLUSION\n\nChoc septique à point de départ pulmonaire sans germe documenté. Evolution favorable sous TIÉNAM. IRA et CIVD associées d’évolution favorable après contrôle du sepsis. Hématurie macroscopique avec caillotage persistant sans déglobulisation chez ce patient de 86 ans anticoagulé pour son ACFA en plus de son traitement par kardegic.\nTransfert à WIDAL 2 et poursuite de la prise en charge médicale\n\nPRESCRIPTION DE SORTIE\nGlucosé 5% 500 ml /24h\nCRESTOR 5mg 1cp/j\nKardegic 75mg/j\nTIÉNAM 500 mg x 4/j\nVERCyte 25mg/j 5j/7\nACUPAN si douleur\nLYRICA 50mg 1cp x 3/j\nIMOVANE 7,5mg au coucher\nO2 2L/min.\nTARBUTALINE/IPRATROPIUM en aérosol 3x/j\nLavage vésical\n\nDANS le service :\n- Transfusion sanguine : non\n- Infection nosocomiale : non\n- Produits ou dérivés sanguins utilisés : non\n- Portage de bactéries multirésistantes : contact Acinétobacter",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "TARGET",
+        "endpoint_value": "P4_E026",
+        "expected_type": "POSOLOGIE",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000024",
+    "candidate_id": "BB1_000024",
+    "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00039",
+        "relation_type": "traitement_administre_a",
+        "page": 4,
+        "source_value": "P4_E034",
+        "target_value": "P4_E038"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E034",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16573733_brut.txt",
+      "page_number": 4,
+      "page_text": "Bilirubine totale 18 3-20 µmol/L\nASAT 30 15-37 U/L\nALAT 20 12-78 U/L\nGamma GT 100 15-85 U/L\nPhosphatases alcalines 150 50-136 U/L\nLDH 210 85-227 U/L\nCréatine kinase 74 39-308 U/L\n\nEXAMENS URINAIRES\nSodium 28 mmol/L\nPotassium 39 mmol/L\nCréatinine 9.4 mmol/L\nUrée 322 mmol/L\n\nCORTISOL TEST SYNACTHENE\nHeure: T0 min 17h30\nCortisol T0 min 1059 nmol/L\nHeure: T60 min 19h00\nCortisol T60 min 1220 nmol/L\n\nPROTEINES SERIQUES\nAlbumine 14.0 VERIFIE 34-50 g/L\nPréalbumine 0.05 VERIFIE 0.18-0.36 g/L\n\nNUMERATION\nLeucocytes 12.2 4.0-10.0 x10*9/L\nHémoglobine 10.1 13.0-17.0 g/dL\nHématocrite 30.3 40.0-50.0 %\nVGM 92.8 82.0-97.0 fL\nPlaquettes 121 150-400 x10*9/L\nPolynucléaires Neutrophiles 8.91 1.50-7.00 x10*9/L\nPolynucléaires Eosinophiles 0.00 0.10-0.40 x10*9/L\nPolynucléaires Basophiles 0.00 <0.10 x10*9/L\nLymphocytes 1.10 1.50-4.00 x10*9/L\nMonocytes 0.73 0.20-1.00 x10*9/L\n\nTemps de Quick 58 70-120 %\nTCA Ratio Patient/Témoin 1.33 <1.20\nFibrinogène activité 6.7 2.0-4.0 g/L\n\nECG : sinusal,BBG.\nsonde d’électro entraînement endocavitaire en mode sentinel.\n\nRadiographie pulmonaire\nPas de pneumothorax, pas d’épanchement visible\nPas de foyer parenchymateux.\nAscension des coupoles diaphragmatiques\nKTC, PAC et sonde d’intubation en place.\n\nCONCLUSION INITIALE\nChoc septique sur dermo-hypodermite nécrosante chez un patient de 77 ans.\n\nPRISE EN CHARGE",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P4_E034",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000025",
+    "candidate_id": "BB1_000025",
+    "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00101",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "page": null,
+        "source_value": "P2_E057",
+        "target_value": "P6_E008"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E008",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Gangrène gazeuse"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E057",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 30,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16573733_brut.txt",
+      "page_number": 2,
+      "page_text": "sous-cutanés para-lombaires droits et gauche avec aspect local.\n\n3 lames de chaque coté de la paroi abdominale et scrotale, mèches dans les gouttières para-anales.\nColostomie terminale sus-ombilicales.\n\nAbsence de défaillance hémodynamique, rythme ventriculaire à 75 bpm avec présence d’une SEES en mode sentinelle à 60 bpm.\nPAC pectorale non-inflammatoire\nSonde urinaire.\n\nRadiographie de thorax : comblement cul de sac pleural gauche.\n\nBiologiquement :\n\nGDS : pH = 7.38, PaO2 = 163 mmHg, PaCO2 = 36 mmHg, CO2T = 22 mmol/L, excès de base -4 mmol/L, lactates = 2.1 mmol/L\nNFS : GB = 7.2G/L, Hb = 10.6g/dL, Ht = 31%, Plaquettes = 114G/L\nIono : Na = 140 mmol/L, K = 3.2, Cl = 107 mmol/L, Bicar = 23 mmol/L, protidémie = 45g/L\nCréat = 118 µmol/L, glycémie = 6.6 mmol/L\nCalcium = 1.97 mmol/L\nHémostase : TP 51%, TCA 32/30, Fg = 7.1g/L\nBilans hépatique et pancréatique normaux.\nTroponine 0.05µg/L\nCPK 207UI/L\n\nDans le service sont réalisées :\nPose de KTA radial droit + KTC jugulaire droit\nIntroduction de noradrénaline devant hypotension avec vasoplégie prédominante.\nPrélèvements bactériologiques exhaustifs (ECBU, hémocultures, liquide de drains).\nPoursuite antibiothérapie par Tazocilline + amikacine\n\nReprise chirurgicale (Pr Faye) : drainage mise à plat de la cellulite abdominale (durée 2h)\n\nTransfert à RPC à Garches pour poursuite de la prise en charge et oxygénation hyperbare.\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :\nTazocilline 4g*4\nAmiklin\nMidazolam\nSUfentanyl\nNoradrénaline 1.7 mg/h\nInexium\nInsuline SC selon protocole\n\nExamen clinique d’admission\n\nSignes généraux et vitaux\nPoids (kg) : 81\nTemp °C : 37.2\nTA (mmHg) : 132/80 FC (bpm) : 86\nFR (c/mn) : 19 SaO2 (%) : 100 % sous 50% de FiO2\n\nExamen cardio-vasculaire\nHémodynamique stable : pas de marbrures, extrémités chaudes et colorées, TRC < 2s\nPouls périphériques perçus en radial et pédieux.",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E057",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000026",
+    "candidate_id": "BB1_000026",
+    "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00104",
+        "relation_type": "traitement_administre_a",
+        "page": null,
+        "source_value": "P2_E057",
+        "target_value": "P6_E039"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E039",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "poids de sortie = 76 kg"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E057",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16573733_brut.txt",
+      "page_number": 2,
+      "page_text": "sous-cutanés para-lombaires droits et gauche avec aspect local.\n\n3 lames de chaque coté de la paroi abdominale et scrotale, mèches dans les gouttières para-anales.\nColostomie terminale sus-ombilicales.\n\nAbsence de défaillance hémodynamique, rythme ventriculaire à 75 bpm avec présence d’une SEES en mode sentinelle à 60 bpm.\nPAC pectorale non-inflammatoire\nSonde urinaire.\n\nRadiographie de thorax : comblement cul de sac pleural gauche.\n\nBiologiquement :\n\nGDS : pH = 7.38, PaO2 = 163 mmHg, PaCO2 = 36 mmHg, CO2T = 22 mmol/L, excès de base -4 mmol/L, lactates = 2.1 mmol/L\nNFS : GB = 7.2G/L, Hb = 10.6g/dL, Ht = 31%, Plaquettes = 114G/L\nIono : Na = 140 mmol/L, K = 3.2, Cl = 107 mmol/L, Bicar = 23 mmol/L, protidémie = 45g/L\nCréat = 118 µmol/L, glycémie = 6.6 mmol/L\nCalcium = 1.97 mmol/L\nHémostase : TP 51%, TCA 32/30, Fg = 7.1g/L\nBilans hépatique et pancréatique normaux.\nTroponine 0.05µg/L\nCPK 207UI/L\n\nDans le service sont réalisées :\nPose de KTA radial droit + KTC jugulaire droit\nIntroduction de noradrénaline devant hypotension avec vasoplégie prédominante.\nPrélèvements bactériologiques exhaustifs (ECBU, hémocultures, liquide de drains).\nPoursuite antibiothérapie par Tazocilline + amikacine\n\nReprise chirurgicale (Pr Faye) : drainage mise à plat de la cellulite abdominale (durée 2h)\n\nTransfert à RPC à Garches pour poursuite de la prise en charge et oxygénation hyperbare.\n\nTraitements à l’entrée de l’épisode actuel\nMédicaments :\nTazocilline 4g*4\nAmiklin\nMidazolam\nSUfentanyl\nNoradrénaline 1.7 mg/h\nInexium\nInsuline SC selon protocole\n\nExamen clinique d’admission\n\nSignes généraux et vitaux\nPoids (kg) : 81\nTemp °C : 37.2\nTA (mmHg) : 132/80 FC (bpm) : 86\nFR (c/mn) : 19 SaO2 (%) : 100 % sous 50% de FiO2\n\nExamen cardio-vasculaire\nHémodynamique stable : pas de marbrures, extrémités chaudes et colorées, TRC < 2s\nPouls périphériques perçus en radial et pédieux.",
+      "document_text_available": true,
+      "page_text_available": true,
+      "used_global_text_fallback": false,
+      "endpoint": {
+        "role": "SOURCE",
+        "endpoint_value": "P2_E057",
+        "expected_type": "TRAITEMENT",
+        "resolution_status": "NOT_FOUND",
+        "status": "UNRESOLVABLE_REFERENCE",
+        "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+      }
+    }
+  }
+]

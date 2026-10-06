@@ -1,0 +1,20 @@
+{
+  "stage": "ORPHAN_RELATION_RESIDUAL_ROUTING",
+  "status": "PASS",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\safe_corrected",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\corrected",
+  "unresolved_queue": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\outputs\\orphan_relation_unresolved_queue.json",
+  "summary": {
+    "documents_processed": 43,
+    "documents_with_unresolved_orphans": 9,
+    "unresolved_orphan_relations": 11,
+    "relations_removed": 0,
+    "errors": 0
+  },
+  "policy": {
+    "delete_unresolved_orphans": false,
+    "preserve_clinical_corpus": true,
+    "route_unresolved_to_multi_agent": true
+  },
+  "errors": []
+}

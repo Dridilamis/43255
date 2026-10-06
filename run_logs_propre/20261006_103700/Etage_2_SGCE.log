@@ -1,0 +1,2616 @@
+============================================================================================================
+TRACE / SGCE - PIPELINE COMPLET (runner V2.0)
+============================================================================================================
+Racine : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE
+Python : C:\Users\Lamis\anaconda3\python.exe (3.11.7)
+Chaine : PATTERNS A -> B -> C -> D -> RELATION REPAIR -> ORPHAN RESOLUTION -> MULTI-AGENT
+Entree : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SortieJson_Postprocessing (43 fichiers JSON)
+Ontologie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json (32 signatures)
+
+============================================================================================================
+[1/4] PATTERNS A -> B -> C -> D
+============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\run_all_patterns.py
+============================================================================
+SGCE - PATTERN A1 DETECTOR V2
+Correction des sous-matches imbriqués
+============================================================================
+Documents trouvés : 43
+
+[OK] img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=36 | candidats=3 | WEAK=3 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=43 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=42 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=41 | candidats=6 | WEAK=2 | MEDIUM=4 | STRONG=0
+[OK] img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=43 | candidats=8 | WEAK=7 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=47 | candidats=11 | WEAK=11 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=65 | candidats=16 | WEAK=11 | MEDIUM=5 | STRONG=0
+[OK] img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=38 | candidats=3 | WEAK=2 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=38 | candidats=0 | WEAK=0 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16225557_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=11 | candidats=0 | WEAK=0 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=44 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=31 | candidats=9 | WEAK=9 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=27 | candidats=3 | WEAK=3 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=39 | candidats=2 | WEAK=1 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=40 | candidats=5 | WEAK=3 | MEDIUM=2 | STRONG=0
+[OK] img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=37 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=51 | candidats=3 | WEAK=3 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=50 | candidats=4 | WEAK=4 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=27 | candidats=5 | WEAK=4 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=18 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=48 | candidats=4 | WEAK=4 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=31 | candidats=3 | WEAK=3 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=82 | candidats=9 | WEAK=8 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=62 | candidats=3 | WEAK=3 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=14 | candidats=0 | WEAK=0 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=29 | candidats=7 | WEAK=6 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=50 | candidats=11 | WEAK=8 | MEDIUM=3 | STRONG=0
+[OK] img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=50 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=54 | candidats=7 | WEAK=7 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=58 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=60 | candidats=13 | WEAK=11 | MEDIUM=2 | STRONG=0
+[OK] img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=23 | candidats=3 | WEAK=3 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=38 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=37 | candidats=10 | WEAK=7 | MEDIUM=3 | STRONG=0
+[OK] img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=34 | candidats=6 | WEAK=5 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=52 | candidats=5 | WEAK=5 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=44 | candidats=2 | WEAK=2 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=37 | candidats=0 | WEAK=0 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=65 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=23 | candidats=1 | WEAK=1 | MEDIUM=0 | STRONG=0
+[OK] img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=63 | candidats=5 | WEAK=4 | MEDIUM=1 | STRONG=0
+[OK] img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=40 | candidats=2 | WEAK=2 | MEDIUM=0 | STRONG=0
+[OK] img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | TRAITEMENT=35 | candidats=0 | WEAK=0 | MEDIUM=0 | STRONG=0
+
+============================================================================
+RÉSUMÉ GLOBAL A1 V2
+============================================================================
+Documents analysés : 43
+TRAITEMENT analysés : 1797
+Candidats A1        : 178
+WEAK                : 151
+MEDIUM              : 27
+STRONG              : 0
+Erreurs             : 0
+
+Rapport : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\detection\pattern_a1_detection_v2_report.json
+Aucun JSON clinique n'a été modifié.
+==============================================================================
+SGCE - PATTERN A1 VALIDATOR V2
+==============================================================================
+Candidats reçus : 178
+Documents concernés : 38
+
+[OK] img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=3 | CORRECT=0 | LINK=1 | SPLIT=0 | AMBIGUOUS=2
+[OK] img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=6 | CORRECT=4 | LINK=1 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=8 | CORRECT=1 | LINK=0 | SPLIT=0 | AMBIGUOUS=7
+[OK] img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=11 | CORRECT=1 | LINK=0 | SPLIT=0 | AMBIGUOUS=10
+[OK] img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=16 | CORRECT=4 | LINK=2 | SPLIT=5 | AMBIGUOUS=5
+[OK] img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=3 | CORRECT=2 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=9 | CORRECT=6 | LINK=0 | SPLIT=0 | AMBIGUOUS=3
+[OK] img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=3 | CORRECT=3 | LINK=0 | SPLIT=0 | AMBIGUOUS=0
+[OK] img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=2 | CORRECT=2 | LINK=0 | SPLIT=0 | AMBIGUOUS=0
+[OK] img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=5 | CORRECT=2 | LINK=0 | SPLIT=0 | AMBIGUOUS=3
+[OK] img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=3 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=3
+[OK] img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=4 | CORRECT=2 | LINK=0 | SPLIT=0 | AMBIGUOUS=2
+[OK] img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=5 | CORRECT=4 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=4 | CORRECT=2 | LINK=0 | SPLIT=0 | AMBIGUOUS=2
+[OK] img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=3 | CORRECT=3 | LINK=0 | SPLIT=0 | AMBIGUOUS=0
+[OK] img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=9 | CORRECT=3 | LINK=2 | SPLIT=0 | AMBIGUOUS=4
+[OK] img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=3 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=3
+[OK] img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=7 | CORRECT=2 | LINK=0 | SPLIT=1 | AMBIGUOUS=4
+[OK] img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=11 | CORRECT=8 | LINK=0 | SPLIT=1 | AMBIGUOUS=2
+[OK] img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=1 | LINK=0 | SPLIT=0 | AMBIGUOUS=0
+[OK] img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=7 | CORRECT=0 | LINK=1 | SPLIT=0 | AMBIGUOUS=6
+[OK] img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=13 | CORRECT=2 | LINK=2 | SPLIT=2 | AMBIGUOUS=7
+[OK] img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=3 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=3
+[OK] img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=1 | LINK=0 | SPLIT=0 | AMBIGUOUS=0
+[OK] img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=10 | CORRECT=9 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=6 | CORRECT=4 | LINK=0 | SPLIT=1 | AMBIGUOUS=1
+[OK] img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=5 | CORRECT=1 | LINK=0 | SPLIT=0 | AMBIGUOUS=4
+[OK] img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=2 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=2
+[OK] img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=1 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=5 | CORRECT=3 | LINK=1 | SPLIT=0 | AMBIGUOUS=1
+[OK] img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | candidats=2 | CORRECT=0 | LINK=0 | SPLIT=0 | AMBIGUOUS=2
+
+==============================================================================
+RÉSUMÉ GLOBAL A1 - VALIDATION
+==============================================================================
+Candidats détectés      : 178
+Candidats validés       : 178
+ALREADY_CORRECT         : 70
+MISSING_RELATION        : 10
+CONFIRMED_PATTERN_A     : 10
+AMBIGUOUS               : 88
+Erreurs                 : 0
+
+PAR FORCE DU SIGNAL
+------------------------------------------------------------------------------
+WEAK    : {'AMBIGUOUS': 88, 'MISSING_RELATION': 10, 'ALREADY_CORRECT': 53}
+MEDIUM  : {'ALREADY_CORRECT': 17, 'CONFIRMED_PATTERN_A': 10}
+STRONG  : {}
+
+Rapport : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\validation\pattern_a1_validation_v2_report.json
+
+Aucun JSON Mistral n'a été modifié.
+Ne lance pas encore de correcteur.
+==============================================================================
+PATTERN A1 - AUDIT DES CAS ACTIONNABLES
+==============================================================================
+Cas actionnables        : 20
+MISSING_RELATION / LINK : 10
+PATTERN_A / SPLIT       : 10
+Warnings chevauchement  : 6
+
+JSON : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\audit\pattern_a1_actionable_audit.json
+CSV  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\audit\pattern_a1_actionable_audit.csv
+
+Aucun JSON clinique n'a été modifié.
+Ouvre le CSV pour examiner les cas avant correction.
+==============================================================================
+PATTERN A1 - AUTO CORRECTOR
+==============================================================================
+Validation : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\validation\pattern_a1_validation_v2_report.json
+Candidats  : 178
+
+[MODIFIÉ] img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=1
+[MODIFIÉ] img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=1
+[MODIFIÉ] img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=7
+[MODIFIÉ] img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=2
+[MODIFIÉ] img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=1
+[MODIFIÉ] img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=1
+[MODIFIÉ] img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=1
+[MODIFIÉ] img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=4
+[MODIFIÉ] img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=1
+[MODIFIÉ] img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | opérations=1
+
+==============================================================================
+RÉSUMÉ CORRECTION AUTOMATIQUE A1
+==============================================================================
+Cas actionnables en entrée : 20
+LINK appliqués             : 10
+SPLIT appliqués            : 10
+Opérations appliquées      : 20
+Cas ignorés / protégés     : 158
+Documents copiés           : 43
+Documents modifiés         : 10
+Erreurs                    : 0
+
+Sortie  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected
+Rapport : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected\pattern_a1_auto_correction_report.json
+
+Les fichiers originaux n'ont pas été modifiés.
+==============================================================================
+SGCE - PATTERN A1 DIFFERENTIAL POST-VALIDATION
+==============================================================================
+Original : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SortieJson_Postprocessing
+Corrigé  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected
+Rapport  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected\pattern_a1_auto_correction_report.json
+Opérations A1 enregistrées : 20
+
+==============================================================================
+RÉSUMÉ DIFFERENTIEL A1
+==============================================================================
+Documents vérifiés             : 43
+Documents PASS                 : 43
+Documents FAIL                 : 0
+
+LINK attendus                  : 10
+LINK validés                   : 10
+SPLIT attendus                 : 10
+SPLIT validés                  : 10
+Opérations A1 validées         : 20
+
+Anomalies préexistantes        : 8335
+Nouvelles anomalies totales    : 0
+Nouvelles anomalies CRITIQUES  : 0
+Nouvelles divergences sync     : 0
+Anomalies résolues             : 20
+Sources modifiées              : 0
+
+STATUT FINAL A1                : PASS
+
+Rapport JSON : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\post_validation\pattern_a1_differential_post_validation_report.json
+Rapport CSV  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\post_validation\pattern_a1_differential_anomalies.csv
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================
+SGCE - PATTERN A1
+TRAITEMENT -> POSOLOGIE
+================================================================================
+
+================================================================================
+RUNNING : pattern_a1_detector.py
+================================================================================
+[OK] pattern_a1_detector.py
+
+================================================================================
+RUNNING : pattern_a1_validator.py
+================================================================================
+[OK] pattern_a1_validator.py
+
+================================================================================
+RUNNING : pattern_a1_actionable_audit.py
+================================================================================
+[OK] pattern_a1_actionable_audit.py
+
+================================================================================
+RUNNING : pattern_a1_auto_corrector.py
+================================================================================
+[OK] pattern_a1_auto_corrector.py
+
+================================================================================
+RUNNING : pattern_a1_differential_post_validator.py
+================================================================================
+[OK] pattern_a1_differential_post_validator.py
+
+================================================================================
+PATTERN A1 TERMINÉ AVEC SUCCÈS
+================================================================================
+
+Sortie clinique finale :
+C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected
+
+Post-validation :
+C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\post_validation
+============================================================================
+SGCE - PATTERN A2 DETECTION V2
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected
+JSON trouvés            : 44
+Documents cliniques     : 43
+JSON non cliniques ignorés : 1
+COMORBIDITE analysées   : 448
+CONTEXTE existants      : 23
+
+Candidats A2            : 2
+WEAK                    : 0
+MEDIUM                  : 0
+STRONG                  : 2
+Erreurs                 : 0
+
+Familles de signaux :
+  TYPE_ACQUISITION                   : 2
+  DISPOSITIF_INVASIF                 : 1
+
+JSON non cliniques ignorés :
+  - pattern_a1_auto_correction_report.json
+
+Rapport JSON            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\detection\pattern_a2_detection_report.json
+CSV candidats           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\detection\pattern_a2_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A2 VALIDATION
+============================================================================
+Entrée clinique           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected
+Rapport détection         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\detection\pattern_a2_detection_report.json
+Documents cliniques       : 43
+
+Candidats détectés        : 2
+Candidats validés         : 2
+
+ALREADY_CORRECT           : 0
+MISSING_RELATION          : 1
+CONFIRMED_PATTERN_A       : 1
+AMBIGUOUS                 : 0
+
+Futurs LINK               : 1
+Futurs SPLIT              : 1
+Cas protégés              : 0
+Erreurs                   : 0
+
+Par force :
+  STRONG   : MISSING_RELATION=1, CONFIRMED_PATTERN_A=1
+
+Rapport JSON              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\validation\pattern_a2_validation_report.json
+CSV validation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\validation\pattern_a2_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A2 AUTOMATIC CORRECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected
+Validation              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\validation\pattern_a2_validation_report.json
+Sortie                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected
+
+Candidats validés       : 2
+Opérations appliquées   : 2
+LINK                    : 1
+SPLIT                   : 1
+SKIP                    : 0
+
+Documents copiés        : 43
+Documents modifiés      : 2
+JSON non cliniques ignorés : 1
+Erreurs                 : 0
+
+Rapport                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected\pattern_a2_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================
+SGCE - PATTERN A2 DIFFERENTIAL POST-VALIDATION
+============================================================================
+AVANT A2                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA1\corrected
+APRES A2                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected
+
+Documents vérifiés      : 43
+PASS                    : 43
+FAIL                    : 0
+
+Opérations attendues    : 2
+Opérations PASS         : 2
+Opérations FAIL         : 0
+
+LINK                    : 1/1
+SPLIT                   : 1/1
+
+Anomalies pré-existantes: 19
+Nouvelles anomalies A2  : 0
+Anomalies résolues A2   : 0
+
+Docs manquants APRES    : 0
+Docs manquants AVANT    : 0
+
+STATUT FINAL A2         : PASS
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\post_validation\pattern_a2_post_validation_report.json
+================================================================================
+SGCE - PATTERN A2
+COMORBIDITE_ANTECEDENT -> CONTEXTE_ACQUISITION
+================================================================================
+
+================================================================================
+RUNNING : pattern_a2_detector.py
+================================================================================
+[OK] pattern_a2_detector.py
+
+================================================================================
+RUNNING : pattern_a2_validator.py
+================================================================================
+[OK] pattern_a2_validator.py
+
+================================================================================
+RUNNING : pattern_a2_auto_corrector.py
+================================================================================
+[OK] pattern_a2_auto_corrector.py
+
+================================================================================
+RUNNING : pattern_a2_post_validator.py
+================================================================================
+[OK] pattern_a2_post_validator.py
+
+================================================================================
+PATTERN A2 TERMINÉ AVEC SUCCÈS
+================================================================================
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected
+============================================================================
+SGCE - PATTERN A3 DETECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected
+JSON trouvés            : 44
+Documents cliniques     : 43
+JSON non cliniques ignorés : 1
+IMAGERIE analysées      : 392
+FOYER existants         : 167
+
+Candidats A3            : 1
+WEAK                    : 1
+MEDIUM                  : 0
+STRONG                  : 0
+Erreurs                 : 0
+
+Familles de signaux :
+  Aucun signal détecté.
+
+JSON non cliniques ignorés :
+  - pattern_a2_correction_report.json
+
+Rapport JSON            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\detection\pattern_a3_detection_report.json
+CSV candidats           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\detection\pattern_a3_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A3 VALIDATION
+============================================================================
+Entrée clinique           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected
+Rapport détection         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\detection\pattern_a3_detection_report.json
+Documents cliniques       : 43
+
+Candidats détectés        : 1
+Candidats validés         : 1
+
+ALREADY_CORRECT           : 0
+MISSING_RELATION          : 1
+CONFIRMED_PATTERN_A       : 0
+AMBIGUOUS                 : 0
+
+Futurs LINK               : 1
+Futurs SPLIT              : 0
+Cas protégés              : 0
+Erreurs                   : 0
+
+Rapport JSON              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\validation\pattern_a3_validation_report.json
+CSV validation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\validation\pattern_a3_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A3 AUTOMATIC CORRECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected
+Validation              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\validation\pattern_a3_validation_report.json
+Sortie                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected
+
+Candidats validés       : 1
+Opérations appliquées   : 1
+LINK                    : 1
+SPLIT                   : 0
+SKIP                    : 0
+
+Documents copiés        : 43
+Documents modifiés      : 1
+JSON non cliniques ignorés : 1
+Erreurs                 : 0
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected\pattern_a3_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================
+SGCE - PATTERN A3 DIFFERENTIAL POST-VALIDATION
+============================================================================
+AVANT A3                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA2\corrected
+APRES A3                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected
+
+Documents vérifiés      : 43
+PASS                    : 43
+FAIL                    : 0
+
+Opérations attendues    : 1
+Opérations PASS         : 1
+Opérations FAIL         : 0
+
+LINK                    : 1/1
+
+Anomalies pré-existantes: 16
+Nouvelles anomalies A3  : 0
+Anomalies résolues A3   : 0
+
+Docs manquants APRES    : 0
+Docs manquants AVANT    : 0
+
+STATUT FINAL A3         : PASS
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\post_validation\pattern_a3_post_validation_report.json
+================================================================================
+SGCE - PATTERN A3
+IMAGERIE_PROCEDURE -> FOYER_INFECTIEUX
+================================================================================
+
+================================================================================
+RUNNING : pattern_a3_detector.py
+================================================================================
+[OK] pattern_a3_detector.py
+
+================================================================================
+RUNNING : pattern_a3_validator.py
+================================================================================
+[OK] pattern_a3_validator.py
+
+================================================================================
+RUNNING : pattern_a3_auto_corrector.py
+================================================================================
+[OK] pattern_a3_auto_corrector.py
+
+================================================================================
+RUNNING : pattern_a3_post_validator.py
+================================================================================
+[OK] pattern_a3_post_validator.py
+
+================================================================================
+PATTERN A3 TERMINÉ AVEC SUCCÈS
+================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\post_validation
+============================================================================
+SGCE - PATTERN A4 DETECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected
+JSON trouvés            : 44
+Documents cliniques     : 43
+JSON non cliniques ignorés : 1
+IMAGERIE analysées      : 392
+DEFAILLANCE existantes  : 363
+
+Candidats A4            : 1
+WEAK                    : 1
+MEDIUM                  : 0
+STRONG                  : 0
+Erreurs                 : 0
+
+Familles de signaux :
+  Aucun signal détecté.
+
+Rapport JSON            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\detection\pattern_a4_detection_report.json
+CSV candidats           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\detection\pattern_a4_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A4 VALIDATION
+============================================================================
+Entrée clinique           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected
+Rapport détection         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\detection\pattern_a4_detection_report.json
+Documents cliniques       : 43
+
+Candidats détectés        : 1
+Candidats validés         : 1
+
+ALREADY_CORRECT           : 0
+MISSING_RELATION          : 1
+CONFIRMED_PATTERN_A       : 0
+AMBIGUOUS                 : 0
+
+Futurs LINK               : 1
+Futurs SPLIT              : 0
+Cas protégés              : 0
+Erreurs                   : 0
+
+Rapport JSON              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\validation\pattern_a4_validation_report.json
+CSV validation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\validation\pattern_a4_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A4 AUTOMATIC CORRECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected
+Validation              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\validation\pattern_a4_validation_report.json
+Sortie                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected
+
+Candidats validés       : 1
+Opérations appliquées   : 1
+LINK                    : 1
+SPLIT                   : 0
+SKIP                    : 0
+
+Documents copiés        : 43
+Documents modifiés      : 1
+JSON non cliniques ignorés : 1
+Erreurs                 : 0
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected\pattern_a4_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================
+SGCE - PATTERN A4 DIFFERENTIAL POST-VALIDATION
+============================================================================
+AVANT A4                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA3\corrected
+APRES A4                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected
+
+Documents vérifiés      : 43
+PASS                    : 43
+FAIL                    : 0
+
+Opérations attendues    : 1
+Opérations PASS         : 1
+Opérations FAIL         : 0
+
+LINK                    : 1/1
+
+Anomalies pré-existantes: 16
+Nouvelles anomalies A4  : 0
+Anomalies résolues A4   : 0
+
+Docs manquants APRES    : 0
+Docs manquants AVANT    : 0
+
+STATUT FINAL A4         : PASS
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\post_validation\pattern_a4_post_validation_report.json
+================================================================================
+SGCE - PATTERN A4
+IMAGERIE_PROCEDURE -> DEFAILLANCE_ORGANE
+================================================================================
+
+================================================================================
+RUNNING : pattern_a4_detector.py
+================================================================================
+[OK] pattern_a4_detector.py
+
+================================================================================
+RUNNING : pattern_a4_validator.py
+================================================================================
+[OK] pattern_a4_validator.py
+
+================================================================================
+RUNNING : pattern_a4_auto_corrector.py
+================================================================================
+[OK] pattern_a4_auto_corrector.py
+
+================================================================================
+RUNNING : pattern_a4_post_validator.py
+================================================================================
+[OK] pattern_a4_post_validator.py
+
+================================================================================
+PATTERN A4 TERMINÉ AVEC SUCCÈS
+================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\post_validation
+============================================================================
+SGCE - PATTERN A5 DETECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected
+JSON trouvés            : 44
+Documents cliniques     : 43
+JSON non cliniques ignorés : 1
+IMAGERIE analysées      : 392
+COMORBIDITE existantes  : 448
+
+Candidats A5            : 1
+WEAK                    : 1
+MEDIUM                  : 0
+STRONG                  : 0
+Erreurs                 : 0
+
+Familles de signaux :
+  Aucun signal détecté.
+
+Rapport JSON            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\detection\pattern_a5_detection_report.json
+CSV candidats           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\detection\pattern_a5_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A5 VALIDATION
+============================================================================
+Entrée clinique           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected
+Rapport détection         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\detection\pattern_a5_detection_report.json
+Documents cliniques       : 43
+
+Candidats détectés        : 1
+Candidats validés         : 1
+
+ALREADY_CORRECT           : 0
+MISSING_RELATION          : 1
+CONFIRMED_PATTERN_A       : 0
+AMBIGUOUS                 : 0
+
+Futurs LINK               : 1
+Futurs SPLIT              : 0
+Cas protégés              : 0
+Erreurs                   : 0
+
+Rapport JSON              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\validation\pattern_a5_validation_report.json
+CSV validation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\validation\pattern_a5_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A5 AUTOMATIC CORRECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected
+Validation              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\validation\pattern_a5_validation_report.json
+Sortie                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected
+
+Candidats validés       : 1
+Opérations appliquées   : 1
+LINK                    : 1
+SPLIT                   : 0
+SKIP                    : 0
+
+Documents copiés        : 43
+Documents modifiés      : 1
+JSON non cliniques ignorés : 1
+Erreurs                 : 0
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected\pattern_a5_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================
+SGCE - PATTERN A5 DIFFERENTIAL POST-VALIDATION
+============================================================================
+AVANT A5                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA4\corrected
+APRES A5                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected
+
+Documents vérifiés      : 43
+PASS                    : 43
+FAIL                    : 0
+
+Opérations attendues    : 1
+Opérations PASS         : 1
+Opérations FAIL         : 0
+
+LINK                    : 1/1
+
+Anomalies pré-existantes: 16
+Nouvelles anomalies A5  : 0
+Anomalies résolues A5   : 0
+
+Docs manquants APRES    : 0
+Docs manquants AVANT    : 0
+
+STATUT FINAL A5         : PASS
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\post_validation\pattern_a5_post_validation_report.json
+================================================================================
+SGCE - PATTERN A5
+IMAGERIE_PROCEDURE -> COMORBIDITE_ANTECEDENT
+================================================================================
+
+================================================================================
+RUNNING : pattern_a5_detector.py
+================================================================================
+[OK] pattern_a5_detector.py
+
+================================================================================
+RUNNING : pattern_a5_validator.py
+================================================================================
+[OK] pattern_a5_validator.py
+
+================================================================================
+RUNNING : pattern_a5_auto_corrector.py
+================================================================================
+[OK] pattern_a5_auto_corrector.py
+
+================================================================================
+RUNNING : pattern_a5_post_validator.py
+================================================================================
+[OK] pattern_a5_post_validator.py
+
+================================================================================
+PATTERN A5 TERMINÉ AVEC SUCCÈS
+================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\post_validation
+============================================================================
+SGCE - PATTERN A6 DETECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected
+JSON trouvés            : 44
+Documents cliniques     : 43
+JSON non cliniques ignorés : 1
+DONNEE_PATIENT analysées: 355
+SYMPTOME existants      : 988
+
+Candidats A6            : 13
+WEAK                    : 13
+MEDIUM                  : 0
+STRONG                  : 0
+Erreurs                 : 0
+
+Familles de signaux :
+  Aucun signal détecté.
+
+Rapport JSON            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\detection\pattern_a6_detection_report.json
+CSV candidats           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\detection\pattern_a6_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A6 VALIDATION
+============================================================================
+Entrée clinique           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected
+Rapport détection         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\detection\pattern_a6_detection_report.json
+Documents cliniques       : 43
+
+Candidats détectés        : 13
+Candidats validés         : 13
+
+ALREADY_CORRECT           : 12
+MISSING_RELATION          : 1
+CONFIRMED_PATTERN_A       : 0
+AMBIGUOUS                 : 0
+
+Futurs LINK               : 1
+Futurs SPLIT              : 0
+Cas protégés              : 12
+Erreurs                   : 0
+
+Rapport JSON              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\validation\pattern_a6_validation_report.json
+CSV validation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\validation\pattern_a6_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+============================================================================
+SGCE - PATTERN A6 AUTOMATIC CORRECTION
+============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected
+Validation              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\validation\pattern_a6_validation_report.json
+Sortie                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+
+Candidats validés       : 13
+ALREADY_CORRECT         : 12
+MISSING_RELATION        : 1
+CONFIRMED_PATTERN_A     : 0
+AMBIGUOUS               : 0
+
+Opérations appliquées   : 0
+LINK                    : 0
+SPLIT                   : 0
+SKIP                    : 13
+
+Documents copiés        : 43
+Documents modifiés      : 0
+JSON non cliniques ignorés : 1
+Erreurs                 : 0
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected\pattern_a6_correction_report.json
+
+Aucune correction clinique n'a été appliquée.
+============================================================================
+SGCE - PATTERN A6 DIFFERENTIAL POST-VALIDATION
+============================================================================
+AVANT A6                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA5\corrected
+APRES A6                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+
+Documents vérifiés      : 43
+PASS                    : 43
+FAIL                    : 0
+
+Opérations appliquées   : 0
+LINK                    : 0
+SPLIT                   : 0
+SKIP                    : 13
+
+Documents cliniques modifiés : 0
+
+Anomalies pré-existantes: 26
+Nouvelles anomalies A6  : 0
+Anomalies résolues A6   : 0
+
+Docs manquants APRES    : 0
+Docs manquants AVANT    : 0
+
+STATUT FINAL A6         : PASS
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\post_validation\pattern_a6_post_validation_report.json
+================================================================================
+SGCE - PATTERN A6
+DONNEE_PATIENT -> presente_symptome -> SYMPTOME
+================================================================================
+
+================================================================================
+RUNNING : pattern_a6_detector.py
+================================================================================
+[OK] pattern_a6_detector.py
+
+================================================================================
+RUNNING : pattern_a6_validator.py
+================================================================================
+[OK] pattern_a6_validator.py
+
+================================================================================
+RUNNING : pattern_a6_auto_corrector.py
+================================================================================
+[OK] pattern_a6_auto_corrector.py
+
+================================================================================
+RUNNING : pattern_a6_post_validator.py
+================================================================================
+[OK] pattern_a6_post_validator.py
+
+================================================================================
+PATTERN A6 TERMINÉ AVEC SUCCÈS
+================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\post_validation
+
+==========================================================================================
+SGCE — GLOBAL PATTERN A PIPELINE
+==========================================================================================
+
+Ordre d'exécution :
+
+A1 → A2 → A3 → A4 → A5 → A6
+
+
+==========================================================================================
+SGCE — PATTERN A1
+TRAITEMENT + POSOLOGIE
+==========================================================================================
+
+[OK] PATTERN A1
+Durée : 8.23 secondes
+
+==========================================================================================
+SGCE — PATTERN A2
+COMORBIDITE_ANTECEDENT + CONTEXTE_ACQUISITION
+==========================================================================================
+
+[OK] PATTERN A2
+Durée : 6.76 secondes
+
+==========================================================================================
+SGCE — PATTERN A3
+IMAGERIE_PROCEDURE + FOYER_INFECTIEUX
+==========================================================================================
+
+[OK] PATTERN A3
+Durée : 6.69 secondes
+
+==========================================================================================
+SGCE — PATTERN A4
+IMAGERIE_PROCEDURE + DEFAILLANCE_ORGANE
+==========================================================================================
+
+[OK] PATTERN A4
+Durée : 6.95 secondes
+
+==========================================================================================
+SGCE — PATTERN A5
+IMAGERIE_PROCEDURE + COMORBIDITE_ANTECEDENT
+==========================================================================================
+
+[OK] PATTERN A5
+Durée : 6.92 secondes
+
+==========================================================================================
+SGCE — PATTERN A6
+DONNEE_PATIENT + SYMPTOME
+==========================================================================================
+
+[OK] PATTERN A6
+Durée : 7.59 secondes
+
+==========================================================================================
+PATTERN A — PIPELINE TERMINÉ AVEC SUCCÈS
+==========================================================================================
+
+Patterns exécutés :
+A1 → A2 → A3 → A4 → A5 → A6
+
+Durée totale : 43.15 secondes
+
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+
+==============================================================================
+SGCE - PATTERN B1 DETECTION
+==============================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+JSON trouvés            : 44
+Documents cliniques     : 43
+JSON non cliniques ignorés : 1
+
+Entités analysées       : 10138
+Relations analysées     : 3756
+
+Candidats B1            : 16
+WEAK                    : 0
+MEDIUM                  : 0
+STRONG                  : 16
+Erreurs                 : 0
+
+Types de candidats :
+  MISSING_ENTITY_ENDPOINT                : 16
+
+Rapport JSON            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\detection\pattern_b1_detection_report.json
+CSV candidats           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\detection\pattern_b1_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+==============================================================================
+SGCE - PATTERN B1 VALIDATION
+==============================================================================
+Entrée clinique           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+Rapport détection         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\detection\pattern_b1_detection_report.json
+Documents cliniques       : 43
+
+Candidats détectés        : 16
+Candidats validés         : 16
+
+RESOLVABLE_REFERENCE      : 0
+CONFIRMED_MISSING_ENTITY  : 0
+UNRESOLVABLE_REFERENCE    : 16
+AMBIGUOUS                 : 0
+
+Futurs RELINK             : 0
+Futurs CREATE_AND_LINK    : 0
+Cas protégés              : 16
+Erreurs                   : 0
+
+Rapport JSON              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\validation\pattern_b1_validation_report.json
+CSV validation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\validation\pattern_b1_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+==================================================================================
+SGCE - PATTERN B1 GENERIC CORRECTION
+==================================================================================
+Entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+Validation              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\validation\pattern_b1_validation_report.json
+Sortie                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\corrected
+
+Candidats validés       : 16
+RELINK appliqués        : 0
+CREATE_AND_LINK         : 0
+Documents copiés        : 43
+Documents modifiés      : 0
+Erreurs                 : 0
+
+Rapport                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\corrected\pattern_b1_correction_report.json
+==============================================================================
+SGCE - PATTERN B1 DIFFERENTIAL POST-VALIDATION
+==============================================================================
+AVANT B1                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+APRES B1                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\corrected
+
+Documents vérifiés      : 43
+PASS                    : 43
+FAIL                    : 0
+
+RELINK                  : 0/0
+CREATE_AND_LINK         : 0/0
+Opérations FAIL         : 0
+
+Anomalies pré-existantes: 16
+Nouvelles anomalies B1  : 0
+Anomalies résolues B1   : 0
+
+STATUT FINAL B1         : PASS
+
+Rapport JSON            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\post_validation\pattern_b1_post_validation_report.json
+Rapport CSV             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\post_validation\pattern_b1_post_validation_anomalies.csv
+================================================================================
+SGCE - PATTERN B1
+Entité manquante implicite - endpoint relationnel absent
+================================================================================
+
+================================================================================
+RUNNING : pattern_b1_detector.py
+================================================================================
+[OK] pattern_b1_detector.py
+
+================================================================================
+RUNNING : pattern_b1_validator.py
+================================================================================
+[OK] pattern_b1_validator.py
+
+================================================================================
+RUNNING : pattern_b1_generic_corrector.py
+================================================================================
+[OK] pattern_b1_generic_corrector.py
+
+================================================================================
+RUNNING : pattern_b1_post_validator.py
+================================================================================
+[OK] pattern_b1_post_validator.py
+
+================================================================================
+PATTERN B1 TERMINÉ AVEC SUCCÈS
+================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\post_validation
+==================================================================================
+SGCE - PATTERN B2 DETECTION
+==================================================================================
+Entrée clinique          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\corrected
+Guideline                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Relations autorisées     : 32
+Chaînes compatibles A-B-C: 39
+
+Documents cliniques      : 43
+JSON non cliniques ignorés : 1
+Entités analysées        : 10138
+
+Candidats B2             : 1658
+STRONG                   : 336
+MEDIUM                   : 1322
+Erreurs                  : 0
+
+Types intermédiaires absents les plus fréquents :
+  MICRO_ORGANISME                 : 932
+  CONTEXTE_ACQUISITION            : 726
+
+Rapport JSON             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\detection\pattern_b2_detection_report.json
+CSV candidats            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\detection\pattern_b2_candidates.csv
+Catalogue des chaînes    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\detection\pattern_b2_chain_catalog.csv
+
+Aucun JSON clinique n'a été modifié.
+Les candidats doivent être validés avant toute correction.
+==================================================================================
+SGCE - PATTERN B2 RELATION-GROUNDING VALIDATION
+==================================================================================
+Candidats actionnables en entrée      : 16
+
+ACTIONABLE_CHAIN_REWRITE              : 0
+DIRECT_RELATION_ALREADY_VALID         : 0
+NO_DIRECT_RELATIONAL_EVIDENCE         : 16
+AMBIGUOUS_MULTIPLE_DIRECT_RELATIONS   : 0
+INVALID_CHAIN_SIGNATURE               : 0
+
+Cas protégés                          : 16
+
+Rapport JSON                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\relation_grounding\pattern_b2_relation_grounding_report.json
+CSV audit                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\relation_grounding\pattern_b2_relation_grounding_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+==================================================================================
+SGCE - PATTERN B2 ACTIONABILITY VALIDATION
+==================================================================================
+Rapport entrée                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\validation\pattern_b2_validation_report.json
+
+Candidats grounded en entrée   : 28
+ACTIONABLE_CREATE_AND_LINK     : 16
+MULTIPLE_EVIDENCE_AMBIGUOUS    : 12
+NO_USABLE_EVIDENCE             : 0
+REDUNDANT                      : 0
+
+Cas protégés                   : 12
+
+Rapport JSON                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\actionability\pattern_b2_actionability_report.json
+CSV audit                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\actionability\pattern_b2_actionable_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+==================================================================================
+SGCE - PATTERN B2 RELATION-GROUNDING VALIDATION
+==================================================================================
+Candidats actionnables en entrée      : 16
+
+ACTIONABLE_CHAIN_REWRITE              : 0
+DIRECT_RELATION_ALREADY_VALID         : 0
+NO_DIRECT_RELATIONAL_EVIDENCE         : 16
+AMBIGUOUS_MULTIPLE_DIRECT_RELATIONS   : 0
+INVALID_CHAIN_SIGNATURE               : 0
+
+Cas protégés                          : 16
+
+Rapport JSON                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\relation_grounding\pattern_b2_relation_grounding_report.json
+CSV audit                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\relation_grounding\pattern_b2_relation_grounding_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+==================================================================================
+SGCE - PATTERN B2 GENERIC CORRECTION
+==================================================================================
+Entrée                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\corrected
+Grounding report            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\relation_grounding\pattern_b2_relation_grounding_report.json
+Sortie                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+
+Candidats vus               : 16
+Opérations appliquées       : 0
+Entités B créées            : 0
+Relations directes retirées : 0
+Nouvelles relations créées  : 0
+Documents modifiés          : 0
+Erreurs                     : 0
+
+Rapport                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected\pattern_b2_correction_report.json
+====================================================================================
+SGCE - PATTERN B GLOBAL DIFFERENTIAL POST-VALIDATION
+====================================================================================
+AVANT Pattern B              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\PatternA6\corrected
+APRES Pattern B              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+
+Documents vérifiés           : 43
+PASS                         : 43
+FAIL                         : 0
+
+Documents attendus modifiés  : 0
+Documents réellement modifiés: 0
+Modifications inattendues    : 0
+Corrections attendues absentes: 0
+
+Opérations attendues         : 0
+Opérations PASS              : 0
+Opérations FAIL              : 0
+
+Anomalies pré-existantes     : 62
+Nouvelles anomalies Pattern B: 0
+Anomalies résolues Pattern B : 0
+
+Docs manquants APRES         : 0
+Docs supplémentaires APRES   : 0
+
+Signatures TRACE chargées    : 32
+
+STATUT FINAL PATTERN B       : PASS
+
+Rapport JSON                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\post_validation\pattern_b_post_validation_report.json
+Rapport documents CSV        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\post_validation\pattern_b_post_validation_documents.csv
+Nouvelles anomalies CSV      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\post_validation\pattern_b_new_anomalies.csv
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+================================================================================================
+TRACE / SGCE - PATTERN B2 COMPLET
+================================================================================================
+
+================================================================================================
+RUNNING : pattern_b2_detector.py
+================================================================================================
+[OK] pattern_b2_detector.py — 1.15 sec
+
+================================================================================================
+RUNNING : pattern_b2_validator.py
+================================================================================================
+[OK] pattern_b2_validator.py — 0.72 sec
+
+================================================================================================
+RUNNING : pattern_b2_actionability_validator.py
+================================================================================================
+[OK] pattern_b2_actionability_validator.py — 0.23 sec
+
+================================================================================================
+RUNNING : pattern_b2_relation_grounding_validator.py
+================================================================================================
+[OK] pattern_b2_relation_grounding_validator.py — 0.77 sec
+
+================================================================================================
+RUNNING : pattern_b2_auto_corrector.py
+================================================================================================
+[OK] pattern_b2_auto_corrector.py — 3.14 sec
+
+================================================================================================
+RUNNING : pattern_b_post_validator.py
+================================================================================================
+[OK] pattern_b_post_validator.py — 2.67 sec
+
+================================================================================================
+PATTERN B2 TERMINÉ AVEC SUCCÈS
+================================================================================================
+Entrée B2       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB1\corrected
+Sortie B2       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+Post-validation : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\post_validation
+====================================================================================================
+TRACE / SGCE - PATTERN B COMPLET
+====================================================================================================
+
+====================================================================================================
+RUNNING : PatternB1
+====================================================================================================
+[OK] PatternB1 — 9.34 sec
+
+====================================================================================================
+RUNNING : PatternB2
+====================================================================================================
+[OK] PatternB2 — 8.86 sec
+
+====================================================================================================
+PATTERN B TERMINÉ AVEC SUCCÈS
+====================================================================================================
+Sortie finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+Audit global  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\post_validation
+==================================================================================
+SGCE - PATTERN C DETECTION
+==================================================================================
+Entrée clinique           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+Guideline                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques       : 43
+JSON non cliniques ignorés: 1
+Entités analysées         : 10138
+Relations TRACE autorisées: 32
+
+Candidats Pattern C       : 815
+WEAK                      : 810
+MEDIUM                    : 3
+STRONG                    : 2
+Erreurs                   : 0
+
+Relations les plus souvent suspectées :
+  traitement_a_pour_posologie                  : 287
+  antibiotique_inadequat_pour                  : 267
+  traitement_administre_a                      : 218
+  biomarqueur_obtenu_a                         : 28
+  signe_vital_supporte_defaillance_organe      : 6
+  presente_suspicion_infection                 : 5
+  patient_a_pour_evolution                     : 1
+  score_sofa_inclut_signe_vital                : 1
+  imagerie_objective_foyer                     : 1
+  micro_organisme_isole_dans                   : 1
+
+Rapport JSON              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\detection\pattern_c_detection_report.json
+CSV candidats             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\detection\pattern_c_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+==================================================================================
+SGCE - PATTERN C VALIDATION
+==================================================================================
+Entrée clinique                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+Rapport détection                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\detection\pattern_c_detection_report.json
+
+Documents cliniques              : 43
+Candidats détectés               : 815
+Candidats validés                : 815
+
+WEAK_PROTECTED                   : 810
+ALREADY_RELATIONAL               : 0
+CONFIRMED_REIFIED_RELATION       : 0
+POTENTIAL_REIFIED_RELATION       : 0
+AMBIGUOUS                        : 5
+
+Futurs REPLACE_ENTITY_WITH_RELATION : 0
+Cas protégés                     : 815
+Erreurs                          : 0
+
+Rapport JSON                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\validation\pattern_c_validation_report.json
+CSV validation                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\validation\pattern_c_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+==================================================================================
+SGCE - PATTERN C GENERIC CORRECTION
+==================================================================================
+Entrée                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+Validation                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\validation\pattern_c_validation_report.json
+Sortie                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+
+Candidats validés         : 815
+Opérations autorisées     : 0
+Opérations appliquées     : 0
+Entités réifiées supprimées: 0
+Relations créées          : 0
+
+Documents copiés          : 43
+Documents modifiés        : 0
+JSON non cliniques ignorés: 1
+Erreurs                   : 0
+
+Raisons SKIP :
+  WEAK_PROTECTED                               : 810
+  AMBIGUOUS                                    : 5
+
+Rapport                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected\pattern_c_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+====================================================================================
+SGCE - PATTERN C DIFFERENTIAL POST-VALIDATION
+====================================================================================
+AVANT Pattern C               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\PatternB2\corrected
+APRES Pattern C               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+
+Documents vérifiés            : 43
+PASS                          : 43
+FAIL                          : 0
+
+Documents attendus modifiés   : 0
+Documents réellement modifiés : 0
+Modifications inattendues     : 0
+Corrections attendues absentes: 0
+
+Opérations attendues          : 0
+Opérations PASS               : 0
+Opérations FAIL               : 0
+
+Anomalies pré-existantes      : 62
+Nouvelles anomalies Pattern C : 0
+Anomalies résolues Pattern C  : 0
+
+Docs manquants APRES          : 0
+Docs supplémentaires APRES    : 0
+
+Signatures TRACE chargées     : 32
+
+STATUT FINAL PATTERN C        : PASS
+
+Rapport JSON                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\post_validation\pattern_c_post_validation_report.json
+Rapport documents CSV         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\post_validation\pattern_c_post_validation_documents.csv
+Nouvelles anomalies CSV       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\post_validation\pattern_c_new_anomalies.csv
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+==========================================================================================
+TRACE / SGCE - PATTERN C COMPLET
+==========================================================================================
+
+==========================================================================================
+RUNNING : pattern_c_detector.py
+==========================================================================================
+[OK] pattern_c_detector.py — 7.78 sec
+
+==========================================================================================
+RUNNING : pattern_c_validator.py
+==========================================================================================
+[OK] pattern_c_validator.py — 1.04 sec
+
+==========================================================================================
+RUNNING : pattern_c_generic_corrector.py
+==========================================================================================
+[OK] pattern_c_generic_corrector.py — 2.84 sec
+
+==========================================================================================
+RUNNING : pattern_c_post_validator.py
+==========================================================================================
+[OK] pattern_c_post_validator.py — 2.62 sec
+
+==========================================================================================
+PATTERN C TERMINÉ AVEC SUCCÈS
+==========================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\post_validation
+========================================================================================
+SGCE - PRE-PATTERN-D ANOMALY AUDIT
+========================================================================================
+Entrée clinique                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+Guideline                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques            : 43
+Entités analysées              : 10138
+Relations analysées            : 3756
+Signatures TRACE chargées      : 32
+
+Anomalies totales              : 62
+Erreurs                        : 0
+
+ANOMALIES PAR TYPE
+----------------------------------------------------------------------------------------
+INVALID_RELATION_TARGET_TYPE              : 43
+ORPHAN_RELATION_SOURCE                    : 8
+ORPHAN_RELATION_TARGET                    : 8
+INVALID_RELATION_SOURCE_TYPE              : 3
+
+RECOMMANDATION PATTERN D
+----------------------------------------------------------------------------------------
+Famille recommandée            : DOMAIN_RANGE_MISMATCH
+Répartition familles           : {'DOMAIN_RANGE_MISMATCH': 46, 'ORPHAN_ENDPOINT': 16, 'UNAUTHORIZED_RELATION': 0, 'DUPLICATE_STRUCTURE': 0}
+
+Rapport JSON                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\audit\pattern_d_anomaly_audit_report.json
+CSV anomalies                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\audit\pattern_d_anomalies.csv
+CSV résumé par type            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\audit\pattern_d_summary_by_type.csv
+CSV résumé par relation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\audit\pattern_d_summary_by_relation.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================
+SGCE - PATTERN D DETECTION
+========================================================================================
+Entrée clinique                  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+Guideline                        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques              : 43
+Entités analysées                : 10138
+Relations analysées              : 3756
+Signatures TRACE chargées        : 32
+Relations autorisées contrôlées  : 3756
+
+Candidats Pattern D              : 46
+D1 INVALID SOURCE TYPE           : 3
+D2 INVALID TARGET TYPE           : 43
+Erreurs                          : 0
+
+Relations les plus concernées :
+  presente_dysfonction_organe                       : 15
+  a_pour_label_nosologique                          : 13
+  presente_symptome                                 : 10
+  a_pour_contexte_acquisition                       : 3
+  presente_suspicion_infection                      : 3
+  patient_a_pour_evolution                          : 1
+  biomarqueur_supporte_defaillance_organe           : 1
+
+Mismatch source les plus fréquents :
+  DONNEE_PATIENT               -> COMORBIDITE_ANTECEDENT       : 2
+  LABEL_NOSOLOGIQUE            -> COMORBIDITE_ANTECEDENT       : 1
+
+Mismatch cible les plus fréquents :
+  SYMPTOME                     -> DEFAILLANCE_ORGANE           : 10
+  FOYER_INFECTIEUX             -> LABEL_NOSOLOGIQUE            : 8
+  DEFAILLANCE_ORGANE           -> SYMPTOME                     : 5
+  LABEL_NOSOLOGIQUE            -> DEFAILLANCE_ORGANE           : 5
+  BIOMARQUEUR                  -> SYMPTOME                     : 3
+  SYMPTOME                     -> LABEL_NOSOLOGIQUE            : 3
+  LABEL_NOSOLOGIQUE            -> SYMPTOME                     : 2
+  SYMPTOME                     -> FOYER_INFECTIEUX             : 2
+  DEFAILLANCE_ORGANE           -> LABEL_NOSOLOGIQUE            : 2
+  SYMPTOME                     -> EVOLUTION_PRONOSTIC          : 1
+
+Rapport JSON                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\detection\pattern_d_detection_report.json
+CSV candidats                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\detection\pattern_d_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================
+SGCE - PATTERN D VALIDATION
+========================================================================================
+Entrée clinique                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+Rapport détection                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\detection\pattern_d_detection_report.json
+
+Documents cliniques               : 43
+Candidats détectés                : 46
+Candidats validés                 : 46
+
+CONFIRMED_RELINK                  : 3
+CONFIRMED_RETYPE                  : 0
+CONFIRMED_INVALID_RELATION        : 0
+AMBIGUOUS                         : 43
+SKIP_ORPHAN_ENDPOINT              : 0
+
+Futurs RELINK                     : 3
+Futurs RETYPE_ENTITY              : 0
+Futurs REMOVE_INVALID_RELATION    : 0
+Cas protégés                      : 43
+Erreurs                           : 0
+
+Rapport JSON                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\validation\pattern_d_validation_report.json
+CSV validation                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\validation\pattern_d_validation_candidates.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================
+SGCE - PATTERN D GENERIC CORRECTION
+========================================================================================
+Entrée                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+Validation                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\validation\pattern_d_validation_report.json
+Sortie                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\corrected
+
+Candidats validés              : 46
+Opérations appliquées          : 3
+RELINK appliqués               : 3
+RETYPE_ENTITY appliqués        : 0
+REMOVE_INVALID_RELATION        : 0
+
+Documents copiés               : 43
+Documents modifiés             : 3
+JSON non cliniques ignorés     : 0
+Erreurs                        : 0
+
+Raisons SKIP :
+  AMBIGUOUS                                    : 43
+
+Rapport                        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\corrected\pattern_d_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================================
+SGCE - PATTERN D DIFFERENTIAL POST-VALIDATION
+============================================================================================
+AVANT Pattern D                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\corrected
+APRES Pattern D                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\corrected
+
+Documents vérifiés                 : 43
+PASS                               : 43
+FAIL                               : 0
+
+Documents attendus modifiés        : 3
+Documents réellement modifiés      : 3
+Modifications inattendues          : 0
+Corrections attendues absentes     : 0
+
+Opérations appliquées vérifiées    : 3
+Opérations PASS                    : 3
+Opérations FAIL                    : 0
+
+RETYPE ignorés à réévaluer         : 0
+Déjà satisfaits                    : 0
+Conflits RETYPE                    : 0
+RETYPE non résolus                 : 0
+
+Cas AMBIGUOUS protégés             : 43
+Protégés inchangés                 : 43
+Protégés changés par effet indirect: 0
+
+Anomalies pré-existantes           : 59
+Nouvelles anomalies Pattern D      : 0
+Anomalies résolues Pattern D       : 3
+
+Docs manquants APRES               : 0
+Docs supplémentaires APRES         : 0
+Signatures TRACE chargées          : 32
+
+STATUT FINAL PATTERN D             : PASS
+
+Rapport JSON                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\post_validation\pattern_d_post_validation_report.json
+Rapport documents CSV              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\post_validation\pattern_d_post_validation_documents.csv
+Rapport opérations CSV             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\post_validation\pattern_d_post_validation_operations.csv
+Nouvelles anomalies CSV            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\post_validation\pattern_d_new_anomalies.csv
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+========================================================================================
+SGCE - PATTERN D
+Violation de signature relationnelle (Domain-Range Mismatch)
+========================================================================================
+
+========================================================================================
+RUNNING : pattern_d_anomaly_audit.py
+========================================================================================
+[OK] pattern_d_anomaly_audit.py
+
+========================================================================================
+RUNNING : pattern_d_detector.py
+========================================================================================
+[OK] pattern_d_detector.py
+
+========================================================================================
+RUNNING : pattern_d_validator.py
+========================================================================================
+[OK] pattern_d_validator.py
+
+========================================================================================
+RUNNING : pattern_d_generic_corrector.py
+========================================================================================
+[OK] pattern_d_generic_corrector.py
+
+========================================================================================
+RUNNING : pattern_d_post_validator.py
+========================================================================================
+[OK] pattern_d_post_validator.py
+
+========================================================================================
+PATTERN D TERMINÉ AVEC SUCCÈS
+========================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\post_validation
+====================================================================================================
+SGCE - STRUCTURAL GROUNDING
+GLOBAL PATTERNS PIPELINE
+====================================================================================================
+
+Ordre d'exécution :
+
+Pattern A
+   ↓
+Pattern B
+   ↓
+Pattern C
+   ↓
+Pattern D
+
+
+
+====================================================================================================
+START : PATTERN A
+====================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternA\run_pattern_a_all.py
+
+
+----------------------------------------------------------------------------------------------------
+[OK] PATTERN A
+Durée : 43.33 sec
+----------------------------------------------------------------------------------------------------
+
+
+====================================================================================================
+START : PATTERN B
+====================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternB\run_pattern_b_all.py
+
+
+----------------------------------------------------------------------------------------------------
+[OK] PATTERN B
+Durée : 18.38 sec
+----------------------------------------------------------------------------------------------------
+
+
+====================================================================================================
+START : PATTERN C
+====================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternC\run_pattern_c_all.py
+
+
+----------------------------------------------------------------------------------------------------
+[OK] PATTERN C
+Durée : 14.49 sec
+----------------------------------------------------------------------------------------------------
+
+
+====================================================================================================
+START : PATTERN D
+====================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\run_pattern_d_all.py
+
+
+----------------------------------------------------------------------------------------------------
+[OK] PATTERN D
+Durée : 8.36 sec
+----------------------------------------------------------------------------------------------------
+
+
+====================================================================================================
+TOUS LES PATTERNS SGCE TERMINÉS AVEC SUCCÈS
+====================================================================================================
+
+Résumé des durées :
+  PATTERN A       : 43.33 sec
+  PATTERN B       : 18.38 sec
+  PATTERN C       : 14.49 sec
+  PATTERN D       : 8.36 sec
+
+Durée totale : 84.57 sec
+
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\corrected
+Post-validation finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\post_validation
+
+====================================================================================================
+ATTENTION : patterns cree 1 nouvelle(s) anomalie(s)
+
+============================================================================================================
+[2/4] RELATION REPAIR
+============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\run_relation_repair_all.py
+========================================================================================================
+TRACE / SGCE - RELATION REPAIR CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                 : 43
+Candidats                          : 43
+Orphelines réservées étape suivante: 16
+Relations non autorisées réservées : 0
+SOURCE_MISMATCH                         : 3
+TARGET_MISMATCH                         : 40
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\queues\relation_repair_queue.json
+========================================================================================================
+TRACE / SGCE - RELATION REPAIR AGENT
+========================================================================================================
+Cas reçus                             : 43
+
+DECISIONS
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 41
+CORRECT                                         : 2
+
+ACTIONS PROPOSEES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 41
+RETYPE_TARGET                                   : 2
+
+Sortie                                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - RELATION REPAIR DECISION VALIDATOR
+========================================================================================================
+Décisions reçues : 43
+ACCEPT            : 2
+REVIEW            : 41
+Sortie            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_validated_decisions.json
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR BATCH IMPACT VALIDATOR
+============================================================================================================
+ACCEPT précédents                  : 2
+Actions uniques évaluées           : 2
+Doublons fusionnés                 : 0
+
+SAFE_ACCEPT                        : 2
+REJECT_HARMFUL                     : 0
+NO_BENEFIT                         : 0
+ALREADY_SATISFIED                  : 0
+REVIEW                             : 0
+
+ACTIONS SURES PAR TYPE
+------------------------------------------------------------------------------------------------------------
+RETYPE_TARGET                                   : 2
+
+Anomalies baseline                 : 59
+Anomalies projetées après lot sûr  : 57
+Anomalies projetées résolues       : 2
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_batch_safe_actions.json
+
+Aucun JSON clinique n'a été modifié.
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR BATCH SAFE CORRECTOR
+============================================================================================================
+Actions SAFE_ACCEPT reçues         : 2
+Documents copiés                  : 43
+Opérations appliquées             : 2
+Documents modifiés                : 2
+Erreurs                           : 0
+
+ACTIONS APPLIQUEES
+------------------------------------------------------------------------------------------------------------
+RETYPE_TARGET                                   : 2
+
+Sortie clinique                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected
+Rapport                           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected\relation_repair_safe_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR BATCH SAFE POST-VALIDATION
+============================================================================================================
+AVANT                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\corrected
+APRES                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected
+
+Documents vérifiés                  : 43
+Documents attendus modifiés         : 2
+Documents réellement modifiés       : 2
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Anomalies AVANT                     : 59
+Anomalies APRES                     : 57
+Nouvelles anomalies                 : 0
+Anomalies résolues                  : 2
+
+Docs manquants APRES                : 0
+Docs supplémentaires APRES          : 0
+
+STATUT FINAL BATCH SAFE            : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\post_validation\relation_repair_batch_safe_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR COMPLET
+============================================================================================================
+
+============================================================================================================
+RUNNING : relation_repair_candidate_builder.py
+============================================================================================================
+[OK] relation_repair_candidate_builder.py
+
+============================================================================================================
+RUNNING : relation_repair_agent.py
+============================================================================================================
+[OK] relation_repair_agent.py
+
+============================================================================================================
+RUNNING : relation_repair_decision_validator.py
+============================================================================================================
+[OK] relation_repair_decision_validator.py
+
+============================================================================================================
+RUNNING : relation_repair_batch_impact_validator.py
+============================================================================================================
+[OK] relation_repair_batch_impact_validator.py
+
+============================================================================================================
+RUNNING : relation_repair_batch_safe_corrector.py
+============================================================================================================
+[OK] relation_repair_batch_safe_corrector.py
+
+============================================================================================================
+RUNNING : relation_repair_batch_safe_post_validator.py
+============================================================================================================
+[OK] relation_repair_batch_safe_post_validator.py
+
+============================================================================================================
+RELATION REPAIR TERMINÉ AVEC SUCCÈS
+============================================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\post_validation
+
+============================================================================================================
+[3/4] ORPHAN RESOLUTION
+============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\run_orphan_relations_all.py
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                   : 43
+Relations orphelines candidates      : 16
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\queues\orphan_relation_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION RESOLVER
+========================================================================================================
+Cas reçus                             : 16
+
+DECISIONS
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 11
+CORRECT                                         : 5
+
+ACTIONS PROPOSEES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 11
+REMOVE_INVALID_RELATION                         : 3
+RELINK_EXISTING_ENTITY                          : 2
+
+Sortie                                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\outputs\orphan_relation_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION DECISION VALIDATOR
+========================================================================================================
+Décisions reçues                      : 16
+
+STATUTS FINAUX
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 11
+ACCEPT                                          : 5
+
+ACTIONS FINALES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 11
+REMOVE_INVALID_RELATION                         : 3
+RELINK_EXISTING_ENTITY                          : 2
+
+Sortie                                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\outputs\orphan_relation_validated_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - ORPHAN RELATION SAFE CORRECTOR
+========================================================================================================
+Actions ACCEPT reçues                 : 5
+Documents copiés                      : 43
+Opérations appliquées                 : 5
+Documents modifiés                    : 5
+Erreurs                               : 0
+
+ACTIONS APPLIQUEES
+--------------------------------------------------------------------------------------------------------
+REMOVE_INVALID_RELATION                         : 3
+RELINK_EXISTING_ENTITY                          : 2
+
+Sortie clinique                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\safe_corrected
+Rapport                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\safe_corrected\orphan_relation_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+================================================================================================================
+TRACE / SGCE - ORPHAN RELATION RESIDUAL ROUTER
+================================================================================================================
+Documents traités                   : 43
+Relations orphelines résiduelles    : 11
+Documents concernés                 : 9
+Relations résiduelles supprimées    : 0
+Erreurs                             : 0
+
+POLITIQUE
+----------------------------------------------------------------------------------------------------------------
+PRESERVE_AND_ROUTE_TO_MULTI_AGENT
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Queue Multi-Agent                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\outputs\orphan_relation_unresolved_queue.json
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected\orphan_relation_residual_routing_report.json
+
+Les relations REVIEW sont conservées; aucune suppression résiduelle automatique n'est effectuée.
+================================================================================================================
+TRACE / SGCE - ORPHAN RELATION FINAL POST-VALIDATION
+================================================================================================================
+Documents AVANT                    : 43
+Documents APRES                    : 43
+Relations orphelines AVANT         : 11
+Relations orphelines APRES         : 11
+Résiduelles routées Multi-Agent    : 11
+Docs modifiés par routeur résiduel : 0
+
+CONTROLES
+----------------------------------------------------------------------------------------------------------------
+all_documents_preserved                                     : PASS
+residual_orphan_count_preserved                             : PASS
+all_residual_orphans_routed                                 : PASS
+no_clinical_mutation_by_residual_router                     : PASS
+no_residual_orphan_deleted_before_multi_agent               : PASS
+
+STATUT FINAL ORPHAN RELATION       : PASS
+Rapport                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\post_validation\orphan_relation_final_post_validation_report.json
+
+Aucune relation REVIEW n'est supprimée avant le Multi-Agent.
+============================================================================================================
+TRACE / SGCE - ORPHAN RELATIONS COMPLET
+============================================================================================================
+Entrée : relation_repair/corrected
+Sortie : orphan_resolution/corrected (20 REVIEW conservés et routés vers Multi-Agent)
+
+============================================================================================================
+RUNNING : orphan_relation_candidate_builder.py
+============================================================================================================
+[OK] orphan_relation_candidate_builder.py (0.81 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_resolver.py
+============================================================================================================
+[OK] orphan_relation_resolver.py (0.19 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_decision_validator.py
+============================================================================================================
+[OK] orphan_relation_decision_validator.py (1.10 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_safe_corrector.py
+============================================================================================================
+[OK] orphan_relation_safe_corrector.py (1.71 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_residual_corrector.py
+============================================================================================================
+[OK] orphan_relation_residual_corrector.py (1.61 sec)
+
+============================================================================================================
+RUNNING : orphan_relation_post_validator.py
+============================================================================================================
+[OK] orphan_relation_post_validator.py (2.12 sec)
+
+============================================================================================================
+ORPHAN RELATIONS TERMINÉ AVEC SUCCÈS
+============================================================================================================
+Durée totale            : 7.55 sec
+Sortie clinique finale  : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Post-validation         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\post_validation
+ATTENTION : orphan_resolution cree 2 nouvelle(s) anomalie(s)
+
+============================================================================================================
+[4/4] MULTI-AGENT
+============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\run_all_parts.py
+========================================================================================
+TRACE / SGCE - MULTI-AGENT ORCHESTRATOR V2
+========================================================================================
+
+Principe : second recours uniquement
+
+ROUTES PRIMAIRES
+----------------------------------------------------------------------------------------
+Agent Pattern A                 : 0
+Agent Pattern B                 : 16
+Agent Pattern C                 : 5
+
+ROUTE SECONDAIRE
+----------------------------------------------------------------------------------------
+Agent Patient/Référence         : 5
+
+COMPTAGE CORRECT
+----------------------------------------------------------------------------------------
+Cas uniques routés              : 21
+Routes secondaires              : 5
+Appels agentiques prévus        : 26
+
+Rapport                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\queues\orchestration_report.json
+
+Aucune donnée clinique n'a été modifiée.
+Agent B queue: orphanes résiduelles ajoutées=11; total=27
+[OK] Dossier texte détecté automatiquement : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Sortie_Textes_Brut_MistralSmall4
+============================================================================================
+TRACE / SGCE - TEXT CONTEXT BUILDER
+============================================================================================
+Cas Pattern B                  : 27
+Fichiers texte découverts      : 43
+Documents texte retrouvés      : 27
+Pages retrouvées explicitement : 16
+Fallback texte global          : 11
+Documents texte manquants      : 0
+
+Sortie                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\queues\agent_b_queue_contextualized.json
+
+Aucune donnée clinique n'a été modifiée.
+====================================================================================================
+TRACE / SGCE - BUILD AGENT D QUEUE FROM RELATION REPAIR
+====================================================================================================
+Rapport Relation Repair            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_decisions.json
+REVIEW détectés dans le rapport    : 41
+
+REVIEW résiduels routés vers D     : 41
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\queues\agent_d_queue.json
+
+Aucune donnée clinique n'a été modifiée.
+agent_c_queue.json: 5 -> agent_c_queue_contextualized.json
+patient_reference_queue.json: 5 -> agent_patient_reference_queue_contextualized.json
+agent_d_queue.json: 41 -> agent_d_queue_contextualized.json
+====================================================================================
+TRACE / SGCE - GENERIC AGENT PATTERN A
+====================================================================================
+Cas reçus     : 0
+Décisions     : 0
+Sortie        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_a_decisions.json
+Aucun JSON clinique n'a été modifié.
+====================================================================================================
+Agent_A
+====================================================================================================
+
+RUN : agent_pattern_a.py
+
+Agent_A : FIN OK
+============================================================================================
+TRACE / SGCE - AGENT PATTERN B
+============================================================================================
+Cas reçus                         : 27
+Décisions produites               : 27
+
+DECISIONS
+--------------------------------------------------------------------------------------------
+REVIEW                                  : 21
+CORRECT                                 : 6
+
+ACTIONS PROPOSEES
+--------------------------------------------------------------------------------------------
+NONE                                    : 21
+CREATE_FROM_EXPLICIT_EVIDENCE           : 6
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_b_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+================================================================================================
+TRACE / SGCE - DIAGNOSTIC AGENT B QUEUE
+================================================================================================
+
+Cas totaux : 27
+
+SUBPATTERNS
+------------------------------------------------------------------------------------------------
+B1                                      : 16
+B1_ORPHAN_RESIDUAL                      : 11
+
+STATUTS ORIGINAUX
+------------------------------------------------------------------------------------------------
+UNRESOLVABLE_REFERENCE                  : 16
+UNRESOLVED_ORPHAN                       : 11
+
+CLES SYMBOLIC_CANDIDATE LES PLUS FREQUENTES
+------------------------------------------------------------------------------------------------
+pattern                                      : 27
+candidate_kind                               : 27
+status                                       : 27
+recommended_future_action                    : 27
+document                                     : 16
+strength                                     : 16
+relation                                     : 16
+source_resolution                            : 16
+target_resolution                            : 16
+missing_roles                                : 16
+validation_status                            : 16
+endpoint_validations                         : 16
+relation_id                                  : 11
+relation_type                                : 11
+source_id                                    : 11
+target_id                                    : 11
+source_missing                               : 11
+target_missing                               : 11
+existing_source_entity                       : 11
+existing_target_entity                       : 11
+entity_catalog                               : 11
+
+ENDPOINT_VALIDATIONS
+------------------------------------------------------------------------------------------------
+Candidats avec endpoint_validations : 16
+Tailles endpoint_validations        : {1: 16}
+
+CLES INTERNES DES ENDPOINTS
+------------------------------------------------------------------------------------------------
+role                                         : 16
+endpoint_value                               : 16
+resolution_status                            : 16
+resolution_method                            : 16
+expected_type                                : 16
+schema_support                               : 16
+schema_purity                                : 16
+schema_reliable                              : 16
+status                                       : 16
+recommended_future_action                    : 16
+reason                                       : 16
+
+CHAMPS B2 PRESENTS
+------------------------------------------------------------------------------------------------
+Aucun.
+
+CHAMPS DE PREUVE PRESENTS
+------------------------------------------------------------------------------------------------
+Aucun.
+
+EXEMPLES COMPACTS
+------------------------------------------------------------------------------------------------
+
+EXEMPLE 1
+{
+  "candidate_id": "BB1_000001",
+  "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "subpattern": "B1",
+  "original_status": "UNRESOLVABLE_REFERENCE",
+  "symbolic_keys": [
+    "candidate_kind",
+    "document",
+    "endpoint_validations",
+    "missing_roles",
+    "pattern",
+    "recommended_future_action",
+    "relation",
+    "source_resolution",
+    "status",
+    "strength",
+    "target_resolution",
+    "validation_status"
+  ],
+  "endpoint_validations": [
+    {
+      "role": "SOURCE",
+      "endpoint_value": "P2_E044",
+      "resolution_status": "NOT_FOUND",
+      "resolution_method": "NONE",
+      "expected_type": "IMAGERIE_PROCEDURE",
+      "schema_support": 13,
+      "schema_purity": 1.0,
+      "schema_reliable": true,
+      "status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+    }
+  ],
+  "selected_fields": {}
+}
+
+EXEMPLE 2
+{
+  "candidate_id": "BB1_000002",
+  "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "subpattern": "B1",
+  "original_status": "UNRESOLVABLE_REFERENCE",
+  "symbolic_keys": [
+    "candidate_kind",
+    "document",
+    "endpoint_validations",
+    "missing_roles",
+    "pattern",
+    "recommended_future_action",
+    "relation",
+    "source_resolution",
+    "status",
+    "strength",
+    "target_resolution",
+    "validation_status"
+  ],
+  "endpoint_validations": [
+    {
+      "role": "SOURCE",
+      "endpoint_value": "P2_E044",
+      "resolution_status": "NOT_FOUND",
+      "resolution_method": "NONE",
+      "expected_type": "IMAGERIE_PROCEDURE",
+      "schema_support": 13,
+      "schema_purity": 1.0,
+      "schema_reliable": true,
+      "status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+    }
+  ],
+  "selected_fields": {}
+}
+
+EXEMPLE 3
+{
+  "candidate_id": "BB1_000003",
+  "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "subpattern": "B1",
+  "original_status": "UNRESOLVABLE_REFERENCE",
+  "symbolic_keys": [
+    "candidate_kind",
+    "document",
+    "endpoint_validations",
+    "missing_roles",
+    "pattern",
+    "recommended_future_action",
+    "relation",
+    "source_resolution",
+    "status",
+    "strength",
+    "target_resolution",
+    "validation_status"
+  ],
+  "endpoint_validations": [
+    {
+      "role": "TARGET",
+      "endpoint_value": "P2_E074",
+      "resolution_status": "NOT_FOUND",
+      "resolution_method": "NONE",
+      "expected_type": "COMORBIDITE_ANTECEDENT",
+      "schema_support": 5,
+      "schema_purity": 1.0,
+      "schema_reliable": true,
+      "status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+    }
+  ],
+  "selected_fields": {}
+}
+
+Aucune donnée clinique n'a été modifiée.
+====================================================================================================
+Agent_B
+====================================================================================================
+
+RUN : agent_pattern_b.py
+
+RUN : inspect_agent_b_queue.py
+
+Agent_B : FIN OK
+================================================================================================
+TRACE / SGCE - AGENT PATTERN C DOCUMENT-GROUNDED
+================================================================================================
+Contexte clinique                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Cas reçus                         : 5
+Décisions produites               : 5
+
+DECISIONS
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 5
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------
+NONE                                    : 5
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_c_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+====================================================================================================
+Agent_C
+====================================================================================================
+
+RUN : agent_pattern_c.py
+
+Agent_C : FIN OK
+================================================================================================
+TRACE / SGCE - AGENT PATIENT / REFERENCE
+================================================================================================
+Cas reçus                         : 5
+
+DECISIONS
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 5
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------
+NONE                                    : 5
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_patient_reference_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+================================================================================================
+TRACE / SGCE - PATIENT / REFERENCE DECISION VALIDATOR
+================================================================================================
+Décisions reçues                  : 5
+Décisions validées                : 5
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 5
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------
+NONE                                    : 5
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_patient_reference_validated_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================
+TRACE / SGCE - PATIENT / REFERENCE CORRECTOR
+================================================================================================
+Source clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Sortie clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\corrected
+
+Documents cliniques copiés         : 43
+KEEP vérifiés                      : 0
+Cas protégés                       : 5
+Opérations d'écriture appliquées   : 0
+Documents modifiés                 : 0
+
+Rapport                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\corrected\agent_patient_reference_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+================================================================================================
+TRACE / SGCE - PATIENT / REFERENCE POST-VALIDATION
+================================================================================================
+AVANT                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+APRES                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\corrected
+
+Documents vérifiés                 : 43
+Documents modifiés                 : 0
+Modifications inattendues          : 0
+Docs manquants APRES               : 0
+Docs supplémentaires APRES         : 0
+
+STATUT FINAL                       : PASS
+
+Rapport                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\post_validation\agent_patient_reference_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+====================================================================================================
+Agent_Patient_Reference
+====================================================================================================
+
+RUN : agent_patient_reference.py
+
+RUN : agent_patient_reference_decision_validator.py
+
+RUN : agent_patient_reference_corrector.py
+
+RUN : agent_patient_reference_post_validator.py
+
+Agent_Patient_Reference : FIN OK
+================================================================================================
+TRACE / SGCE - AGENT PATTERN D
+================================================================================================
+Contexte clinique                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Cas reçus                         : 41
+
+DECISIONS
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 41
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------
+NONE                                    : 41
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_d_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+====================================================================================================
+TRACE / SGCE - VALIDATE SPECIALIZED AGENT DECISIONS
+====================================================================================================
+B: 27 -> ACCEPT=6, REVIEW=21
+C: 5 -> ACCEPT=0, REVIEW=5
+D: 41 -> ACCEPT=0, REVIEW=41
+
+----------------------------------------------------------------------------------------------------
+Direct ACCEPT reconstruits         : 6
+Direct ACCEPT par famille          : {'B': 6}
+Fichier                           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_direct_accepts.json
+
+Aucun ACCEPT provenant d'un ancien run n'a été conservé.
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - MULTI-AGENT ADJUDICATOR
+========================================================================================================
+Contexte clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Cas REVIEW reçus                     : 72
+Résolus par consensus                : 0
+UNRESOLVED                           : 72
+
+STATUTS
+--------------------------------------------------------------------------------------------------------
+UNRESOLVED                                      : 72
+
+ACTIONS ADJUDIQUEES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 72
+
+PAR FAMILLE
+--------------------------------------------------------------------------------------------------------
+B                             : total=21   résolus=0
+C                             : total=5    résolus=0
+D                             : total=41   résolus=0
+PATIENT_REFERENCE             : total=5    résolus=0
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_adjudication_report.json
+
+Aucune donnée clinique n'a été modifiée.
+Specialized ACCEPT injectés dans `cases` : 6
+Cas disponibles pour Action Resolver     : 78
+========================================================================================================
+TRACE / SGCE - MULTI-AGENT ACTION RESOLVER
+========================================================================================================
+Cas reçus                           : 78
+ACTIONABLE                          : 6
+CLASSIFICATION_ONLY                 : 0
+NO_ACTION                           : 0
+PROTECTED                           : 72
+
+ACTIONS RESOLUES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 72
+CREATE_FROM_EXPLICIT_EVIDENCE                   : 6
+
+ACTIONABLE PAR FAMILLE
+--------------------------------------------------------------------------------------------------------
+B                                       : 6
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_resolved_actions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - PROVISIONAL CORRECTOR
+========================================================================================================
+Documents modifiés : 0
+Rapport : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_provisional_correction_report.json
+============================================================================================================
+TRACE / SGCE - GENERAL IMPACT VALIDATOR
+============================================================================================================
+Actions ACTIONABLE reçues           : 6
+SAFE_ACCEPT                          : 5
+REJECT_HARMFUL                       : 0
+NO_BENEFIT                           : 0
+REVIEW                               : 1
+Actions sûres par type              : {'CREATE_FROM_EXPLICIT_EVIDENCE': 5}
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_general_impact_validation.json
+========================================================================================================
+TRACE / SGCE - SAFE GENERAL CORRECTOR
+========================================================================================================
+Actions SAFE_ACCEPT reçues          : 5
+Opérations appliquées               : 4
+Documents modifiés                  : 4
+Erreurs                              : 0
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\corrected
+============================================================================================================
+TRACE / SGCE - SAFE GENERAL POST-VALIDATION
+============================================================================================================
+documents_verified                  : 43
+expected_modified                   : 4
+actually_modified                   : 4
+unexpected_modifications            : 0
+expected_corrections_absent         : 0
+anomalies_before                    : 52
+anomalies_after                     : 47
+new_anomalies                       : 0
+resolved_anomalies                  : 5
+missing_documents                   : 0
+extra_documents                     : 0
+final_status                        : PASS
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\post_validation\multiagent_safe_post_validation_report.json
+============================================================================================================
+TRACE / SGCE - MULTI-AGENT COMPLET
+============================================================================================================
+Baseline clinique : SGCE/orphan_resolution/corrected
+Préparation des queues AVANT exécution des agents.
+
+============================================================================================================
+RUN : PREPARATION / orchestrator.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / merge_orphan_review_into_b.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / text_context_builder.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / build_agent_d_queue.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / contextualize_remaining_queues.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_A / run_agent_a.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_B / run_agent_b.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_C / run_agent_c.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_Patient_Reference / run_agent_patient_reference.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_D / agent_pattern_d.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / validate_missing_agent_decisions.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_adjudicator.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / inject_specialized_accepts.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_action_resolver.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_provisional_corrector.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_action_validator.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_corrector.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_post_validator.py
+============================================================================================================
+
+============================================================================================================
+MULTI-AGENT TERMINE
+============================================================================================================
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\corrected
+Post-validation : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\post_validation
+
+=================================================================
+AUDIT STRUCTUREL PAR ETAPE
+=================================================================
+Etape                        docs  anomalies  nouvelles  resolues
+-----------------------------------------------------------------
+ENTREE                         43        343          -         -
+patterns                       43        341          1         3
+relation_repair                43        339          0         2
+orphan_resolution              43        336          2         5
+multiagent                     43        331          0         5
+=================================================================
+
+Type d anomalie                     entree  sortie   delta
+DUPLICATE_ENTITY_CONTENT               281     281      +0
+DUPLICATE_RELATION                       0       3      +3
+INVALID_RELATION_SOURCE_TYPE             3       3      +0
+INVALID_RELATION_TARGET_TYPE            43      38      -5
+ORPHAN_RELATION_SOURCE                   8       2      -6
+ORPHAN_RELATION_TARGET                   8       4      -4
+
+Manifeste : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\run_logs\run_manifest_20261006_103908.json
+Evaluation F1 (gold) : lancer separement run_SGCE_F1_optimizer_audit.py
+TRACE / SGCE - TERMINE AVEC SUCCES

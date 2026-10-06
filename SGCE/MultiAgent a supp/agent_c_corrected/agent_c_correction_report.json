@@ -1,0 +1,42 @@
+{
+  "corrector": "agent_c_corrector",
+  "source_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_b_corrected",
+  "output_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_c_corrected",
+  "decisions_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\outputs\\agent_c_validated_decisions.json",
+  "summary": {
+    "documents_copied": 44,
+    "operations_received": 2,
+    "operations_applied": 2,
+    "operations_skipped": 2,
+    "documents_modified": 2,
+    "errors": 0,
+    "actions_applied": {
+      "REMOVE_REIFIED_ENTITY": 2
+    },
+    "skip_reasons": {
+      "NOT_ACCEPTED": 2
+    }
+  },
+  "modified_documents": [
+    "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "REMOVE_REIFIED_ENTITY",
+      "status": "APPLIED",
+      "reason": "OK",
+      "entity_id": "P4_E027"
+    },
+    {
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "REMOVE_REIFIED_ENTITY",
+      "status": "APPLIED",
+      "reason": "OK",
+      "entity_id": "P4_E025"
+    }
+  ]
+}

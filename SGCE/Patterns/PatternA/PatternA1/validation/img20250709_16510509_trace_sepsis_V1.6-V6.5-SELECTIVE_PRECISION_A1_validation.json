@@ -1,0 +1,88 @@
+{
+  "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 1,
+  "status_counts": {
+    "ALREADY_CORRECT": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E020",
+        "type": "TRAITEMENT",
+        "name": "NAD",
+        "preuve": "amine (NAD 1 mg/h)",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "amine (NAD 1 mg/h) | NAD | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E021"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E021",
+        "target_name": "1 mg",
+        "target_preuve": "NAD 1 mg/h",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E021",
+          "target_name": "1 mg",
+          "target_preuve": "NAD 1 mg/h",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E002",
+          "target_name": "50mg",
+          "target_preuve": "50mg 3/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E004",
+          "target_name": "1/j",
+          "target_preuve": "1/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

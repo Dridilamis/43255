@@ -1,0 +1,98 @@
+{
+  "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 50,
+  "number_candidates": 4,
+  "signal_counts": {
+    "WEAK": 4
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E021",
+        "type": "TRAITEMENT",
+        "name": "noradrénaline",
+        "preuve": "sous NAD 4.5 mg/h",
+        "valeur": 4.5,
+        "page": 5
+      },
+      "detection_text": "sous NAD 4.5 mg/h | noradrénaline | 4.5 | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "4.5 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E028",
+        "type": "TRAITEMENT",
+        "name": "remplissage de 250 ml",
+        "preuve": "remplissage de 250 ml",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "remplissage de 250 ml | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "250 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E015",
+        "type": "TRAITEMENT",
+        "name": "Amiklin",
+        "preuve": "ajout Amiklin 1G ce jour",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "ajout Amiklin 1G ce jour | Amiklin | antibiotique",
+      "detected_components": {
+        "dose": [
+          "1G"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E025",
+        "type": "TRAITEMENT",
+        "name": "NAD",
+        "preuve": "majoration de NAD jusqu'à 20 mg/h",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "majoration de NAD jusqu'à 20 mg/h | NAD | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "20 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "pattern": "A4",
+  "name": "IMAGERIE_PROCEDURE + DEFAILLANCE_ORGANE",
+  "relation": "imagerie_objective_defaillance",
+  "methodological_status": "VALIDATION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA3\\pattern_a3_corrected",
+  "detection_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA4\\pattern_a4_detection\\pattern_a4_detection_report.json",
+  "summary": {
+    "clinical_documents_loaded": 43,
+    "candidates_detected": 1,
+    "candidates_validated": 1,
+    "already_correct": 0,
+    "missing_relation": 1,
+    "confirmed_pattern_a": 0,
+    "ambiguous": 0,
+    "future_link": 1,
+    "future_split": 0,
+    "protected": 0,
+    "errors": 0
+  },
+  "validated_candidates": [
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A4",
+      "subcase": "IMAGERIE_PROCEDURE_DEFAILLANCE_ORGANE",
+      "source_entity": {
+        "entity_id": "P5_E002",
+        "type": "IMAGERIE_PROCEDURE",
+        "page": 5,
+        "text": "PL"
+      },
+      "detected_failure_families": [],
+      "detected_failure_signals": {},
+      "imaging_hint_present": false,
+      "same_page_failure_targets": [
+        {
+          "entity_id": "P5_E018",
+          "page": 5,
+          "text": "pas de défaillances au plan rénal | renal",
+          "text_containment": true,
+          "token_overlap": 0.0,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P5_E019",
+          "page": 5,
+          "text": "pas de défaillances au plan hépatique | hepatique",
+          "text_containment": true,
+          "token_overlap": 0.0,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P5_E020",
+          "page": 5,
+          "text": "pas de défaillances au plan hématologique | hematologique",
+          "text_containment": true,
+          "token_overlap": 0.0,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_failure_target_count": 3,
+      "strength": "WEAK",
+      "status": "A4_CANDIDATE",
+      "validation_status": "MISSING_RELATION",
+      "recommended_future_action": "LINK",
+      "validation_reason": "Une DEFAILLANCE_ORGANE fiable est déjà séparée sur la même page, mais la relation imagerie_objective_defaillance est absente.",
+      "reliable_target": {
+        "entity_id": "P5_E018",
+        "page": 5,
+        "text": "pas de défaillances au plan rénal | renal",
+        "containment": true,
+        "token_overlap": 0.0,
+        "score": 0.55,
+        "reliable": true,
+        "relation_exists": false
+      },
+      "same_page_failure_targets_recomputed": [
+        {
+          "entity_id": "P5_E018",
+          "page": 5,
+          "text": "pas de défaillances au plan rénal | renal",
+          "containment": true,
+          "token_overlap": 0.0,
+          "score": 0.55,
+          "reliable": true,
+          "relation_exists": false
+        },
+        {
+          "entity_id": "P5_E019",
+          "page": 5,
+          "text": "pas de défaillances au plan hépatique | hepatique",
+          "containment": true,
+          "token_overlap": 0.0,
+          "score": 0.55,
+          "reliable": true,
+          "relation_exists": false
+        },
+        {
+          "entity_id": "P5_E020",
+          "page": 5,
+          "text": "pas de défaillances au plan hématologique | hematologique",
+          "containment": true,
+          "token_overlap": 0.0,
+          "score": 0.55,
+          "reliable": true,
+          "relation_exists": false
+        }
+      ]
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a3_correction_report.json"
+  ],
+  "errors": []
+}

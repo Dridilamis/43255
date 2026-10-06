@@ -1,0 +1,32 @@
+{
+  "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 38,
+  "number_candidates": 1,
+  "signal_counts": {
+    "WEAK": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E020",
+        "type": "TRAITEMENT",
+        "name": "NAD",
+        "preuve": "amine (NAD 1 mg/h)",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "amine (NAD 1 mg/h) | NAD | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

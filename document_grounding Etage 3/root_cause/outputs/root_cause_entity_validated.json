@@ -1,0 +1,25 @@
+{
+  "validator": "root_cause_entity_validator",
+  "thresholds": {
+    "min_support": 2,
+    "min_support_ratio": 0.6
+  },
+  "validated": [
+    {
+      "candidate_id": "RCE_000001",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E029",
+      "entity_text": "anurie | renal",
+      "current_type": "SYMPTOME",
+      "proposed_type": "DEFAILLANCE_ORGANE",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "final_status": "SAFE_RETYPE",
+      "reason": "Le retypage rÃ©sout des anomalies sans en crÃ©er.",
+      "before_anomaly_count": 3,
+      "after_anomaly_count": 1,
+      "new_anomaly_count": 0,
+      "resolved_anomaly_count": 2
+    }
+  ]
+}

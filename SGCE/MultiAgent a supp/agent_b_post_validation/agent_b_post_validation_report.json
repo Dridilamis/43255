@@ -1,0 +1,361 @@
+{
+  "validator": "agent_b_post_validator",
+  "before_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternD\\pattern_d_corrected",
+  "after_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_b_corrected",
+  "correction_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_b_corrected\\agent_b_correction_report.json",
+  "guideline": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Guideline_TRACE_Sepsis_v1.6.json",
+  "summary": {
+    "documents_checked": 43,
+    "document_pass": 43,
+    "document_fail": 0,
+    "expected_modified_documents": 2,
+    "actually_modified_documents": 2,
+    "unexpected_modified_documents": 0,
+    "expected_changes_missing": 0,
+    "operations_checked": 2,
+    "operations_pass": 2,
+    "operations_fail": 0,
+    "anomalies_before": 137,
+    "anomalies_after": 134,
+    "new_anomalies": 0,
+    "resolved_anomalies": 3,
+    "missing_documents_after": 0,
+    "extra_documents_after": 0,
+    "locked_signatures_loaded": 32,
+    "final_status": "PASS"
+  },
+  "expected_modified_documents": [
+    "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "actually_modified_documents": [
+    "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "unexpected_modified_documents": [],
+  "expected_changes_missing": [],
+  "missing_documents_after": [],
+  "extra_documents_after": [],
+  "document_results": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": true,
+      "actually_modified": true,
+      "status": "PASS",
+      "reason": "CHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16225557_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": true,
+      "actually_modified": true,
+      "status": "PASS",
+      "reason": "CHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_modified": false,
+      "actually_modified": false,
+      "status": "PASS",
+      "reason": "UNCHANGED_AS_EXPECTED"
+    }
+  ],
+  "operation_results": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "requested_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "applied_operation": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "missing_endpoint": "P2_E044",
+      "status": "PASS",
+      "reason": "OK"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "requested_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "applied_operation": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "missing_endpoint": "P4_E041",
+      "status": "PASS",
+      "reason": "OK"
+    }
+  ],
+  "new_anomalies": []
+}

@@ -1,0 +1,344 @@
+================================================================================================================
+TRACE / SGCE - NEGATION CANDIDATE BUILDER
+================================================================================================================
+Documents analysÃ©s                 : 43
+Candidats construits               : 1034
+Mentions retrouvÃ©es                : 9737
+Mentions non retrouvÃ©es            : 405
+Textes manquants                   : 0
+
+RAISONS DE SELECTION
+----------------------------------------------------------------------------------------------------------------
+LOCAL_NEGATION_CUE                                  : 1034
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\queues\negation_candidates.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - NEGATION CLASSIFIER 
+================================================================================================================
+Candidats reÃ§us                     : 1034
+DÃ©cisions Ã©crites                   : 1034
+
+DECISIONS
+----------------------------------------------------------------------------------------------------------------
+SUPPORTED_NEGATION                                  : 48
+NO_SUPPORTED_NEGATION                               : 986
+
+ACTIONS PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+SET_NEGATED                                         : 48
+NONE                                                : 986
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\outputs\negation_scope_decisions.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - NEGATION VALIDATOR  
+================================================================================================================
+Candidats exÃ©cution courante        : 1034
+DÃ©cisions reÃ§ues                    : 1034
+
+STATUTS FINAUX
+----------------------------------------------------------------------------------------------------------------
+SAFE_ACCEPT                                         : 48
+UNRESOLVED                                          : 986
+
+ACTIONS FINALES
+----------------------------------------------------------------------------------------------------------------
+SET_NEGATED                                         : 48
+NONE                                                : 986
+
+RAISONS NON-AUTOMATIQUES
+----------------------------------------------------------------------------------------------------------------
+Aucune correction automatique dÃ©montrÃ©e.                                                : 986
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\outputs\negation_validated.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - NEGATION SAFE CORRECTOR - FINAL SAFE REPAIR
+================================================================================================================
+Actions SAFE_ACCEPT reÃ§ues          : 48
+OpÃ©rations appliquÃ©es               : 48
+Documents modifiÃ©s                  : 26
+Erreurs                             : 0
+
+CORRECTIONS AVANT -> APRES
+----------------------------------------------------------------------------------------------------------------
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P1_E023 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Gastroscopie faite en janvier 2015, pas de récidive de gastrite, pas de varices oesophagiennes.'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen neurologique\nglasgow 15 conscient et orientée\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d’atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\ndéficit musculaire axial\natteinte motrice proximale aux membres supérieurs\natteinte motrice distale aux membres inférieurs bilatéralement\nROT non retrouvé au MS\nRCP en flexion bilatéralement'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E040 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '--- PAGE 3 ---\nExamen respiratoire\nPolypnée, balancement thoraco-abdominal, tirage sus claviculaire\npas de sueurs, aps de cyanose\nFrein expiratoire majeur\npas de sibilants ou de crépitants'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nSonde naso gastrique en place\nAbdomen souple dépressible indolore\nBHA présents\npas d’hépatosplénomagalie\npas de masse palpable'
+
+img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E029 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen neurologique\nglasgow 15 conscient et orientée\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d’atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\ndéficit musculaire axial\natteinte motrice proximale aux membres supérieurs\natteinte motrice distale aux membres inférieurs bilatéralement\nROT non retrouvé au MS\nRCP en flexion bilatéralement'
+
+img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E038 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nSonde naso gastrique en place\nAbdomen souple dépressible indolore\nBHA présents\npas d’hépatosplénomagalie\npas de masse palpée'
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E057 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'pas de marbrures, TRC<3s\npas de douleur thoracique\nbruits du coeur réguliers\npas de souffle perçu'
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E033 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Examen neurologique\npatient conscient orienté coopérant\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d'atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\n- pas de trouble de la déglutition rapporté pas le patient\npas de trouble de la sensibilité au toucher simple aux 4 membres\ndéficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)\natteinte motrice proximale aux membres supérieurs à 2/5\natteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied\nbilatéralement\nROT rotulien droit perçu, rotulien gauche non testé, bicipitaux non retrouvés bilatéralement\nRCP en flexion bilatéralement"
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Examen neurologique\npatient conscient orienté coopérant\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d'atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\n- pas de trouble de la déglutition rapporté pas le patient\npas de trouble de la sensibilité au toucher simple aux 4 membres\ndéficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)\natteinte motrice proximale aux membres supérieurs à 2/5\natteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied\nbilatéralement\nROT rotulien droit perçu, rotulien gauche non testé, bicipitaux non retrouvés bilatéralement\nRCP en flexion bilatéralement"
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E038 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Examen neurologique\npatient conscient orienté coopérant\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d'atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\n- pas de trouble de la déglutition rapporté pas le patient\npas de trouble de la sensibilité au toucher simple aux 4 membres\ndéficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)\natteinte motrice proximale aux membres supérieurs à 2/5\natteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied\nbilatéralement\nROT rotulien droit perçu, rotulien gauche non testé, bicipitaux non retrouvés bilatéralement\nRCP en flexion bilatéralement"
+
+img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E044 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de marbrures\nBruits du coeur réguliers, pas de souffle perçu\nPouls périphériques bilatéraux et symétriques\nPas de signe d’insuffisance cardiaque droite ou gauche\nMollets souples et indolores.'
+
+img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E045 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\nPas de signe de lutte respiratoire\nEupnéique sous air ambiant\nPas de cyanose\nMurmure vésiculaire bilatéral et symétrique sans bruit surajouté'
+
+img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\nMarbré aux genoux, extrémités froides, tachycardie à 150, bruit du coeur régulier, pas de souffle perçu, pouls périphériques faibles.'
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E072 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '- Echo-doppler veineux des membres inférieurs (28/06/12) : pas de thrombose profonde ni superficielle aux membres inférieurs en particulier gauche.'
+
+img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E035 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "--- PAGE 3 ---\nAbdomen souple depressible indolore\npas de masse palpable\npas d'HSMG\npas de SFU"
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E056 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de cyanose.'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\nPas de signe de détresse respiratoire aiguë, pas de signe de lutte, pas de cyanose\nMurmure vésiculaire bilatéral, diminué en base droite avec crépitants surajoutés en base gauche'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E043 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\nPas de signe de choc : pas de marbrure, bonne coloration cutanéo-muqueuse\nPouls périphériques perçus\nBruits du coeur réguliers, tachycardie, souffle intense au foyer tricuspidien et souffle systolique au foyer mitral'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E058 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\nPas de signe de détresse respiratoire aiguë, pas de signe de lutte, pas de cyanose\nMurmure vésiculaire bilatéral, diminué en base droite avec crépitants surajoutés en base gauche'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E039 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "--- PAGE 3 ---\nExamen abdominal et pelvien\nAbdomen souple, dépressible et indolore\nPas de masse, pas de signe d'irritation péritonéale, pas d'hépatosplénomégalie\nOrifices herniaires libres"
+
+img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E062 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Les bruits du cœur sont rapides, pas de souffle perçu.'
+
+img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E030 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '--- PAGE 3 ---\nExamen respiratoire\nSignes de luttes: tirage sus et sous costal\nPas de signe hypoxémie\nMVBS avec des bronchis en base droite'
+
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E052 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\npas de signe de choc : extrémités chaudes, pas de marbrures\npas d’œdème\npas de signe de phlébite\npouls périphériques perçus\nà l’auscultation : bruits du coeur réguliers, pas de souffle perçu'
+
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E053 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\ndrain thoracique gauche : 610mL\npatient eupnéique en air ambiant\npas de toux, pas d’expectoration\npas de signe de lutte, pas de cyanose\ncrépitations sous cutané en sous-claviculaire gauche.'
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Avis Dr DAVIDO:\npoursuite fortum+oflocef+amiklin\npas d’indication pour rajouter de la vanco (pas de SARM/ risque immunoallergie à la vanco)\non pourrait discuter de l’adjonction de cancidas vu l’évolution défavorable.'
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E044 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Avis Dr DAVIDO:\npoursuite fortum+oflocef+amiklin\npas d’indication pour rajouter de la vanco (pas de SARM/ risque immunoallergie à la vanco)\non pourrait discuter de l’adjonction de cancidas vu l’évolution défavorable.'
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P7_E052 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Avis Dr DAVIDO:\npoursuite fortum+oflocef+amiklin\npas d’indication pour rajouter de la vanco (pas de SARM/ risque immunoallergie à la vanco)\non pourrait discuter de l’adjonction de cancidas vu l’évolution défavorable.'
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P1_E021 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de syndrome inflammatoire biologique (GB 4 600)\nUn BK crachat est effectué qui retrouve des Cocci Gram + en chaînette, mais pas de BAAR au direct.'
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P1_E022 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de syndrome inflammatoire biologique (GB 4 600)\nUn BK crachat est effectué qui retrouve des Cocci Gram + en chaînette, mais pas de BAAR au direct.'
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E031 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\npas de douleur thoracique\npas de signe de choc\npouls périphériques perçus\npas de signe de phlébite, pas d’œdème\nà l’auscultation : BdC réguliers, pas de souffle perçu'
+
+img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E041 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de masse palpable.'
+
+img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E024 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de souffle perçu.'
+
+img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E021 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de déficit sensitif.'
+
+img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E030 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de masse palpée.'
+
+img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E046 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nAbdomen souple, dépressible, indolore\nPas d’hépato(spléno)mégalie\nPas de masse palpée.'
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E033 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\nBruits du coeur réguliers, un peu bradycarde, pas de souffle perçu.'
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de masse palpée.'
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Pas d'hépatosplénomégalie."
+
+img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E037 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Il n’y a pas de défaillance cardio-respiratoire.'
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E047 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nAbdomen souple, sensibilité diffuse de l’abdomen, pas de masse palpable, fosses lombaires libres.'
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E041 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '--- PAGE 6 ---\nretrouve pas de thrombose porte.'
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E018 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Sur la plan infectieux le bilan a rapporté une hémoculture positive (flacon anaérobie prélevé sur veine périphérique à la clinique de l’amandier) à entérocoque faecalis, la coproculture ne retrouve pas de pathogène spécifique ainsi qu’un Ag clostridium négatif (culture en cours pour le clostridium et le campylobacter).'
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E040 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Radiographie pulmonaire sans particularité avec absence de foyer infectieux.'
+
+img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E069 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nAbdomen souple dépressible, pas de masse palpable, pas d’hépatosplénomégalie, pas de globe\nvésical, Légère matité déclive prédominant à droite.'
+
+img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E039 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Échographie\nAbdominale : lame d’ascite ed moyen en abondance\nETT patiente trop peu échogène mais pas de dysfonction VG évidente'
+
+img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E026 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de cyanose.'
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E044 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de trouble de la déglutition, pas de fausse route.'
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E041 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Le contrôle echo doppler ne retrouve pas de thrombose.'
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\negation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\negation_safe_corrected\negation_correction_report.json
+
+Les fichiers sources n'ont pas Ã©tÃ© modifiÃ©s.
+================================================================================================================
+TRACE / SGCE - NEGATION POST-VALIDATION - FINAL SAFE REPAIR
+================================================================================================================
+Documents vÃ©rifiÃ©s                  : 43
+OpÃ©rations attendues                : 48
+OpÃ©rations FAIL                     : 0
+Changements cliniques inattendus    : 0
+
+Docs manquants APRES                : 0
+Docs supplÃ©mentaires APRES          : 0
+
+STATUT FINAL NEGATION REPAIR        : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\post_validation\negation_post_validation_report.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e par ce post-validateur.
+================================================================================================================
+TRACE - NEGATION VALIDATION - ETAGE 7 V2 SEMANTIC GUARD
+================================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7
+
+>>> negation_candidate_builder.py
+
+>>> negation_scope_classifier.py
+
+>>> negation_validator.py
+
+>>> negation_safe_corrector.py
+
+>>> negation_post_validator.py
+
+NEGATION ETAGE 7 V2 : PASS

@@ -1,0 +1,1385 @@
+{
+  "pattern": "A6",
+  "name": "DONNEE_PATIENT + SYMPTOME",
+  "relation": "presente_symptome",
+  "methodological_status": "DETECTION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA5\\pattern_a5_corrected",
+  "summary": {
+    "json_files_found": 44,
+    "clinical_documents_scanned": 43,
+    "nonclinical_json_skipped": 1,
+    "patient_entities_scanned": 355,
+    "existing_symptom_entities": 988,
+    "a6_candidates": 13,
+    "weak": 13,
+    "medium": 0,
+    "strong": 0,
+    "errors": 0
+  },
+  "signal_family_counts": {},
+  "candidates": [
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P6_E037",
+        "type": "DONNEE_PATIENT",
+        "page": 6,
+        "text": "le patient | patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P6_E026",
+          "page": 6,
+          "text": "Patient toujours somnolent | somnolence",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E012",
+          "page": 6,
+          "text": "Présence initialement d'une oligurie | oligurie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E027",
+          "page": 6,
+          "text": "et encombré | encombrement",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E028",
+          "page": 6,
+          "text": "persistance des troubles de la vigilance | trouble_de_la_vigilance",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E032",
+          "page": 6,
+          "text": "bradycardie sinusale | bradycardie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E033",
+          "page": 6,
+          "text": "Anémie à 6.9 g/dl | anemie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E034",
+          "page": 6,
+          "text": "escarres talonnières | escarres",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E035",
+          "page": 6,
+          "text": "encombrement",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E044",
+          "page": 6,
+          "text": "trouble de la déglutition | trouble_de_la_déglutition",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        }
+      ],
+      "same_page_symptom_target_count": 9,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P5_E037",
+        "type": "DONNEE_PATIENT",
+        "page": 5,
+        "text": "Le patient | patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P5_E027",
+          "page": 5,
+          "text": "Patient initialement très agité | agitation",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E007",
+          "page": 5,
+          "text": "suspicion de récidive sur installation d'une anémie hémolytique | anemie_hemolytique",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E028",
+          "page": 5,
+          "text": "et confus | confusion",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E032",
+          "page": 5,
+          "text": "agitation au réveil | agitation",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E033",
+          "page": 5,
+          "text": "état confusionnel | confusion",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        }
+      ],
+      "same_page_symptom_target_count": 5,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P3_E050",
+        "type": "DONNEE_PATIENT",
+        "page": 3,
+        "text": "patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P3_E017",
+          "page": 3,
+          "text": "patient avec rétention d'urine, non sondé | retention_urine",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E027",
+          "page": 3,
+          "text": "patient eupnéique en air ambiant",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E034",
+          "page": 3,
+          "text": "patient conscient",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E008",
+          "page": 3,
+          "text": "légèrement confus | confusion",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E010",
+          "page": 3,
+          "text": "astérixis",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E011",
+          "page": 3,
+          "text": "angiomes stellaires au niveau du torse | hepatique",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E012",
+          "page": 3,
+          "text": "hippocratisme digital | ictere",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E015",
+          "page": 3,
+          "text": "abdomen distendu avec ascite, souple dépressible, sensible dans son ensemble | douleur_abdominale",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E016",
+          "page": 3,
+          "text": "constipation : nécessité d'aide à la défécation | constipation",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E021",
+          "page": 3,
+          "text": "extrémités chaudes",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P3_E024",
+          "page": 3,
+          "text": "pouls périphériques perçus",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E025",
+          "page": 3,
+          "text": "bruits du coeur réguliers",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E031",
+          "page": 3,
+          "text": "crépitations sous cutané en sous-claviculaire gauche",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E032",
+          "page": 3,
+          "text": "MV aboli en base gauche",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E036",
+          "page": 3,
+          "text": "pupilles normoréactives",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E037",
+          "page": 3,
+          "text": "ROT perçus, vifs",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E038",
+          "page": 3,
+          "text": "déficit musculaire totale du pied gauche",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E039",
+          "page": 3,
+          "text": "marche avec une canne",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E041",
+          "page": 3,
+          "text": "pied gauche en varus",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E042",
+          "page": 3,
+          "text": "mauvais état bucco-dentaire",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E052",
+          "page": 3,
+          "text": "souffle perçu | souffle_perçu",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P3_E053",
+          "page": 3,
+          "text": "cyanose",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_symptom_target_count": 22,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P3_E037",
+        "type": "DONNEE_PATIENT",
+        "page": 3,
+        "text": "patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P3_E016",
+          "page": 3,
+          "text": "patient agité, confus, désorienté dans le temps et dans l'espace | confusion",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E032",
+          "page": 3,
+          "text": "patient dénutri | dénutrition",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E009",
+          "page": 3,
+          "text": "frissons aux membres supérieurs | fievre",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E010",
+          "page": 3,
+          "text": "extrémités de membres inférieurs fraîches | extremites_froides",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E011",
+          "page": 3,
+          "text": "DRA avec signes de lutte (tirage, polypnée) | polypnee",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E012",
+          "page": 3,
+          "text": "tirage",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E013",
+          "page": 3,
+          "text": "polypnée | polypnee",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E017",
+          "page": 3,
+          "text": "désorienté dans le temps et dans l'espace | desorientation",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E030",
+          "page": 3,
+          "text": "hypotondu 9/6 | hypotension",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P3_E031",
+          "page": 3,
+          "text": "tachycarde | tachycardie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        }
+      ],
+      "same_page_symptom_target_count": 10,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P5_E042",
+        "type": "DONNEE_PATIENT",
+        "page": 5,
+        "text": "patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P5_E038",
+          "page": 5,
+          "text": "perte de contact avec patient vigile | perte de contact",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E030",
+          "page": 5,
+          "text": "épisode de méléna | méléna",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E035",
+          "page": 5,
+          "text": "tachyarythmie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E036",
+          "page": 5,
+          "text": "collapsus des cavités gauches | collapsus",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E037",
+          "page": 5,
+          "text": "désaturation brutale | désaturation",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E039",
+          "page": 5,
+          "text": "ulcère gastrique",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_symptom_target_count": 6,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P6_E028",
+        "type": "DONNEE_PATIENT",
+        "page": 6,
+        "text": "le patient | patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P6_E019",
+          "page": 6,
+          "text": "Patient à nouveau fébrile depuis le 23/02/13 | fievre",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E024",
+          "page": 6,
+          "text": "Patient à nouveau fébrile | fievre",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E007",
+          "page": 6,
+          "text": "fièvre persistante | fievre",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E010",
+          "page": 6,
+          "text": "vésicule biliaire distendue",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P6_E023",
+          "page": 6,
+          "text": "Abdomen restant douloureux | douleur",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        }
+      ],
+      "same_page_symptom_target_count": 5,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P2_E060",
+        "type": "DONNEE_PATIENT",
+        "page": 2,
+        "text": "patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P2_E016",
+          "page": 2,
+          "text": "patient marbré | marbrures",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E019",
+          "page": 2,
+          "text": "oedème remontant à la racine de la cuisse | oedemes",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E020",
+          "page": 2,
+          "text": "crépitations sous cutanées | crepitants",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E037",
+          "page": 2,
+          "text": "initialement anurie | renal",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E044",
+          "page": 2,
+          "text": "persistance de l'anurie | renal",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E065",
+          "page": 2,
+          "text": "anurie | renal",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_symptom_target_count": 6,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P5_E032",
+        "type": "DONNEE_PATIENT",
+        "page": 5,
+        "text": "patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P5_E031",
+          "page": 5,
+          "text": "Patient hypothermique",
+          "containment": true,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E014",
+          "page": 5,
+          "text": "Encombrement bronchique | encombrement",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E015",
+          "page": 5,
+          "text": "2 épisodes de perte de connaissance | perte_poids",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E016",
+          "page": 5,
+          "text": "arrêt respiratoire | arrêt_respiratoire",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E017",
+          "page": 5,
+          "text": "hypothermie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E028",
+          "page": 5,
+          "text": "Sécrétions trachéales sales",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E029",
+          "page": 5,
+          "text": "Râles et ronchis bilatéraux diffus",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P5_E030",
+          "page": 5,
+          "text": "Murmure vésiculaire diminué à droite",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        }
+      ],
+      "same_page_symptom_target_count": 8,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P2_E045",
+        "type": "DONNEE_PATIENT",
+        "page": 2,
+        "text": "Patient | patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P2_E032",
+          "page": 2,
+          "text": "Patient cyanosé | cyanose",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E003",
+          "page": 2,
+          "text": "dyspnée | dyspnee",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E009",
+          "page": 2,
+          "text": "dégradation respiratoire rapide | dyspnee",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E010",
+          "page": 2,
+          "text": "insuffisance respiratoire aiguë | insuffisance_respiratoire_aigue",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E018",
+          "page": 2,
+          "text": "cyanose",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E019",
+          "page": 2,
+          "text": "sibilants",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E033",
+          "page": 2,
+          "text": "Signes de lutte : tirage sous costal sus claviculaire et sus sternal | tirage",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E034",
+          "page": 2,
+          "text": "sibilants diffus | sibilants",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E035",
+          "page": 2,
+          "text": "Frein expiratoire | frein_expiratoire",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E042",
+          "page": 2,
+          "text": "syndrome grippal",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E049",
+          "page": 2,
+          "text": "extrémités chaudes | extrémités_chaudes",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_symptom_target_count": 11,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P2_E055",
+        "type": "DONNEE_PATIENT",
+        "page": 2,
+        "text": "Patient | patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P2_E018",
+          "page": 2,
+          "text": "Patient très dyspnéique | dyspnee",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E001",
+          "page": 2,
+          "text": "toux",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E002",
+          "page": 2,
+          "text": "encombrement bronchique | encombrement",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E008",
+          "page": 2,
+          "text": "expectorations purulentes | expectorations_purulentes",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E009",
+          "page": 2,
+          "text": "tirage sus-claviculaire | tirage",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E010",
+          "page": 2,
+          "text": "cyanose des extrémités supérieures | cyanose",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E011",
+          "page": 2,
+          "text": "ronchis dans l'hémichamp droit | ronchis",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E019",
+          "page": 2,
+          "text": "désaturation | desaturation",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E020",
+          "page": 2,
+          "text": "encombrement au niveau glottique | encombrement",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E021",
+          "page": 2,
+          "text": "Marbrures au MI | marbrures",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E040",
+          "page": 2,
+          "text": "Marbrure au niveau des cuisses | marbrures",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E042",
+          "page": 2,
+          "text": "Ronchis diffus bilatéraux | ronchis",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E043",
+          "page": 2,
+          "text": "Crépitants intermittents en base gauche | crepitants",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E044",
+          "page": 2,
+          "text": "déficit moteur du MIG | diminution_force_musculaire",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E045",
+          "page": 2,
+          "text": "diminution de la force musculaire prédominant à gauche | diminution_force_musculaire",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E046",
+          "page": 2,
+          "text": "ROT rotuliens et bicipitaux abolis | reflexes_osteotendineux",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E047",
+          "page": 2,
+          "text": "RCP en flexion | signe_meninge",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E048",
+          "page": 2,
+          "text": "nombreuses erreurs au pic-touche | sensibilite",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E068",
+          "page": 2,
+          "text": "Toux inefficace | symptome",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E069",
+          "page": 2,
+          "text": "Toux inefficace | symptome",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_symptom_target_count": 20,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P2_E045",
+        "type": "DONNEE_PATIENT",
+        "page": 2,
+        "text": "Patient | patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P2_E043",
+          "page": 2,
+          "text": "Patient cachectique ++ | cachexie",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E039",
+          "page": 2,
+          "text": "anurique à l'entrée | anurie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E040",
+          "page": 2,
+          "text": "Murmure vésiculaire nettement diminué dans le champ pulmonaire droit | murmure_vesiculaire_diminue",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E041",
+          "page": 2,
+          "text": "abolition du réflexe cornéen | abolition_reflexe_corneen",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E042",
+          "page": 2,
+          "text": "myosis bilatéral et symétrique | myosis",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E048",
+          "page": 2,
+          "text": "désaturation",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E049",
+          "page": 2,
+          "text": "toux",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        }
+      ],
+      "same_page_symptom_target_count": 7,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P2_E019",
+        "type": "DONNEE_PATIENT",
+        "page": 2,
+        "text": "Poids (kg) : 36 | 36 | poids_kg"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P2_E014",
+          "page": 2,
+          "text": "Perte de 7 kg en 3 semaine (43kg contre 37 ce jour) | 7 | perte_poids",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E007",
+          "page": 2,
+          "text": "dysphonie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E008",
+          "page": 2,
+          "text": "2 épisodes de dyspnée ces derniers jours | dyspnee",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E009",
+          "page": 2,
+          "text": "trouble de la déglutition aux solides et liquides | trouble_deglutition",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E010",
+          "page": 2,
+          "text": "chute de la mandibule | chute_mandibule",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E011",
+          "page": 2,
+          "text": "Polypnée à 32/min | polypnee",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E012",
+          "page": 2,
+          "text": "Discret tirage sus sternal | tirage",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E013",
+          "page": 2,
+          "text": "2 fausses routes cette semaine | 2 | fausse_route",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E017",
+          "page": 2,
+          "text": "Notion d'épigastralgies durant la semaine | epigastralgie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E018",
+          "page": 2,
+          "text": "Dysphonie majeure | dysphonie",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P2_E023",
+          "page": 2,
+          "text": "troubles de la déglutition | troubles_de_la_déglutition",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E025",
+          "page": 2,
+          "text": "indolore",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P2_E026",
+          "page": 2,
+          "text": "cyanose",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_symptom_target_count": 13,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A6",
+      "subcase": "DONNEE_PATIENT_SYMPTOME",
+      "source_entity": {
+        "entity_id": "P1_E019",
+        "type": "DONNEE_PATIENT",
+        "page": 1,
+        "text": "Patient | patient"
+      },
+      "detected_symptom_families": [],
+      "detected_symptom_signals": {},
+      "same_page_symptom_targets": [
+        {
+          "entity_id": "P1_E011",
+          "page": 1,
+          "text": "Patient sédaté avec réactions adaptées à la douleur | douleur",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P1_E012",
+          "page": 1,
+          "text": "abdomen très sensible | douleur_abdominale",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        },
+        {
+          "entity_id": "P1_E013",
+          "page": 1,
+          "text": "présence de crépitants | crepitants",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": true
+        }
+      ],
+      "same_page_symptom_target_count": 3,
+      "strength": "WEAK",
+      "status": "A6_CANDIDATE"
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a5_correction_report.json"
+  ],
+  "errors": []
+}

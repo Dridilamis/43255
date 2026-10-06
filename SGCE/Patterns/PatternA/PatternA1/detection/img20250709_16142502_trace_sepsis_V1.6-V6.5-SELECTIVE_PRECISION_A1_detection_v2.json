@@ -1,0 +1,76 @@
+{
+  "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 36,
+  "number_candidates": 3,
+  "signal_counts": {
+    "WEAK": 3
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E004",
+        "type": "TRAITEMENT",
+        "name": "Véinofer IV",
+        "preuve": "Véinofer IV",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Véinofer IV | supplementation_electrolytique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E012",
+        "type": "TRAITEMENT",
+        "name": "métronidazole",
+        "preuve": "métronidazole IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "métronidazole IV | métronidazole | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E024",
+        "type": "TRAITEMENT",
+        "name": "Primperanlasilix",
+        "preuve": "Primperanlasilix à 40 mg",
+        "valeur": 40,
+        "page": 2
+      },
+      "detection_text": "Primperanlasilix à 40 mg | Primperanlasilix | 40 | autre",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

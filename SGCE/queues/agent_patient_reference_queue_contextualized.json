@@ -1,0 +1,439 @@
+[
+  {
+    "task_id": "agent_patient_reference::C_000093",
+    "candidate_id": "C_000093",
+    "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_patient_reference",
+    "routing_reason": "Contrôle contextuel secondaire : déterminer si le contenu concerne réellement le patient ou représente une information générique/de référence.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternC\\pattern_c_validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "KEEP_AS_PATIENT",
+      "EXCLUDE_AS_REFERENCE",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "MEDIUM",
+      "reified_entity": {
+        "id": "P4_E027",
+        "type": "LABEL_NOSOLOGIQUE",
+        "text": "Pas d'infection virale ou de vaccination récente | suspicion_infection",
+        "page": 4
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "presente_suspicion_infection",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "FOYER_INFECTIEUX",
+          "relation_group": "RELATIONS_DIAGNOSTIQUES",
+          "relation_description": "Condition sine qua non du diagnostic du sepsis.",
+          "similarity_score": 0.6833,
+          "matched_tokens": [
+            "infection",
+            "suspicion"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E014",
+              "type": "DONNEE_PATIENT",
+              "text": "69 ans | 69 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E015",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            },
+            {
+              "id": "P2_E031",
+              "type": "DONNEE_PATIENT",
+              "text": "Poids (kg) : 80 | 80 | poids_kg",
+              "page": 2
+            },
+            {
+              "id": "P2_E032",
+              "type": "DONNEE_PATIENT",
+              "text": "Taille (m) : 1.72 | 1.72 | taille_m",
+              "page": 2
+            },
+            {
+              "id": "P2_E033",
+              "type": "DONNEE_PATIENT",
+              "text": "BMI : 27 | 27 | bmi",
+              "page": 2
+            },
+            {
+              "id": "P2_E034",
+              "type": "DONNEE_PATIENT",
+              "text": "Le patient | patient",
+              "page": 2
+            },
+            {
+              "id": "P3_E029",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 3
+            },
+            {
+              "id": "P5_E044",
+              "type": "DONNEE_PATIENT",
+              "text": "le patient | patient",
+              "page": 5
+            },
+            {
+              "id": "P6_E037",
+              "type": "DONNEE_PATIENT",
+              "text": "69 ans | 69 | age",
+              "page": 6
+            },
+            {
+              "id": "P6_E038",
+              "type": "DONNEE_PATIENT",
+              "text": "Le patient | patient",
+              "page": 6
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P5_E018",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumopathie à Staphylocoque doré et Serratia Marcesens | pneumopathie_infectieuse",
+              "page": 5
+            },
+            {
+              "id": "P5_E023",
+              "type": "FOYER_INFECTIEUX",
+              "text": "PAVM | pneumopathie_infectieuse",
+              "page": 5
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 0.6833,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=10, image=2)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "secondary_route": true,
+    "parent_agent": "agent_pattern_c",
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16190789_brut.txt",
+      "page_number": 4,
+      "page_text": "HbO2 94.7 94.0-98.0 %\n\nSodium 137 136-145 mmol/L\nPotassium 4.1 3.7-4.7 mmol/L\nChlorure 104 95-105 mmol/L\nCO2 total 25 25-29 mmol/L\nProtéines 71 69-82 g/L\nCréatinine 61 71-115 µmol/L\nUrée 4.4 2.5-6.4 mmol/L\nGlucose 7.9 3.8-6.1 mmol/L\nLactate plasmatique 0.8 0.4-2.0 mmol/L\nCalcium 2.24 2.12-2.52 mmol/L\nPhosphates 1.13 0.80-1.45 mmol/L\nMagnésium 0.92 0.70-1.00 mmol/L\n\nAmylase 30 25-115 U/L\nLipase 88 73-393 U/L\nBilirubine totale 7 3-20 µmol/L\nBilirubine conjuguée 2 <5 µmol/L\nASAT 21 15-37 U/L\nALAT 44 12-78 U/L\nGamma GT 126 15-85 U/L\nPhosphatases alcalines 67 46-116 U/L\nLDH 164 85-227 U/L\nCréatine kinase 34 39-308 U/L\n\nECG\nRythme sinusal et régulier\nFréquence cardiaque à 82 bpm\nPas de déviation axiale\nPas de trouble de la conduction\nPas de trouble de la repolarisation\n\nRadiographie pulmonaire\nPas de foyer parenchymateux\nCuls de sac pleuraux libres\nPas de cardiomégalie\n\nCONCLUSION INITIALE\n\nPolyradiculonévrite aiguë dans un contexte post opératoire d’un adénocarcinome lieberkhunien.\nPas d’infection virale ou de vaccination récente.\n\nEVOLUTION\n\nEn réanimation :\nSur le plan étiologique, il s’agit d’un syndrome de Guillain Barré en post opératoire d’un adénocarcinome Liberkhunien. Les sérologies VIH et VHC reviennent négatives, les sérologies VHA, VHB, CMV et EBV sont en faveur d’une infection ancienne. Les sérologies mycoplasme pneumoniae et Campylobacter Jejuni sont douteuses. Les anticorps anti gangliosides et l’immunophénotypage HLAB 27 et les porphyries urinaires sont en cours.\nUn EMG réalisé le 15.12.2014 retrouve une atteinte sensitivomotrice démyélinisante sans atteinte axonale. Un traitement par immunoglobulines intraveineuses est débuté le 07/12/2014 pour une durée totale de 7 jours.",
+      "text_grounded_available": true,
+      "used_global_text_fallback": false
+    }
+  },
+  {
+    "task_id": "agent_patient_reference::C_000218",
+    "candidate_id": "C_000218",
+    "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_patient_reference",
+    "routing_reason": "Contrôle contextuel secondaire : déterminer si le contenu concerne réellement le patient ou représente une information générique/de référence.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternC\\pattern_c_validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "KEEP_AS_PATIENT",
+      "EXCLUDE_AS_REFERENCE",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "MEDIUM",
+      "reified_entity": {
+        "id": "P1_E001",
+        "type": "LABEL_NOSOLOGIQUE",
+        "text": "Syndrome hémolytique et urémique | suspicion_infection",
+        "page": 1
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "presente_suspicion_infection",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "FOYER_INFECTIEUX",
+          "relation_group": "RELATIONS_DIAGNOSTIQUES",
+          "relation_description": "Condition sine qua non du diagnostic du sepsis.",
+          "similarity_score": 0.6833,
+          "matched_tokens": [
+            "infection",
+            "suspicion"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E029",
+              "type": "DONNEE_PATIENT",
+              "text": "62 ans | 62 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E030",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P6_E002",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumopathie précoce acquise sous ventilation",
+              "page": 6
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 0.6833,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=2, image=1)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "secondary_route": true,
+    "parent_agent": "agent_pattern_c",
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16233563_brut.txt",
+      "page_number": 1,
+      "page_text": "CRH réanimation de siger claude\n\nPatient : MAD [?] MOH [?]\n\nMotif de l’hospitalisation\n\nSyndrome hémolytique et urémique chez un patient de 62 ans\n\nAntécédents\n\nMédicaux\n- Reflux gastro-oesophagien\n- Douleurs abdominales chroniques\n\nChirurgicaux\n- Cure de hernie inguinale (côté ?): cicatrice de coelioscopie et cicatrice de petite laparotomie au niveau du flanc droit\n- Cicatrice coude gauche: fracture ostéosynthésée?\n\nFamiliaux\nNon connus\n\nAllergies\nAucune\n\nMode de vie\n- Profession: chauffeur /éboueur et homme de ménage\n- Marié, 4 enfants\n\nTraitements habituels\nMédicaments :\n- Topalgic\n- Kestinlyo\n- Trimébutine\n- Levocitirizine\n- Omeprazole\n- Diclofenac\n- Doliprane\n\nHISTOIRE DE LA MALADIE\n\nLe patient consulte au Service d’accueil des urgences de l’hôpital Mignot (Versailles) le 20/07/12 au soir pour des vomissements évoluant depuis le matin, et l’apparition d’une confusion dans l’après-midi.\n\nL’examen retrouve un patient désorienté, confus, en position en chien de fusil, sans déficit objectif avec un doute sur une raideur de nuque. L’hémodynamique est stable avec à l’entrée: PA 139/78, FC 70, apyrétique T° 37°, HGT 1.33g/L, l’examen pulmonaire est normal (SpO2 97%), l’examen abdominal retrouve un abdomen souple et des urines foncées, ainsi qu’un ictère. Le bilan",
+      "text_grounded_available": true,
+      "used_global_text_fallback": false
+    }
+  },
+  {
+    "task_id": "agent_patient_reference::C_000247",
+    "candidate_id": "C_000247",
+    "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_patient_reference",
+    "routing_reason": "Contrôle contextuel secondaire : déterminer si le contenu concerne réellement le patient ou représente une information générique/de référence.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternC\\pattern_c_validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "KEEP_AS_PATIENT",
+      "EXCLUDE_AS_REFERENCE",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "STRONG",
+      "reified_entity": {
+        "id": "P4_E025",
+        "type": "SYMPTOME",
+        "text": "Evolution favorable avec apyrexie | apyrexie",
+        "page": 4
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "patient_a_pour_evolution",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "EVOLUTION_PRONOSTIC",
+          "relation_group": "RELATIONS_TEMPORELLES_ET_PRONOSTIC",
+          "relation_description": "",
+          "similarity_score": 1.0,
+          "matched_tokens": [
+            "evolution"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E030",
+              "type": "DONNEE_PATIENT",
+              "text": "51 ans | 51 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E031",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            },
+            {
+              "id": "P2_E050",
+              "type": "DONNEE_PATIENT",
+              "text": "patiente | patient",
+              "page": 2
+            },
+            {
+              "id": "P5_E032",
+              "type": "DONNEE_PATIENT",
+              "text": "51 ans | 51 | age",
+              "page": 5
+            },
+            {
+              "id": "P5_E033",
+              "type": "DONNEE_PATIENT",
+              "text": "La patiente | patient",
+              "page": 5
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P4_E026",
+              "type": "EVOLUTION_PRONOSTIC",
+              "text": "Evolution favorable | evolution_favorable",
+              "page": 4
+            },
+            {
+              "id": "P4_E038",
+              "type": "EVOLUTION_PRONOSTIC",
+              "text": "régression du syndrome inflammatoire biologique | evolution_clinique",
+              "page": 4
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 1.0,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=5, image=2)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "secondary_route": true,
+    "parent_agent": "agent_pattern_c",
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16254831_brut.txt",
+      "page_number": 4,
+      "page_text": "Phosphatases alcalines 109\nGammaGT 24\nAlbumine 30\nPré-albumine 0,27\nCRP 19,3\nPctT 21,7\n\nCortisol T0 1765\n\nECG\nRythme sinusal, régulier, FC = 138 => tachycardie sinusale\nAxe normal\nPR normal, QRS fins\nTrouble de la repolarisation : V3 à V5 (ondes T négatives)\nPas de signe ischémique ou hypertrophique\n\nRadiographie pulmonaire\nPas de foyer radiologique\nHémiparésie diaphragmatique droite\n\nEVOLUTION\n\nEN REANIMATION :\n\nAu niveau infectieux :\nLe bilan retrouve des hémocultures et un ECBU positifs à KLEBSIELLE PNEUMONIAE et PROTEUS VULGARIS, sensibles à l’AUGMENTIN\nIntroduction initiale d’une antibiothérapie probabiliste par CEFTRIAXONE et AMIKLIN puis relais par AUGMENTIN le 08/08 après résultat de l’antibiogramme.\n\nEvolution favorable avec apyrexie et régression du syndrome inflammatoire biologique.\n\nAu niveau hémodynamique :\nIntroduction d’un traitement vasopresseur par NORADRENALINE du 06/08 au 07/08 permettant la restauration d’une bonne hémodynamique.\n\nAu niveau rénal et urologique :\nA l’arrivée, on note une rétention urinaire aiguë sur une sonde vésicale bouchée, probablement à l’origine du tableau septique.\nLe sonde est changée et la reprise mictionnelle est correcte.\n\nAssociation d’une insuffisance rénale aiguë (créatinine = 150 µmol/l) d’allure organique, rapidement corrigée après introduction des antibiotiques et correction des troubles hémodynamiques.\n\nAu niveau neurologique :\nPrésence initialement de troubles de conscience dans un contexte de bas débit, corrigé après restauration d’une hémodynamique correcte.\nRetour à l’état antérieur (ralentissement psychomoteur, désorientation spatio-temporelle).\n\nAu niveau respiratoire :\nPas de défaillance respiratoire.\n\nEN POST-REANIMATION :",
+      "text_grounded_available": true,
+      "used_global_text_fallback": false
+    }
+  },
+  {
+    "task_id": "agent_patient_reference::C_000686",
+    "candidate_id": "C_000686",
+    "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_patient_reference",
+    "routing_reason": "Contrôle contextuel secondaire : déterminer si le contenu concerne réellement le patient ou représente une information générique/de référence.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternC\\pattern_c_validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "KEEP_AS_PATIENT",
+      "EXCLUDE_AS_REFERENCE",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "MEDIUM",
+      "reified_entity": {
+        "id": "P1_E016",
+        "type": "LABEL_NOSOLOGIQUE",
+        "text": "suspicion de tuberculose pulmonaire | suspicion_infection",
+        "page": 1
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "presente_suspicion_infection",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "FOYER_INFECTIEUX",
+          "relation_group": "RELATIONS_DIAGNOSTIQUES",
+          "relation_description": "Condition sine qua non du diagnostic du sepsis.",
+          "similarity_score": 0.6833,
+          "matched_tokens": [
+            "infection",
+            "suspicion"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E023",
+              "type": "DONNEE_PATIENT",
+              "text": "67 ans | 67 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E024",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P3_E020",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumonie à Pneumocoque",
+              "page": 3
+            },
+            {
+              "id": "P3_E047",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumopathie",
+              "page": 3
+            },
+            {
+              "id": "P4_E006",
+              "type": "FOYER_INFECTIEUX",
+              "text": "point de départ pulmonaire à pneumocoque | pneumopathie_infectieuse",
+              "page": 4
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 0.6833,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=2, image=3)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true,
+    "secondary_route": true,
+    "parent_agent": "agent_pattern_c",
+    "text_context": {
+      "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16545673_brut.txt",
+      "page_number": 1,
+      "page_text": "CRH réanimation de Bover Marc\n\nPatient : HAMID TAH\n\nMotif de l’hospitalisation\n\nDétresse respiratoire aiguë chez un patient de 67 ans initialement hospitalisé à Widal 2 pour suspicion de tuberculose.\n\nAntécédents\n\nMédicaux\nTuberculose pulmonaire en 1985 (hospitalisé à Saint Germain en Laye)\nUlcère gastrique\nDépression\nNotion d’HTA\n\nChirurgicaux\nCicatrice abdominale -> chirurgie digestive sur ulcère gastrique?\n\nFamiliaux\naucun connu\n\nAllergies\naucun connu\n\nMode de vie\nEboueur à la retraite\nVit en appartement, seul, sans aide\nOrigine algérienne, en France depuis l’âge de 14 ans, femme et enfant en Algérie (Parle mal français)\nTabac non sevré : 10/12 cigarettes/jour\n\nTraitements habituels\nAucun\n\nHISTOIRE DE LA MALADIE\n\n-> Le 05/10/13 Patient consulte aux urgences d’Antoine Béclère pour une altération de l’état général avec toux grasse évoluant depuis 6 mois, notion de fièvre fluctuante et de sueurs, pas de notion de contage, pas de voyage récent.\nApyrétique, SatO2 à 89% en AA. Scanner thoracique : pas d’EP, mais condensation alvéolaire lobaire inférieure droite, micromodules d’allure bronchogène lobaires inférieures gauches et foyers de condensation plus circonscrits lobaires supérieurs bilatéraux. -> suspicion de tuberculose pulmonaire.\nLe patient est hospitalisé à Garches, en maladie infectieuse : mis en isolement respiratoire, oxygénothérapie (lunette nasale : initialement à 2 litres, puis passage à 4 litres devant la Sat O2 à 83%), réalisation de BK crachats, Antigénuries Pneumocoque et Légionelle.\n\n-> Le 07/10/13 : Episode de désaturation à 60% sous 4L d’O2 aux lunettes, avec détresse respiratoire.",
+      "text_grounded_available": true,
+      "used_global_text_fallback": false
+    }
+  }
+]

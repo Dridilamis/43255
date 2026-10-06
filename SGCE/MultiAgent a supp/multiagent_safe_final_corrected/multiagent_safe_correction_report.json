@@ -1,0 +1,59 @@
+{
+  "corrector": "multiagent_safe_retype_corrector",
+  "source_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_d_corrected",
+  "output_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\multiagent_safe_final_corrected",
+  "impact_validation_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\outputs\\multiagent_retype_impact_validation.json",
+  "summary": {
+    "documents_copied": 43,
+    "safe_actions_received": 3,
+    "operations_applied": 3,
+    "operations_skipped": 0,
+    "documents_modified": 2,
+    "errors": 0
+  },
+  "modified_documents": [
+    "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E029",
+      "old_type": "SYMPTOME",
+      "expected_old_type": "SYMPTOME",
+      "new_type": "DONNEE_PATIENT",
+      "candidate_ids": [
+        "D_000002"
+      ],
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_ACCEPT"
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E050",
+      "old_type": "SYMPTOME",
+      "expected_old_type": "SYMPTOME",
+      "new_type": "DONNEE_PATIENT",
+      "candidate_ids": [
+        "D_000004"
+      ],
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_ACCEPT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E016",
+      "old_type": "FOYER_INFECTIEUX",
+      "expected_old_type": "FOYER_INFECTIEUX",
+      "new_type": "MICRO_ORGANISME",
+      "candidate_ids": [
+        "D_000099"
+      ],
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_ACCEPT"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 40,
+  "number_candidates": 2,
+  "signal_counts": {
+    "WEAK": 2
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E012",
+        "type": "TRAITEMENT",
+        "name": "rivotril",
+        "preuve": "Administration d'1 mg de rivotril",
+        "valeur": 1,
+        "page": 2
+      },
+      "detection_text": "Administration d'1 mg de rivotril | rivotril | 1 | autre",
+      "detected_components": {
+        "dose": [
+          "1 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E013",
+        "type": "TRAITEMENT",
+        "name": "dilantin",
+        "preuve": "1600 mg de dilantin",
+        "valeur": 1600,
+        "page": 2
+      },
+      "detection_text": "1600 mg de dilantin | dilantin | 1600 | autre",
+      "detected_components": {
+        "dose": [
+          "1600 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

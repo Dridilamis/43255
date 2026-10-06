@@ -1,0 +1,477 @@
+[
+  {
+    "task_id": "agent_pattern_c::C_000093",
+    "candidate_id": "C_000093",
+    "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_pattern_c",
+    "routing_reason": "Structure relationnelle/réifiée détectée, mais la décision MERGE / KEEP / REVIEW dépend du contexte.",
+    "source_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternC\\validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "MERGE",
+      "KEEP",
+      "REVIEW",
+      "REMOVE_RELATION"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "MEDIUM",
+      "reified_entity": {
+        "id": "P4_E027",
+        "type": "LABEL_NOSOLOGIQUE",
+        "text": "Pas d'infection virale ou de vaccination récente | suspicion_infection",
+        "page": 4
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "presente_suspicion_infection",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "FOYER_INFECTIEUX",
+          "relation_group": "RELATIONS_DIAGNOSTIQUES",
+          "relation_description": "Condition sine qua non du diagnostic du sepsis.",
+          "similarity_score": 0.6833,
+          "matched_tokens": [
+            "infection",
+            "suspicion"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E014",
+              "type": "DONNEE_PATIENT",
+              "text": "69 ans | 69 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E015",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            },
+            {
+              "id": "P2_E031",
+              "type": "DONNEE_PATIENT",
+              "text": "Poids (kg) : 80 | 80 | poids_kg",
+              "page": 2
+            },
+            {
+              "id": "P2_E032",
+              "type": "DONNEE_PATIENT",
+              "text": "Taille (m) : 1.72 | 1.72 | taille_m",
+              "page": 2
+            },
+            {
+              "id": "P2_E033",
+              "type": "DONNEE_PATIENT",
+              "text": "BMI : 27 | 27 | bmi",
+              "page": 2
+            },
+            {
+              "id": "P2_E034",
+              "type": "DONNEE_PATIENT",
+              "text": "Le patient | patient",
+              "page": 2
+            },
+            {
+              "id": "P3_E029",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 3
+            },
+            {
+              "id": "P5_E044",
+              "type": "DONNEE_PATIENT",
+              "text": "le patient | patient",
+              "page": 5
+            },
+            {
+              "id": "P6_E037",
+              "type": "DONNEE_PATIENT",
+              "text": "69 ans | 69 | age",
+              "page": 6
+            },
+            {
+              "id": "P6_E038",
+              "type": "DONNEE_PATIENT",
+              "text": "Le patient | patient",
+              "page": 6
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P5_E018",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumopathie à Staphylocoque doré et Serratia Marcesens | pneumopathie_infectieuse",
+              "page": 5
+            },
+            {
+              "id": "P5_E023",
+              "type": "FOYER_INFECTIEUX",
+              "text": "PAVM | pneumopathie_infectieuse",
+              "page": 5
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 0.6833,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=10, image=2)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_c::C_000218",
+    "candidate_id": "C_000218",
+    "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_pattern_c",
+    "routing_reason": "Structure relationnelle/réifiée détectée, mais la décision MERGE / KEEP / REVIEW dépend du contexte.",
+    "source_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternC\\validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "MERGE",
+      "KEEP",
+      "REVIEW",
+      "REMOVE_RELATION"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "MEDIUM",
+      "reified_entity": {
+        "id": "P1_E001",
+        "type": "LABEL_NOSOLOGIQUE",
+        "text": "Syndrome hémolytique et urémique | suspicion_infection",
+        "page": 1
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "presente_suspicion_infection",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "FOYER_INFECTIEUX",
+          "relation_group": "RELATIONS_DIAGNOSTIQUES",
+          "relation_description": "Condition sine qua non du diagnostic du sepsis.",
+          "similarity_score": 0.6833,
+          "matched_tokens": [
+            "infection",
+            "suspicion"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E029",
+              "type": "DONNEE_PATIENT",
+              "text": "62 ans | 62 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E030",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P6_E002",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumopathie précoce acquise sous ventilation",
+              "page": 6
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 0.6833,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=2, image=1)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_c::C_000247",
+    "candidate_id": "C_000247",
+    "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_pattern_c",
+    "routing_reason": "Structure relationnelle/réifiée détectée, mais la décision MERGE / KEEP / REVIEW dépend du contexte.",
+    "source_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternC\\validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "MERGE",
+      "KEEP",
+      "REVIEW",
+      "REMOVE_RELATION"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "STRONG",
+      "reified_entity": {
+        "id": "P4_E025",
+        "type": "SYMPTOME",
+        "text": "Evolution favorable avec apyrexie | apyrexie",
+        "page": 4
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "patient_a_pour_evolution",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "EVOLUTION_PRONOSTIC",
+          "relation_group": "RELATIONS_TEMPORELLES_ET_PRONOSTIC",
+          "relation_description": "",
+          "similarity_score": 1.0,
+          "matched_tokens": [
+            "evolution"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E030",
+              "type": "DONNEE_PATIENT",
+              "text": "51 ans | 51 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E031",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            },
+            {
+              "id": "P2_E050",
+              "type": "DONNEE_PATIENT",
+              "text": "patiente | patient",
+              "page": 2
+            },
+            {
+              "id": "P5_E032",
+              "type": "DONNEE_PATIENT",
+              "text": "51 ans | 51 | age",
+              "page": 5
+            },
+            {
+              "id": "P5_E033",
+              "type": "DONNEE_PATIENT",
+              "text": "La patiente | patient",
+              "page": 5
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P4_E026",
+              "type": "EVOLUTION_PRONOSTIC",
+              "text": "Evolution favorable | evolution_favorable",
+              "page": 4
+            },
+            {
+              "id": "P4_E038",
+              "type": "EVOLUTION_PRONOSTIC",
+              "text": "régression du syndrome inflammatoire biologique | evolution_clinique",
+              "page": 4
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 1.0,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=5, image=2)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_c::C_000657",
+    "candidate_id": "C_000657",
+    "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_pattern_c",
+    "routing_reason": "Structure relationnelle/réifiée détectée, mais la décision MERGE / KEEP / REVIEW dépend du contexte.",
+    "source_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternC\\validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "MERGE",
+      "KEEP",
+      "REVIEW",
+      "REMOVE_RELATION"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000657",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "STRONG",
+      "reified_entity": {
+        "id": "P4_E036",
+        "type": "MICRO_ORGANISME",
+        "text": "campylobacter | micro_organisme",
+        "page": 4
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "micro_organisme_isole_dans",
+          "domain_type": "MICRO_ORGANISME",
+          "image_type": "FOYER_INFECTIEUX",
+          "relation_group": "RELATIONS_BIOMARQUEURS_ET_MICROBIO",
+          "relation_description": "",
+          "similarity_score": 0.8167,
+          "matched_tokens": [
+            "micro",
+            "organisme"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P4_E015",
+              "type": "MICRO_ORGANISME",
+              "text": "entérocoque faecalis",
+              "page": 4
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P4_E040",
+              "type": "FOYER_INFECTIEUX",
+              "text": "foyer infectieux | foyer",
+              "page": 4
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 0.8167,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validation_reason": "Erreur validation : name 'relation_id' is not defined"
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_c::C_000686",
+    "candidate_id": "C_000686",
+    "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "C",
+    "subpattern": "C",
+    "original_status": "AMBIGUOUS",
+    "route_to": "agent_pattern_c",
+    "routing_reason": "Structure relationnelle/réifiée détectée, mais la décision MERGE / KEEP / REVIEW dépend du contexte.",
+    "source_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternC\\validation\\pattern_c_validation_report.json",
+    "allowed_actions": [
+      "MERGE",
+      "KEEP",
+      "REVIEW",
+      "REMOVE_RELATION"
+    ],
+    "symbolic_candidate": {
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "candidate_type": "REIFIED_RELATION_ENTITY",
+      "strength": "MEDIUM",
+      "reified_entity": {
+        "id": "P1_E016",
+        "type": "LABEL_NOSOLOGIQUE",
+        "text": "suspicion de tuberculose pulmonaire | suspicion_infection",
+        "page": 1
+      },
+      "best_relation_hypotheses": [
+        {
+          "relation_name": "presente_suspicion_infection",
+          "domain_type": "DONNEE_PATIENT",
+          "image_type": "FOYER_INFECTIEUX",
+          "relation_group": "RELATIONS_DIAGNOSTIQUES",
+          "relation_description": "Condition sine qua non du diagnostic du sepsis.",
+          "similarity_score": 0.6833,
+          "matched_tokens": [
+            "infection",
+            "suspicion"
+          ],
+          "domain_candidates": [
+            {
+              "id": "P1_E023",
+              "type": "DONNEE_PATIENT",
+              "text": "67 ans | 67 | age",
+              "page": 1
+            },
+            {
+              "id": "P1_E024",
+              "type": "DONNEE_PATIENT",
+              "text": "Patient | patient",
+              "page": 1
+            }
+          ],
+          "image_candidates": [
+            {
+              "id": "P3_E020",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumonie à Pneumocoque",
+              "page": 3
+            },
+            {
+              "id": "P3_E047",
+              "type": "FOYER_INFECTIEUX",
+              "text": "pneumopathie",
+              "page": 3
+            },
+            {
+              "id": "P4_E006",
+              "type": "FOYER_INFECTIEUX",
+              "text": "point de départ pulmonaire à pneumocoque | pneumopathie_infectieuse",
+              "page": 4
+            }
+          ]
+        }
+      ],
+      "top_similarity_score": 0.6833,
+      "status": "C_CANDIDATE",
+      "safe_to_correct": false,
+      "validation_status": "AMBIGUOUS",
+      "recommended_future_action": "NONE",
+      "validated_relation": null,
+      "validated_source_entity": null,
+      "validated_target_entity": null,
+      "validation_reason": "Les endpoints compatibles ne sont pas uniques (domain=2, image=3)."
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  }
+]

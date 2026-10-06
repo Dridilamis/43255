@@ -1,0 +1,252 @@
+{
+  "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 47,
+  "number_candidates": 11,
+  "signal_counts": {
+    "WEAK": 11
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E014",
+        "type": "TRAITEMENT",
+        "name": "Eupantol",
+        "preuve": "Eupantol 40 mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Eupantol 40 mg | Eupantol | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E016",
+        "type": "TRAITEMENT",
+        "name": "Imovane",
+        "preuve": "Imovane 7.5 mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Imovane 7.5 mg | Imovane | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "7.5 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E017",
+        "type": "TRAITEMENT",
+        "name": "Alprazolam",
+        "preuve": "Alprazolam 0.5mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Alprazolam 0.5mg | Alprazolam | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "0.5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E018",
+        "type": "TRAITEMENT",
+        "name": "Ramipril",
+        "preuve": "Ramipril 5mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Ramipril 5mg | Ramipril | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E020",
+        "type": "TRAITEMENT",
+        "name": "Umuline rapide",
+        "preuve": "Umuline rapide 100UI/mL",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Umuline rapide 100UI/mL | Umuline rapide | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "100UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E028",
+        "type": "TRAITEMENT",
+        "name": "remplissage par sérum physiologique 500 ml",
+        "preuve": "remplissage par sérum physiologique 500 ml",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "remplissage par sérum physiologique 500 ml | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P3_E025",
+        "type": "TRAITEMENT",
+        "name": "voluven",
+        "preuve": "voluven 500 ml",
+        "valeur": null,
+        "page": 3
+      },
+      "detection_text": "voluven 500 ml | voluven | cristalloide",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E019",
+        "type": "TRAITEMENT",
+        "name": "adrénaline",
+        "preuve": "2 mg d'adrénaline",
+        "valeur": 2,
+        "page": 5
+      },
+      "detection_text": "2 mg d'adrénaline | adrénaline | 2 | vasopresseur",
+      "detected_components": {
+        "dose": [
+          "2 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E022",
+        "type": "TRAITEMENT",
+        "name": "drainer 600 ml",
+        "preuve": "drainer 600 ml",
+        "valeur": 600,
+        "page": 5
+      },
+      "detection_text": "drainer 600 ml | 600 | drainage",
+      "detected_components": {
+        "dose": [
+          "600 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E030",
+        "type": "TRAITEMENT",
+        "name": "HCHS à 200 mg/j",
+        "preuve": "HCHS à 200 mg/j",
+        "valeur": 200,
+        "page": 5
+      },
+      "detection_text": "HCHS à 200 mg/j | 200 | nutrition_enterale",
+      "detected_components": {
+        "dose": [
+          "200 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E031",
+        "type": "TRAITEMENT",
+        "name": "50 mg/j",
+        "preuve": "50 mg/j",
+        "valeur": 50,
+        "page": 5
+      },
+      "detection_text": "50 mg/j | 50 | corticoide",
+      "detected_components": {
+        "dose": [
+          "50 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

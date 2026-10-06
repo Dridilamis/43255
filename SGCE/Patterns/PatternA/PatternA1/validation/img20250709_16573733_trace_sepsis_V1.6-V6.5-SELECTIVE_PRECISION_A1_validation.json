@@ -1,0 +1,393 @@
+{
+  "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 5,
+  "status_counts": {
+    "AMBIGUOUS": 1,
+    "ALREADY_CORRECT": 3,
+    "MISSING_RELATION": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E016",
+        "type": "TRAITEMENT",
+        "name": "G5%",
+        "preuve": "G5% 500 ml / jour",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "G5% 500 ml / jour | G5% | nutrition_parenterale",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E017",
+        "P6_E043"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E017",
+          "target_name": "G5% 500 ml / jour",
+          "target_preuve": "G5% 500 ml / jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.45,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E043",
+          "target_name": "500 ml",
+          "target_preuve": "500 ml",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E002",
+          "target_name": "12.5microg/jour",
+          "target_preuve": "Levothyrox 12.5microg/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E020",
+        "type": "TRAITEMENT",
+        "name": "CACI",
+        "preuve": "CACI 1g/j",
+        "valeur": 1,
+        "page": 6
+      },
+      "detection_text": "CACI 1g/j | CACI | 1 | autre",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E021"
+      ],
+      "best_posology_match": {
+        "target_id": "P6_E021",
+        "target_name": "1g",
+        "target_preuve": "CACI 1g/j",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E021",
+          "target_name": "1g",
+          "target_preuve": "CACI 1g/j",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E002",
+          "target_name": "12.5microg/jour",
+          "target_preuve": "Levothyrox 12.5microg/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E017",
+          "target_name": "G5% 500 ml / jour",
+          "target_preuve": "G5% 500 ml / jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E022",
+        "type": "TRAITEMENT",
+        "name": "Kcl",
+        "preuve": "Kcl 2g/j",
+        "valeur": 2,
+        "page": 6
+      },
+      "detection_text": "Kcl 2g/j | Kcl | 2 | autre",
+      "detected_components": {
+        "dose": [
+          "2g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": {
+        "target_id": "P6_E023",
+        "target_name": "2g",
+        "target_preuve": "Kcl 2g/j",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E023",
+          "target_name": "2g",
+          "target_preuve": "Kcl 2g/j",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E055",
+          "target_name": "7.2G",
+          "target_preuve": "7.2G",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E002",
+          "target_name": "12.5microg/jour",
+          "target_preuve": "Levothyrox 12.5microg/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P6_E032",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 0.4 ml/j SC",
+        "valeur": 0.4,
+        "page": 6
+      },
+      "detection_text": "Lovenox 0.4 ml/j SC | Lovenox | 0.4 | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "0.4 ml"
+        ],
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E033"
+      ],
+      "best_posology_match": {
+        "target_id": "P6_E033",
+        "target_name": "Lovenox 0.4 ml/j SC",
+        "target_preuve": "Lovenox 0.4 ml/j SC",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E033",
+          "target_name": "Lovenox 0.4 ml/j SC",
+          "target_preuve": "Lovenox 0.4 ml/j SC",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E025",
+          "target_name": "2-2-2",
+          "target_preuve": "diffu K 2-2-2",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E002",
+          "target_name": "12.5microg/jour",
+          "target_preuve": "Levothyrox 12.5microg/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E034",
+        "type": "TRAITEMENT",
+        "name": "Eupantol",
+        "preuve": "Eupantol 40 mg",
+        "valeur": 40,
+        "page": 6
+      },
+      "detection_text": "Eupantol 40 mg | Eupantol | 40 | autre",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E035"
+      ],
+      "best_posology_match": {
+        "target_id": "P6_E035",
+        "target_name": "40 mg",
+        "target_preuve": "Eupantol 40 mg",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E035",
+          "target_name": "40 mg",
+          "target_preuve": "Eupantol 40 mg",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E002",
+          "target_name": "12.5microg/jour",
+          "target_preuve": "Levothyrox 12.5microg/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E017",
+          "target_name": "G5% 500 ml / jour",
+          "target_preuve": "G5% 500 ml / jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

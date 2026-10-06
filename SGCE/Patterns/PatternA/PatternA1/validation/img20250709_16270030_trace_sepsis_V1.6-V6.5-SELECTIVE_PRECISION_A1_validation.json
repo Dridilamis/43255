@@ -1,0 +1,244 @@
+{
+  "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 3,
+  "status_counts": {
+    "ALREADY_CORRECT": 3
+  },
+  "results": [
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E013",
+        "type": "TRAITEMENT",
+        "name": "Noradrénaline",
+        "preuve": "Noradrénaline 1mg/h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Noradrénaline 1mg/h | Noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E014"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E014",
+        "target_name": "1mg",
+        "target_preuve": "Noradrénaline 1mg/h",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E014",
+          "target_name": "1mg",
+          "target_preuve": "Noradrénaline 1mg/h",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E006",
+          "target_name": "1mg",
+          "target_preuve": "Noradrénaline 1mg/heure",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.8167,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E011",
+          "target_name": "FiO2 80%",
+          "target_preuve": "SaO2 (%) : 97% sous FiO2 80%",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E015",
+        "type": "TRAITEMENT",
+        "name": "Hypnovel",
+        "preuve": "Hypnovel 8 mg/h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Hypnovel 8 mg/h | Hypnovel | sedatif",
+      "detected_components": {
+        "rate": [
+          "8 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E016"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E016",
+        "target_name": "8 mg",
+        "target_preuve": "Hypnovel 8 mg/h",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E016",
+          "target_name": "8 mg",
+          "target_preuve": "Hypnovel 8 mg/h",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E011",
+          "target_name": "FiO2 80%",
+          "target_preuve": "SaO2 (%) : 97% sous FiO2 80%",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E014",
+          "target_name": "1mg",
+          "target_preuve": "Noradrénaline 1mg/h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E005",
+        "type": "TRAITEMENT",
+        "name": "Noradrénaline",
+        "preuve": "Noradrénaline 1mg/heure",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Noradrénaline 1mg/heure | Noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1mg/heure"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E006"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E006",
+        "target_name": "1mg",
+        "target_preuve": "Noradrénaline 1mg/heure",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E006",
+          "target_name": "1mg",
+          "target_preuve": "Noradrénaline 1mg/heure",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E014",
+          "target_name": "1mg",
+          "target_preuve": "Noradrénaline 1mg/h",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.5667,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E022",
+          "target_name": "30 mg",
+          "target_preuve": "jusqu'à 30 mg/h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

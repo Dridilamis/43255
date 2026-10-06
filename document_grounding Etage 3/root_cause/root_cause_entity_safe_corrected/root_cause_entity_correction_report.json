@@ -1,0 +1,31 @@
+{
+  "corrector": "root_cause_entity_safe_corrector",
+  "source_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\MultiAgent\\corrected",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\document_grounding Etage 3\\root_cause\\root_cause_entity_safe_corrected",
+  "summary": {
+    "documents_copied": 43,
+    "safe_retype_received": 1,
+    "operations_applied": 1,
+    "documents_modified": 1,
+    "errors": 0
+  },
+  "modified_documents": [
+    "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "RCE_000001",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E029",
+      "old_types": [
+        "SYMPTOME"
+      ],
+      "new_type": "DEFAILLANCE_ORGANE",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 3,
+  "status_counts": {
+    "AMBIGUOUS": 2,
+    "MISSING_RELATION": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E004",
+        "type": "TRAITEMENT",
+        "name": "Véinofer IV",
+        "preuve": "Véinofer IV",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Véinofer IV | supplementation_electrolytique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E031",
+          "target_name": "1cp par jour",
+          "target_preuve": "1cp par jour",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E016",
+          "target_name": "5 jours",
+          "target_preuve": "Amiklin pendant 5 jours",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E021",
+          "target_name": "Sérum phy 1500 par jour",
+          "target_preuve": "Sérum phy 1500 par jour",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E012",
+        "type": "TRAITEMENT",
+        "name": "métronidazole",
+        "preuve": "métronidazole IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "métronidazole IV | métronidazole | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E016",
+          "target_name": "5 jours",
+          "target_preuve": "Amiklin pendant 5 jours",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E021",
+          "target_name": "Sérum phy 1500 par jour",
+          "target_preuve": "Sérum phy 1500 par jour",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E022",
+          "target_name": "Restriction hydrique à 50 ml/jour",
+          "target_preuve": "Restriction hydrique à 50 ml/jour",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E024",
+        "type": "TRAITEMENT",
+        "name": "Primperanlasilix",
+        "preuve": "Primperanlasilix à 40 mg",
+        "valeur": 40,
+        "page": 2
+      },
+      "detection_text": "Primperanlasilix à 40 mg | Primperanlasilix | 40 | autre",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": {
+        "target_id": "P2_E025",
+        "target_name": "40 mg",
+        "target_preuve": "Primperanlasilix à 40 mg",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E025",
+          "target_name": "40 mg",
+          "target_preuve": "Primperanlasilix à 40 mg",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E016",
+          "target_name": "5 jours",
+          "target_preuve": "Amiklin pendant 5 jours",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E021",
+          "target_name": "Sérum phy 1500 par jour",
+          "target_preuve": "Sérum phy 1500 par jour",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    }
+  ]
+}

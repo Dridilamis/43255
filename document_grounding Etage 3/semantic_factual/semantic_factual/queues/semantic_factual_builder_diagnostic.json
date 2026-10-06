@@ -1,0 +1,149 @@
+{
+  "builder": "semantic_factual_candidate_builder",
+  "mode": "TRACE_GLOBAL_RELATIONS_SCHEMA",
+  "summary": {
+    "documents": 43,
+    "entities_indexed": 10121,
+    "global_relations_raw": 4200,
+    "relation_candidates": 4200,
+    "source_unresolved": 10,
+    "target_unresolved": 7,
+    "predicate_empty": 0
+  },
+  "endpoint_resolution": {
+    "SOURCE_ID_EXACT": 4190,
+    "TARGET_ID_EXACT": 4193,
+    "SOURCE_NOT_FOUND": 10,
+    "TARGET_NOT_FOUND": 7
+  },
+  "predicate_counts": {
+    "a_pour_label_nosologique": 249,
+    "presente_symptome": 772,
+    "traitement_administre_a": 1299,
+    "presente_suspicion_infection": 131,
+    "service_medical_accueille": 138,
+    "imagerie_objective_foyer": 34,
+    "traitement_a_pour_posologie": 784,
+    "micro_organisme_isole_dans": 50,
+    "biomarqueur_est_critere_de": 39,
+    "imagerie_objective_comorbidite": 15,
+    "presente_dysfonction_organe": 248,
+    "patient_a_pour_evolution": 94,
+    "biomarqueur_supporte_defaillance_organe": 103,
+    "traitement_indique_par_label_nosologique": 112,
+    "a_pour_contexte_acquisition": 6,
+    "score_sofa_calcule_pour": 4,
+    "traitement_cible_defaillance": 96,
+    "signe_vital_supporte_defaillance_organe": 22,
+    "imagerie_objective_defaillance": 3,
+    "contexte_acquisition_influence_risque_resistance": 1
+  },
+  "unresolved_examples": {
+    "SOURCE_NOT_FOUND": [
+      {
+        "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00100",
+        "id": "P6_E039",
+        "text": ""
+      },
+      {
+        "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00117",
+        "id": "P2_E025",
+        "text": ""
+      },
+      {
+        "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00089",
+        "id": "P5_E060",
+        "text": ""
+      },
+      {
+        "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00037",
+        "id": "P2_E006",
+        "text": "A.Paré"
+      },
+      {
+        "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00048",
+        "id": "P5_E024",
+        "text": "KTC"
+      },
+      {
+        "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00044",
+        "id": "P2_E031",
+        "text": "Association : adep"
+      },
+      {
+        "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00124",
+        "id": "P4_E062",
+        "text": ""
+      },
+      {
+        "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00039",
+        "id": "P4_E034",
+        "text": "KTC"
+      },
+      {
+        "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00101",
+        "id": "P2_E057",
+        "text": ""
+      },
+      {
+        "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00104",
+        "id": "P2_E057",
+        "text": ""
+      }
+    ],
+    "TARGET_NOT_FOUND": [
+      {
+        "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00065",
+        "id": "P5_E014",
+        "text": "BPCO"
+      },
+      {
+        "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00074",
+        "id": "P5_E036",
+        "text": "5L"
+      },
+      {
+        "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00029",
+        "id": "P2_E028",
+        "text": "/24h"
+      },
+      {
+        "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00092",
+        "id": "P6_E005",
+        "text": "insuffisance hépatique"
+      },
+      {
+        "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00144",
+        "id": "P2_E028",
+        "text": ""
+      },
+      {
+        "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00139",
+        "id": "P5_E077",
+        "text": ""
+      },
+      {
+        "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "relation_id": "R_V69K_00080",
+        "id": "P4_E026",
+        "text": "/24h"
+      }
+    ]
+  }
+}

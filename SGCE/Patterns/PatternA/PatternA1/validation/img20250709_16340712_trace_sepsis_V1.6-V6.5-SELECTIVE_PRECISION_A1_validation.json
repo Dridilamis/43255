@@ -1,0 +1,213 @@
+{
+  "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 3,
+  "status_counts": {
+    "AMBIGUOUS": 3
+  },
+  "results": [
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E012",
+        "type": "TRAITEMENT",
+        "name": "Lantus",
+        "preuve": "Lantus 30 UI",
+        "valeur": 30,
+        "page": 1
+      },
+      "detection_text": "Lantus 30 UI | Lantus | 30 | insuline",
+      "detected_components": {
+        "dose": [
+          "30 UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E028",
+        "P1_E029"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E014",
+          "target_name": "22 UI",
+          "target_preuve": "Lantus 22 UI le soir",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E028",
+          "target_name": "30 UI",
+          "target_preuve": "30 UI",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E043",
+          "target_name": "30 UI",
+          "target_preuve": "30 UI",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E014",
+        "type": "TRAITEMENT",
+        "name": "Seresta",
+        "preuve": "Seresta 50 mg",
+        "valeur": 50,
+        "page": 1
+      },
+      "detection_text": "Seresta 50 mg | Seresta | 50 | autre",
+      "detected_components": {
+        "dose": [
+          "50 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E030",
+        "P1_E015"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E026",
+          "target_name": "1x2/j",
+          "target_preuve": "Seresta 50 1x2/j",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E030",
+          "target_name": "50 mg",
+          "target_preuve": "50 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E011",
+          "target_name": "3 par jour",
+          "target_preuve": "3 par jour",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E032",
+        "type": "TRAITEMENT",
+        "name": "Lantus",
+        "preuve": "Lantus à 20 UI",
+        "valeur": 20,
+        "page": 5
+      },
+      "detection_text": "Lantus à 20 UI | Lantus | 20 | insuline",
+      "detected_components": {
+        "dose": [
+          "20 UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E057"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E014",
+          "target_name": "22 UI",
+          "target_preuve": "Lantus 22 UI le soir",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E057",
+          "target_name": "20 UI",
+          "target_preuve": "20 UI",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E007",
+          "target_name": "une semaine",
+          "target_preuve": "Tienam pendant une semaine",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

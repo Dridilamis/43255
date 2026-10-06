@@ -1,0 +1,41 @@
+{
+  "documents_evaluated": 43,
+  "configuration": {
+    "relaxed_threshold": 0.85,
+    "min_containment_length": 4
+  },
+  "counts": {
+    "tp_exact": 5759,
+    "tp_containment": 1682,
+    "tp_relaxed": 107,
+    "wrong_type": 243,
+    "fp_remaining": 2353,
+    "fn_remaining": 3282
+  },
+  "strict": {
+    "definition": "TP_EXACT uniquement",
+    "micro_precision": 0.5677,
+    "micro_recall": 0.5201,
+    "micro_f1": 0.5429,
+    "macro_f1_documents": 0.5517
+  },
+  "boundary_relaxed": {
+    "definition": "TP_EXACT + TP_CONTAINMENT",
+    "micro_precision": 0.7335,
+    "micro_recall": 0.672,
+    "micro_f1": 0.7014,
+    "macro_f1_documents": 0.7079
+  },
+  "relaxed": {
+    "definition": "TP_EXACT + TP_CONTAINMENT + TP_RELAXED",
+    "micro_precision": 0.7441,
+    "micro_recall": 0.6817,
+    "micro_f1": 0.7115,
+    "macro_f1_documents": 0.7184
+  },
+  "missing_prediction": [],
+  "missing_gold": [
+    "negation_correction_report",
+    "temporal_status_correction_report"
+  ]
+}

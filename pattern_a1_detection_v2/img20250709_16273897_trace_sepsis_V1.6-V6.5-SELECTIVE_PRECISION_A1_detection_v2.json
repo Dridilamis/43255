@@ -1,0 +1,127 @@
+{
+  "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 40,
+  "number_candidates": 5,
+  "signal_counts": {
+    "MEDIUM": 2,
+    "WEAK": 3
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E029",
+        "type": "TRAITEMENT",
+        "name": "Ceftriaxone",
+        "preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "1g de CG3 Ceftriaxone Rocéphine IV | Ceftriaxone | antibiotique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E030",
+        "type": "TRAITEMENT",
+        "name": "Tavanic",
+        "preuve": "500 mg Quinolone Tavanic IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "500 mg Quinolone Tavanic IV | Tavanic | antibiotique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E031",
+        "type": "TRAITEMENT",
+        "name": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN",
+        "preuve": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E032",
+        "type": "TRAITEMENT",
+        "name": "Perfalgan",
+        "preuve": "1g de Perfalgan",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "1g de Perfalgan | Perfalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E051",
+        "type": "TRAITEMENT",
+        "name": "Antalgique 1g de Perfalgan",
+        "preuve": "Antalgique 1g de Perfalgan",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Antalgique 1g de Perfalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

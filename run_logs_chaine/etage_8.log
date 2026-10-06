@@ -1,0 +1,130 @@
+==============================================================================================================
+TRACE / ETAGE 8 V2 - CONFIDENCE CANDIDATE BUILDER
+==============================================================================================================
+clinical_documents                    : 43
+texts_found                           : 43
+entities_audited                      : 10142
+entity_FOUND                          : 9911
+entity_AMBIGUOUS                      : 33
+entity_NOT_FOUND                      : 90
+relations_audited                     : 3744
+relation_FOUND                        : 3262
+relation_PARTIAL                      : 348
+relation_NOT_FOUND                    : 99
+entity_PARTIAL                        : 108
+relation_AMBIGUOUS                    : 35
+non_clinical_json_ignored             : 2
+JSON non cliniques ignores       : negation_correction_report.json, temporal_status_correction_report.json
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\queues\confidence_candidates.json
+==============================================================================================================
+TRACE / ETAGE 8 V2 - EVIDENCE ANALYZER
+==============================================================================================================
+ENTITY                                : 10142
+document_STRONG                       : 13173
+ontology_CONSISTENT                   : 13880
+document_AMBIGUOUS                    : 68
+document_ABSENT                       : 189
+RELATION                              : 3744
+document_PARTIAL                      : 456
+ontology_CONFLICT                     : 6
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_evidence.json
+==============================================================================================================
+TRACE / ETAGE 8 V2 - CONFIDENCE ASSESSOR
+==============================================================================================================
+HIGH                                  : 13168
+ENTITY_HIGH                           : 9911
+REVIEW                                : 74
+ENTITY_REVIEW                         : 33
+LOW                                   : 189
+ENTITY_LOW                            : 90
+RELATION_HIGH                         : 3257
+MEDIUM                                : 455
+RELATION_MEDIUM                       : 347
+RELATION_LOW                          : 99
+ENTITY_MEDIUM                         : 108
+RELATION_REVIEW                       : 41
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_assessed.json
+==============================================================================================================
+TRACE / ETAGE 8 V2 - CONFIDENCE VALIDATOR
+==============================================================================================================
+HIGH                                  : 13168
+ENTITY_HIGH                           : 9911
+REVIEW                                : 74
+ENTITY_REVIEW                         : 33
+LOW                                   : 189
+ENTITY_LOW                            : 90
+RELATION_HIGH                         : 3257
+MEDIUM                                : 455
+RELATION_MEDIUM                       : 347
+RELATION_LOW                          : 99
+ENTITY_MEDIUM                         : 108
+RELATION_REVIEW                       : 41
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_validated.json
+==============================================================================================================
+TRACE / ETAGE 8 V2.1 - CONFIDENCE SAFE ANNOTATOR
+==============================================================================================================
+clinical_documents                    : 43
+ENTITY_total                          : 10142
+ENTITY_annotations                    : 10142
+ENTITY_unmatched                      : 0
+RELATION_total                        : 3744
+RELATION_annotations                  : 3744
+RELATION_unmatched                    : 0
+clinical_objects_total                : 13886
+expected_annotations                  : 13886
+annotations                           : 13886
+missing_annotations                   : 0
+unused_decisions                      : 0
+duplicate_id_groups                   : 4
+duplicate_id_occurrences              : 8
+HIGH                                  : 13168
+MEDIUM                                : 455
+LOW                                   : 189
+REVIEW                                : 74
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\confidence_assessed_safe
+Rapport         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_annotation_report.json
+
+STATUT ANNOTATION : PASS
+==============================================================================================================
+TRACE / ETAGE 8 V2.1 - POST VALIDATION
+==============================================================================================================
+documents_before                      : 43
+documents_after                       : 43
+missing_after                         : 0
+extra_after                           : 0
+entities_before                       : 10142
+entities_after                        : 10142
+relations_before                      : 3744
+relations_after                       : 3744
+clinical_objects_after                : 13886
+expected_confidence_annotations       : 13886
+valid_confidence_annotations          : 13886
+ENTITY_valid_confidence               : 10142
+RELATION_valid_confidence             : 3744
+HIGH                                  : 13168
+MEDIUM                                : 455
+LOW                                   : 189
+REVIEW                                : 74
+missing_confidence_annotations        : 0
+invalid_confidence_annotations        : 0
+unexpected_clinical_changes           : 0
+STATUT FINAL : PASS
+Rapport      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\post_validation\confidence_post_validation_report.json
+==============================================================================================================
+TRACE - EVIDENCE-BASED CONFIDENCE ASSESSMENT - ETAGE 8 V2.1
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8
+
+>>> confidence_candidate_builder.py
+
+>>> confidence_evidence_analyzer.py
+
+>>> confidence_assessor.py
+
+>>> confidence_validator.py
+
+>>> confidence_safe_annotator.py
+
+>>> confidence_post_validator.py
+
+CONFIDENCE ETAGE 8 V2.1 : PASS

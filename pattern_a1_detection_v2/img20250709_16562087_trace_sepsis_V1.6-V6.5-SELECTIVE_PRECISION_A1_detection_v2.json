@@ -1,0 +1,32 @@
+{
+  "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 23,
+  "number_candidates": 1,
+  "signal_counts": {
+    "WEAK": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E029",
+        "type": "TRAITEMENT",
+        "name": "Introduction d'une corticothérapie à 1mg/kg",
+        "preuve": "Introduction d'une corticothérapie à 1mg/kg",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "Introduction d'une corticothérapie à 1mg/kg | corticoide",
+      "detected_components": {
+        "dose": [
+          "1mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

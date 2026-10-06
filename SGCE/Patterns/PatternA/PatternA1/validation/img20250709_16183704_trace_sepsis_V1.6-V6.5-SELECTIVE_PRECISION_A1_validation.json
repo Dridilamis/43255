@@ -1,0 +1,483 @@
+{
+  "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 6,
+  "status_counts": {
+    "AMBIGUOUS": 1,
+    "MISSING_RELATION": 1,
+    "ALREADY_CORRECT": 4
+  },
+  "results": [
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E012",
+        "type": "TRAITEMENT",
+        "name": "Crestor",
+        "preuve": "Crestor 5mg",
+        "valeur": 5,
+        "page": 1
+      },
+      "detection_text": "Crestor 5mg | Crestor | 5 | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E017"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E017",
+          "target_name": "5mg",
+          "target_preuve": "5mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.45,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E009",
+          "target_name": "1g/125mg PO 1-1-1 pendant 10 jours",
+          "target_preuve": "Augmentin 1g/125mg PO 1-1-1 pendant 10 jours (15/10)",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E065",
+          "target_name": "125mg",
+          "target_preuve": "125mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E020",
+        "type": "TRAITEMENT",
+        "name": "Tahor",
+        "preuve": "Tahor 10mg 0-0-1",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Tahor 10mg 0-0-1 | Tahor | antibiotique",
+      "detected_components": {
+        "dose": [
+          "10mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E072"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E021",
+        "target_name": "10mg",
+        "target_preuve": "Tahor 10mg 0-0-1",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E021",
+          "target_name": "10mg",
+          "target_preuve": "Tahor 10mg 0-0-1",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "PO",
+          "target_preuve": "PO",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E009",
+          "target_name": "1g/125mg PO 1-1-1 pendant 10 jours",
+          "target_preuve": "Augmentin 1g/125mg PO 1-1-1 pendant 10 jours (15/10)",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E024",
+        "type": "TRAITEMENT",
+        "name": "Dafalgan",
+        "preuve": "Dafalgan 500mg PO si besoin",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Dafalgan 500mg PO si besoin | Dafalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "500mg"
+        ],
+        "route": [
+          "PO"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E025"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E025",
+        "target_name": "500mg PO si besoin",
+        "target_preuve": "Dafalgan 500mg PO si besoin",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E025",
+          "target_name": "500mg PO si besoin",
+          "target_preuve": "Dafalgan 500mg PO si besoin",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E031",
+          "target_name": "20mg/2mL PO si besoin",
+          "target_preuve": "Nefopam 20mg/2mL PO si besoin",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.25,
+          "final_score": 0.3,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "PO",
+          "target_preuve": "PO",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E026",
+        "type": "TRAITEMENT",
+        "name": "Fragmine",
+        "preuve": "Fragmine 5000UI/0,2mL SC la nuit",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Fragmine 5000UI/0,2mL SC la nuit | Fragmine | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "5000UI",
+          "0,2mL"
+        ],
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E027"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E027",
+        "target_name": "5000UI/0,2mL SC la nuit",
+        "target_preuve": "Fragmine 5000UI/0,2mL SC la nuit",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.8,
+        "final_score": 0.98,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E027",
+          "target_name": "5000UI/0,2mL SC la nuit",
+          "target_preuve": "Fragmine 5000UI/0,2mL SC la nuit",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.8,
+          "final_score": 0.98,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E067",
+          "target_name": "0,2mL",
+          "target_preuve": "0,2mL",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.3333,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.2833,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E021",
+          "target_name": "10mg",
+          "target_preuve": "Tahor 10mg 0-0-1",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.3333,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.2333,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E028",
+        "type": "TRAITEMENT",
+        "name": "Clinutren HP/HC",
+        "preuve": "Clinutren HP/HC 200mL PO 1 bouteille le matin et au goûter",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Clinutren HP/HC 200mL PO 1 bouteille le matin et au goûter | Clinutren HP/HC | nutrition_enterale",
+      "detected_components": {
+        "dose": [
+          "200mL"
+        ],
+        "route": [
+          "PO"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E029"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E029",
+        "target_name": "1 bouteille le matin et au goûter",
+        "target_preuve": "Clinutren HP/HC 200mL PO 1 bouteille le matin et au goûter",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.8333,
+        "final_score": 0.9833,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E029",
+          "target_name": "1 bouteille le matin et au goûter",
+          "target_preuve": "Clinutren HP/HC 200mL PO 1 bouteille le matin et au goûter",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.8333,
+          "final_score": 0.9833,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E071",
+          "target_name": "1 bouteille",
+          "target_preuve": "1 bouteille",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.325,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "PO",
+          "target_preuve": "PO",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E030",
+        "type": "TRAITEMENT",
+        "name": "Nefopam",
+        "preuve": "Nefopam 20mg/2mL PO si besoin",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Nefopam 20mg/2mL PO si besoin | Nefopam | antalgique",
+      "detected_components": {
+        "dose": [
+          "20mg",
+          "2mL"
+        ],
+        "route": [
+          "PO"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E031"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E031",
+        "target_name": "20mg/2mL PO si besoin",
+        "target_preuve": "Nefopam 20mg/2mL PO si besoin",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.8,
+        "final_score": 0.98,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E031",
+          "target_name": "20mg/2mL PO si besoin",
+          "target_preuve": "Nefopam 20mg/2mL PO si besoin",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.8,
+          "final_score": 0.98,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E067",
+          "target_name": "0,2mL",
+          "target_preuve": "0,2mL",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.6667,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.3667,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E068",
+          "target_name": "2mL",
+          "target_preuve": "2mL",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.6667,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.3667,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

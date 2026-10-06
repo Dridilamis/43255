@@ -1,0 +1,146 @@
+{
+  "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 34,
+  "number_candidates": 6,
+  "signal_counts": {
+    "WEAK": 5,
+    "MEDIUM": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E023",
+        "type": "TRAITEMENT",
+        "name": "Protocole Insuline SC",
+        "preuve": "Protocole Insuline SC",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Protocole Insuline SC | autre",
+      "detected_components": {
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E024",
+        "type": "TRAITEMENT",
+        "name": "EPantol",
+        "preuve": "EPantol 40mg",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "EPantol 40mg | EPantol | autre",
+      "detected_components": {
+        "dose": [
+          "40mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P5_E025",
+        "type": "TRAITEMENT",
+        "name": "ZELITrex",
+        "preuve": "ZELITrex 500 mg 1/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "ZELITrex 500 mg 1/j | ZELITrex | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E026",
+        "type": "TRAITEMENT",
+        "name": "Triflucan",
+        "preuve": "Triflucan 50 mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Triflucan 50 mg/j | Triflucan | antifongique",
+      "detected_components": {
+        "dose": [
+          "50 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E027",
+        "type": "TRAITEMENT",
+        "name": "Acide folinique",
+        "preuve": "Acide folinique 25mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Acide folinique 25mg/j | Acide folinique | autre",
+      "detected_components": {
+        "dose": [
+          "25mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E029",
+        "type": "TRAITEMENT",
+        "name": "AMLOR",
+        "preuve": "AMLOR 10 mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "AMLOR 10 mg/j | AMLOR | autre",
+      "detected_components": {
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

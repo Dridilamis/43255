@@ -1,0 +1,559 @@
+{
+  "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 8,
+  "status_counts": {
+    "ALREADY_CORRECT": 1,
+    "AMBIGUOUS": 7
+  },
+  "results": [
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E006",
+        "type": "TRAITEMENT",
+        "name": "Olmetec",
+        "preuve": "Olmetec 10 mg x 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Olmetec 10 mg x 1/j | Olmetec | traitement_habituel",
+      "detected_components": {
+        "frequency": [
+          "x 1/j"
+        ],
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E007"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E007",
+        "target_name": "10 mg",
+        "target_preuve": "Olmetec 10 mg x 1/j",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E007",
+          "target_name": "10 mg",
+          "target_preuve": "Olmetec 10 mg x 1/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E022",
+          "target_name": "1/j",
+          "target_preuve": "1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E023",
+          "target_name": "2 bouteille",
+          "target_preuve": "2 bouteille",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E020",
+        "type": "TRAITEMENT",
+        "name": "corticothérapie intraveineuse",
+        "preuve": "Une corticothérapie intraveineuse à forte dose est débutée",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Une corticothérapie intraveineuse à forte dose est débutée | corticothérapie intraveineuse | corticoide",
+      "detected_components": {
+        "route": [
+          "intraveineuse"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E007",
+          "target_name": "10 mg",
+          "target_preuve": "Olmetec 10 mg x 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.05,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E022",
+          "target_name": "1/j",
+          "target_preuve": "1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E023",
+          "target_name": "2 bouteille",
+          "target_preuve": "2 bouteille",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E008",
+        "type": "TRAITEMENT",
+        "name": "Valsartan",
+        "preuve": "Valsartan 40 mg",
+        "valeur": 40,
+        "page": 6
+      },
+      "detection_text": "Valsartan 40 mg | Valsartan | 40 | antibiotique",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E009"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E045",
+          "target_name": "40 mg",
+          "target_preuve": "40 mg",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E006",
+          "target_name": "2 mois",
+          "target_preuve": "2 mois",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E009",
+          "target_name": "le matin",
+          "target_preuve": "le matin",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E010",
+        "type": "TRAITEMENT",
+        "name": "Atarax",
+        "preuve": "Atarax 50 mg",
+        "valeur": 50,
+        "page": 6
+      },
+      "detection_text": "Atarax 50 mg | Atarax | 50 | autre",
+      "detected_components": {
+        "dose": [
+          "50 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E011"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E046",
+          "target_name": "50 mg",
+          "target_preuve": "50 mg",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E006",
+          "target_name": "2 mois",
+          "target_preuve": "2 mois",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E009",
+          "target_name": "le matin",
+          "target_preuve": "le matin",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E016",
+        "type": "TRAITEMENT",
+        "name": "Tardyferon",
+        "preuve": "Tardyferon b 9 1/j",
+        "valeur": 1,
+        "page": 6
+      },
+      "detection_text": "Tardyferon b 9 1/j | Tardyferon | 1 | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E013"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E013",
+          "target_name": "1/j",
+          "target_preuve": "1/j",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E053",
+          "target_name": "1/j depuis mi janvier 2015",
+          "target_preuve": "1/j depuis mi janvier 2015",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E007",
+          "target_name": "10 mg",
+          "target_preuve": "Olmetec 10 mg x 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E017",
+        "type": "TRAITEMENT",
+        "name": "Neurontin",
+        "preuve": "Neurontin 1.2 g",
+        "valeur": 1.2,
+        "page": 6
+      },
+      "detection_text": "Neurontin 1.2 g | Neurontin | 1.2 | autre",
+      "detected_components": {
+        "dose": [
+          "1.2 g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_V65_002"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_V65_002",
+          "target_name": "1.2 g x3/j",
+          "target_preuve": "1.2 g x3/j",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E006",
+          "target_name": "2 mois",
+          "target_preuve": "2 mois",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E009",
+          "target_name": "le matin",
+          "target_preuve": "le matin",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E019",
+        "type": "TRAITEMENT",
+        "name": "Loxen",
+        "preuve": "Loxen 20 mg",
+        "valeur": 20,
+        "page": 6
+      },
+      "detection_text": "Loxen 20 mg | Loxen | 20 | autre",
+      "detected_components": {
+        "dose": [
+          "20 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E048"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E048",
+          "target_name": "20 mg",
+          "target_preuve": "20 mg",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E006",
+          "target_name": "2 mois",
+          "target_preuve": "2 mois",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E009",
+          "target_name": "le matin",
+          "target_preuve": "le matin",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E021",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 0.4 ml",
+        "valeur": 0.4,
+        "page": 6
+      },
+      "detection_text": "Lovenox 0.4 ml | Lovenox | 0.4 | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "0.4 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E049"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E049",
+          "target_name": "0.4 ml",
+          "target_preuve": "0.4 ml",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E006",
+          "target_name": "2 mois",
+          "target_preuve": "2 mois",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E009",
+          "target_name": "le matin",
+          "target_preuve": "le matin",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

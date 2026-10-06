@@ -1,0 +1,78 @@
+{
+  "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 1,
+  "status_counts": {
+    "AMBIGUOUS": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E008",
+        "type": "TRAITEMENT",
+        "name": "serum physiologique",
+        "preuve": "500 ml de serum physiologique",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "500 ml de serum physiologique | serum physiologique | cristalloide",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E031",
+        "P2_E032"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E031",
+          "target_name": "500 ml",
+          "target_preuve": "500 ml",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E007",
+          "target_name": "1g",
+          "target_preuve": "perfalgan (1g)",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E024",
+          "target_name": "fio2 à 100%",
+          "target_preuve": "fio2 à 100%",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

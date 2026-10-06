@@ -1,0 +1,90 @@
+
+=== MATCHING ENTITES — V6.6c PRECISION+ / 43 DOCUMENTS ===
+GOLD_DIR   = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\gold_canonical_par_documentF
+PRED_DIR   = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+OUTPUT_DIR = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\evaluation_ablation_F1_TRACE\03_DOCUMENT_FACTUAL_GROUNDING\entities
+====================================================
+
+
+Documents Gold : 43
+Documents MLLM : 44
+Documents appariés : 43
+⚠️ Matching non complet pour 43 documents : Gold=43, Pred=44, Appariés=43.
+
+⚠️ Prédiction sans Gold :
+    semantic_factual_correction_report
+✅ img20250709_16142502 | Gold=252 | Pred=271 | Exact=137 | Containment=60 | Relaxed=11 | WrongType=2 | FP=61 | FN=42
+✅ img20250709_16154161 | Gold=271 | Pred=262 | Exact=175 | Containment=61 | Relaxed=2 | WrongType=1 | FP=23 | FN=32
+✅ img20250709_16164845 | Gold=271 | Pred=258 | Exact=166 | Containment=64 | Relaxed=4 | WrongType=1 | FP=23 | FN=36
+✅ img20250709_16183704 | Gold=236 | Pred=243 | Exact=113 | Containment=71 | Relaxed=2 | WrongType=2 | FP=55 | FN=48
+✅ img20250709_16190789 | Gold=300 | Pred=281 | Exact=113 | Containment=81 | Relaxed=4 | WrongType=2 | FP=81 | FN=100
+✅ img20250709_16193836 | Gold=256 | Pred=271 | Exact=123 | Containment=59 | Relaxed=2 | WrongType=4 | FP=83 | FN=68
+✅ img20250709_16201504 | Gold=273 | Pred=332 | Exact=192 | Containment=36 | Relaxed=1 | WrongType=7 | FP=96 | FN=37
+✅ img20250709_16205810 | Gold=178 | Pred=195 | Exact=125 | Containment=16 | Relaxed=3 | WrongType=8 | FP=43 | FN=26
+✅ img20250709_16223922 | Gold=297 | Pred=248 | Exact=153 | Containment=34 | Relaxed=2 | WrongType=16 | FP=43 | FN=92
+✅ img20250709_16225557 | Gold=121 | Pred=106 | Exact=81 | Containment=4 | Relaxed=4 | WrongType=2 | FP=15 | FN=30
+✅ img20250709_16233563 | Gold=266 | Pred=286 | Exact=130 | Containment=65 | Relaxed=6 | WrongType=3 | FP=82 | FN=62
+✅ img20250709_16254831 | Gold=242 | Pred=211 | Exact=138 | Containment=28 | Relaxed=5 | WrongType=8 | FP=32 | FN=63
+✅ img20250709_16270030 | Gold=258 | Pred=205 | Exact=137 | Containment=20 | Relaxed=10 | WrongType=8 | FP=30 | FN=83
+✅ img20250709_16271908 | Gold=258 | Pred=209 | Exact=115 | Containment=41 | Relaxed=0 | WrongType=6 | FP=47 | FN=96
+✅ img20250709_16273897 | Gold=226 | Pred=246 | Exact=122 | Containment=51 | Relaxed=0 | WrongType=6 | FP=67 | FN=47
+✅ img20250709_16281006 | Gold=283 | Pred=269 | Exact=120 | Containment=88 | Relaxed=1 | WrongType=10 | FP=50 | FN=64
+✅ img20250709_16283177 | Gold=280 | Pred=265 | Exact=126 | Containment=71 | Relaxed=0 | WrongType=9 | FP=59 | FN=74
+✅ img20250709_16295211 | Gold=322 | Pred=340 | Exact=161 | Containment=53 | Relaxed=1 | WrongType=6 | FP=119 | FN=101
+✅ img20250709_16301193 | Gold=468 | Pred=222 | Exact=136 | Containment=31 | Relaxed=3 | WrongType=4 | FP=48 | FN=294
+✅ img20250709_16304515 | Gold=425 | Pred=189 | Exact=102 | Containment=49 | Relaxed=8 | WrongType=8 | FP=22 | FN=258
+✅ img20250709_16313543 | Gold=267 | Pred=270 | Exact=150 | Containment=44 | Relaxed=0 | WrongType=9 | FP=67 | FN=64
+✅ img20250709_16321359 | Gold=173 | Pred=161 | Exact=101 | Containment=23 | Relaxed=3 | WrongType=7 | FP=27 | FN=39
+✅ img20250709_16331952 | Gold=444 | Pred=332 | Exact=214 | Containment=49 | Relaxed=4 | WrongType=9 | FP=56 | FN=168
+✅ img20250709_16340712 | Gold=254 | Pred=281 | Exact=167 | Containment=25 | Relaxed=0 | WrongType=7 | FP=82 | FN=55
+✅ img20250709_16344492 | Gold=116 | Pred=115 | Exact=67 | Containment=19 | Relaxed=0 | WrongType=2 | FP=27 | FN=28
+✅ img20250709_16351550 | Gold=181 | Pred=195 | Exact=115 | Containment=23 | Relaxed=1 | WrongType=7 | FP=49 | FN=35
+✅ img20250709_16360688 | Gold=272 | Pred=245 | Exact=172 | Containment=27 | Relaxed=2 | WrongType=10 | FP=34 | FN=61
+✅ img20250709_16374548 | Gold=385 | Pred=291 | Exact=183 | Containment=44 | Relaxed=0 | WrongType=11 | FP=53 | FN=147
+✅ img20250709_16381567 | Gold=347 | Pred=249 | Exact=169 | Containment=35 | Relaxed=1 | WrongType=5 | FP=39 | FN=137
+✅ img20250709_16393818 | Gold=279 | Pred=301 | Exact=166 | Containment=47 | Relaxed=10 | WrongType=8 | FP=70 | FN=48
+✅ img20250709_16395936 | Gold=262 | Pred=296 | Exact=128 | Containment=40 | Relaxed=2 | WrongType=9 | FP=117 | FN=83
+✅ img20250709_16414914 | Gold=181 | Pred=189 | Exact=131 | Containment=11 | Relaxed=2 | WrongType=7 | FP=38 | FN=30
+✅ img20250709_16510509 | Gold=179 | Pred=193 | Exact=115 | Containment=23 | Relaxed=1 | WrongType=4 | FP=50 | FN=36
+✅ img20250709_16520260 | Gold=314 | Pred=253 | Exact=160 | Containment=48 | Relaxed=1 | WrongType=3 | FP=41 | FN=102
+✅ img20250709_16523752 | Gold=320 | Pred=173 | Exact=101 | Containment=22 | Relaxed=2 | WrongType=4 | FP=44 | FN=191
+✅ img20250709_16531341 | Gold=187 | Pred=258 | Exact=136 | Containment=20 | Relaxed=1 | WrongType=4 | FP=97 | FN=26
+✅ img20250709_16545673 | Gold=162 | Pred=223 | Exact=120 | Containment=17 | Relaxed=2 | WrongType=1 | FP=83 | FN=22
+✅ img20250709_16553580 | Gold=91 | Pred=113 | Exact=63 | Containment=13 | Relaxed=2 | WrongType=2 | FP=33 | FN=11
+✅ img20250709_16560274 | Gold=198 | Pred=270 | Exact=114 | Containment=45 | Relaxed=2 | WrongType=5 | FP=104 | FN=32
+✅ img20250709_16562087 | Gold=182 | Pred=144 | Exact=72 | Containment=41 | Relaxed=0 | WrongType=7 | FP=24 | FN=62
+✅ img20250709_16573733 | Gold=299 | Pred=261 | Exact=182 | Containment=20 | Relaxed=0 | WrongType=2 | FP=57 | FN=95
+✅ img20250709_16583921 | Gold=294 | Pred=245 | Exact=170 | Containment=19 | Relaxed=1 | WrongType=8 | FP=47 | FN=96
+✅ img20250709_17005010 | Gold=203 | Pred=175 | Exact=97 | Containment=43 | Relaxed=1 | WrongType=0 | FP=34 | FN=62
+
+
+===========================================================================
+ÉVALUATION DES ENTITÉS V6.6c PRECISION+ TERMINÉE
+===========================================================================
+Documents évalués      : 43
+TP exact                : 5758
+TP containment          : 1681
+TP relaxed              : 107
+Wrong type              : 244
+FP restants             : 2352
+FN restants             : 3283
+
+--- STRICT ---
+Micro Precision : 0.5677
+Micro Recall    : 0.52
+Micro F1        : 0.5428
+Macro F1 docs   : 0.5516
+
+--- BOUNDARY RELAXED ---
+Micro Precision : 0.7335
+Micro Recall    : 0.6718
+Micro F1        : 0.7013
+Macro F1 docs   : 0.7078
+
+--- RELAXED ---
+Micro Precision : 0.744
+Micro Recall    : 0.6815
+Micro F1        : 0.7114
+Macro F1 docs   : 0.7183
+
+Résultats : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\evaluation_ablation_F1_TRACE\03_DOCUMENT_FACTUAL_GROUNDING\entities

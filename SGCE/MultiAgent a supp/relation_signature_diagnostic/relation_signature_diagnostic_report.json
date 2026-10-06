@@ -1,0 +1,1179 @@
+{
+  "diagnostic": "relation_signature_diagnostic",
+  "input_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\multiagent_safe_final_corrected",
+  "guideline": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Guideline_TRACE_Sepsis_v1.6.json",
+  "summary": {
+    "documents": 43,
+    "relations_total": 4208,
+    "relations_controlled_by_signature": 4208,
+    "signatures_loaded": 32,
+    "mismatch_rows": 692,
+    "source_mismatch_count": 367,
+    "target_mismatch_count": 384,
+    "both_mismatch_count": 59
+  },
+  "top_relation_patterns": [
+    {
+      "relation_type": "traitement_administre_a",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 97
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 81
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "SYMPTOME",
+      "count": 53
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "SYMPTOME",
+      "count": 45
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 43
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 37
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 30
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "SYMPTOME",
+      "count": 27
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 24
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "SYMPTOME",
+      "count": 18
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "SERVICE_MEDICAL",
+      "source_type_expected": "SERVICE_MEDICAL",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 15
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 15
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 15
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 13
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 10
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "SERVICE_MEDICAL",
+      "source_type_expected": "SERVICE_MEDICAL",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 9
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 9
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 8
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "EVOLUTION_PRONOSTIC",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 8
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 7
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SIGNE_VITAL",
+      "target_type_expected": "SYMPTOME",
+      "count": 6
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 5
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "BIOMARQUEUR",
+      "target_type_expected": "SYMPTOME",
+      "count": 5
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 5
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "SYMPTOME",
+      "count": 4
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "DONNEE_PATIENT",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 4
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 4
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "EVOLUTION_PRONOSTIC",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 4
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 4
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 4
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SIGNE_VITAL",
+      "target_type_expected": "SYMPTOME",
+      "count": 3
+    },
+    {
+      "relation_type": "imagerie_objective_comorbidite",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "IMAGERIE_PROCEDURE",
+      "source_type_expected": "IMAGERIE_PROCEDURE",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 3
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "MICRO_ORGANISME",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 3
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "MICRO_ORGANISME",
+      "target_type_observed": "IMAGERIE_PROCEDURE",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 3
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "TRAITEMENT",
+      "target_type_expected": "POSOLOGIE",
+      "count": 3
+    },
+    {
+      "relation_type": "imagerie_objective_foyer",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "IMAGERIE_PROCEDURE",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 3
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 3
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "SERVICE_MEDICAL",
+      "source_type_expected": "SERVICE_MEDICAL",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 3
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DONNEE_PATIENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "SYMPTOME",
+      "count": 2
+    },
+    {
+      "relation_type": "traitement_indique_par_label_nosologique",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "a_pour_contexte_acquisition",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "COMORBIDITE_ANTECEDENT",
+      "target_type_observed": "CONTEXTE_ACQUISITION",
+      "target_type_expected": "CONTEXTE_ACQUISITION",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "relation_type": "biomarqueur_supporte_defaillance_organe",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "BIOMARQUEUR",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 2
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "traitement_indique_par_label_nosologique",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 2
+    },
+    {
+      "relation_type": "imagerie_objective_comorbidite",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "IMAGERIE_PROCEDURE",
+      "source_type_expected": "IMAGERIE_PROCEDURE",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "SYMPTOME",
+      "count": 2
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "SERVICE_MEDICAL",
+      "source_type_expected": "SERVICE_MEDICAL",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "SYMPTOME",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "MICRO_ORGANISME",
+      "source_type_expected": "MICRO_ORGANISME",
+      "target_type_observed": "MICRO_ORGANISME",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "relation_type": "a_pour_contexte_acquisition",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "COMORBIDITE_ANTECEDENT",
+      "target_type_observed": "CONTEXTE_ACQUISITION",
+      "target_type_expected": "CONTEXTE_ACQUISITION",
+      "count": 1
+    },
+    {
+      "relation_type": "a_pour_contexte_acquisition",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "COMORBIDITE_ANTECEDENT",
+      "target_type_observed": "CONTEXTE_ACQUISITION",
+      "target_type_expected": "CONTEXTE_ACQUISITION",
+      "count": 1
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "BIOMARQUEUR",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "relation_type": "imagerie_objective_comorbidite",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "IMAGERIE_PROCEDURE",
+      "source_type_expected": "IMAGERIE_PROCEDURE",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "TRAITEMENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "MICRO_ORGANISME",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 1
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "MICRO_ORGANISME",
+      "source_type_expected": "MICRO_ORGANISME",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 1
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SIGNE_VITAL",
+      "target_type_expected": "SYMPTOME",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "POSOLOGIE",
+      "target_type_expected": "POSOLOGIE",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "DONNEE_PATIENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 1
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 1
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "SIGNE_VITAL",
+      "target_type_expected": "POSOLOGIE",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "POSOLOGIE",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "DONNEE_PATIENT",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 1
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "EVOLUTION_PRONOSTIC",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "TRAITEMENT",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "POSOLOGIE",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 1
+    },
+    {
+      "relation_type": "biomarqueur_supporte_defaillance_organe",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "BIOMARQUEUR",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "POSOLOGIE",
+      "source_type_expected": "TRAITEMENT",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "POSOLOGIE",
+      "count": 1
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "mismatch_kind": "SOURCE_MISMATCH",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "SERVICE_MEDICAL",
+      "target_type_observed": "DONNEE_PATIENT",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_symptome",
+      "mismatch_kind": "TARGET_MISMATCH",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "DONNEE_PATIENT",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 1
+    },
+    {
+      "relation_type": "signe_vital_supporte_defaillance_organe",
+      "mismatch_kind": "BOTH_MISMATCH",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "SIGNE_VITAL",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    }
+  ],
+  "top_source_mismatches": [
+    {
+      "relation_type": "presente_symptome",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 56
+    },
+    {
+      "relation_type": "presente_symptome",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 55
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 45
+    },
+    {
+      "relation_type": "presente_symptome",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 27
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 25
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 23
+    },
+    {
+      "relation_type": "presente_symptome",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 18
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 15
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 13
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 10
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 8
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 8
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 8
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 7
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "MICRO_ORGANISME",
+      "count": 7
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 5
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 5
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "TRAITEMENT",
+      "count": 4
+    },
+    {
+      "relation_type": "traitement_indique_par_label_nosologique",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "TRAITEMENT",
+      "count": 4
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 4
+    },
+    {
+      "relation_type": "imagerie_objective_foyer",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "IMAGERIE_PROCEDURE",
+      "count": 3
+    },
+    {
+      "relation_type": "biomarqueur_supporte_defaillance_organe",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "BIOMARQUEUR",
+      "count": 3
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "source_type_observed": "FOYER_INFECTIEUX",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 3
+    },
+    {
+      "relation_type": "a_pour_contexte_acquisition",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 2
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "source_type_observed": "POSOLOGIE",
+      "source_type_expected": "TRAITEMENT",
+      "count": 2
+    },
+    {
+      "relation_type": "a_pour_contexte_acquisition",
+      "source_type_observed": "DONNEE_PATIENT",
+      "source_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 1
+    },
+    {
+      "relation_type": "a_pour_contexte_acquisition",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "source_type_observed": "LABEL_NOSOLOGIQUE",
+      "source_type_expected": "TRAITEMENT",
+      "count": 1
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "source_type_observed": "SYMPTOME",
+      "source_type_expected": "DONNEE_PATIENT",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "source_type_observed": "POSOLOGIE",
+      "source_type_expected": "TRAITEMENT",
+      "count": 1
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "source_type_observed": "TRAITEMENT",
+      "source_type_expected": "SERVICE_MEDICAL",
+      "count": 1
+    },
+    {
+      "relation_type": "signe_vital_supporte_defaillance_organe",
+      "source_type_observed": "DEFAILLANCE_ORGANE",
+      "source_type_expected": "SIGNE_VITAL",
+      "count": 1
+    }
+  ],
+  "top_target_mismatches": [
+    {
+      "relation_type": "traitement_administre_a",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 98
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 81
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 43
+    },
+    {
+      "relation_type": "traitement_administre_a",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 37
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 15
+    },
+    {
+      "relation_type": "presente_symptome",
+      "target_type_observed": "SIGNE_VITAL",
+      "target_type_expected": "SYMPTOME",
+      "count": 10
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 9
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 9
+    },
+    {
+      "relation_type": "presente_symptome",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "SYMPTOME",
+      "count": 8
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 7
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 6
+    },
+    {
+      "relation_type": "presente_symptome",
+      "target_type_observed": "BIOMARQUEUR",
+      "target_type_expected": "SYMPTOME",
+      "count": 5
+    },
+    {
+      "relation_type": "presente_symptome",
+      "target_type_observed": "DONNEE_PATIENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 3
+    },
+    {
+      "relation_type": "imagerie_objective_comorbidite",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 3
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "target_type_observed": "IMAGERIE_PROCEDURE",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 3
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "target_type_observed": "TRAITEMENT",
+      "target_type_expected": "POSOLOGIE",
+      "count": 3
+    },
+    {
+      "relation_type": "imagerie_objective_foyer",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 3
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 3
+    },
+    {
+      "relation_type": "presente_symptome",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 3
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 3
+    },
+    {
+      "relation_type": "presente_symptome",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "SYMPTOME",
+      "count": 2
+    },
+    {
+      "relation_type": "traitement_indique_par_label_nosologique",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "relation_type": "biomarqueur_supporte_defaillance_organe",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 2
+    },
+    {
+      "relation_type": "traitement_indique_par_label_nosologique",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "a_pour_label_nosologique",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "relation_type": "imagerie_objective_comorbidite",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 2
+    },
+    {
+      "relation_type": "service_medical_accueille",
+      "target_type_observed": "FOYER_INFECTIEUX",
+      "target_type_expected": "DONNEE_PATIENT",
+      "count": 2
+    },
+    {
+      "relation_type": "presente_suspicion_infection",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "relation_type": "micro_organisme_isole_dans",
+      "target_type_observed": "MICRO_ORGANISME",
+      "target_type_expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "target_type_observed": "BIOMARQUEUR",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "relation_type": "imagerie_objective_comorbidite",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "COMORBIDITE_ANTECEDENT",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_symptome",
+      "target_type_observed": "TRAITEMENT",
+      "target_type_expected": "SYMPTOME",
+      "count": 1
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "target_type_observed": "SIGNE_VITAL",
+      "target_type_expected": "POSOLOGIE",
+      "count": 1
+    },
+    {
+      "relation_type": "patient_a_pour_evolution",
+      "target_type_observed": "TRAITEMENT",
+      "target_type_expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "relation_type": "presente_dysfonction_organe",
+      "target_type_observed": "COMORBIDITE_ANTECEDENT",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    },
+    {
+      "relation_type": "biomarqueur_supporte_defaillance_organe",
+      "target_type_observed": "SYMPTOME",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    },
+    {
+      "relation_type": "traitement_a_pour_posologie",
+      "target_type_observed": "DEFAILLANCE_ORGANE",
+      "target_type_expected": "POSOLOGIE",
+      "count": 1
+    },
+    {
+      "relation_type": "signe_vital_supporte_defaillance_organe",
+      "target_type_observed": "LABEL_NOSOLOGIQUE",
+      "target_type_expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    }
+  ]
+}

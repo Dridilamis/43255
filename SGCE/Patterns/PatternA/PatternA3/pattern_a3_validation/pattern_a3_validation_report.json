@@ -1,0 +1,79 @@
+{
+  "pattern": "A3",
+  "name": "IMAGERIE_PROCEDURE + FOYER_INFECTIEUX",
+  "relation": "imagerie_objective_foyer",
+  "methodological_status": "VALIDATION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA2\\pattern_a2_corrected",
+  "detection_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA3\\pattern_a3_detection\\pattern_a3_detection_report.json",
+  "summary": {
+    "clinical_documents_loaded": 43,
+    "candidates_detected": 1,
+    "candidates_validated": 1,
+    "already_correct": 0,
+    "missing_relation": 1,
+    "confirmed_pattern_a": 0,
+    "ambiguous": 0,
+    "future_link": 1,
+    "future_split": 0,
+    "protected": 0,
+    "errors": 0
+  },
+  "validated_candidates": [
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A3",
+      "subcase": "IMAGERIE_PROCEDURE_FOYER_INFECTIEUX",
+      "source_entity": {
+        "entity_id": "P4_E035",
+        "type": "IMAGERIE_PROCEDURE",
+        "page": 4,
+        "text": "ECBU | ecbu"
+      },
+      "detected_focus_families": [],
+      "detected_focus_signals": {},
+      "imaging_hint_present": false,
+      "same_page_focus_targets": [
+        {
+          "entity_id": "P4_E013",
+          "page": 4,
+          "text": "ECBU positifs à KLEBSIELLE PNEUMONIAE et PROTEUS VULGARIS | infection_urinaire",
+          "text_containment": false,
+          "token_overlap": 1.0,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_focus_target_count": 1,
+      "strength": "WEAK",
+      "status": "A3_CANDIDATE",
+      "validation_status": "MISSING_RELATION",
+      "recommended_future_action": "LINK",
+      "validation_reason": "Un FOYER_INFECTIEUX fiable est déjà séparé sur la même page, mais la relation imagerie_objective_foyer est absente.",
+      "reliable_target": {
+        "entity_id": "P4_E013",
+        "page": 4,
+        "text": "ECBU positifs à KLEBSIELLE PNEUMONIAE et PROTEUS VULGARIS | infection_urinaire",
+        "containment": false,
+        "token_overlap": 1.0,
+        "score": 0.45,
+        "reliable": true,
+        "relation_exists": false
+      },
+      "same_page_focus_targets_recomputed": [
+        {
+          "entity_id": "P4_E013",
+          "page": 4,
+          "text": "ECBU positifs à KLEBSIELLE PNEUMONIAE et PROTEUS VULGARIS | infection_urinaire",
+          "containment": false,
+          "token_overlap": 1.0,
+          "score": 0.45,
+          "reliable": true,
+          "relation_exists": false
+        }
+      ]
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a2_correction_report.json"
+  ],
+  "errors": []
+}

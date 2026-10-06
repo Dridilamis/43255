@@ -1,0 +1,407 @@
+{
+  "pattern": "D",
+  "mode": "GENERIC_SAFE_CORRECTOR",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternC\\corrected",
+  "validation_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternD\\validation\\pattern_d_validation_report.json",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternD\\corrected",
+  "summary": {
+    "validated_candidates": 46,
+    "operations_applied": 3,
+    "relink_applied": 3,
+    "retype_entity_applied": 0,
+    "remove_invalid_relation_applied": 0,
+    "documents_copied": 43,
+    "documents_modified": 3,
+    "nonclinical_json_skipped": 0,
+    "errors": 0
+  },
+  "skip_reasons": {
+    "AMBIGUOUS": 43
+  },
+  "operations": [
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000001",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000002",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000003",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000004",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000005",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000006",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "RELINK",
+      "modified": true,
+      "relation_id": "R_V69K_00046",
+      "role": "TARGET",
+      "old_entity_id": "P5_E020",
+      "new_entity_id": "P6_E002",
+      "new_entity_type": "LABEL_NOSOLOGIQUE",
+      "occurrences_updated": 1,
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000007",
+      "validation_status": "CONFIRMED_RELINK"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000008",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000009",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000010",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000011",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000012",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "RELINK",
+      "modified": true,
+      "relation_id": "R_V69K_00050",
+      "role": "TARGET",
+      "old_entity_id": "P4_E031",
+      "new_entity_id": "P4_E026",
+      "new_entity_type": "LABEL_NOSOLOGIQUE",
+      "occurrences_updated": 1,
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000013",
+      "validation_status": "CONFIRMED_RELINK"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000014",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000015",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000016",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000017",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000018",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000019",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000020",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000021",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000022",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000023",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000024",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000025",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "RELINK",
+      "modified": true,
+      "relation_id": "R_V69K_00013",
+      "role": "TARGET",
+      "old_entity_id": "P2_E051",
+      "new_entity_id": "P2_V66_E002",
+      "new_entity_type": "FOYER_INFECTIEUX",
+      "occurrences_updated": 1,
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000026",
+      "validation_status": "CONFIRMED_RELINK"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000027",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000028",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000029",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000030",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000031",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000032",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000033",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000034",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000035",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000036",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000037",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000038",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000039",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000040",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000041",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000042",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000043",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000044",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000045",
+      "validation_status": "AMBIGUOUS"
+    },
+    {
+      "operation": "SKIP",
+      "modified": false,
+      "reason": "AMBIGUOUS",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "D_000046",
+      "validation_status": "AMBIGUOUS"
+    }
+  ],
+  "errors": []
+}

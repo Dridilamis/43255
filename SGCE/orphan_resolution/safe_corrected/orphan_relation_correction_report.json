@@ -1,0 +1,83 @@
+{
+  "corrector": "orphan_relation_safe_corrector",
+  "source_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\relation_repair\\corrected",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\safe_corrected",
+  "summary": {
+    "documents_copied": 43,
+    "accepted_actions": 5,
+    "operations_applied": 5,
+    "documents_modified": 5,
+    "errors": 0,
+    "actions_applied": {
+      "REMOVE_INVALID_RELATION": 3,
+      "RELINK_EXISTING_ENTITY": 2
+    }
+  },
+  "modified_documents": [
+    "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "OR_000003",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "REMOVE_INVALID_RELATION",
+      "parameters": {
+        "relation_id": "R_V69K_00018"
+      },
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "OR_000005",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "REMOVE_INVALID_RELATION",
+      "parameters": {
+        "relation_id": "R_V69K_00047"
+      },
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "OR_000007",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RELINK_EXISTING_ENTITY",
+      "parameters": {
+        "relation_id": "R_V69K_00062",
+        "endpoint_role": "TARGET",
+        "old_endpoint": "P5_E035",
+        "new_entity_id": "P5_E011",
+        "expected_type": "SYMPTOME"
+      },
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "OR_000012",
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "REMOVE_INVALID_RELATION",
+      "parameters": {
+        "relation_id": "R_V69K_00010"
+      },
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "OR_000014",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RELINK_EXISTING_ENTITY",
+      "parameters": {
+        "relation_id": "R_V69K_00010",
+        "endpoint_role": "TARGET",
+        "old_endpoint": "P1_E029",
+        "new_entity_id": "P1_E006",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      },
+      "status": "APPLIED",
+      "reason": "OK"
+    }
+  ]
+}

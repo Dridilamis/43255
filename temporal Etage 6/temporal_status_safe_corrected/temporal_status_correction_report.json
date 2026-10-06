@@ -1,0 +1,643 @@
+{
+  "corrector": "temporal_status_safe_corrector",
+  "mode": "AUTONOMOUS_TEXT_GUIDED",
+  "source_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\numeric_unit Etage 5\\numeric_unit_safe_corrected",
+  "validated_decisions": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\temporal Etage 6\\outputs\\temporal_status_validated_decisions.json",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\temporal Etage 6\\temporal_status_safe_corrected",
+  "summary": {
+    "safe_actions_received": 21,
+    "documents_copied": 43,
+    "logical_operations_applied": 21,
+    "physical_occurrences_changed": 42,
+    "already_satisfied": 0,
+    "documents_modified": 8,
+    "entities_not_found": 0,
+    "invalid_annotation_structures": 0,
+    "errors": 0,
+    "operation_status_counts": {
+      "APPLIED": 21
+    }
+  },
+  "modified_documents": [
+    "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "TSR_000016",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E026",
+      "entity_text": "tabagisme sevré",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 99,
+        "end": 105,
+        "distance": 21
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_000020",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E030",
+      "entity_text": "tabagisme",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 99,
+        "end": 105,
+        "distance": 27
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_000025",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E041",
+      "entity_text": "1998",
+      "entity_type": "EVENEMENT_TEMPOREL",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 99,
+        "end": 105,
+        "distance": 16
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_000476",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E032",
+      "entity_text": "sérologies VHA",
+      "entity_type": "MICRO_ORGANISME",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancienne",
+        "start": 115,
+        "end": 123,
+        "distance": 49
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_000982",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E020",
+      "entity_text": "Tabagisme sevré",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "Ancien",
+        "start": 12,
+        "end": 18,
+        "distance": 69
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_000983",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E022",
+      "entity_text": "Tabagisme",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "Ancien",
+        "start": 12,
+        "end": 18,
+        "distance": 69
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001046",
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E003",
+      "entity_text": "Psychose chronique déficitaire ancienne (schizophrénie)",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancienne",
+        "start": 42,
+        "end": 50,
+        "distance": 0
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001047",
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E004",
+      "entity_text": "Lymphome B à petites cellules de différenciation lympho-plasmocytaire non traité",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancienne",
+        "start": 42,
+        "end": 50,
+        "distance": 19
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001175",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E023",
+      "entity_text": "Tabagisme",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 81,
+        "end": 87,
+        "distance": 50
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001561",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E005",
+      "entity_text": "Pneumothorax spontané ancien",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 31,
+        "end": 37,
+        "distance": 0
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001562",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E006",
+      "entity_text": "Traumatisme du pied et genou droit",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 31,
+        "end": 37,
+        "distance": 9
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001669",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E008",
+      "entity_text": "Alcoolisme sevré",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "Ancien",
+        "start": 143,
+        "end": 149,
+        "distance": 39
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001670",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E009",
+      "entity_text": "Tabagisme actif à 40 PA (2 paquets par jour en 20 ans)",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "Ancien",
+        "start": 143,
+        "end": 149,
+        "distance": 3
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001682",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E026",
+      "entity_text": "20 ans",
+      "entity_type": "DONNEE_PATIENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "Ancien",
+        "start": 143,
+        "end": 149,
+        "distance": 4
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001760",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E003",
+      "entity_text": "DID",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 71,
+        "end": 77,
+        "distance": 2
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001761",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E004",
+      "entity_text": "ancien toxicomane IV sevré",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 71,
+        "end": 77,
+        "distance": 0
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_001762",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E005",
+      "entity_text": "pleuropneumopathie gauche à pneumocoque",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "HISTORICAL",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "HISTORICAL",
+        "match": "ancien",
+        "start": 71,
+        "end": 77,
+        "distance": 39
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_002340",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E009",
+      "entity_text": "Hypertensive",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "AFTER_TREATMENT",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "AFTER_TREATMENT",
+        "match": "sous traitement",
+        "start": 332,
+        "end": 347,
+        "distance": 64
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_002341",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E010",
+      "entity_text": "Tabagisme 60 PA",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "AFTER_TREATMENT",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "AFTER_TREATMENT",
+        "match": "sous traitement",
+        "start": 332,
+        "end": 347,
+        "distance": 48
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_002356",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E036",
+      "entity_text": "Insuffisance rénale",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "AFTER_TREATMENT",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "AFTER_TREATMENT",
+        "match": "sous traitement",
+        "start": 332,
+        "end": 347,
+        "distance": 16
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    },
+    {
+      "candidate_id": "TSR_002357",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E049",
+      "entity_text": "2010",
+      "entity_type": "EVENEMENT_TEMPOREL",
+      "previous_temporal_status": null,
+      "previous_statuses_found": [
+        null,
+        null
+      ],
+      "new_temporal_status": "AFTER_TREATMENT",
+      "annotation_keys": [
+        "trace_context_status"
+      ],
+      "physical_occurrences_found": 2,
+      "physical_occurrences_changed": 2,
+      "physical_occurrences_already_satisfied": 0,
+      "physical_occurrences_invalid_structure": 0,
+      "temporal_evidence": {
+        "label": "AFTER_TREATMENT",
+        "match": "sous traitement",
+        "start": 332,
+        "end": 347,
+        "distance": 7
+      },
+      "confidence": 0.95,
+      "status": "APPLIED"
+    }
+  ],
+  "errors": []
+}

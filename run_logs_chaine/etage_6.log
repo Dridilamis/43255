@@ -1,0 +1,108 @@
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS CANDIDATE BUILDER - AUTONOMOUS FULL TEMPORAL AUDIT
+================================================================================================================
+Documents analysÃ©s                 : 43
+EntitÃ©s auditÃ©es                   : 10142
+Documents avec texte retrouvÃ©      : 43
+Documents sans texte               : 0
+Candidats temporels construits     : 2881
+EXPLICIT_TEMPORAL_CONTEXT           : 2881
+Mentions non retrouvÃ©es            : 745
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\queues\temporal_status_candidates.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS CLASSIFIER - TEXT-GUIDED REPAIR
+================================================================================================================
+Cas reÃ§us                           : 2881
+
+DECISIONS
+----------------------------------------------------------------------------------------------------------------
+KEEP                                                : 2860
+CORRECT                                             : 21
+
+ACTIONS PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 2860
+SET_TEMPORAL_STATUS                                 : 21
+
+TEMPORALITES PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+UNKNOWN                                             : 2860
+HISTORICAL                                          : 17
+AFTER_TREATMENT                                     : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\outputs\temporal_status_decisions.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS VALIDATOR - INDEPENDENT LOCAL REVALIDATION
+================================================================================================================
+DÃ©cisions reÃ§ues                    : 2881
+
+STATUTS FINAUX
+----------------------------------------------------------------------------------------------------------------
+KEEP                                                : 2860
+SAFE_ACCEPT                                         : 21
+
+ACTIONS FINALES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 2860
+SET_TEMPORAL_STATUS                                 : 21
+
+RAISONS REVIEW
+----------------------------------------------------------------------------------------------------------------
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\outputs\temporal_status_validated_decisions.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+========================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS SAFE CORRECTOR - AUTONOMOUS TEXT-GUIDED
+========================================================================================================================
+Actions SAFE_ACCEPT reÃ§ues          : 21
+Documents copiÃ©s                    : 43
+Corrections logiques appliquÃ©es     : 21
+Occurrences physiques modifiÃ©es     : 42
+DÃ©jÃ  satisfaites                     : 0
+Documents modifiÃ©s                  : 8
+EntitÃ©s non retrouvÃ©es              : 0
+Structures annotation invalides     : 0
+Erreurs                             : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+APPLIED                                             : 21
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\temporal_status_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\temporal_status_safe_corrected\temporal_status_correction_report.json
+
+Les fichiers sources n'ont pas Ã©tÃ© modifiÃ©s.
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS POST-VALIDATION - AUTONOMOUS TEXT-GUIDED
+================================================================================================================
+Documents vÃ©rifiÃ©s                  : 43
+OpÃ©rations attendues                : 21
+OpÃ©rations FAIL                     : 0
+Changements cliniques inattendus    : 0
+
+Docs manquants APRES                : 0
+Docs supplÃ©mentaires APRES          : 0
+
+STATUT FINAL TEMPORAL REPAIR        : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\post_validation\temporal_status_post_validation_report.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e par ce post-validateur.
+
+>>> temporal_status_candidate_builder.py
+
+>>> temporal_status_classifier.py
+
+>>> temporal_status_validator.py
+
+>>> temporal_status_safe_corrector.py
+
+>>> temporal_status_post_validator.py
+
+TEMPORAL ETAGE 6 : PASS

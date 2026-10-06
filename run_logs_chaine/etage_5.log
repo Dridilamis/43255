@@ -1,0 +1,472 @@
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT CANDIDATE BUILDER - AUTONOMOUS REDETECTION
+================================================================================================================
+Documents analysés                 : 43
+Candidats construits               : 553
+Textes manquants                   : 0
+Mentions non retrouvées            : 4
+
+ANOMALIES REDETECTEES
+----------------------------------------------------------------------------------------------------------------
+NON_NUMERIC_VALUE                                   : 144
+MISSING_UNIT                                        : 479
+UNIT_PARAMETER_MISMATCH                             : 62
+IMPLAUSIBLE_VALUE                                   : 5
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\queues\numeric_unit_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT VALIDATOR - V7 CONTEXT-AWARE CONSERVATIVE SEMANTIC UNIT GUARD
+================================================================================================================
+Candidats reçus                    : 553
+
+STATUTS
+----------------------------------------------------------------------------------------------------------------
+REVIEW                                              : 488
+SAFE_ACCEPT                                         : 65
+
+ACTIONS SURES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 488
+SET_VALUE_AND_UNIT                                  : 40
+SET_UNIT                                            : 25
+
+UNITES VALIDEES
+----------------------------------------------------------------------------------------------------------------
+mg                                                  : 12
+°C                                                  : 1
+L/min                                               : 4
+mL                                                  : 8
+g/24h                                               : 2
+mg/h                                                : 7
+µg/h                                                : 1
+g                                                   : 1
+%                                                   : 3
+mmol/L                                              : 3
+g/L                                                 : 2
+mmHg                                                : 2
+L                                                   : 6
+kPa                                                 : 1
+UI                                                  : 1
+mL/j                                                : 6
+g/dL                                                : 1
+g/j                                                 : 4
+
+RAISONS REVIEW
+----------------------------------------------------------------------------------------------------------------
+La valeur JSON ne correspond à aucune preuve valeur+unité suffisamment ancrée ; correction automatique interdite.: 233
+Aucune preuve textuelle explicite et non ambiguë de valeur + unité.                       : 199
+La preuve valeur+unité provient du contexte mais n'est pas suffisamment ancrée dans la valeur brute de l'entité.: 41
+Plusieurs expressions valeur+unité concurrentes sont présentes dans la valeur brute de l'entité.: 6
+Unité 'L' incompatible avec le paramètre 'frequence_respiratoire'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 2
+Unité 'UI' incompatible avec le paramètre 'frequence_respiratoire'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 2
+Expression dose + fréquence détectée. La fréquence ne doit pas être fusionnée automatiquement avec l'unité.: 2
+La valeur numérique de l'entité et celle de la preuve ne correspondent pas.               : 1
+Unité 'mg' incompatible avec le paramètre 'pression_arterielle_systolique'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 1
+Unité 'mg/j' incompatible avec le paramètre 'frequence_respiratoire'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 1
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\outputs\numeric_unit_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT SAFE CORRECTOR - BEFORE/AFTER TRACE
+================================================================================================================
+Actions SAFE_ACCEPT reçues (brut)   : 65
+Actions après fusion même slot      : 65
+Actions même slot fusionnées        : 0
+Conflits protégés                   : 0
+Documents copiés                    : 43
+Opérations appliquées               : 65
+Corrections de slots effectives     : 65
+Entités logiques corrigées          : 60
+Entités multi-slots corrigées       : 5
+Documents modifiés                  : 26
+Erreurs                             : 0
+
+CORRECTIONS AVANT -> APRES
+----------------------------------------------------------------------------------------------------------------
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E025 | SET_VALUE_AND_UNIT
+  AVANT : valeur='40 mg' | unité=None
+  APRES : valeur=40.0 | unité='mg'
+  PREUVE: {'value': '40', 'numeric_value': 40.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 5, 'matched_text': '40 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E027 | SET_UNIT
+  AVANT : valeur=37.2 | unité=None
+  APRES : valeur=37.2 | unité='°C'
+  PREUVE: {'value': '37.2', 'numeric_value': 37.2, 'unit': '°C', 'raw_unit': '°C', 'start': 20, 'end': 27, 'matched_text': '37.2 °C', 'source': 'SENTENCE'}
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E011 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3L/min' | unité=None
+  APRES : valeur=3.0 | unité='L/min'
+  PREUVE: {'value': '3', 'numeric_value': 3.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 0, 'end': 6, 'matched_text': '3L/min', 'source': 'RAW_VALUE'}
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E037 | SET_VALUE_AND_UNIT
+  AVANT : valeur='6L/min' | unité=None
+  APRES : valeur=6.0 | unité='L/min'
+  PREUVE: {'value': '6', 'numeric_value': 6.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 0, 'end': 6, 'matched_text': '6L/min', 'source': 'RAW_VALUE'}
+
+img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E026 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 ml' | unité=None
+  APRES : valeur=500.0 | unité='mL'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '500 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E008 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2g /24H' | unité=None
+  APRES : valeur=2.0 | unité='g/24h'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'g/24h', 'raw_unit': 'g /24H', 'start': 0, 'end': 7, 'matched_text': '2g /24H', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E010 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3g/24H' | unité=None
+  APRES : valeur=3.0 | unité='g/24h'
+  PREUVE: {'value': '3', 'numeric_value': 3.0, 'unit': 'g/24h', 'raw_unit': 'g/24H', 'start': 0, 'end': 6, 'matched_text': '3g/24H', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E029 | SET_VALUE_AND_UNIT
+  AVANT : valeur='10mg /h' | unité=None
+  APRES : valeur=10.0 | unité='mg/h'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg/h', 'raw_unit': 'mg /h', 'start': 0, 'end': 7, 'matched_text': '10mg /h', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E030 | SET_VALUE_AND_UNIT
+  AVANT : valeur='300 µg /h' | unité=None
+  APRES : valeur=300.0 | unité='µg/h'
+  PREUVE: {'value': '300', 'numeric_value': 300.0, 'unit': 'µg/h', 'raw_unit': 'µg /h', 'start': 0, 'end': 9, 'matched_text': '300 µg /h', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E034 | SET_VALUE_AND_UNIT
+  AVANT : valeur='10 mg/h' | unité=None
+  APRES : valeur=10.0 | unité='mg/h'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 7, 'matched_text': '10 mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E035 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 mg' | unité=None
+  APRES : valeur=500.0 | unité='mg'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '500 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E039 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 mg' | unité=None
+  APRES : valeur=500.0 | unité='mg'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '500 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E041 | SET_VALUE_AND_UNIT
+  AVANT : valeur='100 mg' | unité=None
+  APRES : valeur=100.0 | unité='mg'
+  PREUVE: {'value': '100', 'numeric_value': 100.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '100 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E046 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1g' | unité=None
+  APRES : valeur=1.0 | unité='g'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'g', 'raw_unit': 'g', 'start': 0, 'end': 2, 'matched_text': '1g', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E008 | SET_VALUE_AND_UNIT
+  AVANT : valeur='Vt 500 ml' | unité=None
+  APRES : valeur=500.0 | unité='mL'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 3, 'end': 9, 'matched_text': '500 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_UNIT
+  AVANT : valeur=95.8 | unité=None
+  APRES : valeur=95.8 | unité='%'
+  PREUVE: {'value': '95.8', 'numeric_value': 95.8, 'unit': '%', 'raw_unit': '%', 'start': 5, 'end': 11, 'matched_text': '95.8 %', 'source': 'ENTITY_TEXT'}
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E044 | SET_UNIT
+  AVANT : valeur=20.8 | unité=None
+  APRES : valeur=20.8 | unité='mmol/L'
+  PREUVE: {'value': '20.80', 'numeric_value': 20.8, 'unit': 'mmol/L', 'raw_unit': 'mmol/L', 'start': 426, 'end': 437, 'matched_text': '20.80mmol/L', 'source': 'SENTENCE'}
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E023 | SET_UNIT
+  AVANT : valeur=0.13 | unité=None
+  APRES : valeur=0.13 | unité='g/L'
+  PREUVE: {'value': '0.13', 'numeric_value': 0.13, 'unit': 'g/L', 'raw_unit': 'g/l', 'start': 76, 'end': 84, 'matched_text': '0.13 g/l', 'source': 'SENTENCE'}
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E010 | SET_UNIT
+  AVANT : valeur=1.03 | unité=None
+  APRES : valeur=1.03 | unité='g/L'
+  PREUVE: {'value': '1.03', 'numeric_value': 1.03, 'unit': 'g/L', 'raw_unit': 'g/l', 'start': 13, 'end': 21, 'matched_text': '1.03 g/l', 'source': 'SENTENCE'}
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E029 | SET_UNIT
+  AVANT : valeur=10 | unité=None
+  APRES : valeur=10 | unité='mg'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 56, 'end': 61, 'matched_text': '10 mg', 'source': 'SENTENCE'}
+
+img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E003 | SET_UNIT
+  AVANT : valeur=10 | unité=None
+  APRES : valeur=10 | unité='mg'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 67, 'end': 72, 'matched_text': '10 mg', 'source': 'SENTENCE'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E003 | SET_UNIT
+  AVANT : valeur=127 | unité=None
+  APRES : valeur=127 | unité='mmHg'
+  PREUVE: {'value': '127', 'numeric_value': 127.0, 'unit': 'mmHg', 'raw_unit': 'mmHg', 'start': 6, 'end': 14, 'matched_text': '127 mmHg', 'source': 'ENTITY_TEXT'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E019 | SET_UNIT
+  AVANT : valeur=68 | unité=None
+  APRES : valeur=68 | unité='mmHg'
+  PREUVE: {'value': '68', 'numeric_value': 68.0, 'unit': 'mmHg', 'raw_unit': 'mmHg', 'start': 6, 'end': 13, 'matched_text': '68 mmHg', 'source': 'ENTITY_TEXT'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='250 ml' | unité=None
+  APRES : valeur=250.0 | unité='mL'
+  PREUVE: {'value': '250', 'numeric_value': 250.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '250 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E025 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1l' | unité=None
+  APRES : valeur=1.0 | unité='L'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'L', 'raw_unit': 'l', 'start': 0, 'end': 2, 'matched_text': '1l', 'source': 'RAW_VALUE'}
+
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E014 | SET_VALUE_AND_UNIT
+  AVANT : valeur='610mL' | unité=None
+  APRES : valeur=610.0 | unité='mL'
+  PREUVE: {'value': '610', 'numeric_value': 610.0, 'unit': 'mL', 'raw_unit': 'mL', 'start': 0, 'end': 5, 'matched_text': '610mL', 'source': 'RAW_VALUE'}
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E038 | SET_UNIT
+  AVANT : valeur=6.8 | unité=None
+  APRES : valeur=6.8 | unité='kPa'
+  PREUVE: {'value': '6.8', 'numeric_value': 6.8, 'unit': 'kPa', 'raw_unit': 'kPa', 'start': 158, 'end': 165, 'matched_text': '6.8 kPa', 'source': 'SENTENCE'}
+
+img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E022 | SET_UNIT
+  AVANT : valeur=2 | unité=None
+  APRES : valeur=2 | unité='mg/h'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 22, 'end': 28, 'matched_text': '2 mg/h', 'source': 'ENTITY_TEXT'}
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E003 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3L' | unité='L'
+  APRES : valeur=3.0 | unité='L'
+  PREUVE: {'value': '3', 'numeric_value': 3.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 2, 'matched_text': '3L', 'source': 'RAW_VALUE'}
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E007 | SET_VALUE_AND_UNIT
+  AVANT : valeur='4L' | unité='L'
+  APRES : valeur=4.0 | unité='L'
+  PREUVE: {'value': '4', 'numeric_value': 4.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 2, 'matched_text': '4L', 'source': 'RAW_VALUE'}
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E008 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1mg' | unité=None
+  APRES : valeur=1.0 | unité='mg'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 3, 'matched_text': '1mg', 'source': 'RAW_VALUE'}
+
+img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E022 | SET_UNIT
+  AVANT : valeur=33 | unité=None
+  APRES : valeur=33 | unité='UI'
+  PREUVE: {'value': '33', 'numeric_value': 33.0, 'unit': 'UI', 'raw_unit': 'UI', 'start': 78, 'end': 83, 'matched_text': '33 UI', 'source': 'SENTENCE'}
+
+img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3000ml' | unité=None
+  APRES : valeur=3000.0 | unité='mL'
+  PREUVE: {'value': '3000', 'numeric_value': 3000.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '3000ml', 'source': 'RAW_VALUE'}
+
+img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E029 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2500 ml' | unité=None
+  APRES : valeur=2500.0 | unité='mL'
+  PREUVE: {'value': '2500', 'numeric_value': 2500.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 7, 'matched_text': '2500 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E033 | SET_VALUE_AND_UNIT
+  AVANT : valeur='470 ml' | unité=None
+  APRES : valeur=470.0 | unité='mL'
+  PREUVE: {'value': '470', 'numeric_value': 470.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '470 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E043 | SET_VALUE_AND_UNIT
+  AVANT : valeur='470 ml' | unité=None
+  APRES : valeur=470.0 | unité='mL'
+  PREUVE: {'value': '470', 'numeric_value': 470.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '470 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E020 | SET_UNIT
+  AVANT : valeur=5.4 | unité=None
+  APRES : valeur=5.4 | unité='mmol/L'
+  PREUVE: {'value': '5.4', 'numeric_value': 5.4, 'unit': 'mmol/L', 'raw_unit': 'mmol/l', 'start': 81, 'end': 91, 'matched_text': '5.4 mmol/l', 'source': 'SENTENCE'}
+
+img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E041 | SET_UNIT
+  AVANT : valeur=84.8 | unité=None
+  APRES : valeur=84.8 | unité='%'
+  PREUVE: {'value': '84.8', 'numeric_value': 84.8, 'unit': '%', 'raw_unit': '%', 'start': 7, 'end': 13, 'matched_text': '84.8 %', 'source': 'ENTITY_TEXT'}
+
+img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E028 | SET_UNIT
+  AVANT : valeur=150 | unité=None
+  APRES : valeur=150 | unité='mg'
+  PREUVE: {'value': '150', 'numeric_value': 150.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 60, 'end': 66, 'matched_text': '150 mg', 'source': 'SENTENCE'}
+
+img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2 L' | unité=None
+  APRES : valeur=2.0 | unité='L'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 3, 'matched_text': '2 L', 'source': 'RAW_VALUE'}
+
+img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E025 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2 L' | unité=None
+  APRES : valeur=2.0 | unité='L'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 3, 'matched_text': '2 L', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E015 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2 mg/h' | unité=None
+  APRES : valeur=2.0 | unité='mg/h'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 6, 'matched_text': '2 mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E024 | SET_VALUE_AND_UNIT
+  AVANT : valeur='7mg/h' | unité=None
+  APRES : valeur=7.0 | unité='mg/h'
+  PREUVE: {'value': '7', 'numeric_value': 7.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 5, 'matched_text': '7mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E026 | SET_VALUE_AND_UNIT
+  AVANT : valeur='20 mg/h' | unité=None
+  APRES : valeur=20.0 | unité='mg/h'
+  PREUVE: {'value': '20', 'numeric_value': 20.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 7, 'matched_text': '20 mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E064 | SET_VALUE_AND_UNIT
+  AVANT : valeur='5 mg IV' | unité=None
+  APRES : valeur=5.0 | unité='mg'
+  PREUVE: {'value': '5', 'numeric_value': 5.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 4, 'matched_text': '5 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E065 | SET_VALUE_AND_UNIT
+  AVANT : valeur='300 mg IV' | unité=None
+  APRES : valeur=300.0 | unité='mg'
+  PREUVE: {'value': '300', 'numeric_value': 300.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '300 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E043 | SET_UNIT
+  AVANT : valeur=97.7 | unité=None
+  APRES : valeur=97.7 | unité='%'
+  PREUVE: {'value': '97.7', 'numeric_value': 97.7, 'unit': '%', 'raw_unit': '%', 'start': 5, 'end': 11, 'matched_text': '97.7 %', 'source': 'ENTITY_TEXT'}
+
+img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E019 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1L' | unité=None
+  APRES : valeur=1.0 | unité='L'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 2, 'matched_text': '1L', 'source': 'RAW_VALUE'}
+
+img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E021 | SET_UNIT
+  AVANT : valeur=1 | unité=None
+  APRES : valeur=1 | unité='mg/h'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 4, 'end': 10, 'matched_text': '1 mg/h', 'source': 'ENTITY_TEXT'}
+
+img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='6L/min' | unité=None
+  APRES : valeur=6.0 | unité='L/min'
+  PREUVE: {'value': '6', 'numeric_value': 6.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 0, 'end': 6, 'matched_text': '6L/min', 'source': 'RAW_VALUE'}
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E020 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1000 ml/j' | unité=None
+  APRES : valeur=1000.0 | unité='mL/j'
+  PREUVE: {'value': '1000', 'numeric_value': 1000.0, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 0, 'end': 9, 'matched_text': '1000 ml/j', 'source': 'RAW_VALUE'}
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E022 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 ml/j' | unité=None
+  APRES : valeur=500.0 | unité='mL/j'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 0, 'end': 8, 'matched_text': '500 ml/j', 'source': 'RAW_VALUE'}
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E003 | SET_UNIT
+  AVANT : valeur=1.0 | unité=None
+  APRES : valeur=1.0 | unité='mmol/L'
+  PREUVE: {'value': '1.00', 'numeric_value': 1.0, 'unit': 'mmol/L', 'raw_unit': 'mmol/L', 'start': 350, 'end': 361, 'matched_text': '1.00 mmol/L', 'source': 'SENTENCE'}
+
+img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E073 | SET_UNIT
+  AVANT : valeur=7 | unité=None
+  APRES : valeur=7 | unité='g/dL'
+  PREUVE: {'value': '7', 'numeric_value': 7.0, 'unit': 'g/dL', 'raw_unit': 'g/dL', 'start': 12, 'end': 17, 'matched_text': '7g/dL', 'source': 'ENTITY_TEXT'}
+
+img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E032 | SET_UNIT
+  AVANT : valeur=15 | unité=None
+  APRES : valeur=15 | unité='L/min'
+  PREUVE: {'value': '15', 'numeric_value': 15.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 95, 'end': 102, 'matched_text': '15L/min', 'source': 'SENTENCE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E017 | SET_UNIT
+  AVANT : valeur=500 | unité=None
+  APRES : valeur=500 | unité='mL/j'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL/j', 'raw_unit': 'ml / jour', 'start': 4, 'end': 17, 'matched_text': '500 ml / jour', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E017 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 ml / jour' | unité='ml'
+  APRES : valeur=500.0 | unité='mL/j'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL/j', 'raw_unit': 'ml / jour', 'start': 0, 'end': 13, 'matched_text': '500 ml / jour', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E021 | SET_UNIT
+  AVANT : valeur=1 | unité=None
+  APRES : valeur=1 | unité='g/j'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 5, 'end': 9, 'matched_text': '1g/j', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E021 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1g/j' | unité='g/j'
+  APRES : valeur=1.0 | unité='g/j'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 0, 'end': 4, 'matched_text': '1g/j', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E023 | SET_UNIT
+  AVANT : valeur=2 | unité=None
+  APRES : valeur=2 | unité='g/j'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 4, 'end': 8, 'matched_text': '2g/j', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2g/j' | unité='g/j'
+  APRES : valeur=2.0 | unité='g/j'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 0, 'end': 4, 'matched_text': '2g/j', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E033 | SET_UNIT
+  AVANT : valeur=0.4 | unité=None
+  APRES : valeur=0.4 | unité='mL/j'
+  PREUVE: {'value': '0.4', 'numeric_value': 0.4, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 8, 'end': 16, 'matched_text': '0.4 ml/j', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E033 | SET_VALUE_AND_UNIT
+  AVANT : valeur='0.4 ml/j' | unité='ml/j'
+  APRES : valeur=0.4 | unité='mL/j'
+  PREUVE: {'value': '0.4', 'numeric_value': 0.4, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 0, 'end': 8, 'matched_text': '0.4 ml/j', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E035 | SET_UNIT
+  AVANT : valeur=40 | unité=None
+  APRES : valeur=40 | unité='mg'
+  PREUVE: {'value': '40', 'numeric_value': 40.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 9, 'end': 14, 'matched_text': '40 mg', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E035 | SET_VALUE_AND_UNIT
+  AVANT : valeur='40 mg' | unité='mg'
+  APRES : valeur=40.0 | unité='mg'
+  PREUVE: {'value': '40', 'numeric_value': 40.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 5, 'matched_text': '40 mg', 'source': 'RAW_VALUE'}
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\numeric_unit_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\numeric_unit_safe_corrected\numeric_unit_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT POST-VALIDATION - BEFORE/AFTER TRACE
+================================================================================================================
+Documents vérifiés                  : 43
+Opérations appliquées               : 65
+Corrections de slots effectives     : 65
+Slots logiques uniques corrigés     : 65
+Entités logiques uniques corrigées  : 60
+Doublons d'opération même slot      : 0
+Conflits protégés                   : 0
+Opérations sans changement réel     : 0
+Documents avec relations modifiées  : 0
+
+Docs manquants APRES                : 0
+Docs supplémentaires APRES          : 0
+
+STATUT FINAL NUMERIC UNIT REPAIR    : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\post_validation\numeric_unit_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+==============================================================================================================
+TRACE - NUMERIC + UNIT VALIDATION - ETAGE 5 V7.1
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_candidate_builder.py
+==============================================================================================================
+OK : numeric_unit_candidate_builder.py
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_validator.py
+==============================================================================================================
+OK : numeric_unit_validator.py
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_safe_corrector.py
+==============================================================================================================
+OK : numeric_unit_safe_corrector.py
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_post_validator.py
+==============================================================================================================
+OK : numeric_unit_post_validator.py
+
+==============================================================================================================
+VERIFICATION FINALE
+==============================================================================================================
+Statut post-validation : PASS
+
+==============================================================================================================
+NUMERIC + UNIT ETAGE 5 V7.1 : PASS
+==============================================================================================================
+Rapport : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\post_validation\numeric_unit_post_validation_report.json

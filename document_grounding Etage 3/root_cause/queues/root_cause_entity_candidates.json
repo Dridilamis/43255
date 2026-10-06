@@ -1,0 +1,32 @@
+[
+  {
+    "candidate_id": "RCE_000001",
+    "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "entity_id": "P4_E029",
+    "entity_text": "anurie | renal",
+    "current_type": "SYMPTOME",
+    "proposed_type": "DEFAILLANCE_ORGANE",
+    "support_count": 2,
+    "total_mismatch_relations": 2,
+    "support_ratio": 1.0,
+    "expected_type_votes": {
+      "DEFAILLANCE_ORGANE": 2
+    },
+    "incident_mismatches": [
+      {
+        "relation_id": "R_V69K_00085",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "role": "TARGET",
+        "current_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      },
+      {
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_dysfonction_organe",
+        "role": "TARGET",
+        "current_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      }
+    ]
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 2,
+  "status_counts": {
+    "AMBIGUOUS": 2
+  },
+  "results": [
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P3_E029",
+        "type": "TRAITEMENT",
+        "name": "Augmentin",
+        "preuve": "relais à J2 par Augmentin IV",
+        "valeur": null,
+        "page": 3
+      },
+      "detection_text": "relais à J2 par Augmentin IV | Augmentin | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P4_E010",
+          "target_name": "x2",
+          "target_preuve": "Calciparine à dose curative 0.5mlx2",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E006",
+          "target_name": "5g",
+          "target_preuve": "5g IVD toutes les 8h (j1 le 20/10)",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E013",
+          "target_name": "lunette nasale : initialement à 2 litres",
+          "target_preuve": "lunette nasale : initialement à 2 litres",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E024",
+        "type": "TRAITEMENT",
+        "name": "alimentation orale",
+        "preuve": "alimentation orale",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "alimentation orale | nutrition_enterale",
+      "detected_components": {
+        "route": [
+          "orale"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E025"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P5_E003",
+          "target_name": "16 jours",
+          "target_preuve": "pour une durée de 16 jours",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E006",
+          "target_name": "5g",
+          "target_preuve": "5g IVD toutes les 8h (j1 le 20/10)",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E008",
+          "target_name": "0.5 ml toutes les 12h",
+          "target_preuve": "0.5 ml toutes les 12h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

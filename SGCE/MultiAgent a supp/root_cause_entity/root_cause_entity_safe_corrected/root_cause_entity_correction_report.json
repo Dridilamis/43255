@@ -1,0 +1,119 @@
+{
+  "corrector": "root_cause_entity_safe_corrector",
+  "source_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\orphan_relation\\orphan_relation_fully_corrected",
+  "output_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\root_cause_entity\\root_cause_entity_safe_corrected",
+  "summary": {
+    "documents_copied": 43,
+    "safe_retype_received": 7,
+    "operations_applied": 7,
+    "documents_modified": 5,
+    "errors": 0
+  },
+  "modified_documents": [
+    "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "RCE_000004",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E015",
+      "old_types": [
+        "FOYER_INFECTIEUX"
+      ],
+      "new_type": "MICRO_ORGANISME",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    },
+    {
+      "candidate_id": "RCE_000005",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E034",
+      "old_types": [
+        "IMAGERIE_PROCEDURE"
+      ],
+      "new_type": "FOYER_INFECTIEUX",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    },
+    {
+      "candidate_id": "RCE_000006",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E004",
+      "old_types": [
+        "COMORBIDITE_ANTECEDENT"
+      ],
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    },
+    {
+      "candidate_id": "RCE_000011",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E034",
+      "old_types": [
+        "DEFAILLANCE_ORGANE"
+      ],
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    },
+    {
+      "candidate_id": "RCE_000016",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E022",
+      "old_types": [
+        "COMORBIDITE_ANTECEDENT"
+      ],
+      "new_type": "SYMPTOME",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    },
+    {
+      "candidate_id": "RCE_000025",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E010",
+      "old_types": [
+        "POSOLOGIE"
+      ],
+      "new_type": "TRAITEMENT",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    },
+    {
+      "candidate_id": "RCE_000026",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E029",
+      "old_types": [
+        "SYMPTOME"
+      ],
+      "new_type": "DEFAILLANCE_ORGANE",
+      "support_count": 2,
+      "support_ratio": 1.0,
+      "occurrences_changed": 2,
+      "status": "APPLIED",
+      "reason": "SAFE_RETYPE"
+    }
+  ]
+}

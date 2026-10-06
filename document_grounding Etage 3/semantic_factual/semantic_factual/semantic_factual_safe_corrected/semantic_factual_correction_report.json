@@ -1,0 +1,204 @@
+{
+  "corrector": "semantic_factual_safe_corrector",
+  "mode": "STRICT_SAFE_REMOVE_ONLY",
+  "source_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\numeric_unit\\numeric_unit_safe_corrected_repaired",
+  "output_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\semantic_factual\\semantic_factual_safe_corrected",
+  "summary": {
+    "safe_remove_actions_received": 4,
+    "documents_copied": 43,
+    "logical_relations_removed": 4,
+    "physical_occurrences_removed": 5,
+    "documents_modified": 4,
+    "errors": 0,
+    "operation_status_counts": {
+      "APPLIED": 4
+    }
+  },
+  "operations": [
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "biomarqueur_est_critere_de",
+      "source_id": "P1_E009",
+      "target_id": "P1_E021",
+      "source_text": "GB 4 600 | globules_blancs | 4600",
+      "target_text": "syndrome inflammatoire biologique | syndrome_inflammatoire_biologique",
+      "negated_side": "TARGET",
+      "negation_cue": "pas de",
+      "negation_distance": 1,
+      "local_context": "r thoracique : images cavitaires des apex, micronodules calcifies et un epanchement pleural de faible abondance. pas de syndrome inflammatoire biologique (gb 4 600) un bk crachat est effectue qui retrouve des cocci gram + en chainette, mais pas de baar au direct. => transf",
+      "contradiction_confidence": 0.995,
+      "entities_before": 538,
+      "entities_after": 538,
+      "relations_before": 189,
+      "relations_after": 188,
+      "physical_occurrences_removed": 1,
+      "removed_occurrences": [
+        {
+          "location": "global_relations",
+          "page": null,
+          "relation": {
+            "identifiant_relation": "R_V69K_00009",
+            "identifiant_entite_sujet": "P1_E009",
+            "type_relation": "biomarqueur_est_critere_de",
+            "identifiant_entite_objet": "P1_E021",
+            "delai_minutes": null,
+            "preuve": "nchement pleural de faible abondance. Pas de syndrome inflammatoire biologique (GB 4 600)\nUn BK crachat est effectué qui retrouve des",
+            "note_clinique": "V6.8 : biomarqueur-critère sur paire clinique fortement typée.",
+            "type_inference": "inference_structurelle_v68",
+            "confiance": "elevee",
+            "_v68_added": true,
+            "_page": 1,
+            "page": 1
+          }
+        }
+      ],
+      "status": "APPLIED"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00022",
+      "relation_type": "micro_organisme_isole_dans",
+      "source_id": "P4_E036",
+      "target_id": "P4_E040",
+      "source_text": "campylobacter | micro_organisme",
+      "target_text": "foyer infectieux | foyer",
+      "negated_side": "TARGET",
+      "negation_cue": "absence de",
+      "negation_distance": 1,
+      "local_context": "ulture differentielle toujours en cours mais negative a 72h. radiographie pulmonaire sans particularite avec absence de foyer infectieux. une pcr cmv a ete realisee dans ce contexte de diarrhee et d'immunosuppression. a noter que la porte d'entree infectie",
+      "contradiction_confidence": 0.995,
+      "entities_before": 344,
+      "entities_after": 344,
+      "relations_before": 100,
+      "relations_after": 99,
+      "physical_occurrences_removed": 1,
+      "removed_occurrences": [
+        {
+          "location": "global_relations",
+          "page": null,
+          "relation": {
+            "identifiant_relation": "R_V69K_00022",
+            "identifiant_entite_sujet": "P4_E036",
+            "type_relation": "micro_organisme_isole_dans",
+            "identifiant_entite_objet": "P4_E040",
+            "delai_minutes": null,
+            "preuve": "ture en cours pour le clostridium et le campylobacter). ECBU stérile, hémoculture différentielle toujours en cours mais négative à 72h.\nRadiographie pulmonaire sans particularité avec absence de foyer infectieux. Une PCR CMV a été réalisée dans ce con",
+            "note_clinique": "V6.8 : microorganisme-foyer sur inclusion/proximité microbiologique forte.",
+            "type_inference": "inference_structurelle_v68",
+            "confiance": "elevee",
+            "_v68_added": true,
+            "_page": 4,
+            "page": 4
+          }
+        }
+      ],
+      "status": "APPLIED"
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00093",
+      "relation_type": "presente_dysfonction_organe",
+      "source_id": "P4_E043",
+      "target_id": "P4_E039",
+      "source_text": "patiente | patient",
+      "target_text": "dysfonction VG | autre",
+      "negated_side": "TARGET",
+      "negation_cue": "pas de",
+      "negation_distance": 1,
+      "local_context": "e, sng en place echographie abdominale : lame d'ascite ed moyen en abondance ett patiente trop peu echogene mais pas de dysfonction vg evidente conclusion initiale coma chez patiente cirrhotique de 54 ans avec tres probable encephalopathie hepatique sur ",
+      "contradiction_confidence": 0.995,
+      "entities_before": 512,
+      "entities_after": 512,
+      "relations_before": 160,
+      "relations_after": 159,
+      "physical_occurrences_removed": 1,
+      "removed_occurrences": [
+        {
+          "location": "global_relations",
+          "page": null,
+          "relation": {
+            "identifiant_relation": "R_V69K_00093",
+            "identifiant_entite_sujet": "P4_E043",
+            "entite_sujet": "patiente",
+            "type_relation": "presente_dysfonction_organe",
+            "identifiant_entite_objet": "P4_E039",
+            "entite_objet": "dysfonction VG",
+            "delai_minutes": null,
+            "preuve": "dysfonction VG",
+            "note_clinique": "",
+            "type_inference": "extraction_directe",
+            "confiance": "elevee",
+            "subject": "patiente",
+            "object": "dysfonction VG",
+            "_page": 4,
+            "page": 4
+          }
+        }
+      ],
+      "status": "APPLIED"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "P5_R001",
+      "relation_type": "imagerie_objective_defaillance",
+      "source_id": "P5_E002",
+      "target_id": "P5_E018",
+      "source_text": "PL",
+      "target_text": "pas de défaillances au plan rénal | renal",
+      "negated_side": "TARGET",
+      "negation_cue": "pas de",
+      "negation_distance": 0,
+      "local_context": "ement avec kinesitherapie motrice. son traitement habituel par keppra est repris le 23/11. par ailleurs, on n'objective pas de defaillances au plan renal, hepatique et hematologique. devant les difficultes de sevrage de la ventilation mecanique, il est effectue un bilan co",
+      "contradiction_confidence": 0.995,
+      "entities_before": 490,
+      "entities_after": 490,
+      "relations_before": 192,
+      "relations_after": 190,
+      "physical_occurrences_removed": 2,
+      "removed_occurrences": [
+        {
+          "location": "global_relations",
+          "page": null,
+          "relation": {
+            "identifiant_relation": "P5_R001",
+            "type_relation": "imagerie_objective_defaillance",
+            "identifiant_entite_sujet": "P5_E002",
+            "identifiant_entite_objet": "P5_E018",
+            "page": 5,
+            "relation": "imagerie_objective_defaillance",
+            "from_id": "P5_E002",
+            "to_id": "P5_E018",
+            "type": "imagerie_objective_defaillance",
+            "_sgce_created": true,
+            "_sgce_pattern": "A",
+            "_sgce_subcase": "A4_IMAGERIE_DEFAILLANCE_ORGANE",
+            "_sgce_operation": "LINK"
+          }
+        },
+        {
+          "location": "page",
+          "page": 5,
+          "relation": {
+            "identifiant_relation": "P5_R001",
+            "identifiant_entite_sujet": "P5_E058",
+            "entite_sujet": "La patiente",
+            "type_relation": "a_pour_label_nosologique",
+            "identifiant_entite_objet": "P5_E001",
+            "entite_objet": "sepsis initial",
+            "delai_minutes": null,
+            "preuve": "sepsis initial",
+            "note_clinique": "",
+            "type_inference": "extraction_directe",
+            "confiance": "elevee",
+            "subject": "La patiente",
+            "object": "sepsis initial",
+            "_page": 5
+          }
+        }
+      ],
+      "status": "APPLIED"
+    }
+  ],
+  "errors": []
+}

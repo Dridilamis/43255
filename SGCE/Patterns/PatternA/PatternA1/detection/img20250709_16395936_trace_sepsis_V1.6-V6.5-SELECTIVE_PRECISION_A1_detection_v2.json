@@ -1,0 +1,304 @@
+{
+  "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 60,
+  "number_candidates": 13,
+  "signal_counts": {
+    "WEAK": 11,
+    "MEDIUM": 2
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E027",
+        "type": "TRAITEMENT",
+        "name": "amiklin",
+        "preuve": "ttt par claventin 3g+ 500 mg d'amiklin",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "ttt par claventin 3g+ 500 mg d'amiklin | amiklin | antibiotique",
+      "detected_components": {
+        "dose": [
+          "3g",
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E008",
+        "type": "TRAITEMENT",
+        "name": "CLAVENTIN",
+        "preuve": "CLAVENTIN 3g",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "CLAVENTIN 3g | CLAVENTIN | antibiotique",
+      "detected_components": {
+        "dose": [
+          "3g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E009",
+        "type": "TRAITEMENT",
+        "name": "AMIKLIN",
+        "preuve": "AMIKLIN 500 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "AMIKLIN 500 mg | AMIKLIN | antibiotique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E015",
+        "type": "TRAITEMENT",
+        "name": "lasilix",
+        "preuve": "lasilix 500 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "lasilix 500 mg | lasilix | diuretique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E019",
+        "type": "TRAITEMENT",
+        "name": "Fosrenol",
+        "preuve": "Fosrenol 1000:1cp×3/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Fosrenol 1000:1cp×3/j | Fosrenol | autre",
+      "detected_components": {
+        "frequency": [
+          "1cp×3/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E021",
+        "type": "TRAITEMENT",
+        "name": "inexium",
+        "preuve": "inexium 40mg : 1cp/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "inexium 40mg : 1cp/j | inexium | autre",
+      "detected_components": {
+        "dose": [
+          "40mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E027",
+        "type": "TRAITEMENT",
+        "name": "Specialfodine",
+        "preuve": "Specialfodine 5 mg : 1cp/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Specialfodine 5 mg : 1cp/j | Specialfodine | autre",
+      "detected_components": {
+        "dose": [
+          "5 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E028",
+        "type": "TRAITEMENT",
+        "name": "Specialfodine IV",
+        "preuve": "Specialfodine IV 5 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Specialfodine IV 5 mg | Specialfodine IV | autre",
+      "detected_components": {
+        "dose": [
+          "5 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E029",
+        "type": "TRAITEMENT",
+        "name": "Ampoule de B12",
+        "preuve": "Ampoule de B12 : 1/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Ampoule de B12 : 1/j | Ampoule de B12 | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E031",
+        "type": "TRAITEMENT",
+        "name": "Venofer",
+        "preuve": "Venofer IV 300 mg : 1/semaine",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Venofer IV 300 mg : 1/semaine | Venofer | autre",
+      "detected_components": {
+        "dose": [
+          "300 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E033",
+        "type": "TRAITEMENT",
+        "name": "Aranesp",
+        "preuve": "Aranesp : 300 ug/semaine",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Aranesp : 300 ug/semaine | Aranesp | autre",
+      "detected_components": {
+        "dose": [
+          "300 ug"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E014",
+        "type": "TRAITEMENT",
+        "name": "héparine",
+        "preuve": "5000 UI d'héparine",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "5000 UI d'héparine | héparine | autre",
+      "detected_components": {
+        "dose": [
+          "5000 UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E014",
+        "type": "TRAITEMENT",
+        "name": "noradrénaline",
+        "preuve": "Début de la noradrénaline en cours d'intervention à 2 mg/h",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Début de la noradrénaline en cours d'intervention à 2 mg/h | noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "2 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

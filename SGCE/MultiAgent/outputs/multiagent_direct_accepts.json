@@ -1,0 +1,253 @@
+{
+  "generated_from_current_run_only": true,
+  "total": 6,
+  "summary": {
+    "B": {
+      "total": 27,
+      "ACCEPT": 6,
+      "REVIEW": 21
+    },
+    "C": {
+      "total": 5,
+      "ACCEPT": 0,
+      "REVIEW": 5
+    },
+    "D": {
+      "total": 41,
+      "ACCEPT": 0,
+      "REVIEW": 41
+    }
+  },
+  "direct_accepts": [
+    {
+      "candidate_id": "BB1_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Un scanner",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "IMAGERIE_PROCEDURE",
+          "text": "Un scanner"
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Un scanner",
+            "matched_patterns": [
+              "\\bscanner\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000002",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Un scanner",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "IMAGERIE_PROCEDURE",
+          "text": "Un scanner"
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Un scanner",
+            "matched_patterns": [
+              "\\bscanner\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000004",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "LABEL_NOSOLOGIQUE",
+          "text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA."
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P5_E014",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+            "matched_patterns": [
+              "\\bchoc septique\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000007",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "SYMPTOME",
+          "text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de"
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P5_E035",
+        "expected_type": "SYMPTOME",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16271908_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+            "matched_patterns": [
+              "\\bdyspnee\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000011",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "TRAITEMENT",
+          "text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu."
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P5_E024",
+        "expected_type": "TRAITEMENT",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16340712_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+            "matched_patterns": [
+              "\\bantibiot",
+              "\\bamoxic"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000013",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "TRAITEMENT",
+          "text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie."
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E031",
+        "expected_type": "TRAITEMENT",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+            "matched_patterns": [
+              "\\btraitement\\b",
+              "\\bantibiot"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    }
+  ]
+}

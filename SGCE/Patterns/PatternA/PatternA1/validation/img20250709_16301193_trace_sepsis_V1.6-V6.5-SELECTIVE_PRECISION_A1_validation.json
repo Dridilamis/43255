@@ -1,0 +1,394 @@
+{
+  "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 5,
+  "status_counts": {
+    "ALREADY_CORRECT": 4,
+    "AMBIGUOUS": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E021",
+        "type": "TRAITEMENT",
+        "name": "noradrénaline",
+        "preuve": "noradrénaline en IVSE 2 mg/h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "noradrénaline en IVSE 2 mg/h | noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "2 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E022",
+        "P2_E060"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E022",
+        "target_name": "2 mg",
+        "target_preuve": "noradrénaline en IVSE 2 mg/h",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E022",
+          "target_name": "2 mg",
+          "target_preuve": "noradrénaline en IVSE 2 mg/h",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E020",
+          "target_name": "remplissage vasculaire par 500 cc de voluven + 500 cc de ringer lactate",
+          "target_preuve": "remplissage vasculaire par 500 cc de voluven + 500 cc de ringer lactate",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E060",
+          "target_name": "1000 ml",
+          "target_preuve": "1000 ml",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P5_E031",
+        "type": "TRAITEMENT",
+        "name": "claforan",
+        "preuve": "claforan 1g toutes les 8h (J6)",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "claforan 1g toutes les 8h (J6) | claforan | antibiotique",
+      "detected_components": {
+        "frequency": [
+          "toutes les 8h"
+        ],
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E032"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E032",
+        "target_name": "1g",
+        "target_preuve": "claforan 1g toutes les 8h (J6)",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E032",
+          "target_name": "1g",
+          "target_preuve": "claforan 1g toutes les 8h (J6)",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E042",
+          "target_name": "0.2ml toutes les 12h en SC",
+          "target_preuve": "calciparine 0.2ml toutes les 12h en SC",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E035",
+          "target_name": "20 mg",
+          "target_preuve": "pariet 20 mg/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E034",
+        "type": "TRAITEMENT",
+        "name": "pariet",
+        "preuve": "pariet 20 mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "pariet 20 mg/j | pariet | autre",
+      "detected_components": {
+        "dose": [
+          "20 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E035"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E035",
+        "target_name": "20 mg",
+        "target_preuve": "pariet 20 mg/j",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E035",
+          "target_name": "20 mg",
+          "target_preuve": "pariet 20 mg/j",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E032",
+          "target_name": "1g",
+          "target_preuve": "claforan 1g toutes les 8h (J6)",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E037",
+          "target_name": "5mg",
+          "target_preuve": "Venlafaxine lp37.5mg/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E036",
+        "type": "TRAITEMENT",
+        "name": "Venlafaxine lp37.5mg",
+        "preuve": "Venlafaxine lp37.5mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Venlafaxine lp37.5mg/j | Venlafaxine lp37.5mg | autre",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E037"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E037",
+        "target_name": "5mg",
+        "target_preuve": "Venlafaxine lp37.5mg/j",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E037",
+          "target_name": "5mg",
+          "target_preuve": "Venlafaxine lp37.5mg/j",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E032",
+          "target_name": "1g",
+          "target_preuve": "claforan 1g toutes les 8h (J6)",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E035",
+          "target_name": "20 mg",
+          "target_preuve": "pariet 20 mg/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E038",
+        "type": "TRAITEMENT",
+        "name": "glucose 500 ml",
+        "preuve": "glucose 500 ml /j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "glucose 500 ml /j | glucose 500 ml | nutrition_parenterale",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E054"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P5_E054",
+          "target_name": "500 ml",
+          "target_preuve": "500 ml",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E032",
+          "target_name": "1g",
+          "target_preuve": "claforan 1g toutes les 8h (J6)",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E035",
+          "target_name": "20 mg",
+          "target_preuve": "pariet 20 mg/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

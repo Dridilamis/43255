@@ -1,0 +1,46 @@
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION REVIEW RESOLVER V2
+========================================================================================================================
+Anomalies totales audit             : 325
+Anomalies relationnelles reçues     : 35
+Documents chargés                   : 20
+Documents manquants                 : 0
+
+ANOMALIES EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+INVALID_RELATION_TARGET_TYPE                                : 34
+INVALID_RELATION_SOURCE_TYPE                                : 1
+
+RESOLUTIONS
+------------------------------------------------------------------------------------------------------------------------
+POSSIBLE_ENDPOINT_MISTYPING                                 : 34
+NEGATION_SENSITIVE                                          : 1
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+REVIEW_ENTITY_TYPE                                          : 34
+REVIEW_NEGATION                                             : 1
+
+RELATIONS CONCERNEES
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                                 : 12
+presente_symptome                                           : 10
+a_pour_label_nosologique                                    : 9
+presente_suspicion_infection                                : 2
+a_pour_contexte_acquisition                                 : 1
+patient_a_pour_evolution                                    : 1
+
+RESOLUTION STRUCTURE TRACE
+------------------------------------------------------------------------------------------------------------------------
+Relations retrouvées                : 35
+Relations non résolues              : 0
+Sources retrouvées                  : 35
+Sources non résolues                : 0
+Cibles retrouvées                   : 35
+Cibles non résolues                 : 0
+
+EXEMPLES POSSIBLE_RELATION_INVERSION
+------------------------------------------------------------------------------------------------------------------------
+Aucun.
+
+Aucune donnée clinique n'a été modifiée.

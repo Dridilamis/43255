@@ -1,0 +1,509 @@
+{
+  "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 7,
+  "status_counts": {
+    "AMBIGUOUS": 4,
+    "CONFIRMED_PATTERN_A": 1,
+    "ALREADY_CORRECT": 2
+  },
+  "results": [
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E015",
+        "type": "TRAITEMENT",
+        "name": "Rivotril",
+        "preuve": "1 mg de Rivotril",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "1 mg de Rivotril | Rivotril | autre",
+      "detected_components": {
+        "dose": [
+          "1 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E016"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E016",
+          "target_name": "1 mg",
+          "target_preuve": "1 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E014",
+          "target_name": "1 mg",
+          "target_preuve": "de la Noradrénaline 1 mg puis 2 mg/h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E010",
+          "target_name": "5 mg",
+          "target_preuve": "5 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E011",
+        "type": "TRAITEMENT",
+        "name": "Pentothal",
+        "preuve": "bolus de Pentotal 500 mg et mise sous 500 mg/h en relais",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "bolus de Pentotal 500 mg et mise sous 500 mg/h en relais | Pentothal | sedatif",
+      "detected_components": {
+        "rate": [
+          "500 mg/h"
+        ],
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E017"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E017",
+          "target_name": "500 mg",
+          "target_preuve": "mise sous 500 mg/h en relais",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.4667,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E038",
+          "target_name": "1500 mg",
+          "target_preuve": "1500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E014",
+          "target_name": "1 mg",
+          "target_preuve": "de la Noradrénaline 1 mg puis 2 mg/h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E012",
+        "type": "TRAITEMENT",
+        "name": "Celocurine",
+        "preuve": "90 mg de Celocurine",
+        "valeur": 90,
+        "page": 2
+      },
+      "detection_text": "90 mg de Celocurine | Celocurine | 90 | curarisation",
+      "detected_components": {
+        "dose": [
+          "90 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E034"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E034",
+          "target_name": "90 mg",
+          "target_preuve": "90 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E014",
+          "target_name": "1 mg",
+          "target_preuve": "de la Noradrénaline 1 mg puis 2 mg/h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E017",
+          "target_name": "500 mg",
+          "target_preuve": "mise sous 500 mg/h en relais",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E013",
+        "type": "TRAITEMENT",
+        "name": "Noradrénaline",
+        "preuve": "de la Noradrénaline 1 mg",
+        "valeur": 1,
+        "page": 2
+      },
+      "detection_text": "de la Noradrénaline 1 mg | Noradrénaline | 1 | vasopresseur",
+      "detected_components": {
+        "dose": [
+          "1 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E014",
+        "P2_E035",
+        "P2_E043"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E014",
+        "target_name": "1 mg",
+        "target_preuve": "de la Noradrénaline 1 mg puis 2 mg/h",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E014",
+          "target_name": "1 mg",
+          "target_preuve": "de la Noradrénaline 1 mg puis 2 mg/h",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E016",
+          "target_name": "1 mg",
+          "target_preuve": "1 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E017",
+          "target_name": "500 mg",
+          "target_preuve": "mise sous 500 mg/h en relais",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E016",
+        "type": "TRAITEMENT",
+        "name": "Pentothane",
+        "preuve": "Pentothane bolus de 500 mg",
+        "valeur": 500,
+        "page": 2
+      },
+      "detection_text": "Pentothane bolus de 500 mg | Pentothane | 500 | sedatif",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E017"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E017",
+          "target_name": "500 mg",
+          "target_preuve": "mise sous 500 mg/h en relais",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E038",
+          "target_name": "1500 mg",
+          "target_preuve": "1500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E014",
+          "target_name": "1 mg",
+          "target_preuve": "de la Noradrénaline 1 mg puis 2 mg/h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E019",
+        "type": "TRAITEMENT",
+        "name": "Dilantin",
+        "preuve": "1500 mg de Dilantin",
+        "valeur": 1500,
+        "page": 2
+      },
+      "detection_text": "1500 mg de Dilantin | Dilantin | 1500 | autre",
+      "detected_components": {
+        "dose": [
+          "1500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E038",
+        "P2_E018"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E038",
+          "target_name": "1500 mg",
+          "target_preuve": "1500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E014",
+          "target_name": "1 mg",
+          "target_preuve": "de la Noradrénaline 1 mg puis 2 mg/h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E017",
+          "target_name": "500 mg",
+          "target_preuve": "mise sous 500 mg/h en relais",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E009",
+        "type": "TRAITEMENT",
+        "name": "Pentho",
+        "preuve": "réaugmentation Pentho à 300 mg/h",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "réaugmentation Pentho à 300 mg/h | Pentho | autre",
+      "detected_components": {
+        "rate": [
+          "300 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P4_E010"
+      ],
+      "best_posology_match": {
+        "target_id": "P4_E010",
+        "target_name": "300 mg",
+        "target_preuve": "réaugmentation Pentho à 300 mg/h",
+        "target_page": 4,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P4_E010",
+          "target_name": "300 mg",
+          "target_preuve": "réaugmentation Pentho à 300 mg/h",
+          "target_page": 4,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P4_E044",
+          "target_name": "5 jours",
+          "target_preuve": "5 jours",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E010",
+          "target_name": "5 mg",
+          "target_preuve": "5 mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

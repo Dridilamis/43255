@@ -1,0 +1,1167 @@
+{
+  "pattern": "B2",
+  "stage": "ACTIONABILITY_VALIDATION",
+  "input_validation_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternB\\PatternB2\\validation\\pattern_b2_validation_report.json",
+  "summary": {
+    "grounded_candidates_input": 28,
+    "actionable_create_and_link": 16,
+    "multiple_evidence_ambiguous": 12,
+    "no_usable_evidence": 0,
+    "redundant": 0,
+    "protected": 12
+  },
+  "candidates": [
+    {
+      "candidate_id": "B2_000018",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "myotonie de Steinert",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_E074",
+        "type": "MICRO_ORGANISME",
+        "text": "Citrobacter Koseri",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000070",
+      "document": "img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "myopathie de Steinert",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_E070",
+        "type": "MICRO_ORGANISME",
+        "text": "Citrobacter Koseri",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000145",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "myotonie de Steinert",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P5_E023",
+        "type": "MICRO_ORGANISME",
+        "text": "CITROBACTER KOSERI",
+        "page": 5
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000157",
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E002",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "HTA",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_E065",
+        "type": "MICRO_ORGANISME",
+        "text": "proteus mirabilis",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes oui",
+        "infection nosocomiale oui"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes oui",
+        "infection nosocomiale oui"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_000220",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E003",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Epilepsie symptomatique lésionnelle depuis 1980",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P5_V66_E001",
+        "type": "MICRO_ORGANISME",
+        "text": "pneumocoque",
+        "page": 5
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000225",
+      "document": "img20250709_16225557_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "STRONG",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E009",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Poliomyélite contractée en Afrique en 1995 responsable d'une tétraplégie avec insuffisance respiratoire restrictive",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_E016",
+        "type": "MICRO_ORGANISME",
+        "text": "Klebsiella Pneumonia",
+        "page": 1
+      },
+      "reason": "A et C présents sur la même page, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000237",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E004",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Sclérose en plaque, diagnostiquée en 1991, secondairement progressive depuis 2004",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P4_E014",
+        "type": "MICRO_ORGANISME",
+        "text": "KLEBSIELLE PNEUMONIAE",
+        "page": 4
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000253",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "STRONG",
+      "chain_id": "antibiotique_adequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_adequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E010",
+        "type": "TRAITEMENT",
+        "text": "5FU",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_E002",
+        "type": "FOYER_INFECTIEUX",
+        "text": "point de départ pulmonaire",
+        "page": 1
+      },
+      "reason": "A et C présents sur la même page, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "nombreux bgn"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "nombreux bgn"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_000415",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "STRONG",
+      "chain_id": "antibiotique_inadequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_inadequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E010",
+        "type": "TRAITEMENT",
+        "text": "5FU",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_E002",
+        "type": "FOYER_INFECTIEUX",
+        "text": "point de départ pulmonaire",
+        "page": 1
+      },
+      "reason": "A et C présents sur la même page, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "nombreux bgn"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "nombreux bgn"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_000577",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E003",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Cancer du rein droit en 1992 : carcinome à cellules claires avec thrombus remontant dans la VCI",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P5_V66_E002",
+        "type": "MICRO_ORGANISME",
+        "text": "staphylocoque aureus multisensible",
+        "page": 5
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000605",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E003",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Cirrhose Child B sur alcoolisme chronique et Hépatite C post transfusionnel en 94",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_E070",
+        "type": "MICRO_ORGANISME",
+        "text": "SARM",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes oui",
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes oui",
+        "nosocomiale"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_000661",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "antibiotique_adequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_adequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E007",
+        "type": "TRAITEMENT",
+        "text": "innohep",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P5_E023",
+        "type": "FOYER_INFECTIEUX",
+        "text": "point de départ probablement urinaire",
+        "page": 5
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "ecbu"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "ecbu"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_000688",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "antibiotique_inadequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_inadequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E007",
+        "type": "TRAITEMENT",
+        "text": "innohep",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P5_E023",
+        "type": "FOYER_INFECTIEUX",
+        "text": "point de départ probablement urinaire",
+        "page": 5
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "ecbu"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "ecbu"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_000715",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "cirrhotique connu",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P5_V66_E001",
+        "type": "MICRO_ORGANISME",
+        "text": "pneumocoque",
+        "page": 5
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "communautaire",
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "communautaire",
+        "nosocomiale"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_000719",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E013",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Schizophrénie",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P4_E006",
+        "type": "MICRO_ORGANISME",
+        "text": "pyocyanique",
+        "page": 4
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000729",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "BPCO",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P4_V66_E002",
+        "type": "MICRO_ORGANISME",
+        "text": "pneumocoque",
+        "page": 4
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000877",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "STRONG",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Myopathie de Duchenne diagnostiquée en 1996",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_V66_E002",
+        "type": "MICRO_ORGANISME",
+        "text": "P. aeruginosa",
+        "page": 1
+      },
+      "reason": "A et C présents sur la même page, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_000904",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "Tabac",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P4_E047",
+        "type": "MICRO_ORGANISME",
+        "text": "grippe A",
+        "page": 4
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes oui",
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes oui",
+        "nosocomiale"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_001049",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "antibiotique_adequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_adequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E012",
+        "type": "TRAITEMENT",
+        "text": "Ponction d'ascite itérative",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_E010",
+        "type": "FOYER_INFECTIEUX",
+        "text": "érysipèle de la jambe droite",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "klebsielle pneumoniae",
+        "a klebsielle"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "klebsielle pneumoniae",
+        "a klebsielle"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_001118",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "antibiotique_inadequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_inadequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E012",
+        "type": "TRAITEMENT",
+        "text": "Ponction d'ascite itérative",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_E010",
+        "type": "FOYER_INFECTIEUX",
+        "text": "érysipèle de la jambe droite",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "klebsielle pneumoniae",
+        "a klebsielle"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "klebsielle pneumoniae",
+        "a klebsielle"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_001187",
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E002",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "anorexie mentale",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P6_E053",
+        "type": "MICRO_ORGANISME",
+        "text": "Citrobacter koseri",
+        "page": 6
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_001203",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P4_E006",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "LNH agressif",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P2_V66_E004",
+        "type": "MICRO_ORGANISME",
+        "text": "enterobacter aerogenes avec",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_001206",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "antibiotique_adequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_adequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E004",
+        "type": "TRAITEMENT",
+        "text": "aVLOCARDYL",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_V66_E002",
+        "type": "FOYER_INFECTIEUX",
+        "text": "sinusite sphénoïdale du côté droit",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "hemoculture",
+        "ecbu"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "hemoculture",
+        "ecbu"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_001414",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "antibiotique_inadequat_pour__THEN__micro_organisme_isole_dans",
+      "source_type": "TRAITEMENT",
+      "relation_1": "antibiotique_inadequat_pour",
+      "middle_type_missing": "MICRO_ORGANISME",
+      "relation_2": "micro_organisme_isole_dans",
+      "target_type": "FOYER_INFECTIEUX",
+      "source_entity": {
+        "id": "P1_E004",
+        "type": "TRAITEMENT",
+        "text": "aVLOCARDYL",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P2_V66_E002",
+        "type": "FOYER_INFECTIEUX",
+        "text": "sinusite sphénoïdale du côté droit",
+        "page": 2
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "hemoculture",
+        "ecbu"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec MICRO_ORGANISME détectée.",
+      "usable_evidence_terms": [
+        "portage de bacteries multiresistantes",
+        "hemoculture",
+        "ecbu"
+      ],
+      "actionability_status": "MULTIPLE_EVIDENCE_AMBIGUOUS",
+      "recommended_action": "NONE",
+      "selected_evidence": null,
+      "actionability_reason": "Plusieurs mentions candidates pour l'entité intermédiaire; création automatique non sûre."
+    },
+    {
+      "candidate_id": "B2_001622",
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "STRONG",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "pemphigoïde bulleuse",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_V66_E001",
+        "type": "MICRO_ORGANISME",
+        "text": "SAMS",
+        "page": 1
+      },
+      "reason": "A et C présents sur la même page, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_001630",
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "HTA",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P4_V66_E001",
+        "type": "MICRO_ORGANISME",
+        "text": "SAMS",
+        "page": 4
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_001642",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E021",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "adénocarcinome",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P5_V66_E001",
+        "type": "MICRO_ORGANISME",
+        "text": "E. Coli",
+        "page": 5
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    },
+    {
+      "candidate_id": "B2_001645",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_type": "MISSING_INTERMEDIATE_ENTITY",
+      "strength": "MEDIUM",
+      "chain_id": "a_pour_contexte_acquisition__THEN__contexte_acquisition_influence_risque_resistance",
+      "source_type": "COMORBIDITE_ANTECEDENT",
+      "relation_1": "a_pour_contexte_acquisition",
+      "middle_type_missing": "CONTEXTE_ACQUISITION",
+      "relation_2": "contexte_acquisition_influence_risque_resistance",
+      "target_type": "MICRO_ORGANISME",
+      "source_entity": {
+        "id": "P1_E001",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "text": "AVC hémorragique en 2011",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P4_E028",
+        "type": "MICRO_ORGANISME",
+        "text": "positifs à BGN",
+        "page": 4
+      },
+      "reason": "A et C présents dans le document, B absent du document",
+      "requires_document_grounding": true,
+      "safe_to_correct": false,
+      "validation_status": "CONFIRMED_DOCUMENT_GROUNDED",
+      "future_action": "CREATE_AND_LINK_CANDIDATE",
+      "evidence_terms": [
+        "nosocomiale"
+      ],
+      "validation_reason": "Type intermédiaire absent mais preuve textuelle explicite compatible avec CONTEXTE_ACQUISITION détectée.",
+      "usable_evidence_terms": [
+        "nosocomiale"
+      ],
+      "actionability_status": "ACTIONABLE_CREATE_AND_LINK",
+      "recommended_action": "CREATE_AND_LINK",
+      "selected_evidence": "nosocomiale",
+      "actionability_reason": "Une seule mention documentaire exploitable pour l'entité intermédiaire; cas suffisamment déterministe pour préparer une correction automatique."
+    }
+  ]
+}

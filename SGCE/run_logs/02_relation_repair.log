@@ -1,0 +1,140 @@
+========================================================================================================
+TRACE / SGCE - RELATION REPAIR CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                 : 43
+Candidats                          : 43
+Orphelines réservées étape suivante: 16
+Relations non autorisées réservées : 0
+SOURCE_MISMATCH                         : 3
+TARGET_MISMATCH                         : 40
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\queues\relation_repair_queue.json
+========================================================================================================
+TRACE / SGCE - RELATION REPAIR AGENT
+========================================================================================================
+Cas reçus                             : 43
+
+DECISIONS
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 41
+CORRECT                                         : 2
+
+ACTIONS PROPOSEES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 41
+RETYPE_TARGET                                   : 2
+
+Sortie                                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - RELATION REPAIR DECISION VALIDATOR
+========================================================================================================
+Décisions reçues : 43
+ACCEPT            : 2
+REVIEW            : 41
+Sortie            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_validated_decisions.json
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR BATCH IMPACT VALIDATOR
+============================================================================================================
+ACCEPT précédents                  : 2
+Actions uniques évaluées           : 2
+Doublons fusionnés                 : 0
+
+SAFE_ACCEPT                        : 2
+REJECT_HARMFUL                     : 0
+NO_BENEFIT                         : 0
+ALREADY_SATISFIED                  : 0
+REVIEW                             : 0
+
+ACTIONS SURES PAR TYPE
+------------------------------------------------------------------------------------------------------------
+RETYPE_TARGET                                   : 2
+
+Anomalies baseline                 : 59
+Anomalies projetées après lot sûr  : 57
+Anomalies projetées résolues       : 2
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_batch_safe_actions.json
+
+Aucun JSON clinique n'a été modifié.
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR BATCH SAFE CORRECTOR
+============================================================================================================
+Actions SAFE_ACCEPT reçues         : 2
+Documents copiés                  : 43
+Opérations appliquées             : 2
+Documents modifiés                : 2
+Erreurs                           : 0
+
+ACTIONS APPLIQUEES
+------------------------------------------------------------------------------------------------------------
+RETYPE_TARGET                                   : 2
+
+Sortie clinique                   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected
+Rapport                           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected\relation_repair_safe_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR BATCH SAFE POST-VALIDATION
+============================================================================================================
+AVANT                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\Patterns\PatternD\corrected
+APRES                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected
+
+Documents vérifiés                  : 43
+Documents attendus modifiés         : 2
+Documents réellement modifiés       : 2
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Anomalies AVANT                     : 59
+Anomalies APRES                     : 57
+Nouvelles anomalies                 : 0
+Anomalies résolues                  : 2
+
+Docs manquants APRES                : 0
+Docs supplémentaires APRES          : 0
+
+STATUT FINAL BATCH SAFE            : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\post_validation\relation_repair_batch_safe_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE / SGCE - RELATION REPAIR COMPLET
+============================================================================================================
+
+============================================================================================================
+RUNNING : relation_repair_candidate_builder.py
+============================================================================================================
+[OK] relation_repair_candidate_builder.py
+
+============================================================================================================
+RUNNING : relation_repair_agent.py
+============================================================================================================
+[OK] relation_repair_agent.py
+
+============================================================================================================
+RUNNING : relation_repair_decision_validator.py
+============================================================================================================
+[OK] relation_repair_decision_validator.py
+
+============================================================================================================
+RUNNING : relation_repair_batch_impact_validator.py
+============================================================================================================
+[OK] relation_repair_batch_impact_validator.py
+
+============================================================================================================
+RUNNING : relation_repair_batch_safe_corrector.py
+============================================================================================================
+[OK] relation_repair_batch_safe_corrector.py
+
+============================================================================================================
+RUNNING : relation_repair_batch_safe_post_validator.py
+============================================================================================================
+[OK] relation_repair_batch_safe_post_validator.py
+
+============================================================================================================
+RELATION REPAIR TERMINÉ AVEC SUCCÈS
+============================================================================================================
+Sortie clinique finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\corrected
+Post-validation        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\post_validation

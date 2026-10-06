@@ -1,0 +1,940 @@
+{
+  "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 13,
+  "status_counts": {
+    "ALREADY_CORRECT": 2,
+    "MISSING_RELATION": 2,
+    "AMBIGUOUS": 7,
+    "CONFIRMED_PATTERN_A": 2
+  },
+  "results": [
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E027",
+        "type": "TRAITEMENT",
+        "name": "amiklin",
+        "preuve": "ttt par claventin 3g+ 500 mg d'amiklin",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "ttt par claventin 3g+ 500 mg d'amiklin | amiklin | antibiotique",
+      "detected_components": {
+        "dose": [
+          "3g",
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E028",
+        "P1_E029"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E029",
+        "target_name": "500 mg",
+        "target_preuve": "500 mg d'amiklin",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 0.5,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.825,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E029",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg d'amiklin",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.825,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E028",
+          "target_name": "3g",
+          "target_preuve": "claventin 3g",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.325,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E047",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.125,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E008",
+        "type": "TRAITEMENT",
+        "name": "CLAVENTIN",
+        "preuve": "CLAVENTIN 3g",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "CLAVENTIN 3g | CLAVENTIN | antibiotique",
+      "detected_components": {
+        "dose": [
+          "3g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E048"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E028",
+        "target_name": "3g",
+        "target_preuve": "claventin 3g",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 0.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.8,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E028",
+          "target_name": "3g",
+          "target_preuve": "claventin 3g",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E048",
+          "target_name": "3g",
+          "target_preuve": "3g",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E010",
+          "target_name": "jusqu'au 20/02/13",
+          "target_preuve": "jusqu'au 20/02/13",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E009",
+        "type": "TRAITEMENT",
+        "name": "AMIKLIN",
+        "preuve": "AMIKLIN 500 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "AMIKLIN 500 mg | AMIKLIN | antibiotique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E047"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E029",
+        "target_name": "500 mg",
+        "target_preuve": "500 mg d'amiklin",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 0.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.8,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E029",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg d'amiklin",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E047",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E010",
+          "target_name": "jusqu'au 20/02/13",
+          "target_preuve": "jusqu'au 20/02/13",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E015",
+        "type": "TRAITEMENT",
+        "name": "lasilix",
+        "preuve": "lasilix 500 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "lasilix 500 mg | lasilix | diuretique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E047"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E047",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E029",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg d'amiklin",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E010",
+          "target_name": "jusqu'au 20/02/13",
+          "target_preuve": "jusqu'au 20/02/13",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E019",
+        "type": "TRAITEMENT",
+        "name": "Fosrenol",
+        "preuve": "Fosrenol 1000:1cp×3/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Fosrenol 1000:1cp×3/j | Fosrenol | autre",
+      "detected_components": {
+        "frequency": [
+          "1cp×3/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E020",
+          "target_name": "3/j",
+          "target_preuve": "1cp×3/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.4333,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E022",
+          "target_name": "1cp/j",
+          "target_preuve": "1cp/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E010",
+          "target_name": "jusqu'au 20/02/13",
+          "target_preuve": "jusqu'au 20/02/13",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E021",
+        "type": "TRAITEMENT",
+        "name": "inexium",
+        "preuve": "inexium 40mg : 1cp/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "inexium 40mg : 1cp/j | inexium | autre",
+      "detected_components": {
+        "dose": [
+          "40mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E022",
+        "P2_E050"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E050",
+          "target_name": "40mg",
+          "target_preuve": "40mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.45,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E020",
+          "target_name": "3/j",
+          "target_preuve": "1cp×3/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.25,
+          "final_score": 0.175,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E022",
+          "target_name": "1cp/j",
+          "target_preuve": "1cp/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.25,
+          "final_score": 0.175,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E027",
+        "type": "TRAITEMENT",
+        "name": "Specialfodine",
+        "preuve": "Specialfodine 5 mg : 1cp/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Specialfodine 5 mg : 1cp/j | Specialfodine | autre",
+      "detected_components": {
+        "dose": [
+          "5 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E022",
+        "P2_E044",
+        "P2_E016"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E044",
+          "target_name": "5 mg",
+          "target_preuve": "5 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E020",
+          "target_name": "3/j",
+          "target_preuve": "1cp×3/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E022",
+          "target_name": "1cp/j",
+          "target_preuve": "1cp/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E028",
+        "type": "TRAITEMENT",
+        "name": "Specialfodine IV",
+        "preuve": "Specialfodine IV 5 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Specialfodine IV 5 mg | Specialfodine IV | autre",
+      "detected_components": {
+        "dose": [
+          "5 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E044"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E044",
+          "target_name": "5 mg",
+          "target_preuve": "5 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E010",
+          "target_name": "jusqu'au 20/02/13",
+          "target_preuve": "jusqu'au 20/02/13",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E016",
+          "target_name": "2 cp/j",
+          "target_preuve": "2 cp/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E029",
+        "type": "TRAITEMENT",
+        "name": "Ampoule de B12",
+        "preuve": "Ampoule de B12 : 1/j",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Ampoule de B12 : 1/j | Ampoule de B12 | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E030"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E030",
+          "target_name": "1/j",
+          "target_preuve": "1/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E010",
+          "target_name": "jusqu'au 20/02/13",
+          "target_preuve": "jusqu'au 20/02/13",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E016",
+          "target_name": "2 cp/j",
+          "target_preuve": "2 cp/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E031",
+        "type": "TRAITEMENT",
+        "name": "Venofer",
+        "preuve": "Venofer IV 300 mg : 1/semaine",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Venofer IV 300 mg : 1/semaine | Venofer | autre",
+      "detected_components": {
+        "dose": [
+          "300 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E032",
+        "P2_E051"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E051",
+          "target_name": "300 mg",
+          "target_preuve": "300 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E032",
+          "target_name": "1/semaine",
+          "target_preuve": "1/semaine",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E034",
+          "target_name": "300 ug",
+          "target_preuve": "300 ug/semaine",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E033",
+        "type": "TRAITEMENT",
+        "name": "Aranesp",
+        "preuve": "Aranesp : 300 ug/semaine",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Aranesp : 300 ug/semaine | Aranesp | autre",
+      "detected_components": {
+        "dose": [
+          "300 ug"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E034"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E034",
+          "target_name": "300 ug",
+          "target_preuve": "300 ug/semaine",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.4333,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E032",
+          "target_name": "1/semaine",
+          "target_preuve": "1/semaine",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.1833,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E010",
+          "target_name": "jusqu'au 20/02/13",
+          "target_preuve": "jusqu'au 20/02/13",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E014",
+        "type": "TRAITEMENT",
+        "name": "héparine",
+        "preuve": "5000 UI d'héparine",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "5000 UI d'héparine | héparine | autre",
+      "detected_components": {
+        "dose": [
+          "5000 UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P4_E011",
+        "P4_E015",
+        "P4_E041"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P4_E041",
+          "target_name": "5000 UI",
+          "target_preuve": "5000 UI",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P4_E011",
+          "target_name": "15 jours",
+          "target_preuve": "Le traitement est poursuivi 15 jours",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P4_E015",
+          "target_name": "2 mg",
+          "target_preuve": "2 mg",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E014",
+        "type": "TRAITEMENT",
+        "name": "noradrénaline",
+        "preuve": "Début de la noradrénaline en cours d'intervention à 2 mg/h",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Début de la noradrénaline en cours d'intervention à 2 mg/h | noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "2 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E015"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E015",
+        "target_name": "2 mg",
+        "target_preuve": "Début de la noradrénaline en cours d'intervention à 2 mg/h",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.8,
+        "final_score": 0.98,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E015",
+          "target_name": "2 mg",
+          "target_preuve": "Début de la noradrénaline en cours d'intervention à 2 mg/h",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.8,
+          "final_score": 0.98,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E024",
+          "target_name": "7mg",
+          "target_preuve": "Majoration de la noradrénaline jusqu'à 7mg/h",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.2,
+          "final_score": 0.67,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E026",
+          "target_name": "20 mg",
+          "target_preuve": "Majoration de l'adrénaline jusqu'à 20 mg/h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

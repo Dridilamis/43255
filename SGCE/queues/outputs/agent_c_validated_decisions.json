@@ -1,0 +1,217 @@
+{
+  "validator": "agent_c_decision_validator",
+  "mode": "DOCUMENT_GROUNDED",
+  "clinical_context_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_b_corrected",
+  "summary": {
+    "decisions_received": 4,
+    "decisions_validated": 4,
+    "status_counts": {
+      "ACCEPT": 2,
+      "REVIEW": 2
+    },
+    "action_counts": {
+      "REMOVE_REIFIED_ENTITY": 2,
+      "NONE": 2
+    }
+  },
+  "validated_decisions": [
+    {
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000093",
+        "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "C",
+        "agent": "agent_pattern_c",
+        "decision": "CORRECT",
+        "action": "REMOVE_REIFIED_ENTITY",
+        "confidence": 0.86,
+        "reason": "L'entité est explicitement retrouvée dans le texte source mais reste isolée dans le graphe. Suppression de la réification proposée.",
+        "evidence": "Pas d'infection virale ou de vaccination récente | suspicion_infection",
+        "proposed_entities": [],
+        "proposed_relations": [],
+        "metadata": {
+          "candidate_entity_id": "P4_E027",
+          "candidate_entity_type": "LABEL_NOSOLOGIQUE",
+          "text_grounded": true,
+          "attached_relation_count": 0,
+          "page_number": 4,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16190789_brut.txt",
+          "reference_hits": 0,
+          "patient_hits": 4,
+          "temporal_hits": 3
+        }
+      },
+      "final_status": "ACCEPT",
+      "final_action": "REMOVE_REIFIED_ENTITY",
+      "reason": "Suppression validée : entité document-grounded, existante, isolée du graphe et compatible avec la preuve textuelle source.",
+      "checks": [
+        {
+          "check": "TEXT_GROUNDED",
+          "passed": true
+        },
+        {
+          "check": "EVIDENCE_NON_EMPTY",
+          "passed": true
+        },
+        {
+          "check": "ENTITY_ID_AVAILABLE",
+          "passed": true,
+          "entity_id": "P4_E027"
+        },
+        {
+          "check": "ENTITY_EXISTS",
+          "passed": true
+        },
+        {
+          "check": "ENTITY_TYPE_STILL_MATCHES",
+          "passed": true,
+          "actual": "LABEL_NOSOLOGIQUE",
+          "expected": "LABEL_NOSOLOGIQUE"
+        },
+        {
+          "check": "ENTITY_HAS_NO_ACTIVE_RELATIONS",
+          "passed": true,
+          "relation_count": 0,
+          "relation_ids": []
+        },
+        {
+          "check": "ENTITY_TEXT_SUPPORTED_BY_DOCUMENT_EVIDENCE",
+          "passed": true,
+          "actual_text": "Pas d'infection virale ou de vaccination récente | suspicion_infection",
+          "evidence": "Pas d'infection virale ou de vaccination récente | suspicion_infection"
+        }
+      ]
+    },
+    {
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000218",
+        "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "C",
+        "agent": "agent_pattern_c",
+        "decision": "REVIEW",
+        "action": "NONE",
+        "confidence": 0.65,
+        "reason": "Le contexte documente une évolution patient, mais aucune cible de fusion explicite n'est fournie. MERGE automatique interdit.",
+        "evidence": "Syndrome hémolytique et urémique | suspicion_infection",
+        "proposed_entities": [],
+        "proposed_relations": [],
+        "metadata": {
+          "candidate_entity_id": "P1_E001",
+          "candidate_entity_type": "LABEL_NOSOLOGIQUE",
+          "text_grounded": true,
+          "temporal_hits": 3,
+          "patient_hits": 4,
+          "attached_relation_count": 1,
+          "page_number": 1,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16233563_brut.txt"
+        }
+      },
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "reason": "Aucune correction automatique proposée.",
+      "checks": []
+    },
+    {
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000247",
+        "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "C",
+        "agent": "agent_pattern_c",
+        "decision": "CORRECT",
+        "action": "REMOVE_REIFIED_ENTITY",
+        "confidence": 0.86,
+        "reason": "L'entité est explicitement retrouvée dans le texte source mais reste isolée dans le graphe. Suppression de la réification proposée.",
+        "evidence": "Evolution favorable avec apyrexie | apyrexie",
+        "proposed_entities": [],
+        "proposed_relations": [],
+        "metadata": {
+          "candidate_entity_id": "P4_E025",
+          "candidate_entity_type": "SYMPTOME",
+          "text_grounded": true,
+          "attached_relation_count": 0,
+          "page_number": 4,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16254831_brut.txt",
+          "reference_hits": 1,
+          "patient_hits": 4,
+          "temporal_hits": 6
+        }
+      },
+      "final_status": "ACCEPT",
+      "final_action": "REMOVE_REIFIED_ENTITY",
+      "reason": "Suppression validée : entité document-grounded, existante, isolée du graphe et compatible avec la preuve textuelle source.",
+      "checks": [
+        {
+          "check": "TEXT_GROUNDED",
+          "passed": true
+        },
+        {
+          "check": "EVIDENCE_NON_EMPTY",
+          "passed": true
+        },
+        {
+          "check": "ENTITY_ID_AVAILABLE",
+          "passed": true,
+          "entity_id": "P4_E025"
+        },
+        {
+          "check": "ENTITY_EXISTS",
+          "passed": true
+        },
+        {
+          "check": "ENTITY_TYPE_STILL_MATCHES",
+          "passed": true,
+          "actual": "SYMPTOME",
+          "expected": "SYMPTOME"
+        },
+        {
+          "check": "ENTITY_HAS_NO_ACTIVE_RELATIONS",
+          "passed": true,
+          "relation_count": 0,
+          "relation_ids": []
+        },
+        {
+          "check": "ENTITY_TEXT_SUPPORTED_BY_DOCUMENT_EVIDENCE",
+          "passed": true,
+          "actual_text": "Evolution favorable avec apyrexie | apyrexie",
+          "evidence": "Evolution favorable avec apyrexie | apyrexie"
+        }
+      ]
+    },
+    {
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000686",
+        "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "C",
+        "agent": "agent_pattern_c",
+        "decision": "REVIEW",
+        "action": "NONE",
+        "confidence": 0.65,
+        "reason": "Le contexte documente une évolution patient, mais aucune cible de fusion explicite n'est fournie. MERGE automatique interdit.",
+        "evidence": "suspicion de tuberculose pulmonaire | suspicion_infection",
+        "proposed_entities": [],
+        "proposed_relations": [],
+        "metadata": {
+          "candidate_entity_id": "P1_E016",
+          "candidate_entity_type": "LABEL_NOSOLOGIQUE",
+          "text_grounded": true,
+          "temporal_hits": 3,
+          "patient_hits": 4,
+          "attached_relation_count": 1,
+          "page_number": 1,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16545673_brut.txt"
+        }
+      },
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "reason": "Aucune correction automatique proposée.",
+      "checks": []
+    }
+  ]
+}

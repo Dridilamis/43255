@@ -1,0 +1,892 @@
+{
+  "family": "B",
+  "source_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\MultiAgent\\outputs\\agent_b_decisions.json",
+  "total": 27,
+  "validated_decisions": [
+    {
+      "candidate_id": "BB1_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Un scanner",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "IMAGERIE_PROCEDURE",
+          "text": "Un scanner"
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Un scanner",
+            "matched_patterns": [
+              "\\bscanner\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000002",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Un scanner",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "IMAGERIE_PROCEDURE",
+          "text": "Un scanner"
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Un scanner",
+            "matched_patterns": [
+              "\\bscanner\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000003",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "evidence": "",
+      "reason": "Aucune preuve textuelle explicite du type attendu n'est retrouvée. La création automatique est interdite.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E074",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16201504_brut.txt"
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000004",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "LABEL_NOSOLOGIQUE",
+          "text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA."
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P5_E014",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+            "matched_patterns": [
+              "\\bchoc septique\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000005",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "evidence": "",
+      "reason": "Aucune preuve textuelle explicite du type attendu n'est retrouvée. La création automatique est interdite.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P4_E026",
+        "expected_type": "MICRO_ORGANISME",
+        "page_number": 4,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt"
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000006",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.55,
+      "evidence": "Le patient est en acidose métabolique avec pH à 6.91, sous Noradrénaline 1mg/heure sur voie périphérique. | Patient initialement stable à son arrivée sous Noradrénaline 1mg/heure avec des PAM vers 65 mmHg | Dans la matinée du 17/08, dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’Adrénaline jusqu’à 30 mg/h sans efficacité sur la perfusion du patient :",
+      "reason": "Plusieurs preuves textuelles du type attendu existent. Aucune ne peut être associée de façon unique à l'endpoint.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P5_E036",
+        "expected_type": "POSOLOGIE",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+        "evidence_candidates": [
+          {
+            "text": "Le patient est en acidose métabolique avec pH à 6.91, sous Noradrénaline 1mg/heure sur voie périphérique.",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "Patient initialement stable à son arrivée sous Noradrénaline 1mg/heure avec des PAM vers 65 mmHg",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "Dans la matinée du 17/08, dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’Adrénaline jusqu’à 30 mg/h sans efficacité sur la perfusion du patient :",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000007",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "SYMPTOME",
+          "text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de"
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P5_E035",
+        "expected_type": "SYMPTOME",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16271908_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+            "matched_patterns": [
+              "\\bdyspnee\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000008",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.55,
+      "evidence": "- G5 2.000mL/24h + NaCl16g/24h + KCl 4g/24h | - Vitamine B1 1000 mg/jour | - Vitamine B6 500 mg/jour | - Vitamine PP 250mg/jour | - Folates 50mg/jour",
+      "reason": "Plusieurs preuves textuelles du type attendu existent. Aucune ne peut être associée de façon unique à l'endpoint.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E028",
+        "expected_type": "POSOLOGIE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+        "evidence_candidates": [
+          {
+            "text": "- G5 2.000mL/24h + NaCl16g/24h + KCl 4g/24h",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Vitamine B1 1000 mg/jour",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Vitamine B6 500 mg/jour",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Vitamine PP 250mg/jour",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Folates 50mg/jour",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Vancomycine 1g x2/jour ivl",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Calciparine 0.2mL x2/jour SC",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Valium 5mg",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- Atarax 50mg ivl le soir",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "- eupanthol 40mg/jour",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000009",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.55,
+      "evidence": "Présence initialement d’une encéphalopathie hépatique avec ralentissement psychomoteur et flapping tremor. | Suspicion d’ Encéphalopathie hépatique. | - Au niveau hépatique : | Trouble de l’hémostase dans le cadre de l’insuffisance hépatique nécessitant la transfusion de PFC. | Présence d’une insuffisance rénale aiguë d’allure fonctionnelle.",
+      "reason": "Plusieurs preuves textuelles du type attendu existent. Aucune ne peut être associée de façon unique à l'endpoint.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P6_E005",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page_number": 6,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+        "evidence_candidates": [
+          {
+            "text": "Présence initialement d’une encéphalopathie hépatique avec ralentissement psychomoteur et flapping tremor.",
+            "matched_patterns": [
+              "\\bhepatique\\b"
+            ]
+          },
+          {
+            "text": "Suspicion d’ Encéphalopathie hépatique.",
+            "matched_patterns": [
+              "\\bhepatique\\b"
+            ]
+          },
+          {
+            "text": "- Au niveau hépatique :",
+            "matched_patterns": [
+              "\\bhepatique\\b"
+            ]
+          },
+          {
+            "text": "Trouble de l’hémostase dans le cadre de l’insuffisance hépatique nécessitant la transfusion de PFC.",
+            "matched_patterns": [
+              "\\binsuffisance\\b",
+              "\\bhepatique\\b"
+            ]
+          },
+          {
+            "text": "Présence d’une insuffisance rénale aiguë d’allure fonctionnelle.",
+            "matched_patterns": [
+              "\\binsuffisance\\b",
+              "\\brenale\\b"
+            ]
+          },
+          {
+            "text": "Persistance d’une insuffisance rénale modérée avec une créatinine à 120.",
+            "matched_patterns": [
+              "\\binsuffisance\\b",
+              "\\brenale\\b"
+            ]
+          },
+          {
+            "text": "Suspicion d’Encéphalopathie hépatique au décours.",
+            "matched_patterns": [
+              "\\bhepatique\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000010",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "evidence": "",
+      "reason": "Aucune preuve textuelle explicite du type attendu n'est retrouvée. La création automatique est interdite.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E006",
+        "expected_type": "SERVICE_MEDICAL",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt"
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000011",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "TRAITEMENT",
+          "text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu."
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P5_E024",
+        "expected_type": "TRAITEMENT",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16340712_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+            "matched_patterns": [
+              "\\bantibiot",
+              "\\bamoxic"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000012",
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "evidence": "",
+      "reason": "Aucune preuve textuelle explicite du type attendu n'est retrouvée. La création automatique est interdite.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E021",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16344492_brut.txt"
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000013",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "CORRECT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "confidence": 0.85,
+      "evidence": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+      "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+      "proposed_entities": [
+        {
+          "type": "TRAITEMENT",
+          "text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie."
+        }
+      ],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P2_E031",
+        "expected_type": "TRAITEMENT",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+            "matched_patterns": [
+              "\\btraitement\\b",
+              "\\bantibiot"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "ACCEPT",
+      "final_status": "ACCEPT",
+      "final_action": "CREATE_FROM_EXPLICIT_EVIDENCE"
+    },
+    {
+      "candidate_id": "BB1_000014",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.55,
+      "evidence": "- Insuffisance hépatique cellulaire (Bloc Beta-Gamma, Hypoalb., Facteur V bas) | - Insuffisance respiratoire Chronique",
+      "reason": "Plusieurs preuves textuelles du type attendu existent. Aucune ne peut être associée de façon unique à l'endpoint.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P1_E029",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page_number": 1,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16414914_brut.txt",
+        "evidence_candidates": [
+          {
+            "text": "- Insuffisance hépatique cellulaire (Bloc Beta-Gamma, Hypoalb., Facteur V bas)",
+            "matched_patterns": [
+              "\\binsuffisance\\b",
+              "\\bhepatique\\b"
+            ]
+          },
+          {
+            "text": "- Insuffisance respiratoire Chronique",
+            "matched_patterns": [
+              "\\binsuffisance\\b",
+              "\\brespiratoire\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000015",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.55,
+      "evidence": "Pas de déglobulisation franche associée (Hb 9,5g/dL) | Glucosé 5% 500 ml /24h | CRESTOR 5mg 1cp/j | Kardegic 75mg/j | TIÉNAM 500 mg x 4/j",
+      "reason": "Plusieurs preuves textuelles du type attendu existent. Aucune ne peut être associée de façon unique à l'endpoint.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P4_E026",
+        "expected_type": "POSOLOGIE",
+        "page_number": 4,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16510509_brut.txt",
+        "evidence_candidates": [
+          {
+            "text": "Pas de déglobulisation franche associée (Hb 9,5g/dL)",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "Glucosé 5% 500 ml /24h",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "CRESTOR 5mg 1cp/j",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b",
+              "\\b/j\\b"
+            ]
+          },
+          {
+            "text": "Kardegic 75mg/j",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b",
+              "\\b/j\\b"
+            ]
+          },
+          {
+            "text": "TIÉNAM 500 mg x 4/j",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b",
+              "\\b/j\\b"
+            ]
+          },
+          {
+            "text": "VERCyte 25mg/j 5j/7",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b",
+              "\\b/j\\b"
+            ]
+          },
+          {
+            "text": "LYRICA 50mg 1cp x 3/j",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b",
+              "\\b/j\\b"
+            ]
+          },
+          {
+            "text": "IMOVANE 7,5mg au coucher",
+            "matched_patterns": [
+              "\\b\\d+(?:[.,]\\d+)?\\s*(?:mg|g|mcg|ug|ml|ui)\\b"
+            ]
+          },
+          {
+            "text": "TARBUTALINE/IPRATROPIUM en aérosol 3x/j",
+            "matched_patterns": [
+              "\\b/j\\b"
+            ]
+          }
+        ]
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "BB1_000016",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "evidence": "",
+      "reason": "Aucune preuve textuelle explicite du type attendu n'est retrouvée. La création automatique est interdite.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "missing_endpoint": "P4_E034",
+        "expected_type": "TRAITEMENT",
+        "page_number": 4,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16573733_brut.txt"
+      },
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000002",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000003",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000004",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000005",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000006",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000007",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000008",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000009",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000010",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    },
+    {
+      "candidate_id": "ORB_OR_RES_000011",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B",
+      "subpattern": "B1_ORPHAN_RESIDUAL",
+      "agent": "agent_pattern_b",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.2,
+      "evidence": "",
+      "reason": "Structure Pattern B non reconnue.",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {},
+      "family": "B",
+      "validation_status": "REVIEW",
+      "final_status": "REVIEW",
+      "final_action": "NONE"
+    }
+  ]
+}

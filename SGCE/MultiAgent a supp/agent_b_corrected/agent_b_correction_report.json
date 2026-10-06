@@ -1,0 +1,87 @@
+{
+  "corrector": "agent_b_corrector",
+  "mode": "GENERIC_PATTERN_B_CORRECTION",
+  "input_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\outputs\\agent_b_deduplicated_decisions.json",
+  "source_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternD\\pattern_d_corrected",
+  "output_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_b_corrected",
+  "summary": {
+    "clinical_documents_copied": 43,
+    "operations_received": 2,
+    "operations_applied": 2,
+    "operations_skipped": 0,
+    "operations_protected": 0,
+    "operation_errors": 0,
+    "documents_modified": 2,
+    "applied_action_counts": {
+      "CREATE_FROM_EXPLICIT_EVIDENCE": 2
+    },
+    "skip_reason_counts": {},
+    "exceptions": 0
+  },
+  "modified_documents": [
+    "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "status": "APPLIED",
+      "operation": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "created_entity_id": "P2_E044",
+      "entity_type": "IMAGERIE_PROCEDURE",
+      "entity_text": "Un scanner",
+      "page_number": 2,
+      "relations_using_endpoint": [
+        {
+          "relation_id": "R_V69K_00018",
+          "relation_type": "imagerie_objective_foyer",
+          "source": "P2_E044",
+          "target": "P2_E062"
+        },
+        {
+          "relation_id": "R_V69K_00019",
+          "relation_type": "imagerie_objective_foyer",
+          "source": "P2_E044",
+          "target": "P2_E053"
+        }
+      ],
+      "insertion": {
+        "added_global": true,
+        "added_page": true
+      },
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "requested_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "source_candidate_ids": [
+        "BB1_000001",
+        "BB1_000002"
+      ],
+      "missing_endpoint": "P2_E044"
+    },
+    {
+      "status": "APPLIED",
+      "operation": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "created_entity_id": "P4_E041",
+      "entity_type": "IMAGERIE_PROCEDURE",
+      "entity_text": "Radiographie pulmonaire",
+      "page_number": 4,
+      "relations_using_endpoint": [
+        {
+          "relation_id": "R_V69K_00108",
+          "relation_type": "imagerie_objective_foyer",
+          "source": "P4_E041",
+          "target": "P4_E035"
+        }
+      ],
+      "insertion": {
+        "added_global": true,
+        "added_page": true
+      },
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "requested_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "source_candidate_ids": [
+        "BB1_000019"
+      ],
+      "missing_endpoint": "P4_E041"
+    }
+  ],
+  "errors": []
+}

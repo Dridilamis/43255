@@ -1,0 +1,551 @@
+========================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY CANDIDATE BUILDER
+========================================================================================================
+Documents analysÃ©s                   : 43
+Candidats cause racine               : 1
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\queues\root_cause_entity_candidates.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+========================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY VALIDATOR
+========================================================================================================
+Candidats reÃ§us                      : 1
+
+STATUTS
+--------------------------------------------------------------------------------------------------------
+SAFE_RETYPE                                     : 1
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\outputs\root_cause_entity_validated.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+========================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY SAFE CORRECTOR
+========================================================================================================
+SAFE_RETYPE reÃ§us                    : 1
+Documents copiÃ©s                     : 43
+Retypages appliquÃ©s                  : 1
+Documents modifiÃ©s                   : 1
+Erreurs                              : 0
+
+Sortie clinique                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected
+Rapport                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected\root_cause_entity_correction_report.json
+
+Les fichiers sources n'ont pas Ã©tÃ© modifiÃ©s.
+============================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY POST-VALIDATION
+============================================================================================================
+Documents vÃ©rifiÃ©s                  : 43
+Documents attendus modifiÃ©s         : 1
+Documents rÃ©ellement modifiÃ©s       : 1
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Anomalies structurelles AVANT       : 47
+Anomalies structurelles APRES       : 45
+Nouvelles anomalies structurelles   : 0
+Anomalies structurelles rÃ©solues    : 2
+
+STATUT FINAL ROOT CAUSE ENTITY      : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\post_validation\root_cause_entity_post_validation_report.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e par ce post-validateur.
+========================================================================================================
+TRACE - ETAGE 3 / ROOT CAUSE - PIPELINE COMPLET
+========================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+========================================================================================================
+[1/4] root_cause_entity_candidate_builder.py
+========================================================================================================
+[OK] root_cause_entity_candidate_builder.py - 0.76 s
+
+========================================================================================================
+[2/4] root_cause_entity_validator.py
+========================================================================================================
+[OK] root_cause_entity_validator.py - 0.64 s
+
+========================================================================================================
+[3/4] root_cause_entity_safe_corrector.py
+========================================================================================================
+[OK] root_cause_entity_safe_corrector.py - 0.97 s
+
+========================================================================================================
+[4/4] root_cause_entity_post_validator.py
+========================================================================================================
+[OK] root_cause_entity_post_validator.py - 3.35 s
+
+========================================================================================================
+ROOT CAUSE TERMINE
+========================================================================================================
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected
+Durée totale    : 5.71 s
+================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL CANDIDATE BUILDER V2
+================================================================================================================
+Documents analysés                 : 43
+Relations candidates               : 3753
+Sources non résolues               : 2
+Cibles non résolues                : 4
+Textes manquants                   : 0
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\queues\semantic_factual_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL CLASSIFIER V2
+================================================================================================================
+Cas reçus                           : 3753
+
+CLASSIFICATIONS
+----------------------------------------------------------------------------------------------------------------
+EXACT_OR_STRONG_SUPPORT                             : 3556
+UNSUPPORTED_FACT                                    : 187
+NEGATION_SENSITIVE                                  : 4
+UNRESOLVED_ENDPOINT                                 : 6
+
+ACTIONS PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+KEEP                                                : 3556
+NONE                                                : 197
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL VALIDATOR V2
+================================================================================================================
+Décisions reçues                    : 3753
+
+STATUTS FINAUX
+----------------------------------------------------------------------------------------------------------------
+SUPPORTED_KEEP                                      : 3556
+REVIEW                                              : 197
+
+ACTIONS FINALES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 3753
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+=============================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL REVIEW ANALYZER V2
+=============================================================================================================================
+Décisions totales                   : 3753
+SUPPORTED_KEEP                      : 3556
+Cas REVIEW                          : 197
+
+UNSUPPORTED_FACT                    : 187
+NEGATION_SENSITIVE                  : 4
+DOCUMENT_LEVEL_SUPPORT              : 0
+AMBIGUOUS                           : 0
+UNRESOLVED_ENDPOINT                 : 6
+
+Types de relation concernés         : 10
+Signatures distinctes               : 12
+
+REVIEW PAR CLASSIFICATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT                                                 : 187
+UNRESOLVED_ENDPOINT                                              : 6
+NEGATION_SENSITIVE                                               : 4
+
+PRESENCE DES ENDPOINTS DANS LE DOCUMENT
+-----------------------------------------------------------------------------------------------------------------------------
+NO_ENDPOINT_FOUND_IN_DOCUMENT                                    : 192
+ONLY_TARGET_IN_DOCUMENT                                          : 3
+ONLY_SOURCE_IN_DOCUMENT                                          : 2
+
+CAS SENSIBLES A LA NEGATION
+-----------------------------------------------------------------------------------------------------------------------------
+TARGET_NEGATED                                                   : 4
+
+REVIEW PAR TYPE DE RELATION
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie                                      : 176
+traitement_administre_a                                          : 7
+biomarqueur_supporte_defaillance_organe                          : 5
+signe_vital_supporte_defaillance_organe                          : 2
+biomarqueur_est_critere_de                                       : 2
+presente_dysfonction_organe                                      : 1
+service_medical_accueille                                        : 1
+a_pour_label_nosologique                                         : 1
+micro_organisme_isole_dans                                       : 1
+imagerie_objective_defaillance                                   : 1
+
+SIGNATURES RELATION | TYPE SUJET -> TYPE OBJET
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie | TRAITEMENT -> POSOLOGIE                                                    : 173
+traitement_administre_a | TRAITEMENT -> DONNEE_PATIENT                                                   : 6
+biomarqueur_supporte_defaillance_organe | BIOMARQUEUR -> DEFAILLANCE_ORGANE                              : 5
+traitement_a_pour_posologie | TRAITEMENT -> <VIDE>                                                       : 3
+signe_vital_supporte_defaillance_organe | SIGNE_VITAL -> DEFAILLANCE_ORGANE                              : 2
+biomarqueur_est_critere_de | BIOMARQUEUR -> LABEL_NOSOLOGIQUE                                            : 2
+presente_dysfonction_organe | DONNEE_PATIENT -> <VIDE>                                                   : 1
+service_medical_accueille | <VIDE> -> DONNEE_PATIENT                                                     : 1
+a_pour_label_nosologique | DONNEE_PATIENT -> LABEL_NOSOLOGIQUE                                           : 1
+micro_organisme_isole_dans | MICRO_ORGANISME -> FOYER_INFECTIEUX                                         : 1
+traitement_administre_a | <VIDE> -> DONNEE_PATIENT                                                       : 1
+imagerie_objective_defaillance | IMAGERIE_PROCEDURE -> DEFAILLANCE_ORGANE                                : 1
+
+EXEMPLES UNSUPPORTED_FACT
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00033
+  Restriction hydrique | restriction_hydrique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  50 ml | posologie [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Restriction hydrique'
+  Preuve target : '50 ml'
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00085
+  adrénaline [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  2 mg | posologie [POSOLOGIE]
+  Source dans document : True
+  Target dans document : False
+  Preuve source : 'adrénaline'
+  Preuve target : '2 mg'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00102
+  tazocilline | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  4g X 4/j | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'tazocilline'
+  Preuve target : '4g X 4/j'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00103
+  Amiklin | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  1g | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Amiklin'
+  Preuve target : '1g'
+
+img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00085
+  Amiklin | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  1g | posologie [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Amiklin'
+  Preuve target : '1g'
+
+EXEMPLES NEGATION_SENSITIVE
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00052
+  PAS 133 | pression_arterielle_systolique | 133 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00053
+  tachycardie | frequence_cardiaque | 144 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00022
+  campylobacter | micro_organisme [MICRO_ORGANISME] status=None
+       --micro_organisme_isole_dans-->
+  foyer infectieux | foyer [FOYER_INFECTIEUX] status=NEGATED
+
+img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_R001
+  PL [IMAGERIE_PROCEDURE] status=None
+       --imagerie_objective_defaillance-->
+  pas de défaillances au plan rénal | renal [DEFAILLANCE_ORGANE] status=NEGATED
+
+INTERPRETATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT signifie que le support textuel de la relation n'a pas été suffisamment démontré.
+Il ne signifie PAS automatiquement que la relation est fausse ou hallucinée.
+Aucune suppression automatique ne doit être effectuée sur cette seule base.
+
+Rapport JSON                        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_review_analysis.json
+Rapport TXT                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_review_analysis.txt
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL SECOND PASS V1
+========================================================================================================================
+Décisions validées reçues           : 3753
+Cas REVIEW reçus                    : 197
+Textes manquants                    : 0
+
+CLASSIFICATIONS INITIALES
+------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT                                            : 187
+UNRESOLVED_ENDPOINT                                         : 6
+NEGATION_SENSITIVE                                          : 4
+
+RESULTATS SECOND PASS
+------------------------------------------------------------------------------------------------------------------------
+SUPPORTED_AFTER_RECHECK                                     : 173
+PARTIAL_SUPPORT                                             : 9
+UNHANDLED_REVIEW_CLASS                                      : 6
+DOCUMENT_LEVEL_SUPPORT                                      : 5
+POTENTIAL_NEGATION_CONTRADICTION                            : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_second_pass.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL SECOND PASS VALIDATOR V1
+========================================================================================================================
+Cas reçus                           : 197
+
+CLASSIFICATIONS SECOND PASS
+------------------------------------------------------------------------------------------------------------------------
+SUPPORTED_AFTER_RECHECK                                     : 173
+PARTIAL_SUPPORT                                             : 9
+UNHANDLED_REVIEW_CLASS                                      : 6
+DOCUMENT_LEVEL_SUPPORT                                      : 5
+POTENTIAL_NEGATION_CONTRADICTION                            : 4
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+SAFE_KEEP                                                   : 173
+REVIEW                                                      : 20
+REVIEW_PRIORITY                                             : 4
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 197
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_second_pass_validated.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL THIRD PASS V1
+========================================================================================================================
+Cas Second Pass reçus               : 197
+Cas sélectionnés                    : 24
+Documents texte manquants           : 0
+
+CLASSIFICATIONS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+PARTIAL_SUPPORT                                             : 9
+UNHANDLED_REVIEW_CLASS                                      : 6
+DOCUMENT_LEVEL_SUPPORT                                      : 5
+POTENTIAL_NEGATION_CONTRADICTION                            : 4
+
+RESULTATS THIRD PASS
+------------------------------------------------------------------------------------------------------------------------
+UNRESOLVED                                                  : 13
+SUPPORTED_AFTER_DEEP_RECHECK                                : 7
+EXPLICITLY_CONTRADICTED                                     : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_third_pass.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL THIRD PASS VALIDATOR V1
+========================================================================================================================
+Cas reçus                           : 24
+
+CLASSIFICATIONS THIRD PASS
+------------------------------------------------------------------------------------------------------------------------
+UNRESOLVED                                                  : 13
+SUPPORTED_AFTER_DEEP_RECHECK                                : 7
+EXPLICITLY_CONTRADICTED                                     : 4
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 13
+SAFE_KEEP                                                   : 7
+SAFE_REMOVE_CANDIDATE                                       : 4
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 20
+PROPOSE_REMOVE_RELATION                                     : 4
+
+Candidats suppression sûre          : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_third_pass_validated.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL CONTRADICTION VALIDATOR V1
+========================================================================================================================
+Third Pass reçus                    : 24
+SAFE_REMOVE_CANDIDATE reçus         : 4
+Textes manquants                    : 0
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 2
+SAFE_REMOVE                                                 : 2
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 2
+REMOVE_RELATION                                             : 2
+
+RESUME
+------------------------------------------------------------------------------------------------------------------------
+Relations SAFE_REMOVE               : 2
+Relations récupérées SAFE_KEEP      : 0
+Relations restant REVIEW            : 2
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_contradiction_validated.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL SAFE CORRECTOR V1
+========================================================================================================================
+Actions SAFE_REMOVE reçues          : 2
+Documents copiés                    : 43
+Relations logiques supprimées       : 2
+Occurrences physiques supprimées    : 3
+Documents modifiés                  : 2
+Erreurs                             : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+APPLIED                                                     : 2
+
+RELATIONS SUPPRIMEES
+------------------------------------------------------------------------------------------------------------------------
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00022 | micro_organisme_isole_dans
+  campylobacter | micro_organisme --micro_organisme_isole_dans--> foyer infectieux | foyer
+  occurrences physiques supprimées : 1
+
+img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_R001 | imagerie_objective_defaillance
+  PL --imagerie_objective_defaillance--> pas de défaillances au plan rénal | renal
+  occurrences physiques supprimées : 2
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected\semantic_factual_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL POST-VALIDATION V1
+========================================================================================================================
+Documents vérifiés                  : 43
+Suppressions logiques attendues     : 2
+Opérations vérifiées                : 2
+Opérations FAIL                     : 0
+
+Changements hors relations          : 0
+Suppressions relations inattendues  : 0
+Ajouts relations inattendus         : 0
+
+Docs manquants APRES                : 0
+Docs supplémentaires APRES          : 0
+
+STATUT FINAL SEMANTIC FACTUAL REPAIR: PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\post_validation\semantic_factual_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE - ETAGE 3 / SEMANTIC-FACTUAL - PIPELINE COMPLET
+============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+============================================================================================================
+[1/11] semantic_factual_candidate_builder.py
+============================================================================================================
+[OK] semantic_factual_candidate_builder.py - 24.29 s
+
+============================================================================================================
+[2/11] semantic_factual_classifier.py
+============================================================================================================
+[OK] semantic_factual_classifier.py - 0.64 s
+
+============================================================================================================
+[3/11] semantic_factual_validator.py
+============================================================================================================
+[OK] semantic_factual_validator.py - 0.59 s
+
+============================================================================================================
+[4/11] semantic_factual_review_analyzer.py
+============================================================================================================
+[OK] semantic_factual_review_analyzer.py - 0.31 s
+
+============================================================================================================
+[5/11] semantic_factual_second_pass.py
+============================================================================================================
+[OK] semantic_factual_second_pass.py - 0.76 s
+
+============================================================================================================
+[6/11] semantic_factual_second_pass_validator.py
+============================================================================================================
+[OK] semantic_factual_second_pass_validator.py - 0.19 s
+
+============================================================================================================
+[7/11] semantic_factual_third_pass.py
+============================================================================================================
+[OK] semantic_factual_third_pass.py - 0.35 s
+
+============================================================================================================
+[8/11] semantic_factual_third_pass_validator.py
+============================================================================================================
+[OK] semantic_factual_third_pass_validator.py - 0.19 s
+
+============================================================================================================
+[9/11] semantic_factual_contradiction_validator.py
+============================================================================================================
+[OK] semantic_factual_contradiction_validator.py - 0.28 s
+
+============================================================================================================
+[10/11] semantic_factual_safe_corrector.py
+============================================================================================================
+[OK] semantic_factual_safe_corrector.py - 2.34 s
+
+============================================================================================================
+[11/11] semantic_factual_post_validator.py
+============================================================================================================
+[OK] semantic_factual_post_validator.py - 4.80 s
+
+============================================================================================================
+SEMANTIC-FACTUAL TERMINE
+============================================================================================================
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+Durée totale    : 34.76 s
+============================================================================================================
+TRACE — ETAGE 3 / DOCUMENT & FACTUAL GROUNDING
+============================================================================================================
+Racine : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3
+Python : C:\Users\Lamis\anaconda3\python.exe
+
+Pipeline : ROOT CAUSE -> SEMANTIC / FACTUAL
+
+============================================================================================================
+[1/2] ROOT CAUSE
+============================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\run_root_cause.py
+
+[OK] ROOT CAUSE
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected
+JSON cliniques : 43
+Durée : 5.92 s
+
+============================================================================================================
+[2/2] SEMANTIC / FACTUAL
+============================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\run_semantic_factual.py
+
+[OK] SEMANTIC / FACTUAL
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+JSON cliniques : 43
+Durée : 34.93 s
+
+============================================================================================================
+TRACE — ETAGE 3 TERMINE AVEC SUCCES
+============================================================================================================
+Root Cause       : OK
+Semantic/Factual : OK
+
+Sortie finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+JSON cliniques : 43
+Durée totale  : 40.85 s
+============================================================================================================

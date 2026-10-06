@@ -1,0 +1,93 @@
+[
+  {
+    "stage": "02_SGCE",
+    "status": "PASS",
+    "source": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\MultiAgent\\corrected",
+    "entity_precision": 0.7441,
+    "entity_recall": 0.6817,
+    "entity_f1": 0.7115,
+    "entity_macro_f1": 0.7184,
+    "relation_precision": 0.7486,
+    "relation_recall": 0.6145,
+    "relation_f1": 0.675,
+    "relation_macro_f1": 0.6739
+  },
+  {
+    "stage": "03_DOCUMENT_FACTUAL",
+    "status": "PASS",
+    "source": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\document_grounding Etage 3\\semantic_factual\\semantic_factual_safe_corrected",
+    "entity_precision": 0.7441,
+    "entity_recall": 0.6817,
+    "entity_f1": 0.7115,
+    "entity_macro_f1": 0.7184,
+    "relation_precision": 0.6656,
+    "relation_recall": 0.6254,
+    "relation_f1": 0.6449,
+    "relation_macro_f1": 0.6437
+  },
+  {
+    "stage": "04_ONTOLOGY",
+    "status": "PASS",
+    "source": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\ontology Etage 4\\ontology_duplicates\\duplicate_entities\\duplicate_entity_safe_merged",
+    "entity_precision": 0.7441,
+    "entity_recall": 0.6817,
+    "entity_f1": 0.7115,
+    "entity_macro_f1": 0.7184,
+    "relation_precision": 0.6648,
+    "relation_recall": 0.624,
+    "relation_f1": 0.6437,
+    "relation_macro_f1": 0.6427
+  },
+  {
+    "stage": "05_NUMERIC_UNIT",
+    "status": "PASS",
+    "source": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\numeric_unit Etage 5\\numeric_unit_safe_corrected",
+    "entity_precision": 0.7441,
+    "entity_recall": 0.6817,
+    "entity_f1": 0.7115,
+    "entity_macro_f1": 0.7184,
+    "relation_precision": 0.6648,
+    "relation_recall": 0.624,
+    "relation_f1": 0.6437,
+    "relation_macro_f1": 0.6427
+  },
+  {
+    "stage": "06_TEMPORAL",
+    "status": "PASS",
+    "source": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\temporal Etage 6\\temporal_status_safe_corrected",
+    "entity_precision": 0.7441,
+    "entity_recall": 0.6817,
+    "entity_f1": 0.7115,
+    "entity_macro_f1": 0.7184,
+    "relation_precision": 0.6648,
+    "relation_recall": 0.624,
+    "relation_f1": 0.6437,
+    "relation_macro_f1": 0.6427
+  },
+  {
+    "stage": "07_NEGATION",
+    "status": "PASS",
+    "source": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\negation Etage 7\\negation_safe_corrected",
+    "entity_precision": 0.7441,
+    "entity_recall": 0.6817,
+    "entity_f1": 0.7115,
+    "entity_macro_f1": 0.7184,
+    "relation_precision": 0.6648,
+    "relation_recall": 0.624,
+    "relation_f1": 0.6437,
+    "relation_macro_f1": 0.6427
+  },
+  {
+    "stage": "08_CONFIDENCE",
+    "status": "PASS",
+    "source": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\confidence Etage 8\\confidence_assessed_safe",
+    "entity_precision": 0.7441,
+    "entity_recall": 0.6817,
+    "entity_f1": 0.7115,
+    "entity_macro_f1": 0.7184,
+    "relation_precision": 0.6648,
+    "relation_recall": 0.624,
+    "relation_f1": 0.6437,
+    "relation_macro_f1": 0.6427
+  }
+]

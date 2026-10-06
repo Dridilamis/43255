@@ -1,0 +1,638 @@
+{
+  "corrector": "agent_d_corrector",
+  "source_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_patient_reference_corrected",
+  "output_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_d_corrected",
+  "summary": {
+    "documents_copied": 43,
+    "operations_applied": 66,
+    "documents_modified": 27,
+    "actions": {
+      "RETYPE_ENTITY": 66
+    }
+  },
+  "modified_documents": [
+    "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "D_000008",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E034",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000010",
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E046",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000012",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E015",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000013",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E028",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000021",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E030",
+      "new_type": "TRAITEMENT",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000023",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E014",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000024",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E015",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000025",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E010",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000026",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E011",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000028",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E026",
+      "new_type": "TRAITEMENT",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000029",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E022",
+      "new_type": "SIGNE_VITAL",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000030",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E029",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000031",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E027",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000038",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E046",
+      "new_type": "TRAITEMENT",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000039",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E029",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000041",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P6_E037",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000042",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E035",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000044",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E019",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000046",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E061",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000047",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E039",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000048",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E041",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000049",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E032",
+      "new_type": "TRAITEMENT",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000050",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P7_E039",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000051",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E046",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000052",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E015",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000053",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E024",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000054",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E006",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000055",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E008",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000057",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E042",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000058",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E042",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000059",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P6_E025",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000060",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E018",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000062",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E036",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000063",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E032",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000064",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P6_E028",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000065",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E020",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000066",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E031",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000067",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E060",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000068",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E060",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000069",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E060",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000070",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E060",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000071",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E029",
+      "new_type": "TRAITEMENT",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000081",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E046",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000083",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E020",
+      "new_type": "TRAITEMENT",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000084",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E070",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000085",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P6_E036",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000088",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E034",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000089",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E032",
+      "new_type": "SYMPTOME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000090",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E032",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000092",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E040",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000093",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E020",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000095",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P3_E056",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000096",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P2_E048",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000097",
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P6_E014",
+      "new_type": "MICRO_ORGANISME",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000100",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E016",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000104",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E030",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000105",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E043",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000106",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E017",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000107",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E010",
+      "new_type": "POSOLOGIE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000108",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P1_E034",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000114",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P6_E039",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000116",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E030",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000117",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E058",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000118",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P5_E047",
+      "new_type": "TRAITEMENT",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000119",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E030",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "APPLIED",
+      "reason": "OK"
+    },
+    {
+      "candidate_id": "D_000121",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_ENTITY",
+      "entity_id": "P4_E026",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "APPLIED",
+      "reason": "OK"
+    }
+  ]
+}

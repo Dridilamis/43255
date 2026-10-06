@@ -1,0 +1,34 @@
+{
+  "pattern": "A4",
+  "name": "IMAGERIE_PROCEDURE + DEFAILLANCE_ORGANE",
+  "relation": "imagerie_objective_defaillance",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA3\\corrected",
+  "validation_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA4\\validation\\pattern_a4_validation_report.json",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA4\\corrected",
+  "summary": {
+    "validated_candidates": 1,
+    "operations_total": 1,
+    "link": 1,
+    "split": 0,
+    "skip": 0,
+    "documents_copied": 43,
+    "documents_modified": 1,
+    "nonclinical_json_skipped": 1,
+    "errors": 0
+  },
+  "operations": [
+    {
+      "operation": "LINK",
+      "source_entity_id": "P5_E002",
+      "target_entity_id": "P5_E018",
+      "relation_id": "P5_R001",
+      "relation_type": "imagerie_objective_defaillance",
+      "modified": true,
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a3_correction_report.json"
+  ],
+  "errors": []
+}

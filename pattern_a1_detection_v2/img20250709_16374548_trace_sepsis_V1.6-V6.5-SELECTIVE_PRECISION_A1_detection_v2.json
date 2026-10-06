@@ -1,0 +1,32 @@
+{
+  "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 50,
+  "number_candidates": 1,
+  "signal_counts": {
+    "WEAK": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E007",
+        "type": "TRAITEMENT",
+        "name": "Remplissage avec 250ml de sérum phy",
+        "preuve": "Remplissage avec 250ml de sérum phy",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Remplissage avec 250ml de sérum phy | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "250ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

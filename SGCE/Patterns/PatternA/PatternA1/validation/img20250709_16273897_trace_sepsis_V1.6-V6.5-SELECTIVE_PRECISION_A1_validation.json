@@ -1,0 +1,370 @@
+{
+  "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 5,
+  "status_counts": {
+    "ALREADY_CORRECT": 2,
+    "AMBIGUOUS": 3
+  },
+  "results": [
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E029",
+        "type": "TRAITEMENT",
+        "name": "Ceftriaxone",
+        "preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "1g de CG3 Ceftriaxone Rocéphine IV | Ceftriaxone | antibiotique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E033"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E033",
+        "target_name": "1g",
+        "target_preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E033",
+          "target_name": "1g",
+          "target_preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E034",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg Quinolone Tavanic IV",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E035",
+          "target_name": "3 l de SSI",
+          "target_preuve": "3 l de SSI",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E030",
+        "type": "TRAITEMENT",
+        "name": "Tavanic",
+        "preuve": "500 mg Quinolone Tavanic IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "500 mg Quinolone Tavanic IV | Tavanic | antibiotique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E034"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E034",
+        "target_name": "500 mg",
+        "target_preuve": "500 mg Quinolone Tavanic IV",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E034",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg Quinolone Tavanic IV",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E033",
+          "target_name": "1g",
+          "target_preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E035",
+          "target_name": "3 l de SSI",
+          "target_preuve": "3 l de SSI",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E031",
+        "type": "TRAITEMENT",
+        "name": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN",
+        "preuve": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E036"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E036",
+          "target_name": "500 ml de VOLUVEN",
+          "target_preuve": "500 ml de VOLUVEN",
+          "target_page": 2,
+          "medication_anchor": 0.3333,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.6167,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E035",
+          "target_name": "3 l de SSI",
+          "target_preuve": "3 l de SSI",
+          "target_page": 2,
+          "medication_anchor": 0.3333,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.3667,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E033",
+          "target_name": "1g",
+          "target_preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E032",
+        "type": "TRAITEMENT",
+        "name": "Perfalgan",
+        "preuve": "1g de Perfalgan",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "1g de Perfalgan | Perfalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E033",
+          "target_name": "1g",
+          "target_preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E034",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg Quinolone Tavanic IV",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E035",
+          "target_name": "3 l de SSI",
+          "target_preuve": "3 l de SSI",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E051",
+        "type": "TRAITEMENT",
+        "name": "Antalgique 1g de Perfalgan",
+        "preuve": "Antalgique 1g de Perfalgan",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Antalgique 1g de Perfalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E033",
+          "target_name": "1g",
+          "target_preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E034",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg Quinolone Tavanic IV",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E035",
+          "target_name": "3 l de SSI",
+          "target_preuve": "3 l de SSI",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 4,
+  "status_counts": {
+    "AMBIGUOUS": 2,
+    "ALREADY_CORRECT": 2
+  },
+  "results": [
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E021",
+        "type": "TRAITEMENT",
+        "name": "noradrénaline",
+        "preuve": "sous NAD 4.5 mg/h",
+        "valeur": 4.5,
+        "page": 5
+      },
+      "detection_text": "sous NAD 4.5 mg/h | noradrénaline | 4.5 | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "4.5 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E048"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P5_E010",
+          "target_name": "Vt 420",
+          "target_preuve": "Vt 420",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E011",
+          "target_name": "F25",
+          "target_preuve": "F25",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E012",
+          "target_name": "PEP à 12",
+          "target_preuve": "PEP à 12",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E028",
+        "type": "TRAITEMENT",
+        "name": "remplissage de 250 ml",
+        "preuve": "remplissage de 250 ml",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "remplissage de 250 ml | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "250 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E027"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E028",
+          "target_name": "remplissage 500 cc Voluven",
+          "target_preuve": "remplissage 500 cc Voluven",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E027",
+          "target_name": "250 ml sérum phy",
+          "target_preuve": "250 ml sérum phy",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E010",
+          "target_name": "Vt 420",
+          "target_preuve": "Vt 420",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E015",
+        "type": "TRAITEMENT",
+        "name": "Amiklin",
+        "preuve": "ajout Amiklin 1G ce jour",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "ajout Amiklin 1G ce jour | Amiklin | antibiotique",
+      "detected_components": {
+        "dose": [
+          "1G"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P7_E016"
+      ],
+      "best_posology_match": {
+        "target_id": "P7_E016",
+        "target_name": "1G",
+        "target_preuve": "Amiklin 1G ce jour",
+        "target_page": 7,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P7_E016",
+          "target_name": "1G",
+          "target_preuve": "Amiklin 1G ce jour",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P7_E026",
+          "target_name": "20 mg",
+          "target_preuve": "NAD jusqu'à 20 mg/h",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P7_E046",
+          "target_name": "10 ppm",
+          "target_preuve": "10 ppm",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E025",
+        "type": "TRAITEMENT",
+        "name": "NAD",
+        "preuve": "majoration de NAD jusqu'à 20 mg/h",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "majoration de NAD jusqu'à 20 mg/h | NAD | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "20 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P7_E026"
+      ],
+      "best_posology_match": {
+        "target_id": "P7_E026",
+        "target_name": "20 mg",
+        "target_preuve": "NAD jusqu'à 20 mg/h",
+        "target_page": 7,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P7_E026",
+          "target_name": "20 mg",
+          "target_preuve": "NAD jusqu'à 20 mg/h",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P7_E016",
+          "target_name": "1G",
+          "target_preuve": "Amiklin 1G ce jour",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P7_E046",
+          "target_name": "10 ppm",
+          "target_preuve": "10 ppm",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

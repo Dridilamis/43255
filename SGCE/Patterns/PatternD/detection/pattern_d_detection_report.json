@@ -1,0 +1,1577 @@
+{
+  "pattern": "D",
+  "name": "Violation de signature relationnelle (Domain-Range Mismatch)",
+  "mode": "DETECTION_ONLY",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternC\\corrected",
+  "guideline": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Guideline_TRACE_Sepsis_v1.6.json",
+  "summary": {
+    "clinical_documents": 43,
+    "entities_analyzed": 10138,
+    "relations_analyzed": 3756,
+    "locked_signatures_loaded": 32,
+    "authorized_relations_checked": 3756,
+    "candidates": 46,
+    "d1_invalid_source_type": 3,
+    "d2_invalid_target_type": 43,
+    "errors": 0
+  },
+  "candidate_counts_by_relation": {
+    "a_pour_contexte_acquisition": 3,
+    "presente_symptome": 10,
+    "presente_dysfonction_organe": 15,
+    "a_pour_label_nosologique": 13,
+    "presente_suspicion_infection": 3,
+    "patient_a_pour_evolution": 1,
+    "biomarqueur_supporte_defaillance_organe": 1
+  },
+  "source_type_mismatch_counts": [
+    {
+      "actual": "DONNEE_PATIENT",
+      "expected": "COMORBIDITE_ANTECEDENT",
+      "count": 2
+    },
+    {
+      "actual": "LABEL_NOSOLOGIQUE",
+      "expected": "COMORBIDITE_ANTECEDENT",
+      "count": 1
+    }
+  ],
+  "target_type_mismatch_counts": [
+    {
+      "actual": "SYMPTOME",
+      "expected": "DEFAILLANCE_ORGANE",
+      "count": 10
+    },
+    {
+      "actual": "FOYER_INFECTIEUX",
+      "expected": "LABEL_NOSOLOGIQUE",
+      "count": 8
+    },
+    {
+      "actual": "DEFAILLANCE_ORGANE",
+      "expected": "SYMPTOME",
+      "count": 5
+    },
+    {
+      "actual": "LABEL_NOSOLOGIQUE",
+      "expected": "DEFAILLANCE_ORGANE",
+      "count": 5
+    },
+    {
+      "actual": "BIOMARQUEUR",
+      "expected": "SYMPTOME",
+      "count": 3
+    },
+    {
+      "actual": "SYMPTOME",
+      "expected": "LABEL_NOSOLOGIQUE",
+      "count": 3
+    },
+    {
+      "actual": "LABEL_NOSOLOGIQUE",
+      "expected": "SYMPTOME",
+      "count": 2
+    },
+    {
+      "actual": "SYMPTOME",
+      "expected": "FOYER_INFECTIEUX",
+      "count": 2
+    },
+    {
+      "actual": "DEFAILLANCE_ORGANE",
+      "expected": "LABEL_NOSOLOGIQUE",
+      "count": 2
+    },
+    {
+      "actual": "SYMPTOME",
+      "expected": "EVOLUTION_PRONOSTIC",
+      "count": 1
+    },
+    {
+      "actual": "LABEL_NOSOLOGIQUE",
+      "expected": "FOYER_INFECTIEUX",
+      "count": 1
+    },
+    {
+      "actual": "COMORBIDITE_ANTECEDENT",
+      "expected": "DEFAILLANCE_ORGANE",
+      "count": 1
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "D_000001",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D1_INVALID_RELATION_SOURCE_TYPE",
+      "anomaly_type": "INVALID_RELATION_SOURCE_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00098",
+        "relation_type": "a_pour_contexte_acquisition",
+        "page": 6,
+        "source_id": "P6_E038",
+        "target_id": "P6_E029"
+      },
+      "source_entity": {
+        "id": "P6_E038",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "COMORBIDITE_ANTECEDENT",
+        "text": "Le patient",
+        "page": 6
+      },
+      "target_entity": {
+        "id": "P6_E029",
+        "type_actual": "CONTEXTE_ACQUISITION",
+        "type_expected": "CONTEXTE_ACQUISITION",
+        "text": "infection nosocomiale : oui",
+        "page": 6
+      },
+      "source_invalid": true,
+      "target_invalid": false,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000002",
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00030",
+        "relation_type": "presente_symptome",
+        "page": 2,
+        "source_id": "P2_E046",
+        "target_id": "P2_E044"
+      },
+      "source_entity": {
+        "id": "P2_E046",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E044",
+        "type_actual": "DEFAILLANCE_ORGANE",
+        "type_expected": "SYMPTOME",
+        "text": "ralentissement psychomoteur",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000003",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00073",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 5,
+        "source_id": "P5_E015",
+        "target_id": "P5_E004"
+      },
+      "source_entity": {
+        "id": "P5_E015",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Le patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E004",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "ACR",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000004",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00014",
+        "relation_type": "presente_symptome",
+        "page": 2,
+        "source_id": "P2_E061",
+        "target_id": "P2_E047"
+      },
+      "source_entity": {
+        "id": "P2_E061",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "la patiente",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E047",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "SYMPTOME",
+        "text": "poussée hypertensive",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000005",
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_id": "P5_E032",
+        "target_id": "P5_E022"
+      },
+      "source_entity": {
+        "id": "P5_E032",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Le patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E022",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "pneumopathie nosocomiale",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000006",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00045",
+        "relation_type": "presente_symptome",
+        "page": 5,
+        "source_id": "P5_E055",
+        "target_id": "P5_E044"
+      },
+      "source_entity": {
+        "id": "P5_E055",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patiente",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E044",
+        "type_actual": "BIOMARQUEUR",
+        "type_expected": "SYMPTOME",
+        "text": "thrombopénie",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000007",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00046",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_id": "P5_E055",
+        "target_id": "P5_E020"
+      },
+      "source_entity": {
+        "id": "P5_E055",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patiente",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E020",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "pneumopathie nosocomiale",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000008",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00082",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 6,
+        "source_id": "P6_E042",
+        "target_id": "P6_E038"
+      },
+      "source_entity": {
+        "id": "P6_E042",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "La patiente",
+        "page": 6
+      },
+      "target_entity": {
+        "id": "P6_E038",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "collapsus de reventilation",
+        "page": 6
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000009",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D1_INVALID_RELATION_SOURCE_TYPE",
+      "anomaly_type": "INVALID_RELATION_SOURCE_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00091",
+        "relation_type": "a_pour_contexte_acquisition",
+        "page": 6,
+        "source_id": "P6_E002",
+        "target_id": "P6_E023"
+      },
+      "source_entity": {
+        "id": "P6_E002",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "COMORBIDITE_ANTECEDENT",
+        "text": "pneumopathie nosocomiale",
+        "page": 6
+      },
+      "target_entity": {
+        "id": "P6_E023",
+        "type_actual": "CONTEXTE_ACQUISITION",
+        "type_expected": "CONTEXTE_ACQUISITION",
+        "text": "Infection nosocomiale : oui",
+        "page": 6
+      },
+      "source_invalid": true,
+      "target_invalid": false,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000010",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00085",
+        "relation_type": "presente_suspicion_infection",
+        "page": 5,
+        "source_id": "P5_E035",
+        "target_id": "P5_E029"
+      },
+      "source_entity": {
+        "id": "P5_E035",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E029",
+        "type_actual": "SYMPTOME",
+        "type_expected": "FOYER_INFECTIEUX",
+        "text": "Cicatrice inflammatoire avec écoulement purulent",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000011",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00088",
+        "relation_type": "patient_a_pour_evolution",
+        "page": 5,
+        "source_id": "P5_E035",
+        "target_id": "P5_E028"
+      },
+      "source_entity": {
+        "id": "P5_E035",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E028",
+        "type_actual": "SYMPTOME",
+        "type_expected": "EVOLUTION_PRONOSTIC",
+        "text": "diminution du syndrome inflammatoire biologique",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000012",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_id": "P5_E046",
+        "target_id": "P5_E028"
+      },
+      "source_entity": {
+        "id": "P5_E046",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "La patiente",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E028",
+        "type_actual": "SYMPTOME",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "Hypokaliémie",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000013",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00050",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 4,
+        "source_id": "P4_E040",
+        "target_id": "P4_E031"
+      },
+      "source_entity": {
+        "id": "P4_E040",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E031",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "tuberculose surinfectée",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000014",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00081",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_id": "P5_E042",
+        "target_id": "P5_E019"
+      },
+      "source_entity": {
+        "id": "P5_E042",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E019",
+        "type_actual": "DEFAILLANCE_ORGANE",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "HTAP",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000015",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00085",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_id": "P5_E042",
+        "target_id": "P5_E039"
+      },
+      "source_entity": {
+        "id": "P5_E042",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E039",
+        "type_actual": "SYMPTOME",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "ulcère gastrique",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000016",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00109",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 6,
+        "source_id": "P6_E025",
+        "target_id": "P6_E022"
+      },
+      "source_entity": {
+        "id": "P6_E025",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 6
+      },
+      "target_entity": {
+        "id": "P6_E022",
+        "type_actual": "DEFAILLANCE_ORGANE",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "HTAP secondaire aux lésions pulmonaires",
+        "page": 6
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000017",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00003",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 1,
+        "source_id": "P1_E024",
+        "target_id": "P1_E004"
+      },
+      "source_entity": {
+        "id": "P1_E024",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_E004",
+        "type_actual": "SYMPTOME",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "bronchite",
+        "page": 1
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000018",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 4,
+        "source_id": "P4_E036",
+        "target_id": "P4_E039"
+      },
+      "source_entity": {
+        "id": "P4_E036",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "La patiente",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E039",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "anurie",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000019",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 4,
+        "source_id": "P4_E032",
+        "target_id": "P4_E029"
+      },
+      "source_entity": {
+        "id": "P4_E032",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E029",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "anurie",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000020",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00111",
+        "relation_type": "presente_symptome",
+        "page": 6,
+        "source_id": "P6_E028",
+        "target_id": "P6_E014"
+      },
+      "source_entity": {
+        "id": "P6_E028",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "le patient",
+        "page": 6
+      },
+      "target_entity": {
+        "id": "P6_E014",
+        "type_actual": "DEFAILLANCE_ORGANE",
+        "type_expected": "SYMPTOME",
+        "text": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+        "page": 6
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000021",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00028",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 2,
+        "source_id": "P2_E060",
+        "target_id": "P2_E001"
+      },
+      "source_entity": {
+        "id": "P2_E060",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E001",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "Gangrene gazeuse",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000022",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 2,
+        "source_id": "P2_E060",
+        "target_id": "P2_E037"
+      },
+      "source_entity": {
+        "id": "P2_E060",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E037",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "initialement anurie",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000023",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00051",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 2,
+        "source_id": "P2_E060",
+        "target_id": "P2_E044"
+      },
+      "source_entity": {
+        "id": "P2_E060",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E044",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "persistance de l'anurie",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000024",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00054",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 2,
+        "source_id": "P2_E060",
+        "target_id": "P2_E065"
+      },
+      "source_entity": {
+        "id": "P2_E060",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E065",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "anurie",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000025",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00011",
+        "relation_type": "presente_symptome",
+        "page": 2,
+        "source_id": "P2_E052",
+        "target_id": "P2_E001"
+      },
+      "source_entity": {
+        "id": "P2_E052",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "le patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E001",
+        "type_actual": "BIOMARQUEUR",
+        "type_expected": "SYMPTOME",
+        "text": "thrombopénie",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000026",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00013",
+        "relation_type": "presente_suspicion_infection",
+        "page": 2,
+        "source_id": "P2_E052",
+        "target_id": "P2_E051"
+      },
+      "source_entity": {
+        "id": "P2_E052",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "le patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E051",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "FOYER_INFECTIEUX",
+        "text": "sinusite maxillaire droite",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000027",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00076",
+        "relation_type": "presente_symptome",
+        "page": 5,
+        "source_id": "P5_E032",
+        "target_id": "P5_E018"
+      },
+      "source_entity": {
+        "id": "P5_E032",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E018",
+        "type_actual": "BIOMARQUEUR",
+        "type_expected": "SYMPTOME",
+        "text": "thrombopénie",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000028",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00091",
+        "relation_type": "presente_symptome",
+        "page": 5,
+        "source_id": "P5_E046",
+        "target_id": "P5_E038"
+      },
+      "source_entity": {
+        "id": "P5_E046",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Le patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E038",
+        "type_actual": "DEFAILLANCE_ORGANE",
+        "type_expected": "SYMPTOME",
+        "text": "Neuropathie de réanimation",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000029",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_suspicion_infection",
+        "page": 5,
+        "source_id": "P5_E070",
+        "target_id": "P5_E064"
+      },
+      "source_entity": {
+        "id": "P5_E070",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E064",
+        "type_actual": "SYMPTOME",
+        "type_expected": "FOYER_INFECTIEUX",
+        "text": "angiocholite",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000030",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00108",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 6,
+        "source_id": "P6_E036",
+        "target_id": "P6_E032"
+      },
+      "source_entity": {
+        "id": "P6_E036",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 6
+      },
+      "target_entity": {
+        "id": "P6_E032",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "Angiocholite",
+        "page": 6
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000031",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D1_INVALID_RELATION_SOURCE_TYPE",
+      "anomaly_type": "INVALID_RELATION_SOURCE_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00135",
+        "relation_type": "a_pour_contexte_acquisition",
+        "page": 6,
+        "source_id": "P6_E036",
+        "target_id": "P6_E031"
+      },
+      "source_entity": {
+        "id": "P6_E036",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "COMORBIDITE_ANTECEDENT",
+        "text": "Patient",
+        "page": 6
+      },
+      "target_entity": {
+        "id": "P6_E031",
+        "type_actual": "CONTEXTE_ACQUISITION",
+        "type_expected": "CONTEXTE_ACQUISITION",
+        "text": "Infection nosocomiale : oui",
+        "page": 6
+      },
+      "source_invalid": true,
+      "target_invalid": false,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000032",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00004",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 1,
+        "source_id": "P1_E034",
+        "target_id": "P1_E032"
+      },
+      "source_entity": {
+        "id": "P1_E034",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_E032",
+        "type_actual": "COMORBIDITE_ANTECEDENT",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "dénutrition sévère",
+        "page": 1
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000033",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00069",
+        "relation_type": "presente_symptome",
+        "page": 4,
+        "source_id": "P4_E032",
+        "target_id": "P4_E028"
+      },
+      "source_entity": {
+        "id": "P4_E032",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E028",
+        "type_actual": "DEFAILLANCE_ORGANE",
+        "type_expected": "SYMPTOME",
+        "text": "dilatation des veines du membre supérieur gauche",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000034",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00071",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 4,
+        "source_id": "P4_E032",
+        "target_id": "P4_E037"
+      },
+      "source_entity": {
+        "id": "P4_E032",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E037",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "anurie",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000035",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00001",
+        "relation_type": "presente_symptome",
+        "page": 1,
+        "source_id": "P1_E027",
+        "target_id": "P1_E024"
+      },
+      "source_entity": {
+        "id": "P1_E027",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 1
+      },
+      "target_entity": {
+        "id": "P1_E024",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "SYMPTOME",
+        "text": "coma",
+        "page": 1
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000036",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00031",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 2,
+        "source_id": "P2_E040",
+        "target_id": "P2_E045"
+      },
+      "source_entity": {
+        "id": "P2_E040",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 2
+      },
+      "target_entity": {
+        "id": "P2_E045",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "Anurie",
+        "page": 2
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000037",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00059",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 5,
+        "source_id": "P5_E020",
+        "target_id": "P5_E017"
+      },
+      "source_entity": {
+        "id": "P5_E020",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E017",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "encéphalopathie hépatique",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000038",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00049",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 3,
+        "source_id": "P3_E056",
+        "target_id": "P3_E040"
+      },
+      "source_entity": {
+        "id": "P3_E056",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patient",
+        "page": 3
+      },
+      "target_entity": {
+        "id": "P3_E040",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "pneumopathie nosocomiale",
+        "page": 3
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000039",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00085",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "page": 4,
+        "source_id": "P4_E030",
+        "target_id": "P4_E029"
+      },
+      "source_entity": {
+        "id": "P4_E030",
+        "type_actual": "BIOMARQUEUR",
+        "type_expected": "BIOMARQUEUR",
+        "text": "hyperkaliémie",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E029",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "anurie",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000040",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 4,
+        "source_id": "P4_E043",
+        "target_id": "P4_E029"
+      },
+      "source_entity": {
+        "id": "P4_E043",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patiente",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E029",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "anurie",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000041",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 5,
+        "source_id": "P5_E017",
+        "target_id": "P5_E014"
+      },
+      "source_entity": {
+        "id": "P5_E017",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "la patiente",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E014",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "encéphalopathie hépatique",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000042",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00034",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 3,
+        "source_id": "P3_E035",
+        "target_id": "P3_E020"
+      },
+      "source_entity": {
+        "id": "P3_E035",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 3
+      },
+      "target_entity": {
+        "id": "P3_E020",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "pneumonie à Pneumocoque",
+        "page": 3
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000043",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00027",
+        "relation_type": "presente_symptome",
+        "page": 4,
+        "source_id": "P4_E030",
+        "target_id": "P4_E023"
+      },
+      "source_entity": {
+        "id": "P4_E030",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patiente",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E023",
+        "type_actual": "DEFAILLANCE_ORGANE",
+        "type_expected": "SYMPTOME",
+        "text": "difficultés ventilatoires",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000044",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00028",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 4,
+        "source_id": "P4_E030",
+        "target_id": "P4_E024"
+      },
+      "source_entity": {
+        "id": "P4_E030",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "patiente",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E024",
+        "type_actual": "SYMPTOME",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "hypoxie",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000045",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00043",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 5,
+        "source_id": "P5_E058",
+        "target_id": "P5_E022"
+      },
+      "source_entity": {
+        "id": "P5_E058",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "La patiente",
+        "page": 5
+      },
+      "target_entity": {
+        "id": "P5_E022",
+        "type_actual": "LABEL_NOSOLOGIQUE",
+        "type_expected": "DEFAILLANCE_ORGANE",
+        "text": "dysfonction diastolique",
+        "page": 5
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    },
+    {
+      "candidate_id": "D_000046",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "D",
+      "subcase": "D2_INVALID_RELATION_TARGET_TYPE",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "relation": {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 4,
+        "source_id": "P4_E030",
+        "target_id": "P4_E006"
+      },
+      "source_entity": {
+        "id": "P4_E030",
+        "type_actual": "DONNEE_PATIENT",
+        "type_expected": "DONNEE_PATIENT",
+        "text": "Patient",
+        "page": 4
+      },
+      "target_entity": {
+        "id": "P4_E006",
+        "type_actual": "FOYER_INFECTIEUX",
+        "type_expected": "LABEL_NOSOLOGIQUE",
+        "text": "gangrène gazeuse",
+        "page": 4
+      },
+      "source_invalid": false,
+      "target_invalid": true,
+      "status": "D_CANDIDATE",
+      "safe_to_correct": false
+    }
+  ],
+  "errors": [],
+  "nonclinical_json_skipped": []
+}

@@ -1,0 +1,211 @@
+{
+  "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 3,
+  "status_counts": {
+    "AMBIGUOUS": 3
+  },
+  "results": [
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E025",
+        "type": "TRAITEMENT",
+        "name": "valium",
+        "preuve": "10 mg de valium",
+        "valeur": 10,
+        "page": 2
+      },
+      "detection_text": "10 mg de valium | valium | 10 | sedatif",
+      "detected_components": {
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E046"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E046",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E009",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg/h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E003",
+          "target_name": "8L",
+          "target_preuve": "8L",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E008",
+        "type": "TRAITEMENT",
+        "name": "Adrénaline",
+        "preuve": "Adrénaline 10 mg/h",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Adrénaline 10 mg/h | Adrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "10 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E009"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P4_E005",
+          "target_name": "3mg",
+          "target_preuve": "soutien par adrénaline 3mg/h",
+          "target_page": 4,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E009",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg/h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E011",
+          "target_name": "20 mg",
+          "target_preuve": "20 mg/h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E010",
+        "type": "TRAITEMENT",
+        "name": "Noradrénaline",
+        "preuve": "Noradrénaline 20 mg/h",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Noradrénaline 20 mg/h | Noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "20 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E011"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P5_E011",
+          "target_name": "20 mg",
+          "target_preuve": "20 mg/h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E009",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg/h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E003",
+          "target_name": "8L",
+          "target_preuve": "8L",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

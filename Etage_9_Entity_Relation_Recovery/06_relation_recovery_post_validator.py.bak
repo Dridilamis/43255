@@ -1,0 +1,149 @@
+# -*- coding: utf-8 -*-
+from pathlib import Path
+import json, re, os, sys, shutil, unicodedata
+from collections import Counter, defaultdict
+
+BASE = Path(os.environ.get("USERPROFILE", str(Path.home()))) / "Desktop" / "TRACE" / "OCR vers LLM"
+RED = BASE / "Reduction_hallucinations"
+STAGE = RED / "relation_recovery Etage 9"
+INPUT_DIR = STAGE / "entity_recovery_v3_safe_corrected"
+TEXT_DIR = RED / "Sortie_Textes_Brut_MistralSmall4"
+GUIDELINE = BASE / "ontologie_sepsis_graph_v1.6.json"
+STAGE.mkdir(parents=True, exist_ok=True)
+
+def norm(x):
+    x="" if x is None else str(x)
+    x=unicodedata.normalize("NFKC",x).lower().replace("\u00a0"," ")
+    return re.sub(r"\s+"," ",x).strip()
+
+def eid(e): return str(e.get("identifiant_entite") or e.get("id") or e.get("entity_id") or "").strip()
+def etype(e): return str(e.get("type") or e.get("categorie") or e.get("label") or "").strip().upper()
+def etext(e):
+    for k in ("name","mention","text","preuve"):
+        if e.get(k) is not None and str(e.get(k)).strip(): return str(e.get(k)).strip()
+    p=str(e.get("parametre") or "").strip()
+    v="" if e.get("valeur") is None else str(e.get("valeur")).strip()
+    u="" if e.get("unite") is None else str(e.get("unite")).strip()
+    return " ".join(x for x in (p,v,u) if x).strip()
+
+def rid(r): return str(r.get("identifiant_relation") or r.get("id") or "").strip()
+def rtype(r): return str(r.get("type_relation") or r.get("relation") or r.get("label") or "").strip()
+def rs(r): return str(r.get("identifiant_entite_sujet") or r.get("subject_id") or "").strip()
+def ro(r): return str(r.get("identifiant_entite_objet") or r.get("object_id") or "").strip()
+
+def load(p): return json.loads(Path(p).read_text(encoding="utf-8-sig"))
+def dump(p,x): Path(p).parent.mkdir(parents=True,exist_ok=True); Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding="utf-8")
+
+def clinical_files(folder):
+    out=[]
+    for p in sorted(Path(folder).glob("*.json")):
+        try:
+            d=load(p)
+            if isinstance(d,dict) and isinstance(d.get("global_entities"),list) and isinstance(d.get("global_relations"),list):
+                out.append((p,d))
+        except Exception: pass
+    return out
+
+def walk(o):
+    if isinstance(o,dict):
+        yield o
+        for v in o.values(): yield from walk(v)
+    elif isinstance(o,list):
+        for v in o: yield from walk(v)
+
+def ontology_root():
+    g=load(GUIDELINE)
+    return g.get("ontologie_sepsis_graph", g)
+
+def signatures():
+    """Parse exactement V1.6: relations/<groupe>/<relation>/{domaine,image}."""
+    g=ontology_root()
+    sig=defaultdict(lambda:{"source":set(),"target":set()})
+    for group_name, group in (g.get("relations") or {}).items():
+        if not isinstance(group,dict): continue
+        for rn,spec in group.items():
+            if not isinstance(spec,dict): continue
+            dom=spec.get("domaine"); img=spec.get("image")
+            if isinstance(dom,str) and dom.strip(): sig[rn]["source"].add(dom.strip().upper())
+            if isinstance(img,str) and img.strip(): sig[rn]["target"].add(img.strip().upper())
+    return sig
+
+def ontology_entity_types():
+    return {str(k).upper() for k in (ontology_root().get("entites") or {}).keys()}
+
+def text_for(stem):
+    candidates=[TEXT_DIR/f"{stem}.txt",TEXT_DIR/f"{stem}_texte_brut.txt",TEXT_DIR/f"{stem}_text_brut.txt"]
+    for p in candidates:
+        if p.exists(): return p.read_text(encoding="utf-8-sig",errors="replace")
+    for p in TEXT_DIR.glob("*.txt"):
+        if stem.lower() in p.stem.lower(): return p.read_text(encoding="utf-8-sig",errors="replace")
+    return ""
+
+def sentences(text):
+    return [s.strip() for s in re.split(r"(?<=[.!?;])\s+|\n+",text) if s.strip()]
+
+def direct_context(text,a,b):
+    """Preuve forte : les deux mentions apparaissent dans la même phrase ou deux phrases adjacentes."""
+    na,nb=norm(a),norm(b)
+    if not na or not nb: return None
+    ss=sentences(text)
+    for i,s in enumerate(ss):
+        ns=norm(s)
+        if na in ns and nb in ns: return {"strength":"SAME_SENTENCE","evidence":s}
+    for i in range(len(ss)-1):
+        ns=norm(ss[i]+" "+ss[i+1])
+        if na in ns and nb in ns: return {"strength":"ADJACENT_SENTENCES","evidence":ss[i]+" "+ss[i+1]}
+    return None
+
+def relation_exists(rels,s,rn,o):
+    return any(rs(r)==s and ro(r)==o and rtype(r)==rn for r in rels)
+
+BEFORE=INPUT_DIR; AFTER=STAGE/"relation_recovery_safe_corrected"; OPS=STAGE/"05_applied_operations.json"
+def key(r): return (rs(r),rtype(r),ro(r))
+def orphan_set(d):
+    ids={eid(e) for e in d.get("global_entities",[]) if eid(e)}
+    return {(rid(r),rs(r),rtype(r),ro(r)) for r in d.get("global_relations",[])
+            if rs(r) not in ids or ro(r) not in ids}
+
+def main():
+    ops=load(OPS)["operations"]
+    fails=[]
+    before_docs={p.name:d for p,d in clinical_files(BEFORE)}
+    after_docs={p.name:d for p,d in clinical_files(AFTER)}
+    if set(before_docs)!=set(after_docs): fails.append("Document set changed")
+    added_total=0; pre_orphans=set(); post_orphans=set()
+    for fn,b in before_docs.items():
+        a=after_docs.get(fn)
+        if not a: continue
+        if b.get("global_entities") != a.get("global_entities"):
+            fails.append(f"{fn}: entities changed during relation recovery")
+        bk=Counter(key(r) for r in b.get("global_relations",[]))
+        ak=Counter(key(r) for r in a.get("global_relations",[]))
+        removed=bk-ak
+        if sum(removed.values()):
+            fails.append(f"{fn}: pre-existing relation removed/changed")
+        added_total += sum((ak-bk).values())
+        pre_orphans |= {(fn,)+x for x in orphan_set(b)}
+        post_orphans |= {(fn,)+x for x in orphan_set(a)}
+    new_orphans=post_orphans-pre_orphans
+    resolved_orphans=pre_orphans-post_orphans
+    if new_orphans:
+        fails.append(f"new orphan endpoints created={len(new_orphans)}")
+    if added_total != len(ops):
+        fails.append(f"added={added_total} but operations={len(ops)}")
+    status="PASS" if not fails else "FAIL"
+    report={"status":status,"added_relations":added_total,"operations":len(ops),
+            "pre_existing_orphans":len(pre_orphans),"post_orphans":len(post_orphans),
+            "resolved_pre_existing_orphans":len(resolved_orphans),
+            "new_orphans_created":len(new_orphans),"failures":fails}
+    dump(STAGE/"06_post_validation.json",report)
+    print("ETAGE 9 / 6 - POST VALIDATION")
+    print("Relations ajoutées :",added_total)
+    print("Orphelins préexistants :",len(pre_orphans))
+    print("Orphelins résolus :",len(resolved_orphans))
+    print("Nouveaux orphelins créés :",len(new_orphans))
+    print("Anomalies Etage 9 :",len(fails)); print("FINAL :",status)
+    if fails:
+        for x in fails[:20]: print(" -",x)
+        raise SystemExit(1)
+if __name__=="__main__": main()

@@ -1,0 +1,157 @@
+{
+  "version": "2.0",
+  "principle": "SECOND_RECOURSE_ONLY",
+  "description": "Les mécanismes symboliques sont prioritaires. Seuls les cas détectés mais non résolus de façon déterministe sont routés vers les agents.",
+  "base_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations",
+  "sources": {
+    "pattern_a": {
+      "reports_found": 10,
+      "reports": [
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA2\\pattern_a2_post_validation\\pattern_a2_post_validation_report.json",
+          "candidate_count": 0,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA2\\pattern_a2_validation\\pattern_a2_validation_report.json",
+          "candidate_count": 2,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA3\\pattern_a3_post_validation\\pattern_a3_post_validation_report.json",
+          "candidate_count": 0,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA3\\pattern_a3_validation\\pattern_a3_validation_report.json",
+          "candidate_count": 1,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA4\\pattern_a4_post_validation\\pattern_a4_post_validation_report.json",
+          "candidate_count": 0,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA4\\pattern_a4_validation\\pattern_a4_validation_report.json",
+          "candidate_count": 1,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA5\\pattern_a5_post_validation\\pattern_a5_post_validation_report.json",
+          "candidate_count": 0,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA5\\pattern_a5_validation\\pattern_a5_validation_report.json",
+          "candidate_count": 1,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA6\\pattern_a6_post_validation\\pattern_a6_post_validation_report.json",
+          "candidate_count": 0,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA\\PatternA6\\pattern_a6_validation\\pattern_a6_validation_report.json",
+          "candidate_count": 13,
+          "selected": 0
+        }
+      ],
+      "selected_total": 0
+    },
+    "pattern_b": {
+      "reports_found": 3,
+      "reports": [
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\pattern_b_post_validation\\pattern_b_post_validation_report.json",
+          "subpattern": "B",
+          "candidate_count": 0,
+          "selected": 0
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+          "subpattern": "B1",
+          "candidate_count": 26,
+          "selected": 26
+        },
+        {
+          "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB2\\pattern_b2_validation\\pattern_b2_validation_report.json",
+          "subpattern": "B2",
+          "candidate_count": 1658,
+          "selected": 0
+        }
+      ],
+      "selected_total": 26
+    },
+    "pattern_c": {
+      "available": true,
+      "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternC\\pattern_c_validation\\pattern_c_validation_report.json",
+      "candidate_count": 815,
+      "selected_total": 4
+    },
+    "pattern_d_context": {
+      "available": true,
+      "report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternD\\pattern_d_post_validation\\pattern_d_post_validation_report.json",
+      "summary": {
+        "documents_verified": 43,
+        "documents_pass": 43,
+        "documents_fail": 0,
+        "expected_modified_documents": 6,
+        "clinical_documents_changed": 6,
+        "unexpected_content_changes": 0,
+        "missing_expected_changes": 0,
+        "applied_operations_expected": 8,
+        "applied_operations_pass": 8,
+        "applied_operations_fail": 0,
+        "skipped_retypes_total": 3,
+        "skipped_retypes_already_satisfied": 3,
+        "skipped_retypes_conflicting": 0,
+        "skipped_retypes_unresolved": 0,
+        "protected_ambiguous_total": 110,
+        "protected_ambiguous_unchanged": 109,
+        "protected_ambiguous_side_effect_changes": 1,
+        "protected_ambiguous_unverifiable": 0,
+        "preexisting_anomalies": 136,
+        "introduced_by_pattern_d": 0,
+        "resolved_by_pattern_d": 11,
+        "missing_after_documents": 0,
+        "extra_after_documents": 0,
+        "locked_signatures_loaded": 32,
+        "before_load_errors": 0,
+        "after_load_errors": 0,
+        "final_status": "PASS"
+      }
+    }
+  },
+  "primary_queue_counts": {
+    "agent_pattern_a": 0,
+    "agent_pattern_b": 26,
+    "agent_pattern_c": 4
+  },
+  "secondary_queue_counts": {
+    "agent_patient_reference": 4
+  },
+  "unique_cases_routed": 30,
+  "secondary_routes": 4,
+  "planned_agent_calls": 34,
+  "unique_cases_by_pattern": {
+    "B": 26,
+    "C": 4
+  },
+  "unique_cases_by_original_status": {
+    "UNRESOLVABLE_REFERENCE": 26,
+    "AMBIGUOUS": 4
+  },
+  "queues": {
+    "agent_pattern_a": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\queues\\agent_a_queue.json",
+    "agent_pattern_b": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\queues\\agent_b_queue.json",
+    "agent_pattern_c": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\queues\\agent_c_queue.json",
+    "agent_patient_reference": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\queues\\patient_reference_queue.json"
+  },
+  "notes": [
+    "Patient/Référence est une route secondaire. Elle ne doit pas être additionnée au nombre de cas uniques.",
+    "Pattern D est utilisé comme contexte de validation ontologique mais n'est pas routé vers les agents A/B/C.",
+    "Aucun agent n'est autorisé à modifier directement un JSON clinique."
+  ]
+}

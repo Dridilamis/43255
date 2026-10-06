@@ -1,0 +1,77 @@
+{
+  "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 1,
+  "status_counts": {
+    "AMBIGUOUS": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E007",
+        "type": "TRAITEMENT",
+        "name": "Crestor",
+        "preuve": "Crestor 5mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Crestor 5mg | Crestor | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E008"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E008",
+          "target_name": "5mg",
+          "target_preuve": "5mg",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.45,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "10jours",
+          "target_preuve": "traité par amoxicilline 10jours",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E009",
+          "target_name": "7jours",
+          "target_preuve": "traité par Tazocilline puis Claforan pendant 7jours",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.0,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

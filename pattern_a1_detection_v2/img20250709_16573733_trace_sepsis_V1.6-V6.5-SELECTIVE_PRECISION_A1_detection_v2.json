@@ -1,0 +1,124 @@
+{
+  "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 63,
+  "number_candidates": 5,
+  "signal_counts": {
+    "WEAK": 4,
+    "MEDIUM": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E016",
+        "type": "TRAITEMENT",
+        "name": "G5%",
+        "preuve": "G5% 500 ml / jour",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "G5% 500 ml / jour | G5% | nutrition_parenterale",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E020",
+        "type": "TRAITEMENT",
+        "name": "CACI",
+        "preuve": "CACI 1g/j",
+        "valeur": 1,
+        "page": 6
+      },
+      "detection_text": "CACI 1g/j | CACI | 1 | autre",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E022",
+        "type": "TRAITEMENT",
+        "name": "Kcl",
+        "preuve": "Kcl 2g/j",
+        "valeur": 2,
+        "page": 6
+      },
+      "detection_text": "Kcl 2g/j | Kcl | 2 | autre",
+      "detected_components": {
+        "dose": [
+          "2g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P6_E032",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 0.4 ml/j SC",
+        "valeur": 0.4,
+        "page": 6
+      },
+      "detection_text": "Lovenox 0.4 ml/j SC | Lovenox | 0.4 | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "0.4 ml"
+        ],
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E034",
+        "type": "TRAITEMENT",
+        "name": "Eupantol",
+        "preuve": "Eupantol 40 mg",
+        "valeur": 40,
+        "page": 6
+      },
+      "detection_text": "Eupantol 40 mg | Eupantol | 40 | autre",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

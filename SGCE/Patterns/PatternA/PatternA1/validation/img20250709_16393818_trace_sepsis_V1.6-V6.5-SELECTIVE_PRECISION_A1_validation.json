@@ -1,0 +1,75 @@
+{
+  "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 1,
+  "status_counts": {
+    "AMBIGUOUS": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E026",
+        "type": "TRAITEMENT",
+        "name": "Rovamycine",
+        "preuve": "Rovamycine IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Rovamycine IV | Rovamycine | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E023",
+          "target_name": "Remplissage vasculaire 2 L de sérum physiologique",
+          "target_preuve": "Remplissage vasculaire 2 L de sérum physiologique",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E025",
+          "target_name": "2 L de Bionolyte sur 24h",
+          "target_preuve": "2 L de Bionolyte sur 24h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E064",
+          "target_name": "3 jours",
+          "target_preuve": "3 jours",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

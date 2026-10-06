@@ -1,0 +1,1155 @@
+{
+  "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 16,
+  "status_counts": {
+    "CONFIRMED_PATTERN_A": 5,
+    "MISSING_RELATION": 2,
+    "AMBIGUOUS": 5,
+    "ALREADY_CORRECT": 4
+  },
+  "results": [
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E008",
+        "type": "TRAITEMENT",
+        "name": "VANCOMYCINE",
+        "preuve": "VANCOMYCINE 2g /24H",
+        "valeur": "2g /24H",
+        "page": 2
+      },
+      "detection_text": "VANCOMYCINE 2g /24H | VANCOMYCINE | 2g /24H | antibiotique",
+      "detected_components": {
+        "rate": [
+          "2g /24H"
+        ],
+        "dose": [
+          "2g"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E006",
+          "target_name": "2g",
+          "target_preuve": "2g /24h",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.2833,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E069",
+          "target_name": "2g",
+          "target_preuve": "2g",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E005",
+          "target_name": "du 19/06/12 au 03/07/12",
+          "target_preuve": "du 19/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E010",
+        "type": "TRAITEMENT",
+        "name": "TIÉNAM",
+        "preuve": "TIÉNAM 3g/24H",
+        "valeur": "3g/24H",
+        "page": 2
+      },
+      "detection_text": "TIÉNAM 3g/24H | TIÉNAM | 3g/24H | antibiotique",
+      "detected_components": {
+        "rate": [
+          "3g/24H"
+        ],
+        "dose": [
+          "3g"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E005",
+          "target_name": "du 19/06/12 au 03/07/12",
+          "target_preuve": "du 19/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E007",
+          "target_name": "du 21/06/12 au 03/07/12",
+          "target_preuve": "du 21/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E009",
+          "target_name": "du 03/06/12 au 05/06/12",
+          "target_preuve": "du 03/06/12 au 05/06/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E029",
+        "type": "TRAITEMENT",
+        "name": "MIDAZOLAM",
+        "preuve": "MIDAZOLAM 10mg /h",
+        "valeur": "10mg /h",
+        "page": 2
+      },
+      "detection_text": "MIDAZOLAM 10mg /h | MIDAZOLAM | 10mg /h | sedatif",
+      "detected_components": {
+        "rate": [
+          "10mg /h"
+        ],
+        "dose": [
+          "10mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E005",
+          "target_name": "du 19/06/12 au 03/07/12",
+          "target_preuve": "du 19/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E007",
+          "target_name": "du 21/06/12 au 03/07/12",
+          "target_preuve": "du 21/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E009",
+          "target_name": "du 03/06/12 au 05/06/12",
+          "target_preuve": "du 03/06/12 au 05/06/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E030",
+        "type": "TRAITEMENT",
+        "name": "FENTANYL",
+        "preuve": "FENTANYL 300 µg /h",
+        "valeur": "300 µg /h",
+        "page": 2
+      },
+      "detection_text": "FENTANYL 300 µg /h | FENTANYL | 300 µg /h | sedatif",
+      "detected_components": {
+        "rate": [
+          "300 µg /h"
+        ],
+        "dose": [
+          "300 µg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E068",
+          "target_name": "300 µg",
+          "target_preuve": "300 µg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E005",
+          "target_name": "du 19/06/12 au 03/07/12",
+          "target_preuve": "du 19/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E007",
+          "target_name": "du 21/06/12 au 03/07/12",
+          "target_preuve": "du 21/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E034",
+        "type": "TRAITEMENT",
+        "name": "Hypnovel",
+        "preuve": "Hypnovel 10 mg/h",
+        "valeur": "10 mg/h",
+        "page": 2
+      },
+      "detection_text": "Hypnovel 10 mg/h | Hypnovel | 10 mg/h | sedatif",
+      "detected_components": {
+        "rate": [
+          "10 mg/h"
+        ],
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E067"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E067",
+          "target_name": "10 mg",
+          "target_preuve": "10 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E005",
+          "target_name": "du 19/06/12 au 03/07/12",
+          "target_preuve": "du 19/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E007",
+          "target_name": "du 21/06/12 au 03/07/12",
+          "target_preuve": "du 21/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E035",
+        "type": "TRAITEMENT",
+        "name": "Keppra",
+        "preuve": "Keppra 500 mg : 1-0-1",
+        "valeur": "500 mg",
+        "page": 2
+      },
+      "detection_text": "Keppra 500 mg : 1-0-1 | Keppra | 500 mg | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E076"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E005",
+        "target_name": "500 mg",
+        "target_preuve": "Keppra 500 mg : 1 - 0 - 1",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 0.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.8,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E005",
+          "target_name": "500 mg",
+          "target_preuve": "Keppra 500 mg : 1 - 0 - 1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P7_E031",
+          "target_name": "500 mg",
+          "target_preuve": "Keppra 500 mg : 1-0-1",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E076",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E039",
+        "type": "TRAITEMENT",
+        "name": "Depakine",
+        "preuve": "Depakine 500 mg : 3-0-3",
+        "valeur": "500 mg",
+        "page": 2
+      },
+      "detection_text": "Depakine 500 mg : 3-0-3 | Depakine | 500 mg | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E040",
+        "P2_E076"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E076",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E005",
+          "target_name": "500 mg",
+          "target_preuve": "Keppra 500 mg : 1 - 0 - 1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P7_E031",
+          "target_name": "500 mg",
+          "target_preuve": "Keppra 500 mg : 1-0-1",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E041",
+        "type": "TRAITEMENT",
+        "name": "Vimpat",
+        "preuve": "Vimpat 100 mg : 1-0-1",
+        "valeur": "100 mg",
+        "page": 2
+      },
+      "detection_text": "Vimpat 100 mg : 1-0-1 | Vimpat | 100 mg | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "100 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E077"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E010",
+        "target_name": "100 mg",
+        "target_preuve": "Vimpat 100 mg : 1 - 0 - 1",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 0.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.8,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E010",
+          "target_name": "100 mg",
+          "target_preuve": "Vimpat 100 mg : 1 - 0 - 1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P7_E029",
+          "target_name": "100 mg",
+          "target_preuve": "Vimpat 100 mg : 1-0-1",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E077",
+          "target_name": "100 mg",
+          "target_preuve": "100 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        }
+      ],
+      "validation_status": "MISSING_RELATION",
+      "validation_reason": "POSOLOGIE fiable trouvée mais relation traitement_a_pour_posologie absente.",
+      "recommended_action": "LINK"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E044",
+        "type": "TRAITEMENT",
+        "name": "Aérosols",
+        "preuve": "Aérosols Atrovent 4/j",
+        "valeur": "4/j",
+        "page": 2
+      },
+      "detection_text": "Aérosols Atrovent 4/j | Aérosols | 4/j | oxygenotherapie",
+      "detected_components": {
+        "frequency": [
+          "4/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E047",
+          "target_name": "1gx4/j",
+          "target_preuve": "1gx4/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E081",
+          "target_name": "4/j",
+          "target_preuve": "4/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E005",
+          "target_name": "du 19/06/12 au 03/07/12",
+          "target_preuve": "du 19/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E045",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 0.4/j",
+        "valeur": "0.4",
+        "page": 2
+      },
+      "detection_text": "Lovenox 0.4/j | Lovenox | 0.4 | anticoagulant",
+      "detected_components": {
+        "frequency": [
+          "4/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P7_E041",
+          "target_name": "1 injection le soir",
+          "target_preuve": "Lovenox 0.4 1 injection le soir",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E047",
+          "target_name": "1gx4/j",
+          "target_preuve": "1gx4/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E081",
+          "target_name": "4/j",
+          "target_preuve": "4/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E046",
+        "type": "TRAITEMENT",
+        "name": "Perfalgan",
+        "preuve": "Perfalgan 1gx4/j",
+        "valeur": "1g",
+        "page": 2
+      },
+      "detection_text": "Perfalgan 1gx4/j | Perfalgan | 1g | antalgique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E047"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E047",
+          "target_name": "1gx4/j",
+          "target_preuve": "1gx4/j",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.4333,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E005",
+          "target_name": "du 19/06/12 au 03/07/12",
+          "target_preuve": "du 19/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E007",
+          "target_name": "du 21/06/12 au 03/07/12",
+          "target_preuve": "du 21/06/12 au 03/07/12",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E021",
+        "type": "TRAITEMENT",
+        "name": "acide folique",
+        "preuve": "supplémentation par acide folique 5mg 1cp/jour",
+        "valeur": 5,
+        "page": 6
+      },
+      "detection_text": "supplémentation par acide folique 5mg 1cp/jour | acide folique | 5 | autre",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E022"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E045",
+          "target_name": "5mg",
+          "target_preuve": "5mg",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.45,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E022",
+          "target_name": "1cp/jour",
+          "target_preuve": "1cp/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.4,
+          "final_score": 0.19,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E002",
+          "target_name": "2 mg",
+          "target_preuve": "maximum 2 mg / h",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E028",
+        "type": "TRAITEMENT",
+        "name": "Vimpat",
+        "preuve": "Vimpat 100 mg : 1-0-1",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "Vimpat 100 mg : 1-0-1 | Vimpat | autre",
+      "detected_components": {
+        "dose": [
+          "100 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P7_E029"
+      ],
+      "best_posology_match": {
+        "target_id": "P7_E029",
+        "target_name": "100 mg",
+        "target_preuve": "Vimpat 100 mg : 1-0-1",
+        "target_page": 7,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P7_E029",
+          "target_name": "100 mg",
+          "target_preuve": "Vimpat 100 mg : 1-0-1",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E010",
+          "target_name": "100 mg",
+          "target_preuve": "Vimpat 100 mg : 1 - 0 - 1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E077",
+          "target_name": "100 mg",
+          "target_preuve": "100 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E030",
+        "type": "TRAITEMENT",
+        "name": "Keppra",
+        "preuve": "Keppra 500 mg : 1-0-1",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "Keppra 500 mg : 1-0-1 | Keppra | autre",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P7_E031"
+      ],
+      "best_posology_match": {
+        "target_id": "P7_E031",
+        "target_name": "500 mg",
+        "target_preuve": "Keppra 500 mg : 1-0-1",
+        "target_page": 7,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P7_E031",
+          "target_name": "500 mg",
+          "target_preuve": "Keppra 500 mg : 1-0-1",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E005",
+          "target_name": "500 mg",
+          "target_preuve": "Keppra 500 mg : 1 - 0 - 1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.8,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E076",
+          "target_name": "500 mg",
+          "target_preuve": "500 mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E032",
+        "type": "TRAITEMENT",
+        "name": "modopar disperssible 125",
+        "preuve": "modopar disperssible 125 1cp toutes les 6 heures",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "modopar disperssible 125 1cp toutes les 6 heures | modopar disperssible 125 | autre",
+      "detected_components": {
+        "frequency": [
+          "toutes les 6 heures"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P7_E033"
+      ],
+      "best_posology_match": {
+        "target_id": "P7_E033",
+        "target_name": "1cp toutes les 6 heures",
+        "target_preuve": "modopar disperssible 125 1cp toutes les 6 heures",
+        "target_page": 7,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.8333,
+        "final_score": 0.9833,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P7_E033",
+          "target_name": "1cp toutes les 6 heures",
+          "target_preuve": "modopar disperssible 125 1cp toutes les 6 heures",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.8333,
+          "final_score": 0.9833,
+          "reliable": true
+        },
+        {
+          "target_id": "P7_E018",
+          "target_name": "à petites doses",
+          "target_preuve": "à petites doses",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P7_E023",
+          "target_name": "par jour",
+          "target_preuve": "fresubin 1500 par jour",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E038",
+        "type": "TRAITEMENT",
+        "name": "Dafalgan",
+        "preuve": "Dafalgan 500mg 2.2.2 si douleur",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "Dafalgan 500mg 2.2.2 si douleur | Dafalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "500mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P7_E039"
+      ],
+      "best_posology_match": {
+        "target_id": "P7_E039",
+        "target_name": "500mg",
+        "target_preuve": "Dafalgan 500mg 2.2.2 si douleur",
+        "target_page": 7,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P7_E039",
+          "target_name": "500mg",
+          "target_preuve": "Dafalgan 500mg 2.2.2 si douleur",
+          "target_page": 7,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P7_E018",
+          "target_name": "à petites doses",
+          "target_preuve": "à petites doses",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P7_E023",
+          "target_name": "par jour",
+          "target_preuve": "fresubin 1500 par jour",
+          "target_page": 7,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

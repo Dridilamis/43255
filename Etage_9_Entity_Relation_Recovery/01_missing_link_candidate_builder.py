@@ -1,0 +1,347 @@
+# -*- coding: utf-8 -*-
+from pathlib import Path
+import json, re, os, sys, shutil, unicodedata
+from collections import Counter, defaultdict
+
+BASE = Path(r"C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM")
+RED = BASE / "Reduction_hallucinations"
+STAGE = RED / "relation_recovery Etage 9"
+INPUT_DIR = STAGE / "entity_recovery_v3_safe_corrected"
+TEXT_DIR = RED / "Sortie_Textes_Brut_MistralSmall4"
+GUIDELINE = BASE / "ontologie_sepsis_graph_v1.6.json"
+STAGE.mkdir(parents=True, exist_ok=True)
+
+def norm(x):
+    x="" if x is None else str(x)
+    x=unicodedata.normalize("NFKC",x).lower().replace("\u00a0"," ")
+    return re.sub(r"\s+"," ",x).strip()
+
+def eid(e): return str(e.get("identifiant_entite") or e.get("id") or e.get("entity_id") or "").strip()
+def etype(e): return str(e.get("type") or e.get("categorie") or e.get("label") or "").strip().upper()
+def etext(e):
+    for k in ("name","mention","text","preuve"):
+        if e.get(k) is not None and str(e.get(k)).strip(): return str(e.get(k)).strip()
+    p=str(e.get("parametre") or "").strip()
+    v="" if e.get("valeur") is None else str(e.get("valeur")).strip()
+    u="" if e.get("unite") is None else str(e.get("unite")).strip()
+    return " ".join(x for x in (p,v,u) if x).strip()
+
+def rid(r): return str(r.get("identifiant_relation") or r.get("id") or "").strip()
+def rtype(r): return str(r.get("type_relation") or r.get("relation") or r.get("label") or "").strip()
+def rs(r): return str(r.get("identifiant_entite_sujet") or r.get("subject_id") or "").strip()
+def ro(r): return str(r.get("identifiant_entite_objet") or r.get("object_id") or "").strip()
+
+def load(p): return json.loads(Path(p).read_text(encoding="utf-8-sig"))
+def dump(p,x): Path(p).parent.mkdir(parents=True,exist_ok=True); Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding="utf-8")
+
+def clinical_files(folder):
+    out=[]
+    for p in sorted(Path(folder).glob("*.json")):
+        try:
+            d=load(p)
+            if isinstance(d,dict) and isinstance(d.get("global_entities"),list) and isinstance(d.get("global_relations"),list):
+                out.append((p,d))
+        except Exception: pass
+    return out
+
+def walk(o):
+    if isinstance(o,dict):
+        yield o
+        for v in o.values(): yield from walk(v)
+    elif isinstance(o,list):
+        for v in o: yield from walk(v)
+
+def ontology_root():
+    g=load(GUIDELINE)
+    return g.get("ontologie_sepsis_graph", g)
+
+def signatures():
+    """Parse exactement V1.6: relations/<groupe>/<relation>/{domaine,image}."""
+    g=ontology_root()
+    sig=defaultdict(lambda:{"source":set(),"target":set()})
+    for group_name, group in (g.get("relations") or {}).items():
+        if not isinstance(group,dict): continue
+        for rn,spec in group.items():
+            if not isinstance(spec,dict): continue
+            dom=spec.get("domaine"); img=spec.get("image")
+            if isinstance(dom,str) and dom.strip(): sig[rn]["source"].add(dom.strip().upper())
+            if isinstance(img,str) and img.strip(): sig[rn]["target"].add(img.strip().upper())
+    return sig
+
+def ontology_entity_types():
+    return {str(k).upper() for k in (ontology_root().get("entites") or {}).keys()}
+
+def text_for(stem_or_source):
+    """
+    Résout le TXT brut à partir du nom JSON / source_file.
+    Ex.:
+      img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json
+        -> img20250709_16142502_brut.txt
+    """
+    raw = Path(str(stem_or_source)).stem
+
+    # Si on reçoit le nom du JSON TRACE, récupérer l'identifiant du PDF source.
+    base = re.split(r"_trace_sepsis", raw, maxsplit=1, flags=re.IGNORECASE)[0]
+
+    # Nettoyage de suffixes éventuels ajoutés lors d'une copie/téléchargement.
+    base = re.sub(r"\(\d+\)$", "", base).strip()
+
+    candidates = [
+        TEXT_DIR / f"{base}_brut.txt",
+        TEXT_DIR / f"{base}.txt",
+        TEXT_DIR / f"{base}_texte_brut.txt",
+        TEXT_DIR / f"{base}_text_brut.txt",
+    ]
+
+    for p in candidates:
+        if p.exists():
+            return p.read_text(encoding="utf-8-sig", errors="replace")
+
+    # Fallback conservateur : appariement par identifiant documentaire.
+    low = base.lower()
+    matches = [
+        p for p in TEXT_DIR.glob("*.txt")
+        if low and (p.stem.lower().startswith(low) or low in p.stem.lower())
+    ]
+    if len(matches) == 1:
+        return matches[0].read_text(encoding="utf-8-sig", errors="replace")
+
+    return ""
+def sentences(text):
+    return [s.strip() for s in re.split(r"(?<=[.!?;])\s+|\n+",text) if s.strip()]
+
+def direct_context(text,a,b):
+    """Preuve forte : les deux mentions apparaissent dans la même phrase ou deux phrases adjacentes."""
+    na,nb=norm(a),norm(b)
+    if not na or not nb: return None
+    ss=sentences(text)
+    for i,s in enumerate(ss):
+        ns=norm(s)
+        if na in ns and nb in ns: return {"strength":"SAME_SENTENCE","evidence":s}
+    for i in range(len(ss)-1):
+        ns=norm(ss[i]+" "+ss[i+1])
+        if na in ns and nb in ns: return {"strength":"ADJACENT_SENTENCES","evidence":ss[i]+" "+ss[i+1]}
+    return None
+
+def relation_exists(rels,s,rn,o):
+    return any(rs(r)==s and ro(r)==o and rtype(r)==rn for r in rels)
+
+OUT=STAGE/"01_candidates.json"
+
+def main():
+    if not INPUT_DIR.is_dir():
+        raise FileNotFoundError(INPUT_DIR)
+    if not GUIDELINE.exists():
+        raise FileNotFoundError(GUIDELINE)
+
+    sig = signatures()
+    candidates = []
+    stats = Counter()
+
+    print("Signatures relationnelles chargées :", len(sig))
+
+    # Index ontologique direct : (type_source, type_cible) -> relations autorisées.
+    allowed = defaultdict(list)
+    for rn, st in sig.items():
+        for stype in st["source"]:
+            for ttype in st["target"]:
+                allowed[(stype, ttype)].append(rn)
+
+    docs = clinical_files(INPUT_DIR)
+
+    for doc_i, (p, d) in enumerate(docs, 1):
+        ents = d["global_entities"]
+        rels = d["global_relations"]
+        txt = text_for(p.stem)
+
+        if not txt.strip():
+            stats["DOCUMENT_WITHOUT_TEXT"] += 1
+            print(f"[{doc_i}/{len(docs)}] {p.name} : TXT introuvable")
+            continue
+
+        ss = sentences(txt)
+        nss = [norm(x) for x in ss]
+
+        # Relations déjà présentes : lookup O(1).
+        existing = {(rs(r), rtype(r), ro(r)) for r in rels}
+
+        # Entités valides + mention normalisée calculée UNE SEULE FOIS.
+        einfo = []
+        for e in ents:
+            i = eid(e)
+            t = etype(e)
+            surface = etext(e)
+            n = norm(surface)
+            if not i or not t or len(n) < 2:
+                continue
+            einfo.append({
+                "entity": e,
+                "id": i,
+                "type": t,
+                "text": surface,
+                "norm": n,
+            })
+
+        # ---------------------------------------------------------------
+        # INDEX DOCUMENTAIRE
+        # ---------------------------------------------------------------
+        # Ancienne version :
+        #   chaque paire source×cible rappelait direct_context(),
+        #   qui re-découpait/re-parcourait tout le document.
+        #
+        # Nouvelle version :
+        #   chaque mention est localisée UNE FOIS dans les phrases.
+        # ---------------------------------------------------------------
+        mention_to_sentence_ids = {}
+        for x in einfo:
+            n = x["norm"]
+            if n in mention_to_sentence_ids:
+                continue
+            ids = [i for i, ns in enumerate(nss) if n in ns]
+            mention_to_sentence_ids[n] = ids
+
+        grounded = [
+            x for x in einfo
+            if mention_to_sentence_ids.get(x["norm"])
+        ]
+        stats["GROUNDED_ENTITIES"] += len(grounded)
+
+        # Index phrase -> entités présentes.
+        sentence_entities = defaultdict(list)
+        for x in grounded:
+            for sid in mention_to_sentence_ids[x["norm"]]:
+                sentence_entities[sid].append(x)
+
+        doc_seen = set()
+        doc_candidates = 0
+
+        def add_candidate(sx, ox, rn, strength, evidence):
+            nonlocal doc_candidates
+
+            if sx["id"] == ox["id"]:
+                return
+
+            key = (sx["id"], rn, ox["id"])
+            if key in existing or key in doc_seen:
+                return
+
+            doc_seen.add(key)
+            candidates.append({
+                "candidate_id": f"RR9_{len(candidates)+1:07d}",
+                "document": p.name,
+                "source_id": sx["id"],
+                "source_text": sx["text"],
+                "source_type": sx["type"],
+                "relation": rn,
+                "target_id": ox["id"],
+                "target_text": ox["text"],
+                "target_type": ox["type"],
+                "evidence_strength": strength,
+                "evidence": evidence,
+                "origin": "ONTOLOGY_COMPATIBLE_DIRECT_DOCUMENT_EVIDENCE",
+            })
+            stats[strength] += 1
+            doc_candidates += 1
+
+        # ---------------------------------------------------------------
+        # 1) MÊME PHRASE
+        # ---------------------------------------------------------------
+        # On ne fabrique plus toutes les combinaisons du document.
+        # On combine seulement les entités réellement ancrées dans
+        # une même phrase, puis on consulte l'ontologie par type.
+        # ---------------------------------------------------------------
+        for sid, local in sentence_entities.items():
+            if len(local) < 2:
+                continue
+
+            bytype = defaultdict(list)
+            for x in local:
+                bytype[x["type"]].append(x)
+
+            for (stype, ttype), relation_names in allowed.items():
+                sources = bytype.get(stype)
+                targets = bytype.get(ttype)
+                if not sources or not targets:
+                    continue
+
+                for sx in sources:
+                    for ox in targets:
+                        if sx["id"] == ox["id"]:
+                            continue
+                        for rn in relation_names:
+                            add_candidate(
+                                sx, ox, rn,
+                                "SAME_SENTENCE",
+                                ss[sid]
+                            )
+
+        # ---------------------------------------------------------------
+        # 2) PHRASES ADJACENTES
+        # ---------------------------------------------------------------
+        # Seulement si la paire n'a pas déjà été générée en SAME_SENTENCE.
+        # ---------------------------------------------------------------
+        for sid in range(len(ss) - 1):
+            left = sentence_entities.get(sid, [])
+            right = sentence_entities.get(sid + 1, [])
+            if not left or not right:
+                continue
+
+            combined = left + right
+            bytype = defaultdict(list)
+            for x in combined:
+                bytype[x["type"]].append(x)
+
+            for (stype, ttype), relation_names in allowed.items():
+                sources = bytype.get(stype)
+                targets = bytype.get(ttype)
+                if not sources or not targets:
+                    continue
+
+                for sx in sources:
+                    for ox in targets:
+                        if sx["id"] == ox["id"]:
+                            continue
+
+                        # Il faut que les deux mentions soient réellement
+                        # couvertes par cette fenêtre de deux phrases.
+                        s_ids = set(mention_to_sentence_ids[sx["norm"]])
+                        o_ids = set(mention_to_sentence_ids[ox["norm"]])
+                        window = {sid, sid + 1}
+                        if not (s_ids & window and o_ids & window):
+                            continue
+
+                        for rn in relation_names:
+                            add_candidate(
+                                sx, ox, rn,
+                                "ADJACENT_SENTENCES",
+                                ss[sid] + " " + ss[sid + 1]
+                            )
+
+        print(
+            f"[{doc_i}/{len(docs)}] {p.name} | "
+            f"entités={len(ents)} | ancrées={len(grounded)} | "
+            f"candidats={doc_candidates}"
+        )
+
+    dump(
+        OUT,
+        {
+            "stage": "Etage 9 Relation Recovery",
+            "gold_used": False,
+            "summary": {
+                "candidates": len(candidates),
+                **dict(stats)
+            },
+            "candidates": candidates
+        }
+    )
+
+    print("ETAGE 9 / 1 - CANDIDATE BUILDER")
+    print("Candidats :", len(candidates))
+    print(dict(stats))
+    print("Gold utilisé : NON")
+    print("Sortie :", OUT)
+
+
+if __name__ == "__main__":
+    main()

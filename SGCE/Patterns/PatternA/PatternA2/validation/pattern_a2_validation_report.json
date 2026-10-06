@@ -1,0 +1,131 @@
+{
+  "pattern": "A2",
+  "name": "COMORBIDITE_ANTECEDENT + CONTEXTE_ACQUISITION",
+  "trace_sepsis_relation": "a_pour_contexte_acquisition",
+  "methodological_status": "VALIDATION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA1\\corrected",
+  "detection_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA2\\detection\\pattern_a2_detection_report.json",
+  "summary": {
+    "clinical_documents_loaded": 43,
+    "candidates_detected": 2,
+    "candidates_validated": 2,
+    "already_correct": 0,
+    "missing_relation": 1,
+    "confirmed_pattern_a": 1,
+    "ambiguous": 0,
+    "future_link": 1,
+    "future_split": 1,
+    "protected_no_action": 0,
+    "errors": 0
+  },
+  "by_strength": {
+    "WEAK": {},
+    "MEDIUM": {},
+    "STRONG": {
+      "MISSING_RELATION": 1,
+      "CONFIRMED_PATTERN_A": 1
+    }
+  },
+  "nonclinical_json_skipped": [
+    "pattern_a1_auto_correction_report.json"
+  ],
+  "validated_candidates": [
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A2",
+      "subcase": "COMORBIDITE_ANTECEDENT_CONTEXTE_ACQUISITION",
+      "source_entity": {
+        "entity_id": "P5_E032",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "page": 5,
+        "text": "Infection nosocomiale : oui"
+      },
+      "detected_context_families": [
+        "TYPE_ACQUISITION"
+      ],
+      "detected_context_signals": {
+        "TYPE_ACQUISITION": [
+          "nosocomiale"
+        ]
+      },
+      "authorized_type_acquisition_hits": [
+        "nosocomiale"
+      ],
+      "same_page_context_targets": [
+        {
+          "entity_id": "P5_V66_E002",
+          "page": 5,
+          "text": "Infection nosocomiale : oui",
+          "text_containment": true,
+          "token_overlap": 1.0,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_context_target_count": 1,
+      "strength": "STRONG",
+      "status": "A2_CANDIDATE",
+      "validation_status": "MISSING_RELATION",
+      "recommended_future_action": "LINK",
+      "validation_reason": "Un CONTEXTE_ACQUISITION fiable est déjà séparé sur la même page, mais la relation a_pour_contexte_acquisition est absente.",
+      "reliable_target": {
+        "entity_id": "P5_V66_E002",
+        "page": 5,
+        "text": "Infection nosocomiale : oui",
+        "containment": true,
+        "token_overlap": 1.0,
+        "score": 1.0,
+        "reliable": true,
+        "relation_exists": false
+      },
+      "same_page_context_targets_recomputed": [
+        {
+          "entity_id": "P5_V66_E002",
+          "page": 5,
+          "text": "Infection nosocomiale : oui",
+          "containment": true,
+          "token_overlap": 1.0,
+          "score": 1.0,
+          "reliable": true,
+          "relation_exists": false
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A2",
+      "subcase": "COMORBIDITE_ANTECEDENT_CONTEXTE_ACQUISITION",
+      "source_entity": {
+        "entity_id": "P1_E006",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "page": 1,
+        "text": "2 pneumopathies acquises sous ventilation mécanique | autre"
+      },
+      "detected_context_families": [
+        "TYPE_ACQUISITION",
+        "DISPOSITIF_INVASIF"
+      ],
+      "detected_context_signals": {
+        "TYPE_ACQUISITION": [
+          "acquises sous ventilation mecanique",
+          "sous ventilation mecanique"
+        ],
+        "DISPOSITIF_INVASIF": [
+          "ventilation mecanique"
+        ]
+      },
+      "authorized_type_acquisition_hits": [
+        "acquise_sous_ventilation_mecanique"
+      ],
+      "same_page_context_targets": [],
+      "same_page_context_target_count": 0,
+      "strength": "STRONG",
+      "status": "A2_CANDIDATE",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "recommended_future_action": "SPLIT",
+      "validation_reason": "Le candidat STRONG contient un contexte d'acquisition explicite, sans CONTEXTE_ACQUISITION fiable déjà séparé.",
+      "reliable_target": null,
+      "same_page_context_targets_recomputed": []
+    }
+  ],
+  "errors": []
+}

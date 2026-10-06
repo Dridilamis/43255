@@ -1,0 +1,184 @@
+{
+  "resolver": "orphan_relation_resolver",
+  "signatures_loaded": 32,
+  "decisions": [
+    {
+      "candidate_id": "OR_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00018",
+      "relation_type": "imagerie_objective_foyer",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000002",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00019",
+      "relation_type": "imagerie_objective_foyer",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000003",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00018",
+      "relation_type": "imagerie_objective_comorbidite",
+      "decision": "CORRECT",
+      "action": "REMOVE_INVALID_RELATION",
+      "reason": "Aucune entité cible compatible n'existe dans le document.",
+      "parameters": {
+        "relation_id": "R_V69K_00018"
+      }
+    },
+    {
+      "candidate_id": "OR_000004",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00065",
+      "relation_type": "a_pour_label_nosologique",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000005",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00047",
+      "relation_type": "micro_organisme_isole_dans",
+      "decision": "CORRECT",
+      "action": "REMOVE_INVALID_RELATION",
+      "reason": "Aucune entité source compatible n'existe dans le document.",
+      "parameters": {
+        "relation_id": "R_V69K_00047"
+      }
+    },
+    {
+      "candidate_id": "OR_000006",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00074",
+      "relation_type": "traitement_a_pour_posologie",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000007",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00062",
+      "relation_type": "presente_symptome",
+      "decision": "CORRECT",
+      "action": "RELINK_EXISTING_ENTITY",
+      "reason": "Une seule entité cible compatible avec la signature TRACE.",
+      "parameters": {
+        "relation_id": "R_V69K_00062",
+        "endpoint_role": "TARGET",
+        "old_endpoint": "P5_E035",
+        "new_entity_id": "P5_E011",
+        "expected_type": "SYMPTOME"
+      }
+    },
+    {
+      "candidate_id": "OR_000008",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00029",
+      "relation_type": "traitement_a_pour_posologie",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000009",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00092",
+      "relation_type": "presente_dysfonction_organe",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000010",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00037",
+      "relation_type": "service_medical_accueille",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000011",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00048",
+      "relation_type": "traitement_administre_a",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000012",
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "imagerie_objective_comorbidite",
+      "decision": "CORRECT",
+      "action": "REMOVE_INVALID_RELATION",
+      "reason": "Aucune entité source compatible n'existe dans le document.",
+      "parameters": {
+        "relation_id": "R_V69K_00010"
+      }
+    },
+    {
+      "candidate_id": "OR_000013",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00044",
+      "relation_type": "traitement_administre_a",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000014",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "presente_dysfonction_organe",
+      "decision": "CORRECT",
+      "action": "RELINK_EXISTING_ENTITY",
+      "reason": "Une seule entité cible compatible avec la signature TRACE.",
+      "parameters": {
+        "relation_id": "R_V69K_00010",
+        "endpoint_role": "TARGET",
+        "old_endpoint": "P1_E029",
+        "new_entity_id": "P1_E006",
+        "expected_type": "DEFAILLANCE_ORGANE"
+      }
+    },
+    {
+      "candidate_id": "OR_000015",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00080",
+      "relation_type": "traitement_a_pour_posologie",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    },
+    {
+      "candidate_id": "OR_000016",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_id": "R_V69K_00039",
+      "relation_type": "traitement_administre_a",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "reason": "Plusieurs entités compatibles possibles.",
+      "parameters": {}
+    }
+  ]
+}

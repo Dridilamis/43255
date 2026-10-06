@@ -1,0 +1,329 @@
+{
+  "pattern": "A4",
+  "name": "IMAGERIE_PROCEDURE + DEFAILLANCE_ORGANE",
+  "relation": "imagerie_objective_defaillance",
+  "methodological_status": "DETECTION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA3\\corrected",
+  "summary": {
+    "json_files_found": 44,
+    "clinical_documents_scanned": 43,
+    "nonclinical_json_skipped": 1,
+    "imaging_entities_scanned": 392,
+    "existing_failure_entities": 363,
+    "a4_candidates": 1,
+    "weak": 1,
+    "medium": 0,
+    "strong": 0,
+    "errors": 0
+  },
+  "signal_family_counts": {},
+  "nonclinical_json_skipped": [
+    "pattern_a3_correction_report.json"
+  ],
+  "documents": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 13,
+      "failure_entities_existing": 11,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 6,
+      "failure_entities_existing": 11,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 7,
+      "failure_entities_existing": 10,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 4,
+      "failure_entities_existing": 2,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 8,
+      "failure_entities_existing": 4,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 15,
+      "failure_entities_existing": 6,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 19,
+      "failure_entities_existing": 10,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 8,
+      "failure_entities_existing": 3,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 10,
+      "failure_entities_existing": 7,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16225557_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 3,
+      "failure_entities_existing": 1,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 11,
+      "failure_entities_existing": 10,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 5,
+      "failure_entities_existing": 8,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 7,
+      "failure_entities_existing": 12,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 8,
+      "failure_entities_existing": 4,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 10,
+      "failure_entities_existing": 9,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 10,
+      "failure_entities_existing": 2,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 9,
+      "failure_entities_existing": 5,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 13,
+      "failure_entities_existing": 26,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 10,
+      "failure_entities_existing": 4,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 6,
+      "failure_entities_existing": 9,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 14,
+      "failure_entities_existing": 19,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 7,
+      "failure_entities_existing": 7,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 16,
+      "failure_entities_existing": 15,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 12,
+      "failure_entities_existing": 12,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 0,
+      "failure_entities_existing": 0,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 8,
+      "failure_entities_existing": 2,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 6,
+      "failure_entities_existing": 10,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 8,
+      "failure_entities_existing": 5,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 5,
+      "failure_entities_existing": 10,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 12,
+      "failure_entities_existing": 9,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 7,
+      "failure_entities_existing": 14,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 8,
+      "failure_entities_existing": 10,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 2,
+      "failure_entities_existing": 8,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 15,
+      "failure_entities_existing": 20,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 14,
+      "failure_entities_existing": 8,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 12,
+      "failure_entities_existing": 13,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 10,
+      "failure_entities_existing": 7,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 5,
+      "failure_entities_existing": 4,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 9,
+      "failure_entities_existing": 13,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 7,
+      "failure_entities_existing": 2,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 10,
+      "failure_entities_existing": 5,
+      "a4_candidates": 0
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 18,
+      "failure_entities_existing": 5,
+      "a4_candidates": 1
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "imaging_entities_scanned": 5,
+      "failure_entities_existing": 11,
+      "a4_candidates": 0
+    }
+  ],
+  "candidates": [
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A4",
+      "subcase": "IMAGERIE_PROCEDURE_DEFAILLANCE_ORGANE",
+      "source_entity": {
+        "entity_id": "P5_E002",
+        "type": "IMAGERIE_PROCEDURE",
+        "page": 5,
+        "text": "PL"
+      },
+      "detected_failure_families": [],
+      "detected_failure_signals": {},
+      "imaging_hint_present": false,
+      "same_page_failure_targets": [
+        {
+          "entity_id": "P5_E018",
+          "page": 5,
+          "text": "pas de défaillances au plan rénal | renal",
+          "text_containment": true,
+          "token_overlap": 0.0,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P5_E019",
+          "page": 5,
+          "text": "pas de défaillances au plan hépatique | hepatique",
+          "text_containment": true,
+          "token_overlap": 0.0,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P5_E020",
+          "page": 5,
+          "text": "pas de défaillances au plan hématologique | hematologique",
+          "text_containment": true,
+          "token_overlap": 0.0,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_failure_target_count": 3,
+      "strength": "WEAK",
+      "status": "A4_CANDIDATE"
+    }
+  ],
+  "errors": []
+}

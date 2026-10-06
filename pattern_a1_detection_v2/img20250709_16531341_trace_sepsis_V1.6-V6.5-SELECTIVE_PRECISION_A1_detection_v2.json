@@ -1,0 +1,120 @@
+{
+  "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 52,
+  "number_candidates": 5,
+  "signal_counts": {
+    "WEAK": 5
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E026",
+        "type": "TRAITEMENT",
+        "name": "ETO/CELO",
+        "preuve": "Induction ETO/CELO 20 m/60 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Induction ETO/CELO 20 m/60 mg | ETO/CELO | curarisation",
+      "detected_components": {
+        "dose": [
+          "60 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E027",
+        "type": "TRAITEMENT",
+        "name": "Atropine",
+        "preuve": "Atropine 1 mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Atropine 1 mg | Atropine | autre",
+      "detected_components": {
+        "dose": [
+          "1 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E034",
+        "type": "TRAITEMENT",
+        "name": "Voluven",
+        "preuve": "250 ml de Voluven",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "250 ml de Voluven | Voluven | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "250 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E035",
+        "type": "TRAITEMENT",
+        "name": "NaCl iv",
+        "preuve": "NaCl iv",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "NaCl iv | cristalloide",
+      "detected_components": {
+        "route": [
+          "iv"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E006",
+        "type": "TRAITEMENT",
+        "name": "noradrénaline",
+        "preuve": "noradrénaline à plus de 3 mg/h",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "noradrénaline à plus de 3 mg/h | noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "3 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

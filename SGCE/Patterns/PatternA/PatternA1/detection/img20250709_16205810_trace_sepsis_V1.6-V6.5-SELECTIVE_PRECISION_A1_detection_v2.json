@@ -1,0 +1,80 @@
+{
+  "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 38,
+  "number_candidates": 3,
+  "signal_counts": {
+    "WEAK": 2,
+    "MEDIUM": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E013",
+        "type": "TRAITEMENT",
+        "name": "SALBUTAMOL",
+        "preuve": "SALBUTAMOL IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "SALBUTAMOL IV | SALBUTAMOL | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E015",
+        "type": "TRAITEMENT",
+        "name": "HYDROCORTISONE",
+        "preuve": "200 mg d'HYDROCORTISONE IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "200 mg d'HYDROCORTISONE IV | HYDROCORTISONE | corticoide",
+      "detected_components": {
+        "dose": [
+          "200 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E023",
+        "type": "TRAITEMENT",
+        "name": "corticothérapie IV",
+        "preuve": "corticothérapie IV",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "corticothérapie IV | corticoide",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

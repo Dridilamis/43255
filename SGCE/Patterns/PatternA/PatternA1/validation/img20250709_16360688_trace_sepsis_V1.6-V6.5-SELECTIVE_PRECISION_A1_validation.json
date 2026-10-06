@@ -1,0 +1,843 @@
+{
+  "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 11,
+  "status_counts": {
+    "ALREADY_CORRECT": 8,
+    "AMBIGUOUS": 2,
+    "CONFIRMED_PATTERN_A": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E023",
+        "type": "TRAITEMENT",
+        "name": "Cortancyl",
+        "preuve": "Cortancyl 40 mg 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Cortancyl 40 mg 1/j | Cortancyl | corticoide",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E024",
+        "P1_E028"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E024",
+        "target_name": "40 mg",
+        "target_preuve": "Cortancyl 40 mg 1/j",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E028",
+          "target_name": "1/j",
+          "target_preuve": "Aprovel 300 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E025",
+        "type": "TRAITEMENT",
+        "name": "Amlor",
+        "preuve": "Amlor 10 mg 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Amlor 10 mg 1/j | Amlor | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E026"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E026",
+        "target_name": "10 mg",
+        "target_preuve": "Amlor 10 mg 1/j",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E028",
+          "target_name": "1/j",
+          "target_preuve": "Aprovel 300 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E027",
+        "type": "TRAITEMENT",
+        "name": "Aprovel",
+        "preuve": "Aprovel 300 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Aprovel 300 1/j | Aprovel | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E028"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E028",
+        "target_name": "1/j",
+        "target_preuve": "Aprovel 300 1/j",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E028",
+          "target_name": "1/j",
+          "target_preuve": "Aprovel 300 1/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E029",
+        "type": "TRAITEMENT",
+        "name": "Avlocardyl LP",
+        "preuve": "Avlocardyl LP 160 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Avlocardyl LP 160 1/j | Avlocardyl LP | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E028",
+          "target_name": "1/j",
+          "target_preuve": "Aprovel 300 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E030",
+        "type": "TRAITEMENT",
+        "name": "Lasilix",
+        "preuve": "Lasilix 40 mg 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Lasilix 40 mg 1/j | Lasilix | diuretique",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E028",
+          "target_name": "1/j",
+          "target_preuve": "Aprovel 300 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E031",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 0.8 x 2/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Lovenox 0.8 x 2/j | Lovenox | anticoagulant",
+      "detected_components": {
+        "frequency": [
+          "x 2/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E032"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E032",
+        "target_name": "0.8 x 2/j",
+        "target_preuve": "Lovenox 0.8 x 2/j",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E032",
+          "target_name": "0.8 x 2/j",
+          "target_preuve": "Lovenox 0.8 x 2/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E033",
+        "type": "TRAITEMENT",
+        "name": "Novorapid",
+        "preuve": "Novorapid 8UI-8UI-8UI",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Novorapid 8UI-8UI-8UI | Novorapid | insuline",
+      "detected_components": {
+        "dose": [
+          "8UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E034"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E034",
+        "target_name": "8UI",
+        "target_preuve": "Novorapid 8UI-8UI-8UI",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E034",
+          "target_name": "8UI",
+          "target_preuve": "Novorapid 8UI-8UI-8UI",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E035",
+        "type": "TRAITEMENT",
+        "name": "LANTUS",
+        "preuve": "LANTUS 22 UI LE SOIR",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "LANTUS 22 UI LE SOIR | LANTUS | insuline",
+      "detected_components": {
+        "dose": [
+          "22 UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E036"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E036",
+        "target_name": "22 UI",
+        "target_preuve": "LANTUS 22 UI LE SOIR",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E036",
+          "target_name": "22 UI",
+          "target_preuve": "LANTUS 22 UI LE SOIR",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E024",
+          "target_name": "40 mg",
+          "target_preuve": "Cortancyl 40 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E026",
+          "target_name": "10 mg",
+          "target_preuve": "Amlor 10 mg 1/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E022",
+        "type": "TRAITEMENT",
+        "name": "sérum_physiologique",
+        "preuve": "remplissage par 3000ml de sérum phy",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "remplissage par 3000ml de sérum phy | sérum_physiologique | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "3000ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E023"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E023",
+          "target_name": "remplissage par 3000ml de sérum phy",
+          "target_preuve": "remplissage par 3000ml de sérum phy",
+          "target_page": 2,
+          "medication_anchor": 0.5,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.8,
+          "final_score": 0.73,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E029",
+          "target_name": "remplissage de 2500 ml de sérum phy/ringer lactate",
+          "target_preuve": "remplissage de 2500 ml de sérum phy/ringer lactate",
+          "target_page": 2,
+          "medication_anchor": 0.5,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.45,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E030",
+          "target_name": "9 mg",
+          "target_preuve": "augmentation Noradrénaline à 9 mg/h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P3_E007",
+        "type": "TRAITEMENT",
+        "name": "HYPNOVEL",
+        "preuve": "HYPNOVEL 3 MG/H",
+        "valeur": null,
+        "page": 3
+      },
+      "detection_text": "HYPNOVEL 3 MG/H | HYPNOVEL | sedatif",
+      "detected_components": {
+        "rate": [
+          "3 MG/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P3_E008"
+      ],
+      "best_posology_match": {
+        "target_id": "P3_E008",
+        "target_name": "3 MG",
+        "target_preuve": "HYPNOVEL 3 MG/H",
+        "target_page": 3,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P3_E008",
+          "target_name": "3 MG",
+          "target_preuve": "HYPNOVEL 3 MG/H",
+          "target_page": 3,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P3_E010",
+          "target_name": "100 GAMMA/H",
+          "target_preuve": "FENTANYL 100 GAMMA/H",
+          "target_page": 3,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P3_E015",
+          "target_name": "4000UI",
+          "target_preuve": "Héparine 4000UI/24h",
+          "target_page": 3,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P3_E014",
+        "type": "TRAITEMENT",
+        "name": "Héparine",
+        "preuve": "Héparine 4000UI/24h",
+        "valeur": null,
+        "page": 3
+      },
+      "detection_text": "Héparine 4000UI/24h | Héparine | anticoagulant",
+      "detected_components": {
+        "rate": [
+          "4000UI/24h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P3_E015"
+      ],
+      "best_posology_match": {
+        "target_id": "P3_E015",
+        "target_name": "4000UI",
+        "target_preuve": "Héparine 4000UI/24h",
+        "target_page": 3,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P3_E015",
+          "target_name": "4000UI",
+          "target_preuve": "Héparine 4000UI/24h",
+          "target_page": 3,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P3_E008",
+          "target_name": "3 MG",
+          "target_preuve": "HYPNOVEL 3 MG/H",
+          "target_page": 3,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P3_E010",
+          "target_name": "100 GAMMA/H",
+          "target_preuve": "FENTANYL 100 GAMMA/H",
+          "target_page": 3,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

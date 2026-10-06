@@ -1,0 +1,170 @@
+{
+  "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 2,
+  "status_counts": {
+    "ALREADY_CORRECT": 2
+  },
+  "results": [
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E008",
+        "type": "TRAITEMENT",
+        "name": "Hypnovel",
+        "preuve": "Hypnovel 5 mg /h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Hypnovel 5 mg /h | Hypnovel | sedatif",
+      "detected_components": {
+        "rate": [
+          "5 mg /h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E009",
+        "P2_E007"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E009",
+        "target_name": "5 mg",
+        "target_preuve": "Hypnovel 5 mg /h",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E009",
+          "target_name": "5 mg",
+          "target_preuve": "Hypnovel 5 mg /h",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "SaO2 (%) : 90% en 100% de FiO2",
+          "target_preuve": "SaO2 (%) : 90% en 100% de FiO2",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E007",
+          "target_name": "10 µg",
+          "target_preuve": "Sufentanyl 10 µg /h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P5_E025",
+        "type": "TRAITEMENT",
+        "name": "augmentin",
+        "preuve": "augmentin 1g *3/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "augmentin 1g *3/j | augmentin | antibiotique",
+      "detected_components": {
+        "frequency": [
+          "3/j"
+        ],
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E026"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E026",
+        "target_name": "1g",
+        "target_preuve": "augmentin 1g *3/j",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E026",
+          "target_name": "1g",
+          "target_preuve": "augmentin 1g *3/j",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E042",
+          "target_name": "3/j",
+          "target_preuve": "3/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E013",
+          "target_name": "1mg",
+          "target_preuve": "aérosol de budésonide 1mg toutes les 6h",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

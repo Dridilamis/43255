@@ -1,0 +1,3900 @@
+{
+  "document": "img20250709_16270030",
+  "source_file": "img20250709_16270030.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "text": "",
+      "entities": [
+        {
+          "name": "choc septique",
+          "normalized_name": "choc septique",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 1
+        },
+        {
+          "name": "point de départ pulmonaire",
+          "normalized_name": "point de départ pulmonaire",
+          "type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "name": "pneumopathie du lobe",
+          "normalized_name": "pneumopathie du lobe",
+          "type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "name": "Carcinome épidermoïde larynx (paroi gauche) T3N2M0",
+          "normalized_name": "carcinome épidermoïde larynx (paroi gauche) t3n2m0",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Tuberculose pulmonaire",
+          "normalized_name": "tuberculose pulmonaire",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "HTA",
+          "normalized_name": "hta",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Hypercholestérolémie",
+          "normalized_name": "hypercholestérolémie",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Cure de hernie inguinale droite",
+          "normalized_name": "cure de hernie inguinale droite",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Cataracte bilatérale opérée",
+          "normalized_name": "cataracte bilatérale opérée",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "5FU",
+          "normalized_name": "5fu",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "Cisplatine",
+          "normalized_name": "cisplatine",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "scanner cervicothoracique",
+          "normalized_name": "scanner cervicothoracique",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 1
+        },
+        {
+          "name": "choc septique",
+          "normalized_name": "choc septique",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 1
+        },
+        {
+          "name": "71 ans",
+          "normalized_name": "71 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "réanimation",
+          "normalized_name": "réanimation",
+          "type": "SERVICE_MEDICAL",
+          "page": 1
+        },
+        {
+          "name": "thrombose",
+          "normalized_name": "thrombose",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 1
+        },
+        {
+          "name": "Tabagisme sevré",
+          "normalized_name": "tabagisme sevré",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Tabagisme",
+          "normalized_name": "tabagisme",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "1/J",
+          "normalized_name": "1/j",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "3/J",
+          "normalized_name": "3/j",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "27/07",
+          "normalized_name": "27/07",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "30/07",
+          "normalized_name": "30/07",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "14/08",
+          "normalized_name": "14/08",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "choc septique",
+          "object_normalized": "choc septique",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 1
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_suspicion_infection",
+          "object": "point de départ pulmonaire",
+          "object_normalized": "point de départ pulmonaire",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "subject": "5FU",
+          "subject_normalized": "5fu",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Cisplatine",
+          "subject_normalized": "cisplatine",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "réanimation",
+          "subject_normalized": "réanimation",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_suspicion_infection",
+          "object": "pneumopathie du lobe",
+          "object_normalized": "pneumopathie du lobe",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "subject": "scanner cervicothoracique",
+          "subject_normalized": "scanner cervicothoracique",
+          "subject_type": "IMAGERIE_PROCEDURE",
+          "relation": "imagerie_objective_foyer",
+          "object": "pneumopathie du lobe",
+          "object_normalized": "pneumopathie du lobe",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "text": "",
+      "entities": [
+        {
+          "name": "Augmentin",
+          "normalized_name": "augmentin",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "Rocéphine",
+          "normalized_name": "rocéphine",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "amiklin",
+          "normalized_name": "amiklin",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "Flagyl",
+          "normalized_name": "flagyl",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "voluven",
+          "normalized_name": "voluven",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "détresse respiratoire aiguë",
+          "normalized_name": "détresse respiratoire aiguë",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        },
+        {
+          "name": "TA (mmHg) : 132/47",
+          "normalized_name": "ta (mmhg) : 132/47",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "FC (bpm) : 120",
+          "normalized_name": "fc (bpm) : 120",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "FR (c/mn) : 17",
+          "normalized_name": "fr (c/mn) : 17",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "FiO2 80%",
+          "normalized_name": "fio2 80%",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Temp °C : 34.7",
+          "normalized_name": "temp °c : 34.7",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "Noradrénaline",
+          "normalized_name": "noradrénaline",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "1mg",
+          "normalized_name": "1mg",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Hypnovel",
+          "normalized_name": "hypnovel",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "8 mg",
+          "normalized_name": "8 mg",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Sufentanyl",
+          "normalized_name": "sufentanyl",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "40 gamma/h",
+          "normalized_name": "40 gamma/h",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "marbrures généralisées",
+          "normalized_name": "marbrures généralisées",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "extrémités froides",
+          "normalized_name": "extrémités froides",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "tirage intercostal",
+          "normalized_name": "tirage intercostal",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "polypnée à 35 cycles/min",
+          "normalized_name": "polypnée à 35 cycles/min",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "cyanose",
+          "normalized_name": "cyanose",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "encombrement",
+          "normalized_name": "encombrement",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "sérum physiologique",
+          "normalized_name": "sérum physiologique",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "2L de voluven",
+          "normalized_name": "2l de voluven",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "1.5L de sérum physiologique",
+          "normalized_name": "1.5l de sérum physiologique",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "intubé",
+          "normalized_name": "intubé",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "pH à 7,11",
+          "normalized_name": "ph à 7,11",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "bicarbonates à 13",
+          "normalized_name": "bicarbonates à 13",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Score SOFA : 19",
+          "normalized_name": "score sofa : 19",
+          "type": "SCORE_SOFA",
+          "page": 2
+        },
+        {
+          "name": "troubles de conscience",
+          "normalized_name": "troubles de conscience",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "GCS 5",
+          "normalized_name": "gcs 5",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "GCS 3 à l'arrivée",
+          "normalized_name": "gcs 3 à l'arrivée",
+          "type": "SCORE_NEUROLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "Four score : Y0 M1 T2 R 0",
+          "normalized_name": "four score : y0 m1 t2 r 0",
+          "type": "SCORE_NEUROLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "oxygénodépendant",
+          "normalized_name": "oxygénodépendant",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "15L d'O2 au MHC",
+          "normalized_name": "15l d'o2 au mhc",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "P/F 156",
+          "normalized_name": "p/f 156",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Patient ventilé",
+          "normalized_name": "patient ventilé",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "FiO2 0.6",
+          "normalized_name": "fio2 0.6",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "respiration abdominale",
+          "normalized_name": "respiration abdominale",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "murmure vésiculaire est diminué à gauche",
+          "normalized_name": "murmure vésiculaire est diminué à gauche",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "cyanose rétroauriculaire",
+          "normalized_name": "cyanose rétroauriculaire",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "Pouls périphériques discrets",
+          "normalized_name": "pouls périphériques discrets",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "TRC>3s",
+          "normalized_name": "trc>3s",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "Bruits du cœur irréguliers",
+          "normalized_name": "bruits du cœur irréguliers",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "aspirations purulentes",
+          "normalized_name": "aspirations purulentes",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "acidose mixte avec un pH à 7,11",
+          "normalized_name": "acidose mixte avec un ph à 7,11",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Hémodynamique instable",
+          "normalized_name": "hémodynamique instable",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        },
+        {
+          "name": "Thrombose veine jugulaire gauche",
+          "normalized_name": "thrombose veine jugulaire gauche",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        },
+        {
+          "name": "Poids (kg) : 65",
+          "normalized_name": "poids (kg) : 65",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "Taille (m) : 1.72",
+          "normalized_name": "taille (m) : 1.72",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "BMI : 22",
+          "normalized_name": "bmi : 22",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "Le patient",
+          "normalized_name": "le patient",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "GCS 5",
+          "normalized_name": "gcs 5",
+          "type": "SCORE_NEUROLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "SpO2 à 87%",
+          "normalized_name": "spo2 à 87%",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "O2",
+          "normalized_name": "o2",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "détresse respiratoire",
+          "normalized_name": "détresse respiratoire",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        },
+        {
+          "name": "Thrombose",
+          "normalized_name": "thrombose",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "souffle perçu",
+          "normalized_name": "souffle perçu",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "TRC>3s",
+          "normalized_name": "trc>3s",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "Le 15/08",
+          "normalized_name": "le 15/08",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "Le 16/08",
+          "normalized_name": "le 16/08",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "détresse respiratoire aiguë",
+          "object_normalized": "détresse respiratoire aiguë",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "Hémodynamique instable",
+          "object_normalized": "hémodynamique instable",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "marbrures généralisées",
+          "object_normalized": "marbrures généralisées",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "extrémités froides",
+          "object_normalized": "extrémités froides",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "tirage intercostal",
+          "object_normalized": "tirage intercostal",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "polypnée à 35 cycles/min",
+          "object_normalized": "polypnée à 35 cycles/min",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "respiration abdominale",
+          "object_normalized": "respiration abdominale",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "murmure vésiculaire est diminué à gauche",
+          "object_normalized": "murmure vésiculaire est diminué à gauche",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "encombrement",
+          "object_normalized": "encombrement",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "cyanose rétroauriculaire",
+          "object_normalized": "cyanose rétroauriculaire",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Pouls périphériques discrets",
+          "object_normalized": "pouls périphériques discrets",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "TRC>3s",
+          "object_normalized": "trc>3s",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Bruits du cœur irréguliers",
+          "object_normalized": "bruits du cœur irréguliers",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "aspirations purulentes",
+          "object_normalized": "aspirations purulentes",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "troubles de conscience",
+          "object_normalized": "troubles de conscience",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Score SOFA : 19",
+          "subject_normalized": "score sofa : 19",
+          "subject_type": "SCORE_SOFA",
+          "relation": "score_sofa_calcule_pour",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Patient ventilé",
+          "subject_normalized": "patient ventilé",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Rocéphine",
+          "subject_normalized": "rocéphine",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "amiklin",
+          "subject_normalized": "amiklin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Flagyl",
+          "subject_normalized": "flagyl",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "voluven",
+          "subject_normalized": "voluven",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Noradrénaline",
+          "subject_normalized": "noradrénaline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Noradrénaline",
+          "subject_normalized": "noradrénaline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "1mg",
+          "object_normalized": "1mg",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Hypnovel",
+          "subject_normalized": "hypnovel",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Hypnovel",
+          "subject_normalized": "hypnovel",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "8 mg",
+          "object_normalized": "8 mg",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Sufentanyl",
+          "subject_normalized": "sufentanyl",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Sufentanyl",
+          "subject_normalized": "sufentanyl",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "40 gamma/h",
+          "object_normalized": "40 gamma/h",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "sérum physiologique",
+          "subject_normalized": "sérum physiologique",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "sérum physiologique",
+          "subject_normalized": "sérum physiologique",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "1.5L de sérum physiologique",
+          "object_normalized": "1.5l de sérum physiologique",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "voluven",
+          "subject_normalized": "voluven",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "2L de voluven",
+          "object_normalized": "2l de voluven",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Patient ventilé",
+          "subject_normalized": "patient ventilé",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "FiO2 0.6",
+          "object_normalized": "fio2 0.6",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "intubé",
+          "subject_normalized": "intubé",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "GCS 5",
+          "object_normalized": "gcs 5",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Score SOFA : 19",
+          "subject_normalized": "score sofa : 19",
+          "subject_type": "SCORE_SOFA",
+          "relation": "score_sofa_calcule_pour",
+          "object": "Poids (kg) : 65",
+          "object_normalized": "poids (kg) : 65",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Augmentin",
+          "subject_normalized": "augmentin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "SpO2 à 87%",
+          "subject_normalized": "spo2 à 87%",
+          "subject_type": "SIGNE_VITAL",
+          "relation": "signe_vital_supporte_defaillance_organe",
+          "object": "détresse respiratoire aiguë",
+          "object_normalized": "détresse respiratoire aiguë",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "text": "",
+      "entities": [
+        {
+          "name": "Réflexes du tronc : oculocéphalogyre négatif, photomoteur discret, toux présent, PMF négatif",
+          "normalized_name": "réflexes du tronc : oculocéphalogyre négatif, photomoteur discret, toux présent, pmf négatif",
+          "type": "SIGNE_VITAL",
+          "page": 3
+        },
+        {
+          "name": "toux présent",
+          "normalized_name": "toux présent",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "Marbrure",
+          "normalized_name": "marbrure",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "pH 6.91",
+          "normalized_name": "ph 6.91",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pCO2 10.10 kPa",
+          "normalized_name": "pco2 10.10 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CO2 Total 17.6 mmol/l",
+          "normalized_name": "co2 total 17.6 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Bicarbonates 15.0 mmol/l",
+          "normalized_name": "bicarbonates 15.0 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pO2 12.5 kPa",
+          "normalized_name": "po2 12.5 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "HbO2 B 91.5 %",
+          "normalized_name": "hbo2 b 91.5 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Lactate 14.0 mmol/l",
+          "normalized_name": "lactate 14.0 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Sodium 146 mmol/l",
+          "normalized_name": "sodium 146 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Potassium 5.1 mmol/l",
+          "normalized_name": "potassium 5.1 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Chlorures 112 mmol/l",
+          "normalized_name": "chlorures 112 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CO2 total 19 mmol/l",
+          "normalized_name": "co2 total 19 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Protides 21 g/l",
+          "normalized_name": "protides 21 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Urée 18.7 mmol/l",
+          "normalized_name": "urée 18.7 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Créatinine 187 µmol/l",
+          "normalized_name": "créatinine 187 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Glucose 4.9 mmol/l",
+          "normalized_name": "glucose 4.9 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Calcium 1.47 mmol/l",
+          "normalized_name": "calcium 1.47 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Phosphore 2.75 mmol/l",
+          "normalized_name": "phosphore 2.75 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Magnesium B 0.65 mmol/l",
+          "normalized_name": "magnesium b 0.65 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "C.K. 126 UI/l",
+          "normalized_name": "c.k. 126 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Bili totale 24 µmol/l",
+          "normalized_name": "bili totale 24 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "ASAT 46 UI/l",
+          "normalized_name": "asat 46 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "ALAT 32 UI/l",
+          "normalized_name": "alat 32 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "PAL 51 UI/l",
+          "normalized_name": "pal 51 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "G.G.T. 90 UI/l",
+          "normalized_name": "g.g.t. 90 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Albumine 7.0 g/l",
+          "normalized_name": "albumine 7.0 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Préalbumine 0.070 g/l",
+          "normalized_name": "préalbumine 0.070 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Créatinine 187 µmol/l",
+          "normalized_name": "créatinine 187 μmol/l",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 3
+        },
+        {
+          "name": "Pupilles symétriques en myosis",
+          "normalized_name": "pupilles symétriques en myosis",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "Hépatomégalie",
+          "normalized_name": "hépatomégalie",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 3
+        },
+        {
+          "name": "21 g",
+          "normalized_name": "21 g",
+          "type": "POSOLOGIE",
+          "page": 3
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "toux présent",
+          "object_normalized": "toux présent",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Marbrure",
+          "object_normalized": "marbrure",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Pupilles symétriques en myosis",
+          "object_normalized": "pupilles symétriques en myosis",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Hépatomégalie",
+          "object_normalized": "hépatomégalie",
+          "object_type": "SYMPTOME",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "text": "",
+      "entities": [
+        {
+          "name": "Leucocytes 3.40 10^9/l",
+          "normalized_name": "leucocytes 3.40 10^9/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Hématies 2.79 10^12/l",
+          "normalized_name": "hématies 2.79 10^12/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Hémoglobine 9.3 g/dl",
+          "normalized_name": "hémoglobine 9.3 g/dl",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Hématocrite 28.3 %",
+          "normalized_name": "hématocrite 28.3 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "V.G.M. 101.4 fl",
+          "normalized_name": "v.g.m. 101.4 fl",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "T.G.M.H. 33.2 pg",
+          "normalized_name": "t.g.m.h. 33.2 pg",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "C.C.M.H. 32.7 %",
+          "normalized_name": "c.c.m.h. 32.7 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Plaquettes 19 10^9/l",
+          "normalized_name": "plaquettes 19 10^9/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "V.M. Plaq. 10.9 fl",
+          "normalized_name": "v.m. plaq. 10.9 fl",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "PNeutroph. 0.68 10^9/l",
+          "normalized_name": "pneutroph. 0.68 10^9/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "PEosinoph. 0.00 10^9/l",
+          "normalized_name": "peosinoph. 0.00 10^9/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "PBasophiles 0.00 10^9/l",
+          "normalized_name": "pbasophiles 0.00 10^9/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Lymphocytes 0.61 10^9/l",
+          "normalized_name": "lymphocytes 0.61 10^9/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Monocytes 0.14 10^9/l",
+          "normalized_name": "monocytes 0.14 10^9/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Activité 18 %",
+          "normalized_name": "activité 18 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "F V 26 %",
+          "normalized_name": "f v 26 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "F II 22 %",
+          "normalized_name": "f ii 22 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "TCA M 73.7 secondes",
+          "normalized_name": "tca m 73.7 secondes",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "TCA T 33.0 secondes",
+          "normalized_name": "tca t 33.0 secondes",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Ratio M/T 2.23",
+          "normalized_name": "ratio m/t 2.23",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "TQ M 41.20 secondes",
+          "normalized_name": "tq m 41.20 secondes",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Fibrinogène 1.93 g/l",
+          "normalized_name": "fibrinogène 1.93 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "DDI 2.68 µg/ml",
+          "normalized_name": "ddi 2.68 μg/ml",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Pneumopathie bilatérale",
+          "normalized_name": "pneumopathie bilatérale",
+          "type": "FOYER_INFECTIEUX",
+          "page": 4
+        },
+        {
+          "name": "PDP",
+          "normalized_name": "pdp",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "ECG",
+          "normalized_name": "ecg",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "ACFA",
+          "normalized_name": "acfa",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 4
+        },
+        {
+          "name": "Radiographie pulmonaire",
+          "normalized_name": "radiographie pulmonaire",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "Opacités bilatérales des bases",
+          "normalized_name": "opacités bilatérales des bases",
+          "type": "SYMPTOME",
+          "page": 4
+        },
+        {
+          "name": "Scanner",
+          "normalized_name": "scanner",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "Hypertrophie bilatérale des surrénales",
+          "normalized_name": "hypertrophie bilatérale des surrénales",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 4
+        },
+        {
+          "name": "GB (0.00<10",
+          "normalized_name": "gb (0.00<10",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "TQ T 13.00 secondes (11.5<14.5",
+          "normalized_name": "tq t 13.00 secondes (11.5<14.5",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Scanner",
+          "subject_normalized": "scanner",
+          "subject_type": "IMAGERIE_PROCEDURE",
+          "relation": "imagerie_objective_foyer",
+          "object": "Pneumopathie bilatérale",
+          "object_normalized": "pneumopathie bilatérale",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "text": "",
+      "entities": [
+        {
+          "name": "choc septique",
+          "normalized_name": "choc septique",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "name": "point de départ pulmonaire",
+          "normalized_name": "point de départ pulmonaire",
+          "type": "FOYER_INFECTIEUX",
+          "page": 5
+        },
+        {
+          "name": "remplissage par voluven et sérum physiologique",
+          "normalized_name": "remplissage par voluven et sérum physiologique",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "PAM à 60-65mmHg",
+          "normalized_name": "pam à 60-65mmhg",
+          "type": "SIGNE_VITAL",
+          "page": 5
+        },
+        {
+          "name": "Noradrénaline",
+          "normalized_name": "noradrénaline",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "1mg",
+          "normalized_name": "1mg",
+          "type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "name": "PICCO",
+          "normalized_name": "picco",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "Tienam",
+          "normalized_name": "tienam",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "Amiklin",
+          "normalized_name": "amiklin",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "scanner cervico-thoraco-abdominal",
+          "normalized_name": "scanner cervico-thoraco-abdominal",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 5
+        },
+        {
+          "name": "pneumopathie postéro-basale bilatérale",
+          "normalized_name": "pneumopathie postéro-basale bilatérale",
+          "type": "FOYER_INFECTIEUX",
+          "page": 5
+        },
+        {
+          "name": "CIVD biologique",
+          "normalized_name": "civd biologique",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "name": "leucocytes à 3500/mm3",
+          "normalized_name": "leucocytes à 3500/mm3",
+          "type": "BIOMARQUEUR",
+          "page": 5
+        },
+        {
+          "name": "Leucopénie à 900/mm3",
+          "normalized_name": "leucopénie à 900/mm3",
+          "type": "BIOMARQUEUR",
+          "page": 5
+        },
+        {
+          "name": "chimiothérapie pour un carcinome épidermoïde",
+          "normalized_name": "chimiothérapie pour un carcinome épidermoïde",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "lactatémie persistante à 14 mmol/l",
+          "normalized_name": "lactatémie persistante à 14 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 5
+        },
+        {
+          "name": "insuffisance rénale fonctionnelle",
+          "normalized_name": "insuffisance rénale fonctionnelle",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "name": "hyperkaliémie",
+          "normalized_name": "hyperkaliémie",
+          "type": "BIOMARQUEUR",
+          "page": 5
+        },
+        {
+          "name": "prisma",
+          "normalized_name": "prisma",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "remplissage de 5L",
+          "normalized_name": "remplissage de 5l",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "Adrénaline",
+          "normalized_name": "adrénaline",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "30 mg",
+          "normalized_name": "30 mg",
+          "type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "name": "défaillance multiviscérale",
+          "normalized_name": "défaillance multiviscérale",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "name": "pH à 6.91",
+          "normalized_name": "ph à 6.91",
+          "type": "BIOMARQUEUR",
+          "page": 5
+        },
+        {
+          "name": "acidose métabolique",
+          "normalized_name": "acidose métabolique",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "name": "acidose métabolique menaçante",
+          "normalized_name": "acidose métabolique menaçante",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "name": "PAM vers 65 mmHg",
+          "normalized_name": "pam vers 65 mmhg",
+          "type": "SIGNE_VITAL",
+          "page": 5
+        },
+        {
+          "name": "71 ans",
+          "normalized_name": "71 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "name": "patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "name": "PAM à 60",
+          "normalized_name": "pam à 60",
+          "type": "SIGNE_VITAL",
+          "page": 5
+        },
+        {
+          "name": "PDP",
+          "normalized_name": "pdp",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 5
+        },
+        {
+          "name": "insuffisance rénale",
+          "normalized_name": "insuffisance rénale",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "name": "CIVD",
+          "normalized_name": "civd",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "name": "transfusion",
+          "normalized_name": "transfusion",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "aggravation et majoration lente de l’hyperkaliémie -> décision d’introduire la prisma (dialyse) devant l’a",
+          "normalized_name": "aggravation et majoration lente de l’hyperkaliémie -> décision d’introduire la prisma (dialyse) devant l’a",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "dégradation de l’état hémodynamique malgré remplissage de 5L au total avec nécessité d’augmenter les doses",
+          "normalized_name": "dégradation de l’état hémodynamique malgré remplissage de 5l au total avec nécessité d’augmenter les doses",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "dégradation avec nécessité dans la nuit d’introduire de l’Adrénaline avec besoin accru et constant",
+          "normalized_name": "dégradation avec nécessité dans la nuit d’introduire de l’adrénaline avec besoin accru et constant",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "amélioration de la perfusion tissulaire",
+          "normalized_name": "amélioration de la perfusion tissulaire",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’Adrénaline jusqu’à 30 m",
+          "normalized_name": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’adrénaline jusqu’à 30 m",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "décès",
+          "normalized_name": "décès",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "décès du patient",
+          "normalized_name": "décès du patient",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "17/08",
+          "normalized_name": "17/08",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "dans l’après midi",
+          "normalized_name": "dans l’après midi",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        }
+      ],
+      "relations": [
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "choc septique",
+          "object_normalized": "choc septique",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_suspicion_infection",
+          "object": "point de départ pulmonaire",
+          "object_normalized": "point de départ pulmonaire",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "défaillance multiviscérale",
+          "object_normalized": "défaillance multiviscérale",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "subject": "remplissage par voluven et sérum physiologique",
+          "subject_normalized": "remplissage par voluven et sérum physiologique",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Noradrénaline",
+          "subject_normalized": "noradrénaline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Noradrénaline",
+          "subject_normalized": "noradrénaline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "1mg",
+          "object_normalized": "1mg",
+          "object_type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "subject": "PICCO",
+          "subject_normalized": "picco",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Tienam",
+          "subject_normalized": "tienam",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Amiklin",
+          "subject_normalized": "amiklin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "scanner cervico-thoraco-abdominal",
+          "subject_normalized": "scanner cervico-thoraco-abdominal",
+          "subject_type": "IMAGERIE_PROCEDURE",
+          "relation": "imagerie_objective_foyer",
+          "object": "pneumopathie postéro-basale bilatérale",
+          "object_normalized": "pneumopathie postéro-basale bilatérale",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 5
+        },
+        {
+          "subject": "prisma",
+          "subject_normalized": "prisma",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "remplissage de 5L",
+          "subject_normalized": "remplissage de 5l",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Adrénaline",
+          "subject_normalized": "adrénaline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Adrénaline",
+          "subject_normalized": "adrénaline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "30 mg",
+          "object_normalized": "30 mg",
+          "object_type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "subject": "pH à 6.91",
+          "subject_normalized": "ph à 6.91",
+          "subject_type": "BIOMARQUEUR",
+          "relation": "biomarqueur_est_critere_de",
+          "object": "acidose métabolique",
+          "object_normalized": "acidose métabolique",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "subject": "transfusion",
+          "subject_normalized": "transfusion",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "dégradation de l’état hémodynamique malgré remplissage de 5L au total avec nécessité d’augmenter les doses",
+          "object_normalized": "dégradation de l’état hémodynamique malgré remplissage de 5l au total avec nécessité d’augmenter les doses",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’Adrénaline jusqu’à 30 m",
+          "object_normalized": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’adrénaline jusqu’à 30 m",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_suspicion_infection",
+          "object": "pneumopathie postéro-basale bilatérale",
+          "object_normalized": "pneumopathie postéro-basale bilatérale",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "CIVD biologique",
+          "object_normalized": "civd biologique",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "insuffisance rénale fonctionnelle",
+          "object_normalized": "insuffisance rénale fonctionnelle",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "acidose métabolique",
+          "object_normalized": "acidose métabolique",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "acidose métabolique menaçante",
+          "object_normalized": "acidose métabolique menaçante",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "insuffisance rénale",
+          "object_normalized": "insuffisance rénale",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "CIVD",
+          "object_normalized": "civd",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "décès",
+          "object_normalized": "décès",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "remplissage de 5L",
+          "subject_normalized": "remplissage de 5l",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "5L",
+          "object_normalized": "5l",
+          "object_type": "",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "text": "",
+      "entities": [
+        {
+          "name": "Choc septique",
+          "normalized_name": "choc septique",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 6
+        },
+        {
+          "name": "point de départ pulmonaire",
+          "normalized_name": "point de départ pulmonaire",
+          "type": "FOYER_INFECTIEUX",
+          "page": 6
+        },
+        {
+          "name": "défaillance multiviscérale",
+          "normalized_name": "défaillance multiviscérale",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 6
+        },
+        {
+          "name": "carcinome du larynx",
+          "normalized_name": "carcinome du larynx",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 6
+        },
+        {
+          "name": "Transfusion",
+          "normalized_name": "transfusion",
+          "type": "TRAITEMENT",
+          "page": 6
+        },
+        {
+          "name": "Produits ou dérivés sanguins",
+          "normalized_name": "produits ou dérivés sanguins",
+          "type": "TRAITEMENT",
+          "page": 6
+        },
+        {
+          "name": "patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 6
+        },
+        {
+          "name": "Décès",
+          "normalized_name": "décès",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 6
+        },
+        {
+          "name": "17/08/2012",
+          "normalized_name": "17/08/2012",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 6
+        }
+      ],
+      "relations": [
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "Choc septique",
+          "object_normalized": "choc septique",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 6
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_suspicion_infection",
+          "object": "point de départ pulmonaire",
+          "object_normalized": "point de départ pulmonaire",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 6
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_dysfonction_organe",
+          "object": "défaillance multiviscérale",
+          "object_normalized": "défaillance multiviscérale",
+          "object_type": "DEFAILLANCE_ORGANE",
+          "page": 6
+        },
+        {
+          "subject": "Transfusion",
+          "subject_normalized": "transfusion",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 6
+        },
+        {
+          "subject": "Produits ou dérivés sanguins",
+          "subject_normalized": "produits ou dérivés sanguins",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 6
+        },
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "Décès",
+          "object_normalized": "décès",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 6
+        }
+      ]
+    }
+  ],
+  "global_entities": [
+    {
+      "name": "choc septique",
+      "normalized_name": "choc septique",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "point de départ pulmonaire",
+      "normalized_name": "point de départ pulmonaire",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "pneumopathie du lobe",
+      "normalized_name": "pneumopathie du lobe",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "Carcinome épidermoïde larynx (paroi gauche) T3N2M0",
+      "normalized_name": "carcinome épidermoïde larynx (paroi gauche) t3n2m0",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Tuberculose pulmonaire",
+      "normalized_name": "tuberculose pulmonaire",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "HTA",
+      "normalized_name": "hta",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Hypercholestérolémie",
+      "normalized_name": "hypercholestérolémie",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Cure de hernie inguinale droite",
+      "normalized_name": "cure de hernie inguinale droite",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Cataracte bilatérale opérée",
+      "normalized_name": "cataracte bilatérale opérée",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "5FU",
+      "normalized_name": "5fu",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Cisplatine",
+      "normalized_name": "cisplatine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "scanner cervicothoracique",
+      "normalized_name": "scanner cervicothoracique",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "choc septique",
+      "normalized_name": "choc septique",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "71 ans",
+      "normalized_name": "71 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Patient",
+      "normalized_name": "patient",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "réanimation",
+      "normalized_name": "réanimation",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "thrombose",
+      "normalized_name": "thrombose",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "Tabagisme sevré",
+      "normalized_name": "tabagisme sevré",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Tabagisme",
+      "normalized_name": "tabagisme",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "1/J",
+      "normalized_name": "1/j",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "3/J",
+      "normalized_name": "3/j",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "27/07",
+      "normalized_name": "27/07",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "30/07",
+      "normalized_name": "30/07",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "14/08",
+      "normalized_name": "14/08",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Augmentin",
+      "normalized_name": "augmentin",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Rocéphine",
+      "normalized_name": "rocéphine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "amiklin",
+      "normalized_name": "amiklin",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Flagyl",
+      "normalized_name": "flagyl",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "voluven",
+      "normalized_name": "voluven",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "détresse respiratoire aiguë",
+      "normalized_name": "détresse respiratoire aiguë",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "TA (mmHg) : 132/47",
+      "normalized_name": "ta (mmhg) : 132/47",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "FC (bpm) : 120",
+      "normalized_name": "fc (bpm) : 120",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "FR (c/mn) : 17",
+      "normalized_name": "fr (c/mn) : 17",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "FiO2 80%",
+      "normalized_name": "fio2 80%",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Temp °C : 34.7",
+      "normalized_name": "temp °c : 34.7",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "Noradrénaline",
+      "normalized_name": "noradrénaline",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "1mg",
+      "normalized_name": "1mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Hypnovel",
+      "normalized_name": "hypnovel",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "8 mg",
+      "normalized_name": "8 mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Sufentanyl",
+      "normalized_name": "sufentanyl",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "40 gamma/h",
+      "normalized_name": "40 gamma/h",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "marbrures généralisées",
+      "normalized_name": "marbrures généralisées",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "extrémités froides",
+      "normalized_name": "extrémités froides",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "tirage intercostal",
+      "normalized_name": "tirage intercostal",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "polypnée à 35 cycles/min",
+      "normalized_name": "polypnée à 35 cycles/min",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "cyanose",
+      "normalized_name": "cyanose",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "encombrement",
+      "normalized_name": "encombrement",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "sérum physiologique",
+      "normalized_name": "sérum physiologique",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "2L de voluven",
+      "normalized_name": "2l de voluven",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "1.5L de sérum physiologique",
+      "normalized_name": "1.5l de sérum physiologique",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "intubé",
+      "normalized_name": "intubé",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "pH à 7,11",
+      "normalized_name": "ph à 7,11",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "bicarbonates à 13",
+      "normalized_name": "bicarbonates à 13",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Score SOFA : 19",
+      "normalized_name": "score sofa : 19",
+      "type": "SCORE_SOFA"
+    },
+    {
+      "name": "troubles de conscience",
+      "normalized_name": "troubles de conscience",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "GCS 5",
+      "normalized_name": "gcs 5",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "GCS 3 à l'arrivée",
+      "normalized_name": "gcs 3 à l'arrivée",
+      "type": "SCORE_NEUROLOGIQUE"
+    },
+    {
+      "name": "Four score : Y0 M1 T2 R 0",
+      "normalized_name": "four score : y0 m1 t2 r 0",
+      "type": "SCORE_NEUROLOGIQUE"
+    },
+    {
+      "name": "oxygénodépendant",
+      "normalized_name": "oxygénodépendant",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "15L d'O2 au MHC",
+      "normalized_name": "15l d'o2 au mhc",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "P/F 156",
+      "normalized_name": "p/f 156",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Patient ventilé",
+      "normalized_name": "patient ventilé",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "FiO2 0.6",
+      "normalized_name": "fio2 0.6",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "respiration abdominale",
+      "normalized_name": "respiration abdominale",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "murmure vésiculaire est diminué à gauche",
+      "normalized_name": "murmure vésiculaire est diminué à gauche",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "cyanose rétroauriculaire",
+      "normalized_name": "cyanose rétroauriculaire",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Pouls périphériques discrets",
+      "normalized_name": "pouls périphériques discrets",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "TRC>3s",
+      "normalized_name": "trc>3s",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Bruits du cœur irréguliers",
+      "normalized_name": "bruits du cœur irréguliers",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "aspirations purulentes",
+      "normalized_name": "aspirations purulentes",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "acidose mixte avec un pH à 7,11",
+      "normalized_name": "acidose mixte avec un ph à 7,11",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hémodynamique instable",
+      "normalized_name": "hémodynamique instable",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "Thrombose veine jugulaire gauche",
+      "normalized_name": "thrombose veine jugulaire gauche",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "Poids (kg) : 65",
+      "normalized_name": "poids (kg) : 65",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Taille (m) : 1.72",
+      "normalized_name": "taille (m) : 1.72",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "BMI : 22",
+      "normalized_name": "bmi : 22",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Le patient",
+      "normalized_name": "le patient",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "GCS 5",
+      "normalized_name": "gcs 5",
+      "type": "SCORE_NEUROLOGIQUE"
+    },
+    {
+      "name": "SpO2 à 87%",
+      "normalized_name": "spo2 à 87%",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "O2",
+      "normalized_name": "o2",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "détresse respiratoire",
+      "normalized_name": "détresse respiratoire",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "souffle perçu",
+      "normalized_name": "souffle perçu",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "TRC>3s",
+      "normalized_name": "trc>3s",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "Le 15/08",
+      "normalized_name": "le 15/08",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Le 16/08",
+      "normalized_name": "le 16/08",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Réflexes du tronc : oculocéphalogyre négatif, photomoteur discret, toux présent, PMF négatif",
+      "normalized_name": "réflexes du tronc : oculocéphalogyre négatif, photomoteur discret, toux présent, pmf négatif",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "toux présent",
+      "normalized_name": "toux présent",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Marbrure",
+      "normalized_name": "marbrure",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "pH 6.91",
+      "normalized_name": "ph 6.91",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pCO2 10.10 kPa",
+      "normalized_name": "pco2 10.10 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 Total 17.6 mmol/l",
+      "normalized_name": "co2 total 17.6 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bicarbonates 15.0 mmol/l",
+      "normalized_name": "bicarbonates 15.0 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pO2 12.5 kPa",
+      "normalized_name": "po2 12.5 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "HbO2 B 91.5 %",
+      "normalized_name": "hbo2 b 91.5 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Lactate 14.0 mmol/l",
+      "normalized_name": "lactate 14.0 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Sodium 146 mmol/l",
+      "normalized_name": "sodium 146 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Potassium 5.1 mmol/l",
+      "normalized_name": "potassium 5.1 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Chlorures 112 mmol/l",
+      "normalized_name": "chlorures 112 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 total 19 mmol/l",
+      "normalized_name": "co2 total 19 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Protides 21 g/l",
+      "normalized_name": "protides 21 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Urée 18.7 mmol/l",
+      "normalized_name": "urée 18.7 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Créatinine 187 µmol/l",
+      "normalized_name": "créatinine 187 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Glucose 4.9 mmol/l",
+      "normalized_name": "glucose 4.9 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Calcium 1.47 mmol/l",
+      "normalized_name": "calcium 1.47 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Phosphore 2.75 mmol/l",
+      "normalized_name": "phosphore 2.75 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Magnesium B 0.65 mmol/l",
+      "normalized_name": "magnesium b 0.65 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "C.K. 126 UI/l",
+      "normalized_name": "c.k. 126 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bili totale 24 µmol/l",
+      "normalized_name": "bili totale 24 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ASAT 46 UI/l",
+      "normalized_name": "asat 46 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ALAT 32 UI/l",
+      "normalized_name": "alat 32 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "PAL 51 UI/l",
+      "normalized_name": "pal 51 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "G.G.T. 90 UI/l",
+      "normalized_name": "g.g.t. 90 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Albumine 7.0 g/l",
+      "normalized_name": "albumine 7.0 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Préalbumine 0.070 g/l",
+      "normalized_name": "préalbumine 0.070 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Créatinine 187 µmol/l",
+      "normalized_name": "créatinine 187 μmol/l",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "Pupilles symétriques en myosis",
+      "normalized_name": "pupilles symétriques en myosis",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Hépatomégalie",
+      "normalized_name": "hépatomégalie",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "21 g",
+      "normalized_name": "21 g",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Leucocytes 3.40 10^9/l",
+      "normalized_name": "leucocytes 3.40 10^9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématies 2.79 10^12/l",
+      "normalized_name": "hématies 2.79 10^12/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hémoglobine 9.3 g/dl",
+      "normalized_name": "hémoglobine 9.3 g/dl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématocrite 28.3 %",
+      "normalized_name": "hématocrite 28.3 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "V.G.M. 101.4 fl",
+      "normalized_name": "v.g.m. 101.4 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "T.G.M.H. 33.2 pg",
+      "normalized_name": "t.g.m.h. 33.2 pg",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "C.C.M.H. 32.7 %",
+      "normalized_name": "c.c.m.h. 32.7 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Plaquettes 19 10^9/l",
+      "normalized_name": "plaquettes 19 10^9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "V.M. Plaq. 10.9 fl",
+      "normalized_name": "v.m. plaq. 10.9 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "PNeutroph. 0.68 10^9/l",
+      "normalized_name": "pneutroph. 0.68 10^9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "PEosinoph. 0.00 10^9/l",
+      "normalized_name": "peosinoph. 0.00 10^9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "PBasophiles 0.00 10^9/l",
+      "normalized_name": "pbasophiles 0.00 10^9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Lymphocytes 0.61 10^9/l",
+      "normalized_name": "lymphocytes 0.61 10^9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Monocytes 0.14 10^9/l",
+      "normalized_name": "monocytes 0.14 10^9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Activité 18 %",
+      "normalized_name": "activité 18 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "F V 26 %",
+      "normalized_name": "f v 26 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "F II 22 %",
+      "normalized_name": "f ii 22 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TCA M 73.7 secondes",
+      "normalized_name": "tca m 73.7 secondes",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TCA T 33.0 secondes",
+      "normalized_name": "tca t 33.0 secondes",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Ratio M/T 2.23",
+      "normalized_name": "ratio m/t 2.23",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TQ M 41.20 secondes",
+      "normalized_name": "tq m 41.20 secondes",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Fibrinogène 1.93 g/l",
+      "normalized_name": "fibrinogène 1.93 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "DDI 2.68 µg/ml",
+      "normalized_name": "ddi 2.68 μg/ml",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Pneumopathie bilatérale",
+      "normalized_name": "pneumopathie bilatérale",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "PDP",
+      "normalized_name": "pdp",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "ECG",
+      "normalized_name": "ecg",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "ACFA",
+      "normalized_name": "acfa",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "Radiographie pulmonaire",
+      "normalized_name": "radiographie pulmonaire",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "Opacités bilatérales des bases",
+      "normalized_name": "opacités bilatérales des bases",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Scanner",
+      "normalized_name": "scanner",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "Hypertrophie bilatérale des surrénales",
+      "normalized_name": "hypertrophie bilatérale des surrénales",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "GB (0.00<10",
+      "normalized_name": "gb (0.00<10",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TQ T 13.00 secondes (11.5<14.5",
+      "normalized_name": "tq t 13.00 secondes (11.5<14.5",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "remplissage par voluven et sérum physiologique",
+      "normalized_name": "remplissage par voluven et sérum physiologique",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "PAM à 60-65mmHg",
+      "normalized_name": "pam à 60-65mmhg",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "PICCO",
+      "normalized_name": "picco",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Tienam",
+      "normalized_name": "tienam",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "scanner cervico-thoraco-abdominal",
+      "normalized_name": "scanner cervico-thoraco-abdominal",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "pneumopathie postéro-basale bilatérale",
+      "normalized_name": "pneumopathie postéro-basale bilatérale",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "CIVD biologique",
+      "normalized_name": "civd biologique",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "leucocytes à 3500/mm3",
+      "normalized_name": "leucocytes à 3500/mm3",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Leucopénie à 900/mm3",
+      "normalized_name": "leucopénie à 900/mm3",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "chimiothérapie pour un carcinome épidermoïde",
+      "normalized_name": "chimiothérapie pour un carcinome épidermoïde",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "lactatémie persistante à 14 mmol/l",
+      "normalized_name": "lactatémie persistante à 14 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "insuffisance rénale fonctionnelle",
+      "normalized_name": "insuffisance rénale fonctionnelle",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "hyperkaliémie",
+      "normalized_name": "hyperkaliémie",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "prisma",
+      "normalized_name": "prisma",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "remplissage de 5L",
+      "normalized_name": "remplissage de 5l",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Adrénaline",
+      "normalized_name": "adrénaline",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "30 mg",
+      "normalized_name": "30 mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "défaillance multiviscérale",
+      "normalized_name": "défaillance multiviscérale",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "pH à 6.91",
+      "normalized_name": "ph à 6.91",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "acidose métabolique",
+      "normalized_name": "acidose métabolique",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "acidose métabolique menaçante",
+      "normalized_name": "acidose métabolique menaçante",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "PAM vers 65 mmHg",
+      "normalized_name": "pam vers 65 mmhg",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "PAM à 60",
+      "normalized_name": "pam à 60",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "insuffisance rénale",
+      "normalized_name": "insuffisance rénale",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "CIVD",
+      "normalized_name": "civd",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "transfusion",
+      "normalized_name": "transfusion",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "aggravation et majoration lente de l’hyperkaliémie -> décision d’introduire la prisma (dialyse) devant l’a",
+      "normalized_name": "aggravation et majoration lente de l’hyperkaliémie -> décision d’introduire la prisma (dialyse) devant l’a",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "dégradation de l’état hémodynamique malgré remplissage de 5L au total avec nécessité d’augmenter les doses",
+      "normalized_name": "dégradation de l’état hémodynamique malgré remplissage de 5l au total avec nécessité d’augmenter les doses",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "dégradation avec nécessité dans la nuit d’introduire de l’Adrénaline avec besoin accru et constant",
+      "normalized_name": "dégradation avec nécessité dans la nuit d’introduire de l’adrénaline avec besoin accru et constant",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "amélioration de la perfusion tissulaire",
+      "normalized_name": "amélioration de la perfusion tissulaire",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’Adrénaline jusqu’à 30 m",
+      "normalized_name": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’adrénaline jusqu’à 30 m",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "décès",
+      "normalized_name": "décès",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "décès du patient",
+      "normalized_name": "décès du patient",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "17/08",
+      "normalized_name": "17/08",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "dans l’après midi",
+      "normalized_name": "dans l’après midi",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "carcinome du larynx",
+      "normalized_name": "carcinome du larynx",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Produits ou dérivés sanguins",
+      "normalized_name": "produits ou dérivés sanguins",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "17/08/2012",
+      "normalized_name": "17/08/2012",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "abdominal",
+      "normalized_name": "abdominal",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "albumine",
+      "normalized_name": "albumine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "pelvien",
+      "normalized_name": "pelvien",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "civd",
+      "normalized_name": "civd",
+      "type": "LABEL_NOSOLOGIQUE"
+    }
+  ],
+  "global_relations": [
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "choc septique",
+      "object_normalized": "choc septique",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_suspicion_infection",
+      "object": "point de départ pulmonaire",
+      "object_normalized": "point de départ pulmonaire",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "5FU",
+      "subject_normalized": "5fu",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Cisplatine",
+      "subject_normalized": "cisplatine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "réanimation",
+      "subject_normalized": "réanimation",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_suspicion_infection",
+      "object": "pneumopathie du lobe",
+      "object_normalized": "pneumopathie du lobe",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "détresse respiratoire aiguë",
+      "object_normalized": "détresse respiratoire aiguë",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "Hémodynamique instable",
+      "object_normalized": "hémodynamique instable",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "marbrures généralisées",
+      "object_normalized": "marbrures généralisées",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "extrémités froides",
+      "object_normalized": "extrémités froides",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "tirage intercostal",
+      "object_normalized": "tirage intercostal",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "polypnée à 35 cycles/min",
+      "object_normalized": "polypnée à 35 cycles/min",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "respiration abdominale",
+      "object_normalized": "respiration abdominale",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "murmure vésiculaire est diminué à gauche",
+      "object_normalized": "murmure vésiculaire est diminué à gauche",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement",
+      "object_normalized": "encombrement",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "cyanose rétroauriculaire",
+      "object_normalized": "cyanose rétroauriculaire",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Pouls périphériques discrets",
+      "object_normalized": "pouls périphériques discrets",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "TRC>3s",
+      "object_normalized": "trc>3s",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Bruits du cœur irréguliers",
+      "object_normalized": "bruits du cœur irréguliers",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "aspirations purulentes",
+      "object_normalized": "aspirations purulentes",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "troubles de conscience",
+      "object_normalized": "troubles de conscience",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Score SOFA : 19",
+      "subject_normalized": "score sofa : 19",
+      "subject_type": "SCORE_SOFA",
+      "relation": "score_sofa_calcule_pour",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient ventilé",
+      "subject_normalized": "patient ventilé",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Rocéphine",
+      "subject_normalized": "rocéphine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "amiklin",
+      "subject_normalized": "amiklin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Flagyl",
+      "subject_normalized": "flagyl",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "voluven",
+      "subject_normalized": "voluven",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Noradrénaline",
+      "subject_normalized": "noradrénaline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Noradrénaline",
+      "subject_normalized": "noradrénaline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "1mg",
+      "object_normalized": "1mg",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Hypnovel",
+      "subject_normalized": "hypnovel",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Hypnovel",
+      "subject_normalized": "hypnovel",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "8 mg",
+      "object_normalized": "8 mg",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Sufentanyl",
+      "subject_normalized": "sufentanyl",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Sufentanyl",
+      "subject_normalized": "sufentanyl",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "40 gamma/h",
+      "object_normalized": "40 gamma/h",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "sérum physiologique",
+      "subject_normalized": "sérum physiologique",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "sérum physiologique",
+      "subject_normalized": "sérum physiologique",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "1.5L de sérum physiologique",
+      "object_normalized": "1.5l de sérum physiologique",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "voluven",
+      "subject_normalized": "voluven",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "2L de voluven",
+      "object_normalized": "2l de voluven",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Patient ventilé",
+      "subject_normalized": "patient ventilé",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "FiO2 0.6",
+      "object_normalized": "fio2 0.6",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "intubé",
+      "subject_normalized": "intubé",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "GCS 5",
+      "object_normalized": "gcs 5",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Score SOFA : 19",
+      "subject_normalized": "score sofa : 19",
+      "subject_type": "SCORE_SOFA",
+      "relation": "score_sofa_calcule_pour",
+      "object": "Poids (kg) : 65",
+      "object_normalized": "poids (kg) : 65",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "SpO2 à 87%",
+      "subject_normalized": "spo2 à 87%",
+      "subject_type": "SIGNE_VITAL",
+      "relation": "signe_vital_supporte_defaillance_organe",
+      "object": "détresse respiratoire aiguë",
+      "object_normalized": "détresse respiratoire aiguë",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "toux présent",
+      "object_normalized": "toux présent",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Marbrure",
+      "object_normalized": "marbrure",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Pupilles symétriques en myosis",
+      "object_normalized": "pupilles symétriques en myosis",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Hépatomégalie",
+      "object_normalized": "hépatomégalie",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "défaillance multiviscérale",
+      "object_normalized": "défaillance multiviscérale",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "remplissage par voluven et sérum physiologique",
+      "subject_normalized": "remplissage par voluven et sérum physiologique",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Noradrénaline",
+      "subject_normalized": "noradrénaline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "PICCO",
+      "subject_normalized": "picco",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Tienam",
+      "subject_normalized": "tienam",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Amiklin",
+      "subject_normalized": "amiklin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "scanner cervico-thoraco-abdominal",
+      "subject_normalized": "scanner cervico-thoraco-abdominal",
+      "subject_type": "IMAGERIE_PROCEDURE",
+      "relation": "imagerie_objective_foyer",
+      "object": "pneumopathie postéro-basale bilatérale",
+      "object_normalized": "pneumopathie postéro-basale bilatérale",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "prisma",
+      "subject_normalized": "prisma",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "remplissage de 5L",
+      "subject_normalized": "remplissage de 5l",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Adrénaline",
+      "subject_normalized": "adrénaline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Adrénaline",
+      "subject_normalized": "adrénaline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "30 mg",
+      "object_normalized": "30 mg",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "pH à 6.91",
+      "subject_normalized": "ph à 6.91",
+      "subject_type": "BIOMARQUEUR",
+      "relation": "biomarqueur_est_critere_de",
+      "object": "acidose métabolique",
+      "object_normalized": "acidose métabolique",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "transfusion",
+      "subject_normalized": "transfusion",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "dégradation de l’état hémodynamique malgré remplissage de 5L au total avec nécessité d’augmenter les doses",
+      "object_normalized": "dégradation de l’état hémodynamique malgré remplissage de 5l au total avec nécessité d’augmenter les doses",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’Adrénaline jusqu’à 30 m",
+      "object_normalized": "dégradation rapide de l’état hémodynamique du patient avec nécessité d’augmenter l’adrénaline jusqu’à 30 m",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_suspicion_infection",
+      "object": "pneumopathie postéro-basale bilatérale",
+      "object_normalized": "pneumopathie postéro-basale bilatérale",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "CIVD biologique",
+      "object_normalized": "civd biologique",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "insuffisance rénale fonctionnelle",
+      "object_normalized": "insuffisance rénale fonctionnelle",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "acidose métabolique",
+      "object_normalized": "acidose métabolique",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "acidose métabolique menaçante",
+      "object_normalized": "acidose métabolique menaçante",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "insuffisance rénale",
+      "object_normalized": "insuffisance rénale",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "CIVD",
+      "object_normalized": "civd",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "décès",
+      "object_normalized": "décès",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "remplissage de 5L",
+      "subject_normalized": "remplissage de 5l",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "5L",
+      "object_normalized": "5l",
+      "object_type": ""
+    },
+    {
+      "subject": "Produits ou dérivés sanguins",
+      "subject_normalized": "produits ou dérivés sanguins",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "scanner cervicothoracique",
+      "subject_normalized": "scanner cervicothoracique",
+      "subject_type": "IMAGERIE_PROCEDURE",
+      "relation": "imagerie_objective_foyer",
+      "object": "pneumopathie du lobe",
+      "object_normalized": "pneumopathie du lobe",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "Scanner",
+      "subject_normalized": "scanner",
+      "subject_type": "IMAGERIE_PROCEDURE",
+      "relation": "imagerie_objective_foyer",
+      "object": "Pneumopathie bilatérale",
+      "object_normalized": "pneumopathie bilatérale",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "5FU",
+      "subject_normalized": "5fu",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_indique_par_label_nosologique",
+      "object": "Carcinome épidermoïde larynx (paroi gauche) T3N2M0",
+      "object_normalized": "carcinome épidermoïde larynx (paroi gauche) t3n2m0",
+      "object_type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "subject": "Cisplatine",
+      "subject_normalized": "cisplatine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_indique_par_label_nosologique",
+      "object": "Carcinome épidermoïde larynx (paroi gauche) T3N2M0",
+      "object_normalized": "carcinome épidermoïde larynx (paroi gauche) t3n2m0",
+      "object_type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "subject": "Patient ventilé",
+      "subject_normalized": "patient ventilé",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "FiO2 80%",
+      "object_normalized": "fio2 80%",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "P/F 156",
+      "subject_normalized": "p/f 156",
+      "subject_type": "BIOMARQUEUR",
+      "relation": "biomarqueur_supporte_defaillance_organe",
+      "object": "détresse respiratoire aiguë",
+      "object_normalized": "détresse respiratoire aiguë",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "sérum physiologique",
+      "subject_normalized": "sérum physiologique",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "71 ans",
+      "object_normalized": "71 ans",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient ventilé",
+      "subject_normalized": "patient ventilé",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "oxygénodépendant",
+      "object_normalized": "oxygénodépendant",
+      "object_type": "TRAITEMENT"
+    },
+    {
+      "subject": "2L de voluven",
+      "subject_normalized": "2l de voluven",
+      "subject_type": "POSOLOGIE",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "polypnée à 35 cycles/min",
+      "subject_normalized": "polypnée à 35 cycles/min",
+      "subject_type": "SYMPTOME",
+      "relation": "signe_vital_supporte_defaillance_organe",
+      "object": "détresse respiratoire aiguë",
+      "object_normalized": "détresse respiratoire aiguë",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "71 ans",
+      "subject_normalized": "71 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "choc septique",
+      "object_normalized": "choc septique",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "chimiothérapie pour un carcinome épidermoïde",
+      "subject_normalized": "chimiothérapie pour un carcinome épidermoïde",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "71 ans",
+      "object_normalized": "71 ans",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "chimiothérapie pour un carcinome épidermoïde",
+      "subject_normalized": "chimiothérapie pour un carcinome épidermoïde",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "détresse respiratoire aiguë",
+      "object_normalized": "détresse respiratoire aiguë",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "détresse respiratoire",
+      "object_normalized": "détresse respiratoire",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_dysfonction_organe",
+      "object": "détresse respiratoire",
+      "object_normalized": "détresse respiratoire",
+      "object_type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "subject": "Rocéphine",
+      "subject_normalized": "rocéphine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Adrénaline",
+      "subject_normalized": "adrénaline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Tienam",
+      "subject_normalized": "tienam",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "sérum physiologique",
+      "subject_normalized": "sérum physiologique",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "2L de voluven",
+      "object_normalized": "2l de voluven",
+      "object_type": "POSOLOGIE"
+    }
+  ]
+}

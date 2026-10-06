@@ -1,0 +1,65 @@
+{
+  "post_validator": "semantic_factual_post_validator",
+  "mode": "STRICT_BEFORE_AFTER_RELATION_INTEGRITY",
+  "summary": {
+    "documents_checked": 43,
+    "expected_logical_removals": 4,
+    "verified_operations": 4,
+    "operation_failures": 0,
+    "documents_with_expected_changes": 4,
+    "unexpected_non_relation_changes": 0,
+    "unexpected_relation_removals": 0,
+    "unexpected_relation_additions": 0,
+    "missing_documents_after": 0,
+    "extra_documents_after": 0,
+    "status": "PASS"
+  },
+  "missing_documents_after": [],
+  "extra_documents_after": [],
+  "verified_operations": [
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_key": [
+        "ID",
+        "R_V69K_00009"
+      ],
+      "expected_physical_removals": 1,
+      "actual_physical_removals": 1,
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_key": [
+        "ID",
+        "R_V69K_00022"
+      ],
+      "expected_physical_removals": 1,
+      "actual_physical_removals": 1,
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_key": [
+        "ID",
+        "R_V69K_00093"
+      ],
+      "expected_physical_removals": 1,
+      "actual_physical_removals": 1,
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "relation_key": [
+        "ID",
+        "P5_R001"
+      ],
+      "expected_physical_removals": 2,
+      "actual_physical_removals": 2,
+      "status": "PASS"
+    }
+  ],
+  "expected_removal_failures": [],
+  "unexpected_non_relation_changes": [],
+  "unexpected_relation_removals": [],
+  "unexpected_relation_additions": []
+}

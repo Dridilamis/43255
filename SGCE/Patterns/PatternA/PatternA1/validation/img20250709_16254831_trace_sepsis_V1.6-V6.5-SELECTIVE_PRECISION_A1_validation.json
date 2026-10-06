@@ -1,0 +1,683 @@
+{
+  "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 9,
+  "status_counts": {
+    "ALREADY_CORRECT": 6,
+    "AMBIGUOUS": 3
+  },
+  "results": [
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E011",
+        "type": "TRAITEMENT",
+        "name": "Paracétamol",
+        "preuve": "Paracétamol 500 mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Paracétamol 500 mg | Paracétamol | antalgique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E012"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E012",
+        "target_name": "500 mg",
+        "target_preuve": "Paracétamol 500 mg : 2-2-2",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E012",
+          "target_name": "500 mg",
+          "target_preuve": "Paracétamol 500 mg : 2-2-2",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E014",
+          "target_name": "50 µg",
+          "target_preuve": "Levothyrox 50 µg : 1-0-0",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E016",
+          "target_name": "100 mg",
+          "target_preuve": "Dantrium 100 mg : 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E013",
+        "type": "TRAITEMENT",
+        "name": "Levothyrox",
+        "preuve": "Levothyrox 50 µg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Levothyrox 50 µg | Levothyrox | autre",
+      "detected_components": {
+        "dose": [
+          "50 µg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E014"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E014",
+        "target_name": "50 µg",
+        "target_preuve": "Levothyrox 50 µg : 1-0-0",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E014",
+          "target_name": "50 µg",
+          "target_preuve": "Levothyrox 50 µg : 1-0-0",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E007",
+          "target_name": "62.5 µg",
+          "target_preuve": "augmentation du Levothyrox de 50 à 62.5 µg/j le 18/08",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E012",
+          "target_name": "500 mg",
+          "target_preuve": "Paracétamol 500 mg : 2-2-2",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E015",
+        "type": "TRAITEMENT",
+        "name": "Dantrium",
+        "preuve": "Dantrium 100 mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Dantrium 100 mg | Dantrium | autre",
+      "detected_components": {
+        "dose": [
+          "100 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E016",
+        "P1_E037"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E016",
+        "target_name": "100 mg",
+        "target_preuve": "Dantrium 100 mg : 1-1-1",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E016",
+          "target_name": "100 mg",
+          "target_preuve": "Dantrium 100 mg : 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E011",
+          "target_name": "1x3/j",
+          "target_preuve": "Dantrium 1x3/j",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.55,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E012",
+          "target_name": "500 mg",
+          "target_preuve": "Paracétamol 500 mg : 2-2-2",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E017",
+        "type": "TRAITEMENT",
+        "name": "Forlax",
+        "preuve": "Forlax 10 g",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Forlax 10 g | Forlax | autre",
+      "detected_components": {
+        "dose": [
+          "10 g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E018"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E018",
+        "target_name": "10 g",
+        "target_preuve": "Forlax 10 g : 2-2-0",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E018",
+          "target_name": "10 g",
+          "target_preuve": "Forlax 10 g : 2-2-0",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E012",
+          "target_name": "500 mg",
+          "target_preuve": "Paracétamol 500 mg : 2-2-2",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E014",
+          "target_name": "50 µg",
+          "target_preuve": "Levothyrox 50 µg : 1-0-0",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E019",
+        "type": "TRAITEMENT",
+        "name": "Acupan",
+        "preuve": "Acupan 20 mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Acupan 20 mg | Acupan | antalgique",
+      "detected_components": {
+        "dose": [
+          "20 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E020",
+        "P1_E038"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E020",
+        "target_name": "20 mg",
+        "target_preuve": "Acupan 20 mg : 1-1-1",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E020",
+          "target_name": "20 mg",
+          "target_preuve": "Acupan 20 mg : 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E012",
+          "target_name": "500 mg",
+          "target_preuve": "Paracétamol 500 mg : 2-2-2",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E014",
+          "target_name": "50 µg",
+          "target_preuve": "Levothyrox 50 µg : 1-0-0",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E023",
+        "type": "TRAITEMENT",
+        "name": "Dompéridone",
+        "preuve": "Dompéridone 10 mg",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Dompéridone 10 mg | Dompéridone | autre",
+      "detected_components": {
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E024",
+        "P1_E036"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E024",
+        "target_name": "10 mg",
+        "target_preuve": "Dompéridone 10 mg : 1-1-1",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E024",
+          "target_name": "10 mg",
+          "target_preuve": "Dompéridone 10 mg : 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E012",
+          "target_name": "500 mg",
+          "target_preuve": "Paracétamol 500 mg : 2-2-2",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E014",
+          "target_name": "50 µg",
+          "target_preuve": "Levothyrox 50 µg : 1-0-0",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E003",
+        "type": "TRAITEMENT",
+        "name": "G5 500 ml",
+        "preuve": "G5 500 ml",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "G5 500 ml | autre",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E004"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E004",
+          "target_name": "12h",
+          "target_preuve": "500 ml SC en 12h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E002",
+          "target_name": "2000 UI",
+          "target_preuve": "2000 UI /j au coucher",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "1-0-0",
+          "target_preuve": "1-0-0",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E019",
+        "type": "TRAITEMENT",
+        "name": "perfalgan",
+        "preuve": "perfalgan 1g IVL",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "perfalgan 1g IVL | perfalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E020"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E020",
+          "target_name": "1g",
+          "target_preuve": "1g",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E002",
+          "target_name": "2000 UI",
+          "target_preuve": "2000 UI /j au coucher",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E004",
+          "target_name": "12h",
+          "target_preuve": "500 ml SC en 12h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E021",
+        "type": "TRAITEMENT",
+        "name": "anexate",
+        "preuve": "anexate 0,2 mg x 4",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "anexate 0,2 mg x 4 | anexate | autre",
+      "detected_components": {
+        "dose": [
+          "0,2 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E022"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P2_E022",
+          "target_name": "0,2 mg",
+          "target_preuve": "0,2 mg x 4",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E002",
+          "target_name": "2000 UI",
+          "target_preuve": "2000 UI /j au coucher",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E004",
+          "target_name": "12h",
+          "target_preuve": "500 ml SC en 12h",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

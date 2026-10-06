@@ -1,0 +1,788 @@
+{
+  "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 10,
+  "status_counts": {
+    "ALREADY_CORRECT": 9,
+    "AMBIGUOUS": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E016",
+        "type": "TRAITEMENT",
+        "name": "TERCIAN",
+        "preuve": "TERCIAN 40 MG 10 gt 3*/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "TERCIAN 40 MG 10 gt 3*/j | TERCIAN | sedatif",
+      "detected_components": {
+        "frequency": [
+          "3*/j"
+        ],
+        "dose": [
+          "40 MG"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E017"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E017",
+        "target_name": "40 MG",
+        "target_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E017",
+          "target_name": "40 MG",
+          "target_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E019",
+          "target_name": "600 mg",
+          "target_preuve": "Diflu-k 600 mg 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E021",
+          "target_name": "500 mg",
+          "target_preuve": "Pyostacine 500 mg 1-0-1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E018",
+        "type": "TRAITEMENT",
+        "name": "Diflu-k",
+        "preuve": "Diflu-k 600 mg 1-1-1",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Diflu-k 600 mg 1-1-1 | Diflu-k | antibiotique",
+      "detected_components": {
+        "dose": [
+          "600 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E019",
+        "P1_E034"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E019",
+        "target_name": "600 mg",
+        "target_preuve": "Diflu-k 600 mg 1-1-1",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E019",
+          "target_name": "600 mg",
+          "target_preuve": "Diflu-k 600 mg 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E017",
+          "target_name": "40 MG",
+          "target_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E021",
+          "target_name": "500 mg",
+          "target_preuve": "Pyostacine 500 mg 1-0-1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E020",
+        "type": "TRAITEMENT",
+        "name": "Pyostacine",
+        "preuve": "Pyostacine 500 mg 1-0-1",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Pyostacine 500 mg 1-0-1 | Pyostacine | antibiotique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E021"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E021",
+        "target_name": "500 mg",
+        "target_preuve": "Pyostacine 500 mg 1-0-1",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E021",
+          "target_name": "500 mg",
+          "target_preuve": "Pyostacine 500 mg 1-0-1",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E017",
+          "target_name": "40 MG",
+          "target_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E019",
+          "target_name": "600 mg",
+          "target_preuve": "Diflu-k 600 mg 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E022",
+        "type": "TRAITEMENT",
+        "name": "Dafalgan",
+        "preuve": "Dafalgan 500 mg si douleur",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Dafalgan 500 mg si douleur | Dafalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P1_E021",
+          "target_name": "500 mg",
+          "target_preuve": "Pyostacine 500 mg 1-0-1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E017",
+          "target_name": "40 MG",
+          "target_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P1_E019",
+          "target_name": "600 mg",
+          "target_preuve": "Diflu-k 600 mg 1-1-1",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E023",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 2000UI 1 injection sc/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Lovenox 2000UI 1 injection sc/j | Lovenox | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "2000UI"
+        ],
+        "route": [
+          "sc"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P1_E024"
+      ],
+      "best_posology_match": {
+        "target_id": "P1_E024",
+        "target_name": "2000UI",
+        "target_preuve": "Lovenox 2000UI 1 injection sc/j",
+        "target_page": 1,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P1_E024",
+          "target_name": "2000UI",
+          "target_preuve": "Lovenox 2000UI 1 injection sc/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E026",
+          "target_name": "j en SC",
+          "target_preuve": "lovenox 0.2ml/j en SC",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.5,
+          "same_page": 0.0,
+          "proof_overlap": 0.25,
+          "final_score": 0.65,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E017",
+          "target_name": "40 MG",
+          "target_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E026",
+        "type": "TRAITEMENT",
+        "name": "lasilix",
+        "preuve": "diurétique (lasilix 40 mg)",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "diurétique (lasilix 40 mg) | lasilix | diuretique",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P4_E027"
+      ],
+      "best_posology_match": {
+        "target_id": "P4_E027",
+        "target_name": "40 mg",
+        "target_preuve": "lasilix 40 mg",
+        "target_page": 4,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P4_E027",
+          "target_name": "40 mg",
+          "target_preuve": "lasilix 40 mg",
+          "target_page": 4,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E017",
+          "target_name": "40 MG",
+          "target_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+          "target_page": 1,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.25,
+          "reliable": false
+        },
+        {
+          "target_id": "P4_E025",
+          "target_name": "2 mg",
+          "target_preuve": "Noradrénaline: 2 mg/h",
+          "target_page": 4,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E019",
+        "type": "TRAITEMENT",
+        "name": "fresubin",
+        "preuve": "fresubin 1000 ml/j (sonde gastrique)",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "fresubin 1000 ml/j (sonde gastrique) | fresubin | nutrition_enterale",
+      "detected_components": {
+        "dose": [
+          "1000 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E020"
+      ],
+      "best_posology_match": {
+        "target_id": "P6_E020",
+        "target_name": "fresubin 1000 ml/j (sonde gastrique)",
+        "target_preuve": "fresubin 1000 ml/j (sonde gastrique)",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E020",
+          "target_name": "fresubin 1000 ml/j (sonde gastrique)",
+          "target_preuve": "fresubin 1000 ml/j (sonde gastrique)",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E044",
+          "target_name": "1000 ml/jour",
+          "target_preuve": "1000 ml/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E013",
+          "target_name": "15jrs",
+          "target_preuve": "durée de l'antibiothérapie: 15jrs",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E021",
+        "type": "TRAITEMENT",
+        "name": "eau",
+        "preuve": "eau 500 ml/j",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "eau 500 ml/j | eau | nutrition_enterale",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E022"
+      ],
+      "best_posology_match": {
+        "target_id": "P6_E022",
+        "target_name": "eau 500 ml/j",
+        "target_preuve": "eau 500 ml/j",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E022",
+          "target_name": "eau 500 ml/j",
+          "target_preuve": "eau 500 ml/j",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E043",
+          "target_name": "500 ml/jour",
+          "target_preuve": "500 ml/jour",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E013",
+          "target_name": "15jrs",
+          "target_preuve": "durée de l'antibiothérapie: 15jrs",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E023",
+        "type": "TRAITEMENT",
+        "name": "atarax",
+        "preuve": "atarax 25 mg/ le soir si besoin",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "atarax 25 mg/ le soir si besoin | atarax | autre",
+      "detected_components": {
+        "dose": [
+          "25 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E024"
+      ],
+      "best_posology_match": {
+        "target_id": "P6_E024",
+        "target_name": "25 mg",
+        "target_preuve": "atarax 25 mg/ le soir si besoin",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E024",
+          "target_name": "25 mg",
+          "target_preuve": "atarax 25 mg/ le soir si besoin",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E013",
+          "target_name": "15jrs",
+          "target_preuve": "durée de l'antibiothérapie: 15jrs",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E020",
+          "target_name": "fresubin 1000 ml/j (sonde gastrique)",
+          "target_preuve": "fresubin 1000 ml/j (sonde gastrique)",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P6_E025",
+        "type": "TRAITEMENT",
+        "name": "lovenox",
+        "preuve": "lovenox 0.2ml/j en SC",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "lovenox 0.2ml/j en SC | lovenox | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "0.2ml"
+        ],
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E026"
+      ],
+      "best_posology_match": {
+        "target_id": "P6_E026",
+        "target_name": "j en SC",
+        "target_preuve": "lovenox 0.2ml/j en SC",
+        "target_page": 6,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P6_E026",
+          "target_name": "j en SC",
+          "target_preuve": "lovenox 0.2ml/j en SC",
+          "target_page": 6,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P1_E024",
+          "target_name": "2000UI",
+          "target_preuve": "Lovenox 2000UI 1 injection sc/j",
+          "target_page": 1,
+          "medication_anchor": 1.0,
+          "component_overlap": 0.5,
+          "same_page": 0.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.6583,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E013",
+          "target_name": "15jrs",
+          "target_preuve": "durée de l'antibiothérapie: 15jrs",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

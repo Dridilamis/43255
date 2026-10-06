@@ -1,0 +1,3133 @@
+{
+  "adjudicator": "multiagent_adjudicator",
+  "mode": "THREE_VOTE_DOCUMENT_ONTOLOGY_CLINICAL",
+  "clinical_context_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_d_corrected",
+  "policy": {
+    "votes": [
+      "DOCUMENT_EVIDENCE",
+      "ONTOLOGY_STRUCTURE",
+      "CLINICAL_COHERENCE"
+    ],
+    "resolution_rule": "3/3 SUPPORT, or >=2 SUPPORT with documentary support, mean score >=0.72, and no veto"
+  },
+  "summary": {
+    "review_cases_received": 71,
+    "resolved": 46,
+    "unresolved": 25,
+    "status_counts": {
+      "UNRESOLVED": 25,
+      "RESOLVED_CLASSIFICATION_ONLY": 46
+    },
+    "action_counts": {
+      "NONE": 71
+    },
+    "by_family": {
+      "B": 23,
+      "C": 2,
+      "D": 44,
+      "PATIENT_REFERENCE": 2
+    },
+    "resolved_by_family": {
+      "B": 5,
+      "D": 41
+    }
+  },
+  "cases": [
+    {
+      "family": "B",
+      "candidate_id": "BB1_000003",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000004",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000005",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000006",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000007",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "REFINE_ENTITY_SPAN",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.75,
+          "hard_veto": false,
+          "reason": "Le type attendu est déjà déterminé par le schéma B.",
+          "proposal": {
+            "action": "REFINE_ENTITY_SPAN",
+            "expected_type": "LABEL_NOSOLOGIQUE"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.72,
+          "hard_veto": false,
+          "reason": "La proposition est cohérente avec le passage clinique source.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000008",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000009",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000010",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "REFINE_ENTITY_SPAN",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.75,
+          "hard_veto": false,
+          "reason": "Le type attendu est déjà déterminé par le schéma B.",
+          "proposal": {
+            "action": "REFINE_ENTITY_SPAN",
+            "expected_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.72,
+          "hard_veto": false,
+          "reason": "La proposition est cohérente avec le passage clinique source.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000011",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000012",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000013",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000014",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000015",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000016",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "REFINE_ENTITY_SPAN",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.75,
+          "hard_veto": false,
+          "reason": "Le type attendu est déjà déterminé par le schéma B.",
+          "proposal": {
+            "action": "REFINE_ENTITY_SPAN",
+            "expected_type": "TRAITEMENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.72,
+          "hard_veto": false,
+          "reason": "La proposition est cohérente avec le passage clinique source.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000017",
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000018",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "REFINE_ENTITY_SPAN",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.75,
+          "hard_veto": false,
+          "reason": "Le type attendu est déjà déterminé par le schéma B.",
+          "proposal": {
+            "action": "REFINE_ENTITY_SPAN",
+            "expected_type": "TRAITEMENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.72,
+          "hard_veto": false,
+          "reason": "La proposition est cohérente avec le passage clinique source.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000020",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000021",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "REFINE_ENTITY_SPAN",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.75,
+          "hard_veto": false,
+          "reason": "Le type attendu est déjà déterminé par le schéma B.",
+          "proposal": {
+            "action": "REFINE_ENTITY_SPAN",
+            "expected_type": "FOYER_INFECTIEUX"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.72,
+          "hard_veto": false,
+          "reason": "La proposition est cohérente avec le passage clinique source.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000022",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000023",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000024",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000025",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000026",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 0.85,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "VETO",
+          "score": 0.0,
+          "hard_veto": true,
+          "reason": "L'entité Pattern C possède encore des relations actives.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.7,
+          "hard_veto": false,
+          "reason": "Le passage décrit un contexte clinique patient.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 1,
+      "mean_support_score": 0.775,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 0.85,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "VETO",
+          "score": 0.0,
+          "hard_veto": true,
+          "reason": "L'entité Pattern C possède encore des relations actives.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.7,
+          "hard_veto": false,
+          "reason": "Le passage décrit un contexte clinique patient.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 1,
+      "mean_support_score": 0.775,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 0.9,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P6_E028",
+            "new_type": "DONNEE_PATIENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000002",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 0.9,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E029",
+            "new_type": "DONNEE_PATIENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000003",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 0.9,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.9,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000004",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E050",
+            "new_type": "DONNEE_PATIENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000005",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "documentary_support": true,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000006",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E033",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000007",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P6_E038",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000009",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E034",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000011",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P1_E016",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000014",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P4_E034",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000015",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P4_E049",
+            "new_type": "EVOLUTION_PRONOSTIC"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000016",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P4_E049",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000017",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E061",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000018",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E061",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000019",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E017",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000020",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E033",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000022",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 0.9,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P6_E031",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000027",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E054",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000034",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E055",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000036",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P6_E042",
+            "new_type": "DEFAILLANCE_ORGANE"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000037",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P6_E002",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000043",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E035",
+            "new_type": "EVOLUTION_PRONOSTIC"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000045",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E061",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000061",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P1_E024",
+            "new_type": "LABEL_NOSOLOGIQUE"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000072",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E004",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000073",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E004",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000074",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E052",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000076",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E032",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000077",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E052",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000078",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E032",
+            "new_type": "POSOLOGIE"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000079",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E052",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000080",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 0.9,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E008",
+            "new_type": "TRAITEMENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000082",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P1_E028",
+            "new_type": "EVOLUTION_PRONOSTIC"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000086",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P6_E036",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000087",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "VETO",
+          "score": 0.0,
+          "hard_veto": true,
+          "reason": "La preuve proposée n'est pas retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P5_E017",
+            "new_type": "COMORBIDITE_ANTECEDENT"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 1,
+      "mean_support_score": 0.86,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000091",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P1_E027",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000098",
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P6_E014",
+            "new_type": "FOYER_INFECTIEUX"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000099",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P4_E016",
+            "new_type": "MICRO_ORGANISME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000101",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P4_E041",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000102",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P3_E040",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000112",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P3_E035",
+            "new_type": "LABEL_NOSOLOGIQUE"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000113",
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P2_E038",
+            "new_type": "SERVICE_MEDICAL"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000115",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P4_E030",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000120",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "SUPPORT",
+          "score": 1.0,
+          "hard_veto": false,
+          "reason": "La preuve clinique est explicitement retrouvée dans le texte source.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "SUPPORT",
+          "score": 0.86,
+          "hard_veto": false,
+          "reason": "Le type courant viole encore le type attendu identifié par Pattern D.",
+          "proposal": {
+            "action": "RETYPE_ENTITY",
+            "entity_id": "P1_E027",
+            "new_type": "SYMPTOME"
+          }
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "Pas d'indice clinique lexical suffisamment discriminant.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus multi-agent suffisant."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Classification patient/référence encore ambiguë.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "SUPPORT",
+          "score": 0.9,
+          "hard_veto": false,
+          "reason": "Le contexte local contient plusieurs marqueurs patient sans marqueur référentiel.",
+          "proposal": {
+            "action": "KEEP"
+          }
+        }
+      ],
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.9,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Classification patient/référence encore ambiguë.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.45,
+          "hard_veto": false,
+          "reason": "Les indices patient/référence restent mixtes.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    }
+  ]
+}

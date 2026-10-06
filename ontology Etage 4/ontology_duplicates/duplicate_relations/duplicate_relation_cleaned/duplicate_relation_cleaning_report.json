@@ -1,0 +1,52 @@
+{
+  "cleaner": "duplicate_relation_safe_cleaner",
+  "source_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\ontology Etage 4\\relation_validation\\relation_validation_safe_corrected",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\ontology Etage 4\\ontology_duplicates\\duplicate_relations\\duplicate_relation_cleaned",
+  "summary": {
+    "documents_copied": 43,
+    "candidate_groups": 3,
+    "relations_removed": 3,
+    "documents_modified": 3,
+    "errors": 0
+  },
+  "modified_documents": [
+    "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "DR_000001",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "keep_relation_id": "R_V69K_00043",
+      "removed_relation_ids": [
+        "R_V69K_00062"
+      ],
+      "removed_count": 1,
+      "status": "APPLIED",
+      "reason": "DUPLICATES_REMOVED"
+    },
+    {
+      "candidate_id": "DR_000002",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "keep_relation_id": "R_V69K_00049",
+      "removed_relation_ids": [
+        "R_V69K_00050"
+      ],
+      "removed_count": 1,
+      "status": "APPLIED",
+      "reason": "DUPLICATES_REMOVED"
+    },
+    {
+      "candidate_id": "DR_000003",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "keep_relation_id": "R_V69K_00003",
+      "removed_relation_ids": [
+        "R_V69K_00010"
+      ],
+      "removed_count": 1,
+      "status": "APPLIED",
+      "reason": "DUPLICATES_REMOVED"
+    }
+  ]
+}

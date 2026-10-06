@@ -1,0 +1,76 @@
+{
+  "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 27,
+  "number_candidates": 3,
+  "signal_counts": {
+    "WEAK": 3
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E013",
+        "type": "TRAITEMENT",
+        "name": "Noradrénaline",
+        "preuve": "Noradrénaline 1mg/h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Noradrénaline 1mg/h | Noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E015",
+        "type": "TRAITEMENT",
+        "name": "Hypnovel",
+        "preuve": "Hypnovel 8 mg/h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Hypnovel 8 mg/h | Hypnovel | sedatif",
+      "detected_components": {
+        "rate": [
+          "8 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E005",
+        "type": "TRAITEMENT",
+        "name": "Noradrénaline",
+        "preuve": "Noradrénaline 1mg/heure",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Noradrénaline 1mg/heure | Noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1mg/heure"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

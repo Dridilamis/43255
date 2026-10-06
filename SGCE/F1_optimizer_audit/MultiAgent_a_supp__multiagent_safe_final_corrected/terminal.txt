@@ -1,0 +1,262 @@
+C:\Users\Lamis\anaconda3\Lib\site-packages\pandas\core\computation\expressions.py:23: UserWarning: Pandas requires version '2.10.2' or newer of 'numexpr' (version '2.8.7' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+C:\Users\Lamis\anaconda3\Lib\site-packages\pandas\core\arrays\masked.py:56: UserWarning: Pandas requires version '1.4.2' or newer of 'bottleneck' (version '1.3.7' currently installed).
+  from pandas.core import (
+
+=== CONFIGURATION EVALUATION RELATIONS V6.9k RECALL-BOOST CONTROLLED ===
+GOLD_DIR = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\gold_canonical_par_documentF
+PRED_DIR = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent a supp\multiagent_safe_final_corrected
+OUTPUT_DIR = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\F1_optimizer_audit\MultiAgent_a_supp__multiagent_safe_final_corrected
+RELAXED_THRESHOLD = 0.8
+====================================================
+
+
+Documents Gold : 43
+Documents MLLM : 44
+Documents appariés : 43
+
+🔎 img20250709_16142502 : Gold relations chargées=116 | Pred relations chargées=100
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> hyponatrémie
+✅ img20250709_16142502 | Gold=116 | Pred=100 | Exact=56 | Boundary=28 | Relaxed=8 | WrongType=0 | FP=8 | FN=24
+
+🔎 img20250709_16154161 : Gold relations chargées=120 | Pred relations chargées=117
+   Exemple GOLD : patient --presente_dysfonction_organe--> détresse respiratoire aiguë
+   Exemple PRED : Patient --presente_dysfonction_organe--> Détresse respiratoire
+✅ img20250709_16154161 | Gold=120 | Pred=117 | Exact=87 | Boundary=21 | Relaxed=4 | WrongType=0 | FP=5 | FN=8
+
+🔎 img20250709_16164845 : Gold relations chargées=118 | Pred relations chargées=114
+   Exemple GOLD : patient --presente_dysfonction_organe--> détresse respiratoire aigue
+   Exemple PRED : Patient --presente_symptome--> encombrement
+✅ img20250709_16164845 | Gold=118 | Pred=114 | Exact=82 | Boundary=23 | Relaxed=6 | WrongType=0 | FP=3 | FN=7
+
+🔎 img20250709_16183704 : Gold relations chargées=103 | Pred relations chargées=93
+   Exemple GOLD : réanimation --service_medical_accueille--> patient de 57 ans
+   Exemple PRED : Patient --presente_symptome--> désaturation nocturne
+✅ img20250709_16183704 | Gold=103 | Pred=93 | Exact=43 | Boundary=45 | Relaxed=4 | WrongType=0 | FP=1 | FN=11
+
+🔎 img20250709_16190789 : Gold relations chargées=132 | Pred relations chargées=108
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> Polyradiculonévrite aiguë
+✅ img20250709_16190789 | Gold=132 | Pred=108 | Exact=60 | Boundary=36 | Relaxed=4 | WrongType=0 | FP=8 | FN=32
+
+🔎 img20250709_16193836 : Gold relations chargées=114 | Pred relations chargées=55
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> Choc septique
+✅ img20250709_16193836 | Gold=114 | Pred=55 | Exact=33 | Boundary=9 | Relaxed=0 | WrongType=0 | FP=13 | FN=72
+
+🔎 img20250709_16201504 : Gold relations chargées=126 | Pred relations chargées=146
+   Exemple GOLD : patient --a_pour_label_nosologique--> pneumopathie d’inhalation
+   Exemple PRED : Patient --a_pour_label_nosologique--> pneumopathie d'inhalation
+✅ img20250709_16201504 | Gold=126 | Pred=146 | Exact=67 | Boundary=38 | Relaxed=3 | WrongType=1 | FP=37 | FN=17
+
+🔎 img20250709_16205810 : Gold relations chargées=88 | Pred relations chargées=81
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --presente_dysfonction_organe--> Detresse respiratoire aigue
+✅ img20250709_16205810 | Gold=88 | Pred=81 | Exact=53 | Boundary=10 | Relaxed=4 | WrongType=0 | FP=14 | FN=21
+
+🔎 img20250709_16223922 : Gold relations chargées=142 | Pred relations chargées=90
+   Exemple GOLD : réanimation --service_medical_accueille--> patiente
+   Exemple PRED : Patient --presente_suspicion_infection--> point de départ indéterminé
+✅ img20250709_16223922 | Gold=142 | Pred=90 | Exact=37 | Boundary=27 | Relaxed=6 | WrongType=0 | FP=20 | FN=72
+
+🔎 img20250709_16225557 : Gold relations chargées=31 | Pred relations chargées=22
+   Exemple GOLD : réanimation --service_medical_accueille--> patient : der[?] seb[?]
+   Exemple PRED : Patient --a_pour_label_nosologique--> choc septique
+✅ img20250709_16225557 | Gold=31 | Pred=22 | Exact=8 | Boundary=8 | Relaxed=2 | WrongType=0 | FP=4 | FN=13
+
+🔎 img20250709_16233563 : Gold relations chargées=136 | Pred relations chargées=109
+   Exemple GOLD : réanimation --service_medical_accueille--> le patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> Syndrome hémolytique et urémique
+✅ img20250709_16233563 | Gold=136 | Pred=109 | Exact=45 | Boundary=33 | Relaxed=10 | WrongType=0 | FP=21 | FN=48
+
+🔎 img20250709_16254831 : Gold relations chargées=115 | Pred relations chargées=93
+   Exemple GOLD : réanimation --service_medical_accueille--> patiente
+   Exemple PRED : Patient --presente_suspicion_infection--> point de départ indéterminé
+✅ img20250709_16254831 | Gold=115 | Pred=93 | Exact=40 | Boundary=19 | Relaxed=13 | WrongType=0 | FP=21 | FN=43
+
+🔎 img20250709_16270030 : Gold relations chargées=140 | Pred relations chargées=91
+   Exemple GOLD : réanimation --service_medical_accueille--> patient : pir yvo
+   Exemple PRED : Patient --a_pour_label_nosologique--> choc septique
+✅ img20250709_16270030 | Gold=140 | Pred=91 | Exact=41 | Boundary=35 | Relaxed=4 | WrongType=0 | FP=11 | FN=60
+
+🔎 img20250709_16271908 : Gold relations chargées=114 | Pred relations chargées=76
+   Exemple GOLD : patient : chi [?] fra [?] --a_pour_label_nosologique--> choc septique
+   Exemple PRED : Patient --a_pour_label_nosologique--> choc septique
+✅ img20250709_16271908 | Gold=114 | Pred=76 | Exact=14 | Boundary=28 | Relaxed=0 | WrongType=0 | FP=34 | FN=72
+
+🔎 img20250709_16273897 : Gold relations chargées=89 | Pred relations chargées=77
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> Sepsis sévère
+✅ img20250709_16273897 | Gold=89 | Pred=77 | Exact=27 | Boundary=33 | Relaxed=2 | WrongType=0 | FP=15 | FN=27
+
+🔎 img20250709_16281006 : Gold relations chargées=150 | Pred relations chargées=102
+   Exemple GOLD : patiente --a_pour_label_nosologique--> acidose métabolique sévère
+   Exemple PRED : Patient --a_pour_label_nosologique--> Acidose métabolique sévère
+✅ img20250709_16281006 | Gold=150 | Pred=102 | Exact=22 | Boundary=34 | Relaxed=10 | WrongType=0 | FP=36 | FN=84
+
+🔎 img20250709_16283177 : Gold relations chargées=175 | Pred relations chargées=144
+   Exemple GOLD : réanimation --service_medical_accueille--> patient : que [?] phi [?]
+   Exemple PRED : Patient --a_pour_label_nosologique--> sepsis sévère
+✅ img20250709_16283177 | Gold=175 | Pred=144 | Exact=83 | Boundary=40 | Relaxed=2 | WrongType=0 | FP=19 | FN=50
+
+🔎 img20250709_16295211 : Gold relations chargées=168 | Pred relations chargées=142
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --presente_suspicion_infection--> PTG gauche infectée
+✅ img20250709_16295211 | Gold=168 | Pred=142 | Exact=60 | Boundary=23 | Relaxed=2 | WrongType=0 | FP=57 | FN=83
+
+🔎 img20250709_16301193 : Gold relations chargées=114 | Pred relations chargées=81
+   Exemple GOLD : réanimation --service_medical_accueille--> patiente
+   Exemple PRED : Patient --a_pour_label_nosologique--> Choc septique
+✅ img20250709_16301193 | Gold=114 | Pred=81 | Exact=41 | Boundary=14 | Relaxed=10 | WrongType=0 | FP=16 | FN=49
+
+🔎 img20250709_16304515 : Gold relations chargées=107 | Pred relations chargées=67
+   Exemple GOLD : patient de 64 ans --a_pour_label_nosologique--> pneumopathie aiguë communautaire grave
+   Exemple PRED : Patient --a_pour_label_nosologique--> sepsis sévère
+✅ img20250709_16304515 | Gold=107 | Pred=67 | Exact=25 | Boundary=33 | Relaxed=3 | WrongType=0 | FP=6 | FN=46
+
+🔎 img20250709_16313543 : Gold relations chargées=143 | Pred relations chargées=132
+   Exemple GOLD : réanimation --service_medical_accueille--> patient : sor [?] ger [?]
+   Exemple PRED : Patient : SOR [?] GER [?] --a_pour_label_nosologique--> tuberculose pulmonaire
+✅ img20250709_16313543 | Gold=143 | Pred=132 | Exact=62 | Boundary=34 | Relaxed=1 | WrongType=0 | FP=35 | FN=46
+
+🔎 img20250709_16321359 : Gold relations chargées=106 | Pred relations chargées=75
+   Exemple GOLD : réanimation --service_medical_accueille--> patiente
+   Exemple PRED : réanimation --service_medical_accueille--> Patient
+✅ img20250709_16321359 | Gold=106 | Pred=75 | Exact=38 | Boundary=7 | Relaxed=17 | WrongType=0 | FP=13 | FN=44
+
+🔎 img20250709_16331952 : Gold relations chargées=229 | Pred relations chargées=168
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> choc septique
+✅ img20250709_16331952 | Gold=229 | Pred=168 | Exact=83 | Boundary=48 | Relaxed=4 | WrongType=0 | FP=33 | FN=94
+
+🔎 img20250709_16340712 : Gold relations chargées=73 | Pred relations chargées=88
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --presente_symptome--> douleur thoracique gauche
+✅ img20250709_16340712 | Gold=73 | Pred=88 | Exact=39 | Boundary=15 | Relaxed=1 | WrongType=0 | FP=33 | FN=18
+
+🔎 img20250709_16344492 : Gold relations chargées=24 | Pred relations chargées=22
+   Exemple GOLD : augmentin --traitement_administre_a--> patient
+   Exemple PRED : Modiodal --traitement_a_pour_posologie--> 100 mg
+✅ img20250709_16344492 | Gold=24 | Pred=22 | Exact=10 | Boundary=4 | Relaxed=0 | WrongType=0 | FP=8 | FN=10
+
+🔎 img20250709_16351550 : Gold relations chargées=69 | Pred relations chargées=79
+   Exemple GOLD : réanimation --service_medical_accueille--> patient de 64 ans
+   Exemple PRED : Patient --a_pour_label_nosologique--> état de mal épileptique
+✅ img20250709_16351550 | Gold=69 | Pred=79 | Exact=27 | Boundary=29 | Relaxed=2 | WrongType=0 | FP=21 | FN=11
+
+🔎 img20250709_16360688 : Gold relations chargées=120 | Pred relations chargées=124
+   Exemple GOLD : réanimation --service_medical_accueille--> patient de 66 ans
+   Exemple PRED : Patient --a_pour_label_nosologique--> choc septique
+✅ img20250709_16360688 | Gold=120 | Pred=124 | Exact=37 | Boundary=52 | Relaxed=1 | WrongType=0 | FP=34 | FN=30
+
+🔎 img20250709_16374548 : Gold relations chargées=157 | Pred relations chargées=119
+   Exemple GOLD : patient --presente_symptome--> encombrement bronchique
+   Exemple PRED : Patient --presente_symptome--> Encombrement bronchique
+✅ img20250709_16374548 | Gold=157 | Pred=119 | Exact=49 | Boundary=37 | Relaxed=0 | WrongType=0 | FP=33 | FN=71
+
+🔎 img20250709_16381567 : Gold relations chargées=211 | Pred relations chargées=132
+   Exemple GOLD : 57 ans --presente_dysfonction_organe--> détresse respiratoire aiguë
+   Exemple PRED : Patient --presente_dysfonction_organe--> Détresse respiratoire aiguë
+✅ img20250709_16381567 | Gold=211 | Pred=132 | Exact=76 | Boundary=30 | Relaxed=2 | WrongType=0 | FP=24 | FN=103
+
+🔎 img20250709_16393818 : Gold relations chargées=121 | Pred relations chargées=141
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> broncho-pneumopathie aiguë
+✅ img20250709_16393818 | Gold=121 | Pred=141 | Exact=78 | Boundary=16 | Relaxed=2 | WrongType=0 | FP=45 | FN=25
+
+🔎 img20250709_16395936 : Gold relations chargées=121 | Pred relations chargées=99
+   Exemple GOLD : patient --presente_suspicion_infection--> escarres complexes surinfectées
+   Exemple PRED : réanimation --service_medical_accueille--> Patient
+✅ img20250709_16395936 | Gold=121 | Pred=99 | Exact=39 | Boundary=14 | Relaxed=5 | WrongType=0 | FP=41 | FN=63
+
+🔎 img20250709_16414914 : Gold relations chargées=76 | Pred relations chargées=76
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --presente_symptome--> coma
+✅ img20250709_16414914 | Gold=76 | Pred=76 | Exact=53 | Boundary=6 | Relaxed=4 | WrongType=0 | FP=13 | FN=13
+
+🔎 img20250709_16510509 : Gold relations chargées=89 | Pred relations chargées=100
+   Exemple GOLD : crestor --traitement_a_pour_posologie--> 5 mg (1/j)
+   Exemple PRED : Patient : HOR [?] CLA [?] --presente_suspicion_infection--> Erysipèle du Mbre Inf. Droit
+✅ img20250709_16510509 | Gold=89 | Pred=100 | Exact=42 | Boundary=26 | Relaxed=2 | WrongType=0 | FP=30 | FN=19
+
+🔎 img20250709_16520260 : Gold relations chargées=155 | Pred relations chargées=100
+   Exemple GOLD : patiente de 33 ans --a_pour_label_nosologique--> choc septique
+   Exemple PRED : Patient --a_pour_label_nosologique--> choc septique
+✅ img20250709_16520260 | Gold=155 | Pred=100 | Exact=45 | Boundary=18 | Relaxed=0 | WrongType=1 | FP=36 | FN=91
+
+🔎 img20250709_16523752 : Gold relations chargées=140 | Pred relations chargées=77
+   Exemple GOLD : tevagastrim g-csf --traitement_a_pour_posologie--> 1-0-0
+   Exemple PRED : patient --presente_symptome--> Diarrhée aqueuse profuse
+✅ img20250709_16523752 | Gold=140 | Pred=77 | Exact=25 | Boundary=23 | Relaxed=2 | WrongType=0 | FP=27 | FN=90
+
+🔎 img20250709_16531341 : Gold relations chargées=90 | Pred relations chargées=133
+   Exemple GOLD : patiente --a_pour_label_nosologique--> hémorragie digestive haute sur rupture de varice oesophagienne de grade 2
+   Exemple PRED : Patient --a_pour_label_nosologique--> cirrhose post éthylique
+✅ img20250709_16531341 | Gold=90 | Pred=133 | Exact=33 | Boundary=32 | Relaxed=10 | WrongType=0 | FP=58 | FN=15
+
+🔎 img20250709_16545673 : Gold relations chargées=68 | Pred relations chargées=112
+   Exemple GOLD : patient --a_pour_label_nosologique--> suspicion de tuberculose pulmonaire
+   Exemple PRED : réanimation --service_medical_accueille--> Patient
+✅ img20250709_16545673 | Gold=68 | Pred=112 | Exact=36 | Boundary=10 | Relaxed=7 | WrongType=0 | FP=59 | FN=15
+
+🔎 img20250709_16553580 : Gold relations chargées=33 | Pred relations chargées=74
+   Exemple GOLD : patiente --presente_symptome--> troubles de déglutition
+   Exemple PRED : cortancyl --traitement_administre_a--> Patient
+✅ img20250709_16553580 | Gold=33 | Pred=74 | Exact=14 | Boundary=4 | Relaxed=11 | WrongType=0 | FP=45 | FN=4
+
+🔎 img20250709_16560274 : Gold relations chargées=100 | Pred relations chargées=128
+   Exemple GOLD : réanimation --service_medical_accueille--> patiente
+   Exemple PRED : Patient --presente_dysfonction_organe--> Détresse respiratoire aiguë
+✅ img20250709_16560274 | Gold=100 | Pred=128 | Exact=53 | Boundary=17 | Relaxed=3 | WrongType=0 | FP=55 | FN=27
+
+🔎 img20250709_16562087 : Gold relations chargées=55 | Pred relations chargées=29
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --presente_symptome--> troubles de la déglutition
+✅ img20250709_16562087 | Gold=55 | Pred=29 | Exact=19 | Boundary=1 | Relaxed=4 | WrongType=0 | FP=5 | FN=31
+
+🔎 img20250709_16573733 : Gold relations chargées=112 | Pred relations chargées=109
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --presente_suspicion_infection--> cellulite extensive
+✅ img20250709_16573733 | Gold=112 | Pred=109 | Exact=62 | Boundary=12 | Relaxed=0 | WrongType=0 | FP=35 | FN=38
+
+🔎 img20250709_16583921 : Gold relations chargées=111 | Pred relations chargées=98
+   Exemple GOLD : réanimation --service_medical_accueille--> patient
+   Exemple PRED : Patient --a_pour_label_nosologique--> état de mal épileptique
+✅ img20250709_16583921 | Gold=111 | Pred=98 | Exact=54 | Boundary=11 | Relaxed=4 | WrongType=0 | FP=29 | FN=42
+
+🔎 img20250709_17005010 : Gold relations chargées=84 | Pred relations chargées=75
+   Exemple GOLD : patient --a_pour_label_nosologique--> gangrène gazeuse
+   Exemple PRED : Patient --a_pour_label_nosologique--> tumeur sigmoidienne perforée
+✅ img20250709_17005010 | Gold=84 | Pred=75 | Exact=35 | Boundary=7 | Relaxed=10 | WrongType=0 | FP=23 | FN=32
+
+============================================================
+ÉVALUATION DES RELATIONS TERMINÉE
+============================================================
+Documents évalués      : 43
+TP exact                : 1933
+TP boundary             : 990
+TP relaxed              : 189
+Wrong relation type     : 2
+FP restants             : 1084
+FN restants             : 1771
+
+--- STRICT ---
+Micro Precision : 0.4605
+Micro Recall    : 0.3957
+Micro F1        : 0.4256
+Macro F1 docs   : 0.4219
+
+--- BOUNDARY RELAXED ---
+Micro Precision : 0.6963
+Micro Recall    : 0.5984
+Micro F1        : 0.6436
+Macro F1 docs   : 0.6350
+
+--- RELAXED ---
+Micro Precision : 0.7413
+Micro Recall    : 0.6371
+Micro F1        : 0.6852
+Macro F1 docs   : 0.6821
+
+Résultats relations V6.9k RECALL-BOOST CONTROLLED : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\F1_optimizer_audit\MultiAgent_a_supp__multiagent_safe_final_corrected

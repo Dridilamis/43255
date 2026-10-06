@@ -1,0 +1,3192 @@
+{
+  "adjudicator": "multiagent_adjudicator",
+  "mode": "THREE_VOTE_DOCUMENT_ONTOLOGY_CLINICAL",
+  "clinical_context_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\corrected",
+  "policy": {
+    "votes": [
+      "DOCUMENT_EVIDENCE",
+      "ONTOLOGY_STRUCTURE",
+      "CLINICAL_COHERENCE"
+    ],
+    "resolution_rule": "3/3 SUPPORT, or >=2 SUPPORT with documentary support, mean score >=0.72, and no veto"
+  },
+  "summary": {
+    "review_cases_received": 72,
+    "resolved": 0,
+    "unresolved": 72,
+    "status_counts": {
+      "UNRESOLVED": 72
+    },
+    "action_counts": {
+      "NONE": 72
+    },
+    "by_family": {
+      "B": 21,
+      "C": 5,
+      "D": 41,
+      "PATIENT_REFERENCE": 5
+    },
+    "resolved_by_family": {},
+    "specialized_accepts_injected": 6
+  },
+  "cases": [
+    {
+      "family": "B",
+      "candidate_id": "BB1_000003",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000005",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000006",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000008",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000009",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000010",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000012",
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000014",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000015",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000016",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000002",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000003",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000004",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000005",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000006",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000007",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000008",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000009",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000010",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "ORB_OR_RES_000011",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Aucune action structurelle B suffisamment explicite.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La cohérence clinique B ne peut pas être tranchée.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.2,
+          "hard_veto": false,
+          "reason": "Entité Pattern C introuvable dans le graphe courant.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.2,
+          "hard_veto": false,
+          "reason": "Entité Pattern C introuvable dans le graphe courant.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.2,
+          "hard_veto": false,
+          "reason": "Entité Pattern C introuvable dans le graphe courant.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000657",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.2,
+          "hard_veto": false,
+          "reason": "Entité Pattern C introuvable dans le graphe courant.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.2,
+          "hard_veto": false,
+          "reason": "Entité Pattern C introuvable dans le graphe courant.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000001",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000002",
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000003",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000004",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000005",
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000006",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000007",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000008",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000009",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000010",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000011",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000012",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000013",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000014",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000015",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000016",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000017",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000018",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000019",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000020",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000021",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000022",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000023",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000024",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000025",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000026",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000027",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000028",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000029",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000030",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000031",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000032",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000033",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000034",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000035",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000036",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000037",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000038",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000040",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000041",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "D",
+      "candidate_id": "RR_000043",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.35,
+          "hard_veto": false,
+          "reason": "La structure ne permet pas une action D unique.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Classification patient/référence encore ambiguë.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Classification patient/référence encore ambiguë.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Classification patient/référence encore ambiguë.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000657",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Classification patient/référence encore ambiguë.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "specialized_status": "REVIEW",
+      "specialized_action": "NONE",
+      "votes": [
+        {
+          "agent": "DOCUMENT_EVIDENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Preuve ou contexte textuel absent.",
+          "proposal": null
+        },
+        {
+          "agent": "ONTOLOGY_STRUCTURE",
+          "verdict": "ABSTAIN",
+          "score": 0.3,
+          "hard_veto": false,
+          "reason": "Classification patient/référence encore ambiguë.",
+          "proposal": null
+        },
+        {
+          "agent": "CLINICAL_COHERENCE",
+          "verdict": "ABSTAIN",
+          "score": 0.0,
+          "hard_veto": false,
+          "reason": "Contexte clinique textuel absent.",
+          "proposal": null
+        }
+      ],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "documentary_support": false,
+      "adjudication_status": "UNRESOLVED",
+      "adjudication_action": "NONE",
+      "proposed_correction": null,
+      "reason": "Consensus insuffisant ou présence d'un veto."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "votes": [],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.85,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_SPECIALIZED_ACCEPT",
+      "adjudication_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_correction": {
+        "missing_endpoint": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Un scanner",
+            "matched_patterns": [
+              "\\bscanner\\b"
+            ]
+          }
+        ],
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "entity_type": "IMAGERIE_PROCEDURE",
+        "entity_text": "Un scanner",
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_foyer",
+        "role": "SOURCE"
+      },
+      "reason": "Validated specialized ACCEPT; impact validation mandatory."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000002",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "votes": [],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.85,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_SPECIALIZED_ACCEPT",
+      "adjudication_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_correction": {
+        "missing_endpoint": "P2_E044",
+        "expected_type": "IMAGERIE_PROCEDURE",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Un scanner",
+            "matched_patterns": [
+              "\\bscanner\\b"
+            ]
+          }
+        ],
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "entity_type": "IMAGERIE_PROCEDURE",
+        "entity_text": "Un scanner",
+        "relation_id": "R_V69K_00019",
+        "relation_type": "imagerie_objective_foyer",
+        "role": "SOURCE"
+      },
+      "reason": "Validated specialized ACCEPT; impact validation mandatory."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000004",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "votes": [],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.85,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_SPECIALIZED_ACCEPT",
+      "adjudication_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_correction": {
+        "missing_endpoint": "P5_E014",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+            "matched_patterns": [
+              "\\bchoc septique\\b"
+            ]
+          }
+        ],
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+        "relation_id": "R_V69K_00065",
+        "relation_type": "a_pour_label_nosologique",
+        "role": "TARGET"
+      },
+      "reason": "Validated specialized ACCEPT; impact validation mandatory."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000007",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "votes": [],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.85,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_SPECIALIZED_ACCEPT",
+      "adjudication_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_correction": {
+        "missing_endpoint": "P5_E035",
+        "expected_type": "SYMPTOME",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16271908_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+            "matched_patterns": [
+              "\\bdyspnee\\b"
+            ]
+          }
+        ],
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "entity_type": "SYMPTOME",
+        "entity_text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_symptome",
+        "role": "TARGET"
+      },
+      "reason": "Validated specialized ACCEPT; impact validation mandatory."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000011",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "votes": [],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.85,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_SPECIALIZED_ACCEPT",
+      "adjudication_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_correction": {
+        "missing_endpoint": "P5_E024",
+        "expected_type": "TRAITEMENT",
+        "page_number": 5,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16340712_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+            "matched_patterns": [
+              "\\bantibiot",
+              "\\bamoxic"
+            ]
+          }
+        ],
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "entity_type": "TRAITEMENT",
+        "entity_text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+        "relation_id": "R_V69K_00048",
+        "relation_type": "traitement_administre_a",
+        "role": "SOURCE"
+      },
+      "reason": "Validated specialized ACCEPT; impact validation mandatory."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000013",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "votes": [],
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.85,
+      "documentary_support": true,
+      "adjudication_status": "RESOLVED_SPECIALIZED_ACCEPT",
+      "adjudication_action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_correction": {
+        "missing_endpoint": "P2_E031",
+        "expected_type": "TRAITEMENT",
+        "page_number": 2,
+        "text_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "used_global_text_fallback": false,
+        "evidence_candidates": [
+          {
+            "text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+            "matched_patterns": [
+              "\\btraitement\\b",
+              "\\bantibiot"
+            ]
+          }
+        ],
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "entity_type": "TRAITEMENT",
+        "entity_text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+        "relation_id": "R_V69K_00044",
+        "relation_type": "traitement_administre_a",
+        "role": "SOURCE"
+      },
+      "reason": "Validated specialized ACCEPT; impact validation mandatory."
+    }
+  ]
+}

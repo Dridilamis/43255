@@ -1,0 +1,212 @@
+{
+  "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 82,
+  "number_candidates": 9,
+  "signal_counts": {
+    "WEAK": 8,
+    "MEDIUM": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E017",
+        "type": "TRAITEMENT",
+        "name": "CALCIPARINE",
+        "preuve": "CALCIPARINE SC",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "CALCIPARINE SC | CALCIPARINE | antibiotique",
+      "detected_components": {
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E019",
+        "type": "TRAITEMENT",
+        "name": "DALACINE",
+        "preuve": "DALACINE IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "DALACINE IV | DALACINE | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E021",
+        "type": "TRAITEMENT",
+        "name": "GENTAMICINE",
+        "preuve": "GENTAMICINE 400 MG",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "GENTAMICINE 400 MG | GENTAMICINE | antibiotique",
+      "detected_components": {
+        "dose": [
+          "400 MG"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E022",
+        "type": "TRAITEMENT",
+        "name": "TAZOCILLINE",
+        "preuve": "TAZOCILLINE 4G*3/J",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "TAZOCILLINE 4G*3/J | TAZOCILLINE | antibiotique",
+      "detected_components": {
+        "frequency": [
+          "3/J"
+        ],
+        "dose": [
+          "4G"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E024",
+        "type": "TRAITEMENT",
+        "name": "VANCOMYCINE",
+        "preuve": "VANCOMYCINE 0.5G/J",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "VANCOMYCINE 0.5G/J | VANCOMYCINE | antibiotique",
+      "detected_components": {
+        "dose": [
+          "0.5G"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E026",
+        "type": "TRAITEMENT",
+        "name": "HYPNOVEL",
+        "preuve": "HYPNOVEL 10 MG/H",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "HYPNOVEL 10 MG/H | HYPNOVEL | sedatif",
+      "detected_components": {
+        "rate": [
+          "10 MG/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E028",
+        "type": "TRAITEMENT",
+        "name": "SUFENTANIL",
+        "preuve": "SUFENTANIL 10 MG/H",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "SUFENTANIL 10 MG/H | SUFENTANIL | antalgique",
+      "detected_components": {
+        "rate": [
+          "10 MG/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E029",
+        "type": "TRAITEMENT",
+        "name": "NORADR2NALINE",
+        "preuve": "NORADR2NALINE 2MG/H",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "NORADR2NALINE 2MG/H | NORADR2NALINE | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "2MG/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P7_E026",
+        "type": "TRAITEMENT",
+        "name": "colimicine",
+        "preuve": "colimicine IV",
+        "valeur": null,
+        "page": 7
+      },
+      "detection_text": "colimicine IV | colimicine | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

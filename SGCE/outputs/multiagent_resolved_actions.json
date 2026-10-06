@@ -1,0 +1,1071 @@
+{
+  "resolver": "multiagent_action_resolver",
+  "input_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\outputs\\multiagent_adjudication_report.json",
+  "summary": {
+    "cases_received": 71,
+    "actionable": 41,
+    "classification_only": 0,
+    "no_action": 5,
+    "protected": 25,
+    "status_counts": {
+      "PROTECTED": 25,
+      "NO_ACTION": 5,
+      "ACTIONABLE": 41
+    },
+    "action_counts": {
+      "NONE": 30,
+      "RETYPE_ENTITY": 41
+    },
+    "actionable_by_family": {
+      "D": 41
+    }
+  },
+  "resolved_actions": [
+    {
+      "family": "B",
+      "candidate_id": "BB1_000003",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000004",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000005",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000006",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000007",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "status": "NO_ACTION",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Le span clinique exact n'est pas explicitement résolu par l'adjudication. Création interdite."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000008",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000009",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000010",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "status": "NO_ACTION",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Le span clinique exact n'est pas explicitement résolu par l'adjudication. Création interdite."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000011",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000012",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000013",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000014",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000015",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000016",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "status": "NO_ACTION",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Le span clinique exact n'est pas explicitement résolu par l'adjudication. Création interdite."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000017",
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000018",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "status": "NO_ACTION",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Le span clinique exact n'est pas explicitement résolu par l'adjudication. Création interdite."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000020",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000021",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 3,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.8233,
+      "status": "NO_ACTION",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Le span clinique exact n'est pas explicitement résolu par l'adjudication. Création interdite."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000022",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000023",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000024",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000025",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "B",
+      "candidate_id": "BB1_000026",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 2,
+      "veto_vote_count": 1,
+      "mean_support_score": 0.775,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "C",
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 2,
+      "veto_vote_count": 1,
+      "mean_support_score": 0.775,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P6_E028",
+        "new_type": "DONNEE_PATIENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000002",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E029",
+        "new_type": "DONNEE_PATIENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000003",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.9,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000004",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E050",
+        "new_type": "DONNEE_PATIENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000005",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 1.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000006",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E033",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000007",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P6_E038",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000009",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E034",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000011",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P1_E016",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000014",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P4_E034",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000015",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P4_E049",
+        "new_type": "EVOLUTION_PRONOSTIC"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000016",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P4_E049",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000017",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E061",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000018",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E061",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000019",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E017",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000020",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E033",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000022",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P6_E031",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000027",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E054",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000034",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E055",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000036",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P6_E042",
+        "new_type": "DEFAILLANCE_ORGANE"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000037",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P6_E002",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000043",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E035",
+        "new_type": "EVOLUTION_PRONOSTIC"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000045",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E061",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000061",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P1_E024",
+        "new_type": "LABEL_NOSOLOGIQUE"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000072",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E004",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000073",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E004",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000074",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E052",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000076",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E032",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000077",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E052",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000078",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E032",
+        "new_type": "POSOLOGIE"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000079",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E052",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000080",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.88,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P5_E008",
+        "new_type": "TRAITEMENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000082",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P1_E028",
+        "new_type": "EVOLUTION_PRONOSTIC"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000086",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P6_E036",
+        "new_type": "COMORBIDITE_ANTECEDENT"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000087",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 1,
+      "mean_support_score": 0.86,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000091",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P1_E027",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000098",
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P6_E014",
+        "new_type": "FOYER_INFECTIEUX"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000099",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P4_E016",
+        "new_type": "MICRO_ORGANISME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000101",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P4_E041",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000102",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P3_E040",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000112",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P3_E035",
+        "new_type": "LABEL_NOSOLOGIQUE"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000113",
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P2_E038",
+        "new_type": "SERVICE_MEDICAL"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000115",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P4_E030",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "D",
+      "candidate_id": "D_000120",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "RESOLVED_CLASSIFICATION_ONLY",
+      "support_vote_count": 2,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.93,
+      "status": "ACTIONABLE",
+      "action": "RETYPE_ENTITY",
+      "parameters": {
+        "entity_id": "P1_E027",
+        "new_type": "SYMPTOME"
+      },
+      "reason": "RETYPE D explicitement reconstruit à partir du vote ontologique."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 1,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.9,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    },
+    {
+      "family": "PATIENT_REFERENCE",
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "adjudication_status": "UNRESOLVED",
+      "support_vote_count": 0,
+      "veto_vote_count": 0,
+      "mean_support_score": 0.0,
+      "status": "PROTECTED",
+      "action": "NONE",
+      "parameters": {},
+      "reason": "Cas encore UNRESOLVED après adjudication."
+    }
+  ]
+}

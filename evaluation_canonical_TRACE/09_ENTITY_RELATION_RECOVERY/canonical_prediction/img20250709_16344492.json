@@ -1,0 +1,1734 @@
+{
+  "document": "img20250709_16344492",
+  "source_file": "img20250709_16344492.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "text": "",
+      "entities": [
+        {
+          "name": "myotonie de Steinert",
+          "normalized_name": "myotonie de steinert",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "parésie gastrique",
+          "normalized_name": "parésie gastrique",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "iléus paralytiques majeurs",
+          "normalized_name": "iléus paralytiques majeurs",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "hépatite à VHA",
+          "normalized_name": "hépatite à vha",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "gastrite chronique",
+          "normalized_name": "gastrite chronique",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "narcolepsie",
+          "normalized_name": "narcolepsie",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "VNI nocturne",
+          "normalized_name": "vni nocturne",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "Modiodal",
+          "normalized_name": "modiodal",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "100 mg",
+          "normalized_name": "100 mg",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "Omeprazol",
+          "normalized_name": "omeprazol",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "20 mg",
+          "normalized_name": "20 mg",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "49 ans",
+          "normalized_name": "49 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "44 ans",
+          "normalized_name": "44 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "53 ans",
+          "normalized_name": "53 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "réanimation",
+          "normalized_name": "réanimation",
+          "type": "SERVICE_MEDICAL",
+          "page": 1
+        },
+        {
+          "name": "Augmentin",
+          "normalized_name": "augmentin",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "cataracte",
+          "normalized_name": "cataracte",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "161 jours",
+          "normalized_name": "161 jours",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "22/05/2006",
+          "normalized_name": "22/05/2006",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "28/10/2006",
+          "normalized_name": "28/10/2006",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "1989",
+          "normalized_name": "1989",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "1993",
+          "normalized_name": "1993",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "1982",
+          "normalized_name": "1982",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "avril 2008",
+          "normalized_name": "avril 2008",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "Oflocet",
+          "normalized_name": "oflocet",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "VNI",
+          "normalized_name": "vni",
+          "type": "TRAITEMENT",
+          "page": 1
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Modiodal",
+          "subject_normalized": "modiodal",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "100 mg",
+          "object_normalized": "100 mg",
+          "object_type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "subject": "Omeprazol",
+          "subject_normalized": "omeprazol",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "20 mg",
+          "object_normalized": "20 mg",
+          "object_type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "subject": "VNI nocturne",
+          "subject_normalized": "vni nocturne",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Modiodal",
+          "subject_normalized": "modiodal",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Omeprazol",
+          "subject_normalized": "omeprazol",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Augmentin",
+          "subject_normalized": "augmentin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "réanimation",
+          "subject_normalized": "réanimation",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "text": "",
+      "entities": [
+        {
+          "name": "VNI",
+          "normalized_name": "vni",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "2L d'O2",
+          "normalized_name": "2l d'o2",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "2L d'O2",
+          "normalized_name": "2l d'o2",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Temp °C : 36,2",
+          "normalized_name": "temp °c : 36,2",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "TA (mmHg) : 107/72",
+          "normalized_name": "ta (mmhg) : 107/72",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "FC (bpm) : 82",
+          "normalized_name": "fc (bpm) : 82",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "SO2 (%) : 99",
+          "normalized_name": "so2 (%) : 99",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "hypoxémie à 72.8 mmHg",
+          "normalized_name": "hypoxémie à 72.8 mmhg",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "hypercapnie à 46.8mmHg",
+          "normalized_name": "hypercapnie à 46.8mmhg",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "La saturation était de 95.4%",
+          "normalized_name": "la saturation était de 95.4%",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "suivi pour myotonie de Steinert",
+          "normalized_name": "suivi pour myotonie de steinert",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 2
+        },
+        {
+          "name": "Toux grasse productive",
+          "normalized_name": "toux grasse productive",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "Ronchis bilatéraux",
+          "normalized_name": "ronchis bilatéraux",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "syndrome restrictif majeur",
+          "normalized_name": "syndrome restrictif majeur",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "Poids : 67kg",
+          "normalized_name": "poids : 67kg",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "50 ans",
+          "normalized_name": "50 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "BIPAP",
+          "normalized_name": "bipap",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "O2",
+          "normalized_name": "o2",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "souffle perçu",
+          "normalized_name": "souffle perçu",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "FiO2 : 21 %",
+          "normalized_name": "fio2 : 21 %",
+          "type": "POSOLOGIE",
+          "page": 2
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "syndrome restrictif majeur",
+          "object_normalized": "syndrome restrictif majeur",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 2
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Toux grasse productive",
+          "object_normalized": "toux grasse productive",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Ronchis bilatéraux",
+          "object_normalized": "ronchis bilatéraux",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "BIPAP",
+          "subject_normalized": "bipap",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "VNI",
+          "subject_normalized": "vni",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "2L d'O2",
+          "subject_normalized": "2l d'o2",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "O2",
+          "subject_normalized": "o2",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "text": "",
+      "entities": [
+        {
+          "name": "Mode ventil. mécanique",
+          "normalized_name": "mode ventil. mécanique",
+          "type": "TRAITEMENT",
+          "page": 3
+        },
+        {
+          "name": "pH H 7.49 (7.38 - 7.42)",
+          "normalized_name": "ph h 7.49 (7.38 - 7.42)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pCO2 B 4.76 kPa (5.00 - 5.60)",
+          "normalized_name": "pco2 b 4.76 kpa (5.00 - 5.60)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CO2 Total 28.5 mmol/l (24.0 - 29.0)",
+          "normalized_name": "co2 total 28.5 mmol/l (24.0 - 29.0)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Bicarbonates 27.4 mmol/l (24.0 - 28.0)",
+          "normalized_name": "bicarbonates 27.4 mmol/l (24.0 - 28.0)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Excès base 4.2",
+          "normalized_name": "excès base 4.2",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pO2 B 8.9 kPa (12.0 - 13.3)",
+          "normalized_name": "po2 b 8.9 kpa (12.0 - 13.3)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "HbO2 B 92.1 % (95 - 98)",
+          "normalized_name": "hbo2 b 92.1 % (95 - 98)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Saturat. O2 B 95.2 % (96 - 99)",
+          "normalized_name": "saturat. o2 b 95.2 % (96 - 99)",
+          "type": "SIGNE_VITAL",
+          "page": 3
+        },
+        {
+          "name": "Hb réduite 4.6 %",
+          "normalized_name": "hb réduite 4.6 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pH 7.40 (7.38 - 7.42)",
+          "normalized_name": "ph 7.40 (7.38 - 7.42)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pCO2 6.13 kPa (5.00 - 5.60)",
+          "normalized_name": "pco2 6.13 kpa (5.00 - 5.60)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CO2 Total H 29.2 mmol/l (24.0 - 29.0)",
+          "normalized_name": "co2 total h 29.2 mmol/l (24.0 - 29.0)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Bicarbonates 27.8 mmol/l (24.0 - 28.0)",
+          "normalized_name": "bicarbonates 27.8 mmol/l (24.0 - 28.0)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Excès base 2.8",
+          "normalized_name": "excès base 2.8",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pO2 B 8.6 kPa (12.0 - 13.3)",
+          "normalized_name": "po2 b 8.6 kpa (12.0 - 13.3)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "HbO2 B 89.8 % (95 - 98)",
+          "normalized_name": "hbo2 b 89.8 % (95 - 98)",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Saturat. O2 B 93.0 % (96 - 99)",
+          "normalized_name": "saturat. o2 b 93.0 % (96 - 99)",
+          "type": "SIGNE_VITAL",
+          "page": 3
+        },
+        {
+          "name": "Hb réduite 6.8 %",
+          "normalized_name": "hb réduite 6.8 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "déficit moteur des membres supérieurs",
+          "normalized_name": "déficit moteur des membres supérieurs",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 3
+        },
+        {
+          "name": "déficit sensitif",
+          "normalized_name": "déficit sensitif",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 3
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 3
+        },
+        {
+          "name": "Glasgow 15",
+          "normalized_name": "glasgow 15",
+          "type": "SCORE_NEUROLOGIQUE",
+          "page": 3
+        },
+        {
+          "name": "O2",
+          "normalized_name": "o2",
+          "type": "TRAITEMENT",
+          "page": 3
+        },
+        {
+          "name": "conscient et orienté",
+          "normalized_name": "conscient et orienté",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "hépatosplénomégalie",
+          "normalized_name": "hépatosplénomégalie",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "indolore",
+          "normalized_name": "indolore",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "BHA présents",
+          "normalized_name": "bha présents",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "masse palpée",
+          "normalized_name": "masse palpée",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "Le 01/02/2013",
+          "normalized_name": "le 01/02/2013",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 3
+        },
+        {
+          "name": "Le 31/01/2013",
+          "normalized_name": "le 31/01/2013",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 3
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "déficit moteur des membres supérieurs",
+          "object_normalized": "déficit moteur des membres supérieurs",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 3
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "BHA présents",
+          "object_normalized": "bha présents",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "Mode ventil. mécanique",
+          "subject_normalized": "mode ventil. mécanique",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "text": "",
+      "entities": [
+        {
+          "name": "Sodium 142 mmol/l",
+          "normalized_name": "sodium 142 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Potassium 4.5 mmol/l",
+          "normalized_name": "potassium 4.5 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Chlorures 107 mmol/l",
+          "normalized_name": "chlorures 107 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "CO2 total 29 mmol/l",
+          "normalized_name": "co2 total 29 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Urée 6.9 mmol/l",
+          "normalized_name": "urée 6.9 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Créatinine 63 µmol/l",
+          "normalized_name": "créatinine 63 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Glucose 5.6 mmol/l",
+          "normalized_name": "glucose 5.6 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Calcium 2.41 mmol/l",
+          "normalized_name": "calcium 2.41 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Phosphore 0.69 mmol/l",
+          "normalized_name": "phosphore 0.69 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "L.D.H. H 317 UI/l",
+          "normalized_name": "l.d.h. h 317 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "C.K. 70 UI/l",
+          "normalized_name": "c.k. 70 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Bili totale 5 µmol/l",
+          "normalized_name": "bili totale 5 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "ASAT 24 UI/l",
+          "normalized_name": "asat 24 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "ALAT H 60 UI/l",
+          "normalized_name": "alat h 60 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "PAL H 213 UI/l",
+          "normalized_name": "pal h 213 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "G.G.T. H 315 UI/l",
+          "normalized_name": "g.g.t. h 315 ui/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Albumine B 37.0 g/l",
+          "normalized_name": "albumine b 37.0 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Préalbumine 0.270 g/l",
+          "normalized_name": "préalbumine 0.270 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "C.R.P. 14.2 mg/l",
+          "normalized_name": "c.r.p. 14.2 mg/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "TQ activité 97 %",
+          "normalized_name": "tq activité 97 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "TCA Malade 33 sec",
+          "normalized_name": "tca malade 33 sec",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Leucocytes 9.2 109/l",
+          "normalized_name": "leucocytes 9.2 109/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Hématies 5.04 1012/l",
+          "normalized_name": "hématies 5.04 1012/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Hémoglobine 15.2 g/dl",
+          "normalized_name": "hémoglobine 15.2 g/dl",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Hématocrite 46.2 %",
+          "normalized_name": "hématocrite 46.2 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "V.G.M. 91.8 fl",
+          "normalized_name": "v.g.m. 91.8 fl",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "T.G.M.H. 30.2 pg",
+          "normalized_name": "t.g.m.h. 30.2 pg",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "C.C.M.H. 32.9 %",
+          "normalized_name": "c.c.m.h. 32.9 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Plaquettes 154 109/l",
+          "normalized_name": "plaquettes 154 109/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "V.M. Plaq. 9.7 fl",
+          "normalized_name": "v.m. plaq. 9.7 fl",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Désaturation en fin de nuit",
+          "normalized_name": "désaturation en fin de nuit",
+          "type": "SYMPTOME",
+          "page": 4
+        },
+        {
+          "name": "Protides 66 g/l",
+          "normalized_name": "protides 66 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "page": 5,
+      "text": "",
+      "entities": [
+        {
+          "name": "VNI",
+          "normalized_name": "vni",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "désaturation",
+          "normalized_name": "désaturation",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "name": "Transfusion",
+          "normalized_name": "transfusion",
+          "type": "TRAITEMENT",
+          "page": 5
+        }
+      ],
+      "relations": [
+        {
+          "subject": "patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "désaturation",
+          "object_normalized": "désaturation",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "VNI",
+          "subject_normalized": "vni",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Transfusion",
+          "subject_normalized": "transfusion",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        }
+      ]
+    }
+  ],
+  "global_entities": [
+    {
+      "name": "myotonie de Steinert",
+      "normalized_name": "myotonie de steinert",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "parésie gastrique",
+      "normalized_name": "parésie gastrique",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "iléus paralytiques majeurs",
+      "normalized_name": "iléus paralytiques majeurs",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "hépatite à VHA",
+      "normalized_name": "hépatite à vha",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "gastrite chronique",
+      "normalized_name": "gastrite chronique",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "narcolepsie",
+      "normalized_name": "narcolepsie",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "VNI nocturne",
+      "normalized_name": "vni nocturne",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Modiodal",
+      "normalized_name": "modiodal",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "100 mg",
+      "normalized_name": "100 mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Omeprazol",
+      "normalized_name": "omeprazol",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "20 mg",
+      "normalized_name": "20 mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "49 ans",
+      "normalized_name": "49 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Patient",
+      "normalized_name": "patient",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "44 ans",
+      "normalized_name": "44 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "53 ans",
+      "normalized_name": "53 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "réanimation",
+      "normalized_name": "réanimation",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "Augmentin",
+      "normalized_name": "augmentin",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "cataracte",
+      "normalized_name": "cataracte",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "161 jours",
+      "normalized_name": "161 jours",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "22/05/2006",
+      "normalized_name": "22/05/2006",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "28/10/2006",
+      "normalized_name": "28/10/2006",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "1989",
+      "normalized_name": "1989",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "1993",
+      "normalized_name": "1993",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "1982",
+      "normalized_name": "1982",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "avril 2008",
+      "normalized_name": "avril 2008",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Oflocet",
+      "normalized_name": "oflocet",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "VNI",
+      "normalized_name": "vni",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "2L d'O2",
+      "normalized_name": "2l d'o2",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "2L d'O2",
+      "normalized_name": "2l d'o2",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Temp °C : 36,2",
+      "normalized_name": "temp °c : 36,2",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "TA (mmHg) : 107/72",
+      "normalized_name": "ta (mmhg) : 107/72",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "FC (bpm) : 82",
+      "normalized_name": "fc (bpm) : 82",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "SO2 (%) : 99",
+      "normalized_name": "so2 (%) : 99",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "hypoxémie à 72.8 mmHg",
+      "normalized_name": "hypoxémie à 72.8 mmhg",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "hypercapnie à 46.8mmHg",
+      "normalized_name": "hypercapnie à 46.8mmhg",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "La saturation était de 95.4%",
+      "normalized_name": "la saturation était de 95.4%",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "suivi pour myotonie de Steinert",
+      "normalized_name": "suivi pour myotonie de steinert",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Toux grasse productive",
+      "normalized_name": "toux grasse productive",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Ronchis bilatéraux",
+      "normalized_name": "ronchis bilatéraux",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "syndrome restrictif majeur",
+      "normalized_name": "syndrome restrictif majeur",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "Poids : 67kg",
+      "normalized_name": "poids : 67kg",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "50 ans",
+      "normalized_name": "50 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "BIPAP",
+      "normalized_name": "bipap",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "O2",
+      "normalized_name": "o2",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "souffle perçu",
+      "normalized_name": "souffle perçu",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "FiO2 : 21 %",
+      "normalized_name": "fio2 : 21 %",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Mode ventil. mécanique",
+      "normalized_name": "mode ventil. mécanique",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "pH H 7.49 (7.38 - 7.42)",
+      "normalized_name": "ph h 7.49 (7.38 - 7.42)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pCO2 B 4.76 kPa (5.00 - 5.60)",
+      "normalized_name": "pco2 b 4.76 kpa (5.00 - 5.60)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 Total 28.5 mmol/l (24.0 - 29.0)",
+      "normalized_name": "co2 total 28.5 mmol/l (24.0 - 29.0)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bicarbonates 27.4 mmol/l (24.0 - 28.0)",
+      "normalized_name": "bicarbonates 27.4 mmol/l (24.0 - 28.0)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Excès base 4.2",
+      "normalized_name": "excès base 4.2",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pO2 B 8.9 kPa (12.0 - 13.3)",
+      "normalized_name": "po2 b 8.9 kpa (12.0 - 13.3)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "HbO2 B 92.1 % (95 - 98)",
+      "normalized_name": "hbo2 b 92.1 % (95 - 98)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Saturat. O2 B 95.2 % (96 - 99)",
+      "normalized_name": "saturat. o2 b 95.2 % (96 - 99)",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "Hb réduite 4.6 %",
+      "normalized_name": "hb réduite 4.6 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pH 7.40 (7.38 - 7.42)",
+      "normalized_name": "ph 7.40 (7.38 - 7.42)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pCO2 6.13 kPa (5.00 - 5.60)",
+      "normalized_name": "pco2 6.13 kpa (5.00 - 5.60)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 Total H 29.2 mmol/l (24.0 - 29.0)",
+      "normalized_name": "co2 total h 29.2 mmol/l (24.0 - 29.0)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bicarbonates 27.8 mmol/l (24.0 - 28.0)",
+      "normalized_name": "bicarbonates 27.8 mmol/l (24.0 - 28.0)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Excès base 2.8",
+      "normalized_name": "excès base 2.8",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pO2 B 8.6 kPa (12.0 - 13.3)",
+      "normalized_name": "po2 b 8.6 kpa (12.0 - 13.3)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "HbO2 B 89.8 % (95 - 98)",
+      "normalized_name": "hbo2 b 89.8 % (95 - 98)",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Saturat. O2 B 93.0 % (96 - 99)",
+      "normalized_name": "saturat. o2 b 93.0 % (96 - 99)",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "Hb réduite 6.8 %",
+      "normalized_name": "hb réduite 6.8 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "déficit moteur des membres supérieurs",
+      "normalized_name": "déficit moteur des membres supérieurs",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "déficit sensitif",
+      "normalized_name": "déficit sensitif",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "Glasgow 15",
+      "normalized_name": "glasgow 15",
+      "type": "SCORE_NEUROLOGIQUE"
+    },
+    {
+      "name": "conscient et orienté",
+      "normalized_name": "conscient et orienté",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "hépatosplénomégalie",
+      "normalized_name": "hépatosplénomégalie",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "indolore",
+      "normalized_name": "indolore",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "BHA présents",
+      "normalized_name": "bha présents",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "masse palpée",
+      "normalized_name": "masse palpée",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Le 01/02/2013",
+      "normalized_name": "le 01/02/2013",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Le 31/01/2013",
+      "normalized_name": "le 31/01/2013",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Sodium 142 mmol/l",
+      "normalized_name": "sodium 142 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Potassium 4.5 mmol/l",
+      "normalized_name": "potassium 4.5 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Chlorures 107 mmol/l",
+      "normalized_name": "chlorures 107 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 total 29 mmol/l",
+      "normalized_name": "co2 total 29 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Urée 6.9 mmol/l",
+      "normalized_name": "urée 6.9 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Créatinine 63 µmol/l",
+      "normalized_name": "créatinine 63 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Glucose 5.6 mmol/l",
+      "normalized_name": "glucose 5.6 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Calcium 2.41 mmol/l",
+      "normalized_name": "calcium 2.41 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Phosphore 0.69 mmol/l",
+      "normalized_name": "phosphore 0.69 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "L.D.H. H 317 UI/l",
+      "normalized_name": "l.d.h. h 317 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "C.K. 70 UI/l",
+      "normalized_name": "c.k. 70 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bili totale 5 µmol/l",
+      "normalized_name": "bili totale 5 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ASAT 24 UI/l",
+      "normalized_name": "asat 24 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ALAT H 60 UI/l",
+      "normalized_name": "alat h 60 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "PAL H 213 UI/l",
+      "normalized_name": "pal h 213 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "G.G.T. H 315 UI/l",
+      "normalized_name": "g.g.t. h 315 ui/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Albumine B 37.0 g/l",
+      "normalized_name": "albumine b 37.0 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Préalbumine 0.270 g/l",
+      "normalized_name": "préalbumine 0.270 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "C.R.P. 14.2 mg/l",
+      "normalized_name": "c.r.p. 14.2 mg/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TQ activité 97 %",
+      "normalized_name": "tq activité 97 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TCA Malade 33 sec",
+      "normalized_name": "tca malade 33 sec",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Leucocytes 9.2 109/l",
+      "normalized_name": "leucocytes 9.2 109/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématies 5.04 1012/l",
+      "normalized_name": "hématies 5.04 1012/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hémoglobine 15.2 g/dl",
+      "normalized_name": "hémoglobine 15.2 g/dl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématocrite 46.2 %",
+      "normalized_name": "hématocrite 46.2 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "V.G.M. 91.8 fl",
+      "normalized_name": "v.g.m. 91.8 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "T.G.M.H. 30.2 pg",
+      "normalized_name": "t.g.m.h. 30.2 pg",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "C.C.M.H. 32.9 %",
+      "normalized_name": "c.c.m.h. 32.9 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Plaquettes 154 109/l",
+      "normalized_name": "plaquettes 154 109/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "V.M. Plaq. 9.7 fl",
+      "normalized_name": "v.m. plaq. 9.7 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Désaturation en fin de nuit",
+      "normalized_name": "désaturation en fin de nuit",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Protides 66 g/l",
+      "normalized_name": "protides 66 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "désaturation",
+      "normalized_name": "désaturation",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Transfusion",
+      "normalized_name": "transfusion",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "respiratoire",
+      "normalized_name": "respiratoire",
+      "type": "SCORE_SOFA"
+    },
+    {
+      "name": "neurologique",
+      "normalized_name": "neurologique",
+      "type": "SCORE_SOFA"
+    },
+    {
+      "name": "respiratoire",
+      "normalized_name": "respiratoire",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "neurologique",
+      "normalized_name": "neurologique",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "transfusion",
+      "normalized_name": "transfusion",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "abdominal",
+      "normalized_name": "abdominal",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "albumine",
+      "normalized_name": "albumine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "pelvien",
+      "normalized_name": "pelvien",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "rechute",
+      "normalized_name": "rechute",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "poids",
+      "normalized_name": "poids",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "autre",
+      "normalized_name": "autre",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "autre",
+      "normalized_name": "autre",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "fio2",
+      "normalized_name": "fio2",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "efr",
+      "normalized_name": "efr",
+      "type": "IMAGERIE_PROCEDURE"
+    }
+  ],
+  "global_relations": [
+    {
+      "subject": "Modiodal",
+      "subject_normalized": "modiodal",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "100 mg",
+      "object_normalized": "100 mg",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Omeprazol",
+      "subject_normalized": "omeprazol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "20 mg",
+      "object_normalized": "20 mg",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "VNI nocturne",
+      "subject_normalized": "vni nocturne",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Modiodal",
+      "subject_normalized": "modiodal",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Omeprazol",
+      "subject_normalized": "omeprazol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "syndrome restrictif majeur",
+      "object_normalized": "syndrome restrictif majeur",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Toux grasse productive",
+      "object_normalized": "toux grasse productive",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Ronchis bilatéraux",
+      "object_normalized": "ronchis bilatéraux",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "BIPAP",
+      "subject_normalized": "bipap",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "VNI",
+      "subject_normalized": "vni",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "2L d'O2",
+      "subject_normalized": "2l d'o2",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "déficit moteur des membres supérieurs",
+      "object_normalized": "déficit moteur des membres supérieurs",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "BHA présents",
+      "object_normalized": "bha présents",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Mode ventil. mécanique",
+      "subject_normalized": "mode ventil. mécanique",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation",
+      "object_normalized": "désaturation",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Transfusion",
+      "subject_normalized": "transfusion",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "réanimation",
+      "subject_normalized": "réanimation",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "O2",
+      "subject_normalized": "o2",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "BIPAP",
+      "subject_normalized": "bipap",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "FiO2 : 21 %",
+      "object_normalized": "fio2 : 21 %",
+      "object_type": "POSOLOGIE"
+    }
+  ]
+}

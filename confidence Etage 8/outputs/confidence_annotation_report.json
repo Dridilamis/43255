@@ -1,0 +1,50 @@
+{
+  "stage": "TRACE_STAGE_8_V2_1_SAFE_ANNOTATOR",
+  "stats": {
+    "clinical_documents": 43,
+    "clinical_objects_total": 13886,
+    "ENTITY_total": 10142,
+    "annotations": 13886,
+    "ENTITY_annotations": 10142,
+    "HIGH": 13168,
+    "REVIEW": 74,
+    "LOW": 189,
+    "RELATION_total": 3744,
+    "RELATION_annotations": 3744,
+    "MEDIUM": 455,
+    "duplicate_id_groups": 4,
+    "duplicate_id_occurrences": 8,
+    "expected_annotations": 13886,
+    "missing_annotations": 0
+  },
+  "details": {
+    "unmatched_clinical_objects": [],
+    "unused_decisions": [],
+    "duplicate_ids": [
+      {
+        "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "kind": "RELATION",
+        "id": "",
+        "occurrences": 2
+      },
+      {
+        "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "kind": "RELATION",
+        "id": "",
+        "occurrences": 2
+      },
+      {
+        "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "kind": "RELATION",
+        "id": "",
+        "occurrences": 2
+      },
+      {
+        "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "kind": "RELATION",
+        "id": "",
+        "occurrences": 2
+      }
+    ]
+  }
+}

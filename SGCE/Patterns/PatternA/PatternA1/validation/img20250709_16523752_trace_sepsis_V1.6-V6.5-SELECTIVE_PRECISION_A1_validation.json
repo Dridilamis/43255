@@ -1,0 +1,457 @@
+{
+  "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 6,
+  "status_counts": {
+    "AMBIGUOUS": 1,
+    "ALREADY_CORRECT": 4,
+    "CONFIRMED_PATTERN_A": 1
+  },
+  "results": [
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E023",
+        "type": "TRAITEMENT",
+        "name": "Protocole Insuline SC",
+        "preuve": "Protocole Insuline SC",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Protocole Insuline SC | autre",
+      "detected_components": {
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P5_E010",
+          "target_name": "4cp/j",
+          "target_preuve": "4cp/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E030",
+          "target_name": "500 mg",
+          "target_preuve": "TIÉNAM 500 mg x 2/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E031",
+          "target_name": "9/j",
+          "target_preuve": "Potassium sachet 9/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E024",
+        "type": "TRAITEMENT",
+        "name": "EPantol",
+        "preuve": "EPantol 40mg",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "EPantol 40mg | EPantol | autre",
+      "detected_components": {
+        "dose": [
+          "40mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E034"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E034",
+        "target_name": "40mg",
+        "target_preuve": "EPantol 40mg",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E034",
+          "target_name": "40mg",
+          "target_preuve": "EPantol 40mg",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E010",
+          "target_name": "4cp/j",
+          "target_preuve": "4cp/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E030",
+          "target_name": "500 mg",
+          "target_preuve": "TIÉNAM 500 mg x 2/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P5_E025",
+        "type": "TRAITEMENT",
+        "name": "ZELITrex",
+        "preuve": "ZELITrex 500 mg 1/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "ZELITrex 500 mg 1/j | ZELITrex | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P5_E030",
+          "target_name": "500 mg",
+          "target_preuve": "TIÉNAM 500 mg x 2/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E057",
+          "target_name": "1/j",
+          "target_preuve": "1/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.5,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E010",
+          "target_name": "4cp/j",
+          "target_preuve": "4cp/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "validation_reason": "Plusieurs types de composants posologiques sont explicitement fusionnés dans TRAITEMENT et aucune POSOLOGIE fiable correspondante n'a été trouvée.",
+      "recommended_action": "SPLIT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E026",
+        "type": "TRAITEMENT",
+        "name": "Triflucan",
+        "preuve": "Triflucan 50 mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Triflucan 50 mg/j | Triflucan | antifongique",
+      "detected_components": {
+        "dose": [
+          "50 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E035"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E035",
+        "target_name": "50 mg",
+        "target_preuve": "Triflucan 50 mg/j",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E035",
+          "target_name": "50 mg",
+          "target_preuve": "Triflucan 50 mg/j",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E010",
+          "target_name": "4cp/j",
+          "target_preuve": "4cp/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E030",
+          "target_name": "500 mg",
+          "target_preuve": "TIÉNAM 500 mg x 2/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E027",
+        "type": "TRAITEMENT",
+        "name": "Acide folinique",
+        "preuve": "Acide folinique 25mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Acide folinique 25mg/j | Acide folinique | autre",
+      "detected_components": {
+        "dose": [
+          "25mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E036"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E036",
+        "target_name": "25mg",
+        "target_preuve": "Acide folinique 25mg/j",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.75,
+        "final_score": 0.975,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E036",
+          "target_name": "25mg",
+          "target_preuve": "Acide folinique 25mg/j",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.75,
+          "final_score": 0.975,
+          "reliable": true
+        },
+        {
+          "target_id": "P6_E002",
+          "target_name": "25mg",
+          "target_preuve": "25mg x 3/j si besoin",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.25,
+          "final_score": 0.275,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E010",
+          "target_name": "4cp/j",
+          "target_preuve": "4cp/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E029",
+        "type": "TRAITEMENT",
+        "name": "AMLOR",
+        "preuve": "AMLOR 10 mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "AMLOR 10 mg/j | AMLOR | autre",
+      "detected_components": {
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P5_E038"
+      ],
+      "best_posology_match": {
+        "target_id": "P5_E038",
+        "target_name": "10 mg",
+        "target_preuve": "AMLOR 10 mg/j",
+        "target_page": 5,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.5,
+        "final_score": 0.95,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P5_E038",
+          "target_name": "10 mg",
+          "target_preuve": "AMLOR 10 mg/j",
+          "target_page": 5,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.95,
+          "reliable": true
+        },
+        {
+          "target_id": "P5_E010",
+          "target_name": "4cp/j",
+          "target_preuve": "4cp/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E030",
+          "target_name": "500 mg",
+          "target_preuve": "TIÉNAM 500 mg x 2/j",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

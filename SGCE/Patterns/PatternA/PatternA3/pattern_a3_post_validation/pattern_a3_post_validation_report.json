@@ -1,0 +1,442 @@
+{
+  "pattern": "A3",
+  "validation_type": "DIFFERENTIAL_POST_VALIDATION",
+  "before_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA2\\pattern_a2_corrected",
+  "after_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA3\\pattern_a3_corrected",
+  "correction_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA3\\pattern_a3_corrected\\pattern_a3_correction_report.json",
+  "summary": {
+    "documents_verified": 43,
+    "documents_pass": 43,
+    "documents_fail": 0,
+    "expected_operations": 1,
+    "operations_pass": 1,
+    "operations_fail": 0,
+    "link_expected": 1,
+    "link_pass": 1,
+    "preexisting_anomalies": 29,
+    "introduced_by_a3": 0,
+    "resolved_by_a3": 0,
+    "missing_before_documents": 0,
+    "missing_after_documents": 0,
+    "final_status": "PASS"
+  },
+  "operation_results": [
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "operation": "LINK",
+      "source_entity_id": "P4_E035",
+      "target_entity_id": "P4_E013",
+      "relation_id": "P4_R001",
+      "checks": [
+        {
+          "check": "SOURCE_EXISTS_AND_TYPED",
+          "passed": true
+        },
+        {
+          "check": "TARGET_EXISTS_AND_TYPED",
+          "passed": true
+        },
+        {
+          "check": "EXPECTED_A3_RELATION_EXISTS",
+          "passed": true
+        },
+        {
+          "check": "EXPECTED_RELATION_ID_EXISTS",
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "documents": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 3,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16225557_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 1,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 3,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 3,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 3,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 2,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 1,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 3,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "expected_operations": 0,
+      "preexisting_anomalies": 0,
+      "introduced_by_a3": 0,
+      "resolved_by_a3": 0,
+      "introduced_anomalies": [],
+      "status": "PASS"
+    }
+  ],
+  "missing_before_documents": [],
+  "missing_after_documents": []
+}

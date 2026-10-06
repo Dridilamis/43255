@@ -1,0 +1,79 @@
+{
+  "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 51,
+  "number_candidates": 3,
+  "signal_counts": {
+    "WEAK": 3
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E026",
+        "type": "TRAITEMENT",
+        "name": "Pariet",
+        "preuve": "Pariet 10 mg 0-0-1",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "Pariet 10 mg 0-0-1 | Pariet | autre",
+      "detected_components": {
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E033",
+        "type": "TRAITEMENT",
+        "name": "calciparine",
+        "preuve": "calciparine 5000ui /0.2 ml 1-0-1",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "calciparine 5000ui /0.2 ml 1-0-1 | calciparine | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "5000ui",
+          "0.2 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E035",
+        "type": "TRAITEMENT",
+        "name": "Perfusion Glucose 5% 1000 cc + 1000 mg bevitine + 500 mg pyridoxine +3 ampoules de potassium 10 % 10 ml",
+        "preuve": "Perfusion Glucose 5% 1000 cc + 1000 mg bevitine + 500 mg pyridoxine +3 ampoules de potassium 10 % 10 ml",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "Perfusion Glucose 5% 1000 cc + 1000 mg bevitine + 500 mg pyridoxine +3 ampoules de potassium 10 % 10 ml | autre",
+      "detected_components": {
+        "dose": [
+          "1000 mg",
+          "500 mg",
+          "10 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

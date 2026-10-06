@@ -1,0 +1,1945 @@
+{
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "mode": "AUTOMATIC_CONSERVATIVE",
+  "validation_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA1\\validation\\pattern_a1_validation_v2_report.json",
+  "input_candidates": 178,
+  "input_actionable_cases": 20,
+  "automatic_rules": {
+    "LINK": {
+      "minimum_medication_anchor": 0.6,
+      "minimum_final_score": 0.65
+    },
+    "SPLIT": {
+      "allowed_signal_strength": [
+        "MEDIUM",
+        "STRONG"
+      ],
+      "minimum_independent_explicit_component_families": 2,
+      "requires_no_reliable_existing_posology": true
+    },
+    "ambiguous_policy": "NEVER_MODIFY"
+  },
+  "summary": {
+    "skipped": 158,
+    "skip_AMBIGUOUS": 88,
+    "links_applied": 10,
+    "operations_applied": 20,
+    "documents_copied": 43,
+    "documents_modified": 10,
+    "skip_ALREADY_CORRECT": 70,
+    "splits_applied": 10
+  },
+  "operations": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E004",
+      "source_name": "Véinofer IV",
+      "source_preuve": "Véinofer IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E012",
+      "source_name": "métronidazole",
+      "source_preuve": "métronidazole IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E024",
+      "source_name": "Primperanlasilix",
+      "source_preuve": "Primperanlasilix à 40 mg",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P2_E025",
+      "new_relation_id": "P2_R001"
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E007",
+      "source_name": "Crestor",
+      "source_preuve": "Crestor 5mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E009",
+      "source_name": "Crestor",
+      "source_preuve": "Crestor 5mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E012",
+      "source_name": "Crestor",
+      "source_preuve": "Crestor 5mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E020",
+      "source_name": "Tahor",
+      "source_preuve": "Tahor 10mg 0-0-1",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P2_E021",
+      "new_relation_id": "P2_R001"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E024",
+      "source_name": "Dafalgan",
+      "source_preuve": "Dafalgan 500mg PO si besoin",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E026",
+      "source_name": "Fragmine",
+      "source_preuve": "Fragmine 5000UI/0,2mL SC la nuit",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E028",
+      "source_name": "Clinutren HP/HC",
+      "source_preuve": "Clinutren HP/HC 200mL PO 1 bouteille le matin et au goûter",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E030",
+      "source_name": "Nefopam",
+      "source_preuve": "Nefopam 20mg/2mL PO si besoin",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E006",
+      "source_name": "Olmetec",
+      "source_preuve": "Olmetec 10 mg x 1/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E020",
+      "source_name": "corticothérapie intraveineuse",
+      "source_preuve": "Une corticothérapie intraveineuse à forte dose est débutée",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E008",
+      "source_name": "Valsartan",
+      "source_preuve": "Valsartan 40 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E010",
+      "source_name": "Atarax",
+      "source_preuve": "Atarax 50 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E016",
+      "source_name": "Tardyferon",
+      "source_preuve": "Tardyferon b 9 1/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E017",
+      "source_name": "Neurontin",
+      "source_preuve": "Neurontin 1.2 g",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E019",
+      "source_name": "Loxen",
+      "source_preuve": "Loxen 20 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E021",
+      "source_name": "Lovenox",
+      "source_preuve": "Lovenox 0.4 ml",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E014",
+      "source_name": "Eupantol",
+      "source_preuve": "Eupantol 40 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E016",
+      "source_name": "Imovane",
+      "source_preuve": "Imovane 7.5 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E017",
+      "source_name": "Alprazolam",
+      "source_preuve": "Alprazolam 0.5mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E018",
+      "source_name": "Ramipril",
+      "source_preuve": "Ramipril 5mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E020",
+      "source_name": "Umuline rapide",
+      "source_preuve": "Umuline rapide 100UI/mL",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E028",
+      "source_name": "remplissage par sérum physiologique 500 ml",
+      "source_preuve": "remplissage par sérum physiologique 500 ml",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P3_E025",
+      "source_name": "voluven",
+      "source_preuve": "voluven 500 ml",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E019",
+      "source_name": "adrénaline",
+      "source_preuve": "2 mg d'adrénaline",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E022",
+      "source_name": "drainer 600 ml",
+      "source_preuve": "drainer 600 ml",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E030",
+      "source_name": "HCHS à 200 mg/j",
+      "source_preuve": "HCHS à 200 mg/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E031",
+      "source_name": "50 mg/j",
+      "source_preuve": "50 mg/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E008",
+      "source_name": "VANCOMYCINE",
+      "source_preuve": "VANCOMYCINE 2g /24H",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E103",
+      "new_posology_text": "2g 2g /24H",
+      "new_relation_id": "P2_R001",
+      "explicit_components": {
+        "rate": [
+          "2g /24H"
+        ],
+        "dose": [
+          "2g"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E010",
+      "source_name": "TIÉNAM",
+      "source_preuve": "TIÉNAM 3g/24H",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E104",
+      "new_posology_text": "3g 3g/24H",
+      "new_relation_id": "P2_R002",
+      "explicit_components": {
+        "rate": [
+          "3g/24H"
+        ],
+        "dose": [
+          "3g"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E029",
+      "source_name": "MIDAZOLAM",
+      "source_preuve": "MIDAZOLAM 10mg /h",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E105",
+      "new_posology_text": "10mg 10mg /h",
+      "new_relation_id": "P2_R003",
+      "explicit_components": {
+        "rate": [
+          "10mg /h"
+        ],
+        "dose": [
+          "10mg"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E030",
+      "source_name": "FENTANYL",
+      "source_preuve": "FENTANYL 300 µg /h",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E106",
+      "new_posology_text": "300 µg 300 µg /h",
+      "new_relation_id": "P2_R004",
+      "explicit_components": {
+        "rate": [
+          "300 µg /h"
+        ],
+        "dose": [
+          "300 µg"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E034",
+      "source_name": "Hypnovel",
+      "source_preuve": "Hypnovel 10 mg/h",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E107",
+      "new_posology_text": "10 mg 10 mg/h",
+      "new_relation_id": "P2_R005",
+      "explicit_components": {
+        "rate": [
+          "10 mg/h"
+        ],
+        "dose": [
+          "10 mg"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E035",
+      "source_name": "Keppra",
+      "source_preuve": "Keppra 500 mg : 1-0-1",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P1_E005",
+      "new_relation_id": "P2_R006"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E039",
+      "source_name": "Depakine",
+      "source_preuve": "Depakine 500 mg : 3-0-3",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E041",
+      "source_name": "Vimpat",
+      "source_preuve": "Vimpat 100 mg : 1-0-1",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P1_E010",
+      "new_relation_id": "P2_R007"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E044",
+      "source_name": "Aérosols",
+      "source_preuve": "Aérosols Atrovent 4/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E045",
+      "source_name": "Lovenox",
+      "source_preuve": "Lovenox 0.4/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E046",
+      "source_name": "Perfalgan",
+      "source_preuve": "Perfalgan 1gx4/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E021",
+      "source_name": "acide folique",
+      "source_preuve": "supplémentation par acide folique 5mg 1cp/jour",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P7_E028",
+      "source_name": "Vimpat",
+      "source_preuve": "Vimpat 100 mg : 1-0-1",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P7_E030",
+      "source_name": "Keppra",
+      "source_preuve": "Keppra 500 mg : 1-0-1",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P7_E032",
+      "source_name": "modopar disperssible 125",
+      "source_preuve": "modopar disperssible 125 1cp toutes les 6 heures",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P7_E038",
+      "source_name": "Dafalgan",
+      "source_preuve": "Dafalgan 500mg 2.2.2 si douleur",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E013",
+      "source_name": "SALBUTAMOL",
+      "source_preuve": "SALBUTAMOL IV",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E015",
+      "source_name": "HYDROCORTISONE",
+      "source_preuve": "200 mg d'HYDROCORTISONE IV",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E023",
+      "source_name": "corticothérapie IV",
+      "source_preuve": "corticothérapie IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E018",
+      "source_name": "Aciclovir",
+      "source_preuve": "Maintien du traitement par Aciclovir IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E011",
+      "source_name": "Paracétamol",
+      "source_preuve": "Paracétamol 500 mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E013",
+      "source_name": "Levothyrox",
+      "source_preuve": "Levothyrox 50 µg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E015",
+      "source_name": "Dantrium",
+      "source_preuve": "Dantrium 100 mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E017",
+      "source_name": "Forlax",
+      "source_preuve": "Forlax 10 g",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E019",
+      "source_name": "Acupan",
+      "source_preuve": "Acupan 20 mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E023",
+      "source_name": "Dompéridone",
+      "source_preuve": "Dompéridone 10 mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E003",
+      "source_name": "G5 500 ml",
+      "source_preuve": "G5 500 ml",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E019",
+      "source_name": "perfalgan",
+      "source_preuve": "perfalgan 1g IVL",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E021",
+      "source_name": "anexate",
+      "source_preuve": "anexate 0,2 mg x 4",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E013",
+      "source_name": "Noradrénaline",
+      "source_preuve": "Noradrénaline 1mg/h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E015",
+      "source_name": "Hypnovel",
+      "source_preuve": "Hypnovel 8 mg/h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E005",
+      "source_name": "Noradrénaline",
+      "source_preuve": "Noradrénaline 1mg/heure",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E008",
+      "source_name": "Hypnovel",
+      "source_preuve": "Hypnovel 5 mg /h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E025",
+      "source_name": "augmentin",
+      "source_preuve": "augmentin 1g *3/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E029",
+      "source_name": "Ceftriaxone",
+      "source_preuve": "1g de CG3 Ceftriaxone Rocéphine IV",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E030",
+      "source_name": "Tavanic",
+      "source_preuve": "500 mg Quinolone Tavanic IV",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E031",
+      "source_name": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN",
+      "source_preuve": "Remplissage par 3 l de SSI et 500 ml de VOLUVEN",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E032",
+      "source_name": "Perfalgan",
+      "source_preuve": "1g de Perfalgan",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E051",
+      "source_name": "Antalgique 1g de Perfalgan",
+      "source_preuve": "Antalgique 1g de Perfalgan",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E013",
+      "source_name": "NORADRENALINE",
+      "source_preuve": "catécholamines à la dose de 1 mg/h de NORADRENALINE",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E026",
+      "source_name": "Pariet",
+      "source_preuve": "Pariet 10 mg 0-0-1",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E033",
+      "source_name": "calciparine",
+      "source_preuve": "calciparine 5000ui /0.2 ml 1-0-1",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E035",
+      "source_name": "Perfusion Glucose 5% 1000 cc + 1000 mg bevitine + 500 mg pyridoxine +3 ampoules de potassium 10 % 10 ml",
+      "source_preuve": "Perfusion Glucose 5% 1000 cc + 1000 mg bevitine + 500 mg pyridoxine +3 ampoules de potassium 10 % 10 ml",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E021",
+      "source_name": "noradrénaline",
+      "source_preuve": "sous NAD 4.5 mg/h",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E028",
+      "source_name": "remplissage de 250 ml",
+      "source_preuve": "remplissage de 250 ml",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P7_E015",
+      "source_name": "Amiklin",
+      "source_preuve": "ajout Amiklin 1G ce jour",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P7_E025",
+      "source_name": "NAD",
+      "source_preuve": "majoration de NAD jusqu'à 20 mg/h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E021",
+      "source_name": "noradrénaline",
+      "source_preuve": "noradrénaline en IVSE 2 mg/h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E031",
+      "source_name": "claforan",
+      "source_preuve": "claforan 1g toutes les 8h (J6)",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E034",
+      "source_name": "pariet",
+      "source_preuve": "pariet 20 mg/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E036",
+      "source_name": "Venlafaxine lp37.5mg",
+      "source_preuve": "Venlafaxine lp37.5mg/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E038",
+      "source_name": "glucose 500 ml",
+      "source_preuve": "glucose 500 ml /j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E008",
+      "source_name": "serum physiologique",
+      "source_preuve": "500 ml de serum physiologique",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E041",
+      "source_name": "amlodipine",
+      "source_preuve": "amlodipine 5mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E043",
+      "source_name": "bisoprol",
+      "source_preuve": "bisoprol 1.25mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E034",
+      "source_name": "traitement intraveineux",
+      "source_preuve": "traitement intraveineux",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E006",
+      "source_name": "corticothérapie",
+      "source_preuve": "corticothérapie à 1mg/kg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E011",
+      "source_name": "aDRénaline",
+      "source_preuve": "aDRénaline 1 mg/H",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E013",
+      "source_name": "hypnovel",
+      "source_preuve": "hypnovel 10 mg/H",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E015",
+      "source_name": "sufenta",
+      "source_preuve": "sufenta 2 mg/H",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E017",
+      "source_name": "CALCIPARINE",
+      "source_preuve": "CALCIPARINE SC",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P2_E018",
+      "new_relation_id": "P2_R001"
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E019",
+      "source_name": "DALACINE",
+      "source_preuve": "DALACINE IV",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E021",
+      "source_name": "GENTAMICINE",
+      "source_preuve": "GENTAMICINE 400 MG",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E022",
+      "source_name": "TAZOCILLINE",
+      "source_preuve": "TAZOCILLINE 4G*3/J",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E024",
+      "source_name": "VANCOMYCINE",
+      "source_preuve": "VANCOMYCINE 0.5G/J",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P2_E025",
+      "new_relation_id": "P2_R002"
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E026",
+      "source_name": "HYPNOVEL",
+      "source_preuve": "HYPNOVEL 10 MG/H",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E028",
+      "source_name": "SUFENTANIL",
+      "source_preuve": "SUFENTANIL 10 MG/H",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E029",
+      "source_name": "NORADR2NALINE",
+      "source_preuve": "NORADR2NALINE 2MG/H",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P7_E026",
+      "source_name": "colimicine",
+      "source_preuve": "colimicine IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E012",
+      "source_name": "Lantus",
+      "source_preuve": "Lantus 30 UI",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E014",
+      "source_name": "Seresta",
+      "source_preuve": "Seresta 50 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E032",
+      "source_name": "Lantus",
+      "source_preuve": "Lantus à 20 UI",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E015",
+      "source_name": "Rivotril",
+      "source_preuve": "1 mg de Rivotril",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E011",
+      "source_name": "Pentothal",
+      "source_preuve": "bolus de Pentotal 500 mg et mise sous 500 mg/h en relais",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E047",
+      "new_posology_text": "500 mg 500 mg/h",
+      "new_relation_id": "P2_R001",
+      "explicit_components": {
+        "rate": [
+          "500 mg/h"
+        ],
+        "dose": [
+          "500 mg"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E012",
+      "source_name": "Celocurine",
+      "source_preuve": "90 mg de Celocurine",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E013",
+      "source_name": "Noradrénaline",
+      "source_preuve": "de la Noradrénaline 1 mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E016",
+      "source_name": "Pentothane",
+      "source_preuve": "Pentothane bolus de 500 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E019",
+      "source_name": "Dilantin",
+      "source_preuve": "1500 mg de Dilantin",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E009",
+      "source_name": "Pentho",
+      "source_preuve": "réaugmentation Pentho à 300 mg/h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E023",
+      "source_name": "Cortancyl",
+      "source_preuve": "Cortancyl 40 mg 1/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E025",
+      "source_name": "Amlor",
+      "source_preuve": "Amlor 10 mg 1/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E027",
+      "source_name": "Aprovel",
+      "source_preuve": "Aprovel 300 1/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E029",
+      "source_name": "Avlocardyl LP",
+      "source_preuve": "Avlocardyl LP 160 1/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E030",
+      "source_name": "Lasilix",
+      "source_preuve": "Lasilix 40 mg 1/j",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P1_E055",
+      "new_posology_text": "40 mg 1/j",
+      "new_relation_id": "P1_R001",
+      "explicit_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "40 mg"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E031",
+      "source_name": "Lovenox",
+      "source_preuve": "Lovenox 0.8 x 2/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E033",
+      "source_name": "Novorapid",
+      "source_preuve": "Novorapid 8UI-8UI-8UI",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E035",
+      "source_name": "LANTUS",
+      "source_preuve": "LANTUS 22 UI LE SOIR",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E022",
+      "source_name": "sérum_physiologique",
+      "source_preuve": "remplissage par 3000ml de sérum phy",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P3_E007",
+      "source_name": "HYPNOVEL",
+      "source_preuve": "HYPNOVEL 3 MG/H",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P3_E014",
+      "source_name": "Héparine",
+      "source_preuve": "Héparine 4000UI/24h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E007",
+      "source_name": "Remplissage avec 250ml de sérum phy",
+      "source_preuve": "Remplissage avec 250ml de sérum phy",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E008",
+      "source_name": "HYDROCORTISONE",
+      "source_preuve": "HYDROCORTISONE 10 mg/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E022",
+      "source_name": "Oslif breezhaler",
+      "source_preuve": "Oslif breezhaler 150 mg 2 inhalations",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E023",
+      "source_name": "Exforge",
+      "source_preuve": "Exforge 5mg/80mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E024",
+      "source_name": "Inexium",
+      "source_preuve": "Inexium 40 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E025",
+      "source_name": "Actiskénan",
+      "source_preuve": "Actiskénan 800 mg/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E017",
+      "source_name": "Noradrénaline",
+      "source_preuve": "Noradrénaline à 1 mg/h",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P4_E018",
+      "new_relation_id": "P4_R001"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E035",
+      "source_name": "morphine",
+      "source_preuve": "doses initialement élevées de morphine à 12 mg/h",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E026",
+      "source_name": "Rovamycine",
+      "source_preuve": "Rovamycine IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E027",
+      "source_name": "amiklin",
+      "source_preuve": "ttt par claventin 3g+ 500 mg d'amiklin",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E008",
+      "source_name": "CLAVENTIN",
+      "source_preuve": "CLAVENTIN 3g",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P1_E028",
+      "new_relation_id": "P2_R001"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E009",
+      "source_name": "AMIKLIN",
+      "source_preuve": "AMIKLIN 500 mg",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P1_E029",
+      "new_relation_id": "P2_R002"
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E015",
+      "source_name": "lasilix",
+      "source_preuve": "lasilix 500 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E019",
+      "source_name": "Fosrenol",
+      "source_preuve": "Fosrenol 1000:1cp×3/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E021",
+      "source_name": "inexium",
+      "source_preuve": "inexium 40mg : 1cp/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E027",
+      "source_name": "Specialfodine",
+      "source_preuve": "Specialfodine 5 mg : 1cp/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E028",
+      "source_name": "Specialfodine IV",
+      "source_preuve": "Specialfodine IV 5 mg",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E064",
+      "new_posology_text": "5 mg IV",
+      "new_relation_id": "P2_R003",
+      "explicit_components": {
+        "dose": [
+          "5 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E029",
+      "source_name": "Ampoule de B12",
+      "source_preuve": "Ampoule de B12 : 1/j",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E031",
+      "source_name": "Venofer",
+      "source_preuve": "Venofer IV 300 mg : 1/semaine",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P2_E065",
+      "new_posology_text": "300 mg IV",
+      "new_relation_id": "P2_R004",
+      "explicit_components": {
+        "dose": [
+          "300 mg"
+        ],
+        "route": [
+          "IV"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E033",
+      "source_name": "Aranesp",
+      "source_preuve": "Aranesp : 300 ug/semaine",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E014",
+      "source_name": "héparine",
+      "source_preuve": "5000 UI d'héparine",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E014",
+      "source_name": "noradrénaline",
+      "source_preuve": "Début de la noradrénaline en cours d'intervention à 2 mg/h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E025",
+      "source_name": "valium",
+      "source_preuve": "10 mg de valium",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E008",
+      "source_name": "Adrénaline",
+      "source_preuve": "Adrénaline 10 mg/h",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E010",
+      "source_name": "Noradrénaline",
+      "source_preuve": "Noradrénaline 20 mg/h",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E020",
+      "source_name": "NAD",
+      "source_preuve": "amine (NAD 1 mg/h)",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E016",
+      "source_name": "TERCIAN",
+      "source_preuve": "TERCIAN 40 MG 10 gt 3*/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E018",
+      "source_name": "Diflu-k",
+      "source_preuve": "Diflu-k 600 mg 1-1-1",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E020",
+      "source_name": "Pyostacine",
+      "source_preuve": "Pyostacine 500 mg 1-0-1",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E022",
+      "source_name": "Dafalgan",
+      "source_preuve": "Dafalgan 500 mg si douleur",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P1_E023",
+      "source_name": "Lovenox",
+      "source_preuve": "Lovenox 2000UI 1 injection sc/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E026",
+      "source_name": "lasilix",
+      "source_preuve": "diurétique (lasilix 40 mg)",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E019",
+      "source_name": "fresubin",
+      "source_preuve": "fresubin 1000 ml/j (sonde gastrique)",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E021",
+      "source_name": "eau",
+      "source_preuve": "eau 500 ml/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E023",
+      "source_name": "atarax",
+      "source_preuve": "atarax 25 mg/ le soir si besoin",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E025",
+      "source_name": "lovenox",
+      "source_preuve": "lovenox 0.2ml/j en SC",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E023",
+      "source_name": "Protocole Insuline SC",
+      "source_preuve": "Protocole Insuline SC",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E024",
+      "source_name": "EPantol",
+      "source_preuve": "EPantol 40mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E025",
+      "source_name": "ZELITrex",
+      "source_preuve": "ZELITrex 500 mg 1/j",
+      "validation_status": "CONFIRMED_PATTERN_A",
+      "decision": "SPLIT",
+      "decision_reason": "AUTO_APPROVED_SPLIT",
+      "applied": true,
+      "new_posology_id": "P5_E063",
+      "new_posology_text": "500 mg 1/j",
+      "new_relation_id": "P5_R001",
+      "explicit_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "500 mg"
+        ]
+      }
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E026",
+      "source_name": "Triflucan",
+      "source_preuve": "Triflucan 50 mg/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E027",
+      "source_name": "Acide folinique",
+      "source_preuve": "Acide folinique 25mg/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E029",
+      "source_name": "AMLOR",
+      "source_preuve": "AMLOR 10 mg/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E026",
+      "source_name": "ETO/CELO",
+      "source_preuve": "Induction ETO/CELO 20 m/60 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E027",
+      "source_name": "Atropine",
+      "source_preuve": "Atropine 1 mg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E034",
+      "source_name": "Voluven",
+      "source_preuve": "250 ml de Voluven",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E035",
+      "source_name": "NaCl iv",
+      "source_preuve": "NaCl iv",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E006",
+      "source_name": "noradrénaline",
+      "source_preuve": "noradrénaline à plus de 3 mg/h",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P3_E029",
+      "source_name": "Augmentin",
+      "source_preuve": "relais à J2 par Augmentin IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E024",
+      "source_name": "alimentation orale",
+      "source_preuve": "alimentation orale",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P5_E008",
+      "source_name": "Ig IV",
+      "source_preuve": "Ig IV",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P4_E029",
+      "source_name": "Introduction d'une corticothérapie à 1mg/kg",
+      "source_preuve": "Introduction d'une corticothérapie à 1mg/kg",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E016",
+      "source_name": "G5%",
+      "source_preuve": "G5% 500 ml / jour",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E020",
+      "source_name": "CACI",
+      "source_preuve": "CACI 1g/j",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E022",
+      "source_name": "Kcl",
+      "source_preuve": "Kcl 2g/j",
+      "validation_status": "MISSING_RELATION",
+      "decision": "LINK",
+      "decision_reason": "AUTO_APPROVED_LINK",
+      "applied": true,
+      "target_entity_id": "P6_E023",
+      "new_relation_id": "P6_R001"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E032",
+      "source_name": "Lovenox",
+      "source_preuve": "Lovenox 0.4 ml/j SC",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P6_E034",
+      "source_name": "Eupantol",
+      "source_preuve": "Eupantol 40 mg",
+      "validation_status": "ALREADY_CORRECT",
+      "decision": "SKIP",
+      "decision_reason": "ALREADY_CORRECT",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E012",
+      "source_name": "rivotril",
+      "source_preuve": "Administration d'1 mg de rivotril",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "source_entity_id": "P2_E013",
+      "source_name": "dilantin",
+      "source_preuve": "1600 mg de dilantin",
+      "validation_status": "AMBIGUOUS",
+      "decision": "SKIP",
+      "decision_reason": "AMBIGUOUS",
+      "applied": false
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,124 @@
+{
+  "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 27,
+  "number_candidates": 5,
+  "signal_counts": {
+    "WEAK": 4,
+    "MEDIUM": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E021",
+        "type": "TRAITEMENT",
+        "name": "noradrénaline",
+        "preuve": "noradrénaline en IVSE 2 mg/h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "noradrénaline en IVSE 2 mg/h | noradrénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "2 mg/h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P5_E031",
+        "type": "TRAITEMENT",
+        "name": "claforan",
+        "preuve": "claforan 1g toutes les 8h (J6)",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "claforan 1g toutes les 8h (J6) | claforan | antibiotique",
+      "detected_components": {
+        "frequency": [
+          "toutes les 8h"
+        ],
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E034",
+        "type": "TRAITEMENT",
+        "name": "pariet",
+        "preuve": "pariet 20 mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "pariet 20 mg/j | pariet | autre",
+      "detected_components": {
+        "dose": [
+          "20 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E036",
+        "type": "TRAITEMENT",
+        "name": "Venlafaxine lp37.5mg",
+        "preuve": "Venlafaxine lp37.5mg/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "Venlafaxine lp37.5mg/j | Venlafaxine lp37.5mg | autre",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E038",
+        "type": "TRAITEMENT",
+        "name": "glucose 500 ml",
+        "preuve": "glucose 500 ml /j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "glucose 500 ml /j | glucose 500 ml | nutrition_parenterale",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

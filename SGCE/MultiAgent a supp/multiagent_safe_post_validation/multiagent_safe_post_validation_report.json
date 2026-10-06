@@ -1,0 +1,76 @@
+{
+  "validator": "multiagent_safe_post_validator",
+  "status": "PASS",
+  "before_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_d_corrected",
+  "after_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\multiagent_safe_final_corrected",
+  "summary": {
+    "documents_checked": 43,
+    "expected_modified_documents": 2,
+    "actually_modified_documents": 2,
+    "unexpected_modifications": 0,
+    "missing_expected_corrections": 0,
+    "operations_checked": 3,
+    "operations_pass": 3,
+    "operations_fail": 0,
+    "anomalies_before": 781,
+    "anomalies_after": 778,
+    "new_anomalies": 0,
+    "resolved_anomalies": 3,
+    "missing_documents_after": 0,
+    "extra_documents_after": 0,
+    "trace_signatures_loaded": 32
+  },
+  "new_anomalies": [],
+  "resolved_anomalies": [
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00107",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E029",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00108",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E050",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00071",
+      "relation_type": "micro_organisme_isole_dans",
+      "entity_id": "P4_E016",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "MICRO_ORGANISME"
+    }
+  ],
+  "operation_results": [
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E029",
+      "new_type": "DONNEE_PATIENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E050",
+      "new_type": "DONNEE_PATIENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E016",
+      "new_type": "MICRO_ORGANISME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    }
+  ]
+}

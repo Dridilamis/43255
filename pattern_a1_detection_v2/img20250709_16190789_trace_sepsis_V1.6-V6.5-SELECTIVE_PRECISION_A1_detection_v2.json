@@ -1,0 +1,190 @@
+{
+  "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 43,
+  "number_candidates": 8,
+  "signal_counts": {
+    "MEDIUM": 1,
+    "WEAK": 7
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E006",
+        "type": "TRAITEMENT",
+        "name": "Olmetec",
+        "preuve": "Olmetec 10 mg x 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Olmetec 10 mg x 1/j | Olmetec | traitement_habituel",
+      "detected_components": {
+        "frequency": [
+          "x 1/j"
+        ],
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E020",
+        "type": "TRAITEMENT",
+        "name": "corticothérapie intraveineuse",
+        "preuve": "Une corticothérapie intraveineuse à forte dose est débutée",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Une corticothérapie intraveineuse à forte dose est débutée | corticothérapie intraveineuse | corticoide",
+      "detected_components": {
+        "route": [
+          "intraveineuse"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E008",
+        "type": "TRAITEMENT",
+        "name": "Valsartan",
+        "preuve": "Valsartan 40 mg",
+        "valeur": 40,
+        "page": 6
+      },
+      "detection_text": "Valsartan 40 mg | Valsartan | 40 | antibiotique",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E010",
+        "type": "TRAITEMENT",
+        "name": "Atarax",
+        "preuve": "Atarax 50 mg",
+        "valeur": 50,
+        "page": 6
+      },
+      "detection_text": "Atarax 50 mg | Atarax | 50 | autre",
+      "detected_components": {
+        "dose": [
+          "50 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E016",
+        "type": "TRAITEMENT",
+        "name": "Tardyferon",
+        "preuve": "Tardyferon b 9 1/j",
+        "valeur": 1,
+        "page": 6
+      },
+      "detection_text": "Tardyferon b 9 1/j | Tardyferon | 1 | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E017",
+        "type": "TRAITEMENT",
+        "name": "Neurontin",
+        "preuve": "Neurontin 1.2 g",
+        "valeur": 1.2,
+        "page": 6
+      },
+      "detection_text": "Neurontin 1.2 g | Neurontin | 1.2 | autre",
+      "detected_components": {
+        "dose": [
+          "1.2 g"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E019",
+        "type": "TRAITEMENT",
+        "name": "Loxen",
+        "preuve": "Loxen 20 mg",
+        "valeur": 20,
+        "page": 6
+      },
+      "detection_text": "Loxen 20 mg | Loxen | 20 | autre",
+      "detected_components": {
+        "dose": [
+          "20 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E021",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 0.4 ml",
+        "valeur": 0.4,
+        "page": 6
+      },
+      "detection_text": "Lovenox 0.4 ml | Lovenox | 0.4 | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "0.4 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

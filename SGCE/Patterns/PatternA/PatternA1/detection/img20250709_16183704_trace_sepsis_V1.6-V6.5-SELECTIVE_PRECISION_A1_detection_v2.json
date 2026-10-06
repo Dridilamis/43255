@@ -1,0 +1,157 @@
+{
+  "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 41,
+  "number_candidates": 6,
+  "signal_counts": {
+    "WEAK": 2,
+    "MEDIUM": 4
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E012",
+        "type": "TRAITEMENT",
+        "name": "Crestor",
+        "preuve": "Crestor 5mg",
+        "valeur": 5,
+        "page": 1
+      },
+      "detection_text": "Crestor 5mg | Crestor | 5 | traitement_habituel",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E020",
+        "type": "TRAITEMENT",
+        "name": "Tahor",
+        "preuve": "Tahor 10mg 0-0-1",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Tahor 10mg 0-0-1 | Tahor | antibiotique",
+      "detected_components": {
+        "dose": [
+          "10mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E024",
+        "type": "TRAITEMENT",
+        "name": "Dafalgan",
+        "preuve": "Dafalgan 500mg PO si besoin",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Dafalgan 500mg PO si besoin | Dafalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "500mg"
+        ],
+        "route": [
+          "PO"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E026",
+        "type": "TRAITEMENT",
+        "name": "Fragmine",
+        "preuve": "Fragmine 5000UI/0,2mL SC la nuit",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Fragmine 5000UI/0,2mL SC la nuit | Fragmine | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "5000UI",
+          "0,2mL"
+        ],
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E028",
+        "type": "TRAITEMENT",
+        "name": "Clinutren HP/HC",
+        "preuve": "Clinutren HP/HC 200mL PO 1 bouteille le matin et au goûter",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Clinutren HP/HC 200mL PO 1 bouteille le matin et au goûter | Clinutren HP/HC | nutrition_enterale",
+      "detected_components": {
+        "dose": [
+          "200mL"
+        ],
+        "route": [
+          "PO"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P2_E030",
+        "type": "TRAITEMENT",
+        "name": "Nefopam",
+        "preuve": "Nefopam 20mg/2mL PO si besoin",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Nefopam 20mg/2mL PO si besoin | Nefopam | antalgique",
+      "detected_components": {
+        "dose": [
+          "20mg",
+          "2mL"
+        ],
+        "route": [
+          "PO"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    }
+  ]
+}

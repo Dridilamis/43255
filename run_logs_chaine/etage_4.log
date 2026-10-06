@@ -1,0 +1,942 @@
+========================================================================================================
+TRACE / SGCE - FINAL ONTOLOGY AUDIT
+========================================================================================================
+Entrée clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+Guideline                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques                : 43
+Entités analysées                  : 10142
+Relations analysées                : 3751
+Signatures TRACE chargées          : 32
+
+Anomalies résiduelles totales      : 329
+
+ANOMALIES PAR TYPE
+--------------------------------------------------------------------------------------------------------
+DUPLICATE_ENTITY_CONTENT                            : 281
+INVALID_RELATION_TARGET_TYPE                        : 36
+ORPHAN_RELATION_TARGET                              : 4
+INVALID_RELATION_SOURCE_TYPE                        : 3
+DUPLICATE_RELATION                                  : 3
+ORPHAN_RELATION_SOURCE                              : 2
+
+RELATIONS LES PLUS CONCERNEES
+--------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                         : 15
+presente_symptome                                   : 11
+a_pour_label_nosologique                            : 11
+a_pour_contexte_acquisition                         : 3
+traitement_a_pour_posologie                         : 3
+presente_suspicion_infection                        : 2
+patient_a_pour_evolution                            : 1
+service_medical_accueille                           : 1
+traitement_administre_a                             : 1
+
+Rapport JSON                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_audit_report.json
+CSV anomalies                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_anomalies.csv
+CSV résumé par type                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_summary_by_type.csv
+CSV résumé par relation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_summary_by_relation.csv
+CSV résumé par document            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_summary_by_document.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION CANDIDATE BUILDER V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Documents avec anomalies           : 21
+Documents chargés                  : 21
+Documents manquants                : 0
+Candidats construits               : 39
+INVALID_RELATION_SOURCE_TYPE        : 3
+INVALID_RELATION_TARGET_TYPE        : 36
+Entités non résolues               : 0
+Relations non résolues             : 0
+Entités causant plusieurs anomalies: 0
+
+HYPOTHESES INITIALES
+------------------------------------------------------------------------------------------------------------------------
+POSSIBLE_ENTITY_MISTYPING                                   : 39
+
+ROLES AFFECTES
+------------------------------------------------------------------------------------------------------------------------
+TARGET                                                      : 36
+SOURCE                                                      : 3
+
+TYPES ATTENDUS
+------------------------------------------------------------------------------------------------------------------------
+DEFAILLANCE_ORGANE                                          : 13
+SYMPTOME                                                    : 10
+LABEL_NOSOLOGIQUE                                           : 10
+COMORBIDITE_ANTECEDENT                                      : 3
+FOYER_INFECTIEUX                                            : 2
+EVOLUTION_PRONOSTIC                                         : 1
+
+RESOLUTION DES RELATIONS
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RESOLUTION DES ENTITES
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\queues\entity_validation_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION CLASSIFIER V1 - CONSERVATIVE MULTI-EVIDENCE
+========================================================================================================================
+Candidats reçus                    : 39
+Groupes d'entités                  : 39
+Groupes mistyping STRONG           : 0
+
+CLASSIFICATIONS
+------------------------------------------------------------------------------------------------------------------------
+RELATION_ONTOLOGY_CONFLICT                                  : 39
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+REVIEW_RELATION                                             : 39
+
+CONFIANCES
+------------------------------------------------------------------------------------------------------------------------
+0.0                                                         : 39
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\outputs\entity_validation_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION VALIDATOR V1 - GROUP-LEVEL SAFE RETYPING
+========================================================================================================================
+Décisions reçues                    : 39
+Groupes d'entités reçus             : 39
+Groupes validés                      : 39
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 39
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 39
+
+RETYPAGES SAFE
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage automatiquement validé.
+
+COUVERTURE
+------------------------------------------------------------------------------------------------------------------------
+Opérations logiques RETYPE_ENTITY   : 0
+Anomalies couvertes par ces groupes : 0
+Anomalies STRONG couvertes          : 0
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\outputs\entity_validation_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION SAFE CORRECTOR V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Actions SAFE_ACCEPT reçues          : 0
+Documents cliniques copiés         : 43
+Retypages logiques appliqués        : 0
+Occurrences physiques modifiées     : 0
+Documents modifiés                  : 0
+Erreurs                             : 0
+Altérations de relations            : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+
+RETYPAGES APPLIQUES
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage appliqué.
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected\entity_validation_correction_report.json
+
+Toutes les corrections SAFE ont été appliquées sans erreur.
+
+Les fichiers sources n'ont pas été modifiés.
+==============================================================================================================
+TRACE — ETAGE 4 / ENTITY VALIDATION
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+==============================================================================================================
+[1/5] final_ontology_audit.py
+==============================================================================================================
+[OK] final_ontology_audit.py
+
+==============================================================================================================
+[2/5] entity_validation_candidate_builder.py
+==============================================================================================================
+[OK] entity_validation_candidate_builder.py
+
+==============================================================================================================
+[3/5] entity_validation_classifier.py
+==============================================================================================================
+[OK] entity_validation_classifier.py
+
+==============================================================================================================
+[4/5] entity_validation_validator.py
+==============================================================================================================
+[OK] entity_validation_validator.py
+
+==============================================================================================================
+[5/5] entity_validation_safe_corrector.py
+==============================================================================================================
+[OK] entity_validation_safe_corrector.py
+
+==============================================================================================================
+ENTITY VALIDATION TERMINE
+==============================================================================================================
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected
+Durée totale    : 2.42 s
+========================================================================================================
+TRACE / SGCE - FINAL ONTOLOGY AUDIT
+========================================================================================================
+Entrée clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected
+Guideline                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques                : 43
+Entités analysées                  : 10142
+Relations analysées                : 3751
+Signatures TRACE chargées          : 32
+
+Anomalies résiduelles totales      : 329
+
+ANOMALIES PAR TYPE
+--------------------------------------------------------------------------------------------------------
+DUPLICATE_ENTITY_CONTENT                            : 281
+INVALID_RELATION_TARGET_TYPE                        : 36
+ORPHAN_RELATION_TARGET                              : 4
+INVALID_RELATION_SOURCE_TYPE                        : 3
+DUPLICATE_RELATION                                  : 3
+ORPHAN_RELATION_SOURCE                              : 2
+
+RELATIONS LES PLUS CONCERNEES
+--------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                         : 15
+presente_symptome                                   : 11
+a_pour_label_nosologique                            : 11
+a_pour_contexte_acquisition                         : 3
+traitement_a_pour_posologie                         : 3
+presente_suspicion_infection                        : 2
+patient_a_pour_evolution                            : 1
+service_medical_accueille                           : 1
+traitement_administre_a                             : 1
+
+Rapport JSON                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_audit_report.json
+CSV anomalies                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_anomalies.csv
+CSV résumé par type                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_summary_by_type.csv
+CSV résumé par relation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_summary_by_relation.csv
+CSV résumé par document            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_summary_by_document.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION RESIDUAL BUILDER V1 - POST RETYPING RELATION AUDIT
+========================================================================================================================
+Anomalies relationnelles reçues    : 39
+Candidats construits               : 39
+Relations logiques concernées       : 39
+Documents manquants                : 0
+
+ANOMALIES
+------------------------------------------------------------------------------------------------------------------------
+INVALID_RELATION_TARGET_TYPE                                : 36
+INVALID_RELATION_SOURCE_TYPE                                : 3
+
+ROLES AFFECTES
+------------------------------------------------------------------------------------------------------------------------
+TARGET                                                      : 36
+SOURCE                                                      : 3
+
+HYPOTHESES INITIALES
+------------------------------------------------------------------------------------------------------------------------
+RELATION_ONTOLOGY_CONFLICT                                  : 39
+
+RESOLUTION DES RELATIONS
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RESOLUTION DES SOURCES
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RESOLUTION DES CIBLES
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RELATIONS LES PLUS CONCERNEES
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                                 : 13
+presente_symptome                                           : 10
+a_pour_label_nosologique                                    : 10
+a_pour_contexte_acquisition                                 : 3
+presente_suspicion_infection                                : 2
+patient_a_pour_evolution                                    : 1
+
+Sortie JSON                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\queues\ontology_relation_residual_candidates.json
+Sortie CSV                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\queues\ontology_relation_residual_candidates.csv
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION RESIDUAL CLASSIFIER V1 - CONSERVATIVE ENDPOINT-FIRST
+========================================================================================================================
+Candidats reçus                    : 39
+
+CLASSIFICATIONS
+------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_RELATION_CANDIDATE                              : 34
+ENDPOINT_TYPE_STRONGLY_GROUNDED                             : 4
+RELATION_TYPE_ERROR_CANDIDATE                               : 1
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+DEEP_REVIEW_RELATION                                        : 34
+REVIEW_RELATION                                             : 5
+
+CONFIANCES
+------------------------------------------------------------------------------------------------------------------------
+0.95                                                        : 4
+0.9                                                         : 1
+0.6                                                         : 34
+
+CLASSIFICATIONS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                       : 13    | UNSUPPORTED_RELATION_CANDIDATE=12, ENDPOINT_TYPE_STRONGLY_GROUNDED=1
+presente_symptome                                 : 10    | UNSUPPORTED_RELATION_CANDIDATE=10
+a_pour_label_nosologique                          : 10    | UNSUPPORTED_RELATION_CANDIDATE=9, ENDPOINT_TYPE_STRONGLY_GROUNDED=1
+a_pour_contexte_acquisition                       : 3     | ENDPOINT_TYPE_STRONGLY_GROUNDED=2, UNSUPPORTED_RELATION_CANDIDATE=1
+presente_suspicion_infection                      : 2     | RELATION_TYPE_ERROR_CANDIDATE=1, UNSUPPORTED_RELATION_CANDIDATE=1
+patient_a_pour_evolution                          : 1     | UNSUPPORTED_RELATION_CANDIDATE=1
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_residual_decisions.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION RESIDUAL VALIDATOR V1 - CONSERVATIVE SAFETY GATE
+========================================================================================================================
+Décisions reçues                    : 39
+
+CLASSIFICATIONS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_RELATION_CANDIDATE                              : 34
+ENDPOINT_TYPE_STRONGLY_GROUNDED                             : 4
+RELATION_TYPE_ERROR_CANDIDATE                               : 1
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+DEEP_REVIEW                                                 : 34
+PROTECTED_ENDPOINT_REVIEW_RELATION                          : 4
+REVIEW_RELATION_TYPE                                        : 1
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 39
+
+RESUME
+------------------------------------------------------------------------------------------------------------------------
+Endpoints protégés                  : 4
+Relations en deep review            : 34
+Types de relation à revoir          : 1
+Types d'entité à revoir             : 0
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_residual_validated.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION DEEP REVIEWER V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Décisions reçues                    : 39
+Documents manquants                 : 0
+
+STATUTS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+DEEP_REVIEW                                                 : 34
+PROTECTED_ENDPOINT_REVIEW_RELATION                          : 4
+REVIEW_RELATION_TYPE                                        : 1
+
+RESOLUTION STRUCTURE TRACE
+------------------------------------------------------------------------------------------------------------------------
+Sources retrouvées                  : 39
+Cibles retrouvées                   : 39
+Deux endpoints retrouvés            : 39
+Relations retrouvées                : 39
+
+RESULTATS DEEP REVIEW
+------------------------------------------------------------------------------------------------------------------------
+PARTIAL_DOCUMENT_SUPPORT                                    : 35
+RELATION_ONTOLOGY_CONFLICT_CONFIRMED                        : 4
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 35
+PROPOSE_REMOVE_RELATION                                     : 4
+
+RESULTATS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                       : 13    | PARTIAL_DOCUMENT_SUPPORT=12, RELATION_ONTOLOGY_CONFLICT_CONFIRMED=1
+presente_symptome                                 : 10    | PARTIAL_DOCUMENT_SUPPORT=10
+a_pour_label_nosologique                          : 10    | PARTIAL_DOCUMENT_SUPPORT=9, RELATION_ONTOLOGY_CONFLICT_CONFIRMED=1
+a_pour_contexte_acquisition                       : 3     | RELATION_ONTOLOGY_CONFLICT_CONFIRMED=2, PARTIAL_DOCUMENT_SUPPORT=1
+presente_suspicion_infection                      : 2     | PARTIAL_DOCUMENT_SUPPORT=2
+patient_a_pour_evolution                          : 1     | PARTIAL_DOCUMENT_SUPPORT=1
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_deep_review.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION FINAL VALIDATOR V1 - CONSERVATIVE RELATION SAFETY GATE
+========================================================================================================================
+Cas reçus                           : 39
+
+CLASSIFICATIONS DEEP REVIEW
+------------------------------------------------------------------------------------------------------------------------
+PARTIAL_DOCUMENT_SUPPORT                                    : 35
+RELATION_ONTOLOGY_CONFLICT_CONFIRMED                        : 4
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 35
+SAFE_REMOVE                                                 : 4
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 35
+REMOVE_RELATION                                             : 4
+
+RESULTATS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                       : 13    | REVIEW=12, SAFE_REMOVE=1
+presente_symptome                                 : 10    | REVIEW=10
+a_pour_label_nosologique                          : 10    | REVIEW=9, SAFE_REMOVE=1
+a_pour_contexte_acquisition                       : 3     | SAFE_REMOVE=2, REVIEW=1
+presente_suspicion_infection                      : 2     | REVIEW=2
+patient_a_pour_evolution                          : 1     | REVIEW=1
+
+RESUME
+------------------------------------------------------------------------------------------------------------------------
+Relations SAFE_REMOVE               : 4
+Relations SAFE_KEEP                 : 0
+Possible inversion                  : 0
+Review négation                     : 0
+Autres REVIEW                       : 35
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_final_validated.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION SAFE CORRECTOR V3 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Décisions finales chargées          : 39
+Actions SAFE_REMOVE détectées       : 4
+SAFE_REMOVE annoncées validator     : 4
+Opérations uniques                  : 4
+Doublons ignorés                    : 0
+Opérations invalides                : 0
+Documents cliniques copiés          : 43
+
+Relations logiques supprimées       : 4
+Occurrences physiques supprimées    : 4
+Documents modifiés                  : 4
+Erreurs                             : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+APPLIED                                                     : 4
+
+SUPPRESSIONS PAR TYPE DE RELATION
+------------------------------------------------------------------------------------------------------------------------
+a_pour_contexte_acquisition                                 : 2
+a_pour_label_nosologique                                    : 1
+presente_dysfonction_organe                                 : 1
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\ontology_relation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\ontology_relation_safe_corrected\ontology_relation_correction_report.json
+
+Toutes les suppressions SAFE ont été appliquées sans erreur.
+
+Les fichiers sources n'ont pas été modifiés.
+========================================================================================================
+TRACE / SGCE - FINAL ONTOLOGY AUDIT
+========================================================================================================
+Entrée clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\ontology_relation_safe_corrected
+Guideline                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques                : 43
+Entités analysées                  : 10142
+Relations analysées                : 3747
+Signatures TRACE chargées          : 32
+
+Anomalies résiduelles totales      : 325
+
+ANOMALIES PAR TYPE
+--------------------------------------------------------------------------------------------------------
+DUPLICATE_ENTITY_CONTENT                            : 281
+INVALID_RELATION_TARGET_TYPE                        : 34
+ORPHAN_RELATION_TARGET                              : 4
+DUPLICATE_RELATION                                  : 3
+ORPHAN_RELATION_SOURCE                              : 2
+INVALID_RELATION_SOURCE_TYPE                        : 1
+
+RELATIONS LES PLUS CONCERNEES
+--------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                         : 14
+presente_symptome                                   : 11
+a_pour_label_nosologique                            : 10
+traitement_a_pour_posologie                         : 3
+presente_suspicion_infection                        : 2
+a_pour_contexte_acquisition                         : 1
+patient_a_pour_evolution                            : 1
+service_medical_accueille                           : 1
+traitement_administre_a                             : 1
+
+Rapport JSON                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_audit_report.json
+CSV anomalies                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_anomalies.csv
+CSV résumé par type                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_summary_by_type.csv
+CSV résumé par relation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_summary_by_relation.csv
+CSV résumé par document            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_summary_by_document.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION REVIEW RESOLVER V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Anomalies totales audit             : 325
+Anomalies relationnelles reçues     : 35
+
+ANOMALIES EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+INVALID_RELATION_TARGET_TYPE                                : 34
+INVALID_RELATION_SOURCE_TYPE                                : 1
+
+RESOLUTIONS
+------------------------------------------------------------------------------------------------------------------------
+POSSIBLE_ENDPOINT_MISTYPING                                 : 34
+NEGATION_SENSITIVE                                          : 1
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+REVIEW_ENTITY_TYPE                                          : 34
+REVIEW_NEGATION                                             : 1
+
+RESOLUTION STRUCTURE TRACE
+------------------------------------------------------------------------------------------------------------------------
+Relations retrouvées                : 35
+Relations non résolues              : 0
+Sources retrouvées                  : 35
+Sources non résolues                : 0
+Cibles retrouvées                   : 35
+Cibles non résolues                 : 0
+
+Inversions potentielles             : 0
+
+Sortie JSON                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_resolved.json
+Sortie CSV                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_resolved.csv
+Résumé TXT                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_summary.txt
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION REVIEW VALIDATOR V2 - CONSERVATIVE MULTI-EVIDENCE SAFETY GATE
+========================================================================================================================
+Cas reçus                           : 35
+
+RESOLUTIONS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+POSSIBLE_ENDPOINT_MISTYPING                                 : 34
+NEGATION_SENSITIVE                                          : 1
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW_ENTITY_TYPE                                          : 32
+PROTECTED_CURRENT_TYPE                                      : 2
+REVIEW_NEGATION                                             : 1
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 35
+
+RESUME SAFE
+------------------------------------------------------------------------------------------------------------------------
+SAFE_NO_CHANGE                     : 0
+SAFE_RETYPE                        : 0
+SAFE_INVERT                        : 0
+PROTECTED_CURRENT_TYPE             : 2
+PROTECTED_ENDPOINT                 : 0
+
+RETYPAGES SAFE PROPOSES
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage automatique autorisé.
+
+TYPES ACTUELS PROTEGES
+------------------------------------------------------------------------------------------------------------------------
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E029 | SYMPTOME (retypage vers FOYER_INFECTIEUX refusé)
+img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E023 | DEFAILLANCE_ORGANE (retypage vers SYMPTOME refusé)
+
+STATUTS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+a_pour_contexte_acquisition                       : 1     | REVIEW_NEGATION=1
+a_pour_label_nosologique                          : 9     | REVIEW_ENTITY_TYPE=9
+patient_a_pour_evolution                          : 1     | REVIEW_ENTITY_TYPE=1
+presente_dysfonction_organe                       : 12    | REVIEW_ENTITY_TYPE=12
+presente_suspicion_infection                      : 2     | PROTECTED_CURRENT_TYPE=1, REVIEW_ENTITY_TYPE=1
+presente_symptome                                 : 10    | REVIEW_ENTITY_TYPE=9, PROTECTED_CURRENT_TYPE=1
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_validated.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION REVIEW SAFE CORRECTOR V1 - GENERIC VALIDATOR-DRIVEN
+========================================================================================================================
+Cas validés reçus                   : 35
+Actions SAFE détectées              : 0
+Opérations uniques                  : 0
+Doublons ignorés                    : 0
+Documents cliniques copiés          : 43
+
+ACTIONS SAFE DEMANDEES
+------------------------------------------------------------------------------------------------------------------------
+Aucune action SAFE.
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+Aucune opération.
+
+CORRECTIONS APPLIQUEES
+------------------------------------------------------------------------------------------------------------------------
+RETYPE_ENTITY                       : 0
+INVERT_RELATION                     : 0
+
+RETYPAGES
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage appliqué.
+
+INVERSIONS DE RELATIONS
+------------------------------------------------------------------------------------------------------------------------
+Aucune relation inversée.
+
+Documents modifiés                  : 0
+Erreurs                             : 0
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\relation_validation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\relation_validation_safe_corrected\ontology_relation_review_correction_report.json
+
+Toutes les corrections SAFE validées ont été traitées sans erreur.
+
+Les fichiers sources n'ont pas été modifiés.
+==============================================================================================================
+TRACE — ETAGE 4 / RELATION VALIDATION
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+==============================================================================================================
+[1/11] AUDIT APRES ENTITY VALIDATION
+Script : final_ontology_audit.py
+==============================================================================================================
+
+[OK] AUDIT APRES ENTITY VALIDATION
+
+==============================================================================================================
+[2/11] RELATION RESIDUAL — BUILDER
+Script : ontology_relation_residual_builder.py
+==============================================================================================================
+
+[OK] RELATION RESIDUAL — BUILDER
+
+==============================================================================================================
+[3/11] RELATION RESIDUAL — CLASSIFIER
+Script : ontology_relation_residual_classifier.py
+==============================================================================================================
+
+[OK] RELATION RESIDUAL — CLASSIFIER
+
+==============================================================================================================
+[4/11] RELATION RESIDUAL — VALIDATOR
+Script : ontology_relation_residual_validator.py
+==============================================================================================================
+
+[OK] RELATION RESIDUAL — VALIDATOR
+
+==============================================================================================================
+[5/11] RELATION — DEEP REVIEWER
+Script : ontology_relation_deep_reviewer.py
+==============================================================================================================
+
+[OK] RELATION — DEEP REVIEWER
+
+==============================================================================================================
+[6/11] RELATION — FINAL VALIDATOR
+Script : ontology_relation_final_validator.py
+==============================================================================================================
+
+[OK] RELATION — FINAL VALIDATOR
+
+==============================================================================================================
+[7/11] RELATION — SAFE REMOVE CORRECTOR
+Script : ontology_relation_safe_corrector.py
+==============================================================================================================
+
+[OK] RELATION — SAFE REMOVE CORRECTOR
+
+==============================================================================================================
+[8/11] AUDIT APRES SAFE REMOVE
+Script : final_ontology_audit.py
+==============================================================================================================
+
+[OK] AUDIT APRES SAFE REMOVE
+
+==============================================================================================================
+[9/11] RELATION REVIEW — RESOLVER
+Script : ontology_relation_review_resolver.py
+==============================================================================================================
+
+[OK] RELATION REVIEW — RESOLVER
+
+==============================================================================================================
+[10/11] RELATION REVIEW — VALIDATOR
+Script : ontology_relation_review_validator.py
+==============================================================================================================
+
+[OK] RELATION REVIEW — VALIDATOR
+
+==============================================================================================================
+[11/11] RELATION REVIEW — SAFE CORRECTOR
+Script : ontology_relation_review_safe_corrector.py
+==============================================================================================================
+
+[OK] RELATION REVIEW — SAFE CORRECTOR
+
+==============================================================================================================
+RELATION VALIDATION TERMINEE
+==============================================================================================================
+Documents cliniques : 43
+Sortie officielle   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\relation_validation_safe_corrected
+Duree totale        : 8.04 s
+========================================================================================================
+TRACE / SGCE - DUPLICATE RELATION CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                   : 43
+Groupes relations dupliquées         : 3
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\queues\duplicate_relation_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - DUPLICATE RELATION SAFE CLEANER
+========================================================================================================
+Groupes candidats                    : 3
+Documents copiés                     : 43
+Relations dupliquées supprimées      : 3
+Documents modifiés                   : 3
+Erreurs                              : 0
+
+Sortie clinique                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\duplicate_relation_cleaned
+Rapport                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\duplicate_relation_cleaned\duplicate_relation_cleaning_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================================================
+TRACE / SGCE - DUPLICATE RELATION POST-VALIDATION
+============================================================================================================
+Documents vérifiés                  : 43
+Documents attendus modifiés         : 3
+Documents réellement modifiés       : 3
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Groupes doublons relations AVANT    : 3
+Groupes doublons relations APRES    : 0
+
+Anomalies structurelles AVANT       : 41
+Anomalies structurelles APRES       : 41
+Nouvelles anomalies structurelles   : 0
+Anomalies structurelles résolues    : 0
+
+STATUT FINAL DUPLICATE RELATION     : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\post_validation\duplicate_relation_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE — ETAGE 4 / DUPLICATE RELATIONS
+============================================================================================================
+
+============================================================================================================
+[1/3] duplicate_relation_candidate_builder.py
+============================================================================================================
+
+============================================================================================================
+[2/3] duplicate_relation_safe_cleaner.py
+============================================================================================================
+
+============================================================================================================
+[3/3] duplicate_relation_post_validator.py
+============================================================================================================
+
+============================================================================================================
+DUPLICATE RELATIONS TERMINE — PASS
+============================================================================================================
+Sortie officielle : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\duplicate_relation_cleaned
+Duree totale      : 5.75 s
+========================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                   : 43
+Groupes candidats doublons           : 346
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\queues\duplicate_entity_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY VALIDATOR V3 - GENERIC MULTI-EVIDENCE
+========================================================================================================
+Candidats reçus                      : 346
+Candidats validés                    : 346
+
+STATUTS
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 346
+
+STATUTS PAR TYPE D'ENTITE
+--------------------------------------------------------------------------------------------------------
+BIOMARQUEUR                             : 2     | REVIEW=2
+COMORBIDITE_ANTECEDENT                  : 15    | REVIEW=15
+CONTEXTE_ACQUISITION                    : 1     | REVIEW=1
+DEFAILLANCE_ORGANE                      : 31    | REVIEW=31
+DONNEE_PATIENT                          : 63    | REVIEW=63
+EVENEMENT_TEMPOREL                      : 5     | REVIEW=5
+EVOLUTION_PRONOSTIC                     : 2     | REVIEW=2
+FOYER_INFECTIEUX                        : 9     | REVIEW=9
+IMAGERIE_PROCEDURE                      : 18    | REVIEW=18
+LABEL_NOSOLOGIQUE                       : 47    | REVIEW=47
+MICRO_ORGANISME                         : 14    | REVIEW=14
+POSOLOGIE                               : 14    | REVIEW=14
+SCORE_NEUROLOGIQUE                      : 1     | REVIEW=1
+SERVICE_MEDICAL                         : 20    | REVIEW=20
+SIGNE_VITAL                             : 2     | REVIEW=2
+SYMPTOME                                : 16    | REVIEW=16
+TRAITEMENT                              : 86    | REVIEW=86
+
+SAFE MERGE
+--------------------------------------------------------------------------------------------------------
+Aucune fusion automatique validée.
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\outputs\duplicate_entity_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY SAFE MERGER
+========================================================================================================
+SAFE_MERGE reçus                     : 0
+Documents copiés                     : 43
+Fusions appliquées                   : 0
+Documents modifiés                   : 0
+Erreurs                              : 0
+
+Sortie clinique                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Rapport                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged\duplicate_entity_merge_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY POST-VALIDATION
+============================================================================================================
+Documents vérifiés                  : 43
+Documents attendus modifiés         : 0
+Documents réellement modifiés       : 0
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Anomalies structurelles AVANT       : 41
+Anomalies structurelles APRES       : 41
+Nouvelles anomalies structurelles   : 0
+Anomalies structurelles résolues    : 0
+
+Groupes doublons AVANT              : 347
+Groupes doublons APRES              : 347
+
+STATUT FINAL DUPLICATE ENTITY       : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\post_validation\duplicate_entity_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE — ETAGE 4 / DUPLICATE ENTITIES
+============================================================================================================
+
+============================================================================================================
+[1/4] duplicate_entity_candidate_builder.py
+============================================================================================================
+
+============================================================================================================
+[2/4] duplicate_entity_validator.py
+============================================================================================================
+
+============================================================================================================
+[3/4] duplicate_entity_safe_merger.py
+============================================================================================================
+
+============================================================================================================
+[4/4] duplicate_entity_post_validator.py
+============================================================================================================
+
+============================================================================================================
+DUPLICATE ENTITIES TERMINE — PASS
+============================================================================================================
+Sortie officielle : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Duree totale      : 13.00 s
+============================================================================================================
+TRACE — ETAGE 4 / DUPLICATES
+============================================================================================================
+
+############################################################################################################
+[1/2] DUPLICATE RELATIONS
+############################################################################################################
+
+############################################################################################################
+[2/2] DUPLICATE ENTITIES
+############################################################################################################
+
+============================================================================================================
+PIPELINE DUPLICATES TERMINE — PASS
+============================================================================================================
+Sortie officielle : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Duree totale      : 19.26 s
+==============================================================================================================
+TRACE — ETAGE 4 / ONTOLOGY VALIDATION — RUNNER GLOBAL
+==============================================================================================================
+Dossier Etage 4 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4
+Python           : C:\Users\Lamis\anaconda3\python.exe
+
+Pipeline:
+  1. Entity Validation
+  2. Relation Validation
+  3. Duplicate Relations
+  4. Duplicate Entities
+
+Patient Canonicalization : NON incluse dans l'Etage 4
+
+==============================================================================================================
+[1/3] ENTITY VALIDATION
+==============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\run_entity_validation.py
+
+[OK] ENTITY VALIDATION
+
+==============================================================================================================
+[2/3] RELATION VALIDATION
+==============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\run_relation_validation.py
+
+[OK] RELATION VALIDATION
+
+==============================================================================================================
+[3/3] DUPLICATE RELATIONS + DUPLICATE ENTITIES
+==============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\run_duplicates.py
+
+[OK] DUPLICATE RELATIONS + DUPLICATE ENTITIES
+
+==============================================================================================================
+TRACE — ETAGE 4 / ONTOLOGY VALIDATION 
+==============================================================================================================
+Documents cliniques detectes : 43
+Sortie officielle            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Duree totale                 : 30.28 s
+==============================================================================================================

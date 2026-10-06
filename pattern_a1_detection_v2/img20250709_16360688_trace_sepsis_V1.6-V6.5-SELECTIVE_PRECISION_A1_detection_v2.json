@@ -1,0 +1,262 @@
+{
+  "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 50,
+  "number_candidates": 11,
+  "signal_counts": {
+    "MEDIUM": 3,
+    "WEAK": 8
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E023",
+        "type": "TRAITEMENT",
+        "name": "Cortancyl",
+        "preuve": "Cortancyl 40 mg 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Cortancyl 40 mg 1/j | Cortancyl | corticoide",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E025",
+        "type": "TRAITEMENT",
+        "name": "Amlor",
+        "preuve": "Amlor 10 mg 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Amlor 10 mg 1/j | Amlor | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "10 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E027",
+        "type": "TRAITEMENT",
+        "name": "Aprovel",
+        "preuve": "Aprovel 300 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Aprovel 300 1/j | Aprovel | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E029",
+        "type": "TRAITEMENT",
+        "name": "Avlocardyl LP",
+        "preuve": "Avlocardyl LP 160 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Avlocardyl LP 160 1/j | Avlocardyl LP | autre",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E030",
+        "type": "TRAITEMENT",
+        "name": "Lasilix",
+        "preuve": "Lasilix 40 mg 1/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Lasilix 40 mg 1/j | Lasilix | diuretique",
+      "detected_components": {
+        "frequency": [
+          "1/j"
+        ],
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E031",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 0.8 x 2/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Lovenox 0.8 x 2/j | Lovenox | anticoagulant",
+      "detected_components": {
+        "frequency": [
+          "x 2/j"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E033",
+        "type": "TRAITEMENT",
+        "name": "Novorapid",
+        "preuve": "Novorapid 8UI-8UI-8UI",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Novorapid 8UI-8UI-8UI | Novorapid | insuline",
+      "detected_components": {
+        "dose": [
+          "8UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E035",
+        "type": "TRAITEMENT",
+        "name": "LANTUS",
+        "preuve": "LANTUS 22 UI LE SOIR",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "LANTUS 22 UI LE SOIR | LANTUS | insuline",
+      "detected_components": {
+        "dose": [
+          "22 UI"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E022",
+        "type": "TRAITEMENT",
+        "name": "sérum_physiologique",
+        "preuve": "remplissage par 3000ml de sérum phy",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "remplissage par 3000ml de sérum phy | sérum_physiologique | remplissage_vasculaire",
+      "detected_components": {
+        "dose": [
+          "3000ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P3_E007",
+        "type": "TRAITEMENT",
+        "name": "HYPNOVEL",
+        "preuve": "HYPNOVEL 3 MG/H",
+        "valeur": null,
+        "page": 3
+      },
+      "detection_text": "HYPNOVEL 3 MG/H | HYPNOVEL | sedatif",
+      "detected_components": {
+        "rate": [
+          "3 MG/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P3_E014",
+        "type": "TRAITEMENT",
+        "name": "Héparine",
+        "preuve": "Héparine 4000UI/24h",
+        "valeur": null,
+        "page": 3
+      },
+      "detection_text": "Héparine 4000UI/24h | Héparine | anticoagulant",
+      "detected_components": {
+        "rate": [
+          "4000UI/24h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

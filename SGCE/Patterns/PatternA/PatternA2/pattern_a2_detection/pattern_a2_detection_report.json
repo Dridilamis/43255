@@ -1,0 +1,355 @@
+{
+  "pattern": "A2",
+  "name": "COMORBIDITE_ANTECEDENT + CONTEXTE_ACQUISITION",
+  "relation": "a_pour_contexte_acquisition",
+  "methodological_status": "DETECTION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA1\\pattern_a1_corrected",
+  "summary": {
+    "json_files_found": 44,
+    "clinical_documents_scanned": 43,
+    "nonclinical_json_skipped": 1,
+    "comorbidities_scanned": 448,
+    "existing_context_entities": 23,
+    "a2_candidates": 2,
+    "weak": 0,
+    "medium": 0,
+    "strong": 2,
+    "errors": 0
+  },
+  "nonclinical_json_skipped": [
+    "pattern_a1_correction_report.json"
+  ],
+  "signal_family_counts": {
+    "TYPE_ACQUISITION": 2,
+    "DISPOSITIF_INVASIF": 1
+  },
+  "documents": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 17,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 13,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 15,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 12,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 13,
+      "existing_context_entities": 3,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 7,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 5,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 11,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 16,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16225557_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 4,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 11,
+      "existing_context_entities": 2,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 4,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 10,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 14,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 10,
+      "existing_context_entities": 2,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 11,
+      "existing_context_entities": 3,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 14,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 3,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 7,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 4,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 4,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 5,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 10,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 18,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 8,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 15,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 11,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 9,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 29,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 9,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 25,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 15,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 23,
+      "existing_context_entities": 2,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 4,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 1,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 9,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 8,
+      "existing_context_entities": 1,
+      "a2_candidates": 1
+    },
+    {
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 8,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 11,
+      "existing_context_entities": 2,
+      "a2_candidates": 1
+    },
+    {
+      "document": "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 6,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 3,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 9,
+      "existing_context_entities": 1,
+      "a2_candidates": 0
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "comorbidities_scanned": 7,
+      "existing_context_entities": 0,
+      "a2_candidates": 0
+    }
+  ],
+  "candidates": [
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A2",
+      "subcase": "COMORBIDITE_ANTECEDENT_CONTEXTE_ACQUISITION",
+      "source_entity": {
+        "entity_id": "P5_E032",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "page": 5,
+        "text": "Infection nosocomiale : oui"
+      },
+      "detected_context_families": [
+        "TYPE_ACQUISITION"
+      ],
+      "detected_context_signals": {
+        "TYPE_ACQUISITION": [
+          "nosocomiale"
+        ]
+      },
+      "authorized_type_acquisition_hits": [
+        "nosocomiale"
+      ],
+      "same_page_context_targets": [
+        {
+          "entity_id": "P5_V66_E002",
+          "page": 5,
+          "text": "Infection nosocomiale : oui",
+          "text_containment": true,
+          "token_overlap": 1.0,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_context_target_count": 1,
+      "strength": "STRONG",
+      "status": "A2_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A2",
+      "subcase": "COMORBIDITE_ANTECEDENT_CONTEXTE_ACQUISITION",
+      "source_entity": {
+        "entity_id": "P1_E006",
+        "type": "COMORBIDITE_ANTECEDENT",
+        "page": 1,
+        "text": "2 pneumopathies acquises sous ventilation mécanique | autre"
+      },
+      "detected_context_families": [
+        "TYPE_ACQUISITION",
+        "DISPOSITIF_INVASIF"
+      ],
+      "detected_context_signals": {
+        "TYPE_ACQUISITION": [
+          "acquises sous ventilation mecanique",
+          "sous ventilation mecanique"
+        ],
+        "DISPOSITIF_INVASIF": [
+          "ventilation mecanique"
+        ]
+      },
+      "authorized_type_acquisition_hits": [
+        "acquise_sous_ventilation_mecanique"
+      ],
+      "same_page_context_targets": [],
+      "same_page_context_target_count": 0,
+      "strength": "STRONG",
+      "status": "A2_CANDIDATE"
+    }
+  ],
+  "errors": []
+}

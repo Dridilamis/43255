@@ -1,0 +1,80 @@
+C:\Users\Lamis\anaconda3\Lib\site-packages\pandas\core\computation\expressions.py:23: UserWarning: Pandas requires version '2.10.2' or newer of 'numexpr' (version '2.8.7' currently installed).
+  from pandas.core.computation.check import NUMEXPR_INSTALLED
+C:\Users\Lamis\anaconda3\Lib\site-packages\pandas\core\arrays\masked.py:56: UserWarning: Pandas requires version '1.4.2' or newer of 'bottleneck' (version '1.3.7' currently installed).
+  from pandas.core import (
+Chargement du matcher ...
+
+=== CONFIGURATION EVALUATION RELATIONS V6.9k RECALL-BOOST CONTROLLED ===
+GOLD_DIR = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\gold_canonical_par_documentF
+PRED_DIR = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\confidence_assessed_safe
+OUTPUT_DIR = C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\evaluation_confidence_vs_gold
+RELAXED_THRESHOLD = 0.8
+====================================================
+
+Documents appaires : 43
+
+====================================================================================================
+1. D'OU VIENNENT LES RELATIONS (provenance ecrite par le post-traitement)
+====================================================================================================
+Relations gold : 4885 | relations predites : 3744 | vrais positifs : 2683
+ORIGINE                     relations  % du total  vrais positifs   precision
+EXTRACTION_DIRECTE               3395       90.7%            2501       73.7%
+INFERENCE_STRUCTURELLE            308        8.2%             160       51.9%
+V75_RECALL                         15        0.4%              13       86.7%
+AUTRE                              26        0.7%               9       34.6%
+----------------------------------------------------------------------------------------------------
+AVEC toutes les relations     : P=71.66%  R=54.92%  F1=62.19%   (controle : doit etre proche de ton ablation, ligne 08)
+SANS les relations GUIDEE_GOLD : P=71.66%  R=54.92%  F1=62.19%   (ecart F1 : +0.00 pts)
+Les relations GUIDEE_GOLD ont ete ajoutees par un post-traitement qui a consulte le gold :
+elles ne mesurent pas la qualite de l'extraction sur des documents nouveaux.
+
+====================================================================================================
+2. PRECISION PAR NIVEAU DE CONFIANCE (Etage 8)
+====================================================================================================
+Population complete :
+NIVEAU          relations  % du total  vrais positifs   precision
+HIGH                 3257       87.0%            2397       73.6%
+MEDIUM                347        9.3%             222       64.0%
+REVIEW                 41        1.1%              23       56.1%
+LOW                    99        2.6%              41       41.4%
+TOUTES               3744      100.0%            2683       71.7%
+
+Hors relations GUIDEE_GOLD (population honnete) :
+NIVEAU          relations  % du total  vrais positifs   precision
+HIGH                 3257       87.0%            2397       73.6%
+MEDIUM                347        9.3%             222       64.0%
+REVIEW                 41        1.1%              23       56.1%
+LOW                    99        2.6%              41       41.4%
+TOUTES               3744      100.0%            2683       71.7%
+
+====================================================================================================
+3. SIMULATION : que se passe-t-il si l'on retire des relations ?
+====================================================================================================
+
+Population complete
+Scenario                                  gardees   couv.  precision   rappel      F1  delta F1
+----------------------------------------------------------------------------------------------------
+Garder tout (reference)                      3744    100%     71.66%   54.92%  62.19%    +0.00
+Retirer LOW                                  3645     97%     72.48%   54.08%  61.95%    -0.24
+Retirer LOW + REVIEW                         3604     96%     72.67%   53.61%  61.70%    -0.48
+Garder HIGH + MEDIUM                         3604     96%     72.67%   53.61%  61.70%    -0.48
+Garder HIGH seul                             3257     87%     73.60%   49.07%  58.88%    -3.31
+Retirer INFERENCE_STRUCTURELLE               3436     92%     73.43%   51.65%  60.64%    -1.54
+Retirer LOW+REVIEW+INFER.STRUCT.             3338     89%     74.06%   50.60%  60.12%    -2.06
+
+Population honnete (hors GUIDEE_GOLD)
+Scenario                                  gardees   couv.  precision   rappel      F1  delta F1
+----------------------------------------------------------------------------------------------------
+Garder tout (reference)                      3744    100%     71.66%   54.92%  62.19%    +0.00
+Retirer LOW                                  3645     97%     72.48%   54.08%  61.95%    -0.24
+Retirer LOW + REVIEW                         3604     96%     72.67%   53.61%  61.70%    -0.48
+Garder HIGH + MEDIUM                         3604     96%     72.67%   53.61%  61.70%    -0.48
+Garder HIGH seul                             3257     87%     73.60%   49.07%  58.88%    -3.31
+Retirer INFERENCE_STRUCTURELLE               3436     92%     73.43%   51.65%  60.64%    -1.54
+Retirer LOW+REVIEW+INFER.STRUCT.             3338     89%     74.06%   50.60%  60.12%    -2.06
+====================================================================================================
+Lecture : retirer un groupe ameliore la PRECISION s'il est moins precis que l'ensemble, et le F1
+seulement s'il est sous F1/2. Sinon on perd plus de bonnes relations que de fausses.
+Seuils population honnete : precision 71.7 %, F1/2 = 31.1 %.
+
+Resultats : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\evaluation_confidence_vs_gold

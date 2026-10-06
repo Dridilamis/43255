@@ -1,0 +1,4766 @@
+{
+  "validator": "multiagent_post_validator",
+  "status": "FAIL",
+  "before_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_d_corrected",
+  "after_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\multiagent_final_corrected",
+  "summary": {
+    "documents_checked": 43,
+    "expected_modified_documents": 24,
+    "actually_modified_documents": 24,
+    "unexpected_modifications": 0,
+    "missing_expected_corrections": 0,
+    "operations_checked": 35,
+    "operations_pass": 35,
+    "operations_fail": 0,
+    "anomalies_before": 781,
+    "anomalies_after": 1088,
+    "new_anomalies": 398,
+    "resolved_anomalies": 91,
+    "missing_documents_after": 0,
+    "extra_documents_after": 0,
+    "trace_signatures_loaded": 32
+  },
+  "expected_modified_documents": [
+    "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "actually_modified_documents": [
+    "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "unexpected_modified_documents": [],
+  "missing_expected_corrections": [],
+  "missing_documents_after": [],
+  "extra_documents_after": [],
+  "operation_results": [
+    {
+      "candidate_id": "D_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E028",
+      "new_type": "DONNEE_PATIENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000002",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E029",
+      "new_type": "DONNEE_PATIENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000004",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E050",
+      "new_type": "DONNEE_PATIENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000006",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E033",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000007",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E038",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000009",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E034",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000011",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E016",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000014",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E034",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000017",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E061",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000019",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E017",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000020",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E033",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000022",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E031",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000027",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E054",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000034",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E055",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000036",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E042",
+      "new_type": "DEFAILLANCE_ORGANE",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000037",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E002",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000043",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E035",
+      "new_type": "EVOLUTION_PRONOSTIC",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000045",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E061",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000061",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E024",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000072",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E004",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000074",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E052",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000076",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E032",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000078",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E032",
+      "new_type": "POSOLOGIE",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000080",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E008",
+      "new_type": "TRAITEMENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000082",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E028",
+      "new_type": "EVOLUTION_PRONOSTIC",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000086",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E036",
+      "new_type": "COMORBIDITE_ANTECEDENT",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000091",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E027",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000098",
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E014",
+      "new_type": "FOYER_INFECTIEUX",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000099",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E016",
+      "new_type": "MICRO_ORGANISME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000101",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E041",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000102",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P3_E040",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000112",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P3_E035",
+      "new_type": "LABEL_NOSOLOGIQUE",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000113",
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E038",
+      "new_type": "SERVICE_MEDICAL",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000115",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E030",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    },
+    {
+      "candidate_id": "D_000120",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E027",
+      "new_type": "SYMPTOME",
+      "status": "PASS",
+      "reason": "RETYPE_CONFIRMED"
+    }
+  ],
+  "new_anomalies": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00084",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E028",
+      "actual_type": "DONNEE_PATIENT",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00096",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E028",
+      "actual_type": "DONNEE_PATIENT",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00093",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00089",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00091",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00012",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00014",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00064",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00065",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00069",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00070",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00071",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00072",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00073",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00074",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00079",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00103",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00007",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00008",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00017",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00066",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00067",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00068",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00075",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00076",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00077",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00078",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00083",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00084",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00085",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00086",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00087",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00088",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00089",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00090",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00091",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E038",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00001",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00002",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00138",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00003",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00005",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00007",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00008",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00134",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E016",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00079",
+      "relation_type": "imagerie_objective_comorbidite",
+      "entity_id": "P4_E034",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00014",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00017",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00018",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00019",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00020",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00021",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00022",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00023",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00037",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00044",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00045",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00053",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00080",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00088",
+      "relation_type": "imagerie_objective_comorbidite",
+      "entity_id": "P2_E017",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00089",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00024",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00025",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00026",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00027",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00035",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00036",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00046",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00047",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00048",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00049",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00050",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00051",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00052",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00054",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00055",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00056",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00057",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00079",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00084",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00085",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00086",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00090",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E033",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00102",
+      "relation_type": "imagerie_objective_comorbidite",
+      "entity_id": "P6_E031",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00007",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00008",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00012",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00014",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00017",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00018",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00019",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00020",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00021",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00039",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00089",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00022",
+      "relation_type": "score_sofa_calcule_pour",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00023",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00024",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00025",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00026",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00027",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00028",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00030",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00032",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00034",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00041",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00090",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E054",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00020",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00021",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00022",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00023",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00024",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00025",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00026",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00027",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00045",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00046",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00047",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00048",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00049",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00050",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00059",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00060",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00065",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00066",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00067",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00078",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00079",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00080",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00081",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00082",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00083",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00084",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00085",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00092",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00028",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00029",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00030",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00031",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00032",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00033",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00034",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00035",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00036",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00037",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00039",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00046",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E002",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00052",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00053",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00054",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00060",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E002",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00061",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00062",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00068",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00069",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00070",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00072",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00074",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00075",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00077",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00086",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E042",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00093",
+      "relation_type": "traitement_indique_par_label_nosologique",
+      "entity_id": "P6_E002",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00097",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P5_E055",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00085",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00086",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00087",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00088",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00077",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00078",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00079",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00080",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00081",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00082",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00083",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00084",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00113",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00114",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00115",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00116",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00117",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00118",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00119",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00120",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00121",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00122",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00123",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00124",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00125",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00106",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00107",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00108",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00109",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00110",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00111",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00112",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00134",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00141",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": null,
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00002",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00003",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00012",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00014",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00001",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00004",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00005",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00006",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00007",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00017",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00018",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00019",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00020",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00021",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E024",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00122",
+      "relation_type": "imagerie_objective_comorbidite",
+      "entity_id": "P5_E004",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00123",
+      "relation_type": "imagerie_objective_comorbidite",
+      "entity_id": "P5_E004",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00012",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00014",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00018",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00022",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00023",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00024",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00025",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00045",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E032",
+      "actual_type": "POSOLOGIE",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00061",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00062",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00067",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00068",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00069",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00070",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00071",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00072",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00073",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00074",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00075",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00076",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00105",
+      "relation_type": "traitement_a_pour_posologie",
+      "entity_id": "P2_E032",
+      "actual_type": "POSOLOGIE",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00106",
+      "relation_type": "traitement_a_pour_posologie",
+      "entity_id": "P2_E032",
+      "actual_type": "POSOLOGIE",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00110",
+      "relation_type": "traitement_a_pour_posologie",
+      "entity_id": "P2_E032",
+      "actual_type": "POSOLOGIE",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00116",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00117",
+      "relation_type": "traitement_a_pour_posologie",
+      "entity_id": "P2_E032",
+      "actual_type": "POSOLOGIE",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00118",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00017",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00019",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00020",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00021",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00032",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00033",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00034",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00035",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00036",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00037",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00039",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00040",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00041",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00042",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00043",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00044",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00045",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00046",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00047",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E052",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00063",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00064",
+      "relation_type": "traitement_a_pour_posologie",
+      "entity_id": "P5_E008",
+      "actual_type": "TRAITEMENT",
+      "expected_type": "POSOLOGIE"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00065",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00066",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E032",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00001",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00002",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00125",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00131",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00012",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00014",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E028",
+      "actual_type": "EVOLUTION_PRONOSTIC",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00104",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00105",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00106",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00107",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00108",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00109",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00110",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00113",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00114",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00132",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00111",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00112",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00115",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00116",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00117",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00119",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00121",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00123",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00125",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00127",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00129",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00131",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00133",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E036",
+      "actual_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00001",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00003",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00002",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00004",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00005",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00006",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00007",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00008",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00075",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00100",
+      "relation_type": "micro_organisme_isole_dans",
+      "entity_id": "P6_E014",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "MICRO_ORGANISME"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00001",
+      "relation_type": "presente_symptome",
+      "entity_id": "P3_E040",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00002",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P3_E040",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00061",
+      "relation_type": "presente_symptome",
+      "entity_id": "P3_E040",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00074",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E041",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00075",
+      "relation_type": "presente_symptome",
+      "entity_id": "P3_E040",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00065",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P4_E041",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00066",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E041",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00067",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E041",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00068",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E041",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00069",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E041",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00070",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E041",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00034",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00035",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00044",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00045",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00046",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00036",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00037",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00039",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00040",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00041",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00042",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00043",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00047",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P3_E035",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E038",
+      "actual_type": "SERVICE_MEDICAL",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00025",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00026",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00027",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00028",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00029",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00030",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00031",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00032",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00036",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00037",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00039",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00040",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00001",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00002",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00003",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00004",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00005",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00017",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00068",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00073",
+      "relation_type": "presente_symptome",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00006",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00007",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00008",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00012",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00018",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00019",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P1_E027",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    }
+  ],
+  "resolved_anomalies": [
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00107",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E029",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00108",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E050",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00009",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00010",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00011",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00012",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00013",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00014",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00015",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00016",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00098",
+      "relation_type": "a_pour_contexte_acquisition",
+      "entity_id": "P6_E038",
+      "actual_type": "DONNEE_PATIENT",
+      "expected_type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00103",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00107",
+      "relation_type": "a_pour_contexte_acquisition",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00007",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00008",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00017",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E034",
+      "actual_type": "SYMPTOME",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00091",
+      "relation_type": "a_pour_contexte_acquisition",
+      "entity_id": "P6_E002",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00085",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00086",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00087",
+      "relation_type": "presente_symptome",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00088",
+      "relation_type": "patient_a_pour_evolution",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00077",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00078",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00079",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00080",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00081",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00082",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00083",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00084",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E035",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00113",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00114",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00115",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00116",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00117",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00118",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00119",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00120",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00121",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00122",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00123",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00124",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00125",
+      "relation_type": "presente_symptome",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00106",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00107",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00108",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00109",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00110",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00111",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00112",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00134",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00141",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P2_E061",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00119",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P5_E008",
+      "actual_type": "POSOLOGIE",
+      "expected_type": "TRAITEMENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00104",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00105",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00106",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00107",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00108",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00109",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00110",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00113",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00114",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00132",
+      "relation_type": "presente_symptome",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00135",
+      "relation_type": "a_pour_contexte_acquisition",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00111",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00112",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00115",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00116",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00117",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00119",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00121",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00123",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00125",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00127",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00129",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00131",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00133",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P6_E036",
+      "actual_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00071",
+      "relation_type": "micro_organisme_isole_dans",
+      "entity_id": "P4_E016",
+      "actual_type": "FOYER_INFECTIEUX",
+      "expected_type": "MICRO_ORGANISME"
+    },
+    {
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00071",
+      "relation_type": "service_medical_accueille",
+      "entity_id": "P2_E038",
+      "actual_type": "TRAITEMENT",
+      "expected_type": "SERVICE_MEDICAL"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00025",
+      "relation_type": "a_pour_label_nosologique",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00026",
+      "relation_type": "presente_suspicion_infection",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00027",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00028",
+      "relation_type": "presente_dysfonction_organe",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00029",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00030",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_SOURCE_TYPE",
+      "relation_id": "R_V69K_00031",
+      "relation_type": "presente_symptome",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00032",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00036",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00037",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00038",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00039",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "type": "INVALID_TARGET_TYPE",
+      "relation_id": "R_V69K_00040",
+      "relation_type": "traitement_administre_a",
+      "entity_id": "P4_E030",
+      "actual_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "DONNEE_PATIENT"
+    }
+  ]
+}

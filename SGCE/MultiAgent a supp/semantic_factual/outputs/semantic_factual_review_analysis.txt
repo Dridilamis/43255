@@ -1,0 +1,148 @@
+=============================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL REVIEW ANALYZER V2
+=============================================================================================================================
+Décisions totales                   : 4183
+SUPPORTED_KEEP                      : 3936
+Cas REVIEW                          : 247
+
+UNSUPPORTED_FACT                    : 234
+NEGATION_SENSITIVE                  : 13
+DOCUMENT_LEVEL_SUPPORT              : 0
+AMBIGUOUS                           : 0
+UNRESOLVED_ENDPOINT                 : 0
+
+Types de relation concernés         : 14
+Signatures distinctes               : 14
+
+REVIEW PAR CLASSIFICATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT                                                 : 234
+NEGATION_SENSITIVE                                               : 13
+
+PRESENCE DES ENDPOINTS DANS LE DOCUMENT
+-----------------------------------------------------------------------------------------------------------------------------
+NO_ENDPOINT_FOUND_IN_DOCUMENT                                    : 234
+ONLY_SOURCE_IN_DOCUMENT                                          : 6
+ONLY_TARGET_IN_DOCUMENT                                          : 6
+BOTH_ENDPOINTS_IN_DOCUMENT                                       : 1
+
+CAS SENSIBLES A LA NEGATION
+-----------------------------------------------------------------------------------------------------------------------------
+TARGET_NEGATED                                                   : 10
+SOURCE_NEGATED                                                   : 3
+
+REVIEW PAR TYPE DE RELATION
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie                                      : 201
+biomarqueur_supporte_defaillance_organe                          : 16
+traitement_administre_a                                          : 13
+signe_vital_supporte_defaillance_organe                          : 3
+biomarqueur_est_critere_de                                       : 3
+a_pour_label_nosologique                                         : 2
+patient_a_pour_evolution                                         : 2
+traitement_indique_par_label_nosologique                         : 1
+traitement_cible_defaillance                                     : 1
+micro_organisme_isole_dans                                       : 1
+presente_dysfonction_organe                                      : 1
+presente_symptome                                                : 1
+imagerie_objective_comorbidite                                   : 1
+imagerie_objective_defaillance                                   : 1
+
+SIGNATURES RELATION | TYPE SUJET -> TYPE OBJET
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie | TRAITEMENT -> POSOLOGIE                                                    : 201
+biomarqueur_supporte_defaillance_organe | BIOMARQUEUR -> DEFAILLANCE_ORGANE                              : 16
+traitement_administre_a | TRAITEMENT -> DONNEE_PATIENT                                                   : 13
+signe_vital_supporte_defaillance_organe | SIGNE_VITAL -> DEFAILLANCE_ORGANE                              : 3
+biomarqueur_est_critere_de | BIOMARQUEUR -> LABEL_NOSOLOGIQUE                                            : 3
+a_pour_label_nosologique | DONNEE_PATIENT -> LABEL_NOSOLOGIQUE                                           : 2
+patient_a_pour_evolution | DONNEE_PATIENT -> EVOLUTION_PRONOSTIC                                         : 2
+traitement_indique_par_label_nosologique | TRAITEMENT -> LABEL_NOSOLOGIQUE                               : 1
+traitement_cible_defaillance | TRAITEMENT -> DEFAILLANCE_ORGANE                                          : 1
+micro_organisme_isole_dans | MICRO_ORGANISME -> FOYER_INFECTIEUX                                         : 1
+presente_dysfonction_organe | DEFAILLANCE_ORGANE -> DEFAILLANCE_ORGANE                                   : 1
+presente_symptome | DONNEE_PATIENT -> SYMPTOME                                                           : 1
+imagerie_objective_comorbidite | IMAGERIE_PROCEDURE -> COMORBIDITE_ANTECEDENT                            : 1
+imagerie_objective_defaillance | IMAGERIE_PROCEDURE -> DEFAILLANCE_ORGANE                                : 1
+
+EXEMPLES UNSUPPORTED_FACT
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00033
+  Restriction hydrique | restriction_hydrique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  50 ml | posologie [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Restriction hydrique'
+  Preuve target : '50 ml'
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00085
+  adrénaline [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  2 mg | posologie [POSOLOGIE]
+  Source dans document : True
+  Target dans document : False
+  Preuve source : 'adrénaline'
+  Preuve target : '2 mg'
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00087
+  O2 | o2 [TRAITEMENT]
+       --traitement_administre_a-->
+  le patient | patient [DONNEE_PATIENT]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'O2'
+  Preuve target : 'le patient'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00102
+  tazocilline | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  4g X 4/j | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'tazocilline'
+  Preuve target : '4g X 4/j'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00103
+  Amiklin | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  1g | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Amiklin'
+  Preuve target : '1g'
+
+EXEMPLES NEGATION_SENSITIVE
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00088
+  arrêt lasilix | lasilix | autre [TRAITEMENT] status=NEGATED
+       --traitement_administre_a-->
+  Patient | patient [DONNEE_PATIENT] status=None
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00095
+  Arrêt primperan | primperan | autre [TRAITEMENT] status=NEGATED
+       --traitement_administre_a-->
+  Patient | patient [DONNEE_PATIENT] status=None
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00052
+  PAS 133 | pression_arterielle_systolique | 133 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00053
+  tachycardie | frequence_cardiaque | 144 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00094
+  patient [DONNEE_PATIENT] status=None
+       --a_pour_label_nosologique-->
+  SARM [LABEL_NOSOLOGIQUE] status=NEGATED
+
+INTERPRETATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT signifie que le support textuel de la relation n'a pas été suffisamment démontré.
+Il ne signifie PAS automatiquement que la relation est fausse ou hallucinée.
+Aucune suppression automatique ne doit être effectuée sur cette seule base.

@@ -1,0 +1,240 @@
+{
+  "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 37,
+  "number_candidates": 10,
+  "signal_counts": {
+    "MEDIUM": 3,
+    "WEAK": 7
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E016",
+        "type": "TRAITEMENT",
+        "name": "TERCIAN",
+        "preuve": "TERCIAN 40 MG 10 gt 3*/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "TERCIAN 40 MG 10 gt 3*/j | TERCIAN | sedatif",
+      "detected_components": {
+        "frequency": [
+          "3*/j"
+        ],
+        "dose": [
+          "40 MG"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E018",
+        "type": "TRAITEMENT",
+        "name": "Diflu-k",
+        "preuve": "Diflu-k 600 mg 1-1-1",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Diflu-k 600 mg 1-1-1 | Diflu-k | antibiotique",
+      "detected_components": {
+        "dose": [
+          "600 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E020",
+        "type": "TRAITEMENT",
+        "name": "Pyostacine",
+        "preuve": "Pyostacine 500 mg 1-0-1",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Pyostacine 500 mg 1-0-1 | Pyostacine | antibiotique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P1_E022",
+        "type": "TRAITEMENT",
+        "name": "Dafalgan",
+        "preuve": "Dafalgan 500 mg si douleur",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Dafalgan 500 mg si douleur | Dafalgan | antalgique",
+      "detected_components": {
+        "dose": [
+          "500 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P1_E023",
+        "type": "TRAITEMENT",
+        "name": "Lovenox",
+        "preuve": "Lovenox 2000UI 1 injection sc/j",
+        "valeur": null,
+        "page": 1
+      },
+      "detection_text": "Lovenox 2000UI 1 injection sc/j | Lovenox | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "2000UI"
+        ],
+        "route": [
+          "sc"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E026",
+        "type": "TRAITEMENT",
+        "name": "lasilix",
+        "preuve": "diurétique (lasilix 40 mg)",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "diurétique (lasilix 40 mg) | lasilix | diuretique",
+      "detected_components": {
+        "dose": [
+          "40 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E019",
+        "type": "TRAITEMENT",
+        "name": "fresubin",
+        "preuve": "fresubin 1000 ml/j (sonde gastrique)",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "fresubin 1000 ml/j (sonde gastrique) | fresubin | nutrition_enterale",
+      "detected_components": {
+        "dose": [
+          "1000 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E021",
+        "type": "TRAITEMENT",
+        "name": "eau",
+        "preuve": "eau 500 ml/j",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "eau 500 ml/j | eau | nutrition_enterale",
+      "detected_components": {
+        "dose": [
+          "500 ml"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E023",
+        "type": "TRAITEMENT",
+        "name": "atarax",
+        "preuve": "atarax 25 mg/ le soir si besoin",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "atarax 25 mg/ le soir si besoin | atarax | autre",
+      "detected_components": {
+        "dose": [
+          "25 mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P6_E025",
+        "type": "TRAITEMENT",
+        "name": "lovenox",
+        "preuve": "lovenox 0.2ml/j en SC",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "lovenox 0.2ml/j en SC | lovenox | anticoagulant",
+      "detected_components": {
+        "dose": [
+          "0.2ml"
+        ],
+        "route": [
+          "SC"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "runner_version": "2.0",
+  "started": "2026-10-06T10:37:07",
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "root": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE",
+  "mode": "run",
+  "input": {
+    "dir": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SortieJson_Postprocessing",
+    "n_files": 43,
+    "digest": "461e0db7c2cff94a5d462ec7edfeff8181f0584fc4db0220fd1b068ed0bfde0e",
+    "files": {
+      "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "dc8fd8f535d44bad60f3eac67ae1c93eb71a0b390840828c2b1b1cd715eb6c00",
+      "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "9986d111a76edb9afa393647c8940836fe9a6a2b5f176214e03255a67d497446",
+      "img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "38651483755adb0e4ae8cf000980cecacef21620403dddbe238e5043ad6be13c",
+      "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "03ee51d818d9192efe9d729958e48e466309c92e57385d1d6446c5580973a2ce",
+      "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "bfba113ac8f95aac6bd426dc7c95d87a13c0eacfc8f754f1a662bcba4f2cb8b2",
+      "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "aa5a43f9e3a43b2c2d5fc92b707b176848a04e6cd94d0f287d32582555f5aaeb",
+      "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "d302f498ff58b87de0f10b9fabac2811a620669431165a1cca109c08bf3065a5",
+      "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "15f0037757f74871d9b0e56b536ba70faa3658151263cbb0a69980a359e823d3",
+      "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "7b50ee73d1cd14fc024f7e994647aad1dd87591b44a786a88cdbbd14751b441d",
+      "img20250709_16225557_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "908e4d2423d9d6346a71c2bfb060e655b90e013b2d1eaef22a186380076a5041",
+      "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "a89eaa3181472f83cb44ef1e3a0202f416edc049fb54d85e99c8c098ea996490",
+      "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "3e485b2e09e54f270e18ee4ef8a64fea4acd8b74e6eb5d4ae689693d15f6b335",
+      "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "9368a57611faf18b25ba4e6174d6f86abc9b4964b00ae80420da6fd4c856bc3b",
+      "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "f2a55047aa6918959652db109f79a3031ecf58655ab01a9137296ec517f2e873",
+      "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "704a5da5800414b2dec38f80da0f04ab0de88ea91d869d9e82e25b299765df34",
+      "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "68fa8708a4fcb3844d2d151a3e98c4559fa321b2c744ec715185b662dc852c68",
+      "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "3c90f32f39d841cf578305d60fa232be29099c574c20f6023988752b5397f78d",
+      "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "a7125bbe5cfb10ac77537bf619e0c1af85cc0fbc4172e056430f5c06afb6bdc7",
+      "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "d18693da83a00ef7390099aa08fb1965711f10a98b296f80549ad8cacab84d35",
+      "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "5f9373a7060e64b4c060a28104d99db88fb16abb0c3909086e39597a7efa6125",
+      "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "28807da520a95500c87050cce8b511084d8a686ede5f243c5ae8124293ff594d",
+      "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "3190f4058cd3b333af340bdc0c47f56a9a87e61ceb99a889643ebaf8b004b92e",
+      "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "494eeb98c855d5f34728a869d341abc9c7e60c26e9b2352731e08492a7459ec4",
+      "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "f1c38b40036b13d7fd941ce116300f19875db759f3b88fd349cb275aea13cc7e",
+      "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "35a635b08bad1319a906399b9df68eb4fa7c06ceff753098034798c6dbf520ae",
+      "img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "2eabc605248c90e4acf4b0a8425bff33cde67c462f5558797651209b7bad964d",
+      "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "5a673932394b1d2738a1e4c021465bc3201bdfa66cb6d053caf546b8c574dbbc",
+      "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "2b0e105941632902fdc010a5807a3add7e18202537c6947d9fb0e0494c52948b",
+      "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "405cf10db1db964cdc641002cef0853c7bec8c4834962833f1aabd09c08de4d3",
+      "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "7027fb0ec1e90c4e934efeb90a920f73323a15f33f19a3eeaee13dcfba043e9b",
+      "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "8e2432d0c5bf85b6af1136691a331c65ede959d4385ca2ba34743f7d20e3c0a5",
+      "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "28dc54bc588a930d5ea8bccdeef6c5c5ece37f9944f29a03379300810fdbe096",
+      "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "17f57fd65e604529d7d87b125eda0f03c8a9dda9c68a460ed24418ab253bdd5e",
+      "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "5f1151507a0c607f5bb3bc3030e29eaa2155b20d0db5c457da1613ea8d32547c",
+      "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "2bce7a7f77a34dbe62017305b7be5fef07087f7f2f5fa2bc7b79a62d8ab52deb",
+      "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "7dc42e58b5d57589fcd4dd6832a1cbc7267b8d9058b4efbcd9d087c3c7ef5ccd",
+      "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "21ea5bd3e24d2e1f94214b553ada5169801e29515cc6ed49a195ea1eddea7b20",
+      "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "3a7de5825bcb1f07bc3bad22e4142175d66988dab6bec041cff3f157a117f879",
+      "img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "5cc0250af325d1c8442141b926ef6ed0fcd704338930aff702c82a8c6519b453",
+      "img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "30dc00dfb852542be031e963013b45c6b0ee087e1bc09098fc0d2ef553d6943c",
+      "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "f14e9cbd2d7f51662c9f28ea5a7c89cd31c5829f707ffc8e1ece3647ca05f6c5",
+      "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "b4de7927e4dd3fb5523a32f340c0a70af3c8342a0b155c94efb73fdd0d323eac",
+      "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json": "f1058b8e3e6606ce4667d88142361232b61da6cf952e2119858a9102e2912462"
+    }
+  },
+  "ontology": {
+    "path": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Guideline_TRACE_Sepsis_v1.6.json",
+    "n_signatures": 32,
+    "sha256": "580a526905cca7ae3f82640a37fedc7c445372719ade45f72bd79862e18d1bbf"
+  },
+  "warnings": [
+    "patterns cree 1 nouvelle(s) anomalie(s)",
+    "orphan_resolution cree 2 nouvelle(s) anomalie(s)"
+  ],
+  "stages": [
+    {
+      "index": 1,
+      "key": "patterns",
+      "label": "PATTERNS A -> B -> C -> D",
+      "runner": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\run_all_patterns.py",
+      "output": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternD\\corrected",
+      "returncode": 0,
+      "seconds": 84.72,
+      "log": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\run_logs\\01_patterns.log",
+      "reports": [
+        {
+          "report": "PatternA\\PatternA2\\post_validation\\pattern_a2_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternA\\PatternA3\\post_validation\\pattern_a3_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternA\\PatternA4\\post_validation\\pattern_a4_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternA\\PatternA5\\post_validation\\pattern_a5_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternA\\PatternA6\\post_validation\\pattern_a6_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternB\\PatternB1\\post_validation\\pattern_b1_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternB\\post_validation\\pattern_b_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternC\\post_validation\\pattern_c_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "PatternD\\post_validation\\pattern_d_post_validation_report.json",
+          "status": "PASS"
+        }
+      ],
+      "status": "OK",
+      "n_docs": 43,
+      "anomalies": 341,
+      "new_anomalies": 1,
+      "resolved_anomalies": 3,
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "ORPHAN_RELATION_SOURCE": 8,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 40,
+        "ORPHAN_RELATION_TARGET": 8,
+        "DUPLICATE_RELATION": 1
+      }
+    },
+    {
+      "index": 2,
+      "key": "relation_repair",
+      "label": "RELATION REPAIR",
+      "runner": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\relation_repair\\run_relation_repair_all.py",
+      "output": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\relation_repair\\corrected",
+      "returncode": 0,
+      "seconds": 6.46,
+      "log": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\run_logs\\02_relation_repair.log",
+      "reports": [
+        {
+          "report": "post_validation\\relation_repair_batch_safe_post_validation_report.json",
+          "status": "PASS"
+        }
+      ],
+      "status": "OK",
+      "n_docs": 43,
+      "anomalies": 339,
+      "new_anomalies": 0,
+      "resolved_anomalies": 2,
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "ORPHAN_RELATION_SOURCE": 8,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 38,
+        "ORPHAN_RELATION_TARGET": 8,
+        "DUPLICATE_RELATION": 1
+      }
+    },
+    {
+      "index": 3,
+      "key": "orphan_resolution",
+      "label": "ORPHAN RESOLUTION",
+      "runner": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\run_orphan_relations_all.py",
+      "output": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\corrected",
+      "returncode": 0,
+      "seconds": 7.76,
+      "log": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\run_logs\\03_orphan_resolution.log",
+      "reports": [
+        {
+          "report": "corrected\\orphan_relation_residual_routing_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "post_validation\\orphan_relation_final_post_validation_report.json",
+          "status": "PASS"
+        }
+      ],
+      "status": "OK",
+      "n_docs": 43,
+      "anomalies": 336,
+      "new_anomalies": 2,
+      "resolved_anomalies": 5,
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "ORPHAN_RELATION_SOURCE": 6,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 38,
+        "ORPHAN_RELATION_TARGET": 5,
+        "DUPLICATE_RELATION": 3
+      }
+    },
+    {
+      "index": 4,
+      "key": "multiagent",
+      "label": "MULTI-AGENT",
+      "runner": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\MultiAgent\\run_all_parts.py",
+      "output": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\MultiAgent\\corrected",
+      "returncode": 0,
+      "seconds": 17.68,
+      "log": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\run_logs\\04_multiagent.log",
+      "reports": [
+        {
+          "report": "Agent_Patient_Reference\\post_validation\\agent_patient_reference_post_validation_report.json",
+          "status": "PASS"
+        },
+        {
+          "report": "post_validation\\multiagent_safe_post_validation_report.json",
+          "status": "PASS"
+        }
+      ],
+      "status": "OK",
+      "n_docs": 43,
+      "anomalies": 331,
+      "new_anomalies": 0,
+      "resolved_anomalies": 5,
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 38,
+        "ORPHAN_RELATION_TARGET": 4,
+        "DUPLICATE_RELATION": 3,
+        "ORPHAN_RELATION_SOURCE": 2
+      }
+    }
+  ],
+  "audit": [
+    {
+      "stage": "input",
+      "dir": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SortieJson_Postprocessing",
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "ORPHAN_RELATION_SOURCE": 8,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 43,
+        "ORPHAN_RELATION_TARGET": 8
+      }
+    },
+    {
+      "stage": "patterns",
+      "dir": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternD\\corrected",
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "ORPHAN_RELATION_SOURCE": 8,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 40,
+        "ORPHAN_RELATION_TARGET": 8,
+        "DUPLICATE_RELATION": 1
+      }
+    },
+    {
+      "stage": "relation_repair",
+      "dir": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\relation_repair\\corrected",
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "ORPHAN_RELATION_SOURCE": 8,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 38,
+        "ORPHAN_RELATION_TARGET": 8,
+        "DUPLICATE_RELATION": 1
+      }
+    },
+    {
+      "stage": "orphan_resolution",
+      "dir": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\corrected",
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "ORPHAN_RELATION_SOURCE": 6,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 38,
+        "ORPHAN_RELATION_TARGET": 5,
+        "DUPLICATE_RELATION": 3
+      }
+    },
+    {
+      "stage": "multiagent",
+      "dir": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\MultiAgent\\corrected",
+      "counts": {
+        "DUPLICATE_ENTITY_CONTENT": 281,
+        "INVALID_RELATION_SOURCE_TYPE": 3,
+        "INVALID_RELATION_TARGET_TYPE": 38,
+        "ORPHAN_RELATION_TARGET": 4,
+        "DUPLICATE_RELATION": 3,
+        "ORPHAN_RELATION_SOURCE": 2
+      }
+    }
+  ],
+  "gates": {
+    "input_unchanged": true,
+    "strict_new_anomalies": "OK"
+  },
+  "status": "OK",
+  "seconds_total": 120.56
+}

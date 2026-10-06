@@ -1,0 +1,32 @@
+{
+  "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 44,
+  "number_candidates": 1,
+  "signal_counts": {
+    "WEAK": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P4_E018",
+        "type": "TRAITEMENT",
+        "name": "Aciclovir",
+        "preuve": "Maintien du traitement par Aciclovir IV",
+        "valeur": null,
+        "page": 4
+      },
+      "detection_text": "Maintien du traitement par Aciclovir IV | Aciclovir | antiviral",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

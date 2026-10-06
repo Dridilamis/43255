@@ -1,0 +1,2748 @@
+{
+  "agent": "agent_pattern_d",
+  "clinical_context_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\agent_patient_reference_corrected",
+  "decisions": [
+    {
+      "candidate_id": "D_000001",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "amykacine | amykacine | antibiotique",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DONNEE_PATIENT",
+        "entity_id": "P6_E028",
+        "relation_id": "R_V69K_00096",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16142502_brut.txt",
+        "page_number": 6,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000002",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "extrémités chaudes | extrémités chaudes | extremites_froides",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT",
+        "entity_id": "P2_E029",
+        "relation_id": "R_V69K_00107",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "SYMPTOME",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16154161_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000003",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "extrémités chaudes | extrémités chaudes | extremites_froides",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E029",
+        "relation_id": "R_V69K_00107",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "SYMPTOME",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16154161_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000004",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "souffle perçus | souffle perçus | souffle_perçus",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DONNEE_PATIENT",
+        "entity_id": "P2_E050",
+        "relation_id": "R_V69K_00108",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "SYMPTOME",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16154161_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000005",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "souffle perçus | souffle perçus | souffle_perçus",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E050",
+        "relation_id": "R_V69K_00108",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "SYMPTOME",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16154161_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000006",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient de 57 ans | Patient de 57 ans | 57 | age",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P5_E033",
+        "relation_id": "R_V69K_00093",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16183704_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000007",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Le patient | Le patient | patient",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P6_E038",
+        "relation_id": "R_V69K_00098",
+        "relation_type": "a_pour_contexte_acquisition",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16190789_brut.txt",
+        "page_number": 6,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000008",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Le patient | Le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E034",
+        "relation_id": "R_V69K_00103",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "toux"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16190789_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000009",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Le patient | Le patient | patient",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P2_E034",
+        "relation_id": "R_V69K_00107",
+        "relation_type": "a_pour_contexte_acquisition",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16190789_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000010",
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E046",
+        "relation_id": "R_V69K_00030",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "douleur",
+          "toux"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16193836_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000011",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E016",
+        "relation_id": "R_V69K_00138",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16201504_brut.txt",
+        "page_number": 1,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000012",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Le patient | Le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P5_E015",
+        "relation_id": "R_V69K_00073",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "ira"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000013",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E028",
+        "relation_id": "R_V69K_00078",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "douleur"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000014",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "TDM cérébral | TDM cérébral | TDM",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P4_E034",
+        "relation_id": "R_V69K_00079",
+        "relation_type": "imagerie_objective_comorbidite",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "page_number": 4,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000015",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "le patient | le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "EVOLUTION_PRONOSTIC",
+        "entity_id": "P4_E049",
+        "relation_id": "R_V69K_00080",
+        "relation_type": "patient_a_pour_evolution",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "page_number": 4,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000016",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "le patient | le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P4_E049",
+        "relation_id": "R_V69K_00081",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+        "page_number": 4,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000017",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "la patiente | la patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E061",
+        "relation_id": "R_V69K_00014",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16223922_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000018",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "la patiente | la patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E061",
+        "relation_id": "R_V69K_00080",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16223922_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000019",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "échographie cardiaque | échographie cardiaque | echographie",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P2_E017",
+        "relation_id": "R_V69K_00088",
+        "relation_type": "imagerie_objective_comorbidite",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16223922_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000020",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "patiente | patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P5_E033",
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16223922_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000021",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "PICCO | PICCO | pression_arterielle_moyenne",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P5_E030",
+        "relation_id": "R_V69K_00090",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "SIGNE_VITAL",
+        "lexicon_support": [
+          "noradrénaline",
+          "adrenaline",
+          "adrénaline"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16223922_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000022",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "FOGD | FOGD | fibroscopie_oesogastroduodenale",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P6_E031",
+        "relation_id": "R_V69K_00102",
+        "relation_type": "imagerie_objective_comorbidite",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16233563_brut.txt",
+        "page_number": 6,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000023",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "KLEBSIELLE PNEUMONIAE | KLEBSIELLE PNEUMONIAE | klebsiella_pneumoniae",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "IMAGERIE_PROCEDURE",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P4_E014",
+        "relation_id": "R_V69K_00090",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "MICRO_ORGANISME",
+        "lexicon_support": [
+          "foyer",
+          "pulmonaire",
+          "urinaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16254831_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000024",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "PROTEUS VULGARIS | PROTEUS VULGARIS | proteus_mirabilis",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "IMAGERIE_PROCEDURE",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P4_E015",
+        "relation_id": "R_V69K_00091",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "MICRO_ORGANISME",
+        "lexicon_support": [
+          "foyer",
+          "pulmonaire",
+          "urinaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16254831_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000025",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "5FU | 5FU | antibiotique",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P1_E010",
+        "relation_id": "R_V69K_00083",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [
+          "choc septique"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000026",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Cisplatine | Cisplatine | antibiotique",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P1_E011",
+        "relation_id": "R_V69K_00084",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [
+          "choc septique"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000027",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Le patient | Le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "TRAITEMENT",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E054",
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000028",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "2L de voluven | 2L de voluven | volume",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P2_E026",
+        "relation_id": "R_V69K_00090",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "POSOLOGIE",
+        "lexicon_support": [
+          "traitement",
+          "noradrénaline",
+          "adrenaline",
+          "adrénaline"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000029",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "polypnée à 35 cycles/min | polypnée à 35 cycles/min | 35 | polypnee",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "SYMPTOME",
+        "expected_type": "SIGNE_VITAL",
+        "entity_id": "P2_E022",
+        "relation_id": "R_V69K_00091",
+        "relation_type": "signe_vital_supporte_defaillance_organe",
+        "current_entity_type": "SYMPTOME",
+        "lexicon_support": [
+          "tension",
+          "spo2"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000030",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Radiographie pulmonaire | Radiographie pulmonaire | radiographie",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P4_E029",
+        "relation_id": "R_V69K_00092",
+        "relation_type": "imagerie_objective_foyer",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [
+          "pulmonaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16270030_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000031",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Radiographie pulmonaire | Radiographie pulmonaire | radiographie",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P4_E027",
+        "relation_id": "R_V69K_00074",
+        "relation_type": "imagerie_objective_foyer",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [
+          "pulmonaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16271908_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000034",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "patiente | patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P5_E055",
+        "relation_id": "R_V69K_00045",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16281006_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000036",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "La patiente | La patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P6_E042",
+        "relation_id": "R_V69K_00082",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16281006_brut.txt",
+        "page_number": 6,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000037",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "pneumopathie nosocomiale | pneumopathie nosocomiale | pneumopathie_nosocomiale",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P6_E002",
+        "relation_id": "R_V69K_00091",
+        "relation_type": "a_pour_contexte_acquisition",
+        "current_entity_type": "LABEL_NOSOLOGIQUE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16281006_brut.txt",
+        "page_number": 6,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000038",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "hypercapnie | hypercapnie | PaCO2",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P5_E046",
+        "relation_id": "R_V69K_00098",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "BIOMARQUEUR",
+        "lexicon_support": [
+          "noradrénaline",
+          "adrenaline",
+          "adrénaline"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16281006_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000039",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Pneumocoque | Pneumocoque | Streptococcus_pneumoniae",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P5_E029",
+        "relation_id": "R_V69K_00101",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "MICRO_ORGANISME",
+        "lexicon_support": [
+          "pulmonaire",
+          "infection"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16281006_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000041",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Haemophilus | Haemophilus",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P6_E037",
+        "relation_id": "R_V69K_00102",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "LABEL_NOSOLOGIQUE",
+        "lexicon_support": [
+          "infection"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16281006_brut.txt",
+        "page_number": 6,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000042",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P5_E035",
+        "relation_id": "R_V69K_00085",
+        "relation_type": "presente_suspicion_infection",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "pulmonaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000043",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "EVOLUTION_PRONOSTIC",
+        "entity_id": "P5_E035",
+        "relation_id": "R_V69K_00088",
+        "relation_type": "patient_a_pour_evolution",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000044",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E019",
+        "relation_id": "R_V69K_00145",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "fièvre",
+          "fievre"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16283177_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000045",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Mr Kokolo | Mr Kokolo | age",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E061",
+        "relation_id": "R_V69K_00113",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000046",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Mr Kokolo | Mr Kokolo | age",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P2_E061",
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "défaillance",
+          "defaillance",
+          "ira"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000047",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "GDS pH 7.22 | GDS pH 7.22 | 7.22 | pH_arteriel",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P2_E039",
+        "relation_id": "R_V69K_00128",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "current_entity_type": "BIOMARQUEUR",
+        "lexicon_support": [
+          "défaillance",
+          "defaillance",
+          "ira"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000048",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "bicar 12.5 | bicar 12.5 | 12.5 | bicarbonates",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P2_E041",
+        "relation_id": "R_V69K_00129",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "current_entity_type": "BIOMARQUEUR",
+        "lexicon_support": [
+          "défaillance",
+          "defaillance",
+          "ira"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000049",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "O2 5L puis masque haute concentration 15L | O2 5L puis masque haute concentration 15L | 5 | debit",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P2_E032",
+        "relation_id": "R_V69K_00141",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "POSOLOGIE",
+        "lexicon_support": [
+          "traitement",
+          "antibiotique",
+          "vancomycine"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000050",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "2 colonie d'enterobacter cloacae BLSE | 2 colonie d'enterobacter cloacae BLSE | enterobacter_cloacae_BLSE",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "IMAGERIE_PROCEDURE",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P7_E039",
+        "relation_id": "R_V69K_00142",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "MICRO_ORGANISME",
+        "lexicon_support": [
+          "urinaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16295211_brut.txt",
+        "page_number": 7,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000051",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "La patiente | La patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P5_E046",
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "choc septique",
+          "syndrome"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16301193_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000052",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E015",
+        "relation_id": "R_V69K_00064",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "dyspnée",
+          "dyspnee"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16304515_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000053",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Radiographie pulmonaire | Radiographie pulmonaire | radiographie",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P4_E024",
+        "relation_id": "R_V69K_00065",
+        "relation_type": "imagerie_objective_foyer",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [
+          "pulmonaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16304515_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000054",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Amoxicilline | Amoxicilline | antibiotique",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P5_E006",
+        "relation_id": "R_V69K_00066",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [
+          "choc septique",
+          "syndrome"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16304515_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000055",
+      "document": "img20250709_16304515_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Vancomycine | Vancomycine | antibiotique",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P5_E008",
+        "relation_id": "R_V69K_00067",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [
+          "choc septique",
+          "syndrome"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16304515_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000057",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P5_E042",
+        "relation_id": "R_V69K_00081",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "syndrome"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16313543_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000058",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P5_E042",
+        "relation_id": "R_V69K_00085",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "syndrome"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16313543_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000059",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P6_E025",
+        "relation_id": "R_V69K_00109",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "choc septique"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16313543_brut.txt",
+        "page_number": 6,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000060",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient : SOR [?] GER [?] | Patient : SOR [?] GER [?]",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E018",
+        "relation_id": "R_V69K_00132",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "fièvre",
+          "fievre",
+          "dyspnée",
+          "dyspnee"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16313543_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000061",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P1_E024",
+        "relation_id": "R_V69K_00003",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16321359_brut.txt",
+        "page_number": 1,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000062",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "La patiente | La patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P4_E036",
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "insuffisance",
+          "défaillance",
+          "defaillance",
+          "ira",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16321359_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000063",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P4_E032",
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "insuffisance",
+          "ira",
+          "rénale",
+          "renale",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16331952_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000064",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "le patient | le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P6_E028",
+        "relation_id": "R_V69K_00111",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "fièvre",
+          "fievre"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16331952_brut.txt",
+        "page_number": 6,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000065",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E020",
+        "relation_id": "R_V69K_00164",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "douleur"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16331952_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000066",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient de 60 ans | patient de 60 ans | 60 | age",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P4_E031",
+        "relation_id": "R_V69K_00165",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "douleur"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16331952_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000067",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P2_E060",
+        "relation_id": "R_V69K_00028",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "syndrome"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16360688_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000068",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P2_E060",
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "ira",
+          "rénale",
+          "renale",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16360688_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000069",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P2_E060",
+        "relation_id": "R_V69K_00051",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "ira",
+          "rénale",
+          "renale",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16360688_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000070",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P2_E060",
+        "relation_id": "R_V69K_00054",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "ira",
+          "rénale",
+          "renale",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16360688_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000071",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "remplissage de 2500 ml de sérum phy/ringer lactate | remplissage de 2500 ml de sérum phy/ringer lactate | 2500 | volume",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P2_E029",
+        "relation_id": "R_V69K_00121",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "POSOLOGIE",
+        "lexicon_support": [
+          "traitement",
+          "noradrénaline",
+          "adrenaline",
+          "adrénaline"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16360688_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000072",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Échocardiographie | Échocardiographie | echocardiographie",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P5_E004",
+        "relation_id": "R_V69K_00122",
+        "relation_type": "imagerie_objective_comorbidite",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16360688_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000073",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Échocardiographie | Échocardiographie | echocardiographie",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P5_E004",
+        "relation_id": "R_V69K_00123",
+        "relation_type": "imagerie_objective_comorbidite",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16360688_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000074",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "le patient | le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E052",
+        "relation_id": "R_V69K_00011",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000076",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P5_E032",
+        "relation_id": "R_V69K_00076",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000077",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "le patient | le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E052",
+        "relation_id": "R_V69K_00116",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000078",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Mode : VAC | Mode : VAC | ventilation_mecanique",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "POSOLOGIE",
+        "entity_id": "P2_E032",
+        "relation_id": "R_V69K_00117",
+        "relation_type": "traitement_a_pour_posologie",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000079",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "le patient | le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P2_E052",
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000080",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "250ml de sérum phy | 250ml de sérum phy | 250 | volume",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P5_E008",
+        "relation_id": "R_V69K_00119",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "POSOLOGIE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000081",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Le patient | Le patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P5_E046",
+        "relation_id": "R_V69K_00091",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "douleur",
+          "toux",
+          "dyspnée",
+          "dyspnee"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16381567_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000082",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "TRAITEMENT",
+        "expected_type": "EVOLUTION_PRONOSTIC",
+        "entity_id": "P1_E028",
+        "relation_id": "R_V69K_00131",
+        "relation_type": "patient_a_pour_evolution",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16381567_brut.txt",
+        "page_number": 1,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000083",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "kétamine per os | kétamine per os | voie_administration",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P5_E020",
+        "relation_id": "R_V69K_00132",
+        "relation_type": "traitement_administre_a",
+        "current_entity_type": "POSOLOGIE",
+        "lexicon_support": [
+          "traitement"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16381567_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000084",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P5_E070",
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_suspicion_infection",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "foyer"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16393818_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000085",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P6_E036",
+        "relation_id": "R_V69K_00108",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "choc septique"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16393818_brut.txt",
+        "page_number": 6,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000086",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P6_E036",
+        "relation_id": "R_V69K_00135",
+        "relation_type": "a_pour_contexte_acquisition",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16393818_brut.txt",
+        "page_number": 6,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000087",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "IRM | IRM | IRM",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "entity_id": "P5_E017",
+        "relation_id": "R_V69K_00140",
+        "relation_type": "imagerie_objective_comorbidite",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16393818_brut.txt",
+        "page_number": 5,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000088",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P1_E034",
+        "relation_id": "R_V69K_00004",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "insuffisance",
+          "rénale",
+          "renale"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16395936_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000089",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P4_E032",
+        "relation_id": "R_V69K_00069",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "fièvre",
+          "fievre"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16395936_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000090",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P4_E032",
+        "relation_id": "R_V69K_00071",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "insuffisance",
+          "rénale",
+          "renale"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16395936_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000091",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E027",
+        "relation_id": "R_V69K_00001",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16414914_brut.txt",
+        "page_number": 1,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000092",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | age",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P2_E040",
+        "relation_id": "R_V69K_00031",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "défaillance",
+          "defaillance",
+          "ira",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16414914_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000093",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P5_E020",
+        "relation_id": "R_V69K_00059",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "ira",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16414914_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000095",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P3_E056",
+        "relation_id": "R_V69K_00049",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "sepsis",
+          "choc septique",
+          "diagnostic"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16510509_brut.txt",
+        "page_number": 3,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000096",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P2_E048",
+        "relation_id": "R_V69K_00100",
+        "relation_type": "presente_suspicion_infection",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "abdominal"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16510509_brut.txt",
+        "page_number": 2,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000097",
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Hémoculture + à BGN(2 série de 2 : aéro et anaérobie) | Hémoculture + à BGN(2 série de 2 : aéro et anaérobie) | hemoculture",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "IMAGERIE_PROCEDURE",
+        "expected_type": "MICRO_ORGANISME",
+        "entity_id": "P6_E014",
+        "relation_id": "R_V69K_00100",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [
+          "e coli"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16520260_brut.txt",
+        "page_number": 6,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000098",
+      "document": "img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Hémoculture + à BGN(2 série de 2 : aéro et anaérobie) | Hémoculture + à BGN(2 série de 2 : aéro et anaérobie) | hemoculture",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "MICRO_ORGANISME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P6_E014",
+        "relation_id": "R_V69K_00100",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16520260_brut.txt",
+        "page_number": 6,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000099",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "hémoculture positive | hémoculture positive | hemoculture",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "IMAGERIE_PROCEDURE",
+        "expected_type": "MICRO_ORGANISME",
+        "entity_id": "P4_E016",
+        "relation_id": "R_V69K_00071",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16523752_brut.txt",
+        "page_number": 4,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000100",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "hémoculture positive | hémoculture positive | hemoculture",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "MICRO_ORGANISME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P4_E016",
+        "relation_id": "R_V69K_00071",
+        "relation_type": "micro_organisme_isole_dans",
+        "current_entity_type": "IMAGERIE_PROCEDURE",
+        "lexicon_support": [
+          "foyer",
+          "pulmonaire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16523752_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000101",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "patiente de 74 ans | patiente de 74 ans | 74 | age",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SIGNE_VITAL",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P4_E041",
+        "relation_id": "R_V69K_00074",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16523752_brut.txt",
+        "page_number": 4,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000102",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "patient | patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P3_E040",
+        "relation_id": "R_V69K_00075",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16523752_brut.txt",
+        "page_number": 3,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000104",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "hyperkaliémie | hyperkaliémie | potassium",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P4_E030",
+        "relation_id": "R_V69K_00085",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "current_entity_type": "BIOMARQUEUR",
+        "lexicon_support": [
+          "défaillance",
+          "defaillance",
+          "ira",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16531341_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000105",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patiente | patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P4_E043",
+        "relation_id": "R_V69K_00089",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "défaillance",
+          "defaillance",
+          "ira",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16531341_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000106",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "la patiente | la patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P5_E017",
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "insuffisance",
+          "défaillance",
+          "defaillance",
+          "rénale",
+          "renale"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16531341_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000107",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Poursuite Catécholamine | Poursuite Catécholamine | vasopresseur",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "POSOLOGIE",
+        "entity_id": "P4_E010",
+        "relation_id": "R_V69K_00125",
+        "relation_type": "traitement_a_pour_posologie",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [
+          "mg"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16531341_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000108",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "54 ans | 54 ans | 54",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "FOYER_INFECTIEUX",
+        "entity_id": "P1_E034",
+        "relation_id": "R_V69K_00130",
+        "relation_type": "presente_suspicion_infection",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "infection"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16531341_brut.txt",
+        "page_number": 1,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000112",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P3_E035",
+        "relation_id": "R_V69K_00034",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16545673_brut.txt",
+        "page_number": 3,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000113",
+      "document": "img20250709_16553580_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "rééducation | rééducation | rééducation",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "TRAITEMENT",
+        "expected_type": "SERVICE_MEDICAL",
+        "entity_id": "P2_E038",
+        "relation_id": "R_V69K_00071",
+        "relation_type": "service_medical_accueille",
+        "current_entity_type": "TRAITEMENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16553580_brut.txt",
+        "page_number": 2,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000114",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "poids de sortie = 76 kg | poids de sortie = 76 kg | 76 | poids_kg",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P6_E039",
+        "relation_id": "R_V69K_00110",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "syndrome"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16573733_brut.txt",
+        "page_number": 6,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000115",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "patiente | patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P4_E030",
+        "relation_id": "R_V69K_00027",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16583921_brut.txt",
+        "page_number": 4,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000116",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "patiente | patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P4_E030",
+        "relation_id": "R_V69K_00028",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "ira"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16583921_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000117",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "La patiente | La patiente | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P5_E058",
+        "relation_id": "R_V69K_00043",
+        "relation_type": "presente_dysfonction_organe",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "défaillance",
+          "defaillance",
+          "ira",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16583921_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000118",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "sous 0,5L d'O2 | sous 0,5L d'O2 | 0.5 | debit",
+      "metadata": {
+        "role": "SOURCE",
+        "actual_type": "POSOLOGIE",
+        "expected_type": "TRAITEMENT",
+        "entity_id": "P5_E047",
+        "relation_id": "R_V69K_00097",
+        "relation_type": "traitement_a_pour_posologie",
+        "current_entity_type": "POSOLOGIE",
+        "lexicon_support": [
+          "traitement"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16583921_brut.txt",
+        "page_number": 5,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000119",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "entity_id": "P4_E030",
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [
+          "choc septique"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_17005010_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    },
+    {
+      "candidate_id": "D_000120",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.45,
+      "reason": "Aucune correction DOMAIN/RANGE suffisamment déterminée par le texte et le graphe.",
+      "evidence": "Patient | Patient | patient",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "SYMPTOME",
+        "entity_id": "P1_E027",
+        "relation_id": "R_V69K_00073",
+        "relation_type": "presente_symptome",
+        "current_entity_type": "DONNEE_PATIENT",
+        "lexicon_support": [],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_17005010_brut.txt",
+        "page_number": 1,
+        "text_grounded": false
+      }
+    },
+    {
+      "candidate_id": "D_000121",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent": "agent_pattern_d",
+      "decision": "CORRECT",
+      "action": "RETYPE_ENTITY",
+      "confidence": 0.84,
+      "reason": "Le type attendu est soutenu par le texte source et l'entité existe encore.",
+      "evidence": "Tachycardie | Tachycardie | frequence_cardiaque",
+      "metadata": {
+        "role": "TARGET",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "entity_id": "P4_E026",
+        "relation_id": "R_V69K_00074",
+        "relation_type": "signe_vital_supporte_defaillance_organe",
+        "current_entity_type": "SIGNE_VITAL",
+        "lexicon_support": [
+          "ira",
+          "respiratoire"
+        ],
+        "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_17005010_brut.txt",
+        "page_number": 4,
+        "text_grounded": true
+      }
+    }
+  ]
+}

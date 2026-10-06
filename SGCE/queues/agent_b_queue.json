@@ -1,0 +1,1770 @@
+[
+  {
+    "task_id": "agent_pattern_b::BB1_000001",
+    "candidate_id": "BB1_000001",
+    "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite maxillaire gauche aiguë"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E044",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 31,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000002",
+    "candidate_id": "BB1_000002",
+    "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00019",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E053"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E053",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite chronique"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E044",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 31,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000003",
+    "candidate_id": "BB1_000003",
+    "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00100",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": null,
+        "source_value": "P6_E039",
+        "target_value": "P6_E010"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E010",
+        "resolved_entity_type": "POSOLOGIE",
+        "resolved_entity_name": "0,3/ 0,8 mg/h de NA"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P6_E039",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 778,
+          "schema_purity": 0.9987,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000004",
+    "candidate_id": "BB1_000004",
+    "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00117",
+        "relation_type": "biomarqueur_supporte_defaillance_organe",
+        "page": null,
+        "source_value": "P2_E025",
+        "target_value": "P5_E033"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E033",
+        "resolved_entity_type": "DEFAILLANCE_ORGANE",
+        "resolved_entity_name": "Acidose respiratoire sévère"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E025",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "BIOMARQUEUR",
+          "schema_support": 101,
+          "schema_purity": 0.9902,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000005",
+    "candidate_id": "BB1_000005",
+    "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00089",
+        "relation_type": "traitement_administre_a",
+        "page": null,
+        "source_value": "P5_E060",
+        "target_value": "P5_E033"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E033",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient de 57 ans"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P5_E060",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000006",
+    "candidate_id": "BB1_000006",
+    "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E014",
+        "target_value": "P2_E074"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E014",
+        "resolved_entity_type": "IMAGERIE_PROCEDURE",
+        "resolved_entity_name": "Echo-doppler veineux des membres inférieurs (28/06/12)"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E074",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "COMORBIDITE_ANTECEDENT",
+          "schema_support": 11,
+          "schema_purity": 0.6471,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000007",
+    "candidate_id": "BB1_000007",
+    "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00065",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_value": "P5_E015",
+        "target_value": "P5_E014"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E015",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E014",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "schema_support": 236,
+          "schema_purity": 0.944,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000008",
+    "candidate_id": "BB1_000008",
+    "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "micro_organisme_isole_dans",
+        "page": 4,
+        "source_value": "P4_E026",
+        "target_value": "P4_E024"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E024",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Pneumopathie bilatérale"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E026",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "MICRO_ORGANISME",
+          "schema_support": 46,
+          "schema_purity": 0.9388,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000009",
+    "candidate_id": "BB1_000009",
+    "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00074",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 5,
+        "source_value": "P5_E020",
+        "target_value": "P5_E036"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E020",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "remplissage de 5L"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E036",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000010",
+    "candidate_id": "BB1_000010",
+    "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_symptome",
+        "page": 5,
+        "source_value": "P5_E038",
+        "target_value": "P5_E035"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E035",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SYMPTOME",
+          "schema_support": 744,
+          "schema_purity": 0.96,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000011",
+    "candidate_id": "BB1_000011",
+    "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00069",
+        "relation_type": "service_medical_accueille",
+        "page": 1,
+        "source_value": "P1_E020",
+        "target_value": "P1_E017"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P1_E017",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P1_E020",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SERVICE_MEDICAL",
+          "schema_support": 136,
+          "schema_purity": 0.9927,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000012",
+    "candidate_id": "BB1_000012",
+    "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00029",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 2,
+        "source_value": "P2_E027",
+        "target_value": "P2_E028"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E027",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "G5"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E028",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000013",
+    "candidate_id": "BB1_000013",
+    "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00092",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 6,
+        "source_value": "P6_E047",
+        "target_value": "P6_E005"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E047",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P6_E005",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "schema_support": 230,
+          "schema_purity": 0.9312,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000014",
+    "candidate_id": "BB1_000014",
+    "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00144",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": null,
+        "source_value": "P2_E031",
+        "target_value": "P2_E028"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E031",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "KCl"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E028",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000015",
+    "candidate_id": "BB1_000015",
+    "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00037",
+        "relation_type": "service_medical_accueille",
+        "page": 2,
+        "source_value": "P2_E006",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E006",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SERVICE_MEDICAL",
+          "schema_support": 136,
+          "schema_purity": 0.9927,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000016",
+    "candidate_id": "BB1_000016",
+    "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "traitement_administre_a",
+        "page": 5,
+        "source_value": "P5_E024",
+        "target_value": "P5_E049"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E049",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P5_E024",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000017",
+    "candidate_id": "BB1_000017",
+    "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E021",
+        "target_value": "P2_E012"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E012",
+        "resolved_entity_type": "COMORBIDITE_ANTECEDENT",
+        "resolved_entity_name": "suivi pour myotonie de Steinert"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E021",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 17,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000018",
+    "candidate_id": "BB1_000018",
+    "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00044",
+        "relation_type": "traitement_administre_a",
+        "page": 2,
+        "source_value": "P2_E031",
+        "target_value": "P2_E052"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E052",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E031",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000019",
+    "candidate_id": "BB1_000019",
+    "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00108",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 4,
+        "source_value": "P4_E041",
+        "target_value": "P4_E035"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E035",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Doute sur un foyer en base droite"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E041",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 31,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000020",
+    "candidate_id": "BB1_000020",
+    "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00124",
+        "relation_type": "traitement_administre_a",
+        "page": null,
+        "source_value": "P4_E062",
+        "target_value": "P5_E046"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E046",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E062",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000021",
+    "candidate_id": "BB1_000021",
+    "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00139",
+        "relation_type": "micro_organisme_isole_dans",
+        "page": null,
+        "source_value": "P6_E005",
+        "target_value": "P5_E077"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E005",
+        "resolved_entity_type": "MICRO_ORGANISME",
+        "resolved_entity_name": "bactéroides fragilis"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E077",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "FOYER_INFECTIEUX",
+          "schema_support": 42,
+          "schema_purity": 0.8571,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000022",
+    "candidate_id": "BB1_000022",
+    "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 1,
+        "source_value": "P1_E027",
+        "target_value": "P1_E029"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P1_E027",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P1_E029",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "schema_support": 230,
+          "schema_purity": 0.9312,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000023",
+    "candidate_id": "BB1_000023",
+    "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00080",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 4,
+        "source_value": "P4_E025",
+        "target_value": "P4_E026"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E025",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "Glucosé 5%"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P4_E026",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 777,
+          "schema_purity": 0.9974,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000024",
+    "candidate_id": "BB1_000024",
+    "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00039",
+        "relation_type": "traitement_administre_a",
+        "page": 4,
+        "source_value": "P4_E034",
+        "target_value": "P4_E038"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E034",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000025",
+    "candidate_id": "BB1_000025",
+    "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00101",
+        "relation_type": "traitement_indique_par_label_nosologique",
+        "page": null,
+        "source_value": "P2_E057",
+        "target_value": "P6_E008"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E008",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Gangrène gazeuse"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E057",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 30,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  },
+  {
+    "task_id": "agent_pattern_b::BB1_000026",
+    "candidate_id": "BB1_000026",
+    "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "pattern": "B",
+    "subpattern": "B1",
+    "original_status": "UNRESOLVABLE_REFERENCE",
+    "route_to": "agent_pattern_b",
+    "routing_reason": "Une entité / référence / endpoint manque ou reste ambigu. La création ou le relink ne peuvent pas être déduits de façon sûre par une règle fixe.",
+    "source_report": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternB\\PatternB1\\pattern_b1_validation\\pattern_b1_validation_report.json",
+    "allowed_actions": [
+      "RELINK",
+      "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "REMOVE_RELATION",
+      "KEEP",
+      "REVIEW"
+    ],
+    "symbolic_candidate": {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00104",
+        "relation_type": "traitement_administre_a",
+        "page": null,
+        "source_value": "P2_E057",
+        "target_value": "P6_E039"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E039",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "poids de sortie = 76 kg"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E057",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1462,
+          "schema_purity": 0.9946,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    "document_context": null,
+    "local_entities": [],
+    "local_relations": [],
+    "second_recourse_only": true
+  }
+]

@@ -1,0 +1,299 @@
+{
+  "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "pattern": "A1_TRAITEMENT_POSOLOGIE",
+  "candidates": 4,
+  "status_counts": {
+    "ALREADY_CORRECT": 2,
+    "AMBIGUOUS": 2
+  },
+  "results": [
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E041",
+        "type": "TRAITEMENT",
+        "name": "amlodipine",
+        "preuve": "amlodipine 5mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "amlodipine 5mg | amlodipine | autre",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E042"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E042",
+        "target_name": "5mg",
+        "target_preuve": "amlodipine 5mg",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E042",
+          "target_name": "5mg",
+          "target_preuve": "amlodipine 5mg",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E044",
+          "target_name": "1.25mg",
+          "target_preuve": "bisoprol 1.25mg",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.4,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "sous 2L d'O2",
+          "target_preuve": "sous 2L d'O2",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E043",
+        "type": "TRAITEMENT",
+        "name": "bisoprol",
+        "preuve": "bisoprol 1.25mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "bisoprol 1.25mg | bisoprol | autre",
+      "detected_components": {
+        "dose": [
+          "1.25mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P2_E044"
+      ],
+      "best_posology_match": {
+        "target_id": "P2_E044",
+        "target_name": "1.25mg",
+        "target_preuve": "bisoprol 1.25mg",
+        "target_page": 2,
+        "medication_anchor": 1.0,
+        "component_overlap": 1.0,
+        "same_page": 1.0,
+        "proof_overlap": 0.6667,
+        "final_score": 0.9667,
+        "reliable": true
+      },
+      "top_3_matches": [
+        {
+          "target_id": "P2_E044",
+          "target_name": "1.25mg",
+          "target_preuve": "bisoprol 1.25mg",
+          "target_page": 2,
+          "medication_anchor": 1.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.6667,
+          "final_score": 0.9667,
+          "reliable": true
+        },
+        {
+          "target_id": "P2_E006",
+          "target_name": "sous 2L d'O2",
+          "target_preuve": "sous 2L d'O2",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P2_E011",
+          "target_name": "4L/min",
+          "target_preuve": "oxygénothérapie aux lunettes 4L/min",
+          "target_page": 2,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "ALREADY_CORRECT",
+      "validation_reason": "POSOLOGIE fiable trouvée et relation déjà présente.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E034",
+        "type": "TRAITEMENT",
+        "name": "traitement intraveineux",
+        "preuve": "traitement intraveineux",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "traitement intraveineux | antibiotique",
+      "detected_components": {
+        "route": [
+          "intraveineux"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P5_E002",
+          "target_name": "1gx3",
+          "target_preuve": "1gx3",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E004",
+          "target_name": "3 jours",
+          "target_preuve": "Amiklin pendant 3 jours",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E008",
+          "target_name": "1mg",
+          "target_preuve": "1mg d'adrénaline",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E006",
+        "type": "TRAITEMENT",
+        "name": "corticothérapie",
+        "preuve": "corticothérapie à 1mg/kg",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "corticothérapie à 1mg/kg | corticothérapie | corticoide",
+      "detected_components": {
+        "dose": [
+          "1mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null,
+      "existing_relation_targets": [
+        "P6_E007"
+      ],
+      "best_posology_match": null,
+      "top_3_matches": [
+        {
+          "target_id": "P6_E007",
+          "target_name": "1mg",
+          "target_preuve": "1mg/kg",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.5,
+          "final_score": 0.45,
+          "reliable": false
+        },
+        {
+          "target_id": "P5_E008",
+          "target_name": "1mg",
+          "target_preuve": "1mg d'adrénaline",
+          "target_page": 5,
+          "medication_anchor": 0.0,
+          "component_overlap": 1.0,
+          "same_page": 0.0,
+          "proof_overlap": 0.3333,
+          "final_score": 0.2833,
+          "reliable": false
+        },
+        {
+          "target_id": "P6_E011",
+          "target_name": "10mg",
+          "target_preuve": "10mg/h",
+          "target_page": 6,
+          "medication_anchor": 0.0,
+          "component_overlap": 0.0,
+          "same_page": 1.0,
+          "proof_overlap": 0.0,
+          "final_score": 0.15,
+          "reliable": false
+        }
+      ],
+      "validation_status": "AMBIGUOUS",
+      "validation_reason": "Un seul type de composant posologique détecté et aucune POSOLOGIE fiable correspondante.",
+      "recommended_action": "NONE"
+    }
+  ]
+}

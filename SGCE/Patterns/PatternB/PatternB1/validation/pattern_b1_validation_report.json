@@ -1,0 +1,1144 @@
+{
+  "pattern": "B1",
+  "pattern_family": "B",
+  "name": "Entité manquante implicite - validation endpoint relationnel",
+  "methodological_status": "VALIDATION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA6\\corrected",
+  "detection_report": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternB\\PatternB1\\detection\\pattern_b1_detection_report.json",
+  "schema_learning": {
+    "minimum_support": 3,
+    "minimum_purity": 0.95,
+    "learned_relation_schema": {
+      "traitement_administre_a": {
+        "source": {
+          "type": "TRAITEMENT",
+          "support": 1380,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "TRAITEMENT": 1380
+          }
+        },
+        "target": {
+          "type": "DONNEE_PATIENT",
+          "support": 1380,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 1380
+          }
+        }
+      },
+      "imagerie_objective_comorbidite": {
+        "source": {
+          "type": "IMAGERIE_PROCEDURE",
+          "support": 5,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "IMAGERIE_PROCEDURE": 5
+          }
+        },
+        "target": {
+          "type": "COMORBIDITE_ANTECEDENT",
+          "support": 5,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "COMORBIDITE_ANTECEDENT": 5
+          }
+        }
+      },
+      "biomarqueur_supporte_defaillance_organe": {
+        "source": {
+          "type": "BIOMARQUEUR",
+          "support": 53,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "BIOMARQUEUR": 53
+          }
+        },
+        "target": {
+          "type": "DEFAILLANCE_ORGANE",
+          "support": 52,
+          "purity": 0.9811,
+          "reliable": true,
+          "distribution": {
+            "DEFAILLANCE_ORGANE": 52,
+            "SYMPTOME": 1
+          }
+        }
+      },
+      "patient_a_pour_evolution": {
+        "source": {
+          "type": "DONNEE_PATIENT",
+          "support": 85,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 85
+          }
+        },
+        "target": {
+          "type": "EVOLUTION_PRONOSTIC",
+          "support": 84,
+          "purity": 0.9882,
+          "reliable": true,
+          "distribution": {
+            "EVOLUTION_PRONOSTIC": 84,
+            "SYMPTOME": 1
+          }
+        }
+      },
+      "a_pour_label_nosologique": {
+        "source": {
+          "type": "DONNEE_PATIENT",
+          "support": 238,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 238
+          }
+        },
+        "target": {
+          "type": "LABEL_NOSOLOGIQUE",
+          "support": 225,
+          "purity": 0.9454,
+          "reliable": false,
+          "distribution": {
+            "LABEL_NOSOLOGIQUE": 225,
+            "FOYER_INFECTIEUX": 8,
+            "SYMPTOME": 3,
+            "DEFAILLANCE_ORGANE": 2
+          }
+        }
+      },
+      "imagerie_objective_foyer": {
+        "source": {
+          "type": "IMAGERIE_PROCEDURE",
+          "support": 13,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "IMAGERIE_PROCEDURE": 13
+          }
+        },
+        "target": {
+          "type": "FOYER_INFECTIEUX",
+          "support": 13,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "FOYER_INFECTIEUX": 13
+          }
+        }
+      },
+      "presente_dysfonction_organe": {
+        "source": {
+          "type": "DONNEE_PATIENT",
+          "support": 239,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 239
+          }
+        },
+        "target": {
+          "type": "DEFAILLANCE_ORGANE",
+          "support": 224,
+          "purity": 0.9372,
+          "reliable": false,
+          "distribution": {
+            "DEFAILLANCE_ORGANE": 224,
+            "LABEL_NOSOLOGIQUE": 5,
+            "SYMPTOME": 9,
+            "COMORBIDITE_ANTECEDENT": 1
+          }
+        }
+      },
+      "micro_organisme_isole_dans": {
+        "source": {
+          "type": "MICRO_ORGANISME",
+          "support": 35,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "MICRO_ORGANISME": 35
+          }
+        },
+        "target": {
+          "type": "FOYER_INFECTIEUX",
+          "support": 35,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "FOYER_INFECTIEUX": 35
+          }
+        }
+      },
+      "biomarqueur_est_critere_de": {
+        "source": {
+          "type": "BIOMARQUEUR",
+          "support": 18,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "BIOMARQUEUR": 18
+          }
+        },
+        "target": {
+          "type": "LABEL_NOSOLOGIQUE",
+          "support": 18,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "LABEL_NOSOLOGIQUE": 18
+          }
+        }
+      },
+      "presente_symptome": {
+        "source": {
+          "type": "DONNEE_PATIENT",
+          "support": 724,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 724
+          }
+        },
+        "target": {
+          "type": "SYMPTOME",
+          "support": 714,
+          "purity": 0.9862,
+          "reliable": true,
+          "distribution": {
+            "SYMPTOME": 714,
+            "DEFAILLANCE_ORGANE": 5,
+            "LABEL_NOSOLOGIQUE": 2,
+            "BIOMARQUEUR": 3
+          }
+        }
+      },
+      "traitement_a_pour_posologie": {
+        "source": {
+          "type": "TRAITEMENT",
+          "support": 702,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "TRAITEMENT": 702
+          }
+        },
+        "target": {
+          "type": "POSOLOGIE",
+          "support": 702,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "POSOLOGIE": 702
+          }
+        }
+      },
+      "contexte_acquisition_influence_risque_resistance": {
+        "source": {
+          "type": "CONTEXTE_ACQUISITION",
+          "support": 1,
+          "purity": 1.0,
+          "reliable": false,
+          "distribution": {
+            "CONTEXTE_ACQUISITION": 1
+          }
+        },
+        "target": {
+          "type": "MICRO_ORGANISME",
+          "support": 1,
+          "purity": 1.0,
+          "reliable": false,
+          "distribution": {
+            "MICRO_ORGANISME": 1
+          }
+        }
+      },
+      "score_sofa_calcule_pour": {
+        "source": {
+          "type": "SCORE_SOFA",
+          "support": 4,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "SCORE_SOFA": 4
+          }
+        },
+        "target": {
+          "type": "DONNEE_PATIENT",
+          "support": 4,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 4
+          }
+        }
+      },
+      "signe_vital_supporte_defaillance_organe": {
+        "source": {
+          "type": "SIGNE_VITAL",
+          "support": 8,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "SIGNE_VITAL": 8
+          }
+        },
+        "target": {
+          "type": "DEFAILLANCE_ORGANE",
+          "support": 8,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DEFAILLANCE_ORGANE": 8
+          }
+        }
+      },
+      "presente_suspicion_infection": {
+        "source": {
+          "type": "DONNEE_PATIENT",
+          "support": 124,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 124
+          }
+        },
+        "target": {
+          "type": "FOYER_INFECTIEUX",
+          "support": 121,
+          "purity": 0.9758,
+          "reliable": true,
+          "distribution": {
+            "FOYER_INFECTIEUX": 121,
+            "SYMPTOME": 2,
+            "LABEL_NOSOLOGIQUE": 1
+          }
+        }
+      },
+      "service_medical_accueille": {
+        "source": {
+          "type": "SERVICE_MEDICAL",
+          "support": 105,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "SERVICE_MEDICAL": 105
+          }
+        },
+        "target": {
+          "type": "DONNEE_PATIENT",
+          "support": 105,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "DONNEE_PATIENT": 105
+          }
+        }
+      },
+      "imagerie_objective_defaillance": {
+        "source": {
+          "type": "IMAGERIE_PROCEDURE",
+          "support": 1,
+          "purity": 1.0,
+          "reliable": false,
+          "distribution": {
+            "IMAGERIE_PROCEDURE": 1
+          }
+        },
+        "target": {
+          "type": "DEFAILLANCE_ORGANE",
+          "support": 1,
+          "purity": 1.0,
+          "reliable": false,
+          "distribution": {
+            "DEFAILLANCE_ORGANE": 1
+          }
+        }
+      },
+      "a_pour_contexte_acquisition": {
+        "source": {
+          "type": "DONNEE_PATIENT",
+          "support": 2,
+          "purity": 0.4,
+          "reliable": false,
+          "distribution": {
+            "DONNEE_PATIENT": 2,
+            "LABEL_NOSOLOGIQUE": 1,
+            "COMORBIDITE_ANTECEDENT": 2
+          }
+        },
+        "target": {
+          "type": "CONTEXTE_ACQUISITION",
+          "support": 5,
+          "purity": 1.0,
+          "reliable": true,
+          "distribution": {
+            "CONTEXTE_ACQUISITION": 5
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "clinical_documents_loaded": 43,
+    "candidates_detected": 16,
+    "candidates_validated": 16,
+    "resolvable_reference": 0,
+    "confirmed_missing_entity": 0,
+    "unresolvable_reference": 16,
+    "ambiguous": 0,
+    "future_relink": 0,
+    "future_create_and_link": 0,
+    "protected": 16,
+    "errors": 0
+  },
+  "validated_candidates": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite maxillaire gauche aiguë"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E044",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 13,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00019",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E053"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E053",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite chronique"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E044",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 13,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E014",
+        "target_value": "P2_E074"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E014",
+        "resolved_entity_type": "IMAGERIE_PROCEDURE",
+        "resolved_entity_name": "Echo-doppler veineux des membres inférieurs (28/06/12)"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E074",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "COMORBIDITE_ANTECEDENT",
+          "schema_support": 5,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00065",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_value": "P5_E015",
+        "target_value": "P5_E014"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E015",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E014",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "schema_support": 225,
+          "schema_purity": 0.9454,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "micro_organisme_isole_dans",
+        "page": 4,
+        "source_value": "P4_E026",
+        "target_value": "P4_E024"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E024",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Pneumopathie bilatérale"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E026",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "MICRO_ORGANISME",
+          "schema_support": 35,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00074",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 5,
+        "source_value": "P5_E020",
+        "target_value": "P5_E036"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E020",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "remplissage de 5L"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E036",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 702,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_symptome",
+        "page": 5,
+        "source_value": "P5_E038",
+        "target_value": "P5_E035"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P5_E035",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SYMPTOME",
+          "schema_support": 714,
+          "schema_purity": 0.9862,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00029",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 2,
+        "source_value": "P2_E027",
+        "target_value": "P2_E028"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E027",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "G5"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P2_E028",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 702,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00092",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 6,
+        "source_value": "P6_E047",
+        "target_value": "P6_E005"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E047",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P6_E005",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "schema_support": 224,
+          "schema_purity": 0.9372,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00037",
+        "relation_type": "service_medical_accueille",
+        "page": 2,
+        "source_value": "P2_E006",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E006",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "SERVICE_MEDICAL",
+          "schema_support": 105,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "traitement_administre_a",
+        "page": 5,
+        "source_value": "P5_E024",
+        "target_value": "P5_E049"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E049",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P5_E024",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1380,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E021",
+        "target_value": "P2_E012"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E012",
+        "resolved_entity_type": "COMORBIDITE_ANTECEDENT",
+        "resolved_entity_name": "suivi pour myotonie de Steinert"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E021",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "IMAGERIE_PROCEDURE",
+          "schema_support": 5,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00044",
+        "relation_type": "traitement_administre_a",
+        "page": 2,
+        "source_value": "P2_E031",
+        "target_value": "P2_E052"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E052",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P2_E031",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1380,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 1,
+        "source_value": "P1_E027",
+        "target_value": "P1_E029"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P1_E027",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P1_E029",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "schema_support": 224,
+          "schema_purity": 0.9372,
+          "schema_reliable": false,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00080",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 4,
+        "source_value": "P4_E025",
+        "target_value": "P4_E026"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E025",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "Glucosé 5%"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "TARGET",
+          "endpoint_value": "P4_E026",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "POSOLOGIE",
+          "schema_support": 702,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00039",
+        "relation_type": "traitement_administre_a",
+        "page": 4,
+        "source_value": "P4_E034",
+        "target_value": "P4_E038"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE",
+      "validation_status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "endpoint_validations": [
+        {
+          "role": "SOURCE",
+          "endpoint_value": "P4_E034",
+          "resolution_status": "NOT_FOUND",
+          "resolution_method": "NONE",
+          "expected_type": "TRAITEMENT",
+          "schema_support": 1380,
+          "schema_purity": 1.0,
+          "schema_reliable": true,
+          "status": "UNRESOLVABLE_REFERENCE",
+          "recommended_future_action": "NONE",
+          "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+        }
+      ]
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a6_correction_report.json"
+  ],
+  "errors": []
+}

@@ -1,0 +1,34 @@
+{
+  "validator": "relation_repair_batch_safe_post_validator",
+  "status": "PASS",
+  "summary": {
+    "documents_checked": 43,
+    "expected_modified": 2,
+    "actually_modified": 2,
+    "unexpected_modified": 0,
+    "missing_expected_changes": 0,
+    "anomalies_before": 59,
+    "anomalies_after": 57,
+    "new_anomalies": 0,
+    "resolved_anomalies": 2,
+    "missing_documents": 0,
+    "extra_documents": 0
+  },
+  "new_anomalies": [],
+  "resolved_anomalies": [
+    [
+      "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "INVALID_TARGET_TYPE",
+      "R_V69K_00034",
+      "FOYER_INFECTIEUX",
+      "LABEL_NOSOLOGIQUE"
+    ],
+    [
+      "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "INVALID_TARGET_TYPE",
+      "R_V69K_00043",
+      "LABEL_NOSOLOGIQUE",
+      "DEFAILLANCE_ORGANE"
+    ]
+  ]
+}

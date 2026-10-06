@@ -1,0 +1,98 @@
+{
+  "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 48,
+  "number_candidates": 4,
+  "signal_counts": {
+    "WEAK": 4
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E041",
+        "type": "TRAITEMENT",
+        "name": "amlodipine",
+        "preuve": "amlodipine 5mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "amlodipine 5mg | amlodipine | autre",
+      "detected_components": {
+        "dose": [
+          "5mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E043",
+        "type": "TRAITEMENT",
+        "name": "bisoprol",
+        "preuve": "bisoprol 1.25mg",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "bisoprol 1.25mg | bisoprol | autre",
+      "detected_components": {
+        "dose": [
+          "1.25mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P5_E034",
+        "type": "TRAITEMENT",
+        "name": "traitement intraveineux",
+        "preuve": "traitement intraveineux",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "traitement intraveineux | antibiotique",
+      "detected_components": {
+        "route": [
+          "intraveineux"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P6_E006",
+        "type": "TRAITEMENT",
+        "name": "corticothérapie",
+        "preuve": "corticothérapie à 1mg/kg",
+        "valeur": null,
+        "page": 6
+      },
+      "detection_text": "corticothérapie à 1mg/kg | corticothérapie | corticoide",
+      "detected_components": {
+        "dose": [
+          "1mg"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

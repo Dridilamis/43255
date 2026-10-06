@@ -1,0 +1,387 @@
+{
+  "deduplicator": "agent_b_deduplicator",
+  "input_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\outputs\\agent_b_validated_decisions.json",
+  "summary": {
+    "validated_decisions_received": 26,
+    "raw_accepts": 3,
+    "unique_accepted_corrections": 2,
+    "duplicates_merged": 1,
+    "conflicts": 0,
+    "refine_entity_span": 5,
+    "review_none": 18
+  },
+  "unique_corrections": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E044",
+      "page_number": 2,
+      "status": "ACCEPT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_entity": {
+        "type": "IMAGERIE_PROCEDURE",
+        "text": "Un scanner"
+      },
+      "evidence": "Un scanner",
+      "relation_types": [
+        "imagerie_objective_foyer"
+      ],
+      "roles": [
+        "SOURCE"
+      ],
+      "source_candidate_ids": [
+        "BB1_000001",
+        "BB1_000002"
+      ],
+      "duplicates_merged": 1,
+      "reason": "Proposition validée unique pour cet endpoint. Les candidats strictement identiques ont été fusionnés."
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P4_E041",
+      "page_number": 4,
+      "status": "ACCEPT",
+      "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+      "proposed_entity": {
+        "type": "IMAGERIE_PROCEDURE",
+        "text": "Radiographie pulmonaire"
+      },
+      "evidence": "Radiographie pulmonaire",
+      "relation_types": [
+        "imagerie_objective_foyer"
+      ],
+      "roles": [
+        "SOURCE"
+      ],
+      "source_candidate_ids": [
+        "BB1_000019"
+      ],
+      "duplicates_merged": 0,
+      "reason": "Proposition validée unique pour cet endpoint. Les candidats strictement identiques ont été fusionnés."
+    }
+  ],
+  "conflicts": [],
+  "refine_entity_span_cases": [
+    {
+      "candidate_id": "BB1_000007",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P5_E014",
+      "relation_type": "a_pour_label_nosologique",
+      "role": "TARGET",
+      "agent_decision": {
+        "candidate_id": "BB1_000007",
+        "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "B",
+        "subpattern": "B1",
+        "agent": "agent_pattern_b",
+        "decision": "CORRECT",
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "confidence": 0.85,
+        "evidence": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+        "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+        "proposed_entities": [
+          {
+            "type": "LABEL_NOSOLOGIQUE",
+            "text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA."
+          }
+        ],
+        "proposed_relations": [],
+        "metadata": {
+          "missing_endpoint": "P5_E014",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "page_number": 5,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16205810_brut.txt",
+          "used_global_text_fallback": false,
+          "evidence_candidates": [
+            {
+              "text": "Pneumopathie communautaire hypoxémiante avec décompensation de BPCO, compliquée d'un choc septique et d'un SDRA.",
+              "matched_patterns": [
+                "\\bchoc septique\\b"
+              ]
+            }
+          ]
+        }
+      },
+      "reason": "La preuve, le type et la relation sont cohérents, mais le texte proposé n'est pas suffisamment atomique pour être créé tel quel comme entité."
+    },
+    {
+      "candidate_id": "BB1_000010",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P5_E035",
+      "relation_type": "presente_symptome",
+      "role": "TARGET",
+      "agent_decision": {
+        "candidate_id": "BB1_000010",
+        "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "B",
+        "subpattern": "B1",
+        "agent": "agent_pattern_b",
+        "decision": "CORRECT",
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "confidence": 0.85,
+        "evidence": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+        "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+        "proposed_entities": [
+          {
+            "type": "SYMPTOME",
+            "text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de"
+          }
+        ],
+        "proposed_relations": [],
+        "metadata": {
+          "missing_endpoint": "P5_E035",
+          "expected_type": "SYMPTOME",
+          "page_number": 5,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16271908_brut.txt",
+          "used_global_text_fallback": false,
+          "evidence_candidates": [
+            {
+              "text": "Il persiste une dyspnée inspiratoire, chronique chez ce patient motivant l’introduction d’aérosol de",
+              "matched_patterns": [
+                "\\bdyspnee\\b"
+              ]
+            }
+          ]
+        }
+      },
+      "reason": "La preuve, le type et la relation sont cohérents, mais le texte proposé n'est pas suffisamment atomique pour être créé tel quel comme entité."
+    },
+    {
+      "candidate_id": "BB1_000016",
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P5_E024",
+      "relation_type": "traitement_administre_a",
+      "role": "SOURCE",
+      "agent_decision": {
+        "candidate_id": "BB1_000016",
+        "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "B",
+        "subpattern": "B1",
+        "agent": "agent_pattern_b",
+        "decision": "CORRECT",
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "confidence": 0.85,
+        "evidence": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+        "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+        "proposed_entities": [
+          {
+            "type": "TRAITEMENT",
+            "text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu."
+          }
+        ],
+        "proposed_relations": [],
+        "metadata": {
+          "missing_endpoint": "P5_E024",
+          "expected_type": "TRAITEMENT",
+          "page_number": 5,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16340712_brut.txt",
+          "used_global_text_fallback": false,
+          "evidence_candidates": [
+            {
+              "text": "=> Amélioration clinique et biologique du syndrome inflammatoire sous antibiothérapie par Tienam pendant une semaine puis switch par Amoxicilline pendant 15 jours + Rovamycine et Tamiflu.",
+              "matched_patterns": [
+                "\\bantibiot",
+                "\\bamoxic"
+              ]
+            }
+          ]
+        }
+      },
+      "reason": "La preuve, le type et la relation sont cohérents, mais le texte proposé n'est pas suffisamment atomique pour être créé tel quel comme entité."
+    },
+    {
+      "candidate_id": "BB1_000018",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E031",
+      "relation_type": "traitement_administre_a",
+      "role": "SOURCE",
+      "agent_decision": {
+        "candidate_id": "BB1_000018",
+        "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "B",
+        "subpattern": "B1",
+        "agent": "agent_pattern_b",
+        "decision": "CORRECT",
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "confidence": 0.85,
+        "evidence": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+        "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+        "proposed_entities": [
+          {
+            "type": "TRAITEMENT",
+            "text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie."
+          }
+        ],
+        "proposed_relations": [],
+        "metadata": {
+          "missing_endpoint": "P2_E031",
+          "expected_type": "TRAITEMENT",
+          "page_number": 2,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16374548_brut.txt",
+          "used_global_text_fallback": false,
+          "evidence_candidates": [
+            {
+              "text": "Après traitement par antibiothérapie (Tazocilline et Ciflox pendant 15 jours) amélioration de la température, de la thrombopénie et de la leucopénie.",
+              "matched_patterns": [
+                "\\btraitement\\b",
+                "\\bantibiot"
+              ]
+            }
+          ]
+        }
+      },
+      "reason": "La preuve, le type et la relation sont cohérents, mais le texte proposé n'est pas suffisamment atomique pour être créé tel quel comme entité."
+    },
+    {
+      "candidate_id": "BB1_000021",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P5_E077",
+      "relation_type": "micro_organisme_isole_dans",
+      "role": "TARGET",
+      "agent_decision": {
+        "candidate_id": "BB1_000021",
+        "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "pattern": "B",
+        "subpattern": "B1",
+        "agent": "agent_pattern_b",
+        "decision": "CORRECT",
+        "action": "CREATE_FROM_EXPLICIT_EVIDENCE",
+        "confidence": 0.85,
+        "evidence": "Le scanner thoracique réalisé retrouve un épanchement pleural bilatéral avec un foyer de condensation à la base droite.",
+        "reason": "L'endpoint est absent du graphe, mais une seule preuve textuelle explicite du type attendu est retrouvée.",
+        "proposed_entities": [
+          {
+            "type": "FOYER_INFECTIEUX",
+            "text": "Le scanner thoracique réalisé retrouve un épanchement pleural bilatéral avec un foyer de condensation à la base droite."
+          }
+        ],
+        "proposed_relations": [],
+        "metadata": {
+          "missing_endpoint": "P5_E077",
+          "expected_type": "FOYER_INFECTIEUX",
+          "page_number": 5,
+          "text_file": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\MultiAgent\\Sortie_Textes_Brut_MistralSmall4\\img20250709_16393818_brut.txt",
+          "used_global_text_fallback": false,
+          "evidence_candidates": [
+            {
+              "text": "Le scanner thoracique réalisé retrouve un épanchement pleural bilatéral avec un foyer de condensation à la base droite.",
+              "matched_patterns": [
+                "\\bfoyer\\b"
+              ]
+            }
+          ]
+        }
+      },
+      "reason": "La preuve, le type et la relation sont cohérents, mais le texte proposé n'est pas suffisamment atomique pour être créé tel quel comme entité."
+    }
+  ],
+  "review_none_cases": [
+    {
+      "candidate_id": "BB1_000003",
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P6_E039",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000004",
+      "document": "img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E025",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000005",
+      "document": "img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P5_E060",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000006",
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E074",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000008",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P4_E026",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000009",
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P5_E036",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000011",
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P1_E020",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000012",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E028",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000013",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P6_E005",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000014",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E028",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000015",
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E006",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000017",
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E021",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000020",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P4_E062",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000022",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P1_E029",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000023",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P4_E026",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000024",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P4_E034",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000025",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E057",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    },
+    {
+      "candidate_id": "BB1_000026",
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "missing_endpoint": "P2_E057",
+      "reason": "L'Agent B n'a proposé aucune correction automatique."
+    }
+  ]
+}

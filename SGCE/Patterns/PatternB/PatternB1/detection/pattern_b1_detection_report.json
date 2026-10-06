@@ -1,0 +1,492 @@
+{
+  "pattern": "B1",
+  "pattern_family": "B",
+  "name": "Entité manquante implicite - endpoint relationnel absent",
+  "methodological_status": "DETECTION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternA\\PatternA6\\corrected",
+  "summary": {
+    "json_files_found": 44,
+    "clinical_documents_scanned": 43,
+    "nonclinical_json_skipped": 1,
+    "entities_scanned": 10138,
+    "relations_scanned": 3756,
+    "b1_candidates": 16,
+    "weak": 0,
+    "medium": 0,
+    "strong": 16,
+    "errors": 0
+  },
+  "candidate_kind_counts": {
+    "MISSING_ENTITY_ENDPOINT": 16
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite maxillaire gauche aiguë"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00019",
+        "relation_type": "imagerie_objective_foyer",
+        "page": 2,
+        "source_value": "P2_E044",
+        "target_value": "P2_E053"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E053",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "sinusite chronique"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00018",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E014",
+        "target_value": "P2_E074"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E014",
+        "resolved_entity_type": "IMAGERIE_PROCEDURE",
+        "resolved_entity_name": "Echo-doppler veineux des membres inférieurs (28/06/12)"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00065",
+        "relation_type": "a_pour_label_nosologique",
+        "page": 5,
+        "source_value": "P5_E015",
+        "target_value": "P5_E014"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E015",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00047",
+        "relation_type": "micro_organisme_isole_dans",
+        "page": 4,
+        "source_value": "P4_E026",
+        "target_value": "P4_E024"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E024",
+        "resolved_entity_type": "FOYER_INFECTIEUX",
+        "resolved_entity_name": "Pneumopathie bilatérale"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00074",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 5,
+        "source_value": "P5_E020",
+        "target_value": "P5_E036"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E020",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "remplissage de 5L"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_symptome",
+        "page": 5,
+        "source_value": "P5_E038",
+        "target_value": "P5_E035"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00029",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 2,
+        "source_value": "P2_E027",
+        "target_value": "P2_E028"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E027",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "G5"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00092",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 6,
+        "source_value": "P6_E047",
+        "target_value": "P6_E005"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P6_E047",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00037",
+        "relation_type": "service_medical_accueille",
+        "page": 2,
+        "source_value": "P2_E006",
+        "target_value": "P2_E062"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E062",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16340712_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00048",
+        "relation_type": "traitement_administre_a",
+        "page": 5,
+        "source_value": "P5_E024",
+        "target_value": "P5_E049"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P5_E049",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "imagerie_objective_comorbidite",
+        "page": 2,
+        "source_value": "P2_E021",
+        "target_value": "P2_E012"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E012",
+        "resolved_entity_type": "COMORBIDITE_ANTECEDENT",
+        "resolved_entity_name": "suivi pour myotonie de Steinert"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00044",
+        "relation_type": "traitement_administre_a",
+        "page": 2,
+        "source_value": "P2_E031",
+        "target_value": "P2_E052"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P2_E052",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "le patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00010",
+        "relation_type": "presente_dysfonction_organe",
+        "page": 1,
+        "source_value": "P1_E027",
+        "target_value": "P1_E029"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P1_E027",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00080",
+        "relation_type": "traitement_a_pour_posologie",
+        "page": 4,
+        "source_value": "P4_E025",
+        "target_value": "P4_E026"
+      },
+      "source_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E025",
+        "resolved_entity_type": "TRAITEMENT",
+        "resolved_entity_name": "Glucosé 5%"
+      },
+      "target_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "missing_roles": [
+        "TARGET"
+      ],
+      "status": "B1_CANDIDATE"
+    },
+    {
+      "document": "img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "B1",
+      "candidate_kind": "MISSING_ENTITY_ENDPOINT",
+      "strength": "STRONG",
+      "relation": {
+        "relation_id": "R_V69K_00039",
+        "relation_type": "traitement_administre_a",
+        "page": 4,
+        "source_value": "P4_E034",
+        "target_value": "P4_E038"
+      },
+      "source_resolution": {
+        "mode": "NOT_FOUND",
+        "resolved_entity_id": null,
+        "resolved_entity_type": null,
+        "resolved_entity_name": null
+      },
+      "target_resolution": {
+        "mode": "ID",
+        "resolved_entity_id": "P4_E038",
+        "resolved_entity_type": "DONNEE_PATIENT",
+        "resolved_entity_name": "Patient"
+      },
+      "missing_roles": [
+        "SOURCE"
+      ],
+      "status": "B1_CANDIDATE"
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a6_correction_report.json"
+  ],
+  "errors": []
+}

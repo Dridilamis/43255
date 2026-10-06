@@ -1,0 +1,385 @@
+﻿# -*- coding: utf-8 -*-
+"""
+root_cause_entity_candidate_builder.py
+======================================
+
+TRACE / SGCE â€” Root-Cause Entity Candidate Builder
+
+EntrÃ©e :
+  SGCE/MultiAgent/corrected
+
+Objectif :
+- dÃ©tecter les entitÃ©s responsables de plusieurs anomalies de type
+- agrÃ©ger les attentes de type issues de toutes les relations incidentes
+- proposer un type cible seulement si plusieurs relations convergent
+
+Aucune donnÃ©e clinique n'est modifiÃ©e.
+
+Sortie :
+  document_grounding Etage 3/root_cause/queues/root_cause_entity_candidates.json
+"""
+
+import json
+from collections import Counter, defaultdict
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent
+STAGE3_DIR = ROOT.parent
+REDUCTION_DIR = STAGE3_DIR.parent
+SGCE_DIR = REDUCTION_DIR / "SGCE"
+
+# EntrÃ©e officielle de l'Ã©tage 3 : sortie finale SGCE / Multi-Agent.
+
+GUIDELINE_CANDIDATES = [
+    REDUCTION_DIR.parent / "ontologie_sepsis_graph_v1.6.json",
+    REDUCTION_DIR / "ontologie_sepsis_graph_v1.6.json",
+    Path(r"C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\ontologie_sepsis_graph_v1.6.json"),
+]
+
+INPUT_DIR = Path(__file__).resolve().parents[2] / "SGCE" / "MultiAgent" / "corrected"
+
+OUTPUT_FILE = ROOT / "queues" / "root_cause_entity_candidates.json"
+
+def load_json(path):
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def resolve_guideline():
+    for path in GUIDELINE_CANDIDATES:
+        if path.exists():
+            return path
+    raise FileNotFoundError("ontologie_sepsis_graph_v1.6.json introuvable.")
+
+def entity_id(entity):
+    return (
+        entity.get("identifiant_entite")
+        or entity.get("id")
+        or entity.get("entity_id")
+    )
+
+
+def entity_type(entity):
+    return (
+        entity.get("categorie")
+        or entity.get("type")
+        or entity.get("entity_type")
+        or ""
+    )
+
+
+def entity_text(entity):
+    values = []
+
+    for key in (
+        "preuve",
+        "name",
+        "valeur",
+        "libelle",
+        "parametre",
+        "texte",
+        "text",
+    ):
+        value = entity.get(key)
+
+        if value not in (None, ""):
+            value = str(value).strip()
+
+            if value and value not in values:
+                values.append(value)
+
+    return " | ".join(values)
+
+
+def relation_id(relation):
+    return (
+        relation.get("identifiant_relation")
+        or relation.get("id")
+        or relation.get("relation_id")
+    )
+
+
+def relation_type(relation):
+    return (
+        relation.get("type_relation")
+        or relation.get("relation")
+        or relation.get("relation_type")
+        or relation.get("predicate")
+        or relation.get("type")
+        or ""
+    )
+
+
+def relation_source(relation):
+    return (
+        relation.get("identifiant_entite_sujet")
+        or relation.get("from_id")
+        or relation.get("subject_id")
+        or relation.get("source")
+    )
+
+
+def relation_target(relation):
+    return (
+        relation.get("identifiant_entite_objet")
+        or relation.get("to_id")
+        or relation.get("object_id")
+        or relation.get("target")
+    )
+
+
+def get_entities(doc):
+    if isinstance(doc.get("global_entities"), list):
+        return doc["global_entities"]
+
+    result = []
+
+    for page in doc.get("pages", []) or []:
+        result.extend(page.get("entities", []) or [])
+
+    return result
+
+
+def get_relations(doc):
+    if isinstance(doc.get("global_relations"), list):
+        return doc["global_relations"]
+
+    result = []
+
+    for page in doc.get("pages", []) or []:
+        result.extend(page.get("relations", []) or [])
+
+    return result
+
+
+def load_signatures():
+    guideline = load_json(resolve_guideline())
+    root = guideline.get("ontologie_sepsis_graph", guideline)
+    relations_root = root.get("relations", {}) or {}
+    signatures = {}
+    if not isinstance(relations_root, dict):
+        return signatures
+    for group in relations_root.values():
+        if not isinstance(group, dict):
+            continue
+        for name, spec in group.items():
+            if not isinstance(spec, dict):
+                continue
+            domaine = spec.get("domaine")
+            image = spec.get("image")
+            if domaine and image:
+                signatures[name] = {"domaine": domaine, "image": image}
+    return signatures
+
+def main():
+    if not INPUT_DIR.exists():
+        raise FileNotFoundError(
+            f"EntrÃ©e clinique introuvable : {INPUT_DIR}"
+        )
+
+    signatures = load_signatures()
+
+    candidates = []
+
+    candidate_index = 1
+
+    documents = 0
+
+    for path in sorted(INPUT_DIR.glob("*.json")):
+        if path.name.endswith("_report.json"):
+            continue
+
+        try:
+            doc = load_json(path)
+        except Exception:
+            continue
+
+        if not isinstance(doc, dict):
+            continue
+
+        documents += 1
+
+        entities = {
+            str(entity_id(e)): e
+            for e in get_entities(doc)
+            if entity_id(e) is not None
+        }
+
+        expected_types = defaultdict(list)
+
+        for relation in get_relations(doc):
+            rtype = relation_type(relation)
+
+            signature = signatures.get(rtype)
+
+            if not signature:
+                continue
+
+            source_id = relation_source(relation)
+            target_id = relation_target(relation)
+
+            source = entities.get(str(source_id))
+            target = entities.get(str(target_id))
+
+            if source is not None:
+                current_source_type = entity_type(source)
+                expected_source_type = signature["domaine"]
+
+                if (
+                    current_source_type
+                    != expected_source_type
+                ):
+                    expected_types[
+                        str(source_id)
+                    ].append({
+                        "relation_id":
+                            relation_id(relation),
+
+                        "relation_type":
+                            rtype,
+
+                        "role":
+                            "SOURCE",
+
+                        "current_type":
+                            current_source_type,
+
+                        "expected_type":
+                            expected_source_type,
+                    })
+
+            if target is not None:
+                current_target_type = entity_type(target)
+                expected_target_type = signature["image"]
+
+                if (
+                    current_target_type
+                    != expected_target_type
+                ):
+                    expected_types[
+                        str(target_id)
+                    ].append({
+                        "relation_id":
+                            relation_id(relation),
+
+                        "relation_type":
+                            rtype,
+
+                        "role":
+                            "TARGET",
+
+                        "current_type":
+                            current_target_type,
+
+                        "expected_type":
+                            expected_target_type,
+                    })
+
+        for eid, mismatches in expected_types.items():
+            entity = entities.get(eid)
+
+            if entity is None:
+                continue
+
+            votes = Counter(
+                item["expected_type"]
+                for item in mismatches
+            )
+
+            if not votes:
+                continue
+
+            top_type, top_count = votes.most_common(1)[0]
+
+            total = sum(votes.values())
+
+            # Root-cause candidate only if:
+            # - at least 2 anomalous incident relations
+            # - at least 2 relations converge toward the same expected type
+            if total < 2 or top_count < 2:
+                continue
+
+            confidence = (
+                top_count / total
+                if total > 0
+                else 0.0
+            )
+
+            candidates.append({
+                "candidate_id":
+                    f"RCE_{candidate_index:06d}",
+
+                "document":
+                    path.name,
+
+                "entity_id":
+                    eid,
+
+                "entity_text":
+                    entity_text(entity),
+
+                "current_type":
+                    entity_type(entity),
+
+                "proposed_type":
+                    top_type,
+
+                "support_count":
+                    top_count,
+
+                "total_mismatch_relations":
+                    total,
+
+                "support_ratio":
+                    round(confidence, 4),
+
+                "expected_type_votes":
+                    dict(votes),
+
+                "incident_mismatches":
+                    mismatches,
+            })
+
+            candidate_index += 1
+
+    OUTPUT_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    OUTPUT_FILE.write_text(
+        json.dumps(
+            candidates,
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+    print("=" * 104)
+    print("TRACE / SGCE - ROOT CAUSE ENTITY CANDIDATE BUILDER")
+    print("=" * 104)
+
+    print(
+        f"Documents analysÃ©s                   : {documents}"
+    )
+
+    print(
+        f"Candidats cause racine               : {len(candidates)}"
+    )
+
+    print(
+        f"Sortie                               : {OUTPUT_FILE}"
+    )
+
+    print()
+
+    print(
+        "Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e."
+    )
+
+
+if __name__ == "__main__":
+    main()
+

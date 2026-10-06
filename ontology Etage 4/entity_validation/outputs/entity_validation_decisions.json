@@ -1,0 +1,3494 @@
+{
+  "classifier": "entity_validation_classifier",
+  "version": "V1_CONSERVATIVE_MULTI_EVIDENCE",
+  "mode": "NON_DESTRUCTIVE",
+  "summary": {
+    "candidates_received": 39,
+    "entity_groups": 39,
+    "strong_mistyping_entity_groups": 0,
+    "classification_counts": {
+      "RELATION_ONTOLOGY_CONFLICT": 39
+    },
+    "proposed_action_counts": {
+      "REVIEW_RELATION": 39
+    },
+    "confidence_counts": {
+      "0.0": 39
+    }
+  },
+  "entity_group_summary": [
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E038",
+      "entity_text": "Le patient",
+      "current_type": "DONNEE_PATIENT",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "COMORBIDITE_ANTECEDENT": 1
+      },
+      "current_type_counts": {
+        "DONNEE_PATIENT": 1
+      },
+      "relation_counts": {
+        "a_pour_contexte_acquisition": 1
+      },
+      "role_counts": {
+        "SOURCE": 1
+      },
+      "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E044",
+      "entity_text": "ralentissement psychomoteur",
+      "current_type": "DEFAILLANCE_ORGANE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E004",
+      "entity_text": "ACR",
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E047",
+      "entity_text": "poussée hypertensive",
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E022",
+      "entity_text": "pneumopathie nosocomiale",
+      "current_type": "FOYER_INFECTIEUX",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "FOYER_INFECTIEUX": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E044",
+      "entity_text": "thrombopénie",
+      "current_type": "BIOMARQUEUR",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "BIOMARQUEUR": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E038",
+      "entity_text": "collapsus de reventilation",
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E002",
+      "entity_text": "pneumopathie nosocomiale",
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "COMORBIDITE_ANTECEDENT": 1
+      },
+      "current_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "relation_counts": {
+        "a_pour_contexte_acquisition": 1
+      },
+      "role_counts": {
+        "SOURCE": 1
+      },
+      "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E029",
+      "entity_text": "Cicatrice inflammatoire avec écoulement purulent",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "FOYER_INFECTIEUX": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_suspicion_infection": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "FOYER_INFECTIEUX",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E028",
+      "entity_text": "diminution du syndrome inflammatoire biologique",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "EVOLUTION_PRONOSTIC": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "patient_a_pour_evolution": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "EVOLUTION_PRONOSTIC",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E028",
+      "entity_text": "Hypokaliémie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E019",
+      "entity_text": "HTAP",
+      "current_type": "DEFAILLANCE_ORGANE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E039",
+      "entity_text": "ulcère gastrique",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E022",
+      "entity_text": "HTAP secondaire aux lésions pulmonaires",
+      "current_type": "DEFAILLANCE_ORGANE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E004",
+      "entity_text": "bronchite",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E039",
+      "entity_text": "anurie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E029",
+      "entity_text": "anurie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E014",
+      "entity_text": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+      "current_type": "DEFAILLANCE_ORGANE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E001",
+      "entity_text": "Gangrene gazeuse",
+      "current_type": "FOYER_INFECTIEUX",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "FOYER_INFECTIEUX": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E037",
+      "entity_text": "initialement anurie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E044",
+      "entity_text": "persistance de l'anurie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E065",
+      "entity_text": "anurie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E001",
+      "entity_text": "thrombopénie",
+      "current_type": "BIOMARQUEUR",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "BIOMARQUEUR": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E018",
+      "entity_text": "thrombopénie",
+      "current_type": "BIOMARQUEUR",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "BIOMARQUEUR": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E038",
+      "entity_text": "Neuropathie de réanimation",
+      "current_type": "DEFAILLANCE_ORGANE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E064",
+      "entity_text": "angiocholite",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "FOYER_INFECTIEUX": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_suspicion_infection": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "FOYER_INFECTIEUX",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E032",
+      "entity_text": "Angiocholite",
+      "current_type": "FOYER_INFECTIEUX",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "FOYER_INFECTIEUX": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E036",
+      "entity_text": "Patient",
+      "current_type": "DONNEE_PATIENT",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "COMORBIDITE_ANTECEDENT": 1
+      },
+      "current_type_counts": {
+        "DONNEE_PATIENT": 1
+      },
+      "relation_counts": {
+        "a_pour_contexte_acquisition": 1
+      },
+      "role_counts": {
+        "SOURCE": 1
+      },
+      "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E032",
+      "entity_text": "dénutrition sévère",
+      "current_type": "COMORBIDITE_ANTECEDENT",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "COMORBIDITE_ANTECEDENT": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E028",
+      "entity_text": "dilatation des veines du membre supérieur gauche",
+      "current_type": "DEFAILLANCE_ORGANE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E037",
+      "entity_text": "anurie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E024",
+      "entity_text": "coma",
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E045",
+      "entity_text": "Anurie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E017",
+      "entity_text": "encéphalopathie hépatique",
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P3_E040",
+      "entity_text": "pneumopathie nosocomiale",
+      "current_type": "FOYER_INFECTIEUX",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "FOYER_INFECTIEUX": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E014",
+      "entity_text": "encéphalopathie hépatique",
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E023",
+      "entity_text": "difficultés ventilatoires",
+      "current_type": "DEFAILLANCE_ORGANE",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "SYMPTOME": 1
+      },
+      "current_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "relation_counts": {
+        "presente_symptome": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "SYMPTOME",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E024",
+      "entity_text": "hypoxie",
+      "current_type": "SYMPTOME",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "DEFAILLANCE_ORGANE": 1
+      },
+      "current_type_counts": {
+        "SYMPTOME": 1
+      },
+      "relation_counts": {
+        "presente_dysfonction_organe": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "DEFAILLANCE_ORGANE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E006",
+      "entity_text": "gangrène gazeuse",
+      "current_type": "FOYER_INFECTIEUX",
+      "number_of_violations": 1,
+      "expected_type_counts": {
+        "LABEL_NOSOLOGIQUE": 1
+      },
+      "current_type_counts": {
+        "FOYER_INFECTIEUX": 1
+      },
+      "relation_counts": {
+        "a_pour_label_nosologique": 1
+      },
+      "role_counts": {
+        "TARGET": 1
+      },
+      "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+      "dominant_expected_count": 1,
+      "dominant_expected_ratio": 1.0,
+      "classification_counts": {
+        "RELATION_ONTOLOGY_CONFLICT": 1
+      },
+      "action_counts": {
+        "REVIEW_RELATION": 1
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_SOURCE_TYPE",
+      "role": "SOURCE",
+      "relation_id": "R_V69K_00098",
+      "relation_name": "a_pour_contexte_acquisition",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P6_E038",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DONNEE_PATIENT",
+      "expected_type": "COMORBIDITE_ANTECEDENT",
+      "entity_text": "Le patient",
+      "entity_proof": "Le patient",
+      "entity_page": 6,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_SOURCE_TYPE",
+        "entity_id": "P6_E038",
+        "entity_type": "DONNEE_PATIENT",
+        "entity_text": "Le patient | patient",
+        "relation_id": "R_V69K_00098",
+        "relation_type": "a_pour_contexte_acquisition",
+        "source_id": "P6_E038",
+        "target_id": "P6_E029",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "page": "6",
+        "details": "Le type source ne respecte pas le domaine TRACE"
+      },
+      "relation_source_id": "P6_E038",
+      "relation_target_id": "P6_E029",
+      "relation_source_text": "",
+      "relation_target_text": "",
+      "relation_proof": "infection nosocomiale : oui",
+      "relation_page": 6,
+      "decision_id": "ONTO_DEC_00001",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "current_type_counts": {
+          "DONNEE_PATIENT": 1
+        },
+        "relation_counts": {
+          "a_pour_contexte_acquisition": 1
+        },
+        "role_counts": {
+          "SOURCE": 1
+        },
+        "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00030",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E044",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "SYMPTOME",
+      "entity_text": "ralentissement psychomoteur",
+      "entity_proof": "ralentissement psychomoteur",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E044",
+        "entity_type": "DEFAILLANCE_ORGANE",
+        "entity_text": "ralentissement psychomoteur | autre",
+        "relation_id": "R_V69K_00030",
+        "relation_type": "presente_symptome",
+        "source_id": "P2_E046",
+        "target_id": "P2_E044",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E046",
+      "relation_target_id": "P2_E044",
+      "relation_source_text": "Patient",
+      "relation_target_text": "ralentissement psychomoteur",
+      "relation_proof": "ralentissement psychomoteur",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00002",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00073",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E004",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "ACR",
+      "entity_proof": "ACR",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E004",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "ACR",
+        "relation_id": "R_V69K_00073",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P5_E015",
+        "target_id": "P5_E004",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E015",
+      "relation_target_id": "P5_E004",
+      "relation_source_text": "Le patient",
+      "relation_target_text": "ACR",
+      "relation_proof": "ACR",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00003",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00014",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E047",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "SYMPTOME",
+      "entity_text": "poussée hypertensive",
+      "entity_proof": "poussée hypertensive",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E047",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "poussée hypertensive",
+        "relation_id": "R_V69K_00014",
+        "relation_type": "presente_symptome",
+        "source_id": "P2_E061",
+        "target_id": "P2_E047",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "SYMPTOME",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E061",
+      "relation_target_id": "P2_E047",
+      "relation_source_text": "la patiente",
+      "relation_target_text": "poussée hypertensive",
+      "relation_proof": "OAP sur poussée hypertensive",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00004",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00047",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E022",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "FOYER_INFECTIEUX",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "pneumopathie nosocomiale",
+      "entity_proof": "pneumopathie nosocomiale",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E022",
+        "entity_type": "FOYER_INFECTIEUX",
+        "entity_text": "pneumopathie nosocomiale | pneumopathie_nosocomiale",
+        "relation_id": "R_V69K_00047",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P5_E032",
+        "target_id": "P5_E022",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E032",
+      "relation_target_id": "P5_E022",
+      "relation_source_text": "Le patient",
+      "relation_target_text": "pneumopathie nosocomiale",
+      "relation_proof": "pneumopathie nosocomiale",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00005",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00045",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E044",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "BIOMARQUEUR",
+      "expected_type": "SYMPTOME",
+      "entity_text": "thrombopénie",
+      "entity_proof": "thrombopénie",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E044",
+        "entity_type": "BIOMARQUEUR",
+        "entity_text": "thrombopénie | plaquettes",
+        "relation_id": "R_V69K_00045",
+        "relation_type": "presente_symptome",
+        "source_id": "P5_E055",
+        "target_id": "P5_E044",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E055",
+      "relation_target_id": "P5_E044",
+      "relation_source_text": "patiente",
+      "relation_target_text": "thrombopénie",
+      "relation_proof": "thrombopénie",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00006",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "BIOMARQUEUR": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00082",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P6_E038",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "collapsus de reventilation",
+      "entity_proof": "collapsus de reventilation",
+      "entity_page": 6,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P6_E038",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "collapsus de reventilation",
+        "relation_id": "R_V69K_00082",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P6_E042",
+        "target_id": "P6_E038",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "6",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P6_E042",
+      "relation_target_id": "P6_E038",
+      "relation_source_text": "La patiente",
+      "relation_target_text": "collapsus de reventilation",
+      "relation_proof": "collapsus de reventilation",
+      "relation_page": 6,
+      "decision_id": "ONTO_DEC_00007",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_SOURCE_TYPE",
+      "role": "SOURCE",
+      "relation_id": "R_V69K_00091",
+      "relation_name": "a_pour_contexte_acquisition",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P6_E002",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "COMORBIDITE_ANTECEDENT",
+      "entity_text": "pneumopathie nosocomiale",
+      "entity_proof": "pneumopathie nosocomiale",
+      "entity_page": 6,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_SOURCE_TYPE",
+        "entity_id": "P6_E002",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "pneumopathie nosocomiale | pneumopathie_nosocomiale",
+        "relation_id": "R_V69K_00091",
+        "relation_type": "a_pour_contexte_acquisition",
+        "source_id": "P6_E002",
+        "target_id": "P6_E023",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "page": "6",
+        "details": "Le type source ne respecte pas le domaine TRACE"
+      },
+      "relation_source_id": "P6_E002",
+      "relation_target_id": "P6_E023",
+      "relation_source_text": "",
+      "relation_target_text": "",
+      "relation_proof": "ollapsus de reventilation et d’une pneumopathie nosocomiale à Haemophilus parainfluenzae et Morganelle morganii chez une patiente présentant une hépatopathie chronique non suivie.\n\nTransfert ce jour à Widal 2 pour bilan de son hépatopathie.\n\nPRESCRIPTION DE SORTIE\n\nInexium 20 mg, 1 cp soir\nContramal gouttes, 50 mg toutes les 6 heures si douleurs\nParacétamol 1 gramme toutes les 6 heures si douleurs\nDiffu k 2 gélules matin, midi et soir\nVitamine B1 et B6,\nCalciparine 0.4 ml/jour\n\nPatch de Nicorette\n\nDANS le service :\n- Transfusion sanguine : 2 CGR\n- Infection nosocomiale : oui\n\n- Produits ou dérivés sanguins ut",
+      "relation_page": 6,
+      "decision_id": "ONTO_DEC_00008",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "relation_counts": {
+          "a_pour_contexte_acquisition": 1
+        },
+        "role_counts": {
+          "SOURCE": 1
+        },
+        "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00085",
+      "relation_name": "presente_suspicion_infection",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E029",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "FOYER_INFECTIEUX",
+      "entity_text": "Cicatrice inflammatoire avec écoulement purulent",
+      "entity_proof": "Cicatrice inflammatoire avec écoulement purulent",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E029",
+        "entity_type": "SYMPTOME",
+        "entity_text": "Cicatrice inflammatoire avec écoulement purulent | douleur_lombaire",
+        "relation_id": "R_V69K_00085",
+        "relation_type": "presente_suspicion_infection",
+        "source_id": "P5_E035",
+        "target_id": "P5_E029",
+        "actual_type": "SYMPTOME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E035",
+      "relation_target_id": "P5_E029",
+      "relation_source_text": "Patient",
+      "relation_target_text": "Cicatrice inflammatoire avec écoulement purulent",
+      "relation_proof": "Cicatrice inflammatoire avec écoulement purulent",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00009",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_suspicion_infection": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "FOYER_INFECTIEUX",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00088",
+      "relation_name": "patient_a_pour_evolution",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E028",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "EVOLUTION_PRONOSTIC",
+      "entity_text": "diminution du syndrome inflammatoire biologique",
+      "entity_proof": "diminution du syndrome inflammatoire biologique",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E028",
+        "entity_type": "SYMPTOME",
+        "entity_text": "diminution du syndrome inflammatoire biologique | alteration_etat_general",
+        "relation_id": "R_V69K_00088",
+        "relation_type": "patient_a_pour_evolution",
+        "source_id": "P5_E035",
+        "target_id": "P5_E028",
+        "actual_type": "SYMPTOME",
+        "expected_type": "EVOLUTION_PRONOSTIC",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E035",
+      "relation_target_id": "P5_E028",
+      "relation_source_text": "Patient",
+      "relation_target_text": "diminution du syndrome inflammatoire biologique",
+      "relation_proof": "diminution du syndrome inflammatoire biologique",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00010",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "EVOLUTION_PRONOSTIC": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "patient_a_pour_evolution": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "EVOLUTION_PRONOSTIC",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00062",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E028",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "Hypokaliémie",
+      "entity_proof": "Hypokaliémie",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E028",
+        "entity_type": "SYMPTOME",
+        "entity_text": "Hypokaliémie | hypokaliemie",
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P5_E046",
+        "target_id": "P5_E028",
+        "actual_type": "SYMPTOME",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E046",
+      "relation_target_id": "P5_E028",
+      "relation_source_text": "La patiente",
+      "relation_target_text": "Hypokaliémie",
+      "relation_proof": "Hypokaliémie",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00011",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00081",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E019",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "HTAP",
+      "entity_proof": "HTAP",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E019",
+        "entity_type": "DEFAILLANCE_ORGANE",
+        "entity_text": "HTAP | cardiaque",
+        "relation_id": "R_V69K_00081",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P5_E042",
+        "target_id": "P5_E019",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E042",
+      "relation_target_id": "P5_E019",
+      "relation_source_text": "patient",
+      "relation_target_text": "HTAP",
+      "relation_proof": "HTAP",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00012",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00085",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E039",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "ulcère gastrique",
+      "entity_proof": "ulcère gastrique",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E039",
+        "entity_type": "SYMPTOME",
+        "entity_text": "ulcère gastrique",
+        "relation_id": "R_V69K_00085",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P5_E042",
+        "target_id": "P5_E039",
+        "actual_type": "SYMPTOME",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E042",
+      "relation_target_id": "P5_E039",
+      "relation_source_text": "patient",
+      "relation_target_text": "ulcère gastrique",
+      "relation_proof": "ulcère gastrique",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00013",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00109",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P6_E022",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "HTAP secondaire aux lésions pulmonaires",
+      "entity_proof": "HTAP secondaire aux lésions pulmonaires",
+      "entity_page": 6,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P6_E022",
+        "entity_type": "DEFAILLANCE_ORGANE",
+        "entity_text": "HTAP secondaire aux lésions pulmonaires | autre",
+        "relation_id": "R_V69K_00109",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P6_E025",
+        "target_id": "P6_E022",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "6",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P6_E025",
+      "relation_target_id": "P6_E022",
+      "relation_source_text": "Patient",
+      "relation_target_text": "HTAP secondaire aux lésions pulmonaires",
+      "relation_proof": "HTAP secondaire aux lésions pulmonaires",
+      "relation_page": 6,
+      "decision_id": "ONTO_DEC_00014",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00003",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P1_E004",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "bronchite",
+      "entity_proof": "bronchite",
+      "entity_page": 1,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P1_E004",
+        "entity_type": "SYMPTOME",
+        "entity_text": "bronchite | toux",
+        "relation_id": "R_V69K_00003",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P1_E024",
+        "target_id": "P1_E004",
+        "actual_type": "SYMPTOME",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "1",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P1_E024",
+      "relation_target_id": "P1_E004",
+      "relation_source_text": "Patient",
+      "relation_target_text": "bronchite",
+      "relation_proof": "bronchite",
+      "relation_page": 1,
+      "decision_id": "ONTO_DEC_00015",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00058",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P4_E039",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 4,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P4_E039",
+        "entity_type": "SYMPTOME",
+        "entity_text": "anurie | renal",
+        "relation_id": "R_V69K_00058",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P4_E036",
+        "target_id": "P4_E039",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "4",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P4_E036",
+      "relation_target_id": "P4_E039",
+      "relation_source_text": "La patiente",
+      "relation_target_text": "anurie",
+      "relation_proof": "anurie",
+      "relation_page": 4,
+      "decision_id": "ONTO_DEC_00016",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00049",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P4_E029",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 4,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P4_E029",
+        "entity_type": "SYMPTOME",
+        "entity_text": "anurie | renal",
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P4_E032",
+        "target_id": "P4_E029",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "4",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P4_E032",
+      "relation_target_id": "P4_E029",
+      "relation_source_text": "patient",
+      "relation_target_text": "anurie",
+      "relation_proof": "anurie",
+      "relation_page": 4,
+      "decision_id": "ONTO_DEC_00017",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00111",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P6_E014",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "SYMPTOME",
+      "entity_text": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+      "entity_proof": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+      "entity_page": 6,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P6_E014",
+        "entity_type": "DEFAILLANCE_ORGANE",
+        "entity_text": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche | lésion du muscle piriforme",
+        "relation_id": "R_V69K_00111",
+        "relation_type": "presente_symptome",
+        "source_id": "P6_E028",
+        "target_id": "P6_E014",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "page": "6",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P6_E028",
+      "relation_target_id": "P6_E014",
+      "relation_source_text": "le patient",
+      "relation_target_text": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+      "relation_proof": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+      "relation_page": 6,
+      "decision_id": "ONTO_DEC_00018",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00028",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E001",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "FOYER_INFECTIEUX",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "Gangrene gazeuse",
+      "entity_proof": "Gangrene gazeuse",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E001",
+        "entity_type": "FOYER_INFECTIEUX",
+        "entity_text": "Gangrene gazeuse | gangrene_gazeuse",
+        "relation_id": "R_V69K_00028",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P2_E060",
+        "target_id": "P2_E001",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E060",
+      "relation_target_id": "P2_E001",
+      "relation_source_text": "patient",
+      "relation_target_text": "Gangrene gazeuse",
+      "relation_proof": "Gangrene gazeuse à point de départ ulcère de la face postérieure du mollet gauche",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00019",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00049",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E037",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "initialement anurie",
+      "entity_proof": "initialement anurie",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E037",
+        "entity_type": "SYMPTOME",
+        "entity_text": "initialement anurie | renal",
+        "relation_id": "R_V69K_00049",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P2_E060",
+        "target_id": "P2_E037",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E060",
+      "relation_target_id": "P2_E037",
+      "relation_source_text": "patient",
+      "relation_target_text": "initialement anurie",
+      "relation_proof": "initialement anurie",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00020",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00051",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E044",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "persistance de l'anurie",
+      "entity_proof": "persistance de l'anurie",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E044",
+        "entity_type": "SYMPTOME",
+        "entity_text": "persistance de l'anurie | renal",
+        "relation_id": "R_V69K_00051",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P2_E060",
+        "target_id": "P2_E044",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E060",
+      "relation_target_id": "P2_E044",
+      "relation_source_text": "patient",
+      "relation_target_text": "persistance de l'anurie",
+      "relation_proof": "persistance de l'anurie",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00021",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00054",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E065",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E065",
+        "entity_type": "SYMPTOME",
+        "entity_text": "anurie | renal",
+        "relation_id": "R_V69K_00054",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P2_E060",
+        "target_id": "P2_E065",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E060",
+      "relation_target_id": "P2_E065",
+      "relation_source_text": "patient",
+      "relation_target_text": "anurie",
+      "relation_proof": "anurie",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00022",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00011",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E001",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "BIOMARQUEUR",
+      "expected_type": "SYMPTOME",
+      "entity_text": "thrombopénie",
+      "entity_proof": "thrombopénie",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E001",
+        "entity_type": "BIOMARQUEUR",
+        "entity_text": "thrombopénie | plaquettes",
+        "relation_id": "R_V69K_00011",
+        "relation_type": "presente_symptome",
+        "source_id": "P2_E052",
+        "target_id": "P2_E001",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E052",
+      "relation_target_id": "P2_E001",
+      "relation_source_text": "le patient",
+      "relation_target_text": "thrombopénie",
+      "relation_proof": "thrombopénie dans un contexte de surinfection pulmonaire",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00023",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "BIOMARQUEUR": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00076",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E018",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "BIOMARQUEUR",
+      "expected_type": "SYMPTOME",
+      "entity_text": "thrombopénie",
+      "entity_proof": "thrombopénie",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E018",
+        "entity_type": "BIOMARQUEUR",
+        "entity_text": "thrombopénie",
+        "relation_id": "R_V69K_00076",
+        "relation_type": "presente_symptome",
+        "source_id": "P5_E032",
+        "target_id": "P5_E018",
+        "actual_type": "BIOMARQUEUR",
+        "expected_type": "SYMPTOME",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E032",
+      "relation_target_id": "P5_E018",
+      "relation_source_text": "patient",
+      "relation_target_text": "thrombopénie",
+      "relation_proof": "thrombopénie",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00024",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "BIOMARQUEUR": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00091",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E038",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "SYMPTOME",
+      "entity_text": "Neuropathie de réanimation",
+      "entity_proof": "Neuropathie de réanimation",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E038",
+        "entity_type": "DEFAILLANCE_ORGANE",
+        "entity_text": "Neuropathie de réanimation | neurologique",
+        "relation_id": "R_V69K_00091",
+        "relation_type": "presente_symptome",
+        "source_id": "P5_E046",
+        "target_id": "P5_E038",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E046",
+      "relation_target_id": "P5_E038",
+      "relation_source_text": "Le patient",
+      "relation_target_text": "Neuropathie de réanimation",
+      "relation_proof": "Neuropathie de réanimation",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00025",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00062",
+      "relation_name": "presente_suspicion_infection",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E064",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "FOYER_INFECTIEUX",
+      "entity_text": "angiocholite",
+      "entity_proof": "angiocholite",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E064",
+        "entity_type": "SYMPTOME",
+        "entity_text": "angiocholite",
+        "relation_id": "R_V69K_00062",
+        "relation_type": "presente_suspicion_infection",
+        "source_id": "P5_E070",
+        "target_id": "P5_E064",
+        "actual_type": "SYMPTOME",
+        "expected_type": "FOYER_INFECTIEUX",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E070",
+      "relation_target_id": "P5_E064",
+      "relation_source_text": "Patient",
+      "relation_target_text": "angiocholite",
+      "relation_proof": "angiocholite",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00026",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_suspicion_infection": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "FOYER_INFECTIEUX",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00108",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P6_E032",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "FOYER_INFECTIEUX",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "Angiocholite",
+      "entity_proof": "Angiocholite",
+      "entity_page": 6,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P6_E032",
+        "entity_type": "FOYER_INFECTIEUX",
+        "entity_text": "Angiocholite",
+        "relation_id": "R_V69K_00108",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P6_E036",
+        "target_id": "P6_E032",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "6",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P6_E036",
+      "relation_target_id": "P6_E032",
+      "relation_source_text": "Patient",
+      "relation_target_text": "Angiocholite",
+      "relation_proof": "Angiocholite",
+      "relation_page": 6,
+      "decision_id": "ONTO_DEC_00027",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_SOURCE_TYPE",
+      "role": "SOURCE",
+      "relation_id": "R_V69K_00135",
+      "relation_name": "a_pour_contexte_acquisition",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P6_E036",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DONNEE_PATIENT",
+      "expected_type": "COMORBIDITE_ANTECEDENT",
+      "entity_text": "Patient",
+      "entity_proof": "Patient",
+      "entity_page": 6,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_SOURCE_TYPE",
+        "entity_id": "P6_E036",
+        "entity_type": "DONNEE_PATIENT",
+        "entity_text": "Patient | patient",
+        "relation_id": "R_V69K_00135",
+        "relation_type": "a_pour_contexte_acquisition",
+        "source_id": "P6_E036",
+        "target_id": "P6_E031",
+        "actual_type": "DONNEE_PATIENT",
+        "expected_type": "COMORBIDITE_ANTECEDENT",
+        "page": "6",
+        "details": "Le type source ne respecte pas le domaine TRACE"
+      },
+      "relation_source_id": "P6_E036",
+      "relation_target_id": "P6_E031",
+      "relation_source_text": "",
+      "relation_target_text": "",
+      "relation_proof": "Infection nosocomiale : oui",
+      "relation_page": 6,
+      "decision_id": "ONTO_DEC_00028",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "current_type_counts": {
+          "DONNEE_PATIENT": 1
+        },
+        "relation_counts": {
+          "a_pour_contexte_acquisition": 1
+        },
+        "role_counts": {
+          "SOURCE": 1
+        },
+        "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00004",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P1_E032",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "COMORBIDITE_ANTECEDENT",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "dénutrition sévère",
+      "entity_proof": "dénutrition sévère",
+      "entity_page": 1,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P1_E032",
+        "entity_type": "COMORBIDITE_ANTECEDENT",
+        "entity_text": "dénutrition sévère | autre",
+        "relation_id": "R_V69K_00004",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P1_E034",
+        "target_id": "P1_E032",
+        "actual_type": "COMORBIDITE_ANTECEDENT",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "1",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P1_E034",
+      "relation_target_id": "P1_E032",
+      "relation_source_text": "Patient",
+      "relation_target_text": "dénutrition sévère",
+      "relation_proof": "dénutrition sévère",
+      "relation_page": 1,
+      "decision_id": "ONTO_DEC_00029",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00069",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P4_E028",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "SYMPTOME",
+      "entity_text": "dilatation des veines du membre supérieur gauche",
+      "entity_proof": "dilatation des veines du membre supérieur gauche",
+      "entity_page": 4,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P4_E028",
+        "entity_type": "DEFAILLANCE_ORGANE",
+        "entity_text": "dilatation des veines du membre supérieur gauche | autre",
+        "relation_id": "R_V69K_00069",
+        "relation_type": "presente_symptome",
+        "source_id": "P4_E032",
+        "target_id": "P4_E028",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "page": "4",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P4_E032",
+      "relation_target_id": "P4_E028",
+      "relation_source_text": "patient",
+      "relation_target_text": "dilatation des veines du membre supérieur gauche",
+      "relation_proof": "dilatation des veines du membre supérieur gauche",
+      "relation_page": 4,
+      "decision_id": "ONTO_DEC_00030",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00071",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P4_E037",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 4,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P4_E037",
+        "entity_type": "SYMPTOME",
+        "entity_text": "anurie | renal",
+        "relation_id": "R_V69K_00071",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P4_E032",
+        "target_id": "P4_E037",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "4",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P4_E032",
+      "relation_target_id": "P4_E037",
+      "relation_source_text": "patient",
+      "relation_target_text": "anurie",
+      "relation_proof": "anurie",
+      "relation_page": 4,
+      "decision_id": "ONTO_DEC_00031",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00001",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P1_E024",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "SYMPTOME",
+      "entity_text": "coma",
+      "entity_proof": "coma",
+      "entity_page": 1,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P1_E024",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "coma",
+        "relation_id": "R_V69K_00001",
+        "relation_type": "presente_symptome",
+        "source_id": "P1_E027",
+        "target_id": "P1_E024",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "SYMPTOME",
+        "page": "1",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P1_E027",
+      "relation_target_id": "P1_E024",
+      "relation_source_text": "Patient",
+      "relation_target_text": "coma",
+      "relation_proof": "hospitalisé pour coma",
+      "relation_page": 1,
+      "decision_id": "ONTO_DEC_00032",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00031",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P2_E045",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "Anurie",
+      "entity_proof": "Anurie",
+      "entity_page": 2,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P2_E045",
+        "entity_type": "SYMPTOME",
+        "entity_text": "Anurie | renal",
+        "relation_id": "R_V69K_00031",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P2_E040",
+        "target_id": "P2_E045",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "2",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P2_E040",
+      "relation_target_id": "P2_E045",
+      "relation_source_text": "patient",
+      "relation_target_text": "Anurie",
+      "relation_proof": "Anurie",
+      "relation_page": 2,
+      "decision_id": "ONTO_DEC_00033",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00059",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E017",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "encéphalopathie hépatique",
+      "entity_proof": "encéphalopathie hépatique",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E017",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "encéphalopathie hépatique | hepatique",
+        "relation_id": "R_V69K_00059",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P5_E020",
+        "target_id": "P5_E017",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E020",
+      "relation_target_id": "P5_E017",
+      "relation_source_text": "patient",
+      "relation_target_text": "encéphalopathie hépatique",
+      "relation_proof": "encéphalopathie hépatique",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00034",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00049",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P3_E040",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "FOYER_INFECTIEUX",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "pneumopathie nosocomiale",
+      "entity_proof": "pneumopathie nosocomiale",
+      "entity_page": 3,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P3_E040",
+        "entity_type": "FOYER_INFECTIEUX",
+        "entity_text": "pneumopathie nosocomiale | pneumopathie_nosocomiale",
+        "relation_id": "R_V69K_00049",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P3_E056",
+        "target_id": "P3_E040",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "3",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P3_E056",
+      "relation_target_id": "P3_E040",
+      "relation_source_text": "patient",
+      "relation_target_text": "pneumopathie nosocomiale",
+      "relation_proof": "portes d'entrées urinaire et pulmonaire potentielles",
+      "relation_page": 3,
+      "decision_id": "ONTO_DEC_00035",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00118",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P5_E014",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "LABEL_NOSOLOGIQUE",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "encéphalopathie hépatique",
+      "entity_proof": "encéphalopathie hépatique",
+      "entity_page": 5,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P5_E014",
+        "entity_type": "LABEL_NOSOLOGIQUE",
+        "entity_text": "encéphalopathie hépatique | hepatique",
+        "relation_id": "R_V69K_00118",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P5_E017",
+        "target_id": "P5_E014",
+        "actual_type": "LABEL_NOSOLOGIQUE",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "5",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P5_E017",
+      "relation_target_id": "P5_E014",
+      "relation_source_text": "la patiente",
+      "relation_target_text": "encéphalopathie hépatique",
+      "relation_proof": "encéphalopathie hépatique",
+      "relation_page": 5,
+      "decision_id": "ONTO_DEC_00036",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00027",
+      "relation_name": "presente_symptome",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P4_E023",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "DEFAILLANCE_ORGANE",
+      "expected_type": "SYMPTOME",
+      "entity_text": "difficultés ventilatoires",
+      "entity_proof": "difficultés ventilatoires",
+      "entity_page": 4,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P4_E023",
+        "entity_type": "DEFAILLANCE_ORGANE",
+        "entity_text": "difficultés ventilatoires | respiratoire",
+        "relation_id": "R_V69K_00027",
+        "relation_type": "presente_symptome",
+        "source_id": "P4_E030",
+        "target_id": "P4_E023",
+        "actual_type": "DEFAILLANCE_ORGANE",
+        "expected_type": "SYMPTOME",
+        "page": "4",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P4_E030",
+      "relation_target_id": "P4_E023",
+      "relation_source_text": "patiente",
+      "relation_target_text": "difficultés ventilatoires",
+      "relation_proof": "difficultés ventilatoires",
+      "relation_page": 4,
+      "decision_id": "ONTO_DEC_00037",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00028",
+      "relation_name": "presente_dysfonction_organe",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P4_E024",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "SYMPTOME",
+      "expected_type": "DEFAILLANCE_ORGANE",
+      "entity_text": "hypoxie",
+      "entity_proof": "hypoxie",
+      "entity_page": 4,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P4_E024",
+        "entity_type": "SYMPTOME",
+        "entity_text": "hypoxie | dyspnee",
+        "relation_id": "R_V69K_00028",
+        "relation_type": "presente_dysfonction_organe",
+        "source_id": "P4_E030",
+        "target_id": "P4_E024",
+        "actual_type": "SYMPTOME",
+        "expected_type": "DEFAILLANCE_ORGANE",
+        "page": "4",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P4_E030",
+      "relation_target_id": "P4_E024",
+      "relation_source_text": "patiente",
+      "relation_target_text": "hypoxie",
+      "relation_proof": "hypoxie",
+      "relation_page": 4,
+      "decision_id": "ONTO_DEC_00038",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    },
+    {
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "anomaly_type": "INVALID_RELATION_TARGET_TYPE",
+      "role": "TARGET",
+      "relation_id": "R_V69K_00062",
+      "relation_name": "a_pour_label_nosologique",
+      "relation_resolution": "ID_EXACT",
+      "entity_id": "P4_E006",
+      "entity_resolution": "ID_EXACT",
+      "entity_type": "FOYER_INFECTIEUX",
+      "expected_type": "LABEL_NOSOLOGIQUE",
+      "entity_text": "gangrène gazeuse",
+      "entity_proof": "gangrène gazeuse",
+      "entity_page": 4,
+      "initial_hypothesis": "POSSIBLE_ENTITY_MISTYPING",
+      "source_audit_row": {
+        "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "type": "INVALID_RELATION_TARGET_TYPE",
+        "entity_id": "P4_E006",
+        "entity_type": "FOYER_INFECTIEUX",
+        "entity_text": "gangrène gazeuse | gangrene_gazeuse",
+        "relation_id": "R_V69K_00062",
+        "relation_type": "a_pour_label_nosologique",
+        "source_id": "P4_E030",
+        "target_id": "P4_E006",
+        "actual_type": "FOYER_INFECTIEUX",
+        "expected_type": "LABEL_NOSOLOGIQUE",
+        "page": "4",
+        "details": "Le type cible ne respecte pas l'image TRACE"
+      },
+      "relation_source_id": "P4_E030",
+      "relation_target_id": "P4_E006",
+      "relation_source_text": "Patient",
+      "relation_target_text": "gangrène gazeuse",
+      "relation_proof": "gangrène gazeuse",
+      "relation_page": 4,
+      "decision_id": "ONTO_DEC_00039",
+      "entity_group_analysis": {
+        "number_of_violations": 1,
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "role_counts": {
+          "TARGET": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0
+      },
+      "classification": "RELATION_ONTOLOGY_CONFLICT",
+      "confidence": 0.0,
+      "proposed_action": "REVIEW_RELATION",
+      "classifier_reason": "La violation domain/range est réelle selon le schéma, mais aucune preuve suffisamment forte ne permet d'attribuer automatiquement l'erreur au type de l'entité.",
+      "lexical_signals": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 39,
+  "number_candidates": 2,
+  "signal_counts": {
+    "WEAK": 1,
+    "MEDIUM": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E008",
+        "type": "TRAITEMENT",
+        "name": "Hypnovel",
+        "preuve": "Hypnovel 5 mg /h",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Hypnovel 5 mg /h | Hypnovel | sedatif",
+      "detected_components": {
+        "rate": [
+          "5 mg /h"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16271908_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "MEDIUM",
+      "source_entity": {
+        "id": "P5_E025",
+        "type": "TRAITEMENT",
+        "name": "augmentin",
+        "preuve": "augmentin 1g *3/j",
+        "valeur": null,
+        "page": 5
+      },
+      "detection_text": "augmentin 1g *3/j | augmentin | antibiotique",
+      "detected_components": {
+        "frequency": [
+          "3/j"
+        ],
+        "dose": [
+          "1g"
+        ]
+      },
+      "number_component_types": 2,
+      "correction": null
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "pattern": "A5",
+  "name": "IMAGERIE_PROCEDURE + COMORBIDITE_ANTECEDENT",
+  "relation": "imagerie_objective_comorbidite",
+  "methodological_status": "DETECTION_ONLY_NO_CORRECTION",
+  "input_directory": "C:\\Users\\techlabo\\Desktop\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\PatternA4\\pattern_a4_corrected",
+  "summary": {
+    "json_files_found": 44,
+    "clinical_documents_scanned": 43,
+    "nonclinical_json_skipped": 1,
+    "imaging_entities_scanned": 392,
+    "existing_comorbidity_entities": 448,
+    "a5_candidates": 1,
+    "weak": 1,
+    "medium": 0,
+    "strong": 0,
+    "errors": 0
+  },
+  "signal_family_counts": {},
+  "candidates": [
+    {
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A5",
+      "subcase": "IMAGERIE_PROCEDURE_COMORBIDITE_ANTECEDENT",
+      "source_entity": {
+        "entity_id": "P1_E014",
+        "type": "IMAGERIE_PROCEDURE",
+        "page": 1,
+        "text": "IRM rachis médullaire | IRM"
+      },
+      "detected_comorbidity_families": [],
+      "detected_comorbidity_signals": {},
+      "same_page_comorbidity_targets": [
+        {
+          "entity_id": "P1_E013",
+          "page": 1,
+          "text": "2011 IRM rachis médullaire : Rétrécissement du canal lombaire modéré mixte de L3-L4 et L4-L5 sans infiltration médullaire",
+          "containment": false,
+          "token_overlap": 1.0,
+          "reliable": true,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E003",
+          "page": 1,
+          "text": "Psychose chronique déficitaire ancienne (schizophrénie)",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E004",
+          "page": 1,
+          "text": "Lymphome B à petites cellules de différenciation lympho-plasmocytaire non traité",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E005",
+          "page": 1,
+          "text": "Adénome prostate avec prostatite à staph doré",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E006",
+          "page": 1,
+          "text": "choc septique sur prostatite à dermabacter hominis",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E008",
+          "page": 1,
+          "text": "03 Août 2012 Fracture basi-cervicale de la hanche gauche traité par réduction et ostéosynthèse clou PFNA",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E009",
+          "page": 1,
+          "text": "diagnostiqué en avril 2011",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E010",
+          "page": 1,
+          "text": "suivi à Cochin Dr Salmon",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E011",
+          "page": 1,
+          "text": "suivi à Cochin",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        },
+        {
+          "entity_id": "P1_E012",
+          "page": 1,
+          "text": "2011 Echo coeur : IM grade 2 valves mitrales remaniées, VG non dilaté, fonction systolique conservée",
+          "containment": false,
+          "token_overlap": 0.0,
+          "reliable": false,
+          "relation_already_exists": false
+        }
+      ],
+      "same_page_comorbidity_target_count": 10,
+      "strength": "WEAK",
+      "status": "A5_CANDIDATE"
+    }
+  ],
+  "nonclinical_json_skipped": [
+    "pattern_a4_correction_report.json"
+  ],
+  "errors": []
+}

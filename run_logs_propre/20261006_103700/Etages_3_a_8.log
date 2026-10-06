@@ -1,0 +1,2602 @@
+====================================================================================================
+TRACE - CHAINE ETAGES 3 -> 8
+====================================================================================================
+Projet : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations
+Python : C:\Users\Lamis\anaconda3\python.exe
+
+  Etage 3  document_grounding Etage 3\run_document_grounding.py 
+  Etage 4  ontology Etage 4\run_ontology.py 
+  Etage 5  numeric_unit Etage 5\run_numeric_unit.py 
+  Etage 6  temporal Etage 6\run_temporal.py (decouvert)
+  Etage 7  negation Etage 7\run_negation.py 
+  Etage 8  confidence Etage 8\run_confidence.py 
+
+====================================================================================================
+ETAGE 3 - document_grounding Etage 3
+====================================================================================================
+========================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY CANDIDATE BUILDER
+========================================================================================================
+Documents analysÃ©s                   : 43
+Candidats cause racine               : 1
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\queues\root_cause_entity_candidates.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+========================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY VALIDATOR
+========================================================================================================
+Candidats reÃ§us                      : 1
+
+STATUTS
+--------------------------------------------------------------------------------------------------------
+SAFE_RETYPE                                     : 1
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\outputs\root_cause_entity_validated.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+========================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY SAFE CORRECTOR
+========================================================================================================
+SAFE_RETYPE reÃ§us                    : 1
+Documents copiÃ©s                     : 43
+Retypages appliquÃ©s                  : 1
+Documents modifiÃ©s                   : 1
+Erreurs                              : 0
+
+Sortie clinique                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected
+Rapport                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected\root_cause_entity_correction_report.json
+
+Les fichiers sources n'ont pas Ã©tÃ© modifiÃ©s.
+============================================================================================================
+TRACE / SGCE - ROOT CAUSE ENTITY POST-VALIDATION
+============================================================================================================
+Documents vÃ©rifiÃ©s                  : 43
+Documents attendus modifiÃ©s         : 1
+Documents rÃ©ellement modifiÃ©s       : 1
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Anomalies structurelles AVANT       : 47
+Anomalies structurelles APRES       : 45
+Nouvelles anomalies structurelles   : 0
+Anomalies structurelles rÃ©solues    : 2
+
+STATUT FINAL ROOT CAUSE ENTITY      : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\post_validation\root_cause_entity_post_validation_report.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e par ce post-validateur.
+========================================================================================================
+TRACE - ETAGE 3 / ROOT CAUSE - PIPELINE COMPLET
+========================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+========================================================================================================
+[1/4] root_cause_entity_candidate_builder.py
+========================================================================================================
+[OK] root_cause_entity_candidate_builder.py - 0.76 s
+
+========================================================================================================
+[2/4] root_cause_entity_validator.py
+========================================================================================================
+[OK] root_cause_entity_validator.py - 0.64 s
+
+========================================================================================================
+[3/4] root_cause_entity_safe_corrector.py
+========================================================================================================
+[OK] root_cause_entity_safe_corrector.py - 0.97 s
+
+========================================================================================================
+[4/4] root_cause_entity_post_validator.py
+========================================================================================================
+[OK] root_cause_entity_post_validator.py - 3.35 s
+
+========================================================================================================
+ROOT CAUSE TERMINE
+========================================================================================================
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected
+Durée totale    : 5.71 s
+================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL CANDIDATE BUILDER V2
+================================================================================================================
+Documents analysés                 : 43
+Relations candidates               : 3753
+Sources non résolues               : 2
+Cibles non résolues                : 4
+Textes manquants                   : 0
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\queues\semantic_factual_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL CLASSIFIER V2
+================================================================================================================
+Cas reçus                           : 3753
+
+CLASSIFICATIONS
+----------------------------------------------------------------------------------------------------------------
+EXACT_OR_STRONG_SUPPORT                             : 3556
+UNSUPPORTED_FACT                                    : 187
+NEGATION_SENSITIVE                                  : 4
+UNRESOLVED_ENDPOINT                                 : 6
+
+ACTIONS PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+KEEP                                                : 3556
+NONE                                                : 197
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL VALIDATOR V2
+================================================================================================================
+Décisions reçues                    : 3753
+
+STATUTS FINAUX
+----------------------------------------------------------------------------------------------------------------
+SUPPORTED_KEEP                                      : 3556
+REVIEW                                              : 197
+
+ACTIONS FINALES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 3753
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+=============================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL REVIEW ANALYZER V2
+=============================================================================================================================
+Décisions totales                   : 3753
+SUPPORTED_KEEP                      : 3556
+Cas REVIEW                          : 197
+
+UNSUPPORTED_FACT                    : 187
+NEGATION_SENSITIVE                  : 4
+DOCUMENT_LEVEL_SUPPORT              : 0
+AMBIGUOUS                           : 0
+UNRESOLVED_ENDPOINT                 : 6
+
+Types de relation concernés         : 10
+Signatures distinctes               : 12
+
+REVIEW PAR CLASSIFICATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT                                                 : 187
+UNRESOLVED_ENDPOINT                                              : 6
+NEGATION_SENSITIVE                                               : 4
+
+PRESENCE DES ENDPOINTS DANS LE DOCUMENT
+-----------------------------------------------------------------------------------------------------------------------------
+NO_ENDPOINT_FOUND_IN_DOCUMENT                                    : 192
+ONLY_TARGET_IN_DOCUMENT                                          : 3
+ONLY_SOURCE_IN_DOCUMENT                                          : 2
+
+CAS SENSIBLES A LA NEGATION
+-----------------------------------------------------------------------------------------------------------------------------
+TARGET_NEGATED                                                   : 4
+
+REVIEW PAR TYPE DE RELATION
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie                                      : 176
+traitement_administre_a                                          : 7
+biomarqueur_supporte_defaillance_organe                          : 5
+signe_vital_supporte_defaillance_organe                          : 2
+biomarqueur_est_critere_de                                       : 2
+presente_dysfonction_organe                                      : 1
+service_medical_accueille                                        : 1
+a_pour_label_nosologique                                         : 1
+micro_organisme_isole_dans                                       : 1
+imagerie_objective_defaillance                                   : 1
+
+SIGNATURES RELATION | TYPE SUJET -> TYPE OBJET
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie | TRAITEMENT -> POSOLOGIE                                                    : 173
+traitement_administre_a | TRAITEMENT -> DONNEE_PATIENT                                                   : 6
+biomarqueur_supporte_defaillance_organe | BIOMARQUEUR -> DEFAILLANCE_ORGANE                              : 5
+traitement_a_pour_posologie | TRAITEMENT -> <VIDE>                                                       : 3
+signe_vital_supporte_defaillance_organe | SIGNE_VITAL -> DEFAILLANCE_ORGANE                              : 2
+biomarqueur_est_critere_de | BIOMARQUEUR -> LABEL_NOSOLOGIQUE                                            : 2
+presente_dysfonction_organe | DONNEE_PATIENT -> <VIDE>                                                   : 1
+service_medical_accueille | <VIDE> -> DONNEE_PATIENT                                                     : 1
+a_pour_label_nosologique | DONNEE_PATIENT -> LABEL_NOSOLOGIQUE                                           : 1
+micro_organisme_isole_dans | MICRO_ORGANISME -> FOYER_INFECTIEUX                                         : 1
+traitement_administre_a | <VIDE> -> DONNEE_PATIENT                                                       : 1
+imagerie_objective_defaillance | IMAGERIE_PROCEDURE -> DEFAILLANCE_ORGANE                                : 1
+
+EXEMPLES UNSUPPORTED_FACT
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00033
+  Restriction hydrique | restriction_hydrique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  50 ml | posologie [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Restriction hydrique'
+  Preuve target : '50 ml'
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00085
+  adrénaline [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  2 mg | posologie [POSOLOGIE]
+  Source dans document : True
+  Target dans document : False
+  Preuve source : 'adrénaline'
+  Preuve target : '2 mg'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00102
+  tazocilline | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  4g X 4/j | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'tazocilline'
+  Preuve target : '4g X 4/j'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00103
+  Amiklin | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  1g | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Amiklin'
+  Preuve target : '1g'
+
+img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00085
+  Amiklin | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  1g | posologie [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Amiklin'
+  Preuve target : '1g'
+
+EXEMPLES NEGATION_SENSITIVE
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00052
+  PAS 133 | pression_arterielle_systolique | 133 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00053
+  tachycardie | frequence_cardiaque | 144 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00022
+  campylobacter | micro_organisme [MICRO_ORGANISME] status=None
+       --micro_organisme_isole_dans-->
+  foyer infectieux | foyer [FOYER_INFECTIEUX] status=NEGATED
+
+img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_R001
+  PL [IMAGERIE_PROCEDURE] status=None
+       --imagerie_objective_defaillance-->
+  pas de défaillances au plan rénal | renal [DEFAILLANCE_ORGANE] status=NEGATED
+
+INTERPRETATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT signifie que le support textuel de la relation n'a pas été suffisamment démontré.
+Il ne signifie PAS automatiquement que la relation est fausse ou hallucinée.
+Aucune suppression automatique ne doit être effectuée sur cette seule base.
+
+Rapport JSON                        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_review_analysis.json
+Rapport TXT                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_review_analysis.txt
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL SECOND PASS V1
+========================================================================================================================
+Décisions validées reçues           : 3753
+Cas REVIEW reçus                    : 197
+Textes manquants                    : 0
+
+CLASSIFICATIONS INITIALES
+------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT                                            : 187
+UNRESOLVED_ENDPOINT                                         : 6
+NEGATION_SENSITIVE                                          : 4
+
+RESULTATS SECOND PASS
+------------------------------------------------------------------------------------------------------------------------
+SUPPORTED_AFTER_RECHECK                                     : 173
+PARTIAL_SUPPORT                                             : 9
+UNHANDLED_REVIEW_CLASS                                      : 6
+DOCUMENT_LEVEL_SUPPORT                                      : 5
+POTENTIAL_NEGATION_CONTRADICTION                            : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_second_pass.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL SECOND PASS VALIDATOR V1
+========================================================================================================================
+Cas reçus                           : 197
+
+CLASSIFICATIONS SECOND PASS
+------------------------------------------------------------------------------------------------------------------------
+SUPPORTED_AFTER_RECHECK                                     : 173
+PARTIAL_SUPPORT                                             : 9
+UNHANDLED_REVIEW_CLASS                                      : 6
+DOCUMENT_LEVEL_SUPPORT                                      : 5
+POTENTIAL_NEGATION_CONTRADICTION                            : 4
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+SAFE_KEEP                                                   : 173
+REVIEW                                                      : 20
+REVIEW_PRIORITY                                             : 4
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 197
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_second_pass_validated.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL THIRD PASS V1
+========================================================================================================================
+Cas Second Pass reçus               : 197
+Cas sélectionnés                    : 24
+Documents texte manquants           : 0
+
+CLASSIFICATIONS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+PARTIAL_SUPPORT                                             : 9
+UNHANDLED_REVIEW_CLASS                                      : 6
+DOCUMENT_LEVEL_SUPPORT                                      : 5
+POTENTIAL_NEGATION_CONTRADICTION                            : 4
+
+RESULTATS THIRD PASS
+------------------------------------------------------------------------------------------------------------------------
+UNRESOLVED                                                  : 13
+SUPPORTED_AFTER_DEEP_RECHECK                                : 7
+EXPLICITLY_CONTRADICTED                                     : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_third_pass.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL THIRD PASS VALIDATOR V1
+========================================================================================================================
+Cas reçus                           : 24
+
+CLASSIFICATIONS THIRD PASS
+------------------------------------------------------------------------------------------------------------------------
+UNRESOLVED                                                  : 13
+SUPPORTED_AFTER_DEEP_RECHECK                                : 7
+EXPLICITLY_CONTRADICTED                                     : 4
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 13
+SAFE_KEEP                                                   : 7
+SAFE_REMOVE_CANDIDATE                                       : 4
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 20
+PROPOSE_REMOVE_RELATION                                     : 4
+
+Candidats suppression sûre          : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_third_pass_validated.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL CONTRADICTION VALIDATOR V1
+========================================================================================================================
+Third Pass reçus                    : 24
+SAFE_REMOVE_CANDIDATE reçus         : 4
+Textes manquants                    : 0
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 2
+SAFE_REMOVE                                                 : 2
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 2
+REMOVE_RELATION                                             : 2
+
+RESUME
+------------------------------------------------------------------------------------------------------------------------
+Relations SAFE_REMOVE               : 2
+Relations récupérées SAFE_KEEP      : 0
+Relations restant REVIEW            : 2
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\outputs\semantic_factual_contradiction_validated.json
+
+Aucune relation clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL SAFE CORRECTOR V1
+========================================================================================================================
+Actions SAFE_REMOVE reçues          : 2
+Documents copiés                    : 43
+Relations logiques supprimées       : 2
+Occurrences physiques supprimées    : 3
+Documents modifiés                  : 2
+Erreurs                             : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+APPLIED                                                     : 2
+
+RELATIONS SUPPRIMEES
+------------------------------------------------------------------------------------------------------------------------
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00022 | micro_organisme_isole_dans
+  campylobacter | micro_organisme --micro_organisme_isole_dans--> foyer infectieux | foyer
+  occurrences physiques supprimées : 1
+
+img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_R001 | imagerie_objective_defaillance
+  PL --imagerie_objective_defaillance--> pas de défaillances au plan rénal | renal
+  occurrences physiques supprimées : 2
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected\semantic_factual_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+========================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL POST-VALIDATION V1
+========================================================================================================================
+Documents vérifiés                  : 43
+Suppressions logiques attendues     : 2
+Opérations vérifiées                : 2
+Opérations FAIL                     : 0
+
+Changements hors relations          : 0
+Suppressions relations inattendues  : 0
+Ajouts relations inattendus         : 0
+
+Docs manquants APRES                : 0
+Docs supplémentaires APRES          : 0
+
+STATUT FINAL SEMANTIC FACTUAL REPAIR: PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\post_validation\semantic_factual_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE - ETAGE 3 / SEMANTIC-FACTUAL - PIPELINE COMPLET
+============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+============================================================================================================
+[1/11] semantic_factual_candidate_builder.py
+============================================================================================================
+[OK] semantic_factual_candidate_builder.py - 24.29 s
+
+============================================================================================================
+[2/11] semantic_factual_classifier.py
+============================================================================================================
+[OK] semantic_factual_classifier.py - 0.64 s
+
+============================================================================================================
+[3/11] semantic_factual_validator.py
+============================================================================================================
+[OK] semantic_factual_validator.py - 0.59 s
+
+============================================================================================================
+[4/11] semantic_factual_review_analyzer.py
+============================================================================================================
+[OK] semantic_factual_review_analyzer.py - 0.31 s
+
+============================================================================================================
+[5/11] semantic_factual_second_pass.py
+============================================================================================================
+[OK] semantic_factual_second_pass.py - 0.76 s
+
+============================================================================================================
+[6/11] semantic_factual_second_pass_validator.py
+============================================================================================================
+[OK] semantic_factual_second_pass_validator.py - 0.19 s
+
+============================================================================================================
+[7/11] semantic_factual_third_pass.py
+============================================================================================================
+[OK] semantic_factual_third_pass.py - 0.35 s
+
+============================================================================================================
+[8/11] semantic_factual_third_pass_validator.py
+============================================================================================================
+[OK] semantic_factual_third_pass_validator.py - 0.19 s
+
+============================================================================================================
+[9/11] semantic_factual_contradiction_validator.py
+============================================================================================================
+[OK] semantic_factual_contradiction_validator.py - 0.28 s
+
+============================================================================================================
+[10/11] semantic_factual_safe_corrector.py
+============================================================================================================
+[OK] semantic_factual_safe_corrector.py - 2.34 s
+
+============================================================================================================
+[11/11] semantic_factual_post_validator.py
+============================================================================================================
+[OK] semantic_factual_post_validator.py - 4.80 s
+
+============================================================================================================
+SEMANTIC-FACTUAL TERMINE
+============================================================================================================
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+Durée totale    : 34.76 s
+============================================================================================================
+TRACE — ETAGE 3 / DOCUMENT & FACTUAL GROUNDING
+============================================================================================================
+Racine : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3
+Python : C:\Users\Lamis\anaconda3\python.exe
+
+Pipeline : ROOT CAUSE -> SEMANTIC / FACTUAL
+
+============================================================================================================
+[1/2] ROOT CAUSE
+============================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\run_root_cause.py
+
+[OK] ROOT CAUSE
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\root_cause\root_cause_entity_safe_corrected
+JSON cliniques : 43
+Durée : 5.92 s
+
+============================================================================================================
+[2/2] SEMANTIC / FACTUAL
+============================================================================================================
+Runner : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\run_semantic_factual.py
+
+[OK] SEMANTIC / FACTUAL
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+JSON cliniques : 43
+Durée : 34.93 s
+
+============================================================================================================
+TRACE — ETAGE 3 TERMINE AVEC SUCCES
+============================================================================================================
+Root Cause       : OK
+Semantic/Factual : OK
+
+Sortie finale : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+JSON cliniques : 43
+Durée totale  : 40.85 s
+============================================================================================================
+
+[OK] Etage 3 - 41 s
+
+====================================================================================================
+ETAGE 4 - ontology Etage 4
+====================================================================================================
+========================================================================================================
+TRACE / SGCE - FINAL ONTOLOGY AUDIT
+========================================================================================================
+Entrée clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\document_grounding Etage 3\semantic_factual\semantic_factual_safe_corrected
+Guideline                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques                : 43
+Entités analysées                  : 10142
+Relations analysées                : 3751
+Signatures TRACE chargées          : 32
+
+Anomalies résiduelles totales      : 329
+
+ANOMALIES PAR TYPE
+--------------------------------------------------------------------------------------------------------
+DUPLICATE_ENTITY_CONTENT                            : 281
+INVALID_RELATION_TARGET_TYPE                        : 36
+ORPHAN_RELATION_TARGET                              : 4
+INVALID_RELATION_SOURCE_TYPE                        : 3
+DUPLICATE_RELATION                                  : 3
+ORPHAN_RELATION_SOURCE                              : 2
+
+RELATIONS LES PLUS CONCERNEES
+--------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                         : 15
+presente_symptome                                   : 11
+a_pour_label_nosologique                            : 11
+a_pour_contexte_acquisition                         : 3
+traitement_a_pour_posologie                         : 3
+presente_suspicion_infection                        : 2
+patient_a_pour_evolution                            : 1
+service_medical_accueille                           : 1
+traitement_administre_a                             : 1
+
+Rapport JSON                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_audit_report.json
+CSV anomalies                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_anomalies.csv
+CSV résumé par type                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_summary_by_type.csv
+CSV résumé par relation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_summary_by_relation.csv
+CSV résumé par document            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\audit_initial\final_ontology_summary_by_document.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION CANDIDATE BUILDER V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Documents avec anomalies           : 21
+Documents chargés                  : 21
+Documents manquants                : 0
+Candidats construits               : 39
+INVALID_RELATION_SOURCE_TYPE        : 3
+INVALID_RELATION_TARGET_TYPE        : 36
+Entités non résolues               : 0
+Relations non résolues             : 0
+Entités causant plusieurs anomalies: 0
+
+HYPOTHESES INITIALES
+------------------------------------------------------------------------------------------------------------------------
+POSSIBLE_ENTITY_MISTYPING                                   : 39
+
+ROLES AFFECTES
+------------------------------------------------------------------------------------------------------------------------
+TARGET                                                      : 36
+SOURCE                                                      : 3
+
+TYPES ATTENDUS
+------------------------------------------------------------------------------------------------------------------------
+DEFAILLANCE_ORGANE                                          : 13
+SYMPTOME                                                    : 10
+LABEL_NOSOLOGIQUE                                           : 10
+COMORBIDITE_ANTECEDENT                                      : 3
+FOYER_INFECTIEUX                                            : 2
+EVOLUTION_PRONOSTIC                                         : 1
+
+RESOLUTION DES RELATIONS
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RESOLUTION DES ENTITES
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\queues\entity_validation_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION CLASSIFIER V1 - CONSERVATIVE MULTI-EVIDENCE
+========================================================================================================================
+Candidats reçus                    : 39
+Groupes d'entités                  : 39
+Groupes mistyping STRONG           : 0
+
+CLASSIFICATIONS
+------------------------------------------------------------------------------------------------------------------------
+RELATION_ONTOLOGY_CONFLICT                                  : 39
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+REVIEW_RELATION                                             : 39
+
+CONFIANCES
+------------------------------------------------------------------------------------------------------------------------
+0.0                                                         : 39
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\outputs\entity_validation_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION VALIDATOR V1 - GROUP-LEVEL SAFE RETYPING
+========================================================================================================================
+Décisions reçues                    : 39
+Groupes d'entités reçus             : 39
+Groupes validés                      : 39
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 39
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 39
+
+RETYPAGES SAFE
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage automatiquement validé.
+
+COUVERTURE
+------------------------------------------------------------------------------------------------------------------------
+Opérations logiques RETYPE_ENTITY   : 0
+Anomalies couvertes par ces groupes : 0
+Anomalies STRONG couvertes          : 0
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\outputs\entity_validation_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ENTITY VALIDATION SAFE CORRECTOR V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Actions SAFE_ACCEPT reçues          : 0
+Documents cliniques copiés         : 43
+Retypages logiques appliqués        : 0
+Occurrences physiques modifiées     : 0
+Documents modifiés                  : 0
+Erreurs                             : 0
+Altérations de relations            : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+
+RETYPAGES APPLIQUES
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage appliqué.
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected\entity_validation_correction_report.json
+
+Toutes les corrections SAFE ont été appliquées sans erreur.
+
+Les fichiers sources n'ont pas été modifiés.
+==============================================================================================================
+TRACE — ETAGE 4 / ENTITY VALIDATION
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+==============================================================================================================
+[1/5] final_ontology_audit.py
+==============================================================================================================
+[OK] final_ontology_audit.py
+
+==============================================================================================================
+[2/5] entity_validation_candidate_builder.py
+==============================================================================================================
+[OK] entity_validation_candidate_builder.py
+
+==============================================================================================================
+[3/5] entity_validation_classifier.py
+==============================================================================================================
+[OK] entity_validation_classifier.py
+
+==============================================================================================================
+[4/5] entity_validation_validator.py
+==============================================================================================================
+[OK] entity_validation_validator.py
+
+==============================================================================================================
+[5/5] entity_validation_safe_corrector.py
+==============================================================================================================
+[OK] entity_validation_safe_corrector.py
+
+==============================================================================================================
+ENTITY VALIDATION TERMINE
+==============================================================================================================
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected
+Durée totale    : 2.42 s
+========================================================================================================
+TRACE / SGCE - FINAL ONTOLOGY AUDIT
+========================================================================================================
+Entrée clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\entity_validation_safe_corrected
+Guideline                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques                : 43
+Entités analysées                  : 10142
+Relations analysées                : 3751
+Signatures TRACE chargées          : 32
+
+Anomalies résiduelles totales      : 329
+
+ANOMALIES PAR TYPE
+--------------------------------------------------------------------------------------------------------
+DUPLICATE_ENTITY_CONTENT                            : 281
+INVALID_RELATION_TARGET_TYPE                        : 36
+ORPHAN_RELATION_TARGET                              : 4
+INVALID_RELATION_SOURCE_TYPE                        : 3
+DUPLICATE_RELATION                                  : 3
+ORPHAN_RELATION_SOURCE                              : 2
+
+RELATIONS LES PLUS CONCERNEES
+--------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                         : 15
+presente_symptome                                   : 11
+a_pour_label_nosologique                            : 11
+a_pour_contexte_acquisition                         : 3
+traitement_a_pour_posologie                         : 3
+presente_suspicion_infection                        : 2
+patient_a_pour_evolution                            : 1
+service_medical_accueille                           : 1
+traitement_administre_a                             : 1
+
+Rapport JSON                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_audit_report.json
+CSV anomalies                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_anomalies.csv
+CSV résumé par type                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_summary_by_type.csv
+CSV résumé par relation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_summary_by_relation.csv
+CSV résumé par document            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_entity_validation\final_ontology_summary_by_document.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION RESIDUAL BUILDER V1 - POST RETYPING RELATION AUDIT
+========================================================================================================================
+Anomalies relationnelles reçues    : 39
+Candidats construits               : 39
+Relations logiques concernées       : 39
+Documents manquants                : 0
+
+ANOMALIES
+------------------------------------------------------------------------------------------------------------------------
+INVALID_RELATION_TARGET_TYPE                                : 36
+INVALID_RELATION_SOURCE_TYPE                                : 3
+
+ROLES AFFECTES
+------------------------------------------------------------------------------------------------------------------------
+TARGET                                                      : 36
+SOURCE                                                      : 3
+
+HYPOTHESES INITIALES
+------------------------------------------------------------------------------------------------------------------------
+RELATION_ONTOLOGY_CONFLICT                                  : 39
+
+RESOLUTION DES RELATIONS
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RESOLUTION DES SOURCES
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RESOLUTION DES CIBLES
+------------------------------------------------------------------------------------------------------------------------
+ID_EXACT                                                    : 39
+
+RELATIONS LES PLUS CONCERNEES
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                                 : 13
+presente_symptome                                           : 10
+a_pour_label_nosologique                                    : 10
+a_pour_contexte_acquisition                                 : 3
+presente_suspicion_infection                                : 2
+patient_a_pour_evolution                                    : 1
+
+Sortie JSON                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\queues\ontology_relation_residual_candidates.json
+Sortie CSV                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\queues\ontology_relation_residual_candidates.csv
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION RESIDUAL CLASSIFIER V1 - CONSERVATIVE ENDPOINT-FIRST
+========================================================================================================================
+Candidats reçus                    : 39
+
+CLASSIFICATIONS
+------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_RELATION_CANDIDATE                              : 34
+ENDPOINT_TYPE_STRONGLY_GROUNDED                             : 4
+RELATION_TYPE_ERROR_CANDIDATE                               : 1
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+DEEP_REVIEW_RELATION                                        : 34
+REVIEW_RELATION                                             : 5
+
+CONFIANCES
+------------------------------------------------------------------------------------------------------------------------
+0.95                                                        : 4
+0.9                                                         : 1
+0.6                                                         : 34
+
+CLASSIFICATIONS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                       : 13    | UNSUPPORTED_RELATION_CANDIDATE=12, ENDPOINT_TYPE_STRONGLY_GROUNDED=1
+presente_symptome                                 : 10    | UNSUPPORTED_RELATION_CANDIDATE=10
+a_pour_label_nosologique                          : 10    | UNSUPPORTED_RELATION_CANDIDATE=9, ENDPOINT_TYPE_STRONGLY_GROUNDED=1
+a_pour_contexte_acquisition                       : 3     | ENDPOINT_TYPE_STRONGLY_GROUNDED=2, UNSUPPORTED_RELATION_CANDIDATE=1
+presente_suspicion_infection                      : 2     | RELATION_TYPE_ERROR_CANDIDATE=1, UNSUPPORTED_RELATION_CANDIDATE=1
+patient_a_pour_evolution                          : 1     | UNSUPPORTED_RELATION_CANDIDATE=1
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_residual_decisions.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION RESIDUAL VALIDATOR V1 - CONSERVATIVE SAFETY GATE
+========================================================================================================================
+Décisions reçues                    : 39
+
+CLASSIFICATIONS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_RELATION_CANDIDATE                              : 34
+ENDPOINT_TYPE_STRONGLY_GROUNDED                             : 4
+RELATION_TYPE_ERROR_CANDIDATE                               : 1
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+DEEP_REVIEW                                                 : 34
+PROTECTED_ENDPOINT_REVIEW_RELATION                          : 4
+REVIEW_RELATION_TYPE                                        : 1
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 39
+
+RESUME
+------------------------------------------------------------------------------------------------------------------------
+Endpoints protégés                  : 4
+Relations en deep review            : 34
+Types de relation à revoir          : 1
+Types d'entité à revoir             : 0
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_residual_validated.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION DEEP REVIEWER V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Décisions reçues                    : 39
+Documents manquants                 : 0
+
+STATUTS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+DEEP_REVIEW                                                 : 34
+PROTECTED_ENDPOINT_REVIEW_RELATION                          : 4
+REVIEW_RELATION_TYPE                                        : 1
+
+RESOLUTION STRUCTURE TRACE
+------------------------------------------------------------------------------------------------------------------------
+Sources retrouvées                  : 39
+Cibles retrouvées                   : 39
+Deux endpoints retrouvés            : 39
+Relations retrouvées                : 39
+
+RESULTATS DEEP REVIEW
+------------------------------------------------------------------------------------------------------------------------
+PARTIAL_DOCUMENT_SUPPORT                                    : 35
+RELATION_ONTOLOGY_CONFLICT_CONFIRMED                        : 4
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 35
+PROPOSE_REMOVE_RELATION                                     : 4
+
+RESULTATS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                       : 13    | PARTIAL_DOCUMENT_SUPPORT=12, RELATION_ONTOLOGY_CONFLICT_CONFIRMED=1
+presente_symptome                                 : 10    | PARTIAL_DOCUMENT_SUPPORT=10
+a_pour_label_nosologique                          : 10    | PARTIAL_DOCUMENT_SUPPORT=9, RELATION_ONTOLOGY_CONFLICT_CONFIRMED=1
+a_pour_contexte_acquisition                       : 3     | RELATION_ONTOLOGY_CONFLICT_CONFIRMED=2, PARTIAL_DOCUMENT_SUPPORT=1
+presente_suspicion_infection                      : 2     | PARTIAL_DOCUMENT_SUPPORT=2
+patient_a_pour_evolution                          : 1     | PARTIAL_DOCUMENT_SUPPORT=1
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_deep_review.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION FINAL VALIDATOR V1 - CONSERVATIVE RELATION SAFETY GATE
+========================================================================================================================
+Cas reçus                           : 39
+
+CLASSIFICATIONS DEEP REVIEW
+------------------------------------------------------------------------------------------------------------------------
+PARTIAL_DOCUMENT_SUPPORT                                    : 35
+RELATION_ONTOLOGY_CONFLICT_CONFIRMED                        : 4
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW                                                      : 35
+SAFE_REMOVE                                                 : 4
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 35
+REMOVE_RELATION                                             : 4
+
+RESULTATS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                       : 13    | REVIEW=12, SAFE_REMOVE=1
+presente_symptome                                 : 10    | REVIEW=10
+a_pour_label_nosologique                          : 10    | REVIEW=9, SAFE_REMOVE=1
+a_pour_contexte_acquisition                       : 3     | SAFE_REMOVE=2, REVIEW=1
+presente_suspicion_infection                      : 2     | REVIEW=2
+patient_a_pour_evolution                          : 1     | REVIEW=1
+
+RESUME
+------------------------------------------------------------------------------------------------------------------------
+Relations SAFE_REMOVE               : 4
+Relations SAFE_KEEP                 : 0
+Possible inversion                  : 0
+Review négation                     : 0
+Autres REVIEW                       : 35
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_final_validated.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION SAFE CORRECTOR V3 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Décisions finales chargées          : 39
+Actions SAFE_REMOVE détectées       : 4
+SAFE_REMOVE annoncées validator     : 4
+Opérations uniques                  : 4
+Doublons ignorés                    : 0
+Opérations invalides                : 0
+Documents cliniques copiés          : 43
+
+Relations logiques supprimées       : 4
+Occurrences physiques supprimées    : 4
+Documents modifiés                  : 4
+Erreurs                             : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+APPLIED                                                     : 4
+
+SUPPRESSIONS PAR TYPE DE RELATION
+------------------------------------------------------------------------------------------------------------------------
+a_pour_contexte_acquisition                                 : 2
+a_pour_label_nosologique                                    : 1
+presente_dysfonction_organe                                 : 1
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\ontology_relation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\ontology_relation_safe_corrected\ontology_relation_correction_report.json
+
+Toutes les suppressions SAFE ont été appliquées sans erreur.
+
+Les fichiers sources n'ont pas été modifiés.
+========================================================================================================
+TRACE / SGCE - FINAL ONTOLOGY AUDIT
+========================================================================================================
+Entrée clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\ontology_relation_safe_corrected
+Guideline                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Guideline_TRACE_Sepsis_v1.6.json
+
+Documents cliniques                : 43
+Entités analysées                  : 10142
+Relations analysées                : 3747
+Signatures TRACE chargées          : 32
+
+Anomalies résiduelles totales      : 325
+
+ANOMALIES PAR TYPE
+--------------------------------------------------------------------------------------------------------
+DUPLICATE_ENTITY_CONTENT                            : 281
+INVALID_RELATION_TARGET_TYPE                        : 34
+ORPHAN_RELATION_TARGET                              : 4
+DUPLICATE_RELATION                                  : 3
+ORPHAN_RELATION_SOURCE                              : 2
+INVALID_RELATION_SOURCE_TYPE                        : 1
+
+RELATIONS LES PLUS CONCERNEES
+--------------------------------------------------------------------------------------------------------
+presente_dysfonction_organe                         : 14
+presente_symptome                                   : 11
+a_pour_label_nosologique                            : 10
+traitement_a_pour_posologie                         : 3
+presente_suspicion_infection                        : 2
+a_pour_contexte_acquisition                         : 1
+patient_a_pour_evolution                            : 1
+service_medical_accueille                           : 1
+traitement_administre_a                             : 1
+
+Rapport JSON                       : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_audit_report.json
+CSV anomalies                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_anomalies.csv
+CSV résumé par type                : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_summary_by_type.csv
+CSV résumé par relation            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_summary_by_relation.csv
+CSV résumé par document            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\audit_after_safe_remove\final_ontology_summary_by_document.csv
+
+Aucun JSON clinique n'a été modifié.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION REVIEW RESOLVER V2 - REAL TRACE JSON STRUCTURE
+========================================================================================================================
+Anomalies totales audit             : 325
+Anomalies relationnelles reçues     : 35
+
+ANOMALIES EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+INVALID_RELATION_TARGET_TYPE                                : 34
+INVALID_RELATION_SOURCE_TYPE                                : 1
+
+RESOLUTIONS
+------------------------------------------------------------------------------------------------------------------------
+POSSIBLE_ENDPOINT_MISTYPING                                 : 34
+NEGATION_SENSITIVE                                          : 1
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------------------------------
+REVIEW_ENTITY_TYPE                                          : 34
+REVIEW_NEGATION                                             : 1
+
+RESOLUTION STRUCTURE TRACE
+------------------------------------------------------------------------------------------------------------------------
+Relations retrouvées                : 35
+Relations non résolues              : 0
+Sources retrouvées                  : 35
+Sources non résolues                : 0
+Cibles retrouvées                   : 35
+Cibles non résolues                 : 0
+
+Inversions potentielles             : 0
+
+Sortie JSON                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_resolved.json
+Sortie CSV                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_resolved.csv
+Résumé TXT                          : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_summary.txt
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION REVIEW VALIDATOR V2 - CONSERVATIVE MULTI-EVIDENCE SAFETY GATE
+========================================================================================================================
+Cas reçus                           : 35
+
+RESOLUTIONS EN ENTREE
+------------------------------------------------------------------------------------------------------------------------
+POSSIBLE_ENDPOINT_MISTYPING                                 : 34
+NEGATION_SENSITIVE                                          : 1
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------------------------------
+REVIEW_ENTITY_TYPE                                          : 32
+PROTECTED_CURRENT_TYPE                                      : 2
+REVIEW_NEGATION                                             : 1
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------------------------------
+NONE                                                        : 35
+
+RESUME SAFE
+------------------------------------------------------------------------------------------------------------------------
+SAFE_NO_CHANGE                     : 0
+SAFE_RETYPE                        : 0
+SAFE_INVERT                        : 0
+PROTECTED_CURRENT_TYPE             : 2
+PROTECTED_ENDPOINT                 : 0
+
+RETYPAGES SAFE PROPOSES
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage automatique autorisé.
+
+TYPES ACTUELS PROTEGES
+------------------------------------------------------------------------------------------------------------------------
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E029 | SYMPTOME (retypage vers FOYER_INFECTIEUX refusé)
+img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E023 | DEFAILLANCE_ORGANE (retypage vers SYMPTOME refusé)
+
+STATUTS PAR RELATION
+------------------------------------------------------------------------------------------------------------------------
+a_pour_contexte_acquisition                       : 1     | REVIEW_NEGATION=1
+a_pour_label_nosologique                          : 9     | REVIEW_ENTITY_TYPE=9
+patient_a_pour_evolution                          : 1     | REVIEW_ENTITY_TYPE=1
+presente_dysfonction_organe                       : 12    | REVIEW_ENTITY_TYPE=12
+presente_suspicion_infection                      : 2     | PROTECTED_CURRENT_TYPE=1, REVIEW_ENTITY_TYPE=1
+presente_symptome                                 : 10    | REVIEW_ENTITY_TYPE=9, PROTECTED_CURRENT_TYPE=1
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\outputs\ontology_relation_review_validated.json
+
+Aucune entité et aucune relation clinique n'ont été modifiées.
+========================================================================================================================
+TRACE / SGCE - ONTOLOGY RELATION REVIEW SAFE CORRECTOR V1 - GENERIC VALIDATOR-DRIVEN
+========================================================================================================================
+Cas validés reçus                   : 35
+Actions SAFE détectées              : 0
+Opérations uniques                  : 0
+Doublons ignorés                    : 0
+Documents cliniques copiés          : 43
+
+ACTIONS SAFE DEMANDEES
+------------------------------------------------------------------------------------------------------------------------
+Aucune action SAFE.
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+Aucune opération.
+
+CORRECTIONS APPLIQUEES
+------------------------------------------------------------------------------------------------------------------------
+RETYPE_ENTITY                       : 0
+INVERT_RELATION                     : 0
+
+RETYPAGES
+------------------------------------------------------------------------------------------------------------------------
+Aucun retypage appliqué.
+
+INVERSIONS DE RELATIONS
+------------------------------------------------------------------------------------------------------------------------
+Aucune relation inversée.
+
+Documents modifiés                  : 0
+Erreurs                             : 0
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\relation_validation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\relation_validation_safe_corrected\ontology_relation_review_correction_report.json
+
+Toutes les corrections SAFE validées ont été traitées sans erreur.
+
+Les fichiers sources n'ont pas été modifiés.
+==============================================================================================================
+TRACE — ETAGE 4 / RELATION VALIDATION
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation
+Python  : C:\Users\Lamis\anaconda3\python.exe
+
+==============================================================================================================
+[1/11] AUDIT APRES ENTITY VALIDATION
+Script : final_ontology_audit.py
+==============================================================================================================
+
+[OK] AUDIT APRES ENTITY VALIDATION
+
+==============================================================================================================
+[2/11] RELATION RESIDUAL — BUILDER
+Script : ontology_relation_residual_builder.py
+==============================================================================================================
+
+[OK] RELATION RESIDUAL — BUILDER
+
+==============================================================================================================
+[3/11] RELATION RESIDUAL — CLASSIFIER
+Script : ontology_relation_residual_classifier.py
+==============================================================================================================
+
+[OK] RELATION RESIDUAL — CLASSIFIER
+
+==============================================================================================================
+[4/11] RELATION RESIDUAL — VALIDATOR
+Script : ontology_relation_residual_validator.py
+==============================================================================================================
+
+[OK] RELATION RESIDUAL — VALIDATOR
+
+==============================================================================================================
+[5/11] RELATION — DEEP REVIEWER
+Script : ontology_relation_deep_reviewer.py
+==============================================================================================================
+
+[OK] RELATION — DEEP REVIEWER
+
+==============================================================================================================
+[6/11] RELATION — FINAL VALIDATOR
+Script : ontology_relation_final_validator.py
+==============================================================================================================
+
+[OK] RELATION — FINAL VALIDATOR
+
+==============================================================================================================
+[7/11] RELATION — SAFE REMOVE CORRECTOR
+Script : ontology_relation_safe_corrector.py
+==============================================================================================================
+
+[OK] RELATION — SAFE REMOVE CORRECTOR
+
+==============================================================================================================
+[8/11] AUDIT APRES SAFE REMOVE
+Script : final_ontology_audit.py
+==============================================================================================================
+
+[OK] AUDIT APRES SAFE REMOVE
+
+==============================================================================================================
+[9/11] RELATION REVIEW — RESOLVER
+Script : ontology_relation_review_resolver.py
+==============================================================================================================
+
+[OK] RELATION REVIEW — RESOLVER
+
+==============================================================================================================
+[10/11] RELATION REVIEW — VALIDATOR
+Script : ontology_relation_review_validator.py
+==============================================================================================================
+
+[OK] RELATION REVIEW — VALIDATOR
+
+==============================================================================================================
+[11/11] RELATION REVIEW — SAFE CORRECTOR
+Script : ontology_relation_review_safe_corrector.py
+==============================================================================================================
+
+[OK] RELATION REVIEW — SAFE CORRECTOR
+
+==============================================================================================================
+RELATION VALIDATION TERMINEE
+==============================================================================================================
+Documents cliniques : 43
+Sortie officielle   : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\relation_validation_safe_corrected
+Duree totale        : 8.04 s
+========================================================================================================
+TRACE / SGCE - DUPLICATE RELATION CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                   : 43
+Groupes relations dupliquées         : 3
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\queues\duplicate_relation_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - DUPLICATE RELATION SAFE CLEANER
+========================================================================================================
+Groupes candidats                    : 3
+Documents copiés                     : 43
+Relations dupliquées supprimées      : 3
+Documents modifiés                   : 3
+Erreurs                              : 0
+
+Sortie clinique                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\duplicate_relation_cleaned
+Rapport                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\duplicate_relation_cleaned\duplicate_relation_cleaning_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================================================
+TRACE / SGCE - DUPLICATE RELATION POST-VALIDATION
+============================================================================================================
+Documents vérifiés                  : 43
+Documents attendus modifiés         : 3
+Documents réellement modifiés       : 3
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Groupes doublons relations AVANT    : 3
+Groupes doublons relations APRES    : 0
+
+Anomalies structurelles AVANT       : 41
+Anomalies structurelles APRES       : 41
+Nouvelles anomalies structurelles   : 0
+Anomalies structurelles résolues    : 0
+
+STATUT FINAL DUPLICATE RELATION     : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\post_validation\duplicate_relation_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE — ETAGE 4 / DUPLICATE RELATIONS
+============================================================================================================
+
+============================================================================================================
+[1/3] duplicate_relation_candidate_builder.py
+============================================================================================================
+
+============================================================================================================
+[2/3] duplicate_relation_safe_cleaner.py
+============================================================================================================
+
+============================================================================================================
+[3/3] duplicate_relation_post_validator.py
+============================================================================================================
+
+============================================================================================================
+DUPLICATE RELATIONS TERMINE — PASS
+============================================================================================================
+Sortie officielle : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_relations\duplicate_relation_cleaned
+Duree totale      : 5.75 s
+========================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY CANDIDATE BUILDER
+========================================================================================================
+Documents analysés                   : 43
+Groupes candidats doublons           : 346
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\queues\duplicate_entity_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY VALIDATOR V3 - GENERIC MULTI-EVIDENCE
+========================================================================================================
+Candidats reçus                      : 346
+Candidats validés                    : 346
+
+STATUTS
+--------------------------------------------------------------------------------------------------------
+REVIEW                                          : 346
+
+STATUTS PAR TYPE D'ENTITE
+--------------------------------------------------------------------------------------------------------
+BIOMARQUEUR                             : 2     | REVIEW=2
+COMORBIDITE_ANTECEDENT                  : 15    | REVIEW=15
+CONTEXTE_ACQUISITION                    : 1     | REVIEW=1
+DEFAILLANCE_ORGANE                      : 31    | REVIEW=31
+DONNEE_PATIENT                          : 63    | REVIEW=63
+EVENEMENT_TEMPOREL                      : 5     | REVIEW=5
+EVOLUTION_PRONOSTIC                     : 2     | REVIEW=2
+FOYER_INFECTIEUX                        : 9     | REVIEW=9
+IMAGERIE_PROCEDURE                      : 18    | REVIEW=18
+LABEL_NOSOLOGIQUE                       : 47    | REVIEW=47
+MICRO_ORGANISME                         : 14    | REVIEW=14
+POSOLOGIE                               : 14    | REVIEW=14
+SCORE_NEUROLOGIQUE                      : 1     | REVIEW=1
+SERVICE_MEDICAL                         : 20    | REVIEW=20
+SIGNE_VITAL                             : 2     | REVIEW=2
+SYMPTOME                                : 16    | REVIEW=16
+TRAITEMENT                              : 86    | REVIEW=86
+
+SAFE MERGE
+--------------------------------------------------------------------------------------------------------
+Aucune fusion automatique validée.
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\outputs\duplicate_entity_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY SAFE MERGER
+========================================================================================================
+SAFE_MERGE reçus                     : 0
+Documents copiés                     : 43
+Fusions appliquées                   : 0
+Documents modifiés                   : 0
+Erreurs                              : 0
+
+Sortie clinique                      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Rapport                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged\duplicate_entity_merge_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+============================================================================================================
+TRACE / SGCE - DUPLICATE ENTITY POST-VALIDATION
+============================================================================================================
+Documents vérifiés                  : 43
+Documents attendus modifiés         : 0
+Documents réellement modifiés       : 0
+Modifications inattendues           : 0
+Corrections attendues absentes      : 0
+
+Anomalies structurelles AVANT       : 41
+Anomalies structurelles APRES       : 41
+Nouvelles anomalies structurelles   : 0
+Anomalies structurelles résolues    : 0
+
+Groupes doublons AVANT              : 347
+Groupes doublons APRES              : 347
+
+STATUT FINAL DUPLICATE ENTITY       : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\post_validation\duplicate_entity_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+============================================================================================================
+TRACE — ETAGE 4 / DUPLICATE ENTITIES
+============================================================================================================
+
+============================================================================================================
+[1/4] duplicate_entity_candidate_builder.py
+============================================================================================================
+
+============================================================================================================
+[2/4] duplicate_entity_validator.py
+============================================================================================================
+
+============================================================================================================
+[3/4] duplicate_entity_safe_merger.py
+============================================================================================================
+
+============================================================================================================
+[4/4] duplicate_entity_post_validator.py
+============================================================================================================
+
+============================================================================================================
+DUPLICATE ENTITIES TERMINE — PASS
+============================================================================================================
+Sortie officielle : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Duree totale      : 13.00 s
+============================================================================================================
+TRACE — ETAGE 4 / DUPLICATES
+============================================================================================================
+
+############################################################################################################
+[1/2] DUPLICATE RELATIONS
+############################################################################################################
+
+############################################################################################################
+[2/2] DUPLICATE ENTITIES
+############################################################################################################
+
+============================================================================================================
+PIPELINE DUPLICATES TERMINE — PASS
+============================================================================================================
+Sortie officielle : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Duree totale      : 19.26 s
+==============================================================================================================
+TRACE — ETAGE 4 / ONTOLOGY VALIDATION — RUNNER GLOBAL
+==============================================================================================================
+Dossier Etage 4 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4
+Python           : C:\Users\Lamis\anaconda3\python.exe
+
+Pipeline:
+  1. Entity Validation
+  2. Relation Validation
+  3. Duplicate Relations
+  4. Duplicate Entities
+
+Patient Canonicalization : NON incluse dans l'Etage 4
+
+==============================================================================================================
+[1/3] ENTITY VALIDATION
+==============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\entity_validation\run_entity_validation.py
+
+[OK] ENTITY VALIDATION
+
+==============================================================================================================
+[2/3] RELATION VALIDATION
+==============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\relation_validation\run_relation_validation.py
+
+[OK] RELATION VALIDATION
+
+==============================================================================================================
+[3/3] DUPLICATE RELATIONS + DUPLICATE ENTITIES
+==============================================================================================================
+Script : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\run_duplicates.py
+
+[OK] DUPLICATE RELATIONS + DUPLICATE ENTITIES
+
+==============================================================================================================
+TRACE — ETAGE 4 / ONTOLOGY VALIDATION 
+==============================================================================================================
+Documents cliniques detectes : 43
+Sortie officielle            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\ontology Etage 4\ontology_duplicates\duplicate_entities\duplicate_entity_safe_merged
+Duree totale                 : 30.28 s
+==============================================================================================================
+
+[OK] Etage 4 - 30 s
+
+====================================================================================================
+ETAGE 5 - numeric_unit Etage 5
+====================================================================================================
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT CANDIDATE BUILDER - AUTONOMOUS REDETECTION
+================================================================================================================
+Documents analysés                 : 43
+Candidats construits               : 553
+Textes manquants                   : 0
+Mentions non retrouvées            : 4
+
+ANOMALIES REDETECTEES
+----------------------------------------------------------------------------------------------------------------
+NON_NUMERIC_VALUE                                   : 144
+MISSING_UNIT                                        : 479
+UNIT_PARAMETER_MISMATCH                             : 62
+IMPLAUSIBLE_VALUE                                   : 5
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\queues\numeric_unit_candidates.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT VALIDATOR - V7 CONTEXT-AWARE CONSERVATIVE SEMANTIC UNIT GUARD
+================================================================================================================
+Candidats reçus                    : 553
+
+STATUTS
+----------------------------------------------------------------------------------------------------------------
+REVIEW                                              : 488
+SAFE_ACCEPT                                         : 65
+
+ACTIONS SURES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 488
+SET_VALUE_AND_UNIT                                  : 40
+SET_UNIT                                            : 25
+
+UNITES VALIDEES
+----------------------------------------------------------------------------------------------------------------
+mg                                                  : 12
+°C                                                  : 1
+L/min                                               : 4
+mL                                                  : 8
+g/24h                                               : 2
+mg/h                                                : 7
+µg/h                                                : 1
+g                                                   : 1
+%                                                   : 3
+mmol/L                                              : 3
+g/L                                                 : 2
+mmHg                                                : 2
+L                                                   : 6
+kPa                                                 : 1
+UI                                                  : 1
+mL/j                                                : 6
+g/dL                                                : 1
+g/j                                                 : 4
+
+RAISONS REVIEW
+----------------------------------------------------------------------------------------------------------------
+La valeur JSON ne correspond à aucune preuve valeur+unité suffisamment ancrée ; correction automatique interdite.: 233
+Aucune preuve textuelle explicite et non ambiguë de valeur + unité.                       : 199
+La preuve valeur+unité provient du contexte mais n'est pas suffisamment ancrée dans la valeur brute de l'entité.: 41
+Plusieurs expressions valeur+unité concurrentes sont présentes dans la valeur brute de l'entité.: 6
+Unité 'L' incompatible avec le paramètre 'frequence_respiratoire'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 2
+Unité 'UI' incompatible avec le paramètre 'frequence_respiratoire'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 2
+Expression dose + fréquence détectée. La fréquence ne doit pas être fusionnée automatiquement avec l'unité.: 2
+La valeur numérique de l'entité et celle de la preuve ne correspondent pas.               : 1
+Unité 'mg' incompatible avec le paramètre 'pression_arterielle_systolique'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 1
+Unité 'mg/j' incompatible avec le paramètre 'frequence_respiratoire'. Un rattachement numérique/contextuel ne suffit pas pour une correction automatique.: 1
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\outputs\numeric_unit_validated.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT SAFE CORRECTOR - BEFORE/AFTER TRACE
+================================================================================================================
+Actions SAFE_ACCEPT reçues (brut)   : 65
+Actions après fusion même slot      : 65
+Actions même slot fusionnées        : 0
+Conflits protégés                   : 0
+Documents copiés                    : 43
+Opérations appliquées               : 65
+Corrections de slots effectives     : 65
+Entités logiques corrigées          : 60
+Entités multi-slots corrigées       : 5
+Documents modifiés                  : 26
+Erreurs                             : 0
+
+CORRECTIONS AVANT -> APRES
+----------------------------------------------------------------------------------------------------------------
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E025 | SET_VALUE_AND_UNIT
+  AVANT : valeur='40 mg' | unité=None
+  APRES : valeur=40.0 | unité='mg'
+  PREUVE: {'value': '40', 'numeric_value': 40.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 5, 'matched_text': '40 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E027 | SET_UNIT
+  AVANT : valeur=37.2 | unité=None
+  APRES : valeur=37.2 | unité='°C'
+  PREUVE: {'value': '37.2', 'numeric_value': 37.2, 'unit': '°C', 'raw_unit': '°C', 'start': 20, 'end': 27, 'matched_text': '37.2 °C', 'source': 'SENTENCE'}
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E011 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3L/min' | unité=None
+  APRES : valeur=3.0 | unité='L/min'
+  PREUVE: {'value': '3', 'numeric_value': 3.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 0, 'end': 6, 'matched_text': '3L/min', 'source': 'RAW_VALUE'}
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E037 | SET_VALUE_AND_UNIT
+  AVANT : valeur='6L/min' | unité=None
+  APRES : valeur=6.0 | unité='L/min'
+  PREUVE: {'value': '6', 'numeric_value': 6.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 0, 'end': 6, 'matched_text': '6L/min', 'source': 'RAW_VALUE'}
+
+img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E026 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 ml' | unité=None
+  APRES : valeur=500.0 | unité='mL'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '500 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E008 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2g /24H' | unité=None
+  APRES : valeur=2.0 | unité='g/24h'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'g/24h', 'raw_unit': 'g /24H', 'start': 0, 'end': 7, 'matched_text': '2g /24H', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E010 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3g/24H' | unité=None
+  APRES : valeur=3.0 | unité='g/24h'
+  PREUVE: {'value': '3', 'numeric_value': 3.0, 'unit': 'g/24h', 'raw_unit': 'g/24H', 'start': 0, 'end': 6, 'matched_text': '3g/24H', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E029 | SET_VALUE_AND_UNIT
+  AVANT : valeur='10mg /h' | unité=None
+  APRES : valeur=10.0 | unité='mg/h'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg/h', 'raw_unit': 'mg /h', 'start': 0, 'end': 7, 'matched_text': '10mg /h', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E030 | SET_VALUE_AND_UNIT
+  AVANT : valeur='300 µg /h' | unité=None
+  APRES : valeur=300.0 | unité='µg/h'
+  PREUVE: {'value': '300', 'numeric_value': 300.0, 'unit': 'µg/h', 'raw_unit': 'µg /h', 'start': 0, 'end': 9, 'matched_text': '300 µg /h', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E034 | SET_VALUE_AND_UNIT
+  AVANT : valeur='10 mg/h' | unité=None
+  APRES : valeur=10.0 | unité='mg/h'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 7, 'matched_text': '10 mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E035 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 mg' | unité=None
+  APRES : valeur=500.0 | unité='mg'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '500 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E039 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 mg' | unité=None
+  APRES : valeur=500.0 | unité='mg'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '500 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E041 | SET_VALUE_AND_UNIT
+  AVANT : valeur='100 mg' | unité=None
+  APRES : valeur=100.0 | unité='mg'
+  PREUVE: {'value': '100', 'numeric_value': 100.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '100 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E046 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1g' | unité=None
+  APRES : valeur=1.0 | unité='g'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'g', 'raw_unit': 'g', 'start': 0, 'end': 2, 'matched_text': '1g', 'source': 'RAW_VALUE'}
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E008 | SET_VALUE_AND_UNIT
+  AVANT : valeur='Vt 500 ml' | unité=None
+  APRES : valeur=500.0 | unité='mL'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 3, 'end': 9, 'matched_text': '500 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_UNIT
+  AVANT : valeur=95.8 | unité=None
+  APRES : valeur=95.8 | unité='%'
+  PREUVE: {'value': '95.8', 'numeric_value': 95.8, 'unit': '%', 'raw_unit': '%', 'start': 5, 'end': 11, 'matched_text': '95.8 %', 'source': 'ENTITY_TEXT'}
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E044 | SET_UNIT
+  AVANT : valeur=20.8 | unité=None
+  APRES : valeur=20.8 | unité='mmol/L'
+  PREUVE: {'value': '20.80', 'numeric_value': 20.8, 'unit': 'mmol/L', 'raw_unit': 'mmol/L', 'start': 426, 'end': 437, 'matched_text': '20.80mmol/L', 'source': 'SENTENCE'}
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E023 | SET_UNIT
+  AVANT : valeur=0.13 | unité=None
+  APRES : valeur=0.13 | unité='g/L'
+  PREUVE: {'value': '0.13', 'numeric_value': 0.13, 'unit': 'g/L', 'raw_unit': 'g/l', 'start': 76, 'end': 84, 'matched_text': '0.13 g/l', 'source': 'SENTENCE'}
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E010 | SET_UNIT
+  AVANT : valeur=1.03 | unité=None
+  APRES : valeur=1.03 | unité='g/L'
+  PREUVE: {'value': '1.03', 'numeric_value': 1.03, 'unit': 'g/L', 'raw_unit': 'g/l', 'start': 13, 'end': 21, 'matched_text': '1.03 g/l', 'source': 'SENTENCE'}
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E029 | SET_UNIT
+  AVANT : valeur=10 | unité=None
+  APRES : valeur=10 | unité='mg'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 56, 'end': 61, 'matched_text': '10 mg', 'source': 'SENTENCE'}
+
+img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E003 | SET_UNIT
+  AVANT : valeur=10 | unité=None
+  APRES : valeur=10 | unité='mg'
+  PREUVE: {'value': '10', 'numeric_value': 10.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 67, 'end': 72, 'matched_text': '10 mg', 'source': 'SENTENCE'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E003 | SET_UNIT
+  AVANT : valeur=127 | unité=None
+  APRES : valeur=127 | unité='mmHg'
+  PREUVE: {'value': '127', 'numeric_value': 127.0, 'unit': 'mmHg', 'raw_unit': 'mmHg', 'start': 6, 'end': 14, 'matched_text': '127 mmHg', 'source': 'ENTITY_TEXT'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E019 | SET_UNIT
+  AVANT : valeur=68 | unité=None
+  APRES : valeur=68 | unité='mmHg'
+  PREUVE: {'value': '68', 'numeric_value': 68.0, 'unit': 'mmHg', 'raw_unit': 'mmHg', 'start': 6, 'end': 13, 'matched_text': '68 mmHg', 'source': 'ENTITY_TEXT'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='250 ml' | unité=None
+  APRES : valeur=250.0 | unité='mL'
+  PREUVE: {'value': '250', 'numeric_value': 250.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '250 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E025 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1l' | unité=None
+  APRES : valeur=1.0 | unité='L'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'L', 'raw_unit': 'l', 'start': 0, 'end': 2, 'matched_text': '1l', 'source': 'RAW_VALUE'}
+
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E014 | SET_VALUE_AND_UNIT
+  AVANT : valeur='610mL' | unité=None
+  APRES : valeur=610.0 | unité='mL'
+  PREUVE: {'value': '610', 'numeric_value': 610.0, 'unit': 'mL', 'raw_unit': 'mL', 'start': 0, 'end': 5, 'matched_text': '610mL', 'source': 'RAW_VALUE'}
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E038 | SET_UNIT
+  AVANT : valeur=6.8 | unité=None
+  APRES : valeur=6.8 | unité='kPa'
+  PREUVE: {'value': '6.8', 'numeric_value': 6.8, 'unit': 'kPa', 'raw_unit': 'kPa', 'start': 158, 'end': 165, 'matched_text': '6.8 kPa', 'source': 'SENTENCE'}
+
+img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E022 | SET_UNIT
+  AVANT : valeur=2 | unité=None
+  APRES : valeur=2 | unité='mg/h'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 22, 'end': 28, 'matched_text': '2 mg/h', 'source': 'ENTITY_TEXT'}
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E003 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3L' | unité='L'
+  APRES : valeur=3.0 | unité='L'
+  PREUVE: {'value': '3', 'numeric_value': 3.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 2, 'matched_text': '3L', 'source': 'RAW_VALUE'}
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E007 | SET_VALUE_AND_UNIT
+  AVANT : valeur='4L' | unité='L'
+  APRES : valeur=4.0 | unité='L'
+  PREUVE: {'value': '4', 'numeric_value': 4.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 2, 'matched_text': '4L', 'source': 'RAW_VALUE'}
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E008 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1mg' | unité=None
+  APRES : valeur=1.0 | unité='mg'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 3, 'matched_text': '1mg', 'source': 'RAW_VALUE'}
+
+img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E022 | SET_UNIT
+  AVANT : valeur=33 | unité=None
+  APRES : valeur=33 | unité='UI'
+  PREUVE: {'value': '33', 'numeric_value': 33.0, 'unit': 'UI', 'raw_unit': 'UI', 'start': 78, 'end': 83, 'matched_text': '33 UI', 'source': 'SENTENCE'}
+
+img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='3000ml' | unité=None
+  APRES : valeur=3000.0 | unité='mL'
+  PREUVE: {'value': '3000', 'numeric_value': 3000.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '3000ml', 'source': 'RAW_VALUE'}
+
+img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E029 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2500 ml' | unité=None
+  APRES : valeur=2500.0 | unité='mL'
+  PREUVE: {'value': '2500', 'numeric_value': 2500.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 7, 'matched_text': '2500 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E033 | SET_VALUE_AND_UNIT
+  AVANT : valeur='470 ml' | unité=None
+  APRES : valeur=470.0 | unité='mL'
+  PREUVE: {'value': '470', 'numeric_value': 470.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '470 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E043 | SET_VALUE_AND_UNIT
+  AVANT : valeur='470 ml' | unité=None
+  APRES : valeur=470.0 | unité='mL'
+  PREUVE: {'value': '470', 'numeric_value': 470.0, 'unit': 'mL', 'raw_unit': 'ml', 'start': 0, 'end': 6, 'matched_text': '470 ml', 'source': 'RAW_VALUE'}
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E020 | SET_UNIT
+  AVANT : valeur=5.4 | unité=None
+  APRES : valeur=5.4 | unité='mmol/L'
+  PREUVE: {'value': '5.4', 'numeric_value': 5.4, 'unit': 'mmol/L', 'raw_unit': 'mmol/l', 'start': 81, 'end': 91, 'matched_text': '5.4 mmol/l', 'source': 'SENTENCE'}
+
+img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E041 | SET_UNIT
+  AVANT : valeur=84.8 | unité=None
+  APRES : valeur=84.8 | unité='%'
+  PREUVE: {'value': '84.8', 'numeric_value': 84.8, 'unit': '%', 'raw_unit': '%', 'start': 7, 'end': 13, 'matched_text': '84.8 %', 'source': 'ENTITY_TEXT'}
+
+img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E028 | SET_UNIT
+  AVANT : valeur=150 | unité=None
+  APRES : valeur=150 | unité='mg'
+  PREUVE: {'value': '150', 'numeric_value': 150.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 60, 'end': 66, 'matched_text': '150 mg', 'source': 'SENTENCE'}
+
+img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2 L' | unité=None
+  APRES : valeur=2.0 | unité='L'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 3, 'matched_text': '2 L', 'source': 'RAW_VALUE'}
+
+img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E025 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2 L' | unité=None
+  APRES : valeur=2.0 | unité='L'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 3, 'matched_text': '2 L', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E015 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2 mg/h' | unité=None
+  APRES : valeur=2.0 | unité='mg/h'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 6, 'matched_text': '2 mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E024 | SET_VALUE_AND_UNIT
+  AVANT : valeur='7mg/h' | unité=None
+  APRES : valeur=7.0 | unité='mg/h'
+  PREUVE: {'value': '7', 'numeric_value': 7.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 5, 'matched_text': '7mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E026 | SET_VALUE_AND_UNIT
+  AVANT : valeur='20 mg/h' | unité=None
+  APRES : valeur=20.0 | unité='mg/h'
+  PREUVE: {'value': '20', 'numeric_value': 20.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 0, 'end': 7, 'matched_text': '20 mg/h', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E064 | SET_VALUE_AND_UNIT
+  AVANT : valeur='5 mg IV' | unité=None
+  APRES : valeur=5.0 | unité='mg'
+  PREUVE: {'value': '5', 'numeric_value': 5.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 4, 'matched_text': '5 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E065 | SET_VALUE_AND_UNIT
+  AVANT : valeur='300 mg IV' | unité=None
+  APRES : valeur=300.0 | unité='mg'
+  PREUVE: {'value': '300', 'numeric_value': 300.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 6, 'matched_text': '300 mg', 'source': 'RAW_VALUE'}
+
+img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E043 | SET_UNIT
+  AVANT : valeur=97.7 | unité=None
+  APRES : valeur=97.7 | unité='%'
+  PREUVE: {'value': '97.7', 'numeric_value': 97.7, 'unit': '%', 'raw_unit': '%', 'start': 5, 'end': 11, 'matched_text': '97.7 %', 'source': 'ENTITY_TEXT'}
+
+img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E019 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1L' | unité=None
+  APRES : valeur=1.0 | unité='L'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'L', 'raw_unit': 'L', 'start': 0, 'end': 2, 'matched_text': '1L', 'source': 'RAW_VALUE'}
+
+img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E021 | SET_UNIT
+  AVANT : valeur=1 | unité=None
+  APRES : valeur=1 | unité='mg/h'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'mg/h', 'raw_unit': 'mg/h', 'start': 4, 'end': 10, 'matched_text': '1 mg/h', 'source': 'ENTITY_TEXT'}
+
+img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='6L/min' | unité=None
+  APRES : valeur=6.0 | unité='L/min'
+  PREUVE: {'value': '6', 'numeric_value': 6.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 0, 'end': 6, 'matched_text': '6L/min', 'source': 'RAW_VALUE'}
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E020 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1000 ml/j' | unité=None
+  APRES : valeur=1000.0 | unité='mL/j'
+  PREUVE: {'value': '1000', 'numeric_value': 1000.0, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 0, 'end': 9, 'matched_text': '1000 ml/j', 'source': 'RAW_VALUE'}
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E022 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 ml/j' | unité=None
+  APRES : valeur=500.0 | unité='mL/j'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 0, 'end': 8, 'matched_text': '500 ml/j', 'source': 'RAW_VALUE'}
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E003 | SET_UNIT
+  AVANT : valeur=1.0 | unité=None
+  APRES : valeur=1.0 | unité='mmol/L'
+  PREUVE: {'value': '1.00', 'numeric_value': 1.0, 'unit': 'mmol/L', 'raw_unit': 'mmol/L', 'start': 350, 'end': 361, 'matched_text': '1.00 mmol/L', 'source': 'SENTENCE'}
+
+img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E073 | SET_UNIT
+  AVANT : valeur=7 | unité=None
+  APRES : valeur=7 | unité='g/dL'
+  PREUVE: {'value': '7', 'numeric_value': 7.0, 'unit': 'g/dL', 'raw_unit': 'g/dL', 'start': 12, 'end': 17, 'matched_text': '7g/dL', 'source': 'ENTITY_TEXT'}
+
+img20250709_16560274_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E032 | SET_UNIT
+  AVANT : valeur=15 | unité=None
+  APRES : valeur=15 | unité='L/min'
+  PREUVE: {'value': '15', 'numeric_value': 15.0, 'unit': 'L/min', 'raw_unit': 'L/min', 'start': 95, 'end': 102, 'matched_text': '15L/min', 'source': 'SENTENCE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E017 | SET_UNIT
+  AVANT : valeur=500 | unité=None
+  APRES : valeur=500 | unité='mL/j'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL/j', 'raw_unit': 'ml / jour', 'start': 4, 'end': 17, 'matched_text': '500 ml / jour', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E017 | SET_VALUE_AND_UNIT
+  AVANT : valeur='500 ml / jour' | unité='ml'
+  APRES : valeur=500.0 | unité='mL/j'
+  PREUVE: {'value': '500', 'numeric_value': 500.0, 'unit': 'mL/j', 'raw_unit': 'ml / jour', 'start': 0, 'end': 13, 'matched_text': '500 ml / jour', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E021 | SET_UNIT
+  AVANT : valeur=1 | unité=None
+  APRES : valeur=1 | unité='g/j'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 5, 'end': 9, 'matched_text': '1g/j', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E021 | SET_VALUE_AND_UNIT
+  AVANT : valeur='1g/j' | unité='g/j'
+  APRES : valeur=1.0 | unité='g/j'
+  PREUVE: {'value': '1', 'numeric_value': 1.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 0, 'end': 4, 'matched_text': '1g/j', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E023 | SET_UNIT
+  AVANT : valeur=2 | unité=None
+  APRES : valeur=2 | unité='g/j'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 4, 'end': 8, 'matched_text': '2g/j', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E023 | SET_VALUE_AND_UNIT
+  AVANT : valeur='2g/j' | unité='g/j'
+  APRES : valeur=2.0 | unité='g/j'
+  PREUVE: {'value': '2', 'numeric_value': 2.0, 'unit': 'g/j', 'raw_unit': 'g/j', 'start': 0, 'end': 4, 'matched_text': '2g/j', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E033 | SET_UNIT
+  AVANT : valeur=0.4 | unité=None
+  APRES : valeur=0.4 | unité='mL/j'
+  PREUVE: {'value': '0.4', 'numeric_value': 0.4, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 8, 'end': 16, 'matched_text': '0.4 ml/j', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E033 | SET_VALUE_AND_UNIT
+  AVANT : valeur='0.4 ml/j' | unité='ml/j'
+  APRES : valeur=0.4 | unité='mL/j'
+  PREUVE: {'value': '0.4', 'numeric_value': 0.4, 'unit': 'mL/j', 'raw_unit': 'ml/j', 'start': 0, 'end': 8, 'matched_text': '0.4 ml/j', 'source': 'RAW_VALUE'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E035 | SET_UNIT
+  AVANT : valeur=40 | unité=None
+  APRES : valeur=40 | unité='mg'
+  PREUVE: {'value': '40', 'numeric_value': 40.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 9, 'end': 14, 'matched_text': '40 mg', 'source': 'ENTITY_TEXT'}
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E035 | SET_VALUE_AND_UNIT
+  AVANT : valeur='40 mg' | unité='mg'
+  APRES : valeur=40.0 | unité='mg'
+  PREUVE: {'value': '40', 'numeric_value': 40.0, 'unit': 'mg', 'raw_unit': 'mg', 'start': 0, 'end': 5, 'matched_text': '40 mg', 'source': 'RAW_VALUE'}
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\numeric_unit_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\numeric_unit_safe_corrected\numeric_unit_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+================================================================================================================
+TRACE / SGCE - NUMERIC UNIT POST-VALIDATION - BEFORE/AFTER TRACE
+================================================================================================================
+Documents vérifiés                  : 43
+Opérations appliquées               : 65
+Corrections de slots effectives     : 65
+Slots logiques uniques corrigés     : 65
+Entités logiques uniques corrigées  : 60
+Doublons d'opération même slot      : 0
+Conflits protégés                   : 0
+Opérations sans changement réel     : 0
+Documents avec relations modifiées  : 0
+
+Docs manquants APRES                : 0
+Docs supplémentaires APRES          : 0
+
+STATUT FINAL NUMERIC UNIT REPAIR    : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\post_validation\numeric_unit_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+==============================================================================================================
+TRACE - NUMERIC + UNIT VALIDATION - ETAGE 5 V7.1
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_candidate_builder.py
+==============================================================================================================
+OK : numeric_unit_candidate_builder.py
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_validator.py
+==============================================================================================================
+OK : numeric_unit_validator.py
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_safe_corrector.py
+==============================================================================================================
+OK : numeric_unit_safe_corrector.py
+
+==============================================================================================================
+>>> LANCEMENT : numeric_unit_post_validator.py
+==============================================================================================================
+OK : numeric_unit_post_validator.py
+
+==============================================================================================================
+VERIFICATION FINALE
+==============================================================================================================
+Statut post-validation : PASS
+
+==============================================================================================================
+NUMERIC + UNIT ETAGE 5 V7.1 : PASS
+==============================================================================================================
+Rapport : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\numeric_unit Etage 5\post_validation\numeric_unit_post_validation_report.json
+
+[OK] Etage 5 - 11 s
+
+====================================================================================================
+ETAGE 6 - temporal Etage 6
+====================================================================================================
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS CANDIDATE BUILDER - AUTONOMOUS FULL TEMPORAL AUDIT
+================================================================================================================
+Documents analysÃ©s                 : 43
+EntitÃ©s auditÃ©es                   : 10142
+Documents avec texte retrouvÃ©      : 43
+Documents sans texte               : 0
+Candidats temporels construits     : 2881
+EXPLICIT_TEMPORAL_CONTEXT           : 2881
+Mentions non retrouvÃ©es            : 745
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\queues\temporal_status_candidates.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS CLASSIFIER - TEXT-GUIDED REPAIR
+================================================================================================================
+Cas reÃ§us                           : 2881
+
+DECISIONS
+----------------------------------------------------------------------------------------------------------------
+KEEP                                                : 2860
+CORRECT                                             : 21
+
+ACTIONS PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 2860
+SET_TEMPORAL_STATUS                                 : 21
+
+TEMPORALITES PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+UNKNOWN                                             : 2860
+HISTORICAL                                          : 17
+AFTER_TREATMENT                                     : 4
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\outputs\temporal_status_decisions.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS VALIDATOR - INDEPENDENT LOCAL REVALIDATION
+================================================================================================================
+DÃ©cisions reÃ§ues                    : 2881
+
+STATUTS FINAUX
+----------------------------------------------------------------------------------------------------------------
+KEEP                                                : 2860
+SAFE_ACCEPT                                         : 21
+
+ACTIONS FINALES
+----------------------------------------------------------------------------------------------------------------
+NONE                                                : 2860
+SET_TEMPORAL_STATUS                                 : 21
+
+RAISONS REVIEW
+----------------------------------------------------------------------------------------------------------------
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\outputs\temporal_status_validated_decisions.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+========================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS SAFE CORRECTOR - AUTONOMOUS TEXT-GUIDED
+========================================================================================================================
+Actions SAFE_ACCEPT reÃ§ues          : 21
+Documents copiÃ©s                    : 43
+Corrections logiques appliquÃ©es     : 21
+Occurrences physiques modifiÃ©es     : 42
+DÃ©jÃ  satisfaites                     : 0
+Documents modifiÃ©s                  : 8
+EntitÃ©s non retrouvÃ©es              : 0
+Structures annotation invalides     : 0
+Erreurs                             : 0
+
+STATUTS DES OPERATIONS
+------------------------------------------------------------------------------------------------------------------------
+APPLIED                                             : 21
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\temporal_status_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\temporal_status_safe_corrected\temporal_status_correction_report.json
+
+Les fichiers sources n'ont pas Ã©tÃ© modifiÃ©s.
+================================================================================================================
+TRACE / SGCE - TEMPORAL STATUS POST-VALIDATION - AUTONOMOUS TEXT-GUIDED
+================================================================================================================
+Documents vÃ©rifiÃ©s                  : 43
+OpÃ©rations attendues                : 21
+OpÃ©rations FAIL                     : 0
+Changements cliniques inattendus    : 0
+
+Docs manquants APRES                : 0
+Docs supplÃ©mentaires APRES          : 0
+
+STATUT FINAL TEMPORAL REPAIR        : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\temporal Etage 6\post_validation\temporal_status_post_validation_report.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e par ce post-validateur.
+
+>>> temporal_status_candidate_builder.py
+
+>>> temporal_status_classifier.py
+
+>>> temporal_status_validator.py
+
+>>> temporal_status_safe_corrector.py
+
+>>> temporal_status_post_validator.py
+
+TEMPORAL ETAGE 6 : PASS
+
+[OK] Etage 6 - 13 s
+
+====================================================================================================
+ETAGE 7 - negation Etage 7
+====================================================================================================
+================================================================================================================
+TRACE / SGCE - NEGATION CANDIDATE BUILDER
+================================================================================================================
+Documents analysÃ©s                 : 43
+Candidats construits               : 1034
+Mentions retrouvÃ©es                : 9737
+Mentions non retrouvÃ©es            : 405
+Textes manquants                   : 0
+
+RAISONS DE SELECTION
+----------------------------------------------------------------------------------------------------------------
+LOCAL_NEGATION_CUE                                  : 1034
+
+Sortie                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\queues\negation_candidates.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - NEGATION CLASSIFIER 
+================================================================================================================
+Candidats reÃ§us                     : 1034
+DÃ©cisions Ã©crites                   : 1034
+
+DECISIONS
+----------------------------------------------------------------------------------------------------------------
+SUPPORTED_NEGATION                                  : 48
+NO_SUPPORTED_NEGATION                               : 986
+
+ACTIONS PROPOSEES
+----------------------------------------------------------------------------------------------------------------
+SET_NEGATED                                         : 48
+NONE                                                : 986
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\outputs\negation_scope_decisions.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - NEGATION VALIDATOR  
+================================================================================================================
+Candidats exÃ©cution courante        : 1034
+DÃ©cisions reÃ§ues                    : 1034
+
+STATUTS FINAUX
+----------------------------------------------------------------------------------------------------------------
+SAFE_ACCEPT                                         : 48
+UNRESOLVED                                          : 986
+
+ACTIONS FINALES
+----------------------------------------------------------------------------------------------------------------
+SET_NEGATED                                         : 48
+NONE                                                : 986
+
+RAISONS NON-AUTOMATIQUES
+----------------------------------------------------------------------------------------------------------------
+Aucune correction automatique dÃ©montrÃ©e.                                                : 986
+
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\outputs\negation_validated.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e.
+================================================================================================================
+TRACE / SGCE - NEGATION SAFE CORRECTOR - FINAL SAFE REPAIR
+================================================================================================================
+Actions SAFE_ACCEPT reÃ§ues          : 48
+OpÃ©rations appliquÃ©es               : 48
+Documents modifiÃ©s                  : 26
+Erreurs                             : 0
+
+CORRECTIONS AVANT -> APRES
+----------------------------------------------------------------------------------------------------------------
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P1_E023 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Gastroscopie faite en janvier 2015, pas de récidive de gastrite, pas de varices oesophagiennes.'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen neurologique\nglasgow 15 conscient et orientée\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d’atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\ndéficit musculaire axial\natteinte motrice proximale aux membres supérieurs\natteinte motrice distale aux membres inférieurs bilatéralement\nROT non retrouvé au MS\nRCP en flexion bilatéralement'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E040 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '--- PAGE 3 ---\nExamen respiratoire\nPolypnée, balancement thoraco-abdominal, tirage sus claviculaire\npas de sueurs, aps de cyanose\nFrein expiratoire majeur\npas de sibilants ou de crépitants'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nSonde naso gastrique en place\nAbdomen souple dépressible indolore\nBHA présents\npas d’hépatosplénomagalie\npas de masse palpable'
+
+img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E029 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen neurologique\nglasgow 15 conscient et orientée\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d’atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\ndéficit musculaire axial\natteinte motrice proximale aux membres supérieurs\natteinte motrice distale aux membres inférieurs bilatéralement\nROT non retrouvé au MS\nRCP en flexion bilatéralement'
+
+img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E038 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nSonde naso gastrique en place\nAbdomen souple dépressible indolore\nBHA présents\npas d’hépatosplénomagalie\npas de masse palpée'
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E057 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'pas de marbrures, TRC<3s\npas de douleur thoracique\nbruits du coeur réguliers\npas de souffle perçu'
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E033 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Examen neurologique\npatient conscient orienté coopérant\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d'atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\n- pas de trouble de la déglutition rapporté pas le patient\npas de trouble de la sensibilité au toucher simple aux 4 membres\ndéficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)\natteinte motrice proximale aux membres supérieurs à 2/5\natteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied\nbilatéralement\nROT rotulien droit perçu, rotulien gauche non testé, bicipitaux non retrouvés bilatéralement\nRCP en flexion bilatéralement"
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Examen neurologique\npatient conscient orienté coopérant\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d'atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\n- pas de trouble de la déglutition rapporté pas le patient\npas de trouble de la sensibilité au toucher simple aux 4 membres\ndéficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)\natteinte motrice proximale aux membres supérieurs à 2/5\natteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied\nbilatéralement\nROT rotulien droit perçu, rotulien gauche non testé, bicipitaux non retrouvés bilatéralement\nRCP en flexion bilatéralement"
+
+img20250709_16183704_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E038 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Examen neurologique\npatient conscient orienté coopérant\npaires crâniennes :\n- parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale\n- pas d'atteinte motrice faciale inférieure\n- pas de trouble sensitif au toucher simple\n- pas de paralysie motrice\n- réflexe photomoteur présent et symétrique\n- pas de trouble de la déglutition rapporté pas le patient\npas de trouble de la sensibilité au toucher simple aux 4 membres\ndéficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)\natteinte motrice proximale aux membres supérieurs à 2/5\natteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied\nbilatéralement\nROT rotulien droit perçu, rotulien gauche non testé, bicipitaux non retrouvés bilatéralement\nRCP en flexion bilatéralement"
+
+img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E044 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de marbrures\nBruits du coeur réguliers, pas de souffle perçu\nPouls périphériques bilatéraux et symétriques\nPas de signe d’insuffisance cardiaque droite ou gauche\nMollets souples et indolores.'
+
+img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E045 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\nPas de signe de lutte respiratoire\nEupnéique sous air ambiant\nPas de cyanose\nMurmure vésiculaire bilatéral et symétrique sans bruit surajouté'
+
+img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\nMarbré aux genoux, extrémités froides, tachycardie à 150, bruit du coeur régulier, pas de souffle perçu, pouls périphériques faibles.'
+
+img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E072 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '- Echo-doppler veineux des membres inférieurs (28/06/12) : pas de thrombose profonde ni superficielle aux membres inférieurs en particulier gauche.'
+
+img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E035 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "--- PAGE 3 ---\nAbdomen souple depressible indolore\npas de masse palpable\npas d'HSMG\npas de SFU"
+
+img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E056 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de cyanose.'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\nPas de signe de détresse respiratoire aiguë, pas de signe de lutte, pas de cyanose\nMurmure vésiculaire bilatéral, diminué en base droite avec crépitants surajoutés en base gauche'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E043 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\nPas de signe de choc : pas de marbrure, bonne coloration cutanéo-muqueuse\nPouls périphériques perçus\nBruits du coeur réguliers, tachycardie, souffle intense au foyer tricuspidien et souffle systolique au foyer mitral'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E058 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\nPas de signe de détresse respiratoire aiguë, pas de signe de lutte, pas de cyanose\nMurmure vésiculaire bilatéral, diminué en base droite avec crépitants surajoutés en base gauche'
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E039 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "--- PAGE 3 ---\nExamen abdominal et pelvien\nAbdomen souple, dépressible et indolore\nPas de masse, pas de signe d'irritation péritonéale, pas d'hépatosplénomégalie\nOrifices herniaires libres"
+
+img20250709_16270030_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E062 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Les bruits du cœur sont rapides, pas de souffle perçu.'
+
+img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E030 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '--- PAGE 3 ---\nExamen respiratoire\nSignes de luttes: tirage sus et sous costal\nPas de signe hypoxémie\nMVBS avec des bronchis en base droite'
+
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E052 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\npas de signe de choc : extrémités chaudes, pas de marbrures\npas d’œdème\npas de signe de phlébite\npouls périphériques perçus\nà l’auscultation : bruits du coeur réguliers, pas de souffle perçu'
+
+img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E053 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen respiratoire\ndrain thoracique gauche : 610mL\npatient eupnéique en air ambiant\npas de toux, pas d’expectoration\npas de signe de lutte, pas de cyanose\ncrépitations sous cutané en sous-claviculaire gauche.'
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Avis Dr DAVIDO:\npoursuite fortum+oflocef+amiklin\npas d’indication pour rajouter de la vanco (pas de SARM/ risque immunoallergie à la vanco)\non pourrait discuter de l’adjonction de cancidas vu l’évolution défavorable.'
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E044 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Avis Dr DAVIDO:\npoursuite fortum+oflocef+amiklin\npas d’indication pour rajouter de la vanco (pas de SARM/ risque immunoallergie à la vanco)\non pourrait discuter de l’adjonction de cancidas vu l’évolution défavorable.'
+
+img20250709_16295211_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P7_E052 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Avis Dr DAVIDO:\npoursuite fortum+oflocef+amiklin\npas d’indication pour rajouter de la vanco (pas de SARM/ risque immunoallergie à la vanco)\non pourrait discuter de l’adjonction de cancidas vu l’évolution défavorable.'
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P1_E021 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de syndrome inflammatoire biologique (GB 4 600)\nUn BK crachat est effectué qui retrouve des Cocci Gram + en chaînette, mais pas de BAAR au direct.'
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P1_E022 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de syndrome inflammatoire biologique (GB 4 600)\nUn BK crachat est effectué qui retrouve des Cocci Gram + en chaînette, mais pas de BAAR au direct.'
+
+img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E031 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\npas de douleur thoracique\npas de signe de choc\npouls périphériques perçus\npas de signe de phlébite, pas d’œdème\nà l’auscultation : BdC réguliers, pas de souffle perçu'
+
+img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E041 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de masse palpable.'
+
+img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E024 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de souffle perçu.'
+
+img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E021 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de déficit sensitif.'
+
+img20250709_16344492_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E030 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de masse palpée.'
+
+img20250709_16351550_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E046 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nAbdomen souple, dépressible, indolore\nPas d’hépato(spléno)mégalie\nPas de masse palpée.'
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E033 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen cardio-vasculaire\nBruits du coeur réguliers, un peu bradycarde, pas de souffle perçu.'
+
+img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E034 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de masse palpée.'
+
+img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E042 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : "Pas d'hépatosplénomégalie."
+
+img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E037 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Il n’y a pas de défaillance cardio-respiratoire.'
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E047 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nAbdomen souple, sensibilité diffuse de l’abdomen, pas de masse palpable, fosses lombaires libres.'
+
+img20250709_16520260_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E041 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : '--- PAGE 6 ---\nretrouve pas de thrombose porte.'
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E018 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Sur la plan infectieux le bilan a rapporté une hémoculture positive (flacon anaérobie prélevé sur veine périphérique à la clinique de l’amandier) à entérocoque faecalis, la coproculture ne retrouve pas de pathogène spécifique ainsi qu’un Ag clostridium négatif (culture en cours pour le clostridium et le campylobacter).'
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E040 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Radiographie pulmonaire sans particularité avec absence de foyer infectieux.'
+
+img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P3_E069 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Examen abdominal et pelvien\nAbdomen souple dépressible, pas de masse palpable, pas d’hépatosplénomégalie, pas de globe\nvésical, Légère matité déclive prédominant à droite.'
+
+img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P4_E039 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Échographie\nAbdominale : lame d’ascite ed moyen en abondance\nETT patiente trop peu échogène mais pas de dysfonction VG évidente'
+
+img20250709_16562087_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P2_E026 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de cyanose.'
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_E044 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Pas de trouble de la déglutition, pas de fausse route.'
+
+img20250709_16573733_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P6_E041 | SET_NEGATED
+  AVANT : None
+  APRES : 'NEGATED'
+  TEXTE : 'Le contrôle echo doppler ne retrouve pas de thrombose.'
+
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\negation_safe_corrected
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\negation_safe_corrected\negation_correction_report.json
+
+Les fichiers sources n'ont pas Ã©tÃ© modifiÃ©s.
+================================================================================================================
+TRACE / SGCE - NEGATION POST-VALIDATION - FINAL SAFE REPAIR
+================================================================================================================
+Documents vÃ©rifiÃ©s                  : 43
+OpÃ©rations attendues                : 48
+OpÃ©rations FAIL                     : 0
+Changements cliniques inattendus    : 0
+
+Docs manquants APRES                : 0
+Docs supplÃ©mentaires APRES          : 0
+
+STATUT FINAL NEGATION REPAIR        : PASS
+
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7\post_validation\negation_post_validation_report.json
+
+Aucune donnÃ©e clinique n'a Ã©tÃ© modifiÃ©e par ce post-validateur.
+================================================================================================================
+TRACE - NEGATION VALIDATION - ETAGE 7 V2 SEMANTIC GUARD
+================================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\negation Etage 7
+
+>>> negation_candidate_builder.py
+
+>>> negation_scope_classifier.py
+
+>>> negation_validator.py
+
+>>> negation_safe_corrector.py
+
+>>> negation_post_validator.py
+
+NEGATION ETAGE 7 V2 : PASS
+
+[OK] Etage 7 - 35 s
+
+====================================================================================================
+ETAGE 8 - confidence Etage 8
+====================================================================================================
+==============================================================================================================
+TRACE / ETAGE 8 V2 - CONFIDENCE CANDIDATE BUILDER
+==============================================================================================================
+clinical_documents                    : 43
+texts_found                           : 43
+entities_audited                      : 10142
+entity_FOUND                          : 9911
+entity_AMBIGUOUS                      : 33
+entity_NOT_FOUND                      : 90
+relations_audited                     : 3744
+relation_FOUND                        : 3262
+relation_PARTIAL                      : 348
+relation_NOT_FOUND                    : 99
+entity_PARTIAL                        : 108
+relation_AMBIGUOUS                    : 35
+non_clinical_json_ignored             : 2
+JSON non cliniques ignores       : negation_correction_report.json, temporal_status_correction_report.json
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\queues\confidence_candidates.json
+==============================================================================================================
+TRACE / ETAGE 8 V2 - EVIDENCE ANALYZER
+==============================================================================================================
+ENTITY                                : 10142
+document_STRONG                       : 13173
+ontology_CONSISTENT                   : 13880
+document_AMBIGUOUS                    : 68
+document_ABSENT                       : 189
+RELATION                              : 3744
+document_PARTIAL                      : 456
+ontology_CONFLICT                     : 6
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_evidence.json
+==============================================================================================================
+TRACE / ETAGE 8 V2 - CONFIDENCE ASSESSOR
+==============================================================================================================
+HIGH                                  : 13168
+ENTITY_HIGH                           : 9911
+REVIEW                                : 74
+ENTITY_REVIEW                         : 33
+LOW                                   : 189
+ENTITY_LOW                            : 90
+RELATION_HIGH                         : 3257
+MEDIUM                                : 455
+RELATION_MEDIUM                       : 347
+RELATION_LOW                          : 99
+ENTITY_MEDIUM                         : 108
+RELATION_REVIEW                       : 41
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_assessed.json
+==============================================================================================================
+TRACE / ETAGE 8 V2 - CONFIDENCE VALIDATOR
+==============================================================================================================
+HIGH                                  : 13168
+ENTITY_HIGH                           : 9911
+REVIEW                                : 74
+ENTITY_REVIEW                         : 33
+LOW                                   : 189
+ENTITY_LOW                            : 90
+RELATION_HIGH                         : 3257
+MEDIUM                                : 455
+RELATION_MEDIUM                       : 347
+RELATION_LOW                          : 99
+ENTITY_MEDIUM                         : 108
+RELATION_REVIEW                       : 41
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_validated.json
+==============================================================================================================
+TRACE / ETAGE 8 V2.1 - CONFIDENCE SAFE ANNOTATOR
+==============================================================================================================
+clinical_documents                    : 43
+ENTITY_total                          : 10142
+ENTITY_annotations                    : 10142
+ENTITY_unmatched                      : 0
+RELATION_total                        : 3744
+RELATION_annotations                  : 3744
+RELATION_unmatched                    : 0
+clinical_objects_total                : 13886
+expected_annotations                  : 13886
+annotations                           : 13886
+missing_annotations                   : 0
+unused_decisions                      : 0
+duplicate_id_groups                   : 4
+duplicate_id_occurrences              : 8
+HIGH                                  : 13168
+MEDIUM                                : 455
+LOW                                   : 189
+REVIEW                                : 74
+Sortie clinique : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\confidence_assessed_safe
+Rapport         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\outputs\confidence_annotation_report.json
+
+STATUT ANNOTATION : PASS
+==============================================================================================================
+TRACE / ETAGE 8 V2.1 - POST VALIDATION
+==============================================================================================================
+documents_before                      : 43
+documents_after                       : 43
+missing_after                         : 0
+extra_after                           : 0
+entities_before                       : 10142
+entities_after                        : 10142
+relations_before                      : 3744
+relations_after                       : 3744
+clinical_objects_after                : 13886
+expected_confidence_annotations       : 13886
+valid_confidence_annotations          : 13886
+ENTITY_valid_confidence               : 10142
+RELATION_valid_confidence             : 3744
+HIGH                                  : 13168
+MEDIUM                                : 455
+LOW                                   : 189
+REVIEW                                : 74
+missing_confidence_annotations        : 0
+invalid_confidence_annotations        : 0
+unexpected_clinical_changes           : 0
+STATUT FINAL : PASS
+Rapport      : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8\post_validation\confidence_post_validation_report.json
+==============================================================================================================
+TRACE - EVIDENCE-BASED CONFIDENCE ASSESSMENT - ETAGE 8 V2.1
+==============================================================================================================
+Dossier : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\confidence Etage 8
+
+>>> confidence_candidate_builder.py
+
+>>> confidence_evidence_analyzer.py
+
+>>> confidence_assessor.py
+
+>>> confidence_validator.py
+
+>>> confidence_safe_annotator.py
+
+>>> confidence_post_validator.py
+
+CONFIDENCE ETAGE 8 V2.1 : PASS
+
+[OK] Etage 8 - 49 s
+
+====================================================================================================
+CHAINE 3 -> 8 TERMINEE - 180 s
+====================================================================================================
+Etape suivante :
+  cd "C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\Evaluation\TRACE_Ablation_F1"
+  python run_ablation_f1_TRACE.py

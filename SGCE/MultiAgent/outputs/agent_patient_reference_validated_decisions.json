@@ -1,0 +1,131 @@
+{
+  "validator": "agent_patient_reference_decision_validator",
+  "clinical_context_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\corrected",
+  "validated_decisions": [
+    {
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000093",
+        "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "agent": "agent_patient_reference",
+        "decision": "REVIEW",
+        "action": "NONE",
+        "confidence": 0.3,
+        "reason": "Preuve textuelle insuffisante.",
+        "evidence": "Pas d'infection virale ou de vaccination récente | Pas d'infection virale ou de vaccination récente | suspicion_infection",
+        "metadata": {
+          "candidate_entity_id": "P4_E027",
+          "text_grounded": false,
+          "patient_hits": 0,
+          "reference_hits": 0,
+          "page_number": null,
+          "text_file": null
+        }
+      },
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "reason": "Décision insuffisante pour une modification automatique."
+    },
+    {
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000218",
+        "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "agent": "agent_patient_reference",
+        "decision": "REVIEW",
+        "action": "NONE",
+        "confidence": 0.3,
+        "reason": "Preuve textuelle insuffisante.",
+        "evidence": "Syndrome hémolytique et urémique | Syndrome hémolytique et urémique | suspicion_infection",
+        "metadata": {
+          "candidate_entity_id": "P1_E001",
+          "text_grounded": false,
+          "patient_hits": 0,
+          "reference_hits": 0,
+          "page_number": null,
+          "text_file": null
+        }
+      },
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "reason": "Décision insuffisante pour une modification automatique."
+    },
+    {
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000247",
+        "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "agent": "agent_patient_reference",
+        "decision": "REVIEW",
+        "action": "NONE",
+        "confidence": 0.3,
+        "reason": "Preuve textuelle insuffisante.",
+        "evidence": "Evolution favorable avec apyrexie | Evolution favorable avec apyrexie | apyrexie",
+        "metadata": {
+          "candidate_entity_id": "P4_E025",
+          "text_grounded": false,
+          "patient_hits": 0,
+          "reference_hits": 0,
+          "page_number": null,
+          "text_file": null
+        }
+      },
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "reason": "Décision insuffisante pour une modification automatique."
+    },
+    {
+      "candidate_id": "C_000657",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000657",
+        "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "agent": "agent_patient_reference",
+        "decision": "REVIEW",
+        "action": "NONE",
+        "confidence": 0.3,
+        "reason": "Preuve textuelle insuffisante.",
+        "evidence": "campylobacter | campylobacter | micro_organisme",
+        "metadata": {
+          "candidate_entity_id": "P4_E036",
+          "text_grounded": false,
+          "patient_hits": 0,
+          "reference_hits": 0,
+          "page_number": null,
+          "text_file": null
+        }
+      },
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "reason": "Décision insuffisante pour une modification automatique."
+    },
+    {
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "agent_decision": {
+        "candidate_id": "C_000686",
+        "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+        "agent": "agent_patient_reference",
+        "decision": "REVIEW",
+        "action": "NONE",
+        "confidence": 0.3,
+        "reason": "Preuve textuelle insuffisante.",
+        "evidence": "suspicion de tuberculose pulmonaire | suspicion de tuberculose pulmonaire | suspicion_infection",
+        "metadata": {
+          "candidate_entity_id": "P1_E016",
+          "text_grounded": false,
+          "patient_hits": 0,
+          "reference_hits": 0,
+          "page_number": null,
+          "text_file": null
+        }
+      },
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "reason": "Décision insuffisante pour une modification automatique."
+    }
+  ]
+}

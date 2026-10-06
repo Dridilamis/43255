@@ -1,0 +1,136 @@
+=============================================================================================================================
+TRACE / SGCE - SEMANTIC FACTUAL REVIEW ANALYZER V2
+=============================================================================================================================
+Décisions totales                   : 3753
+SUPPORTED_KEEP                      : 3556
+Cas REVIEW                          : 197
+
+UNSUPPORTED_FACT                    : 187
+NEGATION_SENSITIVE                  : 4
+DOCUMENT_LEVEL_SUPPORT              : 0
+AMBIGUOUS                           : 0
+UNRESOLVED_ENDPOINT                 : 6
+
+Types de relation concernés         : 10
+Signatures distinctes               : 12
+
+REVIEW PAR CLASSIFICATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT                                                 : 187
+UNRESOLVED_ENDPOINT                                              : 6
+NEGATION_SENSITIVE                                               : 4
+
+PRESENCE DES ENDPOINTS DANS LE DOCUMENT
+-----------------------------------------------------------------------------------------------------------------------------
+NO_ENDPOINT_FOUND_IN_DOCUMENT                                    : 192
+ONLY_TARGET_IN_DOCUMENT                                          : 3
+ONLY_SOURCE_IN_DOCUMENT                                          : 2
+
+CAS SENSIBLES A LA NEGATION
+-----------------------------------------------------------------------------------------------------------------------------
+TARGET_NEGATED                                                   : 4
+
+REVIEW PAR TYPE DE RELATION
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie                                      : 176
+traitement_administre_a                                          : 7
+biomarqueur_supporte_defaillance_organe                          : 5
+signe_vital_supporte_defaillance_organe                          : 2
+biomarqueur_est_critere_de                                       : 2
+presente_dysfonction_organe                                      : 1
+service_medical_accueille                                        : 1
+a_pour_label_nosologique                                         : 1
+micro_organisme_isole_dans                                       : 1
+imagerie_objective_defaillance                                   : 1
+
+SIGNATURES RELATION | TYPE SUJET -> TYPE OBJET
+-----------------------------------------------------------------------------------------------------------------------------
+traitement_a_pour_posologie | TRAITEMENT -> POSOLOGIE                                                    : 173
+traitement_administre_a | TRAITEMENT -> DONNEE_PATIENT                                                   : 6
+biomarqueur_supporte_defaillance_organe | BIOMARQUEUR -> DEFAILLANCE_ORGANE                              : 5
+traitement_a_pour_posologie | TRAITEMENT -> <VIDE>                                                       : 3
+signe_vital_supporte_defaillance_organe | SIGNE_VITAL -> DEFAILLANCE_ORGANE                              : 2
+biomarqueur_est_critere_de | BIOMARQUEUR -> LABEL_NOSOLOGIQUE                                            : 2
+presente_dysfonction_organe | DONNEE_PATIENT -> <VIDE>                                                   : 1
+service_medical_accueille | <VIDE> -> DONNEE_PATIENT                                                     : 1
+a_pour_label_nosologique | DONNEE_PATIENT -> LABEL_NOSOLOGIQUE                                           : 1
+micro_organisme_isole_dans | MICRO_ORGANISME -> FOYER_INFECTIEUX                                         : 1
+traitement_administre_a | <VIDE> -> DONNEE_PATIENT                                                       : 1
+imagerie_objective_defaillance | IMAGERIE_PROCEDURE -> DEFAILLANCE_ORGANE                                : 1
+
+EXEMPLES UNSUPPORTED_FACT
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00033
+  Restriction hydrique | restriction_hydrique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  50 ml | posologie [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Restriction hydrique'
+  Preuve target : '50 ml'
+
+img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00085
+  adrénaline [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  2 mg | posologie [POSOLOGIE]
+  Source dans document : True
+  Target dans document : False
+  Preuve source : 'adrénaline'
+  Preuve target : '2 mg'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00102
+  tazocilline | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  4g X 4/j | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'tazocilline'
+  Preuve target : '4g X 4/j'
+
+img20250709_16154161_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00103
+  Amiklin | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  1g | dose [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Amiklin'
+  Preuve target : '1g'
+
+img20250709_16164845_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00085
+  Amiklin | antibiotique [TRAITEMENT]
+       --traitement_a_pour_posologie-->
+  1g | posologie [POSOLOGIE]
+  Source dans document : False
+  Target dans document : False
+  Preuve source : 'Amiklin'
+  Preuve target : '1g'
+
+EXEMPLES NEGATION_SENSITIVE
+-----------------------------------------------------------------------------------------------------------------------------
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00052
+  PAS 133 | pression_arterielle_systolique | 133 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00053
+  tachycardie | frequence_cardiaque | 144 [SIGNE_VITAL] status=None
+       --signe_vital_supporte_defaillance_organe-->
+  choc | cardiovasculaire [DEFAILLANCE_ORGANE] status=NEGATED
+
+img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | R_V69K_00022
+  campylobacter | micro_organisme [MICRO_ORGANISME] status=None
+       --micro_organisme_isole_dans-->
+  foyer infectieux | foyer [FOYER_INFECTIEUX] status=NEGATED
+
+img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json | P5_R001
+  PL [IMAGERIE_PROCEDURE] status=None
+       --imagerie_objective_defaillance-->
+  pas de défaillances au plan rénal | renal [DEFAILLANCE_ORGANE] status=NEGATED
+
+INTERPRETATION
+-----------------------------------------------------------------------------------------------------------------------------
+UNSUPPORTED_FACT signifie que le support textuel de la relation n'a pas été suffisamment démontré.
+Il ne signifie PAS automatiquement que la relation est fausse ou hallucinée.
+Aucune suppression automatique ne doit être effectuée sur cette seule base.

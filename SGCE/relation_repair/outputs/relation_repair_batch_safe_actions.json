@@ -1,0 +1,98 @@
+{
+  "validator": "relation_repair_batch_impact_validator",
+  "baseline_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternD\\corrected",
+  "summary": {
+    "accepted_actions_received": 2,
+    "unique_actions_evaluated": 2,
+    "duplicates_merged": 0,
+    "safe_accept": 2,
+    "reject_harmful": 0,
+    "no_benefit": 0,
+    "already_satisfied": 0,
+    "review": 0,
+    "baseline_anomalies": 59,
+    "projected_final_anomalies": 57,
+    "projected_resolved_anomalies": 2,
+    "safe_actions_by_type": {
+      "RETYPE_TARGET": 2
+    }
+  },
+  "safe_actions": [
+    {
+      "candidate_id": "RR_000039",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_TARGET",
+      "parameters": {
+        "entity_id": "P3_E020",
+        "old_type": "FOYER_INFECTIEUX",
+        "new_type": "LABEL_NOSOLOGIQUE",
+        "lexicon_support": [
+          "pneumonie"
+        ]
+      },
+      "before_anomaly_count": 1,
+      "after_anomaly_count": 0,
+      "new_anomaly_count": 0,
+      "resolved_anomaly_count": 1
+    },
+    {
+      "candidate_id": "RR_000042",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_TARGET",
+      "parameters": {
+        "entity_id": "P5_E022",
+        "old_type": "LABEL_NOSOLOGIQUE",
+        "new_type": "DEFAILLANCE_ORGANE",
+        "lexicon_support": [
+          "ira",
+          "respiratoire"
+        ]
+      },
+      "before_anomaly_count": 3,
+      "after_anomaly_count": 2,
+      "new_anomaly_count": 0,
+      "resolved_anomaly_count": 1
+    }
+  ],
+  "results": [
+    {
+      "candidate_id": "RR_000039",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_TARGET",
+      "parameters": {
+        "entity_id": "P3_E020",
+        "old_type": "FOYER_INFECTIEUX",
+        "new_type": "LABEL_NOSOLOGIQUE",
+        "lexicon_support": [
+          "pneumonie"
+        ]
+      },
+      "status": "SAFE_ACCEPT",
+      "reason": "MONOTONIC_IMPROVEMENT",
+      "before_anomaly_count": 1,
+      "after_anomaly_count": 0,
+      "new_anomaly_count": 0,
+      "resolved_anomaly_count": 1
+    },
+    {
+      "candidate_id": "RR_000042",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_TARGET",
+      "parameters": {
+        "entity_id": "P5_E022",
+        "old_type": "LABEL_NOSOLOGIQUE",
+        "new_type": "DEFAILLANCE_ORGANE",
+        "lexicon_support": [
+          "ira",
+          "respiratoire"
+        ]
+      },
+      "status": "SAFE_ACCEPT",
+      "reason": "MONOTONIC_IMPROVEMENT",
+      "before_anomaly_count": 3,
+      "after_anomaly_count": 2,
+      "new_anomaly_count": 0,
+      "resolved_anomaly_count": 1
+    }
+  ]
+}

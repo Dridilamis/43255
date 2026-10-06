@@ -1,0 +1,585 @@
+========================================================================================
+TRACE / SGCE - MULTI-AGENT ORCHESTRATOR V2
+========================================================================================
+
+Principe : second recours uniquement
+
+ROUTES PRIMAIRES
+----------------------------------------------------------------------------------------
+Agent Pattern A                 : 0
+Agent Pattern B                 : 16
+Agent Pattern C                 : 5
+
+ROUTE SECONDAIRE
+----------------------------------------------------------------------------------------
+Agent Patient/Référence         : 5
+
+COMPTAGE CORRECT
+----------------------------------------------------------------------------------------
+Cas uniques routés              : 21
+Routes secondaires              : 5
+Appels agentiques prévus        : 26
+
+Rapport                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\queues\orchestration_report.json
+
+Aucune donnée clinique n'a été modifiée.
+Agent B queue: orphanes résiduelles ajoutées=11; total=27
+[OK] Dossier texte détecté automatiquement : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Sortie_Textes_Brut_MistralSmall4
+============================================================================================
+TRACE / SGCE - TEXT CONTEXT BUILDER
+============================================================================================
+Cas Pattern B                  : 27
+Fichiers texte découverts      : 43
+Documents texte retrouvés      : 27
+Pages retrouvées explicitement : 16
+Fallback texte global          : 11
+Documents texte manquants      : 0
+
+Sortie                         : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\queues\agent_b_queue_contextualized.json
+
+Aucune donnée clinique n'a été modifiée.
+====================================================================================================
+TRACE / SGCE - BUILD AGENT D QUEUE FROM RELATION REPAIR
+====================================================================================================
+Rapport Relation Repair            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\relation_repair\outputs\relation_repair_decisions.json
+REVIEW détectés dans le rapport    : 41
+
+REVIEW résiduels routés vers D     : 41
+Sortie                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\queues\agent_d_queue.json
+
+Aucune donnée clinique n'a été modifiée.
+agent_c_queue.json: 5 -> agent_c_queue_contextualized.json
+patient_reference_queue.json: 5 -> agent_patient_reference_queue_contextualized.json
+agent_d_queue.json: 41 -> agent_d_queue_contextualized.json
+====================================================================================
+TRACE / SGCE - GENERIC AGENT PATTERN A
+====================================================================================
+Cas reçus     : 0
+Décisions     : 0
+Sortie        : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_a_decisions.json
+Aucun JSON clinique n'a été modifié.
+====================================================================================================
+Agent_A
+====================================================================================================
+
+RUN : agent_pattern_a.py
+
+Agent_A : FIN OK
+============================================================================================
+TRACE / SGCE - AGENT PATTERN B
+============================================================================================
+Cas reçus                         : 27
+Décisions produites               : 27
+
+DECISIONS
+--------------------------------------------------------------------------------------------
+REVIEW                                  : 21
+CORRECT                                 : 6
+
+ACTIONS PROPOSEES
+--------------------------------------------------------------------------------------------
+NONE                                    : 21
+CREATE_FROM_EXPLICIT_EVIDENCE           : 6
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_b_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+================================================================================================
+TRACE / SGCE - DIAGNOSTIC AGENT B QUEUE
+================================================================================================
+
+Cas totaux : 27
+
+SUBPATTERNS
+------------------------------------------------------------------------------------------------
+B1                                      : 16
+B1_ORPHAN_RESIDUAL                      : 11
+
+STATUTS ORIGINAUX
+------------------------------------------------------------------------------------------------
+UNRESOLVABLE_REFERENCE                  : 16
+UNRESOLVED_ORPHAN                       : 11
+
+CLES SYMBOLIC_CANDIDATE LES PLUS FREQUENTES
+------------------------------------------------------------------------------------------------
+pattern                                      : 27
+candidate_kind                               : 27
+status                                       : 27
+recommended_future_action                    : 27
+document                                     : 16
+strength                                     : 16
+relation                                     : 16
+source_resolution                            : 16
+target_resolution                            : 16
+missing_roles                                : 16
+validation_status                            : 16
+endpoint_validations                         : 16
+relation_id                                  : 11
+relation_type                                : 11
+source_id                                    : 11
+target_id                                    : 11
+source_missing                               : 11
+target_missing                               : 11
+existing_source_entity                       : 11
+existing_target_entity                       : 11
+entity_catalog                               : 11
+
+ENDPOINT_VALIDATIONS
+------------------------------------------------------------------------------------------------
+Candidats avec endpoint_validations : 16
+Tailles endpoint_validations        : {1: 16}
+
+CLES INTERNES DES ENDPOINTS
+------------------------------------------------------------------------------------------------
+role                                         : 16
+endpoint_value                               : 16
+resolution_status                            : 16
+resolution_method                            : 16
+expected_type                                : 16
+schema_support                               : 16
+schema_purity                                : 16
+schema_reliable                              : 16
+status                                       : 16
+recommended_future_action                    : 16
+reason                                       : 16
+
+CHAMPS B2 PRESENTS
+------------------------------------------------------------------------------------------------
+Aucun.
+
+CHAMPS DE PREUVE PRESENTS
+------------------------------------------------------------------------------------------------
+Aucun.
+
+EXEMPLES COMPACTS
+------------------------------------------------------------------------------------------------
+
+EXEMPLE 1
+{
+  "candidate_id": "BB1_000001",
+  "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "subpattern": "B1",
+  "original_status": "UNRESOLVABLE_REFERENCE",
+  "symbolic_keys": [
+    "candidate_kind",
+    "document",
+    "endpoint_validations",
+    "missing_roles",
+    "pattern",
+    "recommended_future_action",
+    "relation",
+    "source_resolution",
+    "status",
+    "strength",
+    "target_resolution",
+    "validation_status"
+  ],
+  "endpoint_validations": [
+    {
+      "role": "SOURCE",
+      "endpoint_value": "P2_E044",
+      "resolution_status": "NOT_FOUND",
+      "resolution_method": "NONE",
+      "expected_type": "IMAGERIE_PROCEDURE",
+      "schema_support": 13,
+      "schema_purity": 1.0,
+      "schema_reliable": true,
+      "status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+    }
+  ],
+  "selected_fields": {}
+}
+
+EXEMPLE 2
+{
+  "candidate_id": "BB1_000002",
+  "document": "img20250709_16142502_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "subpattern": "B1",
+  "original_status": "UNRESOLVABLE_REFERENCE",
+  "symbolic_keys": [
+    "candidate_kind",
+    "document",
+    "endpoint_validations",
+    "missing_roles",
+    "pattern",
+    "recommended_future_action",
+    "relation",
+    "source_resolution",
+    "status",
+    "strength",
+    "target_resolution",
+    "validation_status"
+  ],
+  "endpoint_validations": [
+    {
+      "role": "SOURCE",
+      "endpoint_value": "P2_E044",
+      "resolution_status": "NOT_FOUND",
+      "resolution_method": "NONE",
+      "expected_type": "IMAGERIE_PROCEDURE",
+      "schema_support": 13,
+      "schema_purity": 1.0,
+      "schema_reliable": true,
+      "status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+    }
+  ],
+  "selected_fields": {}
+}
+
+EXEMPLE 3
+{
+  "candidate_id": "BB1_000003",
+  "document": "img20250709_16201504_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "subpattern": "B1",
+  "original_status": "UNRESOLVABLE_REFERENCE",
+  "symbolic_keys": [
+    "candidate_kind",
+    "document",
+    "endpoint_validations",
+    "missing_roles",
+    "pattern",
+    "recommended_future_action",
+    "relation",
+    "source_resolution",
+    "status",
+    "strength",
+    "target_resolution",
+    "validation_status"
+  ],
+  "endpoint_validations": [
+    {
+      "role": "TARGET",
+      "endpoint_value": "P2_E074",
+      "resolution_status": "NOT_FOUND",
+      "resolution_method": "NONE",
+      "expected_type": "COMORBIDITE_ANTECEDENT",
+      "schema_support": 5,
+      "schema_purity": 1.0,
+      "schema_reliable": true,
+      "status": "UNRESOLVABLE_REFERENCE",
+      "recommended_future_action": "NONE",
+      "reason": "Endpoint absent sous forme d'identifiant opaque. Le contenu clinique de l'entité ne peut pas être reconstruit automatiquement sans invention."
+    }
+  ],
+  "selected_fields": {}
+}
+
+Aucune donnée clinique n'a été modifiée.
+====================================================================================================
+Agent_B
+====================================================================================================
+
+RUN : agent_pattern_b.py
+
+RUN : inspect_agent_b_queue.py
+
+Agent_B : FIN OK
+================================================================================================
+TRACE / SGCE - AGENT PATTERN C DOCUMENT-GROUNDED
+================================================================================================
+Contexte clinique                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Cas reçus                         : 5
+Décisions produites               : 5
+
+DECISIONS
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 5
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------
+NONE                                    : 5
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_c_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+====================================================================================================
+Agent_C
+====================================================================================================
+
+RUN : agent_pattern_c.py
+
+Agent_C : FIN OK
+================================================================================================
+TRACE / SGCE - AGENT PATIENT / REFERENCE
+================================================================================================
+Cas reçus                         : 5
+
+DECISIONS
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 5
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------
+NONE                                    : 5
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_patient_reference_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+================================================================================================
+TRACE / SGCE - PATIENT / REFERENCE DECISION VALIDATOR
+================================================================================================
+Décisions reçues                  : 5
+Décisions validées                : 5
+
+STATUTS FINAUX
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 5
+
+ACTIONS FINALES
+------------------------------------------------------------------------------------------------
+NONE                                    : 5
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_patient_reference_validated_decisions.json
+
+Aucune donnée clinique n'a été modifiée.
+================================================================================================
+TRACE / SGCE - PATIENT / REFERENCE CORRECTOR
+================================================================================================
+Source clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Sortie clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\corrected
+
+Documents cliniques copiés         : 43
+KEEP vérifiés                      : 0
+Cas protégés                       : 5
+Opérations d'écriture appliquées   : 0
+Documents modifiés                 : 0
+
+Rapport                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\corrected\agent_patient_reference_correction_report.json
+
+Les fichiers sources n'ont pas été modifiés.
+================================================================================================
+TRACE / SGCE - PATIENT / REFERENCE POST-VALIDATION
+================================================================================================
+AVANT                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+APRES                              : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\corrected
+
+Documents vérifiés                 : 43
+Documents modifiés                 : 0
+Modifications inattendues          : 0
+Docs manquants APRES               : 0
+Docs supplémentaires APRES         : 0
+
+STATUT FINAL                       : PASS
+
+Rapport                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\Agent_Patient_Reference\post_validation\agent_patient_reference_post_validation_report.json
+
+Aucune donnée clinique n'a été modifiée par ce post-validateur.
+====================================================================================================
+Agent_Patient_Reference
+====================================================================================================
+
+RUN : agent_patient_reference.py
+
+RUN : agent_patient_reference_decision_validator.py
+
+RUN : agent_patient_reference_corrector.py
+
+RUN : agent_patient_reference_post_validator.py
+
+Agent_Patient_Reference : FIN OK
+================================================================================================
+TRACE / SGCE - AGENT PATTERN D
+================================================================================================
+Contexte clinique                 : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Cas reçus                         : 41
+
+DECISIONS
+------------------------------------------------------------------------------------------------
+REVIEW                                  : 41
+
+ACTIONS PROPOSEES
+------------------------------------------------------------------------------------------------
+NONE                                    : 41
+
+Sortie                            : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\agent_d_decisions.json
+
+Aucun JSON clinique n'a été modifié.
+====================================================================================================
+TRACE / SGCE - VALIDATE SPECIALIZED AGENT DECISIONS
+====================================================================================================
+B: 27 -> ACCEPT=6, REVIEW=21
+C: 5 -> ACCEPT=0, REVIEW=5
+D: 41 -> ACCEPT=0, REVIEW=41
+
+----------------------------------------------------------------------------------------------------
+Direct ACCEPT reconstruits         : 6
+Direct ACCEPT par famille          : {'B': 6}
+Fichier                           : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_direct_accepts.json
+
+Aucun ACCEPT provenant d'un ancien run n'a été conservé.
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - MULTI-AGENT ADJUDICATOR
+========================================================================================================
+Contexte clinique                    : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\orphan_resolution\corrected
+Cas REVIEW reçus                     : 72
+Résolus par consensus                : 0
+UNRESOLVED                           : 72
+
+STATUTS
+--------------------------------------------------------------------------------------------------------
+UNRESOLVED                                      : 72
+
+ACTIONS ADJUDIQUEES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 72
+
+PAR FAMILLE
+--------------------------------------------------------------------------------------------------------
+B                             : total=21   résolus=0
+C                             : total=5    résolus=0
+D                             : total=41   résolus=0
+PATIENT_REFERENCE             : total=5    résolus=0
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_adjudication_report.json
+
+Aucune donnée clinique n'a été modifiée.
+Specialized ACCEPT injectés dans `cases` : 6
+Cas disponibles pour Action Resolver     : 78
+========================================================================================================
+TRACE / SGCE - MULTI-AGENT ACTION RESOLVER
+========================================================================================================
+Cas reçus                           : 78
+ACTIONABLE                          : 6
+CLASSIFICATION_ONLY                 : 0
+NO_ACTION                           : 0
+PROTECTED                           : 72
+
+ACTIONS RESOLUES
+--------------------------------------------------------------------------------------------------------
+NONE                                            : 72
+CREATE_FROM_EXPLICIT_EVIDENCE                   : 6
+
+ACTIONABLE PAR FAMILLE
+--------------------------------------------------------------------------------------------------------
+B                                       : 6
+
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_resolved_actions.json
+
+Aucune donnée clinique n'a été modifiée.
+========================================================================================================
+TRACE / SGCE - PROVISIONAL CORRECTOR
+========================================================================================================
+Documents modifiés : 0
+Rapport : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_provisional_correction_report.json
+============================================================================================================
+TRACE / SGCE - GENERAL IMPACT VALIDATOR
+============================================================================================================
+Actions ACTIONABLE reçues           : 6
+SAFE_ACCEPT                          : 5
+REJECT_HARMFUL                       : 0
+NO_BENEFIT                           : 0
+REVIEW                               : 1
+Actions sûres par type              : {'CREATE_FROM_EXPLICIT_EVIDENCE': 5}
+Sortie                               : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\outputs\multiagent_general_impact_validation.json
+========================================================================================================
+TRACE / SGCE - SAFE GENERAL CORRECTOR
+========================================================================================================
+Actions SAFE_ACCEPT reçues          : 5
+Opérations appliquées               : 4
+Documents modifiés                  : 4
+Erreurs                              : 0
+Sortie clinique                     : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\corrected
+============================================================================================================
+TRACE / SGCE - SAFE GENERAL POST-VALIDATION
+============================================================================================================
+documents_verified                  : 43
+expected_modified                   : 4
+actually_modified                   : 4
+unexpected_modifications            : 0
+expected_corrections_absent         : 0
+anomalies_before                    : 52
+anomalies_after                     : 47
+new_anomalies                       : 0
+resolved_anomalies                  : 5
+missing_documents                   : 0
+extra_documents                     : 0
+final_status                        : PASS
+Rapport                             : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\post_validation\multiagent_safe_post_validation_report.json
+============================================================================================================
+TRACE / SGCE - MULTI-AGENT COMPLET
+============================================================================================================
+Baseline clinique : SGCE/orphan_resolution/corrected
+Préparation des queues AVANT exécution des agents.
+
+============================================================================================================
+RUN : PREPARATION / orchestrator.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / merge_orphan_review_into_b.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / text_context_builder.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / build_agent_d_queue.py
+============================================================================================================
+
+============================================================================================================
+RUN : PREPARATION / contextualize_remaining_queues.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_A / run_agent_a.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_B / run_agent_b.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_C / run_agent_c.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_Patient_Reference / run_agent_patient_reference.py
+============================================================================================================
+
+============================================================================================================
+RUN : Agent_D / agent_pattern_d.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / validate_missing_agent_decisions.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_adjudicator.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / inject_specialized_accepts.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_action_resolver.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_provisional_corrector.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_action_validator.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_corrector.py
+============================================================================================================
+
+============================================================================================================
+RUN : GLOBAL / multiagent_post_validator.py
+============================================================================================================
+
+============================================================================================================
+MULTI-AGENT TERMINE
+============================================================================================================
+Sortie : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\corrected
+Post-validation : C:\Users\Lamis\Desktop\Projet memoire\TRACE\OCR vers LLM\Reduction_hallucinations\SGCE\MultiAgent\post_validation

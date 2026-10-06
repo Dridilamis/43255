@@ -1,0 +1,181 @@
+{
+  "corrector": "ontology_relation_safe_corrector",
+  "version": "V3_REAL_TRACE_STRUCTURE",
+  "mode": "SAFE_REMOVE_ONLY",
+  "input_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\ontology Etage 4\\entity_validation\\entity_validation_safe_corrected",
+  "validated_file": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\ontology Etage 4\\relation_validation\\outputs\\ontology_relation_final_validated.json",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\ontology Etage 4\\relation_validation\\ontology_relation_safe_corrected",
+  "summary": {
+    "validated_relations_received": 39,
+    "safe_remove_detected": 4,
+    "safe_remove_announced": 4,
+    "unique_operations": 4,
+    "duplicate_operations_ignored": 0,
+    "clinical_documents_copied": 43,
+    "logical_relations_removed": 4,
+    "physical_occurrences_removed": 4,
+    "documents_modified": 4,
+    "errors": 0
+  },
+  "status_counts": {
+    "APPLIED": 4
+  },
+  "removed_by_relation_type": {
+    "a_pour_contexte_acquisition": 2,
+    "a_pour_label_nosologique": 1,
+    "presente_dysfonction_organe": 1
+  },
+  "duplicate_operations_ignored": [],
+  "operations": [
+    {
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "ORR_00001",
+      "relation_id": "R_V69K_00098",
+      "relation_name": "a_pour_contexte_acquisition",
+      "source_id": "P6_E038",
+      "source_text": "",
+      "target_id": "P6_E029",
+      "target_text": "",
+      "final_status": "SAFE_REMOVE",
+      "final_action": "REMOVE_RELATION",
+      "status": "APPLIED",
+      "physical_occurrences_before": 1,
+      "physical_occurrences_removed": 1,
+      "physical_occurrences_after": 0,
+      "removed_paths": [
+        "$.global_relations[97]"
+      ],
+      "removed_relations": [
+        {
+          "identifiant_relation": "R_V69K_00098",
+          "identifiant_entite_sujet": "P6_E038",
+          "type_relation": "a_pour_contexte_acquisition",
+          "identifiant_entite_objet": "P6_E029",
+          "delai_minutes": null,
+          "preuve": "infection nosocomiale : oui",
+          "note_clinique": "V6.8 : contexte nosocomial explicitement affirmé pour le patient.",
+          "type_inference": "inference_structurelle_v68",
+          "confiance": "elevee",
+          "_v68_added": true,
+          "_page": 6,
+          "page": 6
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "ORR_00015",
+      "relation_id": "R_V69K_00003",
+      "relation_name": "a_pour_label_nosologique",
+      "source_id": "P1_E024",
+      "source_text": "Patient",
+      "target_id": "P1_E004",
+      "target_text": "bronchite",
+      "final_status": "SAFE_REMOVE",
+      "final_action": "REMOVE_RELATION",
+      "status": "APPLIED",
+      "physical_occurrences_before": 1,
+      "physical_occurrences_removed": 1,
+      "physical_occurrences_after": 0,
+      "removed_paths": [
+        "$.global_relations[2]"
+      ],
+      "removed_relations": [
+        {
+          "identifiant_relation": "R_V69K_00003",
+          "identifiant_entite_sujet": "P1_E024",
+          "entite_sujet": "Patient",
+          "type_relation": "a_pour_label_nosologique",
+          "identifiant_entite_objet": "P1_E004",
+          "entite_objet": "bronchite",
+          "delai_minutes": null,
+          "preuve": "bronchite",
+          "note_clinique": "V6.8 : diagnostic reclassé label.",
+          "type_inference": "extraction_directe",
+          "confiance": "elevee",
+          "subject": "Patient",
+          "object": "bronchite",
+          "_page": 1,
+          "_v68_original_relation_type": "presente_symptome",
+          "_v68_corrected": true,
+          "page": 1
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "ORR_00028",
+      "relation_id": "R_V69K_00135",
+      "relation_name": "a_pour_contexte_acquisition",
+      "source_id": "P6_E036",
+      "source_text": "",
+      "target_id": "P6_E031",
+      "target_text": "",
+      "final_status": "SAFE_REMOVE",
+      "final_action": "REMOVE_RELATION",
+      "status": "APPLIED",
+      "physical_occurrences_before": 1,
+      "physical_occurrences_removed": 1,
+      "physical_occurrences_after": 0,
+      "removed_paths": [
+        "$.global_relations[134]"
+      ],
+      "removed_relations": [
+        {
+          "identifiant_relation": "R_V69K_00135",
+          "identifiant_entite_sujet": "P6_E036",
+          "type_relation": "a_pour_contexte_acquisition",
+          "identifiant_entite_objet": "P6_E031",
+          "delai_minutes": null,
+          "preuve": "Infection nosocomiale : oui",
+          "note_clinique": "V6.8 : contexte nosocomial explicitement affirmé pour le patient.",
+          "type_inference": "inference_structurelle_v68",
+          "confiance": "elevee",
+          "_v68_added": true,
+          "_page": 6,
+          "page": 6
+        }
+      ]
+    },
+    {
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "candidate_id": "ORR_00038",
+      "relation_id": "R_V69K_00028",
+      "relation_name": "presente_dysfonction_organe",
+      "source_id": "P4_E030",
+      "source_text": "patiente",
+      "target_id": "P4_E024",
+      "target_text": "hypoxie",
+      "final_status": "SAFE_REMOVE",
+      "final_action": "REMOVE_RELATION",
+      "status": "APPLIED",
+      "physical_occurrences_before": 1,
+      "physical_occurrences_removed": 1,
+      "physical_occurrences_after": 0,
+      "removed_paths": [
+        "$.global_relations[27]"
+      ],
+      "removed_relations": [
+        {
+          "identifiant_relation": "R_V69K_00028",
+          "identifiant_entite_sujet": "P4_E030",
+          "entite_sujet": "patiente",
+          "type_relation": "presente_dysfonction_organe",
+          "identifiant_entite_objet": "P4_E024",
+          "entite_objet": "hypoxie",
+          "delai_minutes": null,
+          "preuve": "hypoxie",
+          "note_clinique": "V6.8 : hypoxie reclassée dysfonction.",
+          "type_inference": "extraction_directe",
+          "confiance": "elevee",
+          "subject": "patiente",
+          "object": "hypoxie",
+          "_page": 4,
+          "_v68_original_relation_type": "presente_symptome",
+          "_v68_corrected": true,
+          "page": 4
+        }
+      ]
+    }
+  ]
+}

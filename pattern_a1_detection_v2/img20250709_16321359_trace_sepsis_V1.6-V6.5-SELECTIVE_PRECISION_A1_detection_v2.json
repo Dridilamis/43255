@@ -1,0 +1,76 @@
+{
+  "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 31,
+  "number_candidates": 3,
+  "signal_counts": {
+    "WEAK": 3
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E011",
+        "type": "TRAITEMENT",
+        "name": "aDRénaline",
+        "preuve": "aDRénaline 1 mg/H",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "aDRénaline 1 mg/H | aDRénaline | vasopresseur",
+      "detected_components": {
+        "rate": [
+          "1 mg/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E013",
+        "type": "TRAITEMENT",
+        "name": "hypnovel",
+        "preuve": "hypnovel 10 mg/H",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "hypnovel 10 mg/H | hypnovel | sedatif",
+      "detected_components": {
+        "rate": [
+          "10 mg/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    },
+    {
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E015",
+        "type": "TRAITEMENT",
+        "name": "sufenta",
+        "preuve": "sufenta 2 mg/H",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "sufenta 2 mg/H | sufenta | analgesique",
+      "detected_components": {
+        "rate": [
+          "2 mg/H"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

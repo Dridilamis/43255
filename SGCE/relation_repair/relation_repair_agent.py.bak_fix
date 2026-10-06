@@ -1,0 +1,610 @@
+# -*- coding: utf-8 -*-
+"""
+relation_repair_agent.py
+========================
+
+Propose des réparations relationnelles sûres.
+
+Actions possibles :
+- REPLACE_RELATION
+- RETYPE_SOURCE
+- RETYPE_TARGET
+- REVIEW / NONE
+
+Principes :
+1. REPLACE_RELATION est préféré si les types observés correspondent
+   exactement à UNE signature TRACE unique.
+2. RETYPE_SOURCE / RETYPE_TARGET seulement si :
+   - un seul endpoint est incorrect
+   - le type attendu est explicitement soutenu par le texte
+3. aucune correction si plusieurs interprétations restent possibles.
+
+Aucune donnée clinique n'est modifiée.
+"""
+
+import json
+import re
+import unicodedata
+from pathlib import Path
+from collections import Counter
+
+HERE = Path(__file__).resolve().parent
+SGCE_DIR = HERE.parent
+BASE_DIR = SGCE_DIR.parent
+QUEUE_FILE = HERE / "queues" / "relation_repair_queue.json"
+GUIDELINE_CANDIDATES = [
+    BASE_DIR / "Guideline_TRACE_Sepsis_v1.6.json",
+    BASE_DIR.parent / "Guideline_TRACE_Sepsis_v1.6.json",
+    Path.cwd() / "Guideline_TRACE_Sepsis_v1.6.json",
+    HERE / "Guideline_TRACE_Sepsis_v1.6.json",
+]
+OUTPUT_FILE = HERE / "outputs" / "relation_repair_decisions.json"
+
+LEXICON = {
+    "IMAGERIE_PROCEDURE": (
+        "scanner","tdm","irm","radiographie","echographie","échographie"
+    ),
+    "TRAITEMENT": (
+        "antibiotique","traitement","amikacine","vancomycine",
+        "amoxicilline","noradrenaline","noradrénaline"
+    ),
+    "MICRO_ORGANISME": (
+        "staphylocoque","staphylococcus","streptocoque","streptococcus",
+        "klebsiella","pseudomonas","escherichia","e coli","candida","germe"
+    ),
+    "SYMPTOME": (
+        "douleur","fievre","fièvre","toux","dyspnee","dyspnée",
+        "vomissement","apyrexie"
+    ),
+    "SIGNE_VITAL": (
+        "temperature","température","tension","pression arterielle",
+        "pression artérielle","frequence cardiaque","fréquence cardiaque",
+        "spo2","saturation"
+    ),
+    "BIOMARQUEUR": (
+        "crp","pct","procalcitonine","creatinine","créatinine",
+        "lactate","leucocytes"
+    ),
+    "LABEL_NOSOLOGIQUE": (
+        "sepsis","choc septique","diagnostic","syndrome","pneumonie"
+    ),
+    "DEFAILLANCE_ORGANE": (
+        "insuffisance","defaillance","défaillance","ira",
+        "renale","rénale","respiratoire"
+    ),
+    "FOYER_INFECTIEUX": (
+        "foyer","pulmonaire","urinaire","abdominal","infection"
+    ),
+    "DONNEE_PATIENT": (
+        "patient","homme","femme","age","âge","admis","hospitalise","hospitalisé"
+    ),
+    "POSOLOGIE": (
+        "mg","g","par jour","fois par jour","x2","x3","dose"
+    ),
+    "SERVICE_MEDICAL": (
+        "rea","réa","reanimation","réanimation","urgences","service"
+    ),
+    "COMORBIDITE_ANTECEDENT": (
+        "antecedent","antécédent","diabete","diabète","hta","cancer"
+    ),
+    "EVOLUTION_PRONOSTIC": (
+        "evolution","évolution","amelioration","amélioration",
+        "aggravation","deces","décès"
+    ),
+}
+
+
+def load_json(path):
+    with path.open(
+        "r",
+        encoding="utf-8",
+    ) as f:
+        return json.load(f)
+
+
+def resolve_guideline():
+    for path in GUIDELINE_CANDIDATES:
+        if path.exists():
+            return path
+
+    raise FileNotFoundError(
+        "Guideline TRACE introuvable."
+    )
+
+
+def normalize(text):
+    text = unicodedata.normalize(
+        "NFKD",
+        str(text or "").lower(),
+    )
+
+    text = "".join(
+        c
+        for c in text
+        if not unicodedata.combining(c)
+    )
+
+    text = re.sub(
+        r"[^a-z0-9/+.-]+",
+        " ",
+        text,
+    )
+
+    return re.sub(
+        r"\s+",
+        " ",
+        text,
+    ).strip()
+
+
+def load_signatures():
+    data = load_json(
+        resolve_guideline()
+    )
+
+    root = data.get(
+        "ontologie_sepsis_graph",
+        data,
+    )
+
+    locked = root.get(
+        "signatures_relations_verrouillees_v1_5",
+        {},
+    )
+
+    signatures = {}
+
+    if isinstance(
+        locked,
+        dict,
+    ):
+        for name, spec in locked.items():
+            if not isinstance(
+                spec,
+                dict,
+            ):
+                continue
+
+            domain = spec.get(
+                "domaine"
+            )
+
+            image = spec.get(
+                "image"
+            )
+
+            if domain and image:
+                signatures[
+                    name
+                ] = {
+                    "domaine":
+                        domain,
+
+                    "image":
+                        image,
+                }
+
+    return signatures
+
+
+def lexicon_hits(
+    text,
+    expected_type,
+):
+    normalized = normalize(
+        text
+    )
+
+    return [
+        term
+        for term in LEXICON.get(
+            expected_type,
+            (),
+        )
+        if normalize(
+            term
+        )
+        in normalized
+    ]
+
+
+def compatible_relations(
+    signatures,
+    source_type,
+    target_type,
+):
+    return [
+        name
+        for name, sig in signatures.items()
+        if (
+            sig[
+                "domaine"
+            ]
+            == source_type
+            and sig[
+                "image"
+            ]
+            == target_type
+        )
+    ]
+
+
+def decide(
+    item,
+    signatures,
+):
+    relation_type = item.get(
+        "relation_type"
+    )
+
+    source_obs = item.get(
+        "source_type_observed"
+    )
+
+    source_exp = item.get(
+        "source_type_expected"
+    )
+
+    target_obs = item.get(
+        "target_type_observed"
+    )
+
+    target_exp = item.get(
+        "target_type_expected"
+    )
+
+    mismatch_kind = item.get(
+        "mismatch_kind"
+    )
+
+    context = (
+        item.get(
+            "text_context"
+        )
+        or {}
+    )
+
+    page_text = context.get(
+        "page_text",
+        "",
+    )
+
+    source_evidence = (
+        str(
+            item.get(
+                "source_text"
+            )
+            or ""
+        )
+        + " "
+        + page_text
+    )
+
+    target_evidence = (
+        str(
+            item.get(
+                "target_text"
+            )
+            or ""
+        )
+        + " "
+        + page_text
+    )
+
+    candidates = compatible_relations(
+        signatures,
+        source_obs,
+        target_obs,
+    )
+
+    # --------------------------------------------------------
+    # 1. Relation type seems wrong
+    # --------------------------------------------------------
+
+    if (
+        len(candidates) == 1
+        and candidates[
+            0
+        ] != relation_type
+    ):
+        return {
+            "decision":
+                "CORRECT",
+
+            "action":
+                "REPLACE_RELATION",
+
+            "confidence":
+                0.92,
+
+            "reason":
+                (
+                    "Les types source/cible observés correspondent "
+                    "exactement à une autre signature TRACE unique."
+                ),
+
+            "parameters": {
+                "relation_id":
+                    item.get(
+                        "relation_id"
+                    ),
+
+                "old_relation_type":
+                    relation_type,
+
+                "new_relation_type":
+                    candidates[
+                        0
+                    ],
+            },
+        }
+
+    # --------------------------------------------------------
+    # 2. Only source is wrong
+    # --------------------------------------------------------
+
+    if mismatch_kind == "SOURCE_MISMATCH":
+        hits = lexicon_hits(
+            source_evidence,
+            source_exp,
+        )
+
+        if hits:
+            return {
+                "decision":
+                    "CORRECT",
+
+                "action":
+                    "RETYPE_SOURCE",
+
+                "confidence":
+                    min(
+                        0.95,
+                        0.78
+                        + 0.03
+                        * len(hits),
+                    ),
+
+                "reason":
+                    (
+                        "Le type source attendu est soutenu "
+                        "par la preuve textuelle."
+                    ),
+
+                "parameters": {
+                    "entity_id":
+                        item.get(
+                            "source_id"
+                        ),
+
+                    "old_type":
+                        source_obs,
+
+                    "new_type":
+                        source_exp,
+
+                    "lexicon_support":
+                        hits,
+                },
+            }
+
+    # --------------------------------------------------------
+    # 3. Only target is wrong
+    # --------------------------------------------------------
+
+    if mismatch_kind == "TARGET_MISMATCH":
+        hits = lexicon_hits(
+            target_evidence,
+            target_exp,
+        )
+
+        if hits:
+            return {
+                "decision":
+                    "CORRECT",
+
+                "action":
+                    "RETYPE_TARGET",
+
+                "confidence":
+                    min(
+                        0.95,
+                        0.78
+                        + 0.03
+                        * len(hits),
+                    ),
+
+                "reason":
+                    (
+                        "Le type cible attendu est soutenu "
+                        "par la preuve textuelle."
+                    ),
+
+                "parameters": {
+                    "entity_id":
+                        item.get(
+                            "target_id"
+                        ),
+
+                    "old_type":
+                        target_obs,
+
+                    "new_type":
+                        target_exp,
+
+                    "lexicon_support":
+                        hits,
+                },
+            }
+
+    # --------------------------------------------------------
+    # 4. Both mismatch
+    # --------------------------------------------------------
+
+    if mismatch_kind == "BOTH_MISMATCH":
+        source_hits = lexicon_hits(
+            source_evidence,
+            source_exp,
+        )
+
+        target_hits = lexicon_hits(
+            target_evidence,
+            target_exp,
+        )
+
+        if (
+            source_hits
+            and target_hits
+        ):
+            return {
+                "decision":
+                    "REVIEW",
+
+                "action":
+                    "NONE",
+
+                "confidence":
+                    0.55,
+
+                "reason":
+                    (
+                        "Les deux endpoints pourraient être mal typés. "
+                        "Correction automatique interdite."
+                    ),
+
+                "parameters": {},
+            }
+
+    return {
+        "decision":
+            "REVIEW",
+
+        "action":
+            "NONE",
+
+        "confidence":
+            0.35,
+
+        "reason":
+            (
+                "Aucune réparation relationnelle unique "
+                "n'est suffisamment justifiée."
+            ),
+
+        "parameters": {},
+    }
+
+
+def main():
+    queue = load_json(
+        QUEUE_FILE
+    )
+
+    signatures = load_signatures()
+
+    decisions = []
+
+    for item in queue:
+        result = decide(
+            item,
+            signatures,
+        )
+
+        decisions.append({
+            "candidate_id":
+                item.get(
+                    "candidate_id"
+                ),
+
+            "document":
+                item.get(
+                    "document"
+                ),
+
+            "relation_id":
+                item.get(
+                    "relation_id"
+                ),
+
+            "relation_type":
+                item.get(
+                    "relation_type"
+                ),
+
+            "mismatch_kind":
+                item.get(
+                    "mismatch_kind"
+                ),
+
+            **result,
+        })
+
+    dc = Counter(
+        x[
+            "decision"
+        ]
+        for x in decisions
+    )
+
+    ac = Counter(
+        x[
+            "action"
+        ]
+        for x in decisions
+    )
+
+    OUTPUT_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    OUTPUT_FILE.write_text(
+        json.dumps(
+            {
+                "agent":
+                    "relation_repair_agent",
+
+                "signatures_loaded":
+                    len(
+                        signatures
+                    ),
+
+                "decisions":
+                    decisions,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+    print("=" * 104)
+    print("TRACE / SGCE - RELATION REPAIR AGENT")
+    print("=" * 104)
+    print(f"Cas reçus                             : {len(queue)}")
+    print()
+    print("DECISIONS")
+    print("-" * 104)
+
+    for name, count in dc.most_common():
+        print(
+            f"{name:<48}: {count}"
+        )
+
+    print()
+    print("ACTIONS PROPOSEES")
+    print("-" * 104)
+
+    for name, count in ac.most_common():
+        print(
+            f"{name:<48}: {count}"
+        )
+
+    print()
+    print(f"Sortie                                : {OUTPUT_FILE}")
+    print()
+    print("Aucune donnée clinique n'a été modifiée.")
+
+
+if __name__ == "__main__":
+    main()

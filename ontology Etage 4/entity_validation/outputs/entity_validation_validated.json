@@ -1,0 +1,2206 @@
+{
+  "validator": "entity_validation_validator",
+  "version": "V1_GROUP_LEVEL_SAFE_RETYPING",
+  "mode": "NON_DESTRUCTIVE",
+  "summary": {
+    "decisions_received": 39,
+    "entity_groups_received": 39,
+    "validated_entity_groups": 39,
+    "status_counts": {
+      "REVIEW": 39
+    },
+    "action_counts": {
+      "NONE": 39
+    },
+    "safe_retype_operations": 0,
+    "anomalies_covered_by_safe_retype": 0,
+    "strong_anomalies_covered": 0
+  },
+  "safe_type_changes": [],
+  "validated_groups": [
+    {
+      "validation_id": "ONT_VAL_00001",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E038",
+      "entity_text": "Le patient",
+      "entity_proof": "Le patient",
+      "entity_page": 6,
+      "current_type": "DONNEE_PATIENT",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DONNEE_PATIENT": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_contexte_acquisition": 1
+        },
+        "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DONNEE_PATIENT",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00001",
+          "relation_id": "R_V69K_00098",
+          "relation_name": "a_pour_contexte_acquisition",
+          "role": "SOURCE",
+          "current_type": "DONNEE_PATIENT",
+          "expected_type": "COMORBIDITE_ANTECEDENT",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00002",
+      "document": "img20250709_16193836_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E044",
+      "entity_text": "ralentissement psychomoteur",
+      "entity_proof": "ralentissement psychomoteur",
+      "entity_page": 2,
+      "current_type": "DEFAILLANCE_ORGANE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DEFAILLANCE_ORGANE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00002",
+          "relation_id": "R_V69K_00030",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "DEFAILLANCE_ORGANE",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00003",
+      "document": "img20250709_16205810_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E004",
+      "entity_text": "ACR",
+      "entity_proof": "ACR",
+      "entity_page": 5,
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00003",
+          "relation_id": "R_V69K_00073",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "LABEL_NOSOLOGIQUE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00004",
+      "document": "img20250709_16223922_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E047",
+      "entity_text": "poussée hypertensive",
+      "entity_proof": "poussée hypertensive",
+      "entity_page": 2,
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00004",
+          "relation_id": "R_V69K_00014",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "LABEL_NOSOLOGIQUE",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00005",
+      "document": "img20250709_16273897_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E022",
+      "entity_text": "pneumopathie nosocomiale",
+      "entity_proof": "pneumopathie nosocomiale",
+      "entity_page": 5,
+      "current_type": "FOYER_INFECTIEUX",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "FOYER_INFECTIEUX",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00005",
+          "relation_id": "R_V69K_00047",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "FOYER_INFECTIEUX",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00006",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E044",
+      "entity_text": "thrombopénie",
+      "entity_proof": "thrombopénie",
+      "entity_page": 5,
+      "current_type": "BIOMARQUEUR",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "BIOMARQUEUR": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "BIOMARQUEUR",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00006",
+          "relation_id": "R_V69K_00045",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "BIOMARQUEUR",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00007",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E038",
+      "entity_text": "collapsus de reventilation",
+      "entity_proof": "collapsus de reventilation",
+      "entity_page": 6,
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00007",
+          "relation_id": "R_V69K_00082",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "LABEL_NOSOLOGIQUE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00008",
+      "document": "img20250709_16281006_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E002",
+      "entity_text": "pneumopathie nosocomiale",
+      "entity_proof": "pneumopathie nosocomiale",
+      "entity_page": 6,
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_contexte_acquisition": 1
+        },
+        "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00008",
+          "relation_id": "R_V69K_00091",
+          "relation_name": "a_pour_contexte_acquisition",
+          "role": "SOURCE",
+          "current_type": "LABEL_NOSOLOGIQUE",
+          "expected_type": "COMORBIDITE_ANTECEDENT",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00009",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E029",
+      "entity_text": "Cicatrice inflammatoire avec écoulement purulent",
+      "entity_proof": "Cicatrice inflammatoire avec écoulement purulent",
+      "entity_page": 5,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_suspicion_infection": 1
+        },
+        "dominant_expected_type": "FOYER_INFECTIEUX",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00009",
+          "relation_id": "R_V69K_00085",
+          "relation_name": "presente_suspicion_infection",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "FOYER_INFECTIEUX",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00010",
+      "document": "img20250709_16283177_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E028",
+      "entity_text": "diminution du syndrome inflammatoire biologique",
+      "entity_proof": "diminution du syndrome inflammatoire biologique",
+      "entity_page": 5,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "EVOLUTION_PRONOSTIC": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "patient_a_pour_evolution": 1
+        },
+        "dominant_expected_type": "EVOLUTION_PRONOSTIC",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00010",
+          "relation_id": "R_V69K_00088",
+          "relation_name": "patient_a_pour_evolution",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "EVOLUTION_PRONOSTIC",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00011",
+      "document": "img20250709_16301193_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E028",
+      "entity_text": "Hypokaliémie",
+      "entity_proof": "Hypokaliémie",
+      "entity_page": 5,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00011",
+          "relation_id": "R_V69K_00062",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00012",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E019",
+      "entity_text": "HTAP",
+      "entity_proof": "HTAP",
+      "entity_page": 5,
+      "current_type": "DEFAILLANCE_ORGANE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DEFAILLANCE_ORGANE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00012",
+          "relation_id": "R_V69K_00081",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "DEFAILLANCE_ORGANE",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00013",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E039",
+      "entity_text": "ulcère gastrique",
+      "entity_proof": "ulcère gastrique",
+      "entity_page": 5,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00013",
+          "relation_id": "R_V69K_00085",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00014",
+      "document": "img20250709_16313543_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E022",
+      "entity_text": "HTAP secondaire aux lésions pulmonaires",
+      "entity_proof": "HTAP secondaire aux lésions pulmonaires",
+      "entity_page": 6,
+      "current_type": "DEFAILLANCE_ORGANE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DEFAILLANCE_ORGANE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00014",
+          "relation_id": "R_V69K_00109",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "DEFAILLANCE_ORGANE",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00015",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E004",
+      "entity_text": "bronchite",
+      "entity_proof": "bronchite",
+      "entity_page": 1,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00015",
+          "relation_id": "R_V69K_00003",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00016",
+      "document": "img20250709_16321359_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E039",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 4,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00016",
+          "relation_id": "R_V69K_00058",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00017",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E029",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 4,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00017",
+          "relation_id": "R_V69K_00049",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00018",
+      "document": "img20250709_16331952_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E014",
+      "entity_text": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+      "entity_proof": "lésion spontanément dense d'environ 25 mm du muscle piriforme gauche",
+      "entity_page": 6,
+      "current_type": "DEFAILLANCE_ORGANE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DEFAILLANCE_ORGANE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00018",
+          "relation_id": "R_V69K_00111",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "DEFAILLANCE_ORGANE",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00019",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E001",
+      "entity_text": "Gangrene gazeuse",
+      "entity_proof": "Gangrene gazeuse",
+      "entity_page": 2,
+      "current_type": "FOYER_INFECTIEUX",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "FOYER_INFECTIEUX",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00019",
+          "relation_id": "R_V69K_00028",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "FOYER_INFECTIEUX",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00020",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E037",
+      "entity_text": "initialement anurie",
+      "entity_proof": "initialement anurie",
+      "entity_page": 2,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00020",
+          "relation_id": "R_V69K_00049",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00021",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E044",
+      "entity_text": "persistance de l'anurie",
+      "entity_proof": "persistance de l'anurie",
+      "entity_page": 2,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00021",
+          "relation_id": "R_V69K_00051",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00022",
+      "document": "img20250709_16360688_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E065",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 2,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00022",
+          "relation_id": "R_V69K_00054",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00023",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E001",
+      "entity_text": "thrombopénie",
+      "entity_proof": "thrombopénie",
+      "entity_page": 2,
+      "current_type": "BIOMARQUEUR",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "BIOMARQUEUR": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "BIOMARQUEUR",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00023",
+          "relation_id": "R_V69K_00011",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "BIOMARQUEUR",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00024",
+      "document": "img20250709_16374548_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E018",
+      "entity_text": "thrombopénie",
+      "entity_proof": "thrombopénie",
+      "entity_page": 5,
+      "current_type": "BIOMARQUEUR",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "BIOMARQUEUR": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "BIOMARQUEUR",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00024",
+          "relation_id": "R_V69K_00076",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "BIOMARQUEUR",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00025",
+      "document": "img20250709_16381567_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E038",
+      "entity_text": "Neuropathie de réanimation",
+      "entity_proof": "Neuropathie de réanimation",
+      "entity_page": 5,
+      "current_type": "DEFAILLANCE_ORGANE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DEFAILLANCE_ORGANE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00025",
+          "relation_id": "R_V69K_00091",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "DEFAILLANCE_ORGANE",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00026",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E064",
+      "entity_text": "angiocholite",
+      "entity_proof": "angiocholite",
+      "entity_page": 5,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_suspicion_infection": 1
+        },
+        "dominant_expected_type": "FOYER_INFECTIEUX",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00026",
+          "relation_id": "R_V69K_00062",
+          "relation_name": "presente_suspicion_infection",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "FOYER_INFECTIEUX",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00027",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E032",
+      "entity_text": "Angiocholite",
+      "entity_proof": "Angiocholite",
+      "entity_page": 6,
+      "current_type": "FOYER_INFECTIEUX",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "FOYER_INFECTIEUX",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00027",
+          "relation_id": "R_V69K_00108",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "FOYER_INFECTIEUX",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00028",
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P6_E036",
+      "entity_text": "Patient",
+      "entity_proof": "Patient",
+      "entity_page": 6,
+      "current_type": "DONNEE_PATIENT",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DONNEE_PATIENT": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_contexte_acquisition": 1
+        },
+        "dominant_expected_type": "COMORBIDITE_ANTECEDENT",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DONNEE_PATIENT",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00028",
+          "relation_id": "R_V69K_00135",
+          "relation_name": "a_pour_contexte_acquisition",
+          "role": "SOURCE",
+          "current_type": "DONNEE_PATIENT",
+          "expected_type": "COMORBIDITE_ANTECEDENT",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00029",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E032",
+      "entity_text": "dénutrition sévère",
+      "entity_proof": "dénutrition sévère",
+      "entity_page": 1,
+      "current_type": "COMORBIDITE_ANTECEDENT",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "COMORBIDITE_ANTECEDENT": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "COMORBIDITE_ANTECEDENT",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00029",
+          "relation_id": "R_V69K_00004",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "COMORBIDITE_ANTECEDENT",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00030",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E028",
+      "entity_text": "dilatation des veines du membre supérieur gauche",
+      "entity_proof": "dilatation des veines du membre supérieur gauche",
+      "entity_page": 4,
+      "current_type": "DEFAILLANCE_ORGANE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DEFAILLANCE_ORGANE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00030",
+          "relation_id": "R_V69K_00069",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "DEFAILLANCE_ORGANE",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00031",
+      "document": "img20250709_16395936_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E037",
+      "entity_text": "anurie",
+      "entity_proof": "anurie",
+      "entity_page": 4,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00031",
+          "relation_id": "R_V69K_00071",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00032",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P1_E024",
+      "entity_text": "coma",
+      "entity_proof": "coma",
+      "entity_page": 1,
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00032",
+          "relation_id": "R_V69K_00001",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "LABEL_NOSOLOGIQUE",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00033",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P2_E045",
+      "entity_text": "Anurie",
+      "entity_proof": "Anurie",
+      "entity_page": 2,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00033",
+          "relation_id": "R_V69K_00031",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00034",
+      "document": "img20250709_16414914_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E017",
+      "entity_text": "encéphalopathie hépatique",
+      "entity_proof": "encéphalopathie hépatique",
+      "entity_page": 5,
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00034",
+          "relation_id": "R_V69K_00059",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "LABEL_NOSOLOGIQUE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00035",
+      "document": "img20250709_16510509_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P3_E040",
+      "entity_text": "pneumopathie nosocomiale",
+      "entity_proof": "pneumopathie nosocomiale",
+      "entity_page": 3,
+      "current_type": "FOYER_INFECTIEUX",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "FOYER_INFECTIEUX",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00035",
+          "relation_id": "R_V69K_00049",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "FOYER_INFECTIEUX",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00036",
+      "document": "img20250709_16531341_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P5_E014",
+      "entity_text": "encéphalopathie hépatique",
+      "entity_proof": "encéphalopathie hépatique",
+      "entity_page": 5,
+      "current_type": "LABEL_NOSOLOGIQUE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "LABEL_NOSOLOGIQUE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00036",
+          "relation_id": "R_V69K_00118",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "LABEL_NOSOLOGIQUE",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00037",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E023",
+      "entity_text": "difficultés ventilatoires",
+      "entity_proof": "difficultés ventilatoires",
+      "entity_page": 4,
+      "current_type": "DEFAILLANCE_ORGANE",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "SYMPTOME": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_symptome": 1
+        },
+        "dominant_expected_type": "SYMPTOME",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "DEFAILLANCE_ORGANE",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00037",
+          "relation_id": "R_V69K_00027",
+          "relation_name": "presente_symptome",
+          "role": "TARGET",
+          "current_type": "DEFAILLANCE_ORGANE",
+          "expected_type": "SYMPTOME",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00038",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E024",
+      "entity_text": "hypoxie",
+      "entity_proof": "hypoxie",
+      "entity_page": 4,
+      "current_type": "SYMPTOME",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "DEFAILLANCE_ORGANE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "SYMPTOME": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "presente_dysfonction_organe": 1
+        },
+        "dominant_expected_type": "DEFAILLANCE_ORGANE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "SYMPTOME",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00038",
+          "relation_id": "R_V69K_00028",
+          "relation_name": "presente_dysfonction_organe",
+          "role": "TARGET",
+          "current_type": "SYMPTOME",
+          "expected_type": "DEFAILLANCE_ORGANE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    },
+    {
+      "validation_id": "ONT_VAL_00039",
+      "document": "img20250709_17005010_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "entity_id": "P4_E006",
+      "entity_text": "gangrène gazeuse",
+      "entity_proof": "gangrène gazeuse",
+      "entity_page": 4,
+      "current_type": "FOYER_INFECTIEUX",
+      "proposed_new_type": "",
+      "analysis": {
+        "number_of_decisions": 1,
+        "number_of_strong_decisions": 0,
+        "classification_counts": {
+          "RELATION_ONTOLOGY_CONFLICT": 1
+        },
+        "expected_type_counts": {
+          "LABEL_NOSOLOGIQUE": 1
+        },
+        "strong_expected_type_counts": {},
+        "current_type_counts": {
+          "FOYER_INFECTIEUX": 1
+        },
+        "entity_resolution_counts": {
+          "ID_EXACT": 1
+        },
+        "relation_counts": {
+          "a_pour_label_nosologique": 1
+        },
+        "dominant_expected_type": "LABEL_NOSOLOGIQUE",
+        "dominant_expected_count": 1,
+        "dominant_expected_ratio": 1.0,
+        "strong_expected_type": null,
+        "current_type": "FOYER_INFECTIEUX",
+        "all_resolutions_safe": true,
+        "lexical_signals": [],
+        "has_strong_lexical_signal": false,
+        "all_strong_confidence_ok": false
+      },
+      "related_anomalies": [
+        {
+          "decision_id": "ONTO_DEC_00039",
+          "relation_id": "R_V69K_00062",
+          "relation_name": "a_pour_label_nosologique",
+          "role": "TARGET",
+          "current_type": "FOYER_INFECTIEUX",
+          "expected_type": "LABEL_NOSOLOGIQUE",
+          "classification": "RELATION_ONTOLOGY_CONFLICT",
+          "confidence": 0.0,
+          "relation_resolution": "ID_EXACT",
+          "entity_resolution": "ID_EXACT"
+        }
+      ],
+      "final_status": "REVIEW",
+      "final_action": "NONE",
+      "validator_reason": "Aucune décision ENTITY_MISTYPING_STRONG n'est disponible pour cette entité."
+    }
+  ]
+}

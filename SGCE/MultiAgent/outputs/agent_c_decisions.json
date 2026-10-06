@@ -1,0 +1,122 @@
+{
+  "agent": "agent_pattern_c",
+  "mode": "DOCUMENT_GROUNDED_PATTERN_C",
+  "clinical_context_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\orphan_resolution\\corrected",
+  "summary": {
+    "cases_received": 5,
+    "decisions_written": 5,
+    "decision_counts": {
+      "REVIEW": 5
+    },
+    "action_counts": {
+      "NONE": 5
+    }
+  },
+  "decisions": [
+    {
+      "candidate_id": "C_000093",
+      "document": "img20250709_16190789_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "agent": "agent_pattern_c",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "reason": "Le candidat n'est pas suffisamment ancré dans le texte source. Aucune restructuration automatique.",
+      "evidence": "Pas d'infection virale ou de vaccination récente | suspicion_infection",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "candidate_entity_id": "P4_E027",
+        "candidate_entity_type": "LABEL_NOSOLOGIQUE",
+        "text_grounded": false,
+        "attached_relation_count": 0,
+        "page_number": null,
+        "text_file": null
+      }
+    },
+    {
+      "candidate_id": "C_000218",
+      "document": "img20250709_16233563_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "agent": "agent_pattern_c",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "reason": "Le candidat n'est pas suffisamment ancré dans le texte source. Aucune restructuration automatique.",
+      "evidence": "Syndrome hémolytique et urémique | suspicion_infection",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "candidate_entity_id": "P1_E001",
+        "candidate_entity_type": "LABEL_NOSOLOGIQUE",
+        "text_grounded": false,
+        "attached_relation_count": 1,
+        "page_number": null,
+        "text_file": null
+      }
+    },
+    {
+      "candidate_id": "C_000247",
+      "document": "img20250709_16254831_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "agent": "agent_pattern_c",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "reason": "Le candidat n'est pas suffisamment ancré dans le texte source. Aucune restructuration automatique.",
+      "evidence": "Evolution favorable avec apyrexie | apyrexie",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "candidate_entity_id": "P4_E025",
+        "candidate_entity_type": "SYMPTOME",
+        "text_grounded": false,
+        "attached_relation_count": 0,
+        "page_number": null,
+        "text_file": null
+      }
+    },
+    {
+      "candidate_id": "C_000657",
+      "document": "img20250709_16523752_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "agent": "agent_pattern_c",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "reason": "Le candidat n'est pas suffisamment ancré dans le texte source. Aucune restructuration automatique.",
+      "evidence": "campylobacter | micro_organisme",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "candidate_entity_id": "P4_E036",
+        "candidate_entity_type": "MICRO_ORGANISME",
+        "text_grounded": false,
+        "attached_relation_count": 1,
+        "page_number": null,
+        "text_file": null
+      }
+    },
+    {
+      "candidate_id": "C_000686",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "C",
+      "agent": "agent_pattern_c",
+      "decision": "REVIEW",
+      "action": "NONE",
+      "confidence": 0.35,
+      "reason": "Le candidat n'est pas suffisamment ancré dans le texte source. Aucune restructuration automatique.",
+      "evidence": "suspicion de tuberculose pulmonaire | suspicion_infection",
+      "proposed_entities": [],
+      "proposed_relations": [],
+      "metadata": {
+        "candidate_entity_id": "P1_E016",
+        "candidate_entity_type": "LABEL_NOSOLOGIQUE",
+        "text_grounded": false,
+        "attached_relation_count": 1,
+        "page_number": null,
+        "text_file": null
+      }
+    }
+  ]
+}

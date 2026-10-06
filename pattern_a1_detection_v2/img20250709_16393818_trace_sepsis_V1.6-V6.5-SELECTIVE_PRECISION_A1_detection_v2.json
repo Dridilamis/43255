@@ -1,0 +1,32 @@
+{
+  "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+  "treatments_analysed": 58,
+  "number_candidates": 1,
+  "signal_counts": {
+    "WEAK": 1
+  },
+  "candidates": [
+    {
+      "document": "img20250709_16393818_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "pattern": "A1_TRAITEMENT_POSOLOGIE",
+      "status": "CANDIDATE",
+      "signal_strength": "WEAK",
+      "source_entity": {
+        "id": "P2_E026",
+        "type": "TRAITEMENT",
+        "name": "Rovamycine",
+        "preuve": "Rovamycine IV",
+        "valeur": null,
+        "page": 2
+      },
+      "detection_text": "Rovamycine IV | Rovamycine | antibiotique",
+      "detected_components": {
+        "route": [
+          "IV"
+        ]
+      },
+      "number_component_types": 1,
+      "correction": null
+    }
+  ]
+}

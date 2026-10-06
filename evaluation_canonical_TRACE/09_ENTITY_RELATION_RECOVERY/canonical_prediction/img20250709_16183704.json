@@ -1,0 +1,4651 @@
+{
+  "document": "img20250709_16183704",
+  "source_file": "img20250709_16183704.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "text": "",
+      "entities": [
+        {
+          "name": "myotonie de Steinert",
+          "normalized_name": "myotonie de steinert",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "myopathie de Steinert",
+          "normalized_name": "myopathie de steinert",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "hypercapnie à 6,11 kPa",
+          "normalized_name": "hypercapnie à 6,11 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 1
+        },
+        {
+          "name": "hypercapnie",
+          "normalized_name": "hypercapnie",
+          "type": "BIOMARQUEUR",
+          "page": 1
+        },
+        {
+          "name": "désaturation nocturne",
+          "normalized_name": "désaturation nocturne",
+          "type": "SYMPTOME",
+          "page": 1
+        },
+        {
+          "name": "ventilation BIPAP",
+          "normalized_name": "ventilation bipap",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "Vt 600mL",
+          "normalized_name": "vt 600ml",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "hypercapnie 6,36 kPa",
+          "normalized_name": "hypercapnie 6,36 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 1
+        },
+        {
+          "name": "hypercholestérolémie",
+          "normalized_name": "hypercholestérolémie",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "opération de la cataracte à droite en 2010",
+          "normalized_name": "opération de la cataracte à droite en 2010",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "à gauche en 2014",
+          "normalized_name": "à gauche en 2014",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Crestor",
+          "normalized_name": "crestor",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "encombrement",
+          "normalized_name": "encombrement",
+          "type": "SYMPTOME",
+          "page": 1
+        },
+        {
+          "name": "57 ans",
+          "normalized_name": "57 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "réanimation",
+          "normalized_name": "réanimation",
+          "type": "SERVICE_MEDICAL",
+          "page": 1
+        },
+        {
+          "name": "5mg",
+          "normalized_name": "5mg",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "opération de la cataracte",
+          "normalized_name": "opération de la cataracte",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "tabagisme",
+          "normalized_name": "tabagisme",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "2004",
+          "normalized_name": "2004",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "2015",
+          "normalized_name": "2015",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "2007",
+          "normalized_name": "2007",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "2012",
+          "normalized_name": "2012",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "2010",
+          "normalized_name": "2010",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "2014",
+          "normalized_name": "2014",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        },
+        {
+          "name": "Episodes de désaturation à répétition",
+          "normalized_name": "episodes de désaturation à répétition",
+          "type": "SYMPTOME",
+          "page": 1
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "désaturation nocturne",
+          "object_normalized": "désaturation nocturne",
+          "object_type": "SYMPTOME",
+          "page": 1
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "encombrement",
+          "object_normalized": "encombrement",
+          "object_type": "SYMPTOME",
+          "page": 1
+        },
+        {
+          "subject": "Crestor",
+          "subject_normalized": "crestor",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "5mg",
+          "object_normalized": "5mg",
+          "object_type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "subject": "ventilation BIPAP",
+          "subject_normalized": "ventilation bipap",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Crestor",
+          "subject_normalized": "crestor",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "ventilation BIPAP",
+          "subject_normalized": "ventilation bipap",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "Vt 600mL",
+          "object_normalized": "vt 600ml",
+          "object_type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Episodes de désaturation à répétition",
+          "object_normalized": "episodes de désaturation à répétition",
+          "object_type": "SYMPTOME",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "text": "",
+      "entities": [
+        {
+          "name": "Temp °C : 36,7",
+          "normalized_name": "temp °c : 36,7",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "pam=106",
+          "normalized_name": "pam=106",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "FC (bpm) : 105",
+          "normalized_name": "fc (bpm) : 105",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "FR (c/mn) : 22",
+          "normalized_name": "fr (c/mn) : 22",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "SaO2 (%) : 97% sous 3L O2",
+          "normalized_name": "sao2 (%) : 97% sous 3l o2",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "PO",
+          "normalized_name": "po",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Rocéphine",
+          "normalized_name": "rocéphine",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "Augmentin",
+          "normalized_name": "augmentin",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "1g/125mg PO 1-1-1 pendant 10 jours",
+          "normalized_name": "1g/125mg po 1-1-1 pendant 10 jours",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "oxygénothérapie",
+          "normalized_name": "oxygénothérapie",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "3L/min",
+          "normalized_name": "3l/min",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "kinésithérapie respiratoire",
+          "normalized_name": "kinésithérapie respiratoire",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "hyperleucocytose à 17200",
+          "normalized_name": "hyperleucocytose à 17200",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "CRP à 32",
+          "normalized_name": "crp à 32",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "centre hospitalier René Dubos à Pontoise",
+          "normalized_name": "centre hospitalier rené dubos à pontoise",
+          "type": "SERVICE_MEDICAL",
+          "page": 2
+        },
+        {
+          "name": "clinique de l'Oseraie à Osny",
+          "normalized_name": "clinique de l'oseraie à osny",
+          "type": "SERVICE_MEDICAL",
+          "page": 2
+        },
+        {
+          "name": "désaturation avec encombrement bronchique et une toux inefficace",
+          "normalized_name": "désaturation avec encombrement bronchique et une toux inefficace",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "toux inefficace",
+          "normalized_name": "toux inefficace",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "Tahor",
+          "normalized_name": "tahor",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "10mg",
+          "normalized_name": "10mg",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Movicol",
+          "normalized_name": "movicol",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "1-1-0 si besoin",
+          "normalized_name": "1-1-0 si besoin",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Dafalgan",
+          "normalized_name": "dafalgan",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "500mg PO si besoin",
+          "normalized_name": "500mg po si besoin",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Fragmine",
+          "normalized_name": "fragmine",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "5000UI/0,2mL SC la nuit",
+          "normalized_name": "5000ui/0,2ml sc la nuit",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Clinutren HP/HC",
+          "normalized_name": "clinutren hp/hc",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "1 bouteille le matin et au goûter",
+          "normalized_name": "1 bouteille le matin et au goûter",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Nefopam",
+          "normalized_name": "nefopam",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "20mg/2mL PO si besoin",
+          "normalized_name": "20mg/2ml po si besoin",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Normacol",
+          "normalized_name": "normacol",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "Ipratropium",
+          "normalized_name": "ipratropium",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "Budésonide",
+          "normalized_name": "budésonide",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "jusqu'au 5/11/14",
+          "normalized_name": "jusqu'au 5/11/14",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "Oxygène",
+          "normalized_name": "oxygène",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "6L/min",
+          "normalized_name": "6l/min",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "BAV1",
+          "normalized_name": "bav1",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "hémibloc antérieur gauche",
+          "normalized_name": "hémibloc antérieur gauche",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "myopathie",
+          "normalized_name": "myopathie",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 2
+        },
+        {
+          "name": "désaturation",
+          "normalized_name": "désaturation",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 2
+        },
+        {
+          "name": "élévation de la troponine",
+          "normalized_name": "élévation de la troponine",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Poids (kg) : 65",
+          "normalized_name": "poids (kg) : 65",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "Taille (m) : 1,65",
+          "normalized_name": "taille (m) : 1,65",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "Le patient",
+          "normalized_name": "le patient",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "réanimation",
+          "normalized_name": "réanimation",
+          "type": "SERVICE_MEDICAL",
+          "page": 2
+        },
+        {
+          "name": "SSR",
+          "normalized_name": "ssr",
+          "type": "SERVICE_MEDICAL",
+          "page": 2
+        },
+        {
+          "name": "clinique de l’Oseraie à Osny pour",
+          "normalized_name": "clinique de l’oseraie à osny pour",
+          "type": "SERVICE_MEDICAL",
+          "page": 2
+        },
+        {
+          "name": "pacemaker double chambre",
+          "normalized_name": "pacemaker double chambre",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "kinésithérapie",
+          "normalized_name": "kinésithérapie",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "rééducation",
+          "normalized_name": "rééducation",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "attelle",
+          "normalized_name": "attelle",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "O2",
+          "normalized_name": "o2",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "souffle perçu",
+          "normalized_name": "souffle perçu",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "désaturation",
+          "normalized_name": "désaturation",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "chute",
+          "normalized_name": "chute",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "coronarographie",
+          "normalized_name": "coronarographie",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 2
+        },
+        {
+          "name": "fracture du péroné",
+          "normalized_name": "fracture du péroné",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 2
+        },
+        {
+          "name": "hémibloc antérieur",
+          "normalized_name": "hémibloc antérieur",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 2
+        },
+        {
+          "name": "BAV1",
+          "normalized_name": "bav1",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 2
+        },
+        {
+          "name": "125mg",
+          "normalized_name": "125mg",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "0,2mL",
+          "normalized_name": "0,2ml",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "2mL",
+          "normalized_name": "2ml",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "10 jours",
+          "normalized_name": "10 jours",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "1 bouteille",
+          "normalized_name": "1 bouteille",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "0-0-1",
+          "normalized_name": "0-0-1",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "1-1-1",
+          "normalized_name": "1-1-1",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "malaise syncopal",
+          "normalized_name": "malaise syncopal",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "probables pertes de connaissance",
+          "normalized_name": "probables pertes de connaissance",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "drainage respiratoire",
+          "normalized_name": "drainage respiratoire",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "aérosols",
+          "normalized_name": "aérosols",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "TRC<3s",
+          "normalized_name": "trc<3s",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "3L O2",
+          "normalized_name": "3l o2",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "12/11/14",
+          "normalized_name": "12/11/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "28/11/14",
+          "normalized_name": "28/11/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "29/11/14",
+          "normalized_name": "29/11/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "01/12/14",
+          "normalized_name": "01/12/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "Le 05/11/14",
+          "normalized_name": "le 05/11/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "jusqu'au 5/11/14",
+          "normalized_name": "jusqu'au 5/11/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "le 18/11/14",
+          "normalized_name": "le 18/11/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 2
+        },
+        {
+          "name": "encombrement bronchique",
+          "normalized_name": "encombrement bronchique",
+          "type": "SYMPTOME",
+          "page": 2
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "toux inefficace",
+          "object_normalized": "toux inefficace",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "malaise syncopal",
+          "object_normalized": "malaise syncopal",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "probables pertes de connaissance",
+          "object_normalized": "probables pertes de connaissance",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "chute",
+          "object_normalized": "chute",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Rocéphine",
+          "subject_normalized": "rocéphine",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Augmentin",
+          "subject_normalized": "augmentin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "oxygénothérapie",
+          "subject_normalized": "oxygénothérapie",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "kinésithérapie respiratoire",
+          "subject_normalized": "kinésithérapie respiratoire",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "drainage respiratoire",
+          "subject_normalized": "drainage respiratoire",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "aérosols",
+          "subject_normalized": "aérosols",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Tahor",
+          "subject_normalized": "tahor",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "0-0-1",
+          "object_normalized": "0-0-1",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "réanimation",
+          "subject_normalized": "réanimation",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "SSR",
+          "subject_normalized": "ssr",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "désaturation",
+          "object_normalized": "désaturation",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "centre hospitalier René Dubos à Pontoise",
+          "subject_normalized": "centre hospitalier rené dubos à pontoise",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "clinique de l’Oseraie à Osny pour",
+          "subject_normalized": "clinique de l’oseraie à osny pour",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Augmentin",
+          "subject_normalized": "augmentin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "1g/125mg PO 1-1-1 pendant 10 jours",
+          "object_normalized": "1g/125mg po 1-1-1 pendant 10 jours",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "oxygénothérapie",
+          "subject_normalized": "oxygénothérapie",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "3L/min",
+          "object_normalized": "3l/min",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Movicol",
+          "subject_normalized": "movicol",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "1-1-0 si besoin",
+          "object_normalized": "1-1-0 si besoin",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Dafalgan",
+          "subject_normalized": "dafalgan",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "500mg PO si besoin",
+          "object_normalized": "500mg po si besoin",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Fragmine",
+          "subject_normalized": "fragmine",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "5000UI/0,2mL SC la nuit",
+          "object_normalized": "5000ui/0,2ml sc la nuit",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Clinutren HP/HC",
+          "subject_normalized": "clinutren hp/hc",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "1 bouteille le matin et au goûter",
+          "object_normalized": "1 bouteille le matin et au goûter",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Nefopam",
+          "subject_normalized": "nefopam",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "20mg/2mL PO si besoin",
+          "object_normalized": "20mg/2ml po si besoin",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Oxygène",
+          "subject_normalized": "oxygène",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "6L/min",
+          "object_normalized": "6l/min",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "subject": "Tahor",
+          "subject_normalized": "tahor",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Movicol",
+          "subject_normalized": "movicol",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Dafalgan",
+          "subject_normalized": "dafalgan",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Fragmine",
+          "subject_normalized": "fragmine",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Clinutren HP/HC",
+          "subject_normalized": "clinutren hp/hc",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Nefopam",
+          "subject_normalized": "nefopam",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Normacol",
+          "subject_normalized": "normacol",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Ipratropium",
+          "subject_normalized": "ipratropium",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Budésonide",
+          "subject_normalized": "budésonide",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Oxygène",
+          "subject_normalized": "oxygène",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "pacemaker double chambre",
+          "subject_normalized": "pacemaker double chambre",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "rééducation",
+          "subject_normalized": "rééducation",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "attelle",
+          "subject_normalized": "attelle",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Tahor",
+          "subject_normalized": "tahor",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "10mg",
+          "object_normalized": "10mg",
+          "object_type": "POSOLOGIE",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "text": "",
+      "entities": [
+        {
+          "name": "toux grasse",
+          "normalized_name": "toux grasse",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "encombrement",
+          "normalized_name": "encombrement",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+          "normalized_name": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+          "normalized_name": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+          "normalized_name": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "atteinte motrice proximale aux membres supérieurs à 2/5",
+          "normalized_name": "atteinte motrice proximale aux membres supérieurs à 2/5",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+          "normalized_name": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "Leucocytes 21.5 4.0-10.0 x10*9/L",
+          "normalized_name": "leucocytes 21.5 4.0-10.0 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Hématies 5.79 4.50-5.80 x10*12/L",
+          "normalized_name": "hématies 5.79 4.50-5.80 x10*12/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Hémoglobine 16.1 13.0-17.0 g/dL",
+          "normalized_name": "hémoglobine 16.1 13.0-17.0 g/dl",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Hématocrite 49.5 40.0-50.0 %",
+          "normalized_name": "hématocrite 49.5 40.0-50.0 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "VGM 85.5 82.0-97.0 fL",
+          "normalized_name": "vgm 85.5 82.0-97.0 fl",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "TCMH 27.8 27.0-32.0 pg",
+          "normalized_name": "tcmh 27.8 27.0-32.0 pg",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CCMH 32.5 32.0-36.0 g/dL",
+          "normalized_name": "ccmh 32.5 32.0-36.0 g/dl",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "IDR 14.1 11.0-15.0 %",
+          "normalized_name": "idr 14.1 11.0-15.0 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Plaquettes 249 150-400 x10*9/L",
+          "normalized_name": "plaquettes 249 150-400 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "VMP 10.1 7.0-9.0 fL",
+          "normalized_name": "vmp 10.1 7.0-9.0 fl",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Temps de Quick 92 70-120 %",
+          "normalized_name": "temps de quick 92 70-120 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "TCA Patient 34.4 s",
+          "normalized_name": "tca patient 34.4 s",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "murmure vésiculaire bilatéral et symétrique",
+          "normalized_name": "murmure vésiculaire bilatéral et symétrique",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "Patient 13.9 s",
+          "normalized_name": "patient 13.9 s",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Patient 34.4 s",
+          "normalized_name": "patient 34.4 s",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "le patient",
+          "normalized_name": "le patient",
+          "type": "DONNEE_PATIENT",
+          "page": 3
+        },
+        {
+          "name": "attelle",
+          "normalized_name": "attelle",
+          "type": "TRAITEMENT",
+          "page": 3
+        },
+        {
+          "name": "réflexe photomoteur présent et symétrique",
+          "normalized_name": "réflexe photomoteur présent et symétrique",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "atteinte motrice faciale inférieure",
+          "normalized_name": "atteinte motrice faciale inférieure",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "trouble sensitif au toucher simple",
+          "normalized_name": "trouble sensitif au toucher simple",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "RCP en flexion bilatéralement",
+          "normalized_name": "rcp en flexion bilatéralement",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "balancement thoraco-abdominal",
+          "normalized_name": "balancement thoraco-abdominal",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "parésie faciale supérieure",
+          "normalized_name": "parésie faciale supérieure",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "trouble de la déglutition",
+          "normalized_name": "trouble de la déglutition",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "indolore",
+          "normalized_name": "indolore",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "ROT rotulien droit perçu",
+          "normalized_name": "rot rotulien droit perçu",
+          "type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "name": "toux grasse moyennement efficace",
+          "normalized_name": "toux grasse moyennement efficace",
+          "type": "SYMPTOME",
+          "page": 3
+        }
+      ],
+      "relations": [
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "toux grasse",
+          "object_normalized": "toux grasse",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "encombrement",
+          "object_normalized": "encombrement",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+          "object_normalized": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+          "object_normalized": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+          "object_normalized": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "atteinte motrice proximale aux membres supérieurs à 2/5",
+          "object_normalized": "atteinte motrice proximale aux membres supérieurs à 2/5",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+          "object_normalized": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "RCP en flexion bilatéralement",
+          "object_normalized": "rcp en flexion bilatéralement",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "balancement thoraco-abdominal",
+          "object_normalized": "balancement thoraco-abdominal",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "parésie faciale supérieure",
+          "object_normalized": "parésie faciale supérieure",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "ROT rotulien droit perçu",
+          "object_normalized": "rot rotulien droit perçu",
+          "object_type": "SYMPTOME",
+          "page": 3
+        },
+        {
+          "subject": "attelle",
+          "subject_normalized": "attelle",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "text": "",
+      "entities": [
+        {
+          "name": "Fibrinogène activité 8.9 2.0-4.0 g/L",
+          "normalized_name": "fibrinogène activité 8.9 2.0-4.0 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "pH/T° patient 7.43 7.38-7.42",
+          "normalized_name": "ph/t° patient 7.43 7.38-7.42",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "pCO2/T° patient 6.08 4.66-6.00 kPa",
+          "normalized_name": "pco2/t° patient 6.08 4.66-6.00 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "pO2/T° patient 10.10 11.97-14.40 kPa",
+          "normalized_name": "po2/t° patient 10.10 11.97-14.40 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Bicarbonate 29.8 22.0-26.0 mmol/L",
+          "normalized_name": "bicarbonate 29.8 22.0-26.0 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "CO2 total 31 23.0-27.0 mmol/L",
+          "normalized_name": "co2 total 31 23.0-27.0 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "SatO2 95.6 95-98 %",
+          "normalized_name": "sato2 95.6 95-98 %",
+          "type": "SIGNE_VITAL",
+          "page": 4
+        },
+        {
+          "name": "Excès de base 4.8 -2.0-2.0 mmol/L",
+          "normalized_name": "excès de base 4.8 -2.0-2.0 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "HbO2 95.5 94.0-98.0 %",
+          "normalized_name": "hbo2 95.5 94.0-98.0 %",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Sodium 146 136-145 mmol/L",
+          "normalized_name": "sodium 146 136-145 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Potassium 4.1 3.7-4.7 mmol/L",
+          "normalized_name": "potassium 4.1 3.7-4.7 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Chlorure 108 95-105 mmol/L",
+          "normalized_name": "chlorure 108 95-105 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "CO2 total 33 25-29 mmol/L",
+          "normalized_name": "co2 total 33 25-29 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Protéines 80 69-82 g/L",
+          "normalized_name": "protéines 80 69-82 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Créatinine 71 71-115 µmol/L",
+          "normalized_name": "créatinine 71 71-115 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Urée 6.1 2.5-6.4 mmol/L",
+          "normalized_name": "urée 6.1 2.5-6.4 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Glucose 9.8 3.8-6.1 mmol/L",
+          "normalized_name": "glucose 9.8 3.8-6.1 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Calcium 2.84 2.12-2.52 mmol/L",
+          "normalized_name": "calcium 2.84 2.12-2.52 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Phosphates 0.93 0.80-1.45 mmol/L",
+          "normalized_name": "phosphates 0.93 0.80-1.45 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Magnésium 0.94 0.70-1.00 mmol/L",
+          "normalized_name": "magnésium 0.94 0.70-1.00 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "CRP (u.s.) 97.2 <3.0 mg/L",
+          "normalized_name": "crp (u.s.) 97.2 <3.0 mg/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Bilirubine totale 5 3-20 µmol/L",
+          "normalized_name": "bilirubine totale 5 3-20 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Bilirubine conjuguée 1 <5 µmol/L",
+          "normalized_name": "bilirubine conjuguée 1 <5 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "ASAT 28 15-37 U/L",
+          "normalized_name": "asat 28 15-37 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "ALAT 64 12-78 U/L",
+          "normalized_name": "alat 64 12-78 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Gamma GT 282 15-85 U/L",
+          "normalized_name": "gamma gt 282 15-85 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Phosphatases alcalines 183 46-116 U/L",
+          "normalized_name": "phosphatases alcalines 183 46-116 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "TSH 0.29 0.55-4.78 mU/L",
+          "normalized_name": "tsh 0.29 0.55-4.78 mu/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Cortisol T0 min 492 nmol/L",
+          "normalized_name": "cortisol t0 min 492 nmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Cortisol T60 min 1295 nmol/L",
+          "normalized_name": "cortisol t60 min 1295 nmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Température patient 36.7 °C",
+          "normalized_name": "température patient 36.7 °c",
+          "type": "SIGNE_VITAL",
+          "page": 4
+        },
+        {
+          "name": "Radiographie pulmonaire",
+          "normalized_name": "radiographie pulmonaire",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 4
+        },
+        {
+          "name": "ECG",
+          "normalized_name": "ecg",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "82 g",
+          "normalized_name": "82 g",
+          "type": "POSOLOGIE",
+          "page": 4
+        },
+        {
+          "name": "pO2/T° patient 10.10",
+          "normalized_name": "po2/t° patient 10.10",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Cortisol T0 min 492",
+          "normalized_name": "cortisol t0 min 492",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Cortisol T60 min 1295",
+          "normalized_name": "cortisol t60 min 1295",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Ratio Patient/Témoin 1.04",
+          "normalized_name": "ratio patient/témoin 1.04",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "22h00",
+          "normalized_name": "22h00",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 4
+        },
+        {
+          "name": "23h20",
+          "normalized_name": "23h20",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 4
+        },
+        {
+          "name": "pCO2/T° patient 6.08",
+          "normalized_name": "pco2/t° patient 6.08",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "page": 5,
+      "text": "",
+      "entities": [
+        {
+          "name": "myopathie de Steinert",
+          "normalized_name": "myopathie de steinert",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 5
+        },
+        {
+          "name": "désaturation à répétition",
+          "normalized_name": "désaturation à répétition",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "encombrement",
+          "normalized_name": "encombrement",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "fracture du péroné gauche",
+          "normalized_name": "fracture du péroné gauche",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "Augmentin",
+          "normalized_name": "augmentin",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "7 jours",
+          "normalized_name": "7 jours",
+          "type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "name": "réanimation",
+          "normalized_name": "réanimation",
+          "type": "SERVICE_MEDICAL",
+          "page": 5
+        },
+        {
+          "name": "reste encombré",
+          "normalized_name": "reste encombré",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "kinésithérapie",
+          "normalized_name": "kinésithérapie",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "intubé",
+          "normalized_name": "intubé",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "la radiographie est inchangée",
+          "normalized_name": "la radiographie est inchangée",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 5
+        },
+        {
+          "name": "encombrement bronchique",
+          "normalized_name": "encombrement bronchique",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "extubation",
+          "normalized_name": "extubation",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "oxygénodépendant",
+          "normalized_name": "oxygénodépendant",
+          "type": "SIGNE_VITAL",
+          "page": 5
+        },
+        {
+          "name": "VNI diurne et nocturne",
+          "normalized_name": "vni diurne et nocturne",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "oxygène",
+          "normalized_name": "oxygène",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "insuffisant respiratoire",
+          "normalized_name": "insuffisant respiratoire",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 5
+        },
+        {
+          "name": "kinésithérapie respiratoire",
+          "normalized_name": "kinésithérapie respiratoire",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "un érysipèle du bras gauche",
+          "normalized_name": "un érysipèle du bras gauche",
+          "type": "FOYER_INFECTIEUX",
+          "page": 5
+        },
+        {
+          "name": "amoxicilline",
+          "normalized_name": "amoxicilline",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "10jours",
+          "normalized_name": "10jours",
+          "type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "name": "épisode septique",
+          "normalized_name": "épisode septique",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "name": "CITROBACTER KOSERI",
+          "normalized_name": "citrobacter koseri",
+          "type": "MICRO_ORGANISME",
+          "page": 5
+        },
+        {
+          "name": "TAZOCILLINE",
+          "normalized_name": "tazocilline",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "CLAFORAN",
+          "normalized_name": "claforan",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "7jours",
+          "normalized_name": "7jours",
+          "type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "name": "hyperglycémie",
+          "normalized_name": "hyperglycémie",
+          "type": "BIOMARQUEUR",
+          "page": 5
+        },
+        {
+          "name": "insuline rapide",
+          "normalized_name": "insuline rapide",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "NPH",
+          "normalized_name": "nph",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "troubles de la déglutition",
+          "normalized_name": "troubles de la déglutition",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "balancement thoraco-abdominal",
+          "normalized_name": "balancement thoraco-abdominal",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "syndrome infectieux",
+          "normalized_name": "syndrome infectieux",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "Patient de 57 ans",
+          "normalized_name": "patient de 57 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "name": "57 ans",
+          "normalized_name": "57 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "name": "Transfusion",
+          "normalized_name": "transfusion",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "gastrostomie",
+          "normalized_name": "gastrostomie",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "syndrome infectieux",
+          "normalized_name": "syndrome infectieux",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "name": "thrombose",
+          "normalized_name": "thrombose",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "name": "chute",
+          "normalized_name": "chute",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "insuffisant respiratoire",
+          "normalized_name": "insuffisant respiratoire",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 5
+        },
+        {
+          "name": "fracture du péroné",
+          "normalized_name": "fracture du péroné",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 5
+        },
+        {
+          "name": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+          "normalized_name": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "amélioration clinique il est transféré en secteur de post-réanimation pour la suite de la prise en charge",
+          "normalized_name": "amélioration clinique il est transféré en secteur de post-réanimation pour la suite de la prise en charge",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "s’aggrave progressivement",
+          "normalized_name": "s’aggrave progressivement",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "s’améliore mais le patient requiert toujours de la kinésithérapie respiratoire",
+          "normalized_name": "s’améliore mais le patient requiert toujours de la kinésithérapie respiratoire",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "progressivement sevré de l’oxygène",
+          "normalized_name": "progressivement sevré de l’oxygène",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "L’encombrement bronchique",
+          "normalized_name": "l’encombrement bronchique",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "VNI diurne et nocturne puis uniquement nocturne",
+          "normalized_name": "vni diurne et nocturne puis uniquement nocturne",
+          "type": "TRAITEMENT",
+          "page": 5
+        },
+        {
+          "name": "La fonction respiratoire s’améliore",
+          "normalized_name": "la fonction respiratoire s’améliore",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "L’encombrement bronchique s’améliore",
+          "normalized_name": "l’encombrement bronchique s’améliore",
+          "type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "name": "depuis le 29/11/14",
+          "normalized_name": "depuis le 29/11/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "le 01/12/14",
+          "normalized_name": "le 01/12/14",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "le 14/12/2014",
+          "normalized_name": "le 14/12/2014",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "le 22/12/2014",
+          "normalized_name": "le 22/12/2014",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "le 24/12/2014",
+          "normalized_name": "le 24/12/2014",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "Le 27/12/2014",
+          "normalized_name": "le 27/12/2014",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "le 9/1/2015",
+          "normalized_name": "le 9/1/2015",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 5
+        },
+        {
+          "name": "encombrement bronchique franc",
+          "normalized_name": "encombrement bronchique franc",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "épisodes de désaturation à répétition",
+          "normalized_name": "épisodes de désaturation à répétition",
+          "type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "name": "VNI",
+          "normalized_name": "vni",
+          "type": "TRAITEMENT",
+          "page": 5
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "épisode septique",
+          "object_normalized": "épisode septique",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_suspicion_infection",
+          "object": "un érysipèle du bras gauche",
+          "object_normalized": "un érysipèle du bras gauche",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 5
+        },
+        {
+          "subject": "Augmentin",
+          "subject_normalized": "augmentin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Augmentin",
+          "subject_normalized": "augmentin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "7 jours",
+          "object_normalized": "7 jours",
+          "object_type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "subject": "réanimation",
+          "subject_normalized": "réanimation",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "amoxicilline",
+          "subject_normalized": "amoxicilline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "10jours",
+          "object_normalized": "10jours",
+          "object_type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "subject": "TAZOCILLINE",
+          "subject_normalized": "tazocilline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "TAZOCILLINE",
+          "subject_normalized": "tazocilline",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "7jours",
+          "object_normalized": "7jours",
+          "object_type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "subject": "CLAFORAN",
+          "subject_normalized": "claforan",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "CLAFORAN",
+          "subject_normalized": "claforan",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "7jours",
+          "object_normalized": "7jours",
+          "object_type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "subject": "insuline rapide",
+          "subject_normalized": "insuline rapide",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "NPH",
+          "subject_normalized": "nph",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+          "object_normalized": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "syndrome infectieux",
+          "object_normalized": "syndrome infectieux",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "désaturation à répétition",
+          "object_normalized": "désaturation à répétition",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "encombrement",
+          "object_normalized": "encombrement",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "encombrement bronchique",
+          "object_normalized": "encombrement bronchique",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "balancement thoraco-abdominal",
+          "object_normalized": "balancement thoraco-abdominal",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "chute",
+          "object_normalized": "chute",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "L’encombrement bronchique",
+          "object_normalized": "l’encombrement bronchique",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "s’aggrave progressivement",
+          "object_normalized": "s’aggrave progressivement",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "progressivement sevré de l’oxygène",
+          "object_normalized": "progressivement sevré de l’oxygène",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "La fonction respiratoire s’améliore",
+          "object_normalized": "la fonction respiratoire s’améliore",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "patient_a_pour_evolution",
+          "object": "L’encombrement bronchique s’améliore",
+          "object_normalized": "l’encombrement bronchique s’améliore",
+          "object_type": "EVOLUTION_PRONOSTIC",
+          "page": 5
+        },
+        {
+          "subject": "kinésithérapie",
+          "subject_normalized": "kinésithérapie",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "intubé",
+          "subject_normalized": "intubé",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "extubation",
+          "subject_normalized": "extubation",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "oxygène",
+          "subject_normalized": "oxygène",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "kinésithérapie respiratoire",
+          "subject_normalized": "kinésithérapie respiratoire",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "VNI diurne et nocturne puis uniquement nocturne",
+          "subject_normalized": "vni diurne et nocturne puis uniquement nocturne",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 5
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "encombrement bronchique franc",
+          "object_normalized": "encombrement bronchique franc",
+          "object_type": "SYMPTOME",
+          "page": 5
+        },
+        {
+          "subject": "Augmentin",
+          "subject_normalized": "augmentin",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_indique_par_label_nosologique",
+          "object": "syndrome infectieux",
+          "object_normalized": "syndrome infectieux",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 5
+        }
+      ]
+    }
+  ],
+  "global_entities": [
+    {
+      "name": "myotonie de Steinert",
+      "normalized_name": "myotonie de steinert",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "myopathie de Steinert",
+      "normalized_name": "myopathie de steinert",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "hypercapnie à 6,11 kPa",
+      "normalized_name": "hypercapnie à 6,11 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "hypercapnie",
+      "normalized_name": "hypercapnie",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "désaturation nocturne",
+      "normalized_name": "désaturation nocturne",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "ventilation BIPAP",
+      "normalized_name": "ventilation bipap",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Vt 600mL",
+      "normalized_name": "vt 600ml",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "hypercapnie 6,36 kPa",
+      "normalized_name": "hypercapnie 6,36 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "hypercholestérolémie",
+      "normalized_name": "hypercholestérolémie",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "opération de la cataracte à droite en 2010",
+      "normalized_name": "opération de la cataracte à droite en 2010",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "à gauche en 2014",
+      "normalized_name": "à gauche en 2014",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Crestor",
+      "normalized_name": "crestor",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "encombrement",
+      "normalized_name": "encombrement",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "57 ans",
+      "normalized_name": "57 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Patient",
+      "normalized_name": "patient",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "réanimation",
+      "normalized_name": "réanimation",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "5mg",
+      "normalized_name": "5mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "opération de la cataracte",
+      "normalized_name": "opération de la cataracte",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "tabagisme",
+      "normalized_name": "tabagisme",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "2004",
+      "normalized_name": "2004",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "2015",
+      "normalized_name": "2015",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "2007",
+      "normalized_name": "2007",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "2012",
+      "normalized_name": "2012",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "2010",
+      "normalized_name": "2010",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "2014",
+      "normalized_name": "2014",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Episodes de désaturation à répétition",
+      "normalized_name": "episodes de désaturation à répétition",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Temp °C : 36,7",
+      "normalized_name": "temp °c : 36,7",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "pam=106",
+      "normalized_name": "pam=106",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "FC (bpm) : 105",
+      "normalized_name": "fc (bpm) : 105",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "FR (c/mn) : 22",
+      "normalized_name": "fr (c/mn) : 22",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "SaO2 (%) : 97% sous 3L O2",
+      "normalized_name": "sao2 (%) : 97% sous 3l o2",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "PO",
+      "normalized_name": "po",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Rocéphine",
+      "normalized_name": "rocéphine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Augmentin",
+      "normalized_name": "augmentin",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "1g/125mg PO 1-1-1 pendant 10 jours",
+      "normalized_name": "1g/125mg po 1-1-1 pendant 10 jours",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "oxygénothérapie",
+      "normalized_name": "oxygénothérapie",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "3L/min",
+      "normalized_name": "3l/min",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "kinésithérapie respiratoire",
+      "normalized_name": "kinésithérapie respiratoire",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "hyperleucocytose à 17200",
+      "normalized_name": "hyperleucocytose à 17200",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CRP à 32",
+      "normalized_name": "crp à 32",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "centre hospitalier René Dubos à Pontoise",
+      "normalized_name": "centre hospitalier rené dubos à pontoise",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "clinique de l'Oseraie à Osny",
+      "normalized_name": "clinique de l'oseraie à osny",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "désaturation avec encombrement bronchique et une toux inefficace",
+      "normalized_name": "désaturation avec encombrement bronchique et une toux inefficace",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "toux inefficace",
+      "normalized_name": "toux inefficace",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Tahor",
+      "normalized_name": "tahor",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "10mg",
+      "normalized_name": "10mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Movicol",
+      "normalized_name": "movicol",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "1-1-0 si besoin",
+      "normalized_name": "1-1-0 si besoin",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Dafalgan",
+      "normalized_name": "dafalgan",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "500mg PO si besoin",
+      "normalized_name": "500mg po si besoin",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Fragmine",
+      "normalized_name": "fragmine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "5000UI/0,2mL SC la nuit",
+      "normalized_name": "5000ui/0,2ml sc la nuit",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Clinutren HP/HC",
+      "normalized_name": "clinutren hp/hc",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "1 bouteille le matin et au goûter",
+      "normalized_name": "1 bouteille le matin et au goûter",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Nefopam",
+      "normalized_name": "nefopam",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "20mg/2mL PO si besoin",
+      "normalized_name": "20mg/2ml po si besoin",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Normacol",
+      "normalized_name": "normacol",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Ipratropium",
+      "normalized_name": "ipratropium",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Budésonide",
+      "normalized_name": "budésonide",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "jusqu'au 5/11/14",
+      "normalized_name": "jusqu'au 5/11/14",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Oxygène",
+      "normalized_name": "oxygène",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "6L/min",
+      "normalized_name": "6l/min",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "BAV1",
+      "normalized_name": "bav1",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "hémibloc antérieur gauche",
+      "normalized_name": "hémibloc antérieur gauche",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "myopathie",
+      "normalized_name": "myopathie",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "désaturation",
+      "normalized_name": "désaturation",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "élévation de la troponine",
+      "normalized_name": "élévation de la troponine",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Poids (kg) : 65",
+      "normalized_name": "poids (kg) : 65",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Taille (m) : 1,65",
+      "normalized_name": "taille (m) : 1,65",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Le patient",
+      "normalized_name": "le patient",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "SSR",
+      "normalized_name": "ssr",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "clinique de l’Oseraie à Osny pour",
+      "normalized_name": "clinique de l’oseraie à osny pour",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "pacemaker double chambre",
+      "normalized_name": "pacemaker double chambre",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "kinésithérapie",
+      "normalized_name": "kinésithérapie",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "rééducation",
+      "normalized_name": "rééducation",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "attelle",
+      "normalized_name": "attelle",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "O2",
+      "normalized_name": "o2",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "souffle perçu",
+      "normalized_name": "souffle perçu",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "désaturation",
+      "normalized_name": "désaturation",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "chute",
+      "normalized_name": "chute",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "coronarographie",
+      "normalized_name": "coronarographie",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "fracture du péroné",
+      "normalized_name": "fracture du péroné",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "hémibloc antérieur",
+      "normalized_name": "hémibloc antérieur",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "BAV1",
+      "normalized_name": "bav1",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "125mg",
+      "normalized_name": "125mg",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "0,2mL",
+      "normalized_name": "0,2ml",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "2mL",
+      "normalized_name": "2ml",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "10 jours",
+      "normalized_name": "10 jours",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "1 bouteille",
+      "normalized_name": "1 bouteille",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "0-0-1",
+      "normalized_name": "0-0-1",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "1-1-1",
+      "normalized_name": "1-1-1",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "malaise syncopal",
+      "normalized_name": "malaise syncopal",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "probables pertes de connaissance",
+      "normalized_name": "probables pertes de connaissance",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "drainage respiratoire",
+      "normalized_name": "drainage respiratoire",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "aérosols",
+      "normalized_name": "aérosols",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "TRC<3s",
+      "normalized_name": "trc<3s",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "3L O2",
+      "normalized_name": "3l o2",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "12/11/14",
+      "normalized_name": "12/11/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "28/11/14",
+      "normalized_name": "28/11/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "29/11/14",
+      "normalized_name": "29/11/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "01/12/14",
+      "normalized_name": "01/12/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Le 05/11/14",
+      "normalized_name": "le 05/11/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "jusqu'au 5/11/14",
+      "normalized_name": "jusqu'au 5/11/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "le 18/11/14",
+      "normalized_name": "le 18/11/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "encombrement bronchique",
+      "normalized_name": "encombrement bronchique",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "toux grasse",
+      "normalized_name": "toux grasse",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+      "normalized_name": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+      "normalized_name": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+      "normalized_name": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "atteinte motrice proximale aux membres supérieurs à 2/5",
+      "normalized_name": "atteinte motrice proximale aux membres supérieurs à 2/5",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+      "normalized_name": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Leucocytes 21.5 4.0-10.0 x10*9/L",
+      "normalized_name": "leucocytes 21.5 4.0-10.0 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématies 5.79 4.50-5.80 x10*12/L",
+      "normalized_name": "hématies 5.79 4.50-5.80 x10*12/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hémoglobine 16.1 13.0-17.0 g/dL",
+      "normalized_name": "hémoglobine 16.1 13.0-17.0 g/dl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématocrite 49.5 40.0-50.0 %",
+      "normalized_name": "hématocrite 49.5 40.0-50.0 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "VGM 85.5 82.0-97.0 fL",
+      "normalized_name": "vgm 85.5 82.0-97.0 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TCMH 27.8 27.0-32.0 pg",
+      "normalized_name": "tcmh 27.8 27.0-32.0 pg",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CCMH 32.5 32.0-36.0 g/dL",
+      "normalized_name": "ccmh 32.5 32.0-36.0 g/dl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "IDR 14.1 11.0-15.0 %",
+      "normalized_name": "idr 14.1 11.0-15.0 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Plaquettes 249 150-400 x10*9/L",
+      "normalized_name": "plaquettes 249 150-400 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "VMP 10.1 7.0-9.0 fL",
+      "normalized_name": "vmp 10.1 7.0-9.0 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Temps de Quick 92 70-120 %",
+      "normalized_name": "temps de quick 92 70-120 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TCA Patient 34.4 s",
+      "normalized_name": "tca patient 34.4 s",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "murmure vésiculaire bilatéral et symétrique",
+      "normalized_name": "murmure vésiculaire bilatéral et symétrique",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Patient 13.9 s",
+      "normalized_name": "patient 13.9 s",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Patient 34.4 s",
+      "normalized_name": "patient 34.4 s",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "réflexe photomoteur présent et symétrique",
+      "normalized_name": "réflexe photomoteur présent et symétrique",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "atteinte motrice faciale inférieure",
+      "normalized_name": "atteinte motrice faciale inférieure",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "trouble sensitif au toucher simple",
+      "normalized_name": "trouble sensitif au toucher simple",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "RCP en flexion bilatéralement",
+      "normalized_name": "rcp en flexion bilatéralement",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "balancement thoraco-abdominal",
+      "normalized_name": "balancement thoraco-abdominal",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "parésie faciale supérieure",
+      "normalized_name": "parésie faciale supérieure",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "trouble de la déglutition",
+      "normalized_name": "trouble de la déglutition",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "indolore",
+      "normalized_name": "indolore",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "ROT rotulien droit perçu",
+      "normalized_name": "rot rotulien droit perçu",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "toux grasse moyennement efficace",
+      "normalized_name": "toux grasse moyennement efficace",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Fibrinogène activité 8.9 2.0-4.0 g/L",
+      "normalized_name": "fibrinogène activité 8.9 2.0-4.0 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pH/T° patient 7.43 7.38-7.42",
+      "normalized_name": "ph/t° patient 7.43 7.38-7.42",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pCO2/T° patient 6.08 4.66-6.00 kPa",
+      "normalized_name": "pco2/t° patient 6.08 4.66-6.00 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pO2/T° patient 10.10 11.97-14.40 kPa",
+      "normalized_name": "po2/t° patient 10.10 11.97-14.40 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bicarbonate 29.8 22.0-26.0 mmol/L",
+      "normalized_name": "bicarbonate 29.8 22.0-26.0 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 total 31 23.0-27.0 mmol/L",
+      "normalized_name": "co2 total 31 23.0-27.0 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "SatO2 95.6 95-98 %",
+      "normalized_name": "sato2 95.6 95-98 %",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "Excès de base 4.8 -2.0-2.0 mmol/L",
+      "normalized_name": "excès de base 4.8 -2.0-2.0 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "HbO2 95.5 94.0-98.0 %",
+      "normalized_name": "hbo2 95.5 94.0-98.0 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Sodium 146 136-145 mmol/L",
+      "normalized_name": "sodium 146 136-145 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Potassium 4.1 3.7-4.7 mmol/L",
+      "normalized_name": "potassium 4.1 3.7-4.7 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Chlorure 108 95-105 mmol/L",
+      "normalized_name": "chlorure 108 95-105 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 total 33 25-29 mmol/L",
+      "normalized_name": "co2 total 33 25-29 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Protéines 80 69-82 g/L",
+      "normalized_name": "protéines 80 69-82 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Créatinine 71 71-115 µmol/L",
+      "normalized_name": "créatinine 71 71-115 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Urée 6.1 2.5-6.4 mmol/L",
+      "normalized_name": "urée 6.1 2.5-6.4 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Glucose 9.8 3.8-6.1 mmol/L",
+      "normalized_name": "glucose 9.8 3.8-6.1 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Calcium 2.84 2.12-2.52 mmol/L",
+      "normalized_name": "calcium 2.84 2.12-2.52 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Phosphates 0.93 0.80-1.45 mmol/L",
+      "normalized_name": "phosphates 0.93 0.80-1.45 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Magnésium 0.94 0.70-1.00 mmol/L",
+      "normalized_name": "magnésium 0.94 0.70-1.00 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CRP (u.s.) 97.2 <3.0 mg/L",
+      "normalized_name": "crp (u.s.) 97.2 <3.0 mg/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bilirubine totale 5 3-20 µmol/L",
+      "normalized_name": "bilirubine totale 5 3-20 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bilirubine conjuguée 1 <5 µmol/L",
+      "normalized_name": "bilirubine conjuguée 1 <5 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ASAT 28 15-37 U/L",
+      "normalized_name": "asat 28 15-37 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ALAT 64 12-78 U/L",
+      "normalized_name": "alat 64 12-78 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Gamma GT 282 15-85 U/L",
+      "normalized_name": "gamma gt 282 15-85 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Phosphatases alcalines 183 46-116 U/L",
+      "normalized_name": "phosphatases alcalines 183 46-116 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TSH 0.29 0.55-4.78 mU/L",
+      "normalized_name": "tsh 0.29 0.55-4.78 mu/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Cortisol T0 min 492 nmol/L",
+      "normalized_name": "cortisol t0 min 492 nmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Cortisol T60 min 1295 nmol/L",
+      "normalized_name": "cortisol t60 min 1295 nmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Température patient 36.7 °C",
+      "normalized_name": "température patient 36.7 °c",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "Radiographie pulmonaire",
+      "normalized_name": "radiographie pulmonaire",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "ECG",
+      "normalized_name": "ecg",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "82 g",
+      "normalized_name": "82 g",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "pO2/T° patient 10.10",
+      "normalized_name": "po2/t° patient 10.10",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Cortisol T0 min 492",
+      "normalized_name": "cortisol t0 min 492",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Cortisol T60 min 1295",
+      "normalized_name": "cortisol t60 min 1295",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Ratio Patient/Témoin 1.04",
+      "normalized_name": "ratio patient/témoin 1.04",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "22h00",
+      "normalized_name": "22h00",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "23h20",
+      "normalized_name": "23h20",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "pCO2/T° patient 6.08",
+      "normalized_name": "pco2/t° patient 6.08",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "désaturation à répétition",
+      "normalized_name": "désaturation à répétition",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "fracture du péroné gauche",
+      "normalized_name": "fracture du péroné gauche",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "7 jours",
+      "normalized_name": "7 jours",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "reste encombré",
+      "normalized_name": "reste encombré",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "intubé",
+      "normalized_name": "intubé",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "la radiographie est inchangée",
+      "normalized_name": "la radiographie est inchangée",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "extubation",
+      "normalized_name": "extubation",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "oxygénodépendant",
+      "normalized_name": "oxygénodépendant",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "VNI diurne et nocturne",
+      "normalized_name": "vni diurne et nocturne",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "insuffisant respiratoire",
+      "normalized_name": "insuffisant respiratoire",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "un érysipèle du bras gauche",
+      "normalized_name": "un érysipèle du bras gauche",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "amoxicilline",
+      "normalized_name": "amoxicilline",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "10jours",
+      "normalized_name": "10jours",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "épisode septique",
+      "normalized_name": "épisode septique",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "CITROBACTER KOSERI",
+      "normalized_name": "citrobacter koseri",
+      "type": "MICRO_ORGANISME"
+    },
+    {
+      "name": "TAZOCILLINE",
+      "normalized_name": "tazocilline",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "CLAFORAN",
+      "normalized_name": "claforan",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "7jours",
+      "normalized_name": "7jours",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "hyperglycémie",
+      "normalized_name": "hyperglycémie",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "insuline rapide",
+      "normalized_name": "insuline rapide",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "NPH",
+      "normalized_name": "nph",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "troubles de la déglutition",
+      "normalized_name": "troubles de la déglutition",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "syndrome infectieux",
+      "normalized_name": "syndrome infectieux",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Patient de 57 ans",
+      "normalized_name": "patient de 57 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Transfusion",
+      "normalized_name": "transfusion",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "gastrostomie",
+      "normalized_name": "gastrostomie",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "syndrome infectieux",
+      "normalized_name": "syndrome infectieux",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "thrombose",
+      "normalized_name": "thrombose",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "insuffisant respiratoire",
+      "normalized_name": "insuffisant respiratoire",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+      "normalized_name": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "amélioration clinique il est transféré en secteur de post-réanimation pour la suite de la prise en charge",
+      "normalized_name": "amélioration clinique il est transféré en secteur de post-réanimation pour la suite de la prise en charge",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "s’aggrave progressivement",
+      "normalized_name": "s’aggrave progressivement",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "s’améliore mais le patient requiert toujours de la kinésithérapie respiratoire",
+      "normalized_name": "s’améliore mais le patient requiert toujours de la kinésithérapie respiratoire",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "progressivement sevré de l’oxygène",
+      "normalized_name": "progressivement sevré de l’oxygène",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "L’encombrement bronchique",
+      "normalized_name": "l’encombrement bronchique",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "VNI diurne et nocturne puis uniquement nocturne",
+      "normalized_name": "vni diurne et nocturne puis uniquement nocturne",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "La fonction respiratoire s’améliore",
+      "normalized_name": "la fonction respiratoire s’améliore",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "L’encombrement bronchique s’améliore",
+      "normalized_name": "l’encombrement bronchique s’améliore",
+      "type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "name": "depuis le 29/11/14",
+      "normalized_name": "depuis le 29/11/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "le 01/12/14",
+      "normalized_name": "le 01/12/14",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "le 14/12/2014",
+      "normalized_name": "le 14/12/2014",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "le 22/12/2014",
+      "normalized_name": "le 22/12/2014",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "le 24/12/2014",
+      "normalized_name": "le 24/12/2014",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Le 27/12/2014",
+      "normalized_name": "le 27/12/2014",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "le 9/1/2015",
+      "normalized_name": "le 9/1/2015",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "encombrement bronchique franc",
+      "normalized_name": "encombrement bronchique franc",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "épisodes de désaturation à répétition",
+      "normalized_name": "épisodes de désaturation à répétition",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "VNI",
+      "normalized_name": "vni",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "douleur thoracique",
+      "normalized_name": "douleur thoracique",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "douleur abdominale",
+      "normalized_name": "douleur abdominale",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "respiratoire",
+      "normalized_name": "respiratoire",
+      "type": "SCORE_SOFA"
+    },
+    {
+      "name": "neurologique",
+      "normalized_name": "neurologique",
+      "type": "SCORE_SOFA"
+    },
+    {
+      "name": "neurologique",
+      "normalized_name": "neurologique",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "fibrinogene",
+      "normalized_name": "fibrinogene",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "transfusion",
+      "normalized_name": "transfusion",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "pulmonaire",
+      "normalized_name": "pulmonaire",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "extubation",
+      "normalized_name": "extubation",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "abdominal",
+      "normalized_name": "abdominal",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "marbrures",
+      "normalized_name": "marbrures",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "pelvien",
+      "normalized_name": "pelvien",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "tirage",
+      "normalized_name": "tirage",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "poids",
+      "normalized_name": "poids",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "genou",
+      "normalized_name": "genou",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "autre",
+      "normalized_name": "autre",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "autre",
+      "normalized_name": "autre",
+      "type": "IMAGERIE_PROCEDURE"
+    }
+  ],
+  "global_relations": [
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation nocturne",
+      "object_normalized": "désaturation nocturne",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement",
+      "object_normalized": "encombrement",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Crestor",
+      "subject_normalized": "crestor",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "5mg",
+      "object_normalized": "5mg",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "ventilation BIPAP",
+      "subject_normalized": "ventilation bipap",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Crestor",
+      "subject_normalized": "crestor",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "ventilation BIPAP",
+      "subject_normalized": "ventilation bipap",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "Vt 600mL",
+      "object_normalized": "vt 600ml",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "toux inefficace",
+      "object_normalized": "toux inefficace",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "malaise syncopal",
+      "object_normalized": "malaise syncopal",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "probables pertes de connaissance",
+      "object_normalized": "probables pertes de connaissance",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "chute",
+      "object_normalized": "chute",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Rocéphine",
+      "subject_normalized": "rocéphine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "oxygénothérapie",
+      "subject_normalized": "oxygénothérapie",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "kinésithérapie respiratoire",
+      "subject_normalized": "kinésithérapie respiratoire",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "drainage respiratoire",
+      "subject_normalized": "drainage respiratoire",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "aérosols",
+      "subject_normalized": "aérosols",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Tahor",
+      "subject_normalized": "tahor",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "0-0-1",
+      "object_normalized": "0-0-1",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "réanimation",
+      "subject_normalized": "réanimation",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "SSR",
+      "subject_normalized": "ssr",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation",
+      "object_normalized": "désaturation",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "centre hospitalier René Dubos à Pontoise",
+      "subject_normalized": "centre hospitalier rené dubos à pontoise",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "clinique de l’Oseraie à Osny pour",
+      "subject_normalized": "clinique de l’oseraie à osny pour",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "1g/125mg PO 1-1-1 pendant 10 jours",
+      "object_normalized": "1g/125mg po 1-1-1 pendant 10 jours",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "oxygénothérapie",
+      "subject_normalized": "oxygénothérapie",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "3L/min",
+      "object_normalized": "3l/min",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Movicol",
+      "subject_normalized": "movicol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "1-1-0 si besoin",
+      "object_normalized": "1-1-0 si besoin",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Dafalgan",
+      "subject_normalized": "dafalgan",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "500mg PO si besoin",
+      "object_normalized": "500mg po si besoin",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Fragmine",
+      "subject_normalized": "fragmine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "5000UI/0,2mL SC la nuit",
+      "object_normalized": "5000ui/0,2ml sc la nuit",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Clinutren HP/HC",
+      "subject_normalized": "clinutren hp/hc",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "1 bouteille le matin et au goûter",
+      "object_normalized": "1 bouteille le matin et au goûter",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Nefopam",
+      "subject_normalized": "nefopam",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "20mg/2mL PO si besoin",
+      "object_normalized": "20mg/2ml po si besoin",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Oxygène",
+      "subject_normalized": "oxygène",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "6L/min",
+      "object_normalized": "6l/min",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Tahor",
+      "subject_normalized": "tahor",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Movicol",
+      "subject_normalized": "movicol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Dafalgan",
+      "subject_normalized": "dafalgan",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Fragmine",
+      "subject_normalized": "fragmine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Clinutren HP/HC",
+      "subject_normalized": "clinutren hp/hc",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Nefopam",
+      "subject_normalized": "nefopam",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Normacol",
+      "subject_normalized": "normacol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Ipratropium",
+      "subject_normalized": "ipratropium",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Budésonide",
+      "subject_normalized": "budésonide",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Oxygène",
+      "subject_normalized": "oxygène",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "pacemaker double chambre",
+      "subject_normalized": "pacemaker double chambre",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "rééducation",
+      "subject_normalized": "rééducation",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "attelle",
+      "subject_normalized": "attelle",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "toux grasse",
+      "object_normalized": "toux grasse",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement",
+      "object_normalized": "encombrement",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+      "object_normalized": "râles inspiratoires et expiratoires dans les deux champs pulmonaires",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+      "object_normalized": "parésie faciale supérieure avec occlusion palpébrale incomplète bilatérale",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+      "object_normalized": "déficit musculaire axial (ne décolle pas la tête du plan du lit contre pression)",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "atteinte motrice proximale aux membres supérieurs à 2/5",
+      "object_normalized": "atteinte motrice proximale aux membres supérieurs à 2/5",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+      "object_normalized": "atteinte motrice distale aux membres inférieurs peu marquée avec 4/5 aux releveurs du pied bilatéralement",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "RCP en flexion bilatéralement",
+      "object_normalized": "rcp en flexion bilatéralement",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "balancement thoraco-abdominal",
+      "object_normalized": "balancement thoraco-abdominal",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "parésie faciale supérieure",
+      "object_normalized": "parésie faciale supérieure",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "ROT rotulien droit perçu",
+      "object_normalized": "rot rotulien droit perçu",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "épisode septique",
+      "object_normalized": "épisode septique",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_suspicion_infection",
+      "object": "un érysipèle du bras gauche",
+      "object_normalized": "un érysipèle du bras gauche",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "7 jours",
+      "object_normalized": "7 jours",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "réanimation",
+      "subject_normalized": "réanimation",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "amoxicilline",
+      "subject_normalized": "amoxicilline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "10jours",
+      "object_normalized": "10jours",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "TAZOCILLINE",
+      "subject_normalized": "tazocilline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "TAZOCILLINE",
+      "subject_normalized": "tazocilline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "7jours",
+      "object_normalized": "7jours",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "CLAFORAN",
+      "subject_normalized": "claforan",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "CLAFORAN",
+      "subject_normalized": "claforan",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "7jours",
+      "object_normalized": "7jours",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "insuline rapide",
+      "subject_normalized": "insuline rapide",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "NPH",
+      "subject_normalized": "nph",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+      "object_normalized": "amélioration clinique respiratoire au cours d’une première hospitalisation en réanimation associé à l’antib",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "syndrome infectieux",
+      "object_normalized": "syndrome infectieux",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation à répétition",
+      "object_normalized": "désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement bronchique",
+      "object_normalized": "encombrement bronchique",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "balancement thoraco-abdominal",
+      "object_normalized": "balancement thoraco-abdominal",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "chute",
+      "object_normalized": "chute",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "L’encombrement bronchique",
+      "object_normalized": "l’encombrement bronchique",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "s’aggrave progressivement",
+      "object_normalized": "s’aggrave progressivement",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "progressivement sevré de l’oxygène",
+      "object_normalized": "progressivement sevré de l’oxygène",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "La fonction respiratoire s’améliore",
+      "object_normalized": "la fonction respiratoire s’améliore",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "patient_a_pour_evolution",
+      "object": "L’encombrement bronchique s’améliore",
+      "object_normalized": "l’encombrement bronchique s’améliore",
+      "object_type": "EVOLUTION_PRONOSTIC"
+    },
+    {
+      "subject": "kinésithérapie",
+      "subject_normalized": "kinésithérapie",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "intubé",
+      "subject_normalized": "intubé",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "extubation",
+      "subject_normalized": "extubation",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "oxygène",
+      "subject_normalized": "oxygène",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "kinésithérapie respiratoire",
+      "subject_normalized": "kinésithérapie respiratoire",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "VNI diurne et nocturne puis uniquement nocturne",
+      "subject_normalized": "vni diurne et nocturne puis uniquement nocturne",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Episodes de désaturation à répétition",
+      "object_normalized": "episodes de désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement bronchique franc",
+      "object_normalized": "encombrement bronchique franc",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_indique_par_label_nosologique",
+      "object": "syndrome infectieux",
+      "object_normalized": "syndrome infectieux",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "Augmentin",
+      "subject_normalized": "augmentin",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "7jours",
+      "object_normalized": "7jours",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "amoxicilline",
+      "subject_normalized": "amoxicilline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient de 57 ans",
+      "object_normalized": "patient de 57 ans",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Normacol",
+      "subject_normalized": "normacol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "1-1-0 si besoin",
+      "object_normalized": "1-1-0 si besoin",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "oxygénodépendant",
+      "object_normalized": "oxygénodépendant",
+      "object_type": "SIGNE_VITAL"
+    },
+    {
+      "subject": "Tahor",
+      "subject_normalized": "tahor",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "10mg",
+      "object_normalized": "10mg",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement",
+      "object_normalized": "encombrement",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Episodes de désaturation à répétition",
+      "object_normalized": "episodes de désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation",
+      "object_normalized": "désaturation",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation à répétition",
+      "object_normalized": "désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation",
+      "object_normalized": "désaturation",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement",
+      "object_normalized": "encombrement",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Episodes de désaturation à répétition",
+      "object_normalized": "episodes de désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation",
+      "object_normalized": "désaturation",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "désaturation à répétition",
+      "object_normalized": "désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "chute",
+      "object_normalized": "chute",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "balancement thoraco-abdominal",
+      "object_normalized": "balancement thoraco-abdominal",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "fracture du péroné gauche",
+      "object_normalized": "fracture du péroné gauche",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "57 ans",
+      "subject_normalized": "57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "épisodes de désaturation à répétition",
+      "object_normalized": "épisodes de désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "fracture du péroné gauche",
+      "object_normalized": "fracture du péroné gauche",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "épisodes de désaturation à répétition",
+      "object_normalized": "épisodes de désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "chute",
+      "object_normalized": "chute",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "balancement thoraco-abdominal",
+      "object_normalized": "balancement thoraco-abdominal",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "fracture du péroné gauche",
+      "object_normalized": "fracture du péroné gauche",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient de 57 ans",
+      "subject_normalized": "patient de 57 ans",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "épisodes de désaturation à répétition",
+      "object_normalized": "épisodes de désaturation à répétition",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "TAZOCILLINE",
+      "subject_normalized": "tazocilline",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "CLAFORAN",
+      "subject_normalized": "claforan",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "encombrement bronchique franc",
+      "object_normalized": "encombrement bronchique franc",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "malaise syncopal",
+      "object_normalized": "malaise syncopal",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "probables pertes de connaissance",
+      "object_normalized": "probables pertes de connaissance",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "syndrome infectieux",
+      "object_normalized": "syndrome infectieux",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    }
+  ]
+}

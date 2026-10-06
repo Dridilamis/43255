@@ -1,0 +1,221 @@
+# -*- coding: utf-8 -*-
+"""
+SGCE F1 OPTIMIZER AUDIT
+=======================
+Audit automatique des sorties intermédiaires de SGCE avec EXACTEMENT
+le même matcher de relations que l'évaluation baseline.
+
+Aucune donnée clinique n'est modifiée.
+Aucun seuil de matching n'est modifié.
+Le Gold Standard sert uniquement à l'évaluation.
+"""
+from pathlib import Path
+import os, sys, subprocess, re, csv, json
+
+os.environ["PYTHONUTF8"] = "1"
+os.environ["PYTHONIOENCODING"] = "utf-8"
+
+BASE = Path(os.environ.get("USERPROFILE", str(Path.home()))) / "Desktop" / "TRACE" / "OCR vers LLM"
+RED = BASE / "Reduction_hallucinations"
+SGCE = RED / "SGCE"
+GOLD = BASE / "gold_canonical_par_documentF"
+HERE = Path(__file__).resolve().parent
+MATCHER = HERE / "Matching_relations_SGCE_AUDIT.py"
+OUT = SGCE / "F1_optimizer_audit"
+OUT.mkdir(parents=True, exist_ok=True)
+
+# Baseline RELAXED déjà validée avec le même matcher.
+BASELINE = {
+    "precision": 0.7451,
+    "recall": 0.6362,
+    "f1": 0.6864,
+}
+
+def clinical_json_count(folder):
+    n = 0
+    for p in folder.glob("*.json"):
+        low = p.name.lower()
+        if any(x in low for x in ("report", "decision", "candidate", "validation", "queue", "summary")):
+            continue
+        try:
+            d = json.loads(p.read_text(encoding="utf-8"))
+            if isinstance(d, dict) and (
+                isinstance(d.get("global_relations"), list)
+                or isinstance(d.get("pages"), list)
+            ):
+                n += 1
+        except Exception:
+            pass
+    return n
+
+def discover():
+    candidates = []
+    # On privilégie les dossiers de sortie clinique.
+    for d in SGCE.rglob("*"):
+        if not d.is_dir():
+            continue
+        name = d.name.lower()
+        if name not in {
+            "corrected", "safe_corrected", "relation_repair_safe_corrected",
+            "orphan_relation_safe_corrected", "multiagent_safe_final_corrected"
+        } and "corrected" not in name:
+            continue
+        n = clinical_json_count(d)
+        if n >= 40:
+            candidates.append((d, n))
+
+    # Déduplication par chemin réel.
+    uniq = {}
+    for d, n in candidates:
+        uniq[str(d.resolve()).lower()] = (d, n)
+    candidates = list(uniq.values())
+
+    def rank(item):
+        p = str(item[0]).lower()
+        # ordre méthodologique approximatif uniquement pour affichage
+        if "patterna" in p: k = 10
+        elif "patternb" in p: k = 20
+        elif "patternc" in p: k = 30
+        elif "patternd" in p: k = 40
+        elif "relation_repair" in p: k = 50
+        elif "orphan_resolution" in p: k = 60
+        elif "multiagent" in p: k = 70
+        else: k = 99
+        return (k, len(Path(item[0]).parts), str(item[0]))
+    return sorted(candidates, key=rank)
+
+def metric(text, section, label):
+    m = re.search(rf"---\s*{re.escape(section)}\s*---(.*?)(?=\n\s*---|\Z)", text, re.I|re.S)
+    if not m:
+        return None
+    x = re.search(rf"{re.escape(label)}\s*:\s*([0-9.]+)", m.group(1), re.I)
+    return float(x.group(1)) if x else None
+
+def count(text, label):
+    x = re.search(rf"{re.escape(label)}\s*:\s*(\d+)", text, re.I)
+    return int(x.group(1)) if x else None
+
+def safe_label(path):
+    rel = path.relative_to(SGCE)
+    return "__".join(rel.parts).replace(" ", "_")[:180]
+
+def run_eval(folder):
+    label = safe_label(folder)
+    out = OUT / label
+    out.mkdir(parents=True, exist_ok=True)
+    p = subprocess.run(
+        [sys.executable, "-X", "utf8", str(MATCHER), str(GOLD), str(folder), str(out)],
+        cwd=str(HERE),
+        env=os.environ.copy(),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        encoding="utf-8",
+        errors="replace"
+    )
+    (out/"terminal.txt").write_text(p.stdout, encoding="utf-8")
+    return p.returncode, p.stdout
+
+if not GOLD.is_dir():
+    raise SystemExit(f"Gold Standard introuvable : {GOLD}")
+if not SGCE.is_dir():
+    raise SystemExit(f"SGCE introuvable : {SGCE}")
+
+folders = discover()
+if not folders:
+    raise SystemExit("Aucune sortie clinique SGCE intermédiaire détectée.")
+
+print("="*120)
+print("SGCE — F1 OPTIMIZER AUDIT")
+print("="*120)
+print("Gold :", GOLD)
+print("SGCE :", SGCE)
+print("Sorties cliniques détectées :", len(folders))
+print("Aucune donnée clinique ne sera modifiée.\n")
+
+rows = [{
+    "stage":"00_BASELINE_REFERENCE",
+    "path":"",
+    "clinical_docs":43,
+    "precision":BASELINE["precision"],
+    "recall":BASELINE["recall"],
+    "f1":BASELINE["f1"],
+    "delta_baseline":0.0,
+    "delta_previous":0.0,
+    "tp_exact":None, "tp_boundary":None, "tp_relaxed":None,
+    "wrong_type":None, "fp":None, "fn":None,
+    "status":"REFERENCE"
+}]
+
+previous_f1 = BASELINE["f1"]
+
+for i,(folder,n_docs) in enumerate(folders,1):
+    print(f"[{i}/{len(folders)}] {folder.relative_to(SGCE)}")
+    rc, txt = run_eval(folder)
+    if rc != 0:
+        print("  -> FAIL")
+        rows.append({"stage":safe_label(folder),"path":str(folder),"clinical_docs":n_docs,"status":"FAIL"})
+        continue
+
+    f1 = metric(txt,"RELAXED","Micro F1")
+    prec = metric(txt,"RELAXED","Micro Precision")
+    rec = metric(txt,"RELAXED","Micro Recall")
+    row = {
+        "stage":safe_label(folder),
+        "path":str(folder),
+        "clinical_docs":n_docs,
+        "precision":prec,
+        "recall":rec,
+        "f1":f1,
+        "delta_baseline": (f1-BASELINE["f1"]) if f1 is not None else None,
+        "delta_previous": (f1-previous_f1) if f1 is not None else None,
+        "tp_exact":count(txt,"TP exact"),
+        "tp_boundary":count(txt,"TP boundary"),
+        "tp_relaxed":count(txt,"TP relaxed"),
+        "wrong_type":count(txt,"Wrong relation type"),
+        "fp":count(txt,"FP restants"),
+        "fn":count(txt,"FN restants"),
+        "status":"PASS"
+    }
+    rows.append(row)
+    if f1 is not None:
+        previous_f1 = f1
+    print(f"  -> P={prec:.4f} R={rec:.4f} F1={f1:.4f} | Δbaseline={row['delta_baseline']:+.4f} | Δprev={row['delta_previous']:+.4f}")
+
+# Identify largest negative transitions, without changing any rule.
+valid = [r for r in rows[1:] if r.get("status")=="PASS" and r.get("f1") is not None]
+drops = sorted(valid, key=lambda r:r.get("delta_previous",0))
+
+csv_path = OUT/"SGCE_F1_AUDIT.csv"
+fields = ["stage","path","clinical_docs","precision","recall","f1","delta_baseline","delta_previous",
+          "tp_exact","tp_boundary","tp_relaxed","wrong_type","fp","fn","status"]
+with csv_path.open("w",newline="",encoding="utf-8-sig") as f:
+    w=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore")
+    w.writeheader(); w.writerows(rows)
+
+json_path = OUT/"SGCE_F1_AUDIT.json"
+json_path.write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding="utf-8")
+
+print("\n"+"="*120)
+print("TABLEAU SGCE — RELAXED")
+print("="*120)
+print(f"{'SORTIE':55} | {'P':>8} {'R':>8} {'F1':>8} {'Δ BASE':>9} {'Δ PREV':>9} {'FP':>7} {'FN':>7}")
+print("-"*120)
+for r in rows:
+    if r.get("status") not in ("PASS","REFERENCE"):
+        continue
+    def pc(v):
+        return f"{100*v:7.2f}%" if isinstance(v,(int,float)) else "    N/A "
+    print(f"{r['stage'][:55]:55} | {pc(r.get('precision'))} {pc(r.get('recall'))} {pc(r.get('f1'))} "
+          f"{pc(r.get('delta_baseline'))} {pc(r.get('delta_previous'))} "
+          f"{str(r.get('fp') if r.get('fp') is not None else '-'):>7} "
+          f"{str(r.get('fn') if r.get('fn') is not None else '-'):>7}")
+
+print("\n"+"="*120)
+print("TOP 5 TRANSITIONS A EXAMINER EN PRIORITE")
+print("="*120)
+for r in drops[:5]:
+    print(f"{r['delta_previous']:+.4f}  |  {r['stage']}")
+print("\nCSV :",csv_path)
+print("JSON:",json_path)
+print("\nCet audit ne modifie aucun JSON clinique et n'optimise aucun seuil sur le Gold Standard.")

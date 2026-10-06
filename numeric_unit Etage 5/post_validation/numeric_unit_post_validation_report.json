@@ -1,0 +1,22 @@
+{
+  "post_validator": "numeric_unit_post_validator",
+  "mode": "TEXT_GUIDED_SAFE_REPAIR_WITH_TRACE",
+  "summary": {
+    "documents_checked": 43,
+    "applied_operations": 65,
+    "effective_slot_operations": 65,
+    "unique_slots_corrected": 65,
+    "unique_entities_corrected": 60,
+    "duplicate_slot_operations": 0,
+    "consolidation_conflicts_protected": 0,
+    "ineffective_operations": 0,
+    "documents_with_relation_changes": 0,
+    "missing_documents_after": 0,
+    "extra_documents_after": 0,
+    "status": "PASS"
+  },
+  "ineffective_operations": [],
+  "relation_changes": [],
+  "duplicate_slot_operations": [],
+  "consolidation_conflicts_protected": []
+}

@@ -1,0 +1,1652 @@
+{
+  "document": "img20250709_16225557",
+  "source_file": "img20250709_16225557.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "text": "",
+      "entities": [
+        {
+          "name": "Trachéotomie",
+          "normalized_name": "trachéotomie",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "Ventilation mécanique",
+          "normalized_name": "ventilation mécanique",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "Coumadine",
+          "normalized_name": "coumadine",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "movicol",
+          "normalized_name": "movicol",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "2 sachet par jour",
+          "normalized_name": "2 sachet par jour",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "Rhinocort",
+          "normalized_name": "rhinocort",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "1 dose/j",
+          "normalized_name": "1 dose/j",
+          "type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "name": "Poliomyélite contractée en Afrique en 1995 responsable d'une tétraplégie avec insuffisance respiratoire restrictive",
+          "normalized_name": "poliomyélite contractée en afrique en 1995 responsable d'une tétraplégie avec insuffisance respiratoire restrictive",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Trachéotomie en 1995",
+          "normalized_name": "trachéotomie en 1995",
+          "type": "TRAITEMENT",
+          "page": 1
+        },
+        {
+          "name": "Hospitalisation en réanimation à Garches pour colite grave à clostridium difficile avec choc septique dans un contexte de pneumonie associé à Klebsiella Pneumonia et Streptococcus",
+          "normalized_name": "hospitalisation en réanimation à garches pour colite grave à clostridium difficile avec choc septique dans un contexte de pneumonie associé à klebsiella pneumonia et streptococcus",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Diagnostic d'embolie pulmonaire concomitante nécessitant des AVK au long cours",
+          "normalized_name": "diagnostic d'embolie pulmonaire concomitante nécessitant des avk au long cours",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "Cholécystectomie sur lithiase en 2014",
+          "normalized_name": "cholécystectomie sur lithiase en 2014",
+          "type": "COMORBIDITE_ANTECEDENT",
+          "page": 1
+        },
+        {
+          "name": "choc septique",
+          "normalized_name": "choc septique",
+          "type": "LABEL_NOSOLOGIQUE",
+          "page": 1
+        },
+        {
+          "name": "pneumonie",
+          "normalized_name": "pneumonie",
+          "type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "name": "Klebsiella Pneumonia",
+          "normalized_name": "klebsiella pneumonia",
+          "type": "MICRO_ORGANISME",
+          "page": 1
+        },
+        {
+          "name": "Streptococcus",
+          "normalized_name": "streptococcus",
+          "type": "MICRO_ORGANISME",
+          "page": 1
+        },
+        {
+          "name": "insuffisance respiratoire restrictive",
+          "normalized_name": "insuffisance respiratoire restrictive",
+          "type": "DEFAILLANCE_ORGANE",
+          "page": 1
+        },
+        {
+          "name": "47 ans",
+          "normalized_name": "47 ans",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "name": "réanimation",
+          "normalized_name": "réanimation",
+          "type": "SERVICE_MEDICAL",
+          "page": 1
+        },
+        {
+          "name": "clostridium difficile",
+          "normalized_name": "clostridium difficile",
+          "type": "MICRO_ORGANISME",
+          "page": 1
+        },
+        {
+          "name": "2014",
+          "normalized_name": "2014",
+          "type": "EVENEMENT_TEMPOREL",
+          "page": 1
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "a_pour_label_nosologique",
+          "object": "choc septique",
+          "object_normalized": "choc septique",
+          "object_type": "LABEL_NOSOLOGIQUE",
+          "page": 1
+        },
+        {
+          "subject": "Patient",
+          "subject_normalized": "patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_suspicion_infection",
+          "object": "pneumonie",
+          "object_normalized": "pneumonie",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "subject": "Klebsiella Pneumonia",
+          "subject_normalized": "klebsiella pneumonia",
+          "subject_type": "MICRO_ORGANISME",
+          "relation": "micro_organisme_isole_dans",
+          "object": "pneumonie",
+          "object_normalized": "pneumonie",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "subject": "Streptococcus",
+          "subject_normalized": "streptococcus",
+          "subject_type": "MICRO_ORGANISME",
+          "relation": "micro_organisme_isole_dans",
+          "object": "pneumonie",
+          "object_normalized": "pneumonie",
+          "object_type": "FOYER_INFECTIEUX",
+          "page": 1
+        },
+        {
+          "subject": "réanimation",
+          "subject_normalized": "réanimation",
+          "subject_type": "SERVICE_MEDICAL",
+          "relation": "service_medical_accueille",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Coumadine",
+          "subject_normalized": "coumadine",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "movicol",
+          "subject_normalized": "movicol",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "movicol",
+          "subject_normalized": "movicol",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "2 sachet par jour",
+          "object_normalized": "2 sachet par jour",
+          "object_type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "subject": "Rhinocort",
+          "subject_normalized": "rhinocort",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Rhinocort",
+          "subject_normalized": "rhinocort",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "1 dose/j",
+          "object_normalized": "1 dose/j",
+          "object_type": "POSOLOGIE",
+          "page": 1
+        },
+        {
+          "subject": "Trachéotomie",
+          "subject_normalized": "trachéotomie",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        },
+        {
+          "subject": "Ventilation mécanique",
+          "subject_normalized": "ventilation mécanique",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Patient",
+          "object_normalized": "patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "text": "",
+      "entities": [
+        {
+          "name": "Temp °C : 36.7",
+          "normalized_name": "temp °c : 36.7",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "TA (mmHg) : 127/88",
+          "normalized_name": "ta (mmhg) : 127/88",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "FC (bpm) : 62",
+          "normalized_name": "fc (bpm) : 62",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "SaO2 (%) : 98% AA",
+          "normalized_name": "sao2 (%) : 98% aa",
+          "type": "SIGNE_VITAL",
+          "page": 2
+        },
+        {
+          "name": "ventilé 24h/24h",
+          "normalized_name": "ventilé 24h/24h",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "Eole",
+          "normalized_name": "eole",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "Astral 150",
+          "normalized_name": "astral 150",
+          "type": "TRAITEMENT",
+          "page": 2
+        },
+        {
+          "name": "3 jours",
+          "normalized_name": "3 jours",
+          "type": "POSOLOGIE",
+          "page": 2
+        },
+        {
+          "name": "EMG demandé",
+          "normalized_name": "emg demandé",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 2
+        },
+        {
+          "name": "hypo-esthésie du pied",
+          "normalized_name": "hypo-esthésie du pied",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "Leucocytes : 6.9 4.0-10.0 x10*9/L",
+          "normalized_name": "leucocytes : 6.9 4.0-10.0 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Hématies : 5.65 4.50-5.80 x10*12/L",
+          "normalized_name": "hématies : 5.65 4.50-5.80 x10*12/l",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Hémoglobine : 15.6 13.0-17.0 g/dL",
+          "normalized_name": "hémoglobine : 15.6 13.0-17.0 g/dl",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Hématocrite : 47.7 40.0-50.0 %",
+          "normalized_name": "hématocrite : 47.7 40.0-50.0 %",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "VGM : 84.5 82.0-97.0 fL",
+          "normalized_name": "vgm : 84.5 82.0-97.0 fl",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "TCMH : 27.7 27.0-32.0 pg",
+          "normalized_name": "tcmh : 27.7 27.0-32.0 pg",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "CCMH : 32.8 32.0-36.0 g/dL",
+          "normalized_name": "ccmh : 32.8 32.0-36.0 g/dl",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "IDR : 17.5 11.0-15.0 %",
+          "normalized_name": "idr : 17.5 11.0-15.0 %",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Plaquettes : 199 150-400 x10*9/L",
+          "normalized_name": "plaquettes : 199 150-400 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "VMP : 9.0 7.0-9.0 fL",
+          "normalized_name": "vmp : 9.0 7.0-9.0 fl",
+          "type": "BIOMARQUEUR",
+          "page": 2
+        },
+        {
+          "name": "Tétraplégique",
+          "normalized_name": "tétraplégique",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "météorisé",
+          "normalized_name": "météorisé",
+          "type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "name": "Poids (kg) : 66.8",
+          "normalized_name": "poids (kg) : 66.8",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "Le patient",
+          "normalized_name": "le patient",
+          "type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "name": "clinique d'admission\n\nSignes généraux et",
+          "normalized_name": "clinique d'admission signes généraux et",
+          "type": "SERVICE_MEDICAL",
+          "page": 2
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "hypo-esthésie du pied",
+          "object_normalized": "hypo-esthésie du pied",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "Tétraplégique",
+          "object_normalized": "tétraplégique",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "Le patient",
+          "subject_normalized": "le patient",
+          "subject_type": "DONNEE_PATIENT",
+          "relation": "presente_symptome",
+          "object": "météorisé",
+          "object_normalized": "météorisé",
+          "object_type": "SYMPTOME",
+          "page": 2
+        },
+        {
+          "subject": "ventilé 24h/24h",
+          "subject_normalized": "ventilé 24h/24h",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Eole",
+          "subject_normalized": "eole",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        },
+        {
+          "subject": "Astral 150",
+          "subject_normalized": "astral 150",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_administre_a",
+          "object": "Le patient",
+          "object_normalized": "le patient",
+          "object_type": "DONNEE_PATIENT",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "text": "",
+      "entities": [
+        {
+          "name": "Polynucléaires Neutrophiles 70.2 %",
+          "normalized_name": "polynucléaires neutrophiles 70.2 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Polynucléaires Neutrophiles 4.84 1.50-7.00 x10*9/L",
+          "normalized_name": "polynucléaires neutrophiles 4.84 1.50-7.00 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Polynucléaires Eosinophiles 3.0 %",
+          "normalized_name": "polynucléaires eosinophiles 3.0 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Polynucléaires Eosinophiles 0.21 0.00-0.50 x10*9/L",
+          "normalized_name": "polynucléaires eosinophiles 0.21 0.00-0.50 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Polynucléaires Basophiles 1.7 %",
+          "normalized_name": "polynucléaires basophiles 1.7 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Polynucléaires Basophiles 0.12 <0.10 x10*9/L",
+          "normalized_name": "polynucléaires basophiles 0.12 <0.10 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Lymphocytes 17.9 %",
+          "normalized_name": "lymphocytes 17.9 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Lymphocytes 1.24 1.50-4.00 x10*9/L",
+          "normalized_name": "lymphocytes 1.24 1.50-4.00 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Monocytes 7.2 %",
+          "normalized_name": "monocytes 7.2 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Monocytes 0.50 0.20-1.00 x10*9/L",
+          "normalized_name": "monocytes 0.50 0.20-1.00 x10*9/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Temps de Quick 77 70-120 %",
+          "normalized_name": "temps de quick 77 70-120 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "TCA Patient 40.1 s",
+          "normalized_name": "tca patient 40.1 s",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Ratio Patient/Témoins 1.18 <1.20",
+          "normalized_name": "ratio patient/témoins 1.18 <1.20",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Fibrinogène activité 3.4 2.0-4.0 g/L",
+          "normalized_name": "fibrinogène activité 3.4 2.0-4.0 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pH/T° patient 7.44 7.38-7.42",
+          "normalized_name": "ph/t° patient 7.44 7.38-7.42",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pCO2/T° patient 3.68 4.66-6.00 kPa",
+          "normalized_name": "pco2/t° patient 3.68 4.66-6.00 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pO2/T° patient 6.67 11.97-14.40 kPa",
+          "normalized_name": "po2/t° patient 6.67 11.97-14.40 kpa",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CO2 total 20 23.0-27.0 mmol/L",
+          "normalized_name": "co2 total 20 23.0-27.0 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Bicarbonate 18.7 22.0-26.0 mmol/L",
+          "normalized_name": "bicarbonate 18.7 22.0-26.0 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "SatO2 89.0 95.0-98.0 %",
+          "normalized_name": "sato2 89.0 95.0-98.0 %",
+          "type": "SIGNE_VITAL",
+          "page": 3
+        },
+        {
+          "name": "Excès de base -4.1 -2-2 mmol/L",
+          "normalized_name": "excès de base -4.1 -2-2 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "HbO2 87.4 94-98 %",
+          "normalized_name": "hbo2 87.4 94-98 %",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Sodium 143 136-145 mmol/L",
+          "normalized_name": "sodium 143 136-145 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Potassium 4.0 3.7-4.7 mmol/L",
+          "normalized_name": "potassium 4.0 3.7-4.7 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Chlorure 111 95-105 mmol/L",
+          "normalized_name": "chlorure 111 95-105 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CO2 total 22 25-29 mmol/L",
+          "normalized_name": "co2 total 22 25-29 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Protéines 72 69-82 g/L",
+          "normalized_name": "protéines 72 69-82 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Créatinine 36 71-115 µmol/L",
+          "normalized_name": "créatinine 36 71-115 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Urée 7.5 2.5-6.4 mmol/L",
+          "normalized_name": "urée 7.5 2.5-6.4 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Glucose 6.0 3.8-6.1 mmol/L",
+          "normalized_name": "glucose 6.0 3.8-6.1 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Calcium 2.27 2.12-2.52 mmol/L",
+          "normalized_name": "calcium 2.27 2.12-2.52 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Phosphates 1.07 0.80-1.45 mmol/L",
+          "normalized_name": "phosphates 1.07 0.80-1.45 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Acide urique 401 240-420 µmol/L",
+          "normalized_name": "acide urique 401 240-420 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Magnésium 0.91 0.70-1.00 mmol/L",
+          "normalized_name": "magnésium 0.91 0.70-1.00 mmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "CRP (u.s.) 9.9 <3.0 mg/L",
+          "normalized_name": "crp (u.s.) 9.9 <3.0 mg/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Amylase 31 25-115 U/L",
+          "normalized_name": "amylase 31 25-115 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "Patient",
+          "normalized_name": "patient",
+          "type": "DONNEE_PATIENT",
+          "page": 3
+        },
+        {
+          "name": "82 g",
+          "normalized_name": "82 g",
+          "type": "POSOLOGIE",
+          "page": 3
+        },
+        {
+          "name": "pCO2/T° patient 3.68",
+          "normalized_name": "pco2/t° patient 3.68",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        },
+        {
+          "name": "pO2/T° patient 6.67",
+          "normalized_name": "po2/t° patient 6.67",
+          "type": "BIOMARQUEUR",
+          "page": 3
+        }
+      ],
+      "relations": []
+    },
+    {
+      "page": 4,
+      "text": "",
+      "entities": [
+        {
+          "name": "Lipase 148 73-393 U/L",
+          "normalized_name": "lipase 148 73-393 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Bilirubine totale 34 3-20 µmol/L",
+          "normalized_name": "bilirubine totale 34 3-20 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Bilirubine conjuguée 4 <5 µmol/L",
+          "normalized_name": "bilirubine conjuguée 4 <5 μmol/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "ASAT 29 15-37 U/L",
+          "normalized_name": "asat 29 15-37 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "ALAT 64 16-63 U/L",
+          "normalized_name": "alat 64 16-63 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Gamma GT 329 15-85 U/L",
+          "normalized_name": "gamma gt 329 15-85 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Phosphatases alcalines 165 46-116 U/L",
+          "normalized_name": "phosphatases alcalines 165 46-116 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "LDH 160 85-227 U/L",
+          "normalized_name": "ldh 160 85-227 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Créatine kinase 18 39-308 U/L",
+          "normalized_name": "créatine kinase 18 39-308 u/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Albumine 37 34-50 g/L",
+          "normalized_name": "albumine 37 34-50 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Préalbumine 0.33 0.18-0.36 g/L",
+          "normalized_name": "préalbumine 0.33 0.18-0.36 g/l",
+          "type": "BIOMARQUEUR",
+          "page": 4
+        },
+        {
+          "name": "Astral 150",
+          "normalized_name": "astral 150",
+          "type": "TRAITEMENT",
+          "page": 4
+        },
+        {
+          "name": "Humidificateur 580*21 Ti 1 forme du débit carré Trigger off PEEP off",
+          "normalized_name": "humidificateur 580*21 ti 1 forme du débit carré trigger off peep off",
+          "type": "POSOLOGIE",
+          "page": 4
+        },
+        {
+          "name": "EMG : revu avec Pr Orlikowski",
+          "normalized_name": "emg : revu avec pr orlikowski",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "100% du temps au dessus de 90% de saturation",
+          "normalized_name": "100% du temps au dessus de 90% de saturation",
+          "type": "SIGNE_VITAL",
+          "page": 4
+        },
+        {
+          "name": "ECG",
+          "normalized_name": "ecg",
+          "type": "IMAGERIE_PROCEDURE",
+          "page": 4
+        },
+        {
+          "name": "550ml",
+          "normalized_name": "550ml",
+          "type": "POSOLOGIE",
+          "page": 4
+        }
+      ],
+      "relations": [
+        {
+          "subject": "Astral 150",
+          "subject_normalized": "astral 150",
+          "subject_type": "TRAITEMENT",
+          "relation": "traitement_a_pour_posologie",
+          "object": "550ml",
+          "object_normalized": "550ml",
+          "object_type": "POSOLOGIE",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "text": "",
+      "entities": [
+        {
+          "name": "PEEP off",
+          "normalized_name": "peep off",
+          "type": "POSOLOGIE",
+          "page": 5
+        },
+        {
+          "name": "Transfusion",
+          "normalized_name": "transfusion",
+          "type": "TRAITEMENT",
+          "page": 5
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "global_entities": [
+    {
+      "name": "Trachéotomie",
+      "normalized_name": "trachéotomie",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Ventilation mécanique",
+      "normalized_name": "ventilation mécanique",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Coumadine",
+      "normalized_name": "coumadine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "movicol",
+      "normalized_name": "movicol",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "2 sachet par jour",
+      "normalized_name": "2 sachet par jour",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Rhinocort",
+      "normalized_name": "rhinocort",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "1 dose/j",
+      "normalized_name": "1 dose/j",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Poliomyélite contractée en Afrique en 1995 responsable d'une tétraplégie avec insuffisance respiratoire restrictive",
+      "normalized_name": "poliomyélite contractée en afrique en 1995 responsable d'une tétraplégie avec insuffisance respiratoire restrictive",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Trachéotomie en 1995",
+      "normalized_name": "trachéotomie en 1995",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Hospitalisation en réanimation à Garches pour colite grave à clostridium difficile avec choc septique dans un contexte de pneumonie associé à Klebsiella Pneumonia et Streptococcus",
+      "normalized_name": "hospitalisation en réanimation à garches pour colite grave à clostridium difficile avec choc septique dans un contexte de pneumonie associé à klebsiella pneumonia et streptococcus",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Diagnostic d'embolie pulmonaire concomitante nécessitant des AVK au long cours",
+      "normalized_name": "diagnostic d'embolie pulmonaire concomitante nécessitant des avk au long cours",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "Cholécystectomie sur lithiase en 2014",
+      "normalized_name": "cholécystectomie sur lithiase en 2014",
+      "type": "COMORBIDITE_ANTECEDENT"
+    },
+    {
+      "name": "choc septique",
+      "normalized_name": "choc septique",
+      "type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "name": "pneumonie",
+      "normalized_name": "pneumonie",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "Klebsiella Pneumonia",
+      "normalized_name": "klebsiella pneumonia",
+      "type": "MICRO_ORGANISME"
+    },
+    {
+      "name": "Streptococcus",
+      "normalized_name": "streptococcus",
+      "type": "MICRO_ORGANISME"
+    },
+    {
+      "name": "insuffisance respiratoire restrictive",
+      "normalized_name": "insuffisance respiratoire restrictive",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "47 ans",
+      "normalized_name": "47 ans",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Patient",
+      "normalized_name": "patient",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "réanimation",
+      "normalized_name": "réanimation",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "clostridium difficile",
+      "normalized_name": "clostridium difficile",
+      "type": "MICRO_ORGANISME"
+    },
+    {
+      "name": "2014",
+      "normalized_name": "2014",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "Temp °C : 36.7",
+      "normalized_name": "temp °c : 36.7",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "TA (mmHg) : 127/88",
+      "normalized_name": "ta (mmhg) : 127/88",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "FC (bpm) : 62",
+      "normalized_name": "fc (bpm) : 62",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "SaO2 (%) : 98% AA",
+      "normalized_name": "sao2 (%) : 98% aa",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "ventilé 24h/24h",
+      "normalized_name": "ventilé 24h/24h",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Eole",
+      "normalized_name": "eole",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "Astral 150",
+      "normalized_name": "astral 150",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "3 jours",
+      "normalized_name": "3 jours",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "EMG demandé",
+      "normalized_name": "emg demandé",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "hypo-esthésie du pied",
+      "normalized_name": "hypo-esthésie du pied",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Leucocytes : 6.9 4.0-10.0 x10*9/L",
+      "normalized_name": "leucocytes : 6.9 4.0-10.0 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématies : 5.65 4.50-5.80 x10*12/L",
+      "normalized_name": "hématies : 5.65 4.50-5.80 x10*12/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hémoglobine : 15.6 13.0-17.0 g/dL",
+      "normalized_name": "hémoglobine : 15.6 13.0-17.0 g/dl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Hématocrite : 47.7 40.0-50.0 %",
+      "normalized_name": "hématocrite : 47.7 40.0-50.0 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "VGM : 84.5 82.0-97.0 fL",
+      "normalized_name": "vgm : 84.5 82.0-97.0 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TCMH : 27.7 27.0-32.0 pg",
+      "normalized_name": "tcmh : 27.7 27.0-32.0 pg",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CCMH : 32.8 32.0-36.0 g/dL",
+      "normalized_name": "ccmh : 32.8 32.0-36.0 g/dl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "IDR : 17.5 11.0-15.0 %",
+      "normalized_name": "idr : 17.5 11.0-15.0 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Plaquettes : 199 150-400 x10*9/L",
+      "normalized_name": "plaquettes : 199 150-400 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "VMP : 9.0 7.0-9.0 fL",
+      "normalized_name": "vmp : 9.0 7.0-9.0 fl",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Tétraplégique",
+      "normalized_name": "tétraplégique",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "météorisé",
+      "normalized_name": "météorisé",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "Poids (kg) : 66.8",
+      "normalized_name": "poids (kg) : 66.8",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "Le patient",
+      "normalized_name": "le patient",
+      "type": "DONNEE_PATIENT"
+    },
+    {
+      "name": "clinique d'admission\n\nSignes généraux et",
+      "normalized_name": "clinique d'admission signes généraux et",
+      "type": "SERVICE_MEDICAL"
+    },
+    {
+      "name": "Polynucléaires Neutrophiles 70.2 %",
+      "normalized_name": "polynucléaires neutrophiles 70.2 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Polynucléaires Neutrophiles 4.84 1.50-7.00 x10*9/L",
+      "normalized_name": "polynucléaires neutrophiles 4.84 1.50-7.00 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Polynucléaires Eosinophiles 3.0 %",
+      "normalized_name": "polynucléaires eosinophiles 3.0 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Polynucléaires Eosinophiles 0.21 0.00-0.50 x10*9/L",
+      "normalized_name": "polynucléaires eosinophiles 0.21 0.00-0.50 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Polynucléaires Basophiles 1.7 %",
+      "normalized_name": "polynucléaires basophiles 1.7 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Polynucléaires Basophiles 0.12 <0.10 x10*9/L",
+      "normalized_name": "polynucléaires basophiles 0.12 <0.10 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Lymphocytes 17.9 %",
+      "normalized_name": "lymphocytes 17.9 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Lymphocytes 1.24 1.50-4.00 x10*9/L",
+      "normalized_name": "lymphocytes 1.24 1.50-4.00 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Monocytes 7.2 %",
+      "normalized_name": "monocytes 7.2 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Monocytes 0.50 0.20-1.00 x10*9/L",
+      "normalized_name": "monocytes 0.50 0.20-1.00 x10*9/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Temps de Quick 77 70-120 %",
+      "normalized_name": "temps de quick 77 70-120 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "TCA Patient 40.1 s",
+      "normalized_name": "tca patient 40.1 s",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Ratio Patient/Témoins 1.18 <1.20",
+      "normalized_name": "ratio patient/témoins 1.18 <1.20",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Fibrinogène activité 3.4 2.0-4.0 g/L",
+      "normalized_name": "fibrinogène activité 3.4 2.0-4.0 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pH/T° patient 7.44 7.38-7.42",
+      "normalized_name": "ph/t° patient 7.44 7.38-7.42",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pCO2/T° patient 3.68 4.66-6.00 kPa",
+      "normalized_name": "pco2/t° patient 3.68 4.66-6.00 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pO2/T° patient 6.67 11.97-14.40 kPa",
+      "normalized_name": "po2/t° patient 6.67 11.97-14.40 kpa",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 total 20 23.0-27.0 mmol/L",
+      "normalized_name": "co2 total 20 23.0-27.0 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bicarbonate 18.7 22.0-26.0 mmol/L",
+      "normalized_name": "bicarbonate 18.7 22.0-26.0 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "SatO2 89.0 95.0-98.0 %",
+      "normalized_name": "sato2 89.0 95.0-98.0 %",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "Excès de base -4.1 -2-2 mmol/L",
+      "normalized_name": "excès de base -4.1 -2-2 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "HbO2 87.4 94-98 %",
+      "normalized_name": "hbo2 87.4 94-98 %",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Sodium 143 136-145 mmol/L",
+      "normalized_name": "sodium 143 136-145 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Potassium 4.0 3.7-4.7 mmol/L",
+      "normalized_name": "potassium 4.0 3.7-4.7 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Chlorure 111 95-105 mmol/L",
+      "normalized_name": "chlorure 111 95-105 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CO2 total 22 25-29 mmol/L",
+      "normalized_name": "co2 total 22 25-29 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Protéines 72 69-82 g/L",
+      "normalized_name": "protéines 72 69-82 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Créatinine 36 71-115 µmol/L",
+      "normalized_name": "créatinine 36 71-115 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Urée 7.5 2.5-6.4 mmol/L",
+      "normalized_name": "urée 7.5 2.5-6.4 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Glucose 6.0 3.8-6.1 mmol/L",
+      "normalized_name": "glucose 6.0 3.8-6.1 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Calcium 2.27 2.12-2.52 mmol/L",
+      "normalized_name": "calcium 2.27 2.12-2.52 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Phosphates 1.07 0.80-1.45 mmol/L",
+      "normalized_name": "phosphates 1.07 0.80-1.45 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Acide urique 401 240-420 µmol/L",
+      "normalized_name": "acide urique 401 240-420 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Magnésium 0.91 0.70-1.00 mmol/L",
+      "normalized_name": "magnésium 0.91 0.70-1.00 mmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "CRP (u.s.) 9.9 <3.0 mg/L",
+      "normalized_name": "crp (u.s.) 9.9 <3.0 mg/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Amylase 31 25-115 U/L",
+      "normalized_name": "amylase 31 25-115 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "82 g",
+      "normalized_name": "82 g",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "pCO2/T° patient 3.68",
+      "normalized_name": "pco2/t° patient 3.68",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "pO2/T° patient 6.67",
+      "normalized_name": "po2/t° patient 6.67",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Lipase 148 73-393 U/L",
+      "normalized_name": "lipase 148 73-393 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bilirubine totale 34 3-20 µmol/L",
+      "normalized_name": "bilirubine totale 34 3-20 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Bilirubine conjuguée 4 <5 µmol/L",
+      "normalized_name": "bilirubine conjuguée 4 <5 μmol/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ASAT 29 15-37 U/L",
+      "normalized_name": "asat 29 15-37 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "ALAT 64 16-63 U/L",
+      "normalized_name": "alat 64 16-63 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Gamma GT 329 15-85 U/L",
+      "normalized_name": "gamma gt 329 15-85 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Phosphatases alcalines 165 46-116 U/L",
+      "normalized_name": "phosphatases alcalines 165 46-116 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "LDH 160 85-227 U/L",
+      "normalized_name": "ldh 160 85-227 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Créatine kinase 18 39-308 U/L",
+      "normalized_name": "créatine kinase 18 39-308 u/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Albumine 37 34-50 g/L",
+      "normalized_name": "albumine 37 34-50 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Préalbumine 0.33 0.18-0.36 g/L",
+      "normalized_name": "préalbumine 0.33 0.18-0.36 g/l",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "Humidificateur 580*21 Ti 1 forme du débit carré Trigger off PEEP off",
+      "normalized_name": "humidificateur 580*21 ti 1 forme du débit carré trigger off peep off",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "EMG : revu avec Pr Orlikowski",
+      "normalized_name": "emg : revu avec pr orlikowski",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "100% du temps au dessus de 90% de saturation",
+      "normalized_name": "100% du temps au dessus de 90% de saturation",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "ECG",
+      "normalized_name": "ecg",
+      "type": "IMAGERIE_PROCEDURE"
+    },
+    {
+      "name": "550ml",
+      "normalized_name": "550ml",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "PEEP off",
+      "normalized_name": "peep off",
+      "type": "POSOLOGIE"
+    },
+    {
+      "name": "Transfusion",
+      "normalized_name": "transfusion",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "respiratoire",
+      "normalized_name": "respiratoire",
+      "type": "SCORE_SOFA"
+    },
+    {
+      "name": "neurologique",
+      "normalized_name": "neurologique",
+      "type": "SCORE_SOFA"
+    },
+    {
+      "name": "neurologique",
+      "normalized_name": "neurologique",
+      "type": "DEFAILLANCE_ORGANE"
+    },
+    {
+      "name": "fibrinogene",
+      "normalized_name": "fibrinogene",
+      "type": "BIOMARQUEUR"
+    },
+    {
+      "name": "transfusion",
+      "normalized_name": "transfusion",
+      "type": "EVENEMENT_TEMPOREL"
+    },
+    {
+      "name": "pulmonaire",
+      "normalized_name": "pulmonaire",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "abdominal",
+      "normalized_name": "abdominal",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "albumine",
+      "normalized_name": "albumine",
+      "type": "TRAITEMENT"
+    },
+    {
+      "name": "pelvien",
+      "normalized_name": "pelvien",
+      "type": "FOYER_INFECTIEUX"
+    },
+    {
+      "name": "cyanose",
+      "normalized_name": "cyanose",
+      "type": "SYMPTOME"
+    },
+    {
+      "name": "poids",
+      "normalized_name": "poids",
+      "type": "SIGNE_VITAL"
+    },
+    {
+      "name": "peep",
+      "normalized_name": "peep",
+      "type": "SIGNE_VITAL"
+    }
+  ],
+  "global_relations": [
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "a_pour_label_nosologique",
+      "object": "choc septique",
+      "object_normalized": "choc septique",
+      "object_type": "LABEL_NOSOLOGIQUE"
+    },
+    {
+      "subject": "Patient",
+      "subject_normalized": "patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_suspicion_infection",
+      "object": "pneumonie",
+      "object_normalized": "pneumonie",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "Klebsiella Pneumonia",
+      "subject_normalized": "klebsiella pneumonia",
+      "subject_type": "MICRO_ORGANISME",
+      "relation": "micro_organisme_isole_dans",
+      "object": "pneumonie",
+      "object_normalized": "pneumonie",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "Streptococcus",
+      "subject_normalized": "streptococcus",
+      "subject_type": "MICRO_ORGANISME",
+      "relation": "micro_organisme_isole_dans",
+      "object": "pneumonie",
+      "object_normalized": "pneumonie",
+      "object_type": "FOYER_INFECTIEUX"
+    },
+    {
+      "subject": "réanimation",
+      "subject_normalized": "réanimation",
+      "subject_type": "SERVICE_MEDICAL",
+      "relation": "service_medical_accueille",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Coumadine",
+      "subject_normalized": "coumadine",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "movicol",
+      "subject_normalized": "movicol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "movicol",
+      "subject_normalized": "movicol",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "2 sachet par jour",
+      "object_normalized": "2 sachet par jour",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Rhinocort",
+      "subject_normalized": "rhinocort",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Rhinocort",
+      "subject_normalized": "rhinocort",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "1 dose/j",
+      "object_normalized": "1 dose/j",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Trachéotomie",
+      "subject_normalized": "trachéotomie",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Ventilation mécanique",
+      "subject_normalized": "ventilation mécanique",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Patient",
+      "object_normalized": "patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "hypo-esthésie du pied",
+      "object_normalized": "hypo-esthésie du pied",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "Tétraplégique",
+      "object_normalized": "tétraplégique",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "Le patient",
+      "subject_normalized": "le patient",
+      "subject_type": "DONNEE_PATIENT",
+      "relation": "presente_symptome",
+      "object": "météorisé",
+      "object_normalized": "météorisé",
+      "object_type": "SYMPTOME"
+    },
+    {
+      "subject": "ventilé 24h/24h",
+      "subject_normalized": "ventilé 24h/24h",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Eole",
+      "subject_normalized": "eole",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Astral 150",
+      "subject_normalized": "astral 150",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "Le patient",
+      "object_normalized": "le patient",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Astral 150",
+      "subject_normalized": "astral 150",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "550ml",
+      "object_normalized": "550ml",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "Astral 150",
+      "subject_normalized": "astral 150",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_a_pour_posologie",
+      "object": "PEEP off",
+      "object_normalized": "peep off",
+      "object_type": "POSOLOGIE"
+    },
+    {
+      "subject": "ventilé 24h/24h",
+      "subject_normalized": "ventilé 24h/24h",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "47 ans",
+      "object_normalized": "47 ans",
+      "object_type": "DONNEE_PATIENT"
+    },
+    {
+      "subject": "Rhinocort",
+      "subject_normalized": "rhinocort",
+      "subject_type": "TRAITEMENT",
+      "relation": "traitement_administre_a",
+      "object": "47 ans",
+      "object_normalized": "47 ans",
+      "object_type": "DONNEE_PATIENT"
+    }
+  ]
+}

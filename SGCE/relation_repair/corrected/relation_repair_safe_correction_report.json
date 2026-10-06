@@ -1,0 +1,52 @@
+{
+  "corrector": "relation_repair_batch_safe_corrector",
+  "source_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\Patterns\\PatternD\\corrected",
+  "output_directory": "C:\\Users\\Lamis\\Desktop\\Projet memoire\\TRACE\\OCR vers LLM\\Reduction_hallucinations\\SGCE\\relation_repair\\corrected",
+  "summary": {
+    "documents_copied": 43,
+    "safe_actions_received": 2,
+    "operations_applied": 2,
+    "documents_modified": 2,
+    "errors": 0,
+    "actions_applied": {
+      "RETYPE_TARGET": 2
+    }
+  },
+  "modified_documents": [
+    "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+    "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json"
+  ],
+  "operations": [
+    {
+      "candidate_id": "RR_000039",
+      "document": "img20250709_16545673_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_TARGET",
+      "parameters": {
+        "entity_id": "P3_E020",
+        "old_type": "FOYER_INFECTIEUX",
+        "new_type": "LABEL_NOSOLOGIQUE",
+        "lexicon_support": [
+          "pneumonie"
+        ]
+      },
+      "status": "APPLIED",
+      "reason": "SAFE_ACCEPT"
+    },
+    {
+      "candidate_id": "RR_000042",
+      "document": "img20250709_16583921_trace_sepsis_V1.6-V6.5-SELECTIVE_PRECISION.json",
+      "action": "RETYPE_TARGET",
+      "parameters": {
+        "entity_id": "P5_E022",
+        "old_type": "LABEL_NOSOLOGIQUE",
+        "new_type": "DEFAILLANCE_ORGANE",
+        "lexicon_support": [
+          "ira",
+          "respiratoire"
+        ]
+      },
+      "status": "APPLIED",
+      "reason": "SAFE_ACCEPT"
+    }
+  ]
+}
