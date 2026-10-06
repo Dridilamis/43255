@@ -67,19 +67,25 @@ Taux d'hallucination = part des éléments produits qui sont faux (1 − précis
 |---|---|---|---|---|---|---|---|---|
 | Ancienne chaîne (08b) | 74,40 % | 68,15 % | 71,14 % | 25,6 % | 72,03 % | 54,98 % | 62,36 % | 28,0 % |
 | **v2, mode standard** | **75,55 %** | **68,57 %** | **71,89 %** | 24,5 % | 72,74 % | 54,51 % | 62,32 % | 27,3 % |
-| **v2, mode précision 90 %** ¹ | 79,11 % | 65,03 % | 71,38 % | 20,9 % | 75,94 % | 49,29 % | 59,78 % | 24,1 % |
-| **v2, mode précision 80 %** ¹ | **82,67 %** | 60,49 % | 69,86 % | **17,3 %** | **77,66 %** | 44,54 % | 56,62 % | **22,3 %** |
-| v2, mode précision 70 % ¹ | 85,34 % | 54,86 % | 66,79 % | 14,7 % | 79,27 % | 38,98 % | 52,26 % | 20,7 % |
+| **v2, mode précision 90 %** ¹ | 78,73 % | 66,01 % | 71,81 % | 21,3 % | 74,52 % | 51,48 % | 60,90 % | 25,5 % |
+| **v2, mode précision 80 %** ¹ | **82,49 %** | 61,46 % | 70,44 % | **17,5 %** | **77,34 %** | 46,10 % | 57,77 % | **22,7 %** |
+| v2, mode précision 70 % ¹ | 86,61 % | 55,38 % | 67,56 % | 13,4 % | 80,02 % | 38,28 % | 51,79 % | 20,0 % |
 
-¹ Validation croisée du système complet : les votes sont entraînés sur les documents
+¹ Votes avec agents lexicaux (mots de la mention) : à précision presque égale, rappel et
+F1 meilleurs à chaque niveau que sans les mots. La ligne `07_arbitrage_precision` du
+tableau de l'étage 8 (≈ 86 % / 85 % de précision) est évaluée sur les documents
+d'entraînement : l'écart avec ces chiffres montre que les mots sur-apprennent en partie ;
+seuls les chiffres ci-dessus valent pour des documents nouveaux.
+
+Validation croisée du système complet : les votes sont entraînés sur les documents
 pairs, l'étage 7 est appliqué et évalué sur les impairs, puis l'inverse. Chaque document
 est donc traité par des modèles qui ne l'ont jamais vu. La ligne `07_arbitrage_precision`
 du tableau de l'étage 8 est plus optimiste, car le modèle final est entraîné sur ces
 mêmes documents.
 
 En mode standard, précision, rappel et F1 des entités montent tous les trois. En mode
-précision 80 %, la part d'entités hallucinées baisse d'environ un tiers (25,6 % → 17,3 %)
-et celle des relations d'environ un cinquième (28,0 % → 22,3 %), au prix de rappel.
+précision 80 %, la part d'entités hallucinées baisse d'environ un tiers (25,6 % → 17,5 %)
+et celle des relations d'environ un cinquième (28,0 % → 22,7 %), au prix de rappel.
 
 **Plafond d'un post-traitement.** Même un filtre parfait (100 % de précision) ne dépasse
 pas F1 ≈ 81 % pour les entités et ≈ 71 % pour les relations, car le rappel est borné par
