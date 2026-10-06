@@ -53,7 +53,7 @@ from trace_lib import config as C
 from trace_lib.documents import Graph, trace
 from trace_lib.etage import run_stage
 from trace_lib import vote
-from trace_lib.texte import load_source, norm
+from trace_lib.texte import content_tokens, load_source, norm
 
 WEAK = {
     "preuve_non_citee": lambda s: s["ancrage"]["preuve"] in ("ABSENTE", "NOTE_SYSTEME"),
@@ -81,10 +81,16 @@ def signals(g, doc, rel):
         "nie": bool(ent and ent.get("nie") is True),
         "provenance": "directe" if ti == "extraction_directe" else ("sgce" if t.get("sgce") else "inference"),
         "creee_par_sgce": t.get("sgce") == "CREEE",
+        "mots": words(g.clinical_endpoint(rel)[0]),
     }
 
 
 LOW_LLM_CONFIDENCE = {"moyenne", "faible"}
+
+
+def words(text, n=6):
+    """Mots porteurs de sens d'une mention (sans chiffres), pour les agents lexicaux."""
+    return [w for w in content_tokens(text) if not any(ch.isdigit() for ch in w)][:n]
 
 
 def entity_signals(g, e, linked_ids, seen):
@@ -106,6 +112,8 @@ def entity_signals(g, e, linked_ids, seen):
         "negation": bool(att.get("negation")),
         "mot_pour_mot": tr.get("ancrage", {}).get("mot_pour_mot", True),
         "confiance_llm": str(e.get("confiance") or ""),
+        "mots": words(name),
+        "chiffre": any(ch.isdigit() for ch in name),
     }
 
 

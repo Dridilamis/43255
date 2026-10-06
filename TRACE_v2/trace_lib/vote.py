@@ -29,6 +29,9 @@ def features(s, rel_type):
         f"provenance={s['provenance']}": 1,
         f"temporalite={ctx.get('temporalite', 'INCONNUE')}": 1,
     }
+    for w in s.get("mots", []):
+        f[f"mot={w}"] = 1
+        f[f"relation*mot={rel_type}*{w}"] = 1
     for k in ("doublon",):
         if s[k]:
             f[k] = 1
@@ -52,6 +55,11 @@ def entity_features(s):
         f"type*longueur={t}*{lg}": 1,
         f"inference={s['inference']}": 1,
     }
+    for w in s.get("mots", []):
+        f[f"mot={w}"] = 1
+        f[f"type*mot={t}*{w}"] = 1
+    if s.get("chiffre"):
+        f[f"type*chiffre={t}"] = 1
     if s["repetee"]:
         f["repetee"] = 1
     if s["hypothese"]:
