@@ -6,14 +6,15 @@ etage ne depend de ses resultats.
 
   E1  precision / rappel / F1 (RELAXED) des entites et des relations a la sortie de chaque
       etage, avec les matchers existants (Evaluation/TRACE_Ablation_F1, inchanges) ;
-  E2  taux d'hallucination = 1 - precision des relations ;
+  E2  taux d'hallucination = 1 - precision, pour les entites et pour les relations ;
   E3  stabilite : memes mesures sur les documents pairs et impairs separement ;
   E4  metriques de structure (sans gold) : relations orphelines, violations d'ontologie,
       relations identiques, relations dont une extremite est absente du texte ;
-  E5  (--entrainer-vote) entraine le vote des agents de l'Etage 7 sur la sortie de
-      l'Etage 6 et mesure son compromis precision/rappel par validation croisee a 2 plis
-      (documents pairs / impairs) : chaque document est note par un modele qui ne l'a
-      jamais vu. Le modele final (tous les documents) est ecrit dans modele/vote_agents.json.
+  E5  (--entrainer-vote) entraine les deux votes des agents (entites, relations) sur la
+      sortie de l'Etage 6, puis mesure le SYSTEME COMPLET en mode precision par validation
+      croisee a 2 plis (documents pairs / impairs) : chaque document est traite par
+      l'Etage 7 avec des modeles qui ne l'ont jamais vu. Le modele final (tous les
+      documents) est ecrit dans modele/vote_agents.json.
 
 Usage :
     python etage8_evaluation.py                   # E1-E4
@@ -31,6 +32,7 @@ from pathlib import Path
 import contextlib
 import importlib.util
 import io
+import shutil
 
 import numpy as np
 import pandas as pd
@@ -102,11 +104,13 @@ def structure(stage_dir):
     return c
 
 
-KEEP_LEVELS = [100, 90, 80, 70, 60]
+KEEP_LEVELS = [90, 80, 70]                 # part gardee par le mode precision (validation croisee)
+THRESHOLD_LEVELS = [100, 95, 90, 85, 80, 70, 60]
 
 
-def _matcher_module():
-    spec = importlib.util.spec_from_file_location("matcher", C.MATCHERS_DIR / "Matching_relations_ABLATION.py")
+def _matcher(kind):
+    name = "Matching_relations_ABLATION.py" if kind == "rel" else "Matching_entites_ABLATION.py"
+    spec = importlib.util.spec_from_file_location(f"matcher_{kind}", C.MATCHERS_DIR / name)
     m = importlib.util.module_from_spec(spec)
     argv = sys.argv
     sys.argv = ["matcher", str(gold_dir()), str(C.STAGE_DIRS[6]), str(C.EVAL_DIR / "_matcher_tmp")]
@@ -118,19 +122,21 @@ def _matcher_module():
     return m
 
 
-def _labelled_signals():
-    """(document, features, label) pour chaque relation de la sortie de l'Etage 6, et le
-    nombre de relations gold par document."""
+def _gold_files(m):
+    return {m.normalize_document_key(p.name): p for p in gold_dir().glob("*.json")}
+
+
+def _relation_samples():
+    """(document, variables, juste ?) pour chaque relation de la sortie de l'Etage 6."""
     import etage7_arbitrage
-    m = _matcher_module()
-    gold_idx = m.index_json_folder(str(gold_dir()))
-    samples, n_gold = [], {}
+    m = _matcher("rel")
+    golds = _gold_files(m)
+    samples = []
     for path, data in iter_documents(C.STAGE_DIRS[6]):
         key = m.normalize_document_key(path.name)
-        if not is_clinical(data) or key not in gold_idx:
+        if not is_clinical(data) or key not in golds:
             continue
-        gold = m.extract_gold_relations(m.load_json(gold_idx[key]))
-        n_gold[key] = len(gold)
+        gold = m.extract_gold_relations(m.load_json(golds[key]))
         preds = m.extract_pred_relations(data)
         status = {}
         for r in m.evaluate_document(key, gold, preds):
@@ -142,57 +148,115 @@ def _labelled_signals():
             if i in label:
                 s = etage7_arbitrage.signals(g, doc, rel)
                 samples.append((key, vote.features(s, str(rel.get("type_relation") or "")), label[i]))
-    return samples, n_gold
+    return samples
+
+
+def _entity_samples():
+    """(document, variables, juste ?) pour chaque entite de pages[] que les regles E1-E3 gardent."""
+    import etage7_arbitrage
+    m = _matcher("ent")
+    golds = _gold_files(m)
+    samples = []
+    for path, data in iter_documents(C.STAGE_DIRS[6]):
+        key = m.normalize_document_key(path.name)
+        if not is_clinical(data) or key not in golds:
+            continue
+        with contextlib.redirect_stdout(io.StringIO()):
+            results, _, _ = m.match_document(m.load_json(golds[key]), data)
+        status = {}
+        for r in results:
+            if r["status"] != "FN":
+                status.setdefault((r["page"], r["pred_name"], r["pred_type"]), []).append(r["status"])
+        g = Graph(data)
+        linked = {r.get(k) for r in g.relations for k in ("identifiant_entite_sujet", "identifiant_entite_objet")}
+        seen = Counter()
+        for page, e in g.page_entities():
+            name, etype = m.get_entity_name(e), m.get_entity_type(e)
+            if not name or not etype:
+                continue
+            ok = status[(page.get("page"), name, etype)].pop(0).startswith("TP")
+            s = etage7_arbitrage.entity_signals(g, e, linked, seen)
+            if not etage7_arbitrage.decide_entity(s, "standard")[0]:
+                samples.append((key, vote.entity_features(s), ok))
+    return samples
+
+
+def _fit(samples, docs):
+    rows = [(f, y) for d, f, y in samples if d in docs]
+    weights = vote.fit([f for f, _ in rows], [y for _, y in rows])
+    scores = np.array([vote.score(weights, f) for f, _ in rows])
+    return {"poids": weights,
+            "seuils_garder": {str(k): (float(np.quantile(scores, 1 - k / 100)) if k < 100 else 0.0)
+                              for k in THRESHOLD_LEVELS}}
+
+
+def _counts(df, docs):
+    st = df[df["document"].isin(docs)]["status"].astype(str)
+    return Counter(tp=int(st.str.startswith("TP").sum()), fp=int(st.isin(["FP", "WRONG_TYPE"]).sum()),
+                   fn=int(st.isin(["FN", "WRONG_TYPE"]).sum()))
+
+
+def _prf_counts(c):
+    p = c["tp"] / (c["tp"] + c["fp"]) if c["tp"] + c["fp"] else 0.0
+    r = c["tp"] / (c["tp"] + c["fn"]) if c["tp"] + c["fn"] else 0.0
+    return p, r, (2 * p * r / (p + r) if p + r else 0.0)
 
 
 def train_vote():
+    """Entraine les deux votes et mesure le SYSTEME COMPLET (Etage 7 en mode precision) par
+    validation croisee : modeles entraines sur les documents pairs, Etage 7 applique et evalue
+    sur les impairs, puis l'inverse. Ecrit le modele final (tous les documents)."""
+    import etage7_arbitrage
     out = C.EVAL_DIR
     out.mkdir(parents=True, exist_ok=True)
-    samples, n_gold = _labelled_signals()
-    docs = sorted(n_gold)
+    print("Collecte des signaux et des etiquettes (gold) ...")
+    rel_s, ent_s = _relation_samples(), _entity_samples()
+    docs = sorted({d for d, _, _ in rel_s} | {d for d, _, _ in ent_s})
     folds = [set(docs[0::2]), set(docs[1::2])]
-    totals = {k: Counter() for k in KEEP_LEVELS}
-    for test in folds:
-        train = [s for s in samples if s[0] not in test]
-        held = [s for s in samples if s[0] in test]
-        w = vote.fit([f for _, f, _ in train], [y for _, _, y in train])
-        tr_scores = np.array([vote.score(w, f) for _, f, _ in train])
-        te_scores = np.array([vote.score(w, f) for _, f, _ in held])
-        y_te = np.array([y for _, _, y in held])
+    tmp = out / "_cv"
+    totals = {k: {"ent": Counter(), "rel": Counter()} for k in KEEP_LEVELS}
+    for i, test in enumerate(folds):
+        train = set(docs) - test
+        models = {"relations": _fit(rel_s, train), "entites": _fit(ent_s, train)}
         for k in KEEP_LEVELS:
-            thr = np.quantile(tr_scores, 1 - k / 100) if k < 100 else -1
-            keep = te_scores >= thr
-            totals[k]["tp"] += int(y_te[keep].sum())
-            totals[k]["kept"] += int(keep.sum())
-            totals[k]["gold"] += sum(n_gold[d] for d in test)
+            print(f"  pli {i + 1}/2, garder {k} % : Etage 7 + evaluation sur {len(test)} documents non vus")
+            with contextlib.redirect_stdout(io.StringIO()):
+                etage7_arbitrage.main(mode="precision", out_dir=tmp / "json", keep=k, keep_ent=k, models=models)
+            totals[k]["rel"].update(_counts(match("rel", tmp / "json", tmp / "rel"), test))
+            totals[k]["ent"].update(_counts(match("ent", tmp / "json", tmp / "ent"), test))
+    shutil.rmtree(tmp, ignore_errors=True)
+
     rows = []
     for k in KEEP_LEVELS:
-        t = totals[k]
-        p, r = t["tp"] / t["kept"], t["tp"] / t["gold"]
-        rows.append({"garder_pct": k, "relations": t["kept"], "precision": p, "rappel": r,
-                     "f1": 2 * p * r / (p + r), "taux_hallucination": 1 - p})
+        ep, er, ef = _prf_counts(totals[k]["ent"])
+        rp, rr, rf = _prf_counts(totals[k]["rel"])
+        rows.append({"garder_pct": k, "ent_P": ep, "ent_R": er, "ent_F1": ef, "ent_hallucination": 1 - ep,
+                     "rel_P": rp, "rel_R": rr, "rel_F1": rf, "rel_hallucination": 1 - rp})
     with open(out / "vote_agents_validation.csv", "w", newline="", encoding="utf-8-sig") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter=";")
         w.writeheader()
         w.writerows(rows)
 
-    weights = vote.fit([f for _, f, _ in samples], [y for _, _, y in samples])
-    scores = np.array([vote.score(weights, f) for _, f, _ in samples])
-    vote.save({"poids": weights, "entraine_sur": "sortie Etage 6, 43 documents (gold)",
-               "seuils_garder": {str(k): (float(np.quantile(scores, 1 - k / 100)) if k < 100 else 0.0)
-                                 for k in KEEP_LEVELS},
-               "validation_croisee": rows})
-
-    print("VOTE DES AGENTS - validation croisee (chaque document note par un modele qui ne l'a pas vu)")
-    print(f"{'garder':>7} {'relations':>10} {'precision':>10} {'rappel':>8} {'F1':>8} {'halluc.':>8}")
-    for r in rows:
-        print(f"{r['garder_pct']:6}% {r['relations']:10} {r['precision']:10.2%} {r['rappel']:8.2%} "
-              f"{r['f1']:8.2%} {r['taux_hallucination']:8.2%}")
-    top = sorted(weights.items(), key=lambda kv: kv[1])
-    print("\nSignaux qui font le plus baisser le score :", ", ".join(f"{k} ({v:+.2f})" for k, v in top[:8]))
-    print("Signaux qui font le plus monter le score  :", ", ".join(f"{k} ({v:+.2f})" for k, v in top[-6:]))
+    final = {"relations": _fit(rel_s, set(docs)), "entites": _fit(ent_s, set(docs)),
+             "entraine_sur": f"sortie Etage 6, {len(docs)} documents (gold)", "validation_croisee": rows}
+    vote.save(final)
+    _print_cv(rows)
+    for kind in ("entites", "relations"):
+        top = sorted(final[kind]["poids"].items(), key=lambda kv: kv[1])
+        print(f"\n[{kind}] signaux qui font baisser le score :", ", ".join(f"{a} ({v:+.2f})" for a, v in top[:6]))
+        print(f"[{kind}] signaux qui font monter le score  :", ", ".join(f"{a} ({v:+.2f})" for a, v in top[-4:]))
     print(f"Modele : {C.MODEL_FILE}")
     return 0
+
+
+def _print_cv(rows):
+    print("\nMODE PRECISION - validation croisee (chaque document traite par des modeles qui ne l'ont pas vu)")
+    print(f"{'garder':>7} | {'Ent P':>7} {'Ent R':>7} {'Ent F1':>7} {'halluc':>7} | "
+          f"{'Rel P':>7} {'Rel R':>7} {'Rel F1':>7} {'halluc':>7}")
+    for r in rows:
+        print(f"{r['garder_pct']:6}% | {r['ent_P']:7.2%} {r['ent_R']:7.2%} {r['ent_F1']:7.2%} "
+              f"{r['ent_hallucination']:7.2%} | {r['rel_P']:7.2%} {r['rel_R']:7.2%} {r['rel_F1']:7.2%} "
+              f"{r['rel_hallucination']:7.2%}")
 
 
 def main():
@@ -213,13 +277,13 @@ def main():
         pa, ra, fa, _ = prf(rel, docs[0::2])
         pb, rb, fb, _ = prf(rel, docs[1::2])
         s = structure(d)
-        row = {"etage": name, "ent_P": ep, "ent_R": er, "ent_F1": ef,
-               "rel_P": rp, "rel_R": rr, "rel_F1": rf, "rel_FP": rfp, "taux_hallucination": 1 - rp,
+        row = {"etage": name, "ent_P": ep, "ent_R": er, "ent_F1": ef, "ent_hallucination": 1 - ep,
+               "rel_P": rp, "rel_R": rr, "rel_F1": rf, "rel_FP": rfp, "rel_hallucination": 1 - rp,
                "pairs_P": pa, "pairs_R": ra, "pairs_F1": fa, "impairs_P": pb, "impairs_R": rb, "impairs_F1": fb,
                **{f"struct_{k}": v for k, v in s.items()}}
         rows.append(row)
-        print(f"[OK] {name:24} Ent F1 {ef:.2%} | Rel P {rp:.2%} R {rr:.2%} F1 {rf:.2%} "
-              f"| halluc. {1 - rp:.2%} | ontologie {s['violations_ontologie']} identiques {s['identiques']}")
+        print(f"[OK] {name:24} Ent P {ep:.2%} F1 {ef:.2%} | Rel P {rp:.2%} F1 {rf:.2%} "
+              f"| ontologie {s['violations_ontologie']} identiques {s['identiques']}")
 
     with open(out / "tableau.csv", "w", newline="", encoding="utf-8-sig") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()), delimiter=";")
@@ -228,24 +292,21 @@ def main():
     write_json(out / "tableau.json", rows)
 
     print("\n" + "=" * 118)
-    print(f"{'ETAGE':24} | {'Ent P':>7} {'Ent R':>7} {'Ent F1':>7} | {'Rel P':>7} {'Rel R':>7} {'Rel F1':>7} "
-          f"{'FP':>5} {'Halluc':>7} | {'F1 pairs':>8} {'F1 impairs':>10}")
+    print(f"{'ETAGE':24} | {'Ent P':>7} {'Ent R':>7} {'Ent F1':>7} {'halluc':>7} | {'Rel P':>7} {'Rel R':>7} "
+          f"{'Rel F1':>7} {'halluc':>7} | {'RelF1 pairs':>11} {'impairs':>8}")
     print("-" * 118)
     for r in rows:
-        print(f"{r['etage']:24} | {r['ent_P']:7.2%} {r['ent_R']:7.2%} {r['ent_F1']:7.2%} | {r['rel_P']:7.2%} "
-              f"{r['rel_R']:7.2%} {r['rel_F1']:7.2%} {r['rel_FP']:5} {r['taux_hallucination']:7.2%} | "
-              f"{r['pairs_F1']:8.2%} {r['impairs_F1']:10.2%}")
+        print(f"{r['etage']:24} | {r['ent_P']:7.2%} {r['ent_R']:7.2%} {r['ent_F1']:7.2%} {r['ent_hallucination']:7.2%} | "
+              f"{r['rel_P']:7.2%} {r['rel_R']:7.2%} {r['rel_F1']:7.2%} {r['rel_hallucination']:7.2%} | "
+              f"{r['pairs_F1']:11.2%} {r['impairs_F1']:8.2%}")
     model = vote.load()
-    if model and model.get("validation_croisee"):
+    if model and model.get("validation_croisee") and "ent_P" in model["validation_croisee"][0]:
         cv = model["validation_croisee"]
         with open(out / "vote_agents_validation.csv", "w", newline="", encoding="utf-8-sig") as fh:
             w = csv.DictWriter(fh, fieldnames=list(cv[0]), delimiter=";")
             w.writeheader()
             w.writerows(cv)
-        print("\nVote des agents, validation croisee (documents non vus) :")
-        for r in cv:
-            print(f"  garder {r['garder_pct']:3}% : P {r['precision']:.2%}  R {r['rappel']:.2%}  "
-                  f"F1 {r['f1']:.2%}  hallucinations {r['taux_hallucination']:.2%}")
+        _print_cv(cv)
     if any(r["etage"] == "07_arbitrage_precision" for r in rows):
         print("\nATTENTION : 07_arbitrage_precision est evalue sur les documents qui ont servi a entrainer le")
         print("vote des agents : ces chiffres sont optimistes. La mesure honnete (documents non vus) est")

@@ -87,6 +87,55 @@ class Graph:
             return on, sn, True
         return sn, on, self.is_patient(oe, on)
 
+    # -- entites par page (ce sont elles que le matcher d'entites evalue)
+    @staticmethod
+    def mention(e):
+        """Nom d'une entite tel que l'evaluation le lit (name, mention, text, preuve, valeur)."""
+        for k in ("name", "mention", "text", "preuve", "valeur"):
+            v = (e or {}).get(k)
+            if v is not None and str(v).strip():
+                return str(v).strip()
+        return ""
+
+    def page_entities(self):
+        """Liste de (page, entite) pour toutes les entites de pages[]."""
+        out = []
+        for page in self.data.get("pages", []) or []:
+            if not isinstance(page, dict):
+                continue
+            key = "entities" if isinstance(page.get("entities"), list) else "entites"
+            for e in page.get(key, []) or []:
+                if isinstance(e, dict):
+                    out.append((page, e))
+        return out
+
+    def remove_entities(self, page_entity_objs):
+        """Retire des entites de pages[] ; retire aussi l'entite globale de meme identifiant
+        quand plus aucune page ne la cite, et les relations qui pointent vers elle (un lien
+        vers une entite retiree n'a plus de sens). Retourne (entites, globales, relations)."""
+        drop = {id(e) for e in page_entity_objs}
+        if not drop:
+            return 0, 0, 0
+        removed = 0
+        for page in self.data.get("pages", []) or []:
+            if not isinstance(page, dict):
+                continue
+            key = "entities" if isinstance(page.get("entities"), list) else "entites"
+            if isinstance(page.get(key), list):
+                before = len(page[key])
+                page[key] = [e for e in page[key] if id(e) not in drop]
+                removed += before - len(page[key])
+        still = {e.get("identifiant_entite") for _, e in self.page_entities()}
+        gone = {e.get("identifiant_entite") for e in page_entity_objs} - still - {None}
+        before_g = len(self.data["global_entities"])
+        self.data["global_entities"] = [e for e in self.data["global_entities"]
+                                        if not (isinstance(e, dict) and e.get("identifiant_entite") in gone)]
+        n_rel = self.remove_relations([r.get("identifiant_relation") for r in self.relations
+                                       if r.get("identifiant_entite_sujet") in gone
+                                       or r.get("identifiant_entite_objet") in gone])
+        self.entities = {k: v for k, v in self.entities.items() if k not in gone}
+        return removed, before_g - len(self.data["global_entities"]), n_rel
+
     def remove_relations(self, ids):
         """Retire des relations par identifiant, dans global_relations ET dans pages[]."""
         ids = {i for i in ids if i}

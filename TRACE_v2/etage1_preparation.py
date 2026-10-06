@@ -5,7 +5,9 @@ Seule responsabilite : rendre l'entree propre et uniforme. Ne juge aucune relati
 
   P1  retire les relations ajoutees/validees avec l'aide du gold (V6.9b-k), avec la meme
       definition que run_pipeline_propre.py (importee, pas recopiee) ;
-  P2  met les noms d'entites en forme Unicode NFKC ("µ" -> "μ", ligatures, espaces) ;
+  P2  met les noms des entites GLOBALES (noeuds du graphe) en forme Unicode NFKC
+      ("µ" -> "μ"). Les entites de pages[] sont des MENTIONS : elles restent telles que
+      dans le texte (le compte rendu ecrit "µ"), ce que verifie la regle E1 de l'Etage 7 ;
   P3  verifie que chaque relation a un identifiant (en attribue un sinon).
 
 Entree : SortieJson_Postprocessing (jamais modifiee).

@@ -13,7 +13,8 @@ texte (Document : lignes, sections). Il ANNOTE, il ne retire rien.
                     mention dans le texte, ou l'extraction l'a marquee nie=True ;
   T4 hypothese      un indice d'incertitude ("suspicion de", "probable", "a discuter"...).
 
-Resultat dans entite.trace_v2.attributs.
+Resultat dans entite.trace_v2.attributs, pour les entites globales (lues par les relations)
+et pour les entites de pages[] (lues par l'evaluation des entites).
 """
 import re
 import sys
@@ -31,32 +32,36 @@ VALUE_UNIT_RE = re.compile(r"(?<![\w.])(\d+(?:[.,]\d+)?)\s*(" + UNITS + r")(?![a
 TIME_SECTIONS = {"ANTECEDENTS": "ANTERIEUR", "TRAITEMENT_HABITUEL": "ANTERIEUR", "SORTIE": "SORTIE"}
 
 
+def qualify(g, doc, e, c, name):
+    att = {}
+    if g.entity_type(e) in NUMERIC_TYPES and not e.get("unite"):
+        m = VALUE_UNIT_RE.search(name)
+        if m:
+            e["unite"] = m.group(2)
+            att["unite_renseignee"] = {"valeur": m.group(1), "unite": m.group(2)}
+            c["T1_unites_renseignees"] += 1
+    pos = doc.find_exact(name) or doc.locate(name)
+    section = doc.section_at(pos[0] if pos else None)
+    att["section"] = section
+    att["temporalite"] = TIME_SECTIONS.get(section, "SEJOUR")
+    c[f"T2_{att['temporalite']}"] += 1
+    neg, hyp = doc.cues_before(name)
+    att["negation"] = neg or e.get("nie") is True
+    att["hypothese"] = hyp
+    c["T3_negation"] += att["negation"]
+    c["T4_hypothese"] += hyp
+    trace(e, "attributs", att)
+
+
 def process(path, data):
     c = Counter()
     g, doc = Graph(data), load_source(data, path)
     for e in g.entities.values():
-        name = g.entity_name(e)
-        att = {}
-
-        if g.entity_type(e) in NUMERIC_TYPES and not e.get("unite"):
-            m = VALUE_UNIT_RE.search(name)
-            if m:
-                e["unite"] = m.group(2)
-                att["unite_renseignee"] = {"valeur": m.group(1), "unite": m.group(2)}
-                c["T1_unites_renseignees"] += 1
-
-        pos = doc.find_exact(name) or doc.locate(name)
-        section = doc.section_at(pos[0] if pos else None)
-        att["section"] = section
-        att["temporalite"] = TIME_SECTIONS.get(section, "SEJOUR")
-        c[f"T2_{att['temporalite']}"] += 1
-
-        neg, hyp = doc.cues_before(name)
-        att["negation"] = neg or e.get("nie") is True
-        att["hypothese"] = hyp
-        c["T3_negation"] += att["negation"]
-        c["T4_hypothese"] += hyp
-        trace(e, "attributs", att)
+        qualify(g, doc, e, c, g.entity_name(e))
+    pc = Counter()
+    for _, e in g.page_entities():
+        qualify(g, doc, e, pc, g.mention(e))
+    c.update({f"pages_{k}": v for k, v in pc.items()})
     return c
 
 

@@ -3,8 +3,8 @@
 Vote appris des agents (regression logistique, numpy seul).
 
 Les signaux des agents (Etage 7) deviennent des variables binaires ; le modele apprend
-leur poids. Il est ENTRAINE par l'Etage 8 (seul etage qui lit le gold) et APPLIQUE par
-l'Etage 7 en mode precision. Sa qualite est mesuree par validation croisee sur des
+leur poids. Deux modeles : un pour les relations, un pour les entites. Ils sont ENTRAINES
+par l'Etage 8 (seul etage qui lit le gold) et APPLIQUES par l'Etage 7 en mode precision. Sa qualite est mesuree par validation croisee sur des
 documents qui n'ont pas servi a l'entrainement.
 """
 import json
@@ -35,6 +35,27 @@ def features(s, rel_type):
     for k in ("negation", "hypothese"):
         if ctx.get(k):
             f[k] = 1
+    return f
+
+
+def entity_features(s):
+    """Variables du vote pour une ENTITE (voir etage7_arbitrage.entity_signals)."""
+    t, sec, lg = s["type"], s["section"], s["longueur"]
+    f = {
+        "biais": 1,
+        f"type={t}": 1,
+        f"section={sec}": 1,
+        f"type*section={t}*{sec}": 1,
+        f"reliee={s['reliee']}": 1,
+        f"type*reliee={t}*{s['reliee']}": 1,
+        f"longueur={lg}": 1,
+        f"type*longueur={t}*{lg}": 1,
+        f"inference={s['inference']}": 1,
+    }
+    if s["repetee"]:
+        f["repetee"] = 1
+    if s["hypothese"]:
+        f["hypothese"] = 1
     return f
 
 
