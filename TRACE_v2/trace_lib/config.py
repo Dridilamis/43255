@@ -22,6 +22,7 @@ STAGE_DIRS = {
     2: OUT / "02_ancrage",
     3: OUT / "03_ontologie",
     4: OUT / "04_sgce",
+    "4b": OUT / "04b_recuperation",
     5: OUT / "05_dedoublonnage",
     6: OUT / "06_attributs",
     7: OUT / "07_arbitrage",

@@ -47,6 +47,7 @@ STAGES = [
     ("02_ancrage", C.STAGE_DIRS[2]),
     ("03_ontologie", C.STAGE_DIRS[3]),
     ("04_sgce", C.STAGE_DIRS[4]),
+    ("04b_recuperation", C.STAGE_DIRS["4b"]),
     ("05_dedoublonnage", C.STAGE_DIRS[5]),
     ("06_attributs", C.STAGE_DIRS[6]),
     ("07_arbitrage", C.STAGE_DIRS[7]),

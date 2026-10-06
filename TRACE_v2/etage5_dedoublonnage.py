@@ -65,7 +65,7 @@ def process(path, data):
 
 
 def main(in_dir=None):
-    run_stage(5, "DEDOUBLONNAGE", in_dir or C.STAGE_DIRS[4], process)
+    run_stage(5, "DEDOUBLONNAGE", in_dir or C.STAGE_DIRS["4b"], process)
     return 0
 
 

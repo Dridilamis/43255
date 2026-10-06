@@ -6,6 +6,7 @@ TRACE v2 - lanceur global. Une responsabilite par etage :
   2 Ancrage documentaire  confronte entites et relations au texte ; retire l'impossible
   3 Validation ontologie  confronte chaque relation aux signatures v1.6 (annote)
   4 SGCE                  Patterns A-D, Relation Repair, Orphelins, Multi-Agent (code existant)
+  4b Recuperation         ajoute les entites oubliees dans la biologie et les ordonnances
   5 Dedoublonnage         fusionne/retire l'identique, annote les repetitions
   6 Attributs cliniques   unite, temporalite, negation, hypothese des entites (annote)
   7 Agents et arbitrage   seul etage qui decide (entites et relations) ; modes standard / precision
@@ -26,6 +27,7 @@ import etage1_preparation
 import etage2_ancrage
 import etage3_ontologie
 import etage4_sgce
+import etage4b_recuperation
 import etage5_dedoublonnage
 import etage6_attributs
 import etage7_arbitrage
@@ -34,7 +36,7 @@ import etage8_evaluation
 
 def main():
     argv = sys.argv[1:]
-    start = int(argv[argv.index("--from") + 1]) if "--from" in argv else 1
+    start = float(argv[argv.index("--from") + 1].replace("b", ".5")) if "--from" in argv else 1
     keep = int(argv[argv.index("--garder") + 1]) if "--garder" in argv else 80
     keep_ent = int(argv[argv.index("--garder-entites") + 1]) if "--garder-entites" in argv else 80
     t0 = time.perf_counter()
@@ -43,6 +45,7 @@ def main():
         (2, etage2_ancrage.main),
         (3, etage3_ontologie.main),
         (4, etage4_sgce.main),
+        (4.5, etage4b_recuperation.main),
         (5, etage5_dedoublonnage.main),
         (6, etage6_attributs.main),
     ]

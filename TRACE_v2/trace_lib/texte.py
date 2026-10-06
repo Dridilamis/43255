@@ -156,6 +156,25 @@ class Document:
         return neg, hyp
 
 
+def iter_page_lines(pages):
+    """(page, section, ligne) pour chaque ligne non vide des pages, la section courante
+    etant suivie d'une page a l'autre."""
+    current = "DEBUT"
+    for page in pages or []:
+        if not isinstance(page, dict):
+            continue
+        for line in (page.get("texte_brut") or "").splitlines():
+            n = norm(line)
+            if not n:
+                continue
+            if len(n) <= 60:
+                for rx, sec in _SECTION_RE:
+                    if rx.match(n):
+                        current = sec
+                        break
+            yield page, current, line.strip()
+
+
 def doc_key(path):
     return Path(path).name.split("_trace_")[0]
 

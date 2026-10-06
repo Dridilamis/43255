@@ -12,7 +12,7 @@ Depuis `Reduction_hallucinations\TRACE_v2` :
 
 ```
 python run_trace_v2.py                          # étages 1 à 8 (~3 min, dont SGCE)
-python run_trace_v2.py --from 5                 # reprendre à l'étage 5
+python run_trace_v2.py --from 4b                # reprendre à l'étage 4b
 python run_trace_v2.py --from 7 --entrainer-vote  # réentraîner les votes des agents (~10 min)
 python run_trace_v2.py --garder 80 --garder-entites 80   # mode précision (défaut 80 %)
 ```
@@ -34,6 +34,7 @@ TRACE v2 traite les deux.
 | 2 | `etage2_ancrage` | Confronte **entités et relations** au texte source : présence, mot pour mot dans la page, preuve, distance, section | seulement l'impossible : entité absente du document (A0), extrémité absente (A1), preuve absente (A2), entités jamais proches (A3) |
 | 3 | `etage3_ontologie` | Confronte chaque relation aux 32 signatures TRACE-Sepsis v1.6 | non (annote) |
 | 4 | `etage4_sgce` | Répare la forme du graphe avec **votre SGCE inchangé** (Patterns A1-A6, B1-B2, C, D, Relation Repair, Orphan Resolution, Multi-Agent), lancé dans un atelier temporaire | ce que SGCE retire |
+| 4b | `etage4b_recuperation` | **Rappel** : ajoute les entités oubliées dans les blocs à forme fixe — lignes de biologie (« Leucocytes 40.8 4.0-10.0 x10*9/L ») et lignes d'ordonnance (« Tahor 10mg 0-0-1 » → traitement + posologie). Chaque ajout est copié du texte de sa page | non (ajoute) |
 | 5 | `etage5_dedoublonnage` | Fusionne les entités strictement identiques, retire les relations strictement identiques, annote les répétitions | l'identique |
 | 6 | `etage6_attributs` | Qualifie chaque entité (globale et par page) : unité, temporalité, négation, hypothèse | non (annote) |
 | 7 | `etage7_arbitrage` | **Seul étage qui décide**, pour les entités puis les relations. Agents : ancrage, ontologie, redondance, contexte, provenance | voir ci-dessous |
@@ -65,10 +66,10 @@ Taux d'hallucination = part des éléments produits qui sont faux (1 − précis
 | Sortie | Ent P | Ent R | Ent F1 | Ent halluc. | Rel P | Rel R | Rel F1 | Rel halluc. |
 |---|---|---|---|---|---|---|---|---|
 | Ancienne chaîne (08b) | 74,40 % | 68,15 % | 71,14 % | 25,6 % | 72,03 % | 54,98 % | 62,36 % | 28,0 % |
-| **v2, mode standard** | 76,14 % | 67,39 % | **71,50 %** | 23,9 % | 72,74 % | 54,51 % | 62,32 % | 27,3 % |
-| **v2, mode précision 90 %** ¹ | 79,95 % | 63,94 % | 71,06 % | 20,0 % | 75,92 % | 49,25 % | 59,75 % | 24,1 % |
-| **v2, mode précision 80 %** ¹ | **83,38 %** | 59,27 % | 69,29 % | **16,6 %** | **77,71 %** | 44,32 % | 56,45 % | **22,3 %** |
-| v2, mode précision 70 % ¹ | 86,10 % | 53,61 % | 66,08 % | 13,9 % | 79,51 % | 38,20 % | 51,60 % | 20,5 % |
+| **v2, mode standard** | **75,55 %** | **68,57 %** | **71,89 %** | 24,5 % | 72,74 % | 54,51 % | 62,32 % | 27,3 % |
+| **v2, mode précision 90 %** ¹ | 79,11 % | 65,03 % | 71,38 % | 20,9 % | 75,94 % | 49,29 % | 59,78 % | 24,1 % |
+| **v2, mode précision 80 %** ¹ | **82,67 %** | 60,49 % | 69,86 % | **17,3 %** | **77,66 %** | 44,54 % | 56,62 % | **22,3 %** |
+| v2, mode précision 70 % ¹ | 85,34 % | 54,86 % | 66,79 % | 14,7 % | 79,27 % | 38,98 % | 52,26 % | 20,7 % |
 
 ¹ Validation croisée du système complet : les votes sont entraînés sur les documents
 pairs, l'étage 7 est appliqué et évalué sur les impairs, puis l'inverse. Chaque document
@@ -76,9 +77,14 @@ est donc traité par des modèles qui ne l'ont jamais vu. La ligne `07_arbitrage
 du tableau de l'étage 8 est plus optimiste, car le modèle final est entraîné sur ces
 mêmes documents.
 
-En mode précision 80 %, la part d'entités hallucinées baisse d'environ un tiers
-(25,6 % → 16,6 %) et celle des relations d'environ un cinquième (28,0 % → 22,3 %), au
-prix de rappel.
+En mode standard, précision, rappel et F1 des entités montent tous les trois. En mode
+précision 80 %, la part d'entités hallucinées baisse d'environ un tiers (25,6 % → 17,3 %)
+et celle des relations d'environ un cinquième (28,0 % → 22,3 %), au prix de rappel.
+
+**Plafond d'un post-traitement.** Même un filtre parfait (100 % de précision) ne dépasse
+pas F1 ≈ 81 % pour les entités et ≈ 71 % pour les relations, car le rappel est borné par
+ce que Mistral extrait (≈ 3500 entités et 2200 relations du gold jamais extraites). Un
+F1 de 85 % demande d'agir à l'extraction.
 
 **Ce que les agents ont appris** (poids des votes) :
 - entités : plus souvent fausses quand ce sont des défaillances d'organe ou des
@@ -99,6 +105,9 @@ relations absentes du texte 10 → 0.
   le F1 : c'est un réglage à choisir selon l'usage.
 - Le gold mélange `µ` (515 fois) et `μ` (338 fois). Les mentions par page restent donc
   identiques au texte ; seules les entités globales (nœuds du graphe) sont normalisées.
+- Testé et écarté pour le rappel : dupliquer une entité pour chaque occurrence dans le
+  texte (+1061 entités, précision −5 points, F1 en baisse) ; relier les entités isolées
+  au patient ; l'étage 9 ; étendre les posologies.
 - Toutes les mesures portent sur les 43 mêmes documents. Les votes sont mesurés sur des
   documents non vus ; les autres règles ont été fixées a priori.
 - Pour faire monter précision, rappel et F1 ensemble, il faut agir à l'extraction
