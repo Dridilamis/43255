@@ -1,0 +1,130 @@
+{
+ "a_pour_label_nosologique": {
+  "domaine": "DONNEE_PATIENT",
+  "image": "LABEL_NOSOLOGIQUE"
+ },
+ "presente_suspicion_infection": {
+  "domaine": "DONNEE_PATIENT",
+  "image": "FOYER_INFECTIEUX"
+ },
+ "presente_dysfonction_organe": {
+  "domaine": "DONNEE_PATIENT",
+  "image": "DEFAILLANCE_ORGANE"
+ },
+ "score_sofa_calcule_pour": {
+  "domaine": "SCORE_SOFA",
+  "image": "DONNEE_PATIENT"
+ },
+ "score_sofa_inclut_biomarqueur": {
+  "domaine": "SCORE_SOFA",
+  "image": "BIOMARQUEUR"
+ },
+ "score_sofa_inclut_signe_vital": {
+  "domaine": "SCORE_SOFA",
+  "image": "SIGNE_VITAL"
+ },
+ "score_sofa_inclut_score_neurologique": {
+  "domaine": "SCORE_SOFA",
+  "image": "SCORE_NEUROLOGIQUE"
+ },
+ "score_qsofa_calcule_pour": {
+  "domaine": "SCORE_qSOFA",
+  "image": "DONNEE_PATIENT"
+ },
+ "score_qsofa_inclut_score_neurologique": {
+  "domaine": "SCORE_qSOFA",
+  "image": "SCORE_NEUROLOGIQUE"
+ },
+ "stade_ira_calcule_pour": {
+  "domaine": "STADE_IRA",
+  "image": "DONNEE_PATIENT"
+ },
+ "traitement_administre_a": {
+  "domaine": "TRAITEMENT",
+  "image": "DONNEE_PATIENT"
+ },
+ "traitement_a_pour_posologie": {
+  "domaine": "TRAITEMENT",
+  "image": "POSOLOGIE"
+ },
+ "antibiotique_adequat_pour": {
+  "domaine": "TRAITEMENT",
+  "image": "MICRO_ORGANISME"
+ },
+ "antibiotique_inadequat_pour": {
+  "domaine": "TRAITEMENT",
+  "image": "MICRO_ORGANISME"
+ },
+ "traitement_cible_defaillance": {
+  "domaine": "TRAITEMENT",
+  "image": "DEFAILLANCE_ORGANE"
+ },
+ "traitement_indique_par_label_nosologique": {
+  "domaine": "TRAITEMENT",
+  "image": "LABEL_NOSOLOGIQUE"
+ },
+ "signe_vital_supporte_defaillance_organe": {
+  "domaine": "SIGNE_VITAL",
+  "image": "DEFAILLANCE_ORGANE"
+ },
+ "biomarqueur_obtenu_a": {
+  "domaine": "BIOMARQUEUR",
+  "image": "EVENEMENT_TEMPOREL"
+ },
+ "biomarqueur_supporte_defaillance_organe": {
+  "domaine": "BIOMARQUEUR",
+  "image": "DEFAILLANCE_ORGANE"
+ },
+ "biomarqueur_est_critere_de": {
+  "domaine": "BIOMARQUEUR",
+  "image": "LABEL_NOSOLOGIQUE"
+ },
+ "micro_organisme_isole_dans": {
+  "domaine": "MICRO_ORGANISME",
+  "image": "FOYER_INFECTIEUX"
+ },
+ "comorbidite_est_facteur_risque_de": {
+  "domaine": "COMORBIDITE_ANTECEDENT",
+  "image": "LABEL_NOSOLOGIQUE"
+ },
+ "a_pour_contexte_acquisition": {
+  "domaine": "COMORBIDITE_ANTECEDENT",
+  "image": "CONTEXTE_ACQUISITION"
+ },
+ "contexte_acquisition_influence_risque_resistance": {
+  "domaine": "CONTEXTE_ACQUISITION",
+  "image": "MICRO_ORGANISME"
+ },
+ "precede": {
+  "domaine": "EVENEMENT_TEMPOREL",
+  "image": "EVENEMENT_TEMPOREL"
+ },
+ "patient_a_pour_evolution": {
+  "domaine": "DONNEE_PATIENT",
+  "image": "EVOLUTION_PRONOSTIC"
+ },
+ "evenement_associe_evolution": {
+  "domaine": "EVENEMENT_TEMPOREL",
+  "image": "EVOLUTION_PRONOSTIC"
+ },
+ "service_medical_accueille": {
+  "domaine": "SERVICE_MEDICAL",
+  "image": "DONNEE_PATIENT"
+ },
+ "imagerie_objective_foyer": {
+  "domaine": "IMAGERIE_PROCEDURE",
+  "image": "FOYER_INFECTIEUX"
+ },
+ "imagerie_objective_defaillance": {
+  "domaine": "IMAGERIE_PROCEDURE",
+  "image": "DEFAILLANCE_ORGANE"
+ },
+ "imagerie_objective_comorbidite": {
+  "domaine": "IMAGERIE_PROCEDURE",
+  "image": "COMORBIDITE_ANTECEDENT"
+ },
+ "presente_symptome": {
+  "domaine": "DONNEE_PATIENT",
+  "image": "SYMPTOME"
+ }
+}
