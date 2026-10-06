@@ -32,6 +32,12 @@ Une relation est retiree si au moins une regle ci-dessous est violee :
                              deja gardee. Desactive par defaut : le gold compte les mentions
                              repetees, ce n'est pas une hallucination. Activer avec --dedupe.
 
+Normalisation (ne retire rien) :
+  N1 UNICODE_NFKC            les noms d'entites sont mis en forme Unicode NFKC : le signe
+                             micro "µ" (U+00B5) devient la lettre "μ" (U+03BC), les ligatures
+                             et espaces speciaux sont unifies. "50 µg" et "50 μg" designent
+                             la meme dose mais etaient comptes comme deux chaines differentes.
+
 Toutes les regles et le seuil (1/2) sont fixes a priori : AUCUN acces au gold standard,
 aucun seuil optimise sur le gold. L'entree n'est jamais modifiee.
 
@@ -212,6 +218,18 @@ def check_relation(rel, entities, src):
     return reasons, names
 
 
+def normalize_entity_names(data):
+    """N1 : forme Unicode NFKC des noms d'entites. Retourne le nombre de noms modifies."""
+    changed = 0
+    for e in data.get("global_entities", []) or []:
+        if isinstance(e, dict) and isinstance(e.get("name"), str):
+            new = unicodedata.normalize("NFKC", e["name"])
+            if new != e["name"]:
+                e["name"] = new
+                changed += 1
+    return changed
+
+
 # ------------------------------------------------------------------ main
 def main():
     argv = sys.argv[1:]
@@ -238,7 +256,7 @@ def main():
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
 
     removed_rows, per_doc = [], {}
-    by_rule, total_before, total_after = Counter(), 0, 0
+    by_rule, total_before, total_after, total_nfkc = Counter(), 0, 0, 0
     for path in files:
         data = json.loads(path.read_text(encoding="utf-8-sig"))
         if not isinstance(data, dict) or not isinstance(data.get("global_relations"), list):
@@ -275,6 +293,7 @@ def main():
 
         n_before, n_after = len(data["global_relations"]), len(kept)
         data["global_relations"] = kept
+        n_nfkc = normalize_entity_names(data)
         for page in data.get("pages", []) or []:
             if isinstance(page, dict) and isinstance(page.get("relations"), list):
                 page["relations"] = [r for r in page["relations"]
@@ -290,12 +309,14 @@ def main():
             "relations_avant": n_before,
             "relations_retirees": n_before - n_after,
             "par_regle": dict(doc_rules),
+            "noms_normalises_nfkc": n_nfkc,
         }
         if not dry:
             (OUTPUT_DIR / path.name).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         by_rule.update(doc_rules)
         total_before += n_before
         total_after += n_after
+        total_nfkc += n_nfkc
         per_doc[doc_key(path)] = {"avant": n_before, "apres": n_after, "par_regle": dict(doc_rules)}
         print(f"[OK] {doc_key(path)} | relations {n_before} -> {n_after} | {dict(doc_rules) or '-'}")
 
@@ -308,12 +329,13 @@ def main():
                "relations_retirees": total_before - total_after, "par_regle": dict(by_rule),
                "dedupe": dedupe, "couverture_min": MIN_TOKEN_COVERAGE,
                "fenetre_cooccurrence": COOCCURRENCE_WINDOW, "gold_utilise": False,
-               "par_document": per_doc}
+               "noms_normalises_nfkc": total_nfkc, "par_document": per_doc}
     (REPORT_DIR / "grounding_gate_summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print("\n" + "=" * 100)
     print(f"Relations : {total_before} -> {total_after}  (retirees : {total_before - total_after})")
+    print(f"Noms d'entites normalises (NFKC) : {total_nfkc}")
     for rule, n in sorted(by_rule.items()):
         print(f"  {rule:28} {n}")
     print("(une relation peut violer plusieurs regles)")
