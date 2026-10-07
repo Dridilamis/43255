@@ -16,6 +16,8 @@ Usage (depuis Reduction_hallucinations\\TRACE_v2) :
     python run_trace_v2.py                  # etages 1 a 8
     python run_trace_v2.py --from 5         # reprend a l'etage 5
     python run_trace_v2.py --entrainer-vote # reentraine le vote des agents (gold) avant l'etage 7
+    python run_trace_v2.py --entree ..\\extraction_mistral\\seconde_passe
+                                            # autre entree (ex. sortie de la seconde passe Mistral)
     python run_trace_v2.py --garder 80 --garder-entites 80
                                             # parts gardees par le mode precision (defaut 80)
 Aucun fichier du projet existant n'est modifie : tout est ecrit dans TRACE_v2/sorties.
@@ -39,9 +41,10 @@ def main():
     start = float(argv[argv.index("--from") + 1].replace("b", ".5")) if "--from" in argv else 1
     keep = int(argv[argv.index("--garder") + 1]) if "--garder" in argv else 80
     keep_ent = int(argv[argv.index("--garder-entites") + 1]) if "--garder-entites" in argv else 80
+    entree = argv[argv.index("--entree") + 1] if "--entree" in argv else None
     t0 = time.perf_counter()
     steps = [
-        (1, etage1_preparation.main),
+        (1, lambda: etage1_preparation.main(entree)),
         (2, etage2_ancrage.main),
         (3, etage3_ontologie.main),
         (4, etage4_sgce.main),

@@ -19,6 +19,22 @@ python run_trace_v2.py --garder 80 --garder-entites 80   # mode précision (déf
 
 Chaque étage se lance aussi seul (`python etage2_ancrage.py`, etc.).
 
+## Étage 0b — seconde passe Mistral (rappel)
+
+`extraction_mistral/seconde_passe_mistral.py` redemande à Mistral, page par page, les
+entités puis les relations **oubliées** (en lui montrant ce qui existe déjà). Chaque demande
+est faite 3 fois et un élément n'est gardé que s'il revient au moins 2 fois. Une entité
+n'est ajoutée que si sa preuve figure mot pour mot dans le texte de la page ; une relation,
+que si sa signature respecte l'ontologie. Les réponses sont mises en cache (reprise possible).
+
+```
+$env:MISTRAL_API_KEY="votre_cle"
+python extraction_mistral\seconde_passe_mistral.py --docs 2   # essai
+python extraction_mistral\seconde_passe_mistral.py            # 43 documents
+cd TRACE_v2
+python run_trace_v2.py --entree ..\extraction_mistral\seconde_passe --entrainer-vote
+```
+
 ## Le constat de départ
 
 Le matcher d'entités évalue les entités **par page** (`pages[].entities`). Tous les
