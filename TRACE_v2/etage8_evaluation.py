@@ -105,8 +105,8 @@ def structure(stage_dir):
     return c
 
 
-KEEP_LEVELS = [90, 80, 70]                 # part gardee par le mode precision (validation croisee)
-THRESHOLD_LEVELS = [100, 95, 90, 85, 80, 70, 60]
+KEEP_LEVELS = [98, 95, 90, 80, 70]     # part gardee par le mode precision (validation croisee)
+THRESHOLD_LEVELS = [100, 98, 95, 90, 85, 80, 70, 60]
 
 
 def _matcher(kind):
