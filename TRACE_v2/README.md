@@ -67,6 +67,8 @@ Taux d'hallucination = part des éléments produits qui sont faux (1 − précis
 |---|---|---|---|---|---|---|---|---|
 | Ancienne chaîne (08b) | 74,40 % | 68,15 % | 71,14 % | 25,6 % | 72,03 % | 54,98 % | 62,36 % | 28,0 % |
 | **v2, mode standard** | **75,55 %** | **68,57 %** | **71,89 %** | 24,5 % | 72,74 % | 54,51 % | 62,32 % | 27,3 % |
+| v2, mode précision 98 % ¹ | 76,38 % | 68,13 % | 72,02 % | 23,6 % | 73,21 % | 53,94 % | 62,12 % | 26,8 % |
+| v2, mode précision 95 % ¹ | 77,41 % | 67,27 % | 71,98 % | 22,6 % | 73,55 % | 53,22 % | 61,76 % | 26,5 % |
 | **v2, mode précision 90 %** ¹ | 78,73 % | 66,01 % | 71,81 % | 21,3 % | 74,52 % | 51,48 % | 60,90 % | 25,5 % |
 | **v2, mode précision 80 %** ¹ | **82,49 %** | 61,46 % | 70,44 % | **17,5 %** | **77,34 %** | 46,10 % | 57,77 % | **22,7 %** |
 | v2, mode précision 70 % ¹ | 86,61 % | 55,38 % | 67,56 % | 13,4 % | 80,02 % | 38,28 % | 51,79 % | 20,0 % |
@@ -82,6 +84,11 @@ pairs, l'étage 7 est appliqué et évalué sur les impairs, puis l'inverse. Cha
 est donc traité par des modèles qui ne l'ont jamais vu. La ligne `07_arbitrage_precision`
 du tableau de l'étage 8 est plus optimiste, car le modèle final est entraîné sur ces
 mêmes documents.
+
+**Réglage sans perte de rappel** : `--garder-entites 98 --garder 100` (entités : précision
+76,4 %, rappel 68,1 %, F1 72,0 % ; relations inchangées par rapport au mode standard).
+Retirer moins de 2 % des entités est le seul moyen de baisser les hallucinations sans
+toucher au rappel : au-delà, chaque point d'hallucination en moins coûte du rappel.
 
 En mode standard, précision, rappel et F1 des entités montent tous les trois. En mode
 précision 80 %, la part d'entités hallucinées baisse d'environ un tiers (25,6 % → 17,5 %)
