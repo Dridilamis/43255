@@ -15,9 +15,10 @@ Etapes :
   1. verifie les bibliotheques et les dossiers ;
   2. seconde passe Mistral : ajoute les entites et relations oubliees, avec preuve et vote
      (reprise possible : les reponses deja obtenues sont en cache) ;
-  3. TRACE v2 sur la sortie de la seconde passe, avec reentrainement des votes et validation
+  3. filtre de la seconde passe (garde seulement les ajouts d'un type fiable) ;
+  4. TRACE v2 sur la sortie filtree, avec reentrainement des votes et validation
      croisee (~30 min) ;
-  4. affiche avant / apres.
+  5. affiche avant / apres.
 
 Options :
   --essai              seconde passe sur 2 documents, sans TRACE (pour verifier la cle)
@@ -49,6 +50,8 @@ ROOT = Path(__file__).resolve().parent
 SECONDE_PASSE = ROOT / "extraction_mistral" / "seconde_passe_mistral.py"
 ENTREE = ROOT / "SortieJson_Postprocessing_PROPRE"
 SORTIE = ROOT / "extraction_mistral" / "seconde_passe"
+FILTRE = ROOT / "extraction_mistral" / "filtre_seconde_passe.py"
+FILTREE = ROOT / "extraction_mistral" / "seconde_passe_filtree"
 TRACE_DIR = ROOT / "TRACE_v2"
 EVAL_DIR = TRACE_DIR / "sorties" / "08_evaluation"
 
@@ -164,7 +167,9 @@ def main():
               "passe ; TRACE v2 n'evaluera que ces documents.")
 
     titre("2/2  TRACE v2 (etages 1 a 8) sur la sortie de la seconde passe")
-    cmd = [sys.executable, "run_trace_v2.py", "--entree", SORTIE]
+    titre("Filtre de la seconde passe (types fiables, vote 3/3, non nies ; relations ajoutees retirees)")
+    lancer([sys.executable, FILTRE, SORTIE, FILTREE], ROOT)
+    cmd = [sys.executable, "run_trace_v2.py", "--entree", FILTREE]
     if not args.sans_reentrainer:
         cmd.append("--entrainer-vote")
     duree = lancer(cmd, TRACE_DIR)
