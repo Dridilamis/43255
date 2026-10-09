@@ -97,7 +97,7 @@ def ename(e):
 
 # ------------------------------------------------------------------ API Mistral
 class Mistral:
-    def __init__(self, cache_dir, temperature):
+    def __init__(self, cache_dir, temperature, pause=1.5):
         self.key = os.getenv("MISTRAL_API_KEY", "").strip()
         if not self.key:
             sys.exit("MISTRAL_API_KEY absente. PowerShell : $env:MISTRAL_API_KEY=\"votre_cle\"")
@@ -106,6 +106,8 @@ class Mistral:
         self.cache.mkdir(parents=True, exist_ok=True)
         self.temperature = temperature
         self.calls = 0
+        self.pause = pause              # secondes minimum entre deux appels (limite de debit)
+        self.last = 0.0
 
     def ask(self, prompt, sample):
         key = hashlib.sha256(f"{MODEL}|{self.temperature}|{sample}|{prompt}".encode("utf-8")).hexdigest()
@@ -115,21 +117,35 @@ class Mistral:
         payload = {"model": MODEL, "temperature": self.temperature, "max_tokens": 6000,
                    "random_seed": 1000 + sample, "response_format": {"type": "json_object"},
                    "messages": [{"role": "user", "content": prompt}]}
-        for attempt in range(8):
+        for attempt in range(15):
+            wait_more = self.pause - (time.monotonic() - self.last)
+            if wait_more > 0:
+                time.sleep(wait_more)
+            self.last = time.monotonic()
             try:
                 r = self.session.post(URL, json=payload, timeout=(30, 240),
                                       headers={"Authorization": f"Bearer {self.key}",
                                                "Content-Type": "application/json"})
             except requests.RequestException as exc:
-                wait = 2 ** attempt
+                wait = min(60, 2 ** attempt)
                 print(f"    reseau : {exc} - nouvel essai dans {wait} s")
                 time.sleep(wait)
                 continue
             if r.status_code in (429, 500, 502, 503, 504):
-                wait = min(60, 2 ** attempt)
-                print(f"    Mistral {r.status_code} - nouvel essai dans {wait} s")
+                try:
+                    retry_after = float(r.headers.get("Retry-After", 0))
+                except ValueError:
+                    retry_after = 0
+                wait = max(retry_after, min(60, 5 * 2 ** attempt))
+                if r.status_code == 429 and attempt == 0:
+                    print(f"    Mistral 429 (limite de debit) : {r.text[:200]}")
+                    self.pause = min(10.0, self.pause * 1.5)    # ralentit pour la suite
+                    print(f"    pause entre appels portee a {self.pause:.1f} s")
+                print(f"    Mistral {r.status_code} - nouvel essai dans {wait:.0f} s")
                 time.sleep(wait)
                 continue
+            if r.status_code == 401:
+                raise RuntimeError("Mistral 401 : cle API refusee. Verifiez la cle (console.mistral.ai).")
             if r.status_code != 200:
                 raise RuntimeError(f"Mistral {r.status_code} : {r.text[:300]}")
             self.calls += 1
@@ -137,7 +153,9 @@ class Mistral:
             data = parse_json(content)
             cached.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
             return data
-        raise RuntimeError("Mistral injoignable apres 8 essais")
+        raise RuntimeError("Mistral refuse encore apres 15 essais (limite de debit ou quota). "
+                           "Attendez quelques minutes puis relancez avec une pause plus longue, "
+                           "ex. --pause 5 : les reponses deja obtenues sont en cache.")
 
 
 def parse_json(text):
@@ -337,6 +355,8 @@ def main():
     ap.add_argument("--echantillons", type=int, default=3)
     ap.add_argument("--vote", type=int, default=2)
     ap.add_argument("--temperature", type=float, default=0.3)
+    ap.add_argument("--pause", type=float, default=1.5,
+                    help="secondes minimum entre deux appels Mistral (limite de debit ; defaut 1.5)")
     args = ap.parse_args()
 
     src, out = Path(args.entree), Path(args.sortie)
@@ -346,7 +366,7 @@ def main():
     if not files:
         sys.exit(f"Aucun JSON dans {src}")
     out.mkdir(parents=True, exist_ok=True)
-    api = Mistral(HERE / "cache_seconde_passe", args.temperature)
+    api = Mistral(HERE / "cache_seconde_passe", args.temperature, args.pause)
     total = Counter()
     print(f"Entree : {src} ({len(files)} documents) | sortie : {out}")
     print(f"Modele {MODEL} | {args.echantillons} echantillons, vote >= {args.vote}, temperature {args.temperature}")

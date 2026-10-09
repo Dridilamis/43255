@@ -27,6 +27,8 @@ Options :
                        precision utilise alors l'ancien modele)
   --echantillons N     appels par question pour le vote (defaut 3)
   --vote N             nombre minimal de reponses concordantes (defaut 2)
+  --pause S            secondes minimum entre deux appels Mistral (defaut 1.5) ; si Mistral
+                       repond 429 (trop de requetes), relancez avec --pause 5
 """
 import argparse
 import csv
@@ -137,6 +139,7 @@ def main():
     ap.add_argument("--sans-reentrainer", action="store_true")
     ap.add_argument("--echantillons", type=int, default=3)
     ap.add_argument("--vote", type=int, default=2)
+    ap.add_argument("--pause", type=float, default=1.5)
     args = ap.parse_args()
     if args.essai:
         args.docs, args.sans_trace = 2, True
@@ -146,7 +149,7 @@ def main():
 
     titre("1/2  SECONDE PASSE MISTRAL (etage 0b)")
     cmd = [sys.executable, SECONDE_PASSE, "--entree", ENTREE, "--sortie", SORTIE,
-           "--echantillons", args.echantillons, "--vote", args.vote]
+           "--echantillons", args.echantillons, "--vote", args.vote, "--pause", args.pause]
     if args.docs:
         cmd += ["--docs", args.docs]
     duree = lancer(cmd, ROOT)
