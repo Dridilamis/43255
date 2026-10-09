@@ -27,6 +27,17 @@ est faite 3 fois et un élément n'est gardé que s'il revient au moins 2 fois. 
 n'est ajoutée que si sa preuve figure mot pour mot dans le texte de la page ; une relation,
 que si sa signature respecte l'ontologie. Les réponses sont mises en cache (reprise possible).
 
+**En une commande** (depuis `Reduction_hallucinations`) : la clé est demandée au clavier et
+n'est jamais enregistrée ; la seconde passe puis TRACE v2 s'enchaînent et les résultats
+avant / après s'affichent.
+
+```
+python lancer_trace_complet.py --essai    # essai : 2 documents, vérifie la clé
+python lancer_trace_complet.py            # tout (seconde passe + TRACE v2 + votes, ~1 h)
+```
+
+Étape par étape :
+
 ```
 $env:MISTRAL_API_KEY="votre_cle"
 python extraction_mistral\seconde_passe_mistral.py --docs 2   # essai
