@@ -8475,7 +8475,199 @@
       "statut_ocr": "ok",
       "statut_ontologie": "ok",
       "statut_entites": "ok",
-      "statut_relations": "ok"
+      "statut_relations": "ok",
+      "_seconde_passe_candidats": {
+        "entites": [
+          {
+            "name": "augmentin",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "corticothérapie",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "altération de l’état général",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "fébrile",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "sinusite",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hospitalisé à Foch",
+            "type": "SERVICE_MEDICAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "mi janvier 2015",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "sinusite",
+            "type": "FOYER_INFECTIEUX",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "TDM thoracique",
+            "type": "IMAGERIE_PROCEDURE",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "fièvre",
+            "type": "FOYER_INFECTIEUX",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "fébrile",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hyponatrémie",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "altération de l’état général",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Confusion",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "fièvre",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "sinusite",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Foch",
+            "type": "SERVICE_MEDICAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          }
+        ],
+        "relations": [
+          {
+            "sujet": "TDM thoracique",
+            "type_relation": "imagerie_objective_foyer",
+            "objet": "sinusite",
+            "sujet_type": "IMAGERIE_PROCEDURE",
+            "objet_type": "FOYER_INFECTIEUX",
+            "votes": 2,
+            "preuve": "Le patient est hospitalisé à Foch mi janvier 2015 pour altération de l’état général, fébrile, ayant mené au diagnostic de sinusite"
+          },
+          {
+            "sujet": "TDM thoracique",
+            "type_relation": "imagerie_objective_comorbidite",
+            "objet": "nodule de 4 mm",
+            "sujet_type": "IMAGERIE_PROCEDURE",
+            "objet_type": "COMORBIDITE_ANTECEDENT",
+            "votes": 1,
+            "preuve": "Au cours de ce séjour la TDM thoracique réalisée pour le bilan de fièvre retrouve un nodule de 4 mm",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "pancytopénie",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "thrombose",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Cirrhose hépatique diagnostiquée en mai 2014 sur un bilan de pancytopénie, probablement d’origine éthylique. Bilan auto-immun négatif, sérologie virale négative, association d’une hypertension portale dans thrombose.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Coloscopie",
+            "type_relation": "imagerie_objective_foyer",
+            "objet": "sinusite",
+            "sujet_type": "IMAGERIE_PROCEDURE",
+            "objet_type": "FOYER_INFECTIEUX",
+            "votes": 2,
+            "preuve": "TDM thoracique réalisée pour le bilan de fièvre"
+          },
+          {
+            "sujet": "Patient",
+            "type_relation": "a_pour_label_nosologique",
+            "objet": "thrombose",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Cirrhose hépatique diagnostiquée en mai 2014 sur un bilan de pancytopénie, probablement d’origine éthylique. Bilan auto-immun négatif, sérologie virale négative, association d’une hypertension portale dans thrombose.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "hypertension portale",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "thrombose",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Cirrhose hépatique diagnostiquée en mai 2014 sur un bilan de pancytopénie, probablement d’origine éthylique. Bilan auto-immun négatif, sérologie virale négative, association d’une hypertension portale dans thrombose.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "tabagisme",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "thrombose",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "tabagisme sevré 1998 estimé à 10 PA",
+            "rejet": "vote"
+          }
+        ]
+      }
     },
     {
       "page": 2,
@@ -10568,7 +10760,394 @@
       "statut_ocr": "ok",
       "statut_ontologie": "ok",
       "statut_entites": "ok",
-      "statut_relations": "ok"
+      "statut_relations": "ok",
+      "_seconde_passe_candidats": {
+        "entites": [
+          {
+            "name": "métronidazole IV",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Claforan",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "1g x 3 par jour",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "pendant 5 jours",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "fièvre\noscillante",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "altération de l’état général",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "contexte fébrile",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pas de lésion hépatique",
+            "type": "SYMPTOME",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "alpha-foeto-protéine normale",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Pouls périphériques perçus mous souples et indolores",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "pas de\nsigne d’insuffisance circulatoire périphérique",
+            "type": "SIGNE_VITAL",
+            "nie": true,
+            "votes": 3
+          },
+          {
+            "name": "Eupnéique",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pas de signe de lutte",
+            "type": "SIGNE_VITAL",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "MV +/-",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "quelques crépitants à gauche",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "STELL",
+            "type": "SERVICE_MEDICAL",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "Garches",
+            "type": "SERVICE_MEDICAL",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "Louis Mourier",
+            "type": "SERVICE_MEDICAL",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "nodule pulmonaire non-exploré",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "hyperosmolarité urinaire",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "Mr Kauffmann",
+            "type": "DONNEE_PATIENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "BDC régulier",
+            "type": "DONNEE_PATIENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pas de souffle audible",
+            "type": "DONNEE_PATIENT",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "janvier",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "fièvre\noscillante",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "MV +/-",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "abolition en base droite",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "nodule pulmonaire non-exploré",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hyperosmolarité urinaire",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pas de lésion hépatique",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "alpha-foeto-protéine normale",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "Contusion",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "alpha-foeto-protéine normale",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          }
+        ],
+        "relations": [
+          {
+            "sujet": "augmentin",
+            "type_relation": "traitement_administre_a",
+            "objet": "le patient",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "DONNEE_PATIENT",
+            "votes": 3,
+            "preuve": "Le bilan conclut à une pansinusite traitée par augmentin puis Rovamycine et Flagyl"
+          },
+          {
+            "sujet": "Acupan",
+            "type_relation": "traitement_administre_a",
+            "objet": "le patient",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "DONNEE_PATIENT",
+            "votes": 3,
+            "preuve": null,
+            "rejet": "sans_preuve"
+          },
+          {
+            "sujet": "Primperanlasilix",
+            "type_relation": "traitement_administre_a",
+            "objet": "le patient",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "DONNEE_PATIENT",
+            "votes": 3,
+            "preuve": null,
+            "rejet": "sans_preuve"
+          },
+          {
+            "sujet": "le patient",
+            "type_relation": "a_pour_label_nosologique",
+            "objet": "SIADH",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "le patient",
+            "type_relation": "a_pour_label_nosologique",
+            "objet": "sepsis",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "A l’admission, le patient présente un tableau\nde sepsis sévère",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "O2",
+            "type_relation": "traitement_administre_a",
+            "objet": "le patient",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "DONNEE_PATIENT",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "O2",
+            "type_relation": "traitement_a_pour_posologie",
+            "objet": "3L O2",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "POSOLOGIE",
+            "votes": 2,
+            "preuve": "SaO2 (%) : 98% sous 3L O2"
+          },
+          {
+            "sujet": "Le 24/02/2015",
+            "type_relation": "precede",
+            "objet": "le 6/03/2015",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 3,
+            "preuve": null,
+            "rejet": "sans_preuve"
+          },
+          {
+            "sujet": "le 6/03/2015",
+            "type_relation": "precede",
+            "objet": "le 10/03/2015",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 3,
+            "preuve": null,
+            "rejet": "sans_preuve"
+          },
+          {
+            "sujet": "le 10/03/2015",
+            "type_relation": "precede",
+            "objet": "30 avril 2015 au 15 Mai 2015",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 2,
+            "preuve": null,
+            "rejet": "sans_preuve"
+          },
+          {
+            "sujet": "30 avril 2015 au 15 Mai 2015",
+            "type_relation": "precede",
+            "objet": "Le 22/05/2015",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 3,
+            "preuve": null,
+            "rejet": "sans_preuve"
+          },
+          {
+            "sujet": "Primperanlasilix",
+            "type_relation": "traitement_a_pour_posologie",
+            "objet": "40 mg",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "POSOLOGIE",
+            "votes": 3,
+            "preuve": "Primperanlasilix à 40 mg le matin"
+          },
+          {
+            "sujet": "FC (bpm) : 122",
+            "type_relation": "signe_vital_supporte_defaillance_organe",
+            "objet": "hyponatrémie hypotonique",
+            "sujet_type": "SIGNE_VITAL",
+            "objet_type": "DEFAILLANCE_ORGANE",
+            "votes": 3,
+            "preuve": "FC (bpm) : 122"
+          },
+          {
+            "sujet": "Temp : 37,2",
+            "type_relation": "signe_vital_supporte_defaillance_organe",
+            "objet": "hyponatrémie hypotonique",
+            "sujet_type": "SIGNE_VITAL",
+            "objet_type": "DEFAILLANCE_ORGANE",
+            "votes": 2,
+            "preuve": "Temp : 37,2"
+          },
+          {
+            "sujet": "FR (c/mn) : 25",
+            "type_relation": "signe_vital_supporte_defaillance_organe",
+            "objet": "hyponatrémie hypotonique",
+            "sujet_type": "SIGNE_VITAL",
+            "objet_type": "DEFAILLANCE_ORGANE",
+            "votes": 2,
+            "preuve": "FR (c/mn) : 25"
+          },
+          {
+            "sujet": "SaO2 (%) : 98% sous 3L O2",
+            "type_relation": "signe_vital_supporte_defaillance_organe",
+            "objet": "hyponatrémie hypotonique",
+            "sujet_type": "SIGNE_VITAL",
+            "objet_type": "DEFAILLANCE_ORGANE",
+            "votes": 2,
+            "preuve": "SaO2 (%) : 98% sous 3L O2"
+          },
+          {
+            "sujet": "natrémie est mesurée à 130 mmol/L",
+            "type_relation": "biomarqueur_obtenu_a",
+            "objet": "le 10/03/2015",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 1,
+            "preuve": "Sur le plan métabolique, la natrémie est mesurée à 130 mmol/L s’aggravant jusqu’à 115 mmol/L au\ncours du séjour malgré le traitement.",
+            "rejet": "vote"
+          }
+        ]
+      }
     },
     {
       "page": 3,
@@ -11499,7 +12078,522 @@
       "statut_ocr": "ok",
       "statut_ontologie": "ok",
       "statut_entites": "ok",
-      "statut_relations": "ok"
+      "statut_relations": "ok",
+      "_seconde_passe_candidats": {
+        "entites": [
+          {
+            "name": "Statut respiratoire Ventilation Libre",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "ROT vifs non diffusés non polycinétiques",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "BHA +",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "Paires crâniennes normales",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "Aires ganglionnaires\nLibres",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "Pas de syndrome méningé",
+            "type": "SIGNE_VITAL",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "Pas de Babinski",
+            "type": "SIGNE_VITAL",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "Pas d'ascite",
+            "type": "SIGNE_VITAL",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "Pas de douleurs à la palpation des sinus",
+            "type": "SIGNE_VITAL",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "Souple dépressible",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Hépato(splénomégalie",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "syndrome méningé",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Babinski",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "ascite",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Carie",
+            "type": "FOYER_INFECTIEUX",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "parodontite",
+            "type": "FOYER_INFECTIEUX",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "état buco-dentaire insatisfaisant",
+            "type": "FOYER_INFECTIEUX",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "Hépato(splénomégalie",
+            "type": "DEFAILLANCE_ORGANE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Analyse 22/05/15 16h43",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "CRP (u.s.) 36.9",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Procalcitonine (PCT) 0.48",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "état buco-dentaire insatisfaisant",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Température patient 37.2 °C",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "SatO2 98.1",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pH/T° patient 7.45",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pCO2/T° patient 4.53",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pO2/T° patient 14.10",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Bicarbonate 23.4",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "CO2 total 24",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Excès de base 0.5",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "HbO2 96.3",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Sodium 118",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Potassium 4.2",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Chlorure 85",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "CO2 total 25",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Protéines 75",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Créatinine 76",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Urée 3.1",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Glucose 5.2",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Lactate plasmatique 0.4",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Ammonium 0",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Calcium 2.00",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Phosphates 1.22",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Magnésium 0.64",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Hypertonie",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "opposition",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "sensible en hypochondre droit",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "patient",
+            "type": "DONNEE_PATIENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "état buco-dentaire insatisfaisant",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "82 g",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "FiO2 3 %",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "22/05/15 16h43",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "GAZ DU SANG - ARTERIEL",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "EXAMENS SANGUINS",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Pas de signe de localisation",
+            "type": "SYMPTOME",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "Pas de syndrome méningé",
+            "type": "SYMPTOME",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Pas de Babinski",
+            "type": "SYMPTOME",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "ROT vifs non diffusés non polycinétiques",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "pas de réel roue dentée",
+            "type": "SYMPTOME",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "Paires crâniennes normales",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Souple dépressible sensible en hypochondre droit",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Pas d'ascite",
+            "type": "SYMPTOME",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "BHA +",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Pas de douleurs à la palpation des sinus",
+            "type": "SYMPTOME",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Aires ganglionnaires\nLibres",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Souple dépressible",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Hépato(splénomégalie",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Hypertonie et opposition",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          }
+        ],
+        "relations": [
+          {
+            "sujet": "patient",
+            "type_relation": "presente_symptome",
+            "objet": "Hépato(splénomégalie",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "SYMPTOME",
+            "votes": 3,
+            "preuve": "Hépato(splénomégalie"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "presente_symptome",
+            "objet": "Hypertonie",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "SYMPTOME",
+            "votes": 3,
+            "preuve": "Hypertonie"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "presente_symptome",
+            "objet": "opposition",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "SYMPTOME",
+            "votes": 2,
+            "preuve": "opposition"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "presente_symptome",
+            "objet": "sensible en hypochondre droit",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "SYMPTOME",
+            "votes": 3,
+            "preuve": "sensible en hypochondre droit"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "presente_suspicion_infection",
+            "objet": "état buco-dentaire insatisfaisant",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "FOYER_INFECTIEUX",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          }
+        ]
+      }
     },
     {
       "page": 4,
@@ -12313,7 +13407,92 @@
       "statut_ocr": "ok",
       "statut_ontologie": "ok",
       "statut_entites": "ok",
-      "statut_relations": "ok"
+      "statut_relations": "ok",
+      "_seconde_passe_candidats": {
+        "entites": [],
+        "relations": [
+          {
+            "sujet": "Sodium 108 mmol/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "sepsis",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": ">10 µg/L : probabilité élevée de sepsis sévère ou de choc septique.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Sodium 108 mmol/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "choc septique",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": ">10 µg/L : probabilité élevée de sepsis sévère ou de choc septique.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "BNP 67 <100 ng/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "sepsis",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "BNP 67 <100 ng/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "choc septique",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Lipase 576 73-393 U/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "choc septique",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": ">10 µg/L : probabilité élevée de sepsis sévère ou de choc septique.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Lipase 576 73-393 U/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "sepsis",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": ">10 µg/L : probabilité élevée de sepsis sévère ou de choc septique.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Troponine Ic <0.017 <0.056 µg/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "choc septique",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": ">10 µg/L : probabilité élevée de sepsis sévère ou de choc septique.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Troponine Ic <0.017 <0.056 µg/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "sepsis",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": ">10 µg/L : probabilité élevée de sepsis sévère ou de choc septique.",
+            "rejet": "vote"
+          }
+        ]
+      }
     },
     {
       "page": 5,
@@ -13398,7 +14577,375 @@
       "statut_ocr": "ok",
       "statut_ontologie": "ok",
       "statut_entites": "ok",
-      "statut_relations": "ok"
+      "statut_relations": "ok",
+      "_seconde_passe_candidats": {
+        "entites": [
+          {
+            "name": "restriction hydrique",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "administration répétée de soluté salé hypertonique",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "à 3%",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "détresse respiratoire",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "31/05",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "fausse route",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "SIADH",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "AVC",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "lacune ischémique semi récente du pallidum gauche",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "sinusite d’origine dentaire",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Hépatopathie chronique",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "hypertension portale",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "détresse respiratoire",
+            "type": "DEFAILLANCE_ORGANE",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "amélioration initiale en rapport avec la normalisation de la natrémie",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "survenue le 31/05 d’une détresse respiratoire suite à une fausse route",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Bilan de ralentissement psycho-moteur",
+            "type": "IMAGERIE_PROCEDURE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "administration répétée de soluté salé hypertonique à 3%",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "le 31/05",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "atrophie cortico sous corticales",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Dilatation quadriventriculaire",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "élargissement des vallées sylviennes",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Sinusite sphénoïdale droite",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "bilan d’AVC",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hyponatrémie iatrogène",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "épanchements pleuraux bilatéraux",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Surveillance clinico biologique rapprochée",
+            "type": "SERVICE_MEDICAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "sinusite d’origine dentaire incomplètement traitée",
+            "type": "CONTEXTE_ACQUISITION",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          }
+        ],
+        "relations": [
+          {
+            "sujet": "soluté salé hypertonique",
+            "type_relation": "traitement_a_pour_posologie",
+            "objet": "soluté salé hypertonique à 3%",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "POSOLOGIE",
+            "votes": 2,
+            "preuve": "soluté salé hypertonique à 3%"
+          },
+          {
+            "sujet": "restriction hydrique",
+            "type_relation": "traitement_a_pour_posologie",
+            "objet": "à 3%",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "POSOLOGIE",
+            "votes": 2,
+            "preuve": "restriction hydrique et administration répétée de soluté salé hypertonique à 3%"
+          },
+          {
+            "sujet": "Patient",
+            "type_relation": "a_pour_label_nosologique",
+            "objet": "lacune ischémique semi récente du pallidum gauche",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 3,
+            "preuve": "Aspect IRM en faveur d’une lacune ischémique semi récente du pallidum gauche"
+          },
+          {
+            "sujet": "hypertension portale",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "hyponatrémie",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 2,
+            "preuve": "cirrhotique child pugh B (8 points) dans un contexte de sinusite d’origine dentaire incomplètement traitée et d’épanchements pleuraux bilatéraux sans retentissement cliniques majeurs"
+          },
+          {
+            "sujet": "20/05/15",
+            "type_relation": "precede",
+            "objet": "le 31/05",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 2,
+            "preuve": null,
+            "rejet": "sans_preuve"
+          },
+          {
+            "sujet": "le 31/05",
+            "type_relation": "evenement_associe_evolution",
+            "objet": "amélioration initiale en rapport avec la normalisation de la natrémie (corrigée jusqu’à 138 mmol/L par rest",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "patient de 77 ans",
+            "type_relation": "a_pour_label_nosologique",
+            "objet": "lacune ischémique semi récente du pallidum gauche",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Aspect IRM en faveur d’une lacune ischémique semi récente du pallidum gauche",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Monocytes 6.5 %",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "SIADH",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Bilan SIADH à distance",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Monocytes 0.45 0.20-1.00 x10*9/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "SIADH",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Bilan SIADH à distance",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Ratio Patient/Témoin 1.14",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "SIADH",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Bilan SIADH à distance",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "natrémie (corrigée jusqu’à 138 mmol/L",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "SIADH",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "Bilan SIADH à distance",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "cirrhotique child pugh B (8 points)",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "hyponatrémie",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "hyponatrémie iatrogène chez un patient de 77 ans cirrhotique child pugh B (8 points)",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Hépatopathie chronique",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "hyponatrémie",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "hyponatrémie iatrogène chez un patient de 77 ans cirrhotique child pugh B (8 points)",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "soluté salé hypertonique",
+            "type_relation": "traitement_a_pour_posologie",
+            "objet": "à 3%",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "POSOLOGIE",
+            "votes": 1,
+            "preuve": "administration répétée de soluté salé hypertonique à 3%",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Patient",
+            "type_relation": "a_pour_label_nosologique",
+            "objet": "épanchements pleuraux bilatéraux",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "épanchements pleuraux bilatéraux",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "hypertension portale",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "hyponatrémie iatrogène",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "hyponatrémie iatrogène chez un patient de 77 ans cirrhotique child pugh B",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "atrophie cortico sous corticales",
+            "type_relation": "comorbidite_est_facteur_risque_de",
+            "objet": "hyponatrémie iatrogène",
+            "sujet_type": "COMORBIDITE_ANTECEDENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": "hyponatrémie iatrogène chez un patient de 77 ans cirrhotique child pugh B",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "IRM",
+            "type_relation": "imagerie_objective_foyer",
+            "objet": "Sinusite sphénoïdale droite",
+            "sujet_type": "IMAGERIE_PROCEDURE",
+            "objet_type": "FOYER_INFECTIEUX",
+            "votes": 1,
+            "preuve": "Sinusite sphénoïdale droite",
+            "rejet": "vote"
+          }
+        ]
+      }
     },
     {
       "page": 6,
@@ -15534,7 +17081,585 @@
       "statut_ocr": "ok",
       "statut_ontologie": "ok",
       "statut_entites": "ok",
-      "statut_relations": "ok"
+      "statut_relations": "ok",
+      "_seconde_passe_candidats": {
+        "entites": [
+          {
+            "name": "adrénaline",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "2 x 2 mg",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 3,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "No Flow",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hypoxémie",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "dépendance modeste à la noradrénaline",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "surveillance de l’hématome",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "déplétion progressive",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "acharnement thérapeutique",
+            "type": "TRAITEMENT",
+            "nie": true,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "administration de G10",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "hypoglycémies",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "diminution cytolyse",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 3
+          },
+          {
+            "name": "NAD",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "tableau d’insuffisance hépatocellulaire sévère",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "troubles de l’hémostase importants",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "15 juin au soir",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "G10",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "diminution NAD",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "GB augmentés de 8 000 à 18 000",
+            "type": "BIOMARQUEUR",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "0.4 à 3 mg/h",
+            "type": "POSOLOGIE",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "anisocorie : mydriase droite",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "mydriase droite",
+            "type": "SIGNE_VITAL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "insuffisance hépatocellulaire sévère",
+            "type": "DEFAILLANCE_ORGANE",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "CIVD",
+            "type": "DEFAILLANCE_ORGANE",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Ponction d’ascite",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "ECU",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "amykacine",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hémisuccinate d’hydrocortisone",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "ventilation protectrice",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "dosage des éosinophiles",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "hématome",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Le 10 juin",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Le 13 juin",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "Le 15 juin",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 2,
+            "rejet": "deja_presente"
+          },
+          {
+            "name": "persistance d’une dépendance modeste à la noradrénaline",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "famille est informée de la précarité de la situation",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "ne souhaite pas d’acharnement thérapeutique",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": true,
+            "votes": 2
+          },
+          {
+            "name": "survenue d’hypoglycémies",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 2
+          },
+          {
+            "name": "dégradation importante de l’hémodynamique",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "rapidement suivie du décès du patient",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "sans No Flow",
+            "type": "CONTEXTE_ACQUISITION",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "Probable AVC hémorragique",
+            "type": "LABEL_NOSOLOGIQUE",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "anisocorie",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "troubles de l’hémostase importants",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "décès du patient",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "précarité de la situation",
+            "type": "EVOLUTION_PRONOSTIC",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "au soir",
+            "type": "EVENEMENT_TEMPOREL",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hématome de la cuisse droite",
+            "type": "COMORBIDITE_ANTECEDENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hypoxémie",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hypoglycémies",
+            "type": "SYMPTOME",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "hémofiltration",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "malgré l’inclusion dans le protocole APPROCHE",
+            "type": "TRAITEMENT",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          },
+          {
+            "name": "point de départ indéterminé",
+            "type": "FOYER_INFECTIEUX",
+            "nie": false,
+            "votes": 1,
+            "rejet": "vote"
+          }
+        ],
+        "relations": [
+          {
+            "sujet": "noradrénaline",
+            "type_relation": "traitement_a_pour_posologie",
+            "objet": "0,3/ 0,8 mg/h de NA",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "POSOLOGIE",
+            "votes": 3,
+            "preuve": "persistance d’une dépendance modeste à la noradrénaline (0,3/ 0,8 mg/h de NA)"
+          },
+          {
+            "sujet": "Ponction d’ascite",
+            "type_relation": "imagerie_objective_foyer",
+            "objet": "point de départ indéterminé",
+            "sujet_type": "IMAGERIE_PROCEDURE",
+            "objet_type": "FOYER_INFECTIEUX",
+            "votes": 2,
+            "preuve": "PDP + ECU Ponction d’ascite"
+          },
+          {
+            "sujet": "ECU",
+            "type_relation": "imagerie_objective_foyer",
+            "objet": "point de départ indéterminé",
+            "sujet_type": "IMAGERIE_PROCEDURE",
+            "objet_type": "FOYER_INFECTIEUX",
+            "votes": 2,
+            "preuve": "PDP + ECU Ponction d’ascite"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "patient_a_pour_evolution",
+            "objet": "survenue d’hypoglycémies",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": "associé à l’administration de G10 compte tenu de la survenue d’hypoglycémies",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "dosage des éosinophiles",
+            "type_relation": "biomarqueur_obtenu_a",
+            "objet": "13 juin",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 2,
+            "preuve": "dosage des éosinophiles (éventualité d’une allergie)."
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "patient_a_pour_evolution",
+            "objet": "dégradation de la fonction hépatique (TP à 23%)",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": "dégradation de la fonction hépatique (TP à 23%)",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "patient_a_pour_evolution",
+            "objet": "dégradation de l’hémodynamique (augmentation de la noradrénaline de 0",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "patient_a_pour_evolution",
+            "objet": "décès du patient",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": "rapidement suivie du décès du patient",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "P/F à 139",
+            "type_relation": "biomarqueur_est_critere_de",
+            "objet": "Pneumopathie d'inhalation",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Hb et lactates stables",
+            "type_relation": "biomarqueur_obtenu_a",
+            "objet": "15 juin",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "patient",
+            "type_relation": "a_pour_label_nosologique",
+            "objet": "compliquée de choc septique",
+            "sujet_type": "DONNEE_PATIENT",
+            "objet_type": "LABEL_NOSOLOGIQUE",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "hémocultures répétées",
+            "type_relation": "imagerie_objective_foyer",
+            "objet": "point de départ indéterminé",
+            "sujet_type": "IMAGERIE_PROCEDURE",
+            "objet_type": "FOYER_INFECTIEUX",
+            "votes": 1,
+            "preuve": "réalisation des prélèvements bactériologiques",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "10 juin",
+            "type_relation": "precede",
+            "objet": "13 juin",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "13 juin",
+            "type_relation": "precede",
+            "objet": "15 juin",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVENEMENT_TEMPOREL",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "10 juin",
+            "type_relation": "evenement_associe_evolution",
+            "objet": "Régression de l’insuffisance rénale",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "13 juin",
+            "type_relation": "evenement_associe_evolution",
+            "objet": "dégradation de la fonction hépatique (TP à 23%)",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "15 juin",
+            "type_relation": "evenement_associe_evolution",
+            "objet": "décès du patient",
+            "sujet_type": "EVENEMENT_TEMPOREL",
+            "objet_type": "EVOLUTION_PRONOSTIC",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          },
+          {
+            "sujet": "administration de G10",
+            "type_relation": "traitement_administre_a",
+            "objet": "patient",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "DONNEE_PATIENT",
+            "votes": 1,
+            "preuve": "associé à l’administration de G10",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "Hb et lactates stables",
+            "type_relation": "biomarqueur_supporte_defaillance_organe",
+            "objet": "défaillance multiviscérale",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "DEFAILLANCE_ORGANE",
+            "votes": 1,
+            "preuve": "Hb et lactates stables.",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "GB augmentés de 8 000 à 18 000",
+            "type_relation": "biomarqueur_supporte_defaillance_organe",
+            "objet": "défaillance multiviscérale",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "DEFAILLANCE_ORGANE",
+            "votes": 1,
+            "preuve": "augmentation du syndrome inflammatoire (GB augmentés de 8 000 à 18 000)",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "P/F à 139",
+            "type_relation": "biomarqueur_supporte_defaillance_organe",
+            "objet": "défaillance multiviscérale",
+            "sujet_type": "BIOMARQUEUR",
+            "objet_type": "DEFAILLANCE_ORGANE",
+            "votes": 1,
+            "preuve": "hypoxémie (P/F à 139)",
+            "rejet": "vote"
+          },
+          {
+            "sujet": "hémisuccinate d'hydrocortisone",
+            "type_relation": "traitement_a_pour_posologie",
+            "objet": "0.4 à 3 mg/h",
+            "sujet_type": "TRAITEMENT",
+            "objet_type": "POSOLOGIE",
+            "votes": 1,
+            "preuve": null,
+            "rejet": "vote"
+          }
+        ]
+      }
     }
   ],
   "pages_failed": [],
