@@ -46,6 +46,22 @@ cd TRACE_v2
 python run_trace_v2.py --entree ..\extraction_mistral\seconde_passe --entrainer-vote
 ```
 
+**Mesure sur les 43 documents.** La seconde passe brute ajoute 2060 entités (27 % justes) et
+1297 relations (15 % justes) : le F1 baisse (entités 71,97 → 70,80 %, relations 62,22 → 57,73 %
+avant TRACE). `filtre_seconde_passe.py` ne garde que les entités ajoutées de type
+MICRO_ORGANISME, TRAITEMENT, BIOMARQUEUR ou EVOLUTION_PRONOSTIC, votées 3/3 et non niées
+(300 entités), et retire toutes les relations ajoutées. Résultats avec ce filtre :
+
+| Sortie | Ent P | Ent R | Ent F1 | Ent halluc. | Rel P | Rel R | Rel F1 | Rel halluc. |
+|---|---|---|---|---|---|---|---|---|
+| v2 standard, sans seconde passe | 75,76 % | 68,57 % | 71,99 % | 24,2 % | 71,65 % | 55,58 % | 62,60 % | 28,4 % |
+| **v2 standard, seconde passe filtrée** | 75,17 % | **69,84 %** | **72,40 %** | 24,8 % | 71,62 % | 55,58 % | 62,59 % | 28,4 % |
+| v2 précision 98 %, seconde passe filtrée ¹ | 75,81 % | 69,39 % | **72,46 %** | 24,2 % | 72,13 % | 54,94 % | 62,38 % | 27,9 % |
+| v2 précision 80 %, seconde passe filtrée ¹ | 82,34 % | 62,14 % | 70,83 % | 17,7 % | 77,03 % | 46,61 % | 58,08 % | 23,0 % |
+
+Le rappel et le F1 des entités montent un peu ; la précision des entités baisse légèrement.
+Les relations ne bénéficient pas de la seconde passe.
+
 ## Le constat de départ
 
 Le matcher d'entités évalue les entités **par page** (`pages[].entities`). Tous les
