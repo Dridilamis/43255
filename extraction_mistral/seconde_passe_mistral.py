@@ -283,14 +283,17 @@ def complete_page(api, page, doc_relations, n_samples, min_votes, counters):
             seen.add(k)
             votes[k] += 1
             sample_of.setdefault(k, (surface, typ, bool(item.get("nie"))))
-    new_entities = []
+    new_entities, cand_e = [], []
     for k, v in votes.items():
+        surface, typ, nie = sample_of[k]
+        cand_e.append({"name": surface, "type": typ, "nie": nie, "votes": v})
         if v < min_votes:
             counters["entites_rejetees_vote"] += 1
+            cand_e[-1]["rejet"] = "vote"
             continue
-        surface, typ, nie = sample_of[k]
         if overlaps(surface, typ, existing + new_entities):
             counters["entites_rejetees_deja_presentes"] += 1
+            cand_e[-1]["rejet"] = "deja_presente"
             continue
         new_entities.append({
             "identifiant_entite": f"P{pnum}_S{len(new_entities) + 1:03d}",
@@ -327,21 +330,29 @@ def complete_page(api, page, doc_relations, n_samples, min_votes, counters):
             proof = find_verbatim(item.get("preuve"), text)
             if proof:
                 rproof.setdefault(k, proof)
-    new_relations = []
+    new_relations, cand_r = [], []
     for k, v in rvotes.items():
+        sid, rt, oid = k
+        cand_r.append({"sujet": ename(by_id[sid]), "type_relation": rt, "objet": ename(by_id[oid]),
+                       "sujet_type": etype(by_id[sid]), "objet_type": etype(by_id[oid]),
+                       "votes": v, "preuve": rproof.get(k)})
         if v < min_votes:
             counters["relations_rejetees_vote"] += 1
+            cand_r[-1]["rejet"] = "vote"
             continue
         if k not in rproof:
             counters["relations_rejetees_sans_preuve"] += 1
+            cand_r[-1]["rejet"] = "sans_preuve"
             continue
-        sid, rt, oid = k
         new_relations.append({
             "identifiant_entite_sujet": sid, "entite_sujet": ename(by_id[sid]), "type_relation": rt,
             "identifiant_entite_objet": oid, "entite_objet": ename(by_id[oid]), "preuve": rproof[k],
             "type_inference": "seconde_passe_mistral", "confiance": "elevee", "page": pnum,
             "subject": ename(by_id[sid]), "object": ename(by_id[oid]),
             "_seconde_passe_votes": f"{v}/{n_samples}"})
+    # tous les candidats (gardes ou non, avec leurs votes) : permet de regler les filtres
+    # ensuite sans rappeler Mistral
+    page["_seconde_passe_candidats"] = {"entites": cand_e, "relations": cand_r}
     page.setdefault(key, []).extend(new_entities)
     return new_entities, new_relations
 
