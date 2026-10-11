@@ -62,6 +62,18 @@ MICRO_ORGANISME, TRAITEMENT, BIOMARQUEUR ou EVOLUTION_PRONOSTIC, votées 3/3 et 
 Le rappel et le F1 des entités montent un peu ; la précision des entités baisse légèrement.
 Les relations ne bénéficient pas de la seconde passe.
 
+**Accord avec une seconde passe à exemples annotés** (`--exemples 2`, exemples tirés du gold de
+l'autre moitié des documents). Seule, elle n'ajoute pas plus de justes (26 % des entités, 15 %
+des relations), mais une entité proposée par les deux passes est juste 36 % du temps contre
+22 %. Le filtre garde aussi ces entités confirmées (types BIOMARQUEUR, COMORBIDITE_ANTECEDENT,
+IMAGERIE_PROCEDURE, MICRO_ORGANISME, POSOLOGIE, TRAITEMENT ; non niées) : 421 entités.
+
+| Sortie | Ent P | Ent R | Ent F1 | Ent halluc. | Rel P | Rel R | Rel F1 | Rel halluc. |
+|---|---|---|---|---|---|---|---|---|
+| **v2 standard, filtre + accord** | 74,97 % | **70,37 %** | **72,60 %** | 25,0 % | 71,60 % | 55,58 % | 62,58 % | 28,4 % |
+| v2 précision 98 %, filtre + accord ¹ | 75,58 % | 69,94 % | **72,65 %** | 24,4 % | 72,09 % | 54,94 % | 62,36 % | 27,9 % |
+| v2 précision 80 %, filtre + accord ¹ | 82,26 % | 62,74 % | 71,19 % | 17,7 % | 76,96 % | 46,71 % | 58,14 % | 23,0 % |
+
 ## Le constat de départ
 
 Le matcher d'entités évalue les entités **par page** (`pages[].entities`). Tous les
