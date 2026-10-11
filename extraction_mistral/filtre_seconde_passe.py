@@ -19,33 +19,65 @@ impairs) ; au-dessus d'environ un tiers de justes, un ajout fait monter le F1. V
 croise (types choisis sur une moitie, effet mesure sur l'autre) : F1 entites +0,3 et +0,7
 point. Aucun filtre de relations n'ameliore le F1 sur les deux moities.
 
+Accord entre deux passes (si le dossier seconde_passe_exemples existe : seconde passe relancee
+avec des exemples annotes) : une entite ajoutee par la 1re passe est aussi gardee si la 2e
+passe propose la meme (meme document, meme type, meme nom normalise), qu'elle n'est pas niee
+et que son type est BIOMARQUEUR, COMORBIDITE_ANTECEDENT, IMAGERIE_PROCEDURE, MICRO_ORGANISME,
+POSOLOGIE ou TRAITEMENT (types retenus sur chacune des deux moities). Les entites proposees
+par les deux passes sont justes 36 % du temps, contre 22 % pour les autres. Valide en croise :
+F1 entites +0,63 et +0,95 point (filtre seul : +0,56 et +0,53).
+
 Usage (depuis Reduction_hallucinations) :
     python extraction_mistral\\filtre_seconde_passe.py
     cd TRACE_v2 ; python run_trace_v2.py --entree ..\\extraction_mistral\\seconde_passe_filtree
 """
 import json
+import re
 import sys
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_IN = HERE / "seconde_passe"
 DEFAULT_OUT = HERE / "seconde_passe_filtree"
+DEFAULT_CONFIRM = HERE / "seconde_passe_exemples"
 
 TYPES_GARDES = {"MICRO_ORGANISME", "TRAITEMENT", "BIOMARQUEUR", "EVOLUTION_PRONOSTIC"}
 VOTES_REQUIS = "3/3"
+TYPES_ACCORD = {"BIOMARQUEUR", "COMORBIDITE_ANTECEDENT", "IMAGERIE_PROCEDURE", "MICRO_ORGANISME",
+                "POSOLOGIE", "TRAITEMENT"}
+
+
+def norm(text):
+    text = unicodedata.normalize("NFD", str(text or "").lower())
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    return re.sub(r"[^a-z0-9]+", " ", text).strip()
+
+
+def etype(e):
+    return str(e.get("type") or e.get("categorie") or "").upper()
+
+
+def proposees(data):
+    """(type, nom normalise) des entites ajoutees par une passe."""
+    return {(etype(e), norm(e.get("name"))) for page in data.get("pages", []) or [] if isinstance(page, dict)
+            for e in page.get("entities", page.get("entites", [])) or [] if isinstance(e, dict) and ajoutee(e)}
 
 
 def ajoutee(e):
     return str(e.get("type_inference")) == "seconde_passe_mistral"
 
 
-def garder(e):
-    return (str(e.get("type") or e.get("categorie") or "").upper() in TYPES_GARDES
-            and e.get("_seconde_passe_votes") == VOTES_REQUIS and e.get("nie") is not True)
+def garder(e, confirm=frozenset()):
+    if e.get("nie") is True:
+        return False
+    if etype(e) in TYPES_GARDES and e.get("_seconde_passe_votes") == VOTES_REQUIS:
+        return True
+    return etype(e) in TYPES_ACCORD and (etype(e), norm(e.get("name"))) in confirm
 
 
-def filtrer(data, c):
+def filtrer(data, c, confirm=frozenset()):
     retirees = set()
     for page in data.get("pages", []) or []:
         if not isinstance(page, dict):
@@ -54,7 +86,7 @@ def filtrer(data, c):
         kept = []
         for e in page.get(key, []) or []:
             if isinstance(e, dict) and ajoutee(e):
-                if garder(e):
+                if garder(e, confirm):
                     c["entites_gardees"] += 1
                 else:
                     c["entites_retirees"] += 1
@@ -73,6 +105,10 @@ def filtrer(data, c):
 def main():
     src = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_IN
     out = Path(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_OUT
+    conf_dir = Path(sys.argv[3]) if len(sys.argv) > 3 else DEFAULT_CONFIRM
+    if not conf_dir.is_dir():
+        conf_dir = None
+    print(f"Accord avec la 2e passe : {conf_dir or 'non (dossier absent)'}")
     files = sorted(src.glob("img*.json"))
     if not files:
         sys.exit(f"Aucun JSON dans {src}")
@@ -80,7 +116,10 @@ def main():
     c = Counter()
     for path in files:
         data = json.loads(path.read_text(encoding="utf-8-sig"))
-        filtrer(data, c)
+        confirm = frozenset()
+        if conf_dir is not None and (conf_dir / path.name).exists():
+            confirm = frozenset(proposees(json.loads((conf_dir / path.name).read_text(encoding="utf-8-sig"))))
+        filtrer(data, c, confirm)
         (out / path.name).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"{len(files)} documents -> {out}")
     print(dict(c))
