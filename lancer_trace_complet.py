@@ -28,6 +28,8 @@ Options :
                        precision utilise alors l'ancien modele)
   --echantillons N     appels par question pour le vote (defaut 3)
   --vote N             nombre minimal de reponses concordantes (defaut 2)
+  --exemples N         montre a Mistral N extraits annotes (gold), pris dans l'autre moitie
+                       des documents ; sortie dans extraction_mistral/seconde_passe_exemples
   --pause S            secondes minimum entre deux appels Mistral (defaut 1.5) ; si Mistral
                        repond 429 (trop de requetes), relancez avec --pause 5
 """
@@ -143,7 +145,12 @@ def main():
     ap.add_argument("--echantillons", type=int, default=3)
     ap.add_argument("--vote", type=int, default=2)
     ap.add_argument("--pause", type=float, default=1.5)
+    ap.add_argument("--exemples", type=int, default=0)
     args = ap.parse_args()
+    global SORTIE, FILTREE
+    if args.exemples:
+        SORTIE = ROOT / "extraction_mistral" / "seconde_passe_exemples"
+        FILTREE = ROOT / "extraction_mistral" / "seconde_passe_exemples_filtree"
     if args.essai:
         args.docs, args.sans_trace = 2, True
 
@@ -152,7 +159,8 @@ def main():
 
     titre("1/2  SECONDE PASSE MISTRAL (etage 0b)")
     cmd = [sys.executable, SECONDE_PASSE, "--entree", ENTREE, "--sortie", SORTIE,
-           "--echantillons", args.echantillons, "--vote", args.vote, "--pause", args.pause]
+           "--echantillons", args.echantillons, "--vote", args.vote, "--pause", args.pause,
+           "--exemples", args.exemples]
     if args.docs:
         cmd += ["--docs", args.docs]
     duree = lancer(cmd, ROOT)

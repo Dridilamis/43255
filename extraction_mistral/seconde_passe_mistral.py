@@ -95,6 +95,68 @@ def ename(e):
     return ""
 
 
+# ------------------------------------------------------------------ exemples annotes
+GOLD_CANDIDATES = [PROJECT.parent / "gold_canonical_par_documentF",
+                   PROJECT / "SGCE" / "gold_canonical_par_documentF"]
+
+
+def doc_key(path):
+    return Path(path).name.split("_trace")[0].replace(".json", "")
+
+
+def fold_of(keys):
+    """Pli de chaque document : rang pair -> 0, rang impair -> 1 (meme decoupage que la
+    validation croisee de TRACE)."""
+    return {k: i % 2 for i, k in enumerate(sorted(keys))}
+
+
+def build_examples(gold_dir, keys, n, chunk=1200):
+    """Choisit n extraits annotes dans les documents gold `keys` (jamais le document traite) :
+    des morceaux de page d'environ `chunk` caracteres, choisis pour couvrir le plus de types
+    d'entites differents. Retourne (bloc entites, bloc relations) a inserer dans les prompts."""
+    cands = []
+    for k in sorted(keys):
+        path = Path(gold_dir) / f"{k}.json"
+        if not path.exists():
+            continue
+        gold = json.loads(path.read_text(encoding="utf-8"))
+        for page in gold.get("pages", []):
+            text = page.get("text") or ""
+            pos = 0
+            while pos < len(text):
+                end = text.rfind("\n", pos, pos + chunk)
+                end = end if end > pos + chunk // 2 else min(len(text), pos + chunk)
+                ents = [e for e in page.get("entities", [])
+                        if e.get("start") is not None and pos <= e["start"] and e["end"] <= end]
+                names = {norm(e["name"]) for e in ents}
+                rels = [r for r in page.get("relations", [])
+                        if (norm(r["subject"]) in names or norm(r["subject"]) == "patient")
+                        and norm(r["object"]) in names]
+                if len(ents) >= 8:
+                    cands.append((k, text[pos:end].strip(), ents, rels))
+                pos = end + 1
+    chosen, covered, used_docs = [], set(), set()
+    for _ in range(n):
+        best = max((c for c in cands if c[0] not in used_docs),
+                   key=lambda c: (len({e["type"] for e in c[2]} - covered), len(c[3]), len(c[2])),
+                   default=None)
+        if best is None:
+            break
+        chosen.append(best)
+        covered |= {e["type"] for e in best[2]}
+        used_docs.add(best[0])
+    ent_blocks, rel_blocks = [], []
+    for i, (_, text, ents, rels) in enumerate(chosen, 1):
+        lst = "\n".join(f"- [{e['type']}] {e['name']}" for e in ents)
+        rl = "\n".join(f"- {r['subject']} --{r['relation']}--> {r['object']}" for r in rels) or "(aucune)"
+        ent_blocks.append(f"EXEMPLE {i} - texte :\n\"\"\"\n{text}\n\"\"\"\nEntites attendues :\n{lst}")
+        rel_blocks.append(f"EXEMPLE {i} - texte :\n\"\"\"\n{text}\n\"\"\"\nRelations attendues :\n{rl}")
+    head = ("EXEMPLES D'ANNOTATION (autres comptes rendus, annotes a la main) : ils montrent comment "
+            "decouper et typer les elements. Ne recopie jamais leur contenu.\n\n")
+    return (head + "\n\n".join(ent_blocks) + "\n\n" if chosen else "",
+            head + "\n\n".join(rel_blocks) + "\n\n" if chosen else "")
+
+
 # ------------------------------------------------------------------ API Mistral
 class Mistral:
     def __init__(self, cache_dir, temperature, pause=1.5):
@@ -174,7 +236,7 @@ def parse_json(text):
 
 
 # ------------------------------------------------------------------ prompts
-def prompt_entities(page_text, existing):
+def prompt_entities(page_text, existing, examples=""):
     deja = "\n".join(f"- [{etype(e)}] {ename(e)}" for e in existing) or "(aucune)"
     return f"""Tu es un expert en extraction d'information clinique orientee sepsis (guideline TRACE-Sepsis v1.6).
 
@@ -194,7 +256,7 @@ REGLES :
 - N'invente rien, ne deduis rien, n'utilise aucune connaissance externe.
 - Categories autorisees : {", ".join(CATEGORIES)}.
 
-DEJA EXTRAITES :
+{examples}DEJA EXTRAITES :
 {deja}
 
 TEXTE DE LA PAGE :
@@ -207,7 +269,7 @@ Reponds UNIQUEMENT par un objet JSON :
 Si rien ne manque : {{"entites": []}}"""
 
 
-def prompt_relations(page_text, entities, existing_rel):
+def prompt_relations(page_text, entities, existing_rel, examples=""):
     lst = "\n".join(f"- {e['identifiant_entite']} [{etype(e)}] {ename(e)}" for e in entities)
     rel = "\n".join(f"- {r['identifiant_entite_sujet']} {r['type_relation']} {r['identifiant_entite_objet']}"
                     for r in existing_rel) or "(aucune)"
@@ -228,6 +290,8 @@ REGLES :
 
 SIGNATURES AUTORISEES :
 {sig}
+
+{examples}
 
 ENTITES :
 {lst}
@@ -257,7 +321,7 @@ def overlaps(name, typ, entities):
     return False
 
 
-def complete_page(api, page, doc_relations, n_samples, min_votes, counters):
+def complete_page(api, page, doc_relations, n_samples, min_votes, counters, examples=("", "")):
     text = page.get("texte_brut") or ""
     if len(text.strip()) < 30:
         return [], []
@@ -269,7 +333,7 @@ def complete_page(api, page, doc_relations, n_samples, min_votes, counters):
     votes, sample_of = Counter(), {}
     for s in range(n_samples):
         seen = set()
-        for item in (api.ask(prompt_entities(text, existing), s).get("entites") or []):
+        for item in (api.ask(prompt_entities(text, existing, examples[0]), s).get("entites") or []):
             if not isinstance(item, dict):
                 continue
             typ = str(item.get("categorie") or "").strip().upper().replace("SCORE_QSOFA", "SCORE_qSOFA")
@@ -310,7 +374,7 @@ def complete_page(api, page, doc_relations, n_samples, min_votes, counters):
     rvotes, rproof = Counter(), {}
     for s in range(n_samples):
         seen = set()
-        for item in (api.ask(prompt_relations(text, all_entities, page_rel), s).get("relations") or []):
+        for item in (api.ask(prompt_relations(text, all_entities, page_rel, examples[1]), s).get("relations") or []):
             if not isinstance(item, dict):
                 continue
             sid, oid = item.get("identifiant_entite_sujet"), item.get("identifiant_entite_objet")
@@ -366,12 +430,25 @@ def main():
     ap.add_argument("--echantillons", type=int, default=3)
     ap.add_argument("--vote", type=int, default=2)
     ap.add_argument("--temperature", type=float, default=0.3)
+    ap.add_argument("--exemples", type=int, default=0,
+                    help="nombre d'extraits annotes (gold) montres a Mistral, pris dans l'AUTRE moitie "
+                         "des documents (0 = sans exemples)")
     ap.add_argument("--pause", type=float, default=1.5,
                     help="secondes minimum entre deux appels Mistral (limite de debit ; defaut 1.5)")
     args = ap.parse_args()
 
     src, out = Path(args.entree), Path(args.sortie)
     files = sorted(p for p in src.glob("*.json") if p.name.startswith("img"))
+    folds = fold_of(doc_key(p) for p in files)
+    examples_by_fold = {0: ("", ""), 1: ("", "")}
+    if args.exemples:
+        gold_dir = next((g for g in GOLD_CANDIDATES if g.exists()), None)
+        if gold_dir is None:
+            sys.exit("Gold introuvable (gold_canonical_par_documentF) : necessaire pour --exemples")
+        for f in (0, 1):
+            others = [k for k, v in folds.items() if v != f]
+            examples_by_fold[f] = build_examples(gold_dir, others, args.exemples)
+        print(f"Exemples annotes : {args.exemples} par prompt, pris dans l'autre moitie des documents")
     if args.docs:
         files = files[:args.docs]
     if not files:
@@ -389,7 +466,8 @@ def main():
         for page in data.get("pages", []) or []:
             if not isinstance(page, dict):
                 continue
-            ents, new_rels = complete_page(api, page, rels, args.echantillons, args.vote, counters)
+            ents, new_rels = complete_page(api, page, rels, args.echantillons, args.vote, counters,
+                                           examples_by_fold[folds[doc_key(path)]])
             data.setdefault("global_entities", []).extend(json.loads(json.dumps(ents)))
             for j, r in enumerate(new_rels, 1):
                 r["identifiant_relation"] = f"R_S2_P{page.get('page')}_{added_r + j:03d}"
@@ -398,6 +476,7 @@ def main():
             added_r += len(new_rels)
         data["global_relations"] = rels
         data["seconde_passe_trace"] = {"modele": MODEL, "echantillons": args.echantillons, "vote": args.vote,
+                                       "exemples": args.exemples, "pli": folds[doc_key(path)],
                                        "temperature": args.temperature, "entites_ajoutees": added_e,
                                        "relations_ajoutees": added_r, "rejets": dict(counters)}
         (out / path.name).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
