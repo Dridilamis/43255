@@ -35,6 +35,10 @@ from trace_lib.etage import run_stage
 from trace_lib.texte import iter_page_lines, norm
 
 BIO_RE = re.compile(r"^([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9 ./°()'’*+-]{1,40}?)\s+([<>]?-?\d+(?:[.,]\d+)?)(?:\s+.*)?$")
+# lignes de biologie qui ne sont pas des biomarqueurs du patient : valeurs temoins du
+# laboratoire ("Temoin 13.6 s", "Patient 18.3 s" d'un test de coagulation) et reglages du
+# ventilateur (FiO2, PEEP, debit, volume, mode)
+BIO_SKIP = re.compile(r"^(t[ée]moins?|patient|fio2|peep|d[ée]bit|volume|axe|mode|vt|fr)\b", re.I)
 MED_SKIP = re.compile(r"^(m[ée]dicaments?|autres?|dans le service|aucun|ras|traitements?|prescriptions?)\b", re.I)
 LINK_POSOLOGY = True
 LINK_PATIENT = False
@@ -104,7 +108,8 @@ def process(path, data):
         ents = page.setdefault(key, [])
         if line.endswith(":"):
             continue
-        if section == "BIOLOGIE_IMAGERIE" and len(line) <= 80 and BIO_RE.match(line):
+        if section == "BIOLOGIE_IMAGERIE" and len(line) <= 80 and BIO_RE.match(line) \
+                and not BIO_SKIP.match(line):
             if not _covered(ents, line, {"BIOMARQUEUR", "SIGNE_VITAL"}):
                 _add(g, page, key, line, "BIOMARQUEUR", "B1", c)
         elif section in ("TRAITEMENT_HABITUEL", "SORTIE") and 3 <= len(line) <= 90 \
