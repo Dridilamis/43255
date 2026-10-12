@@ -74,6 +74,15 @@ IMAGERIE_PROCEDURE, MICRO_ORGANISME, POSOLOGIE, TRAITEMENT ; non niées) : 421 e
 | v2 précision 98 %, filtre + accord ¹ | 75,58 % | 69,94 % | **72,65 %** | 24,4 % | 72,09 % | 54,94 % | 62,36 % | 27,9 % |
 | v2 précision 80 %, filtre + accord ¹ | 82,26 % | 62,74 % | 71,19 % | 17,7 % | 76,96 % | 46,71 % | 58,14 % | 23,0 % |
 
+Puis, à l'étage 4b, les valeurs témoins du laboratoire et les réglages du ventilateur ne sont plus
+récupérés comme biomarqueurs (résultats finaux) :
+
+| Sortie | Ent P | Ent R | Ent F1 | Ent halluc. | Rel P | Rel R | Rel F1 | Rel halluc. |
+|---|---|---|---|---|---|---|---|---|
+| **v2 standard (final)** | 75,13 % | 70,32 % | 72,65 % | 24,9 % | 71,60 % | 55,58 % | 62,58 % | 28,4 % |
+| v2 précision 98 % (final) ¹ | 75,74 % | 69,93 % | **72,72 %** | 24,3 % | 72,08 % | 55,03 % | 62,41 % | 27,9 % |
+| v2 précision 80 % (final) ¹ | 82,40 % | 62,81 % | 71,28 % | 17,6 % | 77,03 % | 46,69 % | 58,14 % | 23,0 % |
+
 ## Le constat de départ
 
 Le matcher d'entités évalue les entités **par page** (`pages[].entities`). Tous les
