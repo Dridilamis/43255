@@ -283,7 +283,103 @@
           "score_total",
           "delta_par_rapport_baseline",
           "horodatage"
-        ]
+        ],
+        "bareme_sofa_v1_7": {
+          "reference": "Vincent et al., 1996 (score SOFA) ; Sepsis-3 (Singer et al., 2016) : sepsis = infection + augmentation du SOFA >= 2 points.",
+          "principe": "6 composantes notees de 0 (normal) a 4 (defaillance grave) ; score_total de 0 a 24.",
+          "usage": "Le bareme sert a interpreter et a verifier la coherence d'un SOFA ecrit dans le dossier. Il ne sert PAS a calculer ni a annoter un SOFA absent du texte (regles R1_ancrage_textuel et R8_inference).",
+          "statut": "a_valider",
+          "note_statut": "Les definitions des composantes sont validees par le medecin ; les seuils ci-dessous sont ceux du bareme SOFA de reference et restent a confirmer par le medecin.",
+          "composantes": {
+            "respiratoire": {
+              "parametre": "rapport PaO2/FiO2 (mmHg)",
+              "entite_source": "BIOMARQUEUR rapport_PaO2_FiO2",
+              "relation": "score_sofa_inclut_biomarqueur",
+              "seuils": {
+                "0": ">= 400",
+                "1": "< 400",
+                "2": "< 300",
+                "3": "< 200 sous assistance ventilatoire",
+                "4": "< 100 sous assistance ventilatoire"
+              }
+            },
+            "coagulation": {
+              "parametre": "plaquettes (x10^3/uL = G/L)",
+              "entite_source": "BIOMARQUEUR plaquettes",
+              "relation": "score_sofa_inclut_biomarqueur",
+              "seuils": {
+                "0": ">= 150",
+                "1": "< 150",
+                "2": "< 100",
+                "3": "< 50",
+                "4": "< 20"
+              }
+            },
+            "hepatique": {
+              "parametre": "bilirubine totale (umol/L)",
+              "entite_source": "BIOMARQUEUR bilirubine_totale",
+              "relation": "score_sofa_inclut_biomarqueur",
+              "seuils": {
+                "0": "< 20",
+                "1": "20-32",
+                "2": "33-101",
+                "3": "102-204",
+                "4": "> 204"
+              }
+            },
+            "cardiovasculaire": {
+              "parametre": "pression arterielle moyenne (mmHg) et vasopresseurs (ug/kg/min)",
+              "entite_source": "SIGNE_VITAL pression_arterielle_moyenne ; TRAITEMENT vasopresseur",
+              "relation": "score_sofa_inclut_signe_vital (pression arterielle) ; vasopresseurs : aucune relation (voir propositions_v1_7.R_SOFA_VASOPRESSEUR)",
+              "seuils": {
+                "0": "PAM >= 70",
+                "1": "PAM < 70",
+                "2": "dopamine <= 5 ou dobutamine (toute dose)",
+                "3": "dopamine > 5 ou adrenaline <= 0,1 ou noradrenaline <= 0,1",
+                "4": "dopamine > 15 ou adrenaline > 0,1 ou noradrenaline > 0,1"
+              }
+            },
+            "neurologique": {
+              "parametre": "score de Glasgow",
+              "entite_source": "SCORE_NEUROLOGIQUE Glasgow",
+              "relation": "score_sofa_inclut_score_neurologique",
+              "seuils": {
+                "0": "15",
+                "1": "13-14",
+                "2": "10-12",
+                "3": "6-9",
+                "4": "< 6"
+              }
+            },
+            "renal": {
+              "parametre": "creatinine (umol/L) ou diurese des 24 h (mL/j)",
+              "entite_source": "BIOMARQUEUR creatinine ; SIGNE_VITAL diurese_24h",
+              "relation": "score_sofa_inclut_biomarqueur (creatinine) ; score_sofa_inclut_signe_vital (diurese)",
+              "seuils": {
+                "0": "< 110",
+                "1": "110-170",
+                "2": "171-299",
+                "3": "300-440 ou diurese < 500",
+                "4": "> 440 ou diurese < 200"
+              }
+            }
+          },
+          "exemple": {
+            "texte": "SOFA a 8, plaquettes 45 G/L, Glasgow 9",
+            "entites": [
+              "SCORE_SOFA (score_total = 8)",
+              "BIOMARQUEUR plaquettes = 45 G/L",
+              "SCORE_NEUROLOGIQUE Glasgow = 9"
+            ],
+            "relations": [
+              "SCORE_SOFA -> score_sofa_inclut_biomarqueur -> plaquettes 45 G/L",
+              "SCORE_SOFA -> score_sofa_inclut_score_neurologique -> Glasgow 9",
+              "SCORE_SOFA -> score_sofa_calcule_pour -> DONNEE_PATIENT"
+            ],
+            "lecture": "plaquettes 45 -> composante coagulation = 3 ; Glasgow 9 -> composante neurologique = 3."
+          },
+          "regle_relations": "Une relation score_sofa_inclut_* n'est creee que si le SOFA ET le parametre sont explicitement ecrits dans le document, et que le parametre appartient a la composante correspondante ci-dessus."
+        }
       },
       "SCORE_qSOFA": {
         "description": "Outil de reperage rapide hors reanimation (score de 0 a 3).",

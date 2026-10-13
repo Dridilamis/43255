@@ -26,6 +26,7 @@ désormais `signatures_relations_v1_7` (33 relations).
 | 11 | DEFAILLANCE_ORGANE | Cardiovasculaire = synonyme d'hémodynamique ; métabolique = lié à l'IRA | `synonymes_organes_v1_7`, `notes_organes_v1_7` |
 | 12 | COMORBIDITE_ANTECEDENT | Le type endocrinien inclut le diabète | `notes_type_antecedent_v1_7` |
 | 13 | Relations | Nouvelle relation `ira_a_pour_stade` : DEFAILLANCE_ORGANE (IRA) → STADE_IRA, seulement si le stade est écrit dans le document | `relations.RELATIONS_DIAGNOSTIQUES.ira_a_pour_stade`, `signatures_relations_v1_7` |
+| 14 | SCORE_SOFA | Barème des 6 composantes (seuils 0 → 4), entité source et relation pour chaque composante, exemple. Les définitions sont validées ; les **seuils** (barème de référence, Vincent et al., 1996) restent **à confirmer** par le médecin. Le barème sert à interpréter un SOFA écrit, jamais à en calculer un absent du texte | `SCORE_SOFA.bareme_sofa_v1_7` |
 
 ## Décisions à prendre (statut `a_valider`)
 
