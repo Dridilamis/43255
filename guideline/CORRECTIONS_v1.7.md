@@ -4,8 +4,10 @@ Base : TRACE-Sepsis v1.6 FINAL. Réunion de validation avec le médecin référe
 Fichier corrigé : `Guideline_TRACE_Sepsis_v1.7.json` (JSON valide). Chaque correction y porte un
 statut : `valide` (intégrée) ou `a_valider` (décision encore à prendre).
 
-Les **32 signatures de relations ne changent pas** : elles sont identiques à celles qu'utilisent
-TRACE (étage 3) et SGCE, ce qui a été vérifié automatiquement.
+Les **32 signatures de relations v1.5 ne changent pas** (vérifié automatiquement : elles sont
+identiques à celles de TRACE et de SGCE). Une **33e relation** est ajoutée après validation
+médicale : `ira_a_pour_stade` (DEFAILLANCE_ORGANE → STADE_IRA). La liste de référence est
+désormais `signatures_relations_v1_7` (33 relations).
 
 ## Corrections intégrées (statut `valide`)
 
@@ -23,12 +25,12 @@ TRACE (étage 3) et SGCE, ce qui a été vérifié automatiquement.
 | 10 | MICRO_ORGANISME | BHRE = bactérie hautement résistante émergente | `definitions_phenotype_resistance` |
 | 11 | DEFAILLANCE_ORGANE | Cardiovasculaire = synonyme d'hémodynamique ; métabolique = lié à l'IRA | `synonymes_organes_v1_7`, `notes_organes_v1_7` |
 | 12 | COMORBIDITE_ANTECEDENT | Le type endocrinien inclut le diabète | `notes_type_antecedent_v1_7` |
+| 13 | Relations | Nouvelle relation `ira_a_pour_stade` : DEFAILLANCE_ORGANE (IRA) → STADE_IRA, seulement si le stade est écrit dans le document | `relations.RELATIONS_DIAGNOSTIQUES.ira_a_pour_stade`, `signatures_relations_v1_7` |
 
 ## Décisions à prendre (statut `a_valider`)
 
 | # | Remarque du médecin | Pourquoi elle n'est pas appliquée |
 |---|---|---|
-| A | IRA : créer un lien avec le stade IRA | Aucune des 32 relations ne relie l'IRA au STADE_IRA. Il faudrait une 33e relation (`ira_a_pour_stade`), ce qui casse le verrou des signatures v1.5. Proposition dans `propositions_v1_7`. |
 | B | STADE_IRA : « à réfléchir » | L'entité est gardée telle quelle. Elle est rare dans les comptes rendus. |
 | C | SOFA cardiovasculaire : relier le score aux vasopresseurs | La composante dépend du besoin en vasopresseurs, qui sont des TRAITEMENT, mais aucune relation ne relie SCORE_SOFA à un TRAITEMENT. Il faudrait une nouvelle relation (`score_sofa_inclut_traitement`, limitée aux vasopresseurs). Proposition dans `propositions_v1_7.R_SOFA_VASOPRESSEUR`. |
 
@@ -37,4 +39,5 @@ TRACE (étage 3) et SGCE, ce qui a été vérifié automatiquement.
 - **46 entités du gold** (sur 11 073, soit 0,4 %) utilisent une valeur retirée : 41 LABEL_NOSOLOGIQUE (ACFA 11, encéphalopathie hépatique 7, état de mal épileptique 7, flutter 4, MAT 3, myasthénie 3, AVC 2, syndrome hépato-rénal 2, SHU 1, SIADH 1) et 5 scores myasthéniques.
 - **Les résultats actuels (chapitre 6) ont été obtenus avec le guideline v1.6.** Pour passer à v1.7, il faut appliquer les mêmes corrections au gold et au prompt d'extraction, puis tout ré-évaluer. Il ne faut pas mélanger un gold v1.6 avec une extraction v1.7.
 - Le gold doit être révisé selon v1.7 **par l'annotatrice ou le médecin**, à partir du guideline, et jamais à partir des sorties du modèle.
-- TRACE n'est pas affecté directement : ses étages n'utilisent que les signatures, qui sont inchangées.
+- **Nouvelle relation `ira_a_pour_stade`** : le gold actuel contient 21 IRA typées DEFAILLANCE_ORGANE mais **aucune entité STADE_IRA** et donc aucune relation de ce type. Il faut l'annoter dans le gold là où un stade est écrit ; sinon cette relation n'aura aucun exemple pour l'évaluation.
+- **TRACE** : les 32 anciennes signatures sont inchangées. Pour que l'étage 3 reconnaisse la nouvelle relation, il faudra lui donner les 33 signatures v1.7. Sans cela, il la marquera « non conforme » (simple indice, sans retrait).
