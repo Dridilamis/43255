@@ -28,6 +28,7 @@ désormais `signatures_relations` (33 relations).
 | 12 | COMORBIDITE_ANTECEDENT | Le type endocrinien inclut le diabète | `COMORBIDITE_ANTECEDENT.notes_type_antecedent` |
 | 13 | Relations | Nouvelle relation `ira_a_pour_stade` : DEFAILLANCE_ORGANE (IRA) → STADE_IRA, seulement si le stade est écrit dans le document | `relations.RELATIONS_DIAGNOSTIQUES.ira_a_pour_stade`, `signatures_relations`, `regles_derivees.R10_stade_IRA` |
 | 14 | SCORE_SOFA | Barème des 6 composantes (seuils 0 → 4), entité source et relation pour chaque composante, exemple. Les définitions sont validées ; les **seuils** (barème de référence, Vincent et al., 1996) restent **à confirmer** par le médecin. Le barème sert à interpréter un SOFA écrit, jamais à en calculer un absent du texte | `SCORE_SOFA.bareme` |
+| 15 | LABEL_NOSOLOGIQUE / FOYER_INFECTIEUX | La pneumopathie et ses types (communautaire, nosocomiale, inhalation, PAVM) sont des **diagnostics** donc LABEL_NOSOLOGIQUE ; FOYER_INFECTIEUX = **localisation seulement**. Diagnostic + localisation écrits → deux entités ; aucun FOYER déduit du mot « pneumopathie » | `regles_de_typage.LABEL_NOSOLOGIQUE_vs_FOYER_INFECTIEUX`, `FOYER_INFECTIEUX.description`, `normalisation_terminologique.LABEL_NOSOLOGIQUE` |
 
 ## Décisions à prendre
 
@@ -35,9 +36,12 @@ désormais `signatures_relations` (33 relations).
 |---|---|---|
 | B | STADE_IRA : « à réfléchir » | L'entité est gardée telle quelle. Elle est rare dans les comptes rendus. |
 | C | SOFA cardiovasculaire : relier le score aux vasopresseurs | La composante dépend du besoin en vasopresseurs, qui sont des TRAITEMENT, mais aucune relation ne relie SCORE_SOFA à un TRAITEMENT. Il faudrait une nouvelle relation (`score_sofa_inclut_traitement`, limitée aux vasopresseurs). Voir `decisions_en_attente.relation_SOFA_vasopresseurs`. |
+| D | Relier un germe ou une imagerie à une pneumopathie quand aucune localisation n'est écrite | Aucune relation ne va de MICRO_ORGANISME ou IMAGERIE_PROCEDURE vers LABEL_NOSOLOGIQUE. Proposition : `micro_organisme_responsable_de` et `imagerie_objective_label`. |
+| E | Abcès, pyélonéphrite, érysipèle, sinusite, endocardite | Ce sont des diagnostics mais ils ne sont pas dans la liste des LABEL : les ajouter, ou les laisser en FOYER ? |
 
 ## Impact sur le gold et sur les résultats
 
+- **Pneumopathies (correction 15)** : 47 entités du gold (22 documents) sont des pneumopathies typées FOYER_INFECTIEUX et doivent passer en LABEL_NOSOLOGIQUE, en créant une entité FOYER séparée quand une localisation est écrite. 85 relations pointent vers elles (36 `micro_organisme_isole_dans`, 33 `presente_suspicion_infection`, 14 `imagerie_objective_foyer`, 2 `antibiotique_adequat_pour`) : à rattacher à la localisation si elle est écrite, ou à remplacer par `a_pour_label_nosologique` pour le patient ; sinon elles disparaissent (voir `decisions_en_attente.relations_germe_imagerie_vers_diagnostic`). 2 LABEL « choc septique à point de départ pulmonaire » sont à découper.
 - **46 entités du gold** (sur 11 073, soit 0,4 %) utilisent une valeur retirée : 41 LABEL_NOSOLOGIQUE (ACFA 11, encéphalopathie hépatique 7, état de mal épileptique 7, flutter 4, MAT 3, myasthénie 3, AVC 2, syndrome hépato-rénal 2, SHU 1, SIADH 1) et 5 scores myasthéniques.
 - **Les résultats actuels (chapitre 6) ont été obtenus avec le guideline v1.6.** Pour passer à v1.7, il faut appliquer les mêmes corrections au gold et au prompt d'extraction, puis tout ré-évaluer. Il ne faut pas mélanger un gold v1.6 avec une extraction v1.7.
 - Le gold doit être révisé selon v1.7 **par l'annotatrice ou le médecin**, à partir du guideline, et jamais à partir des sorties du modèle.

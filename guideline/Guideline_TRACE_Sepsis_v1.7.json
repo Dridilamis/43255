@@ -51,7 +51,8 @@
           "gangrene_gazeuse"
         ],
         "notes": {
-          "IRA": "Typee DEFAILLANCE_ORGANE lorsqu'il s'agit de la dysfonction renale de l'episode ; son stade est relie par ira_a_pour_stade."
+          "IRA": "Typee DEFAILLANCE_ORGANE lorsqu'il s'agit de la dysfonction renale de l'episode ; son stade est relie par ira_a_pour_stade.",
+          "pneumopathie": "La pneumopathie et ses types (communautaire, nosocomiale, inhalation, PAVM) sont des diagnostics : toujours LABEL_NOSOLOGIQUE. Leur localisation, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte."
         }
       },
       "SIGNE_VITAL": {
@@ -405,7 +406,7 @@
         ]
       },
       "FOYER_INFECTIEUX": {
-        "description": "Localisation suspectee ou confirmee de l'infection.",
+        "description": "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE.",
         "localisations": [
           "pulmonaire",
           "voies_urinaires",
@@ -439,7 +440,13 @@
           "possible",
           "suspecte",
           "non_documente"
-        ]
+        ],
+        "exemples": {
+          "point de depart pulmonaire": "FOYER_INFECTIEUX (pulmonaire)",
+          "foyer pulmonaire": "FOYER_INFECTIEUX (pulmonaire)",
+          "lobe inferieur droit": "FOYER_INFECTIEUX (pulmonaire)",
+          "pneumopathie": "pas un FOYER : LABEL_NOSOLOGIQUE"
+        }
       },
       "MICRO_ORGANISME": {
         "description": "Agent pathogene identifie lors d'un prelevement microbiologique.",
@@ -1342,6 +1349,19 @@
         "coque": "cocci",
         "coques": "cocci",
         "BHRE": "bacterie_hautement_resistante_emergente"
+      },
+      "LABEL_NOSOLOGIQUE": {
+        "pneumonie": "pneumopathie",
+        "bronchopneumonie": "pneumopathie",
+        "broncho-pneumopathie": "pneumopathie",
+        "pneumopathie infectieuse": "pneumopathie",
+        "pneumopathie acquise sous ventilation": "PAVM",
+        "pneumopathie acquise sous ventilation mecanique": "PAVM",
+        "pneumopathie d'inhalation": "pneumopathie_inhalation",
+        "inhalation": "pneumopathie_inhalation (si diagnostic)",
+        "pneumopathie nosocomiale": "pneumopathie_nosocomiale",
+        "pneumopathie communautaire": "pneumopathie_communautaire",
+        "PAC": "pneumopathie_communautaire"
       }
     },
     "regles_de_typage": {
@@ -1378,6 +1398,26 @@
       },
       "LABEL_NOSOLOGIQUE": {
         "regle": "Respecter strictement la liste valeurs_autorisees. Ne pas inventer une valeur hors liste (les diagnostics hors sepsis retires en v1.7, ex. ACFA, AVC, SIADH, ne sont plus des LABEL_NOSOLOGIQUE)."
+      },
+      "LABEL_NOSOLOGIQUE_vs_FOYER_INFECTIEUX": {
+        "regle": "Un diagnostic infectieux est un LABEL_NOSOLOGIQUE ; FOYER_INFECTIEUX ne represente que la localisation. Une mention recoit un seul type : si le texte donne le diagnostic ET la localisation, on cree deux entites, chacune sur sa propre surface. Aucun FOYER n'est cree si aucune localisation n'est ecrite (pas de FOYER 'pulmonaire' deduit du mot pneumopathie).",
+        "exemples": {
+          "pneumopathie": "LABEL_NOSOLOGIQUE pneumopathie",
+          "pneumonie": "LABEL_NOSOLOGIQUE pneumopathie",
+          "pneumopathie nosocomiale": "LABEL_NOSOLOGIQUE pneumopathie_nosocomiale",
+          "pneumopathie d'inhalation": "LABEL_NOSOLOGIQUE pneumopathie_inhalation",
+          "pneumopathie communautaire": "LABEL_NOSOLOGIQUE pneumopathie_communautaire",
+          "PAVM / pneumopathie acquise sous ventilation": "LABEL_NOSOLOGIQUE PAVM",
+          "pneumopathie des lobes inferieur et moyen droits": "LABEL_NOSOLOGIQUE 'pneumopathie' + FOYER_INFECTIEUX 'lobes inferieur et moyen droits' (pulmonaire)",
+          "choc septique a point de depart pulmonaire": "LABEL_NOSOLOGIQUE 'choc septique' + FOYER_INFECTIEUX 'point de depart pulmonaire'",
+          "foyer pulmonaire": "FOYER_INFECTIEUX (pulmonaire)"
+        },
+        "relations": {
+          "patient -> pneumopathie": "a_pour_label_nosologique (DONNEE_PATIENT -> LABEL_NOSOLOGIQUE)",
+          "patient -> localisation": "presente_suspicion_infection (DONNEE_PATIENT -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
+          "germe -> localisation": "micro_organisme_isole_dans (MICRO_ORGANISME -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
+          "imagerie -> localisation": "imagerie_objective_foyer (IMAGERIE_PROCEDURE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite"
+        }
       }
     },
     "validation_relations": {
@@ -1413,7 +1453,9 @@
     },
     "decisions_en_attente": {
       "seuils_SOFA": "Faire confirmer par le medecin les seuils de SCORE_SOFA.bareme.",
-      "relation_SOFA_vasopresseurs": "score_sofa_inclut_traitement (SCORE_SOFA -> TRAITEMENT, vasopresseurs) : proposee, non ajoutee."
+      "relation_SOFA_vasopresseurs": "score_sofa_inclut_traitement (SCORE_SOFA -> TRAITEMENT, vasopresseurs) : proposee, non ajoutee.",
+      "relations_germe_imagerie_vers_diagnostic": "Avec FOYER = localisation seule, un germe ou une imagerie ne peut plus etre relie a une pneumopathie (LABEL) quand aucune localisation n'est ecrite (ex. 'PAVM a Stenotrophomonas'). Proposition : micro_organisme_responsable_de (MICRO_ORGANISME -> LABEL_NOSOLOGIQUE) et imagerie_objective_label (IMAGERIE_PROCEDURE -> LABEL_NOSOLOGIQUE). Non ajoutees.",
+      "autres_infections_localisees": "Meme logique pour abces, pyelonephrite, erysipele, sinusite, endocardite : ce sont des diagnostics, mais ils ne sont pas dans LABEL_NOSOLOGIQUE.valeurs_autorisees. Les ajouter a la liste, ou les laisser en FOYER_INFECTIEUX ?"
     }
   }
 }
