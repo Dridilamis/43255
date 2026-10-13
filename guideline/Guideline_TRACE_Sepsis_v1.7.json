@@ -276,7 +276,8 @@
           "hepatique": "bilirubine totale",
           "cardiovasculaire": "pression arterielle et besoin de vasopresseurs",
           "neurologique": "score de Glasgow",
-          "renal": "creatinine et diurese des 24 h"
+          "renal": "creatinine et diurese des 24 h",
+          "note_cardiovasculaire": "Le besoin de vasopresseurs est un TRAITEMENT : son lien avec le SOFA demande une nouvelle relation (propositions_v1_7.R_SOFA_VASOPRESSEUR, a valider)."
         },
         "attributs": [
           "score_total",
@@ -1025,6 +1026,12 @@
         "proposition": "Nouvelle relation ira_a_pour_stade : DEFAILLANCE_ORGANE (IRA) -> STADE_IRA (ou LABEL_NOSOLOGIQUE (IRA) -> STADE_IRA).",
         "statut": "a_valider",
         "impact": "33e relation : contredit principes_v1_6.aucune_nouvelle_relation et signatures_relations_verrouillees_v1_5."
+      },
+      "R_SOFA_VASOPRESSEUR": {
+        "remarque": "La composante cardiovasculaire du SOFA depend de la pression arterielle ET du besoin de vasopresseurs ; aucune des 32 relations ne relie SCORE_SOFA a un TRAITEMENT.",
+        "proposition": "Nouvelle relation score_sofa_inclut_traitement : SCORE_SOFA -> TRAITEMENT (limitee aux vasopresseurs : noradrenaline, adrenaline, dopamine, dobutamine).",
+        "statut": "a_valider",
+        "impact": "33e (ou 34e avec R_IRA_STADE) relation : contredit principes_v1_6.aucune_nouvelle_relation et signatures_relations_verrouillees_v1_5 ; demande une re-annotation du gold si elle est adoptee."
       }
     },
     "regles_derivees": {

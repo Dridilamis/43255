@@ -30,6 +30,7 @@ TRACE (étage 3) et SGCE, ce qui a été vérifié automatiquement.
 |---|---|---|
 | A | IRA : créer un lien avec le stade IRA | Aucune des 32 relations ne relie l'IRA au STADE_IRA. Il faudrait une 33e relation (`ira_a_pour_stade`), ce qui casse le verrou des signatures v1.5. Proposition dans `propositions_v1_7`. |
 | B | STADE_IRA : « à réfléchir » | L'entité est gardée telle quelle. Elle est rare dans les comptes rendus. |
+| C | SOFA cardiovasculaire : relier le score aux vasopresseurs | La composante dépend du besoin en vasopresseurs, qui sont des TRAITEMENT, mais aucune relation ne relie SCORE_SOFA à un TRAITEMENT. Il faudrait une nouvelle relation (`score_sofa_inclut_traitement`, limitée aux vasopresseurs). Proposition dans `propositions_v1_7.R_SOFA_VASOPRESSEUR`. |
 
 ## Impact sur le gold et sur les résultats
 
