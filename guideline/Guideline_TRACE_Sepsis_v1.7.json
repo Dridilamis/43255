@@ -1,20 +1,14 @@
 {
   "ontologie_sepsis_graph": {
     "version": "1.7",
-    "nom_guideline": "TRACE-Sepsis v1.7 (v1.6 corrigee apres validation medicale)",
-    "historique_version": {
-      "base": "TRACE-Sepsis v1.6 FINAL",
-      "validation_medicale": "Reunion de validation avec le medecin referent (2026-10-12). Les corrections sont listees dans guideline/CORRECTIONS_v1.7.md.",
-      "statuts": {
-        "valide": "correction demandee explicitement par le medecin et integree",
-        "a_valider": "remarque du medecin qui demande une decision (ajout de relation, entite a repenser) ; non appliquee aux signatures"
-      }
-    },
+    "nom_guideline": "TRACE-Sepsis v1.7",
+    "description": "Ontologie et guide d'annotation du graphe de connaissances clinique du sepsis. Version 1.7 : v1.6 corrigee apres validation medicale (detail dans CORRECTIONS_v1.7.md).",
     "references_fondatrices": [
       "Sepsis-3 (Singer et al., 2016)",
       "Surviving Sepsis Campaign (SSC 2021)",
       "KDIGO AKI Guidelines 2012",
-      "EUCAST v14.0 (2024)"
+      "EUCAST v14.0 (2024)",
+      "Vincent et al., 1996 (score SOFA)"
     ],
     "entites": {
       "DONNEE_PATIENT": {
@@ -31,7 +25,7 @@
         ],
         "regles_validation": {
           "age_source": "Au moins un des deux attributs date_naissance ou age_annees doit etre renseigne (contrainte sh:or, non-exclusive).",
-          "moment_reference_v1_7": "Les donnees du patient (age, poids, taille, IMC...) sont prises a l'ADMISSION. Si une valeur est donnee a plusieurs moments du sejour, on retient celle de l'admission (validation medicale)."
+          "moment_reference": "Les donnees du patient (age, poids, taille, IMC...) sont prises a l'ADMISSION. Si une valeur est donnee a plusieurs moments du sejour, on retient celle de l'admission (validation medicale)."
         }
       },
       "LABEL_NOSOLOGIQUE": {
@@ -56,30 +50,8 @@
           "IRA",
           "gangrene_gazeuse"
         ],
-        "valeurs_retirees_v1_7": {
-          "valeurs": [
-            "syndrome_hepato_renal",
-            "encephalopathie_hepatique",
-            "etat_de_mal_epileptique",
-            "crise_myasthenique",
-            "aggravation_myasthenique",
-            "ACFA",
-            "flutter",
-            "SIADH",
-            "MAT",
-            "SHU",
-            "AVC",
-            "AVC_hemorragique_probable"
-          ],
-          "motif": "Diagnostics hors du champ du sepsis : retires de la liste par le medecin (validation medicale v1.7).",
-          "statut": "valide"
-        },
-        "notes_v1_7": {
-          "IRA": {
-            "remarque_medecin": "On doit creer un lien entre IRA et le stade IRA.",
-            "statut": "valide",
-            "consequence": "Relation ira_a_pour_stade ajoutee (33e relation) : DEFAILLANCE_ORGANE (IRA) -> STADE_IRA."
-          }
+        "notes": {
+          "IRA": "Typee DEFAILLANCE_ORGANE lorsqu'il s'agit de la dysfonction renale de l'episode ; son stade est relie par ira_a_pour_stade."
         }
       },
       "SIGNE_VITAL": {
@@ -183,9 +155,18 @@
           "antigenurie",
           "charge_microbiologique"
         ],
-        "orientation_clinique_v1_7": {
+        "attributs_obligatoires_additionnels": [
+          "direction_cinetique"
+        ],
+        "valeurs_autorisees_direction_cinetique": [
+          "augmentation",
+          "diminution",
+          "stable",
+          "normalisation",
+          "inconnue"
+        ],
+        "orientation_clinique": {
           "description": "Correspondance biomarqueur -> diagnostic ou defaillance qu'il documente, validee par le medecin. Elle guide les relations biomarqueur_est_critere_de (vers LABEL_NOSOLOGIQUE) et biomarqueur_supporte_defaillance_organe (vers DEFAILLANCE_ORGANE) ; elle ne cree jamais une relation sans support textuel (regle R8_inference).",
-          "statut": "valide",
           "correspondances": {
             "choc_septique": {
               "biomarqueurs": [
@@ -243,17 +224,7 @@
             }
           }
         },
-        "attributs_obligatoires_additionnels": [
-          "direction_cinetique"
-        ],
-        "valeurs_autorisees_direction_cinetique": [
-          "augmentation",
-          "diminution",
-          "stable",
-          "normalisation",
-          "inconnue"
-        ],
-        "attributs_optionnels_v1_6": [
+        "attributs_optionnels": [
           "contexte_prelevement",
           "est_baseline",
           "valeur_normalisee"
@@ -269,27 +240,23 @@
           "neurologique",
           "renal"
         ],
-        "definition_composantes_v1_7": {
-          "statut": "valide",
-          "respiratoire": "rapport PaO2/FiO2",
-          "coagulation": "taux de plaquettes",
-          "hepatique": "bilirubine totale",
-          "cardiovasculaire": "pression arterielle et besoin de vasopresseurs",
-          "neurologique": "score de Glasgow",
-          "renal": "creatinine et diurese des 24 h",
-          "note_cardiovasculaire": "Le besoin de vasopresseurs est un TRAITEMENT : son lien avec le SOFA demande une nouvelle relation (propositions_v1_7.R_SOFA_VASOPRESSEUR, a valider)."
-        },
         "attributs": [
           "score_total",
           "delta_par_rapport_baseline",
           "horodatage"
         ],
-        "bareme_sofa_v1_7": {
+        "definition_composantes": {
+          "respiratoire": "rapport PaO2/FiO2",
+          "coagulation": "taux de plaquettes",
+          "hepatique": "bilirubine totale",
+          "cardiovasculaire": "pression arterielle et besoin de vasopresseurs",
+          "neurologique": "score de Glasgow",
+          "renal": "creatinine et diurese des 24 h"
+        },
+        "bareme": {
           "reference": "Vincent et al., 1996 (score SOFA) ; Sepsis-3 (Singer et al., 2016) : sepsis = infection + augmentation du SOFA >= 2 points.",
           "principe": "6 composantes notees de 0 (normal) a 4 (defaillance grave) ; score_total de 0 a 24.",
           "usage": "Le bareme sert a interpreter et a verifier la coherence d'un SOFA ecrit dans le dossier. Il ne sert PAS a calculer ni a annoter un SOFA absent du texte (regles R1_ancrage_textuel et R8_inference).",
-          "statut": "a_valider",
-          "note_statut": "Les definitions des composantes sont validees par le medecin ; les seuils ci-dessous sont ceux du bareme SOFA de reference et restent a confirmer par le medecin.",
           "composantes": {
             "respiratoire": {
               "parametre": "rapport PaO2/FiO2 (mmHg)",
@@ -330,7 +297,7 @@
             "cardiovasculaire": {
               "parametre": "pression arterielle moyenne (mmHg) et vasopresseurs (ug/kg/min)",
               "entite_source": "SIGNE_VITAL pression_arterielle_moyenne ; TRAITEMENT vasopresseur",
-              "relation": "score_sofa_inclut_signe_vital (pression arterielle) ; vasopresseurs : aucune relation (voir propositions_v1_7.R_SOFA_VASOPRESSEUR)",
+              "relation": "score_sofa_inclut_signe_vital (pression arterielle) ; vasopresseurs : aucune relation pour l'instant (voir decisions_en_attente.relation_SOFA_vasopresseurs)",
               "seuils": {
                 "0": "PAM >= 70",
                 "1": "PAM < 70",
@@ -378,7 +345,8 @@
             ],
             "lecture": "plaquettes 45 -> composante coagulation = 3 ; Glasgow 9 -> composante neurologique = 3."
           },
-          "regle_relations": "Une relation score_sofa_inclut_* n'est creee que si le SOFA ET le parametre sont explicitement ecrits dans le document, et que le parametre appartient a la composante correspondante ci-dessus."
+          "regle_relations": "Une relation score_sofa_inclut_* n'est creee que si le SOFA ET le parametre sont explicitement ecrits dans le document, et que le parametre appartient a la composante correspondante ci-dessus.",
+          "statut_seuils": "seuils du bareme de reference (Vincent et al., 1996), a confirmer par le medecin"
         }
       },
       "SCORE_qSOFA": {
@@ -403,10 +371,6 @@
           "valeur_brute",
           "horodatage"
         ],
-        "regles_v1_7": {
-          "statut": "valide",
-          "score_glasgow_total": "Somme des trois sous-scores : ouverture_yeux + reponse_verbale + reponse_motrice."
-        },
         "valeurs_autorisees": [
           "Glasgow",
           "RASS",
@@ -414,22 +378,16 @@
           "MMS",
           "testing_musculaire"
         ],
-        "valeurs_retirees_v1_7": {
-          "valeurs": [
-            "score_myasthenique"
-          ],
-          "motif": "Non pertinent pour le sepsis (validation medicale v1.7).",
-          "statut": "valide"
+        "regles": {
+          "score_glasgow_total": "Somme des trois sous-scores : ouverture_yeux + reponse_verbale + reponse_motrice."
         },
-        "notes_v1_7": {
+        "notes": {
           "MMS": "Antecedent ou consequence du sepsis.",
           "testing_musculaire": "Consequence du sepsis."
         }
       },
       "STADE_IRA": {
         "description": "Stadification de la gravite de l'insuffisance renale aigue (variations relatives de creatinine et de diurese).",
-        "statut_v1_7": "a_valider",
-        "remarque_medecin": "Entite a reflechir.",
         "systeme_classification": "KDIGO 2012",
         "note_nommage": "Renommee depuis KDIGO_AKI_STAGE : le nom du referentiel de classification (KDIGO) n'apparait quasiment jamais litteralement dans les dossiers patients francais (on y trouve plutot 'IRA', des valeurs de creatinine, une mention de diurese), contrairement a SOFA/qSOFA qui sont effectivement extraits tels quels. Le referentiel est donc deplace en metadonnee (systeme_classification) plutot que dans l'identifiant.",
         "valeurs_autorisees": [
@@ -509,7 +467,6 @@
           "coque": "cocci",
           "coques": "cocci"
         },
-        "note_morphologie_v1_7": "Ajout valide par le medecin : un Gram positif ou negatif se precise en cocci (synonyme coque) ou bacille.",
         "valeurs_autorisees_type_prelevement": [
           "hemoculture",
           "ECBU",
@@ -526,12 +483,6 @@
           "coproculture",
           "autre"
         ],
-        "regles_type_prelevement_v1_7": {
-          "statut": "valide",
-          "principe": "Le type de prelevement renseigne le site d'infection.",
-          "prelevement_per_operatoire": "Identifier le site de prelevement exact (attribut site_prelevement).",
-          "biopsie": "Identifier le site de la biopsie (attribut site_prelevement)."
-        },
         "valeurs_autorisees_phenotype_resistance": [
           "sensible",
           "resistant",
@@ -546,6 +497,11 @@
         ],
         "definitions_phenotype_resistance": {
           "BHRE": "bacterie hautement resistante emergente"
+        },
+        "regles_type_prelevement": {
+          "principe": "Le type de prelevement renseigne le site d'infection.",
+          "prelevement_per_operatoire": "Identifier le site de prelevement exact (attribut site_prelevement).",
+          "biopsie": "Identifier le site de la biopsie (attribut site_prelevement)."
         }
       },
       "DEFAILLANCE_ORGANE": {
@@ -561,13 +517,6 @@
           "coagulation",
           "metabolique"
         ],
-        "synonymes_organes_v1_7": {
-          "hemodynamique": "cardiovasculaire"
-        },
-        "notes_organes_v1_7": {
-          "cardiovasculaire": "Synonyme de hemodynamique (validation medicale).",
-          "metabolique": "Lie a l'IRA (validation medicale)."
-        },
         "manifestations_autorisees": [
           "SDRA",
           "hypoxemie",
@@ -593,7 +542,14 @@
           "acidose_metabolique",
           "hyperkaliemie",
           "defaillance_multiviscerale"
-        ]
+        ],
+        "synonymes_organes": {
+          "hemodynamique": "cardiovasculaire"
+        },
+        "notes_organes": {
+          "cardiovasculaire": "Synonyme de hemodynamique (validation medicale).",
+          "metabolique": "Lie a l'IRA (validation medicale)."
+        }
       },
       "TRAITEMENT": {
         "description": "Interventions therapeutiques administrees au patient, medicamenteuses ou de support.",
@@ -649,7 +605,7 @@
           "nom_medicament"
         ],
         "note": "Les valeurs_autorisees representent des categories therapeutiques. nom_medicament conserve la DCI ou le nom commercial explicitement mentionne.",
-        "attributs_optionnels_v1_6": [
+        "attributs_optionnels": [
           "statut_administration"
         ]
       },
@@ -737,7 +693,7 @@
           "toxicologique",
           "autre"
         ],
-        "notes_type_antecedent_v1_7": {
+        "notes_type_antecedent": {
           "endocrinien": "Inclut le diabete (validation medicale)."
         }
       },
@@ -828,7 +784,6 @@
         ]
       },
       "METADONNEES_PIPELINE": {
-        "statut": "consolidee",
         "description": "Champs transversaux obligatoires pour l'ancrage visuel et le suivi de confiance (LLM multimodal Qwen2-VL).",
         "attributs": [
           "identifiant_entite",
@@ -978,8 +933,7 @@
         },
         "score_sofa_inclut_score_neurologique": {
           "domaine": "SCORE_SOFA",
-          "image": "SCORE_NEUROLOGIQUE",
-          "statut": "proposee_a_valider"
+          "image": "SCORE_NEUROLOGIQUE"
         },
         "score_qsofa_calcule_pour": {
           "domaine": "SCORE_qSOFA",
@@ -988,8 +942,7 @@
         },
         "score_qsofa_inclut_score_neurologique": {
           "domaine": "SCORE_qSOFA",
-          "image": "SCORE_NEUROLOGIQUE",
-          "statut": "proposee_a_valider"
+          "image": "SCORE_NEUROLOGIQUE"
         },
         "stade_ira_calcule_pour": {
           "domaine": "STADE_IRA",
@@ -999,8 +952,7 @@
         "ira_a_pour_stade": {
           "domaine": "DEFAILLANCE_ORGANE",
           "image": "STADE_IRA",
-          "description": "Relie une IRA (DEFAILLANCE_ORGANE, manifestation IRA) a son stade KDIGO 2012 (STADE_IRA). Creee uniquement si le stade est explicitement ecrit dans le document (regle R8_inference).",
-          "statut": "valide_v1_7"
+          "description": "Relie une IRA (DEFAILLANCE_ORGANE, manifestation IRA) a son stade KDIGO 2012 (STADE_IRA). Creee uniquement si le stade est explicitement ecrit dans le document (regle R8_inference)."
         }
       },
       "RELATIONS_THERAPEUTIQUES": {
@@ -1046,7 +998,7 @@
         "biomarqueur_supporte_defaillance_organe": {
           "domaine": "BIOMARQUEUR",
           "image": "DEFAILLANCE_ORGANE",
-          "description": "Voir BIOMARQUEUR.orientation_clinique_v1_7 pour les biomarqueurs propres a chaque defaillance."
+          "description": "Voir BIOMARQUEUR.orientation_clinique pour les biomarqueurs propres a chaque defaillance."
         },
         "biomarqueur_est_critere_de": {
           "domaine": "BIOMARQUEUR",
@@ -1121,20 +1073,171 @@
         }
       }
     },
-    "propositions_v1_7": {
-      "description": "Remarques du medecin qui demandent de modifier les signatures verrouillees. Non appliquees : elles exigent une decision (et une re-annotation du gold si elles sont adoptees).",
-      "R_IRA_STADE": {
-        "remarque_medecin": "IRA : on doit creer un lien avec le stade IRA.",
-        "proposition": "Nouvelle relation ira_a_pour_stade : DEFAILLANCE_ORGANE (IRA) -> STADE_IRA (ou LABEL_NOSOLOGIQUE (IRA) -> STADE_IRA).",
-        "statut": "valide",
-        "impact": "33e relation : contredit principes_v1_6.aucune_nouvelle_relation et signatures_relations_verrouillees_v1_5.",
-        "decision": "Validee : relation ira_a_pour_stade (DEFAILLANCE_ORGANE -> STADE_IRA) ajoutee. Domaine DEFAILLANCE_ORGANE car l'IRA est typee DEFAILLANCE_ORGANE (regles_de_typage_v1_6.SYMPTOME_vs_DEFAILLANCE_ORGANE)."
+    "signatures_relations": {
+      "a_pour_label_nosologique": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
       },
-      "R_SOFA_VASOPRESSEUR": {
-        "remarque": "La composante cardiovasculaire du SOFA depend de la pression arterielle ET du besoin de vasopresseurs ; aucune des 32 relations ne relie SCORE_SOFA a un TRAITEMENT.",
-        "proposition": "Nouvelle relation score_sofa_inclut_traitement : SCORE_SOFA -> TRAITEMENT (limitee aux vasopresseurs : noradrenaline, adrenaline, dopamine, dobutamine).",
-        "statut": "a_valider",
-        "impact": "33e (ou 34e avec R_IRA_STADE) relation : contredit principes_v1_6.aucune_nouvelle_relation et signatures_relations_verrouillees_v1_5 ; demande une re-annotation du gold si elle est adoptee."
+      "presente_suspicion_infection": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "presente_dysfonction_organe": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_calcule_pour": {
+        "domaine": "SCORE_SOFA",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_inclut_biomarqueur": {
+        "domaine": "SCORE_SOFA",
+        "image": "BIOMARQUEUR",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_inclut_signe_vital": {
+        "domaine": "SCORE_SOFA",
+        "image": "SIGNE_VITAL",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_inclut_score_neurologique": {
+        "domaine": "SCORE_SOFA",
+        "image": "SCORE_NEUROLOGIQUE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_qsofa_calcule_pour": {
+        "domaine": "SCORE_qSOFA",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_qsofa_inclut_score_neurologique": {
+        "domaine": "SCORE_qSOFA",
+        "image": "SCORE_NEUROLOGIQUE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "stade_ira_calcule_pour": {
+        "domaine": "STADE_IRA",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "ira_a_pour_stade": {
+        "domaine": "DEFAILLANCE_ORGANE",
+        "image": "STADE_IRA",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "traitement_administre_a": {
+        "domaine": "TRAITEMENT",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "traitement_a_pour_posologie": {
+        "domaine": "TRAITEMENT",
+        "image": "POSOLOGIE",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "antibiotique_adequat_pour": {
+        "domaine": "TRAITEMENT",
+        "image": "MICRO_ORGANISME",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "antibiotique_inadequat_pour": {
+        "domaine": "TRAITEMENT",
+        "image": "MICRO_ORGANISME",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "traitement_cible_defaillance": {
+        "domaine": "TRAITEMENT",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "traitement_indique_par_label_nosologique": {
+        "domaine": "TRAITEMENT",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "signe_vital_supporte_defaillance_organe": {
+        "domaine": "SIGNE_VITAL",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_SIGNES_VITAUX"
+      },
+      "biomarqueur_obtenu_a": {
+        "domaine": "BIOMARQUEUR",
+        "image": "EVENEMENT_TEMPOREL",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "biomarqueur_supporte_defaillance_organe": {
+        "domaine": "BIOMARQUEUR",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "biomarqueur_est_critere_de": {
+        "domaine": "BIOMARQUEUR",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "micro_organisme_isole_dans": {
+        "domaine": "MICRO_ORGANISME",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "comorbidite_est_facteur_risque_de": {
+        "domaine": "COMORBIDITE_ANTECEDENT",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
+      },
+      "a_pour_contexte_acquisition": {
+        "domaine": "COMORBIDITE_ANTECEDENT",
+        "image": "CONTEXTE_ACQUISITION",
+        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
+      },
+      "contexte_acquisition_influence_risque_resistance": {
+        "domaine": "CONTEXTE_ACQUISITION",
+        "image": "MICRO_ORGANISME",
+        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
+      },
+      "precede": {
+        "domaine": "EVENEMENT_TEMPOREL",
+        "image": "EVENEMENT_TEMPOREL",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "patient_a_pour_evolution": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "EVOLUTION_PRONOSTIC",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "evenement_associe_evolution": {
+        "domaine": "EVENEMENT_TEMPOREL",
+        "image": "EVOLUTION_PRONOSTIC",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "service_medical_accueille": {
+        "domaine": "SERVICE_MEDICAL",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "imagerie_objective_foyer": {
+        "domaine": "IMAGERIE_PROCEDURE",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_IMAGERIE"
+      },
+      "imagerie_objective_defaillance": {
+        "domaine": "IMAGERIE_PROCEDURE",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_IMAGERIE"
+      },
+      "imagerie_objective_comorbidite": {
+        "domaine": "IMAGERIE_PROCEDURE",
+        "image": "COMORBIDITE_ANTECEDENT",
+        "groupe": "RELATIONS_IMAGERIE"
+      },
+      "presente_symptome": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "SYMPTOME",
+        "groupe": "RELATIONS_SYMPTOMES"
       }
     },
     "regles_derivees": {
@@ -1148,29 +1251,22 @@
       "R7_contexte_acquisition_risque_BMR": "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR)",
       "R8_IMAGERIE_PROCEDURE": "Une relation d'imagerie est créée uniquement si l'examen et l'entité cible sont tous deux explicitement présents dans le document. Aucune inférence n'est autorisée.",
       "R9_SYMPTOME": "Une relation presente_symptome est créée uniquement si le symptôme est explicitement mentionné dans le document. Aucune inférence diagnostique n'est autorisée à partir d'un symptôme seul.",
-      "note_R1_v1_7": "Seuil corrige par le medecin : lactate superieur OU EGAL a 2 mmol/L (v1.6 : strictement superieur a 2)."
+      "R10_stade_IRA": "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine)."
     },
-    "principes_v1_6": {
-      "compatibilite": "Toutes les signatures domaine/image des relations sont identiques a TRACE-Sepsis v1.5.",
-      "aucune_nouvelle_relation": true,
-      "aucune_signature_modifiee": true,
-      "aucune_relation_supprimee": true,
-      "objectif": "Clarifier les frontieres ontologiques, normaliser les variantes lexicales et reduire les erreurs WRONG_TYPE sans modifier la structure relationnelle v1.5."
-    },
-    "regles_generales_annotation_v1_6": {
+    "regles_generales_annotation": {
       "R1_ancrage_textuel": "Toute entite doit correspondre a une expression explicitement presente dans le document. Aucune entite Gold ne doit etre creee uniquement par connaissance medicale externe.",
       "R2_surface_originale": "Toujours conserver la surface textuelle originale et les offsets. La normalisation est stockee separement et ne remplace jamais la surface.",
       "R3_normalisation_separee": "Ajouter si necessaire valeur_normalisee ou parametre_normalise sans modifier les offsets.",
       "R4_wrong_type": "Une expression doit respecter la definition et les valeurs autorisees de sa categorie. Si elle correspond mieux a une autre categorie du schema, elle doit etre retypee.",
       "R5_negation": "Les informations explicitement niees peuvent etre conservees avec nie=true si elles representent un concept clinique reellement mentionne.",
       "R6_hypothese_traitement": "Un traitement seulement envisage, discute, propose ou souhaite ne doit pas recevoir traitement_administre_a.",
-      "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations_v1_7.",
+      "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations (33 relations).",
       "R8_inference": "Une relation causalement plausible mais non supportee par le document ne doit pas etre ajoutee au Gold.",
       "R9_chronique_aigu": "Une pathologie explicitement chronique ou placee dans les antecedents reste COMORBIDITE_ANTECEDENT et ne devient pas automatiquement DEFAILLANCE_ORGANE.",
       "R10_baseline": "Une valeur dite de base, habituelle ou anterieure reste un BIOMARQUEUR mais ne doit pas soutenir automatiquement une defaillance aigue.",
-      "R11_synonymes_abreviations_v1_7": "Lors de l'extraction, les synonymes et les abreviations d'un meme concept doivent etre reconnus (ex. CRP / C.R.P. / proteine C reactive ; IRA / AKI / insuffisance renale aigue ; hemodynamique / cardiovasculaire ; coque / cocci). La surface ecrite est conservee telle quelle et la forme canonique est donnee par normalisation_terminologique (validation medicale)."
+      "R11_synonymes_abreviations": "Lors de l'extraction, les synonymes et les abreviations d'un meme concept doivent etre reconnus (ex. CRP / C.R.P. / proteine C reactive ; IRA / AKI / insuffisance renale aigue ; hemodynamique / cardiovasculaire ; coque / cocci). La surface ecrite est conservee telle quelle et la forme canonique est donnee par normalisation_terminologique (validation medicale)."
     },
-    "normalisation_terminologique_v1_6": {
+    "normalisation_terminologique": {
       "principe": "La surface originale est conservee. La forme canonique sert uniquement a l'harmonisation Gold/MLLM et a l'evaluation.",
       "SIGNE_VITAL": {
         "FC": "frequence_cardiaque",
@@ -1208,7 +1304,8 @@
         "CPK": "CPK",
         "pCO2": "PaCO2",
         "pO2": "PaO2",
-        "HCO3": "bicarbonates"
+        "HCO3": "bicarbonates",
+        "AKI": "IRA"
       },
       "IMAGERIE_PROCEDURE": {
         "scanner": "scanner",
@@ -1238,19 +1335,16 @@
         "troubles de la deglutition": "trouble_deglutition",
         "alteration de l'etat general": "alteration_etat_general"
       },
-      "DEFAILLANCE_ORGANE_v1_7": {
+      "DEFAILLANCE_ORGANE": {
         "hemodynamique": "cardiovasculaire"
       },
-      "MICRO_ORGANISME_v1_7": {
+      "MICRO_ORGANISME": {
         "coque": "cocci",
         "coques": "cocci",
         "BHRE": "bacterie_hautement_resistante_emergente"
-      },
-      "BIOMARQUEUR_v1_7": {
-        "AKI": "IRA"
       }
     },
-    "regles_de_typage_v1_6": {
+    "regles_de_typage": {
       "SIGNE_VITAL_vs_SYMPTOME": {
         "regle": "Une mesure physiologique chiffree utilise SIGNE_VITAL. La manifestation clinique qualitative utilise SYMPTOME.",
         "exemples": {
@@ -1263,7 +1357,7 @@
         }
       },
       "SYMPTOME_vs_DEFAILLANCE_ORGANE": {
-        "regle": "Un symptome ne devient pas automatiquement une defaillance. DEFAILLANCE_ORGANE est reservee aux dysfonctions ou manifestations autorisees par v1.5.",
+        "regle": "Un symptome ne devient pas automatiquement une defaillance. DEFAILLANCE_ORGANE est reservee aux dysfonctions ou manifestations autorisees.",
         "exemples": {
           "dyspnee": "SYMPTOME",
           "polypnee": "SYMPTOME",
@@ -1283,387 +1377,43 @@
         "regle": "Une intervention discutee ou envisagee peut rester mentionnee comme TRAITEMENT si elle est explicitement identifiee, mais aucune relation traitement_administre_a ne doit etre creee tant que sa realisation n'est pas explicitement documentee."
       },
       "LABEL_NOSOLOGIQUE": {
-        "regle": "Respecter strictement la liste valeurs_autorisees. Ne pas inventer une valeur hors liste. Les valeurs retirees en v1.7 (valeurs_retirees_v1_7) ne sont plus des LABEL_NOSOLOGIQUE."
+        "regle": "Respecter strictement la liste valeurs_autorisees. Ne pas inventer une valeur hors liste (les diagnostics hors sepsis retires en v1.7, ex. ACFA, AVC, SIADH, ne sont plus des LABEL_NOSOLOGIQUE)."
       }
     },
-    "validation_relations_v1_6": {
+    "validation_relations": {
       "signature_lock": true,
-      "description": "Les signatures ci-dessous sont celles de v1.5 et doivent être utilisées telles quelles. Aucune correction v1.6 ne peut modifier domaine ou image.",
+      "description": "Les 33 signatures de signatures_relations doivent etre utilisees telles quelles.",
       "regles": [
-        "Verifier domaine et image avant toute validation sémantique.",
-        "Une relation avec signature invalide est rejetée comme WRONG_TYPE_RELATION.",
-        "Les règles de normalisation ne modifient jamais les signatures.",
+        "Verifier domaine et image avant toute validation semantique.",
+        "Une relation avec signature invalide est rejetee comme WRONG_TYPE_RELATION.",
+        "Les regles de normalisation ne modifient jamais les signatures.",
         "micro_organisme_isole_dans conserve MICRO_ORGANISME -> FOYER_INFECTIEUX.",
         "biomarqueur_est_critere_de conserve BIOMARQUEUR -> LABEL_NOSOLOGIQUE.",
-        "ira_a_pour_stade relie DEFAILLANCE_ORGANE (IRA) -> STADE_IRA (ajout v1.7)."
+        "ira_a_pour_stade relie DEFAILLANCE_ORGANE (IRA) -> STADE_IRA."
       ]
     },
-    "controle_compatibilite_v1_5": {
-      "nombre_relations_v1_5": 32,
-      "nombre_relations_v1_6": 32,
-      "nombre_relations_v1_7": 33,
-      "signatures_identiques": "les 32 signatures v1.5 sont identiques ; +1 relation en v1.7"
-    },
-    "strategie_compatibilite": {
-      "semantique_entites": "v1.7",
-      "regles_typage": "v1.7",
-      "normalisation": "v1.7",
-      "vocabulaires": "v1.7",
-      "signatures_relations": "v1.5 verrouillees + ira_a_pour_stade (v1.7)",
-      "nombre_relations": 33,
-      "aucune_nouvelle_relation": false,
-      "aucune_signature_modifiee": true,
-      "description": "Toute la semantique d'annotation suit TRACE-Sepsis v1.7. Les 32 signatures v1.5 sont conservees strictement ; la relation ira_a_pour_stade est ajoutee en v1.7 apres validation medicale."
-    },
-    "signatures_relations_verrouillees_v1_5": {
-      "a_pour_label_nosologique": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "presente_suspicion_infection": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "FOYER_INFECTIEUX",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "presente_dysfonction_organe": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_calcule_pour": {
-        "domaine": "SCORE_SOFA",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_inclut_biomarqueur": {
-        "domaine": "SCORE_SOFA",
-        "image": "BIOMARQUEUR",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_inclut_signe_vital": {
-        "domaine": "SCORE_SOFA",
-        "image": "SIGNE_VITAL",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_inclut_score_neurologique": {
-        "domaine": "SCORE_SOFA",
-        "image": "SCORE_NEUROLOGIQUE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_qsofa_calcule_pour": {
-        "domaine": "SCORE_qSOFA",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_qsofa_inclut_score_neurologique": {
-        "domaine": "SCORE_qSOFA",
-        "image": "SCORE_NEUROLOGIQUE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "stade_ira_calcule_pour": {
-        "domaine": "STADE_IRA",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "traitement_administre_a": {
-        "domaine": "TRAITEMENT",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "traitement_a_pour_posologie": {
-        "domaine": "TRAITEMENT",
-        "image": "POSOLOGIE",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "antibiotique_adequat_pour": {
-        "domaine": "TRAITEMENT",
-        "image": "MICRO_ORGANISME",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "antibiotique_inadequat_pour": {
-        "domaine": "TRAITEMENT",
-        "image": "MICRO_ORGANISME",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "traitement_cible_defaillance": {
-        "domaine": "TRAITEMENT",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "traitement_indique_par_label_nosologique": {
-        "domaine": "TRAITEMENT",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "signe_vital_supporte_defaillance_organe": {
-        "domaine": "SIGNE_VITAL",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_SIGNES_VITAUX"
-      },
-      "biomarqueur_obtenu_a": {
-        "domaine": "BIOMARQUEUR",
-        "image": "EVENEMENT_TEMPOREL",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "biomarqueur_supporte_defaillance_organe": {
-        "domaine": "BIOMARQUEUR",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "biomarqueur_est_critere_de": {
-        "domaine": "BIOMARQUEUR",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "micro_organisme_isole_dans": {
-        "domaine": "MICRO_ORGANISME",
-        "image": "FOYER_INFECTIEUX",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "comorbidite_est_facteur_risque_de": {
-        "domaine": "COMORBIDITE_ANTECEDENT",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
-      },
-      "a_pour_contexte_acquisition": {
-        "domaine": "COMORBIDITE_ANTECEDENT",
-        "image": "CONTEXTE_ACQUISITION",
-        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
-      },
-      "contexte_acquisition_influence_risque_resistance": {
-        "domaine": "CONTEXTE_ACQUISITION",
-        "image": "MICRO_ORGANISME",
-        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
-      },
-      "precede": {
-        "domaine": "EVENEMENT_TEMPOREL",
-        "image": "EVENEMENT_TEMPOREL",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "patient_a_pour_evolution": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "EVOLUTION_PRONOSTIC",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "evenement_associe_evolution": {
-        "domaine": "EVENEMENT_TEMPOREL",
-        "image": "EVOLUTION_PRONOSTIC",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "service_medical_accueille": {
-        "domaine": "SERVICE_MEDICAL",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "imagerie_objective_foyer": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "FOYER_INFECTIEUX",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
-      "imagerie_objective_defaillance": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
-      "imagerie_objective_comorbidite": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "COMORBIDITE_ANTECEDENT",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
-      "presente_symptome": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "SYMPTOME",
-        "groupe": "RELATIONS_SYMPTOMES"
-      }
-    },
     "politique_annotation_finale": {
-      "R1": "Appliquer les définitions, vocabulaires, attributs et règles de typage TRACE-Sepsis v1.7.",
-      "R2": "Conserver la surface textuelle originale et les offsets ; la normalisation reste séparée.",
-      "R3": "Ne créer aucune entité ou relation uniquement par connaissance médicale externe.",
-      "R4": "Pour chaque relation, valider strictement domaine et image selon signatures_relations_v1_7.",
-      "R5": "Une relation dont le domaine ou l'image ne correspond pas à la signature est rejetée.",
+      "R1": "Appliquer les definitions, vocabulaires, attributs et regles de typage TRACE-Sepsis v1.7.",
+      "R2": "Conserver la surface textuelle originale et les offsets ; la normalisation reste separee.",
+      "R3": "Ne creer aucune entite ou relation uniquement par connaissance medicale externe.",
+      "R4": "Pour chaque relation, valider strictement domaine et image selon signatures_relations.",
+      "R5": "Une relation dont le domaine ou l'image ne correspond pas a la signature est rejetee.",
       "R6": "Ne pas modifier le sens d'une relation pour la rendre valide.",
-      "R7": "Ne pas creer de nouvelle relation hors des 33 relations autorisees (32 v1.5 + ira_a_pour_stade).",
-      "R8": "Les règles de typage et de normalisation v1.7 ne modifient jamais les signatures relationnelles."
+      "R7": "Ne pas creer de nouvelle relation hors des 33 relations autorisees.",
+      "R8": "Les regles de typage et de normalisation ne modifient jamais les signatures relationnelles.",
+      "R9": "Reconnaitre les synonymes et abreviations (voir normalisation_terminologique) ; prendre les donnees patient a l'admission."
     },
-    "signatures_relations_v1_7": {
-      "a_pour_label_nosologique": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "presente_suspicion_infection": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "FOYER_INFECTIEUX",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "presente_dysfonction_organe": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_calcule_pour": {
-        "domaine": "SCORE_SOFA",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_inclut_biomarqueur": {
-        "domaine": "SCORE_SOFA",
-        "image": "BIOMARQUEUR",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_inclut_signe_vital": {
-        "domaine": "SCORE_SOFA",
-        "image": "SIGNE_VITAL",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_sofa_inclut_score_neurologique": {
-        "domaine": "SCORE_SOFA",
-        "image": "SCORE_NEUROLOGIQUE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_qsofa_calcule_pour": {
-        "domaine": "SCORE_qSOFA",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "score_qsofa_inclut_score_neurologique": {
-        "domaine": "SCORE_qSOFA",
-        "image": "SCORE_NEUROLOGIQUE",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "stade_ira_calcule_pour": {
-        "domaine": "STADE_IRA",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_DIAGNOSTIQUES"
-      },
-      "traitement_administre_a": {
-        "domaine": "TRAITEMENT",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "traitement_a_pour_posologie": {
-        "domaine": "TRAITEMENT",
-        "image": "POSOLOGIE",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "antibiotique_adequat_pour": {
-        "domaine": "TRAITEMENT",
-        "image": "MICRO_ORGANISME",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "antibiotique_inadequat_pour": {
-        "domaine": "TRAITEMENT",
-        "image": "MICRO_ORGANISME",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "traitement_cible_defaillance": {
-        "domaine": "TRAITEMENT",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "traitement_indique_par_label_nosologique": {
-        "domaine": "TRAITEMENT",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_THERAPEUTIQUES"
-      },
-      "signe_vital_supporte_defaillance_organe": {
-        "domaine": "SIGNE_VITAL",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_SIGNES_VITAUX"
-      },
-      "biomarqueur_obtenu_a": {
-        "domaine": "BIOMARQUEUR",
-        "image": "EVENEMENT_TEMPOREL",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "biomarqueur_supporte_defaillance_organe": {
-        "domaine": "BIOMARQUEUR",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "biomarqueur_est_critere_de": {
-        "domaine": "BIOMARQUEUR",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "micro_organisme_isole_dans": {
-        "domaine": "MICRO_ORGANISME",
-        "image": "FOYER_INFECTIEUX",
-        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
-      },
-      "comorbidite_est_facteur_risque_de": {
-        "domaine": "COMORBIDITE_ANTECEDENT",
-        "image": "LABEL_NOSOLOGIQUE",
-        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
-      },
-      "a_pour_contexte_acquisition": {
-        "domaine": "COMORBIDITE_ANTECEDENT",
-        "image": "CONTEXTE_ACQUISITION",
-        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
-      },
-      "contexte_acquisition_influence_risque_resistance": {
-        "domaine": "CONTEXTE_ACQUISITION",
-        "image": "MICRO_ORGANISME",
-        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
-      },
-      "precede": {
-        "domaine": "EVENEMENT_TEMPOREL",
-        "image": "EVENEMENT_TEMPOREL",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "patient_a_pour_evolution": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "EVOLUTION_PRONOSTIC",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "evenement_associe_evolution": {
-        "domaine": "EVENEMENT_TEMPOREL",
-        "image": "EVOLUTION_PRONOSTIC",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "service_medical_accueille": {
-        "domaine": "SERVICE_MEDICAL",
-        "image": "DONNEE_PATIENT",
-        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
-      },
-      "imagerie_objective_foyer": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "FOYER_INFECTIEUX",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
-      "imagerie_objective_defaillance": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
-      "imagerie_objective_comorbidite": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "COMORBIDITE_ANTECEDENT",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
-      "presente_symptome": {
-        "domaine": "DONNEE_PATIENT",
-        "image": "SYMPTOME",
-        "groupe": "RELATIONS_SYMPTOMES"
-      },
-      "ira_a_pour_stade": {
-        "domaine": "DEFAILLANCE_ORGANE",
-        "image": "STADE_IRA",
-        "groupe": "RELATIONS_DIAGNOSTIQUES",
-        "ajoutee_en": "v1.7"
-      }
-    },
-    "signatures_relations_verrouillees_v1_5_note": "Bloc historique (32 relations v1.5). La reference v1.7 est signatures_relations_v1_7 (33 relations).",
-    "principes_v1_7": {
-      "aucune_nouvelle_relation": false,
-      "nouvelles_relations": [
+    "compatibilite": {
+      "nombre_relations": 33,
+      "relations_inchangees_depuis_v1.5": 32,
+      "relations_ajoutees": [
         "ira_a_pour_stade"
       ],
-      "aucune_signature_modifiee": true,
-      "aucune_relation_supprimee": true,
-      "description": "Les 32 signatures v1.5 sont inchangees ; une seule relation est ajoutee apres validation medicale."
+      "description": "Les 32 signatures v1.5 sont conservees a l'identique ; une relation est ajoutee en v1.7 apres validation medicale."
+    },
+    "decisions_en_attente": {
+      "seuils_SOFA": "Faire confirmer par le medecin les seuils de SCORE_SOFA.bareme.",
+      "relation_SOFA_vasopresseurs": "score_sofa_inclut_traitement (SCORE_SOFA -> TRAITEMENT, vasopresseurs) : proposee, non ajoutee."
     }
   }
 }
