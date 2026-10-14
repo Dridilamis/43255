@@ -8,16 +8,23 @@ function bullets(x,y,items,o={}){let yy=y;for(const it of items){const lines=Arr
 function arrow(x1,y1,x2,y2,color,dash=false){s.push(`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="2.2" ${dash?'stroke-dasharray="6 5"':''} marker-end="url(#m${color.slice(1)})"/>`);}
 // défs
 const marks=[C.navy,C.green,C.orange,'#7a8796','#3d4b5c'].map(c=>`<marker id="m${c.slice(1)}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="${c}"/></marker>`).join('');
-// --- haut ---
-box(36,70,460,150,C.orange,C.ofill);
-text(56,104,'Validation médicale du guideline',{bold:true,size:16.5,color:'#8a4510'});
-bullets(56,140,['Pr N. Heming, médecine intensive–réanimation','Catégories, vocabulaires, relations, règles'],{size:14.5,gap:10});
-box(536,70,944,150,C.navy,C.gfill);
-text(556,104,'Guideline TRACE-Sepsis v1.6',{bold:true,size:16.5,color:C.navy});
-bullets(556,140,['20 types d’entités cliniques + métadonnées de traçabilité  •  32 relations en 8 familles (signatures verrouillées)','Règles : ancrage documentaire, négation, incertitude, temporalité, valeurs et unités'],{size:14.5,gap:10});
-arrow(496,145,534,145,C.orange);
+// --- haut : collecte -> verification/validation -> guideline valide ---
+const TY=60,TH=180;
+box(36,TY,214,TH,'#5b6b7d','#f4f6f8');
+text(50,TY+30,'Construction',{bold:true,size:16,color:'#33414f'});
+text(50,TY+51,'du guideline',{bold:true,size:16,color:'#33414f'});
+bullets(50,TY+82,[['Collecte : Sepsis-3,','SSC 2021, KDIGO 2012,','EUCAST v14.0'],['Observation des','dossiers du corpus']],{size:13.5,lh:19,gap:7});
+box(284,TY,214,TH,C.orange,C.ofill);
+text(298,TY+30,'Vérification et',{bold:true,size:16,color:'#8a4510'});
+text(298,TY+51,'validation médicale',{bold:true,size:16,color:'#8a4510'});
+bullets(298,TY+82,[['Pr N. Heming, médecine','intensive–réanimation'],['Catégories, vocabulaires,','relations, règles']],{size:13.5,lh:19,gap:7});
+box(532,TY,948,TH,C.navy,C.gfill);
+text(552,TY+34,'Guideline TRACE-Sepsis v1.6 (version validée)',{bold:true,size:16.5,color:C.navy});
+bullets(552,TY+72,['20 types d’entités cliniques + métadonnées de traçabilité  •  32 relations en 8 familles (signatures verrouillées)','Règles : ancrage documentaire, négation, incertitude, temporalité, valeurs et unités','Consolidé par versions successives à partir des cas rencontrés, puis vérifié et validé par le médecin'],{size:14.5,gap:12});
+arrow(250,TY+TH/2,282,TY+TH/2,'#3d4b5c');
+arrow(498,TY+TH/2,530,TY+TH/2,'#3d4b5c');
 // --- étapes ---
-const Y=330,H=300,W=214;
+const Y=340,H=300,W=214;
 const xs=[36,284,532,780,1028,1276,1524];
 const steps=[
  {t:['Corpus'],c:C.navy,f:'#fff',b:['246 dossiers PDF scannés',['Cohorte APROCCHSS','(AP-HP)'],['Réanimation, Hôpital','Raymond-Poincaré'],'2008–2015',['Pseudonymisation','partielle (AP-HP)']]},
@@ -38,19 +45,19 @@ steps.forEach((st,i)=>{const x=xs[i];box(x,Y,W,H,st.c,st.f);
  if(i<6) arrow(x+W,Y+H/2,xs[i+1]-2,Y+H/2,'#3d4b5c');
 });
 // liens guideline <-> étapes
-arrow(612,220,612,Y-2,C.navy); text(620,282,'encadre',{italic:true,size:13.5,color:C.navy});
-arrow(700,Y,700,222,'#7a8796',true); text(708,262,'cas ambigus',{italic:true,size:13.5,color:'#5a6675'});
-arrow(886,220,886,Y-2,C.navy); text(894,282,'référentiel',{italic:true,size:13.5,color:C.navy});
-arrow(1383,Y,1383,222,C.orange,true); text(1391,258,'clarification',{italic:true,size:13.5,color:C.orange}); text(1391,276,'des règles',{italic:true,size:13.5,color:C.orange});
+arrow(612,240,612,Y-2,C.navy); text(620,292,'encadre',{italic:true,size:13.5,color:C.navy});
+arrow(700,Y,700,242,'#7a8796',true); text(708,274,'cas ambigus',{italic:true,size:13.5,color:'#5a6675'});
+arrow(886,240,886,Y-2,C.navy); text(894,292,'référentiel',{italic:true,size:13.5,color:C.navy});
+arrow(1383,Y,1383,242,C.orange,true); text(1391,276,'clarification',{italic:true,size:13.5,color:C.orange}); text(1391,294,'des règles',{italic:true,size:13.5,color:C.orange});
 // accolades
-function brace(x1,x2,label,color){const y=660;s.push(`<path d="M${x1} ${y} v12 H${x2} v-12" fill="none" stroke="${color}" stroke-width="2"/>`);text((x1+x2)/2,y+42,label,{bold:true,size:15,color,anchor:'middle',ls:0.6});}
+function brace(x1,x2,label,color){const y=670;s.push(`<path d="M${x1} ${y} v12 H${x2} v-12" fill="none" stroke="${color}" stroke-width="2"/>`);text((x1+x2)/2,y+42,label,{bold:true,size:15,color,anchor:'middle',ls:0.6});}
 brace(36,xs[1]+W,'PRÉPARATION DU CORPUS',C.navy);
 brace(xs[2],xs[4]+W,'ANNOTATION ET CONTRÔLE',C.green);
 brace(xs[5],xs[6]+W,'VALIDATION ET GOLD STANDARD',C.orange);
-const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 730" width="1760" height="730" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif"><defs>${marks}</defs><rect width="1760" height="730" fill="#fff"/>${s.join('\n')}</svg>`;
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 740" width="1760" height="740" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif"><defs>${marks}</defs><rect width="1760" height="740" fill="#fff"/>${s.join('\n')}</svg>`;
 fs.writeFileSync('fig_gold.svg',svg);
 fs.writeFileSync('fig.html',`<html><body style="margin:0">${svg}</body></html>`);
 const {chromium}=require('playwright');
-(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1760,height:730},deviceScaleFactor:2.5});
-await p.goto('file://'+process.cwd()+'/fig.html');await p.screenshot({path:'fig_gold.png',clip:{x:0,y:0,width:1760,height:730}});
-await p.pdf({path:'fig_gold.pdf',width:'1760px',height:'730px',printBackground:true,pageRanges:'1'});await b.close();})();
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1760,height:740},deviceScaleFactor:2.5});
+await p.goto('file://'+process.cwd()+'/fig.html');await p.screenshot({path:'fig_gold.png',clip:{x:0,y:0,width:1760,height:740}});
+await p.pdf({path:'fig_gold.pdf',width:'1760px',height:'740px',printBackground:true,pageRanges:'1'});await b.close();})();
