@@ -49,11 +49,16 @@
           "CIVD",
           "syndrome_activation_macrophagique",
           "IRA",
+          "abces",
+          "pyelonephrite",
+          "erysipele",
+          "sinusite",
           "gangrene_gazeuse"
         ],
         "notes": {
           "IRA": "Typee DEFAILLANCE_ORGANE lorsqu'il s'agit de la dysfonction renale de l'episode ; son stade est relie par ira_a_pour_stade.",
-          "pneumopathie": "La pneumopathie et ses types (communautaire, nosocomiale, inhalation, PAVM) sont des diagnostics : toujours LABEL_NOSOLOGIQUE. Leur localisation, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte."
+          "pneumopathie": "La pneumopathie et ses types (communautaire, nosocomiale, inhalation, PAVM) sont des diagnostics : toujours LABEL_NOSOLOGIQUE. Leur localisation, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte.",
+          "diagnostics_infectieux_localises": "Pneumopathie, abces, pyelonephrite, erysipele et sinusite sont des diagnostics (LABEL_NOSOLOGIQUE) qui ont une localisation : celle-ci, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte."
         }
       },
       "SIGNE_VITAL": {
@@ -591,6 +596,7 @@
           "sedatif",
           "analgesique",
           "insuline",
+          "transfusion_CGR",
           "transfusion_plaquettes",
           "transfusion_PFC",
           "nutrition_enterale",
@@ -616,11 +622,10 @@
           "corticoide": "Preciser le type et la dose (posologie).",
           "sedatif": "Lie a la defaillance respiratoire (ventilation) ; influence le score de Glasgow.",
           "nutrition_enterale": "Liee au traitement par ventilation mecanique.",
-          "ecmo": "Extracorporeal membrane oxygenation (oxygenation par membrane extracorporelle).",
-          "insuline": "Le medecin indique que ce n'est pas un traitement du sepsis ; maintenue dans la liste en attendant sa confirmation (voir decisions_en_attente)."
+          "ecmo": "Extracorporeal membrane oxygenation (oxygenation par membrane extracorporelle)."
         },
         "groupes_therapeutiques": {
-          "description": "Sous-groupes de traitements valides par le medecin : traitement de l'infection, et traitement symptomatique des defaillances d'organe (hemodynamique, respiratoire, renale). La repartition de chaque categorie ci-dessous est une proposition a confirmer par le medecin.",
+          "description": "Sous-groupes de traitements valides par le medecin : traitement de l'infection, et traitement symptomatique des defaillances d'organe (hemodynamique, respiratoire, renale). Les autres categories sont conservees dans autres_traitements_de_support.",
           "traitement_infection": {
             "description": "Traitement de l'infection : anti-infectieux et traitement chirurgical (controle de la source).",
             "valeurs": [
@@ -665,10 +670,11 @@
             ]
           },
           "autres_traitements_de_support": {
-            "description": "Categories non rattachees aux sous-groupes donnes par le medecin ; classement a confirmer.",
+            "description": "Categories conservees hors des sous-groupes (validation medicale).",
             "valeurs": [
               "analgesique",
               "insuline",
+              "transfusion_CGR",
               "transfusion_plaquettes",
               "transfusion_PFC",
               "nutrition_enterale",
@@ -1449,7 +1455,15 @@
         "inhalation": "pneumopathie_inhalation (si diagnostic)",
         "pneumopathie nosocomiale": "pneumopathie_nosocomiale",
         "pneumopathie communautaire": "pneumopathie_communautaire",
-        "PAC": "pneumopathie_communautaire"
+        "PAC": "pneumopathie_communautaire",
+        "abces": "abces",
+        "abcès": "abces",
+        "pyelonephrite": "pyelonephrite",
+        "pyélonéphrite": "pyelonephrite",
+        "PNA": "pyelonephrite",
+        "erysipele": "erysipele",
+        "érysipèle": "erysipele",
+        "sinusite": "sinusite"
       }
     },
     "regles_de_typage": {
@@ -1488,7 +1502,7 @@
         "regle": "Respecter strictement la liste valeurs_autorisees. Ne pas inventer une valeur hors liste (les diagnostics hors sepsis retires en v1.7, ex. ACFA, AVC, SIADH, ne sont plus des LABEL_NOSOLOGIQUE)."
       },
       "LABEL_NOSOLOGIQUE_vs_FOYER_INFECTIEUX": {
-        "regle": "Un diagnostic infectieux est un LABEL_NOSOLOGIQUE ; FOYER_INFECTIEUX ne represente que la localisation. Une mention recoit un seul type : si le texte donne le diagnostic ET la localisation, on cree deux entites, chacune sur sa propre surface. Aucun FOYER n'est cree si aucune localisation n'est ecrite (pas de FOYER 'pulmonaire' deduit du mot pneumopathie).",
+        "regle": "Un diagnostic infectieux (pneumopathie, abces, pyelonephrite, erysipele, sinusite) est un LABEL_NOSOLOGIQUE ; FOYER_INFECTIEUX ne represente que la localisation. Une mention recoit un seul type : si le texte donne le diagnostic ET la localisation, on cree deux entites, chacune sur sa propre surface. Aucun FOYER n'est cree si aucune localisation n'est ecrite (pas de FOYER 'pulmonaire' deduit du mot pneumopathie).",
         "exemples": {
           "pneumopathie": "LABEL_NOSOLOGIQUE pneumopathie",
           "pneumonie": "LABEL_NOSOLOGIQUE pneumonie",
@@ -1498,7 +1512,11 @@
           "PAVM / pneumopathie acquise sous ventilation": "LABEL_NOSOLOGIQUE PAVM",
           "pneumopathie des lobes inferieur et moyen droits": "LABEL_NOSOLOGIQUE 'pneumopathie' + FOYER_INFECTIEUX 'lobes inferieur et moyen droits' (pulmonaire)",
           "choc septique a point de depart pulmonaire": "LABEL_NOSOLOGIQUE 'choc septique' + FOYER_INFECTIEUX 'point de depart pulmonaire'",
-          "foyer pulmonaire": "FOYER_INFECTIEUX (pulmonaire)"
+          "foyer pulmonaire": "FOYER_INFECTIEUX (pulmonaire)",
+          "abces pulmonaire": "LABEL_NOSOLOGIQUE 'abces' + FOYER_INFECTIEUX 'pulmonaire'",
+          "pyelonephrite droite": "LABEL_NOSOLOGIQUE 'pyelonephrite' + FOYER_INFECTIEUX 'droite' (renal)",
+          "erysipele du membre inferieur gauche": "LABEL_NOSOLOGIQUE 'erysipele' + FOYER_INFECTIEUX 'membre inferieur gauche'",
+          "sinusite maxillaire": "LABEL_NOSOLOGIQUE 'sinusite' + FOYER_INFECTIEUX 'maxillaire' (sinus)"
         },
         "relations": {
           "patient -> pneumopathie": "a_pour_label_nosologique (DONNEE_PATIENT -> LABEL_NOSOLOGIQUE)",
@@ -1544,11 +1562,7 @@
     "decisions_en_attente": {
       "seuils_SOFA": "Faire confirmer par le medecin les seuils de SCORE_SOFA.bareme.",
       "relation_SOFA_vasopresseurs": "score_sofa_inclut_traitement (SCORE_SOFA -> TRAITEMENT, vasopresseurs) : proposee, non ajoutee.",
-      "relations_germe_imagerie_vers_diagnostic": "Avec FOYER = localisation seule, un germe ou une imagerie ne peut plus etre relie a une pneumopathie (LABEL) quand aucune localisation n'est ecrite (ex. 'PAVM a Stenotrophomonas'). Proposition : micro_organisme_responsable_de (MICRO_ORGANISME -> LABEL_NOSOLOGIQUE) et imagerie_objective_label (IMAGERIE_PROCEDURE -> LABEL_NOSOLOGIQUE). Non ajoutees.",
-      "autres_infections_localisees": "Endocardite ajoutee par le medecin comme localisation (FOYER_INFECTIEUX). Reste a trancher pour abces, pyelonephrite, erysipele, sinusite : LABEL_NOSOLOGIQUE ou FOYER_INFECTIEUX ?",
-      "insuline": "Notee 'n'est pas un traitement du sepsis' mais non barree : la retirer de TRAITEMENT ?",
-      "transfusion_CGR": "Absente de la liste corrigee par le medecin (transfusions plaquettes et PFC gardees) : retrait volontaire a confirmer.",
-      "repartition_groupes_therapeutiques": "Confirmer le classement de chaque categorie dans TRAITEMENT.groupes_therapeutiques (ex. corticoide en hemodynamique, ecmo en respiratoire, transfusions en support)."
+      "relations_germe_imagerie_vers_diagnostic": "Avec FOYER = localisation seule, un germe ou une imagerie ne peut plus etre relie a une pneumopathie (LABEL) quand aucune localisation n'est ecrite (ex. 'PAVM a Stenotrophomonas'). Proposition : micro_organisme_responsable_de (MICRO_ORGANISME -> LABEL_NOSOLOGIQUE) et imagerie_objective_label (IMAGERIE_PROCEDURE -> LABEL_NOSOLOGIQUE). Non ajoutees."
     }
   }
 }
