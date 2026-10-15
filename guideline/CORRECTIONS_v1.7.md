@@ -6,9 +6,9 @@ sont intégrées directement dans les entités et les règles ; les points non t
 dans le bloc `decisions_en_attente`).
 
 Les **32 signatures de relations v1.5 ne changent pas** (vérifié automatiquement : elles sont
-identiques à celles de TRACE et de SGCE). Une **33e relation** est ajoutée après validation
-médicale : `ira_a_pour_stade` (DEFAILLANCE_ORGANE → STADE_IRA). La liste de référence est
-désormais `signatures_relations` (33 relations).
+identiques à celles de TRACE et de SGCE). **Deux relations** sont ajoutées après validation
+médicale : `ira_a_pour_stade` (DEFAILLANCE_ORGANE → STADE_IRA) et `micro_organisme_infecte_site` (MICRO_ORGANISME → FOYER_INFECTIEUX). La liste de référence est
+désormais `signatures_relations` (34 relations).
 
 ## Corrections intégrées
 
@@ -29,6 +29,12 @@ désormais `signatures_relations` (33 relations).
 | 13 | Relations | Nouvelle relation `ira_a_pour_stade` : DEFAILLANCE_ORGANE (IRA) → STADE_IRA, seulement si le stade est écrit dans le document | `relations.RELATIONS_DIAGNOSTIQUES.ira_a_pour_stade`, `signatures_relations`, `regles_derivees.R10_stade_IRA` |
 | 14 | SCORE_SOFA | Barème des 6 composantes (seuils 0 → 4), entité source et relation pour chaque composante, exemple. Les définitions sont validées ; les **seuils** (barème de référence, Vincent et al., 1996) restent **à confirmer** par le médecin. Le barème sert à interpréter un SOFA écrit, jamais à en calculer un absent du texte | `SCORE_SOFA.bareme` |
 | 15 | LABEL_NOSOLOGIQUE / FOYER_INFECTIEUX | La pneumopathie et ses types (communautaire, nosocomiale, inhalation, PAVM) sont des **diagnostics** donc LABEL_NOSOLOGIQUE ; FOYER_INFECTIEUX = **localisation seulement**. Diagnostic + localisation écrits → deux entités ; aucun FOYER déduit du mot « pneumopathie » | `regles_de_typage.LABEL_NOSOLOGIQUE_vs_FOYER_INFECTIEUX`, `FOYER_INFECTIEUX.description`, `normalisation_terminologique.LABEL_NOSOLOGIQUE` |
+| 16 | Relations / MICRO_ORGANISME | Nouvelle relation `micro_organisme_infecte_site` (pathogène → site d'infection), distincte de `micro_organisme_isole_dans` (site de prélèvement). Règle : le site d'infection ne se déduit jamais de l'espèce — un pneumocoque (synonymes : *S. pneumoniae*, *Streptococcus pneumoniae*) n'est pas uniquement pulmonaire | `relations.RELATIONS_BIOMARQUEURS_ET_MICROBIO.micro_organisme_infecte_site`, `regles_derivees.R11_site_infection_pathogene` |
+| 17 | TRAITEMENT | Sous-groupes : (1) traitement de l'infection (anti-infectieux, chirurgie) ; (2) traitement symptomatique des défaillances d'organe : a) hémodynamique, b) respiratoire, c) rénal | `TRAITEMENT.groupes_therapeutiques` |
+| 18 | TRAITEMENT | Retirés (pas des traitements du sepsis ou non pertinents) : antalgique, anticoagulant, antiagrégant, diurétique, supplémentation électrolytique, kinésithérapie respiratoire et motrice, immunoglobulines, échange plasmatique, traitement habituel, transfusion de CGR. Ajoutés : décubitus ventral, ECMO. Notes : corticoïde (type et dose), sédatif (défaillance respiratoire, influence le Glasgow), nutrition entérale (liée à la ventilation) | `TRAITEMENT.valeurs_autorisees`, `notes_valeurs` |
+| 19 | CONTEXTE_ACQUISITION | Ajout de l'attribut `hospitalisation_anterieure_recente` (dans les 6 mois) ; « post-opératoire » = infection du site opératoire ; valeur « indéterminée » retirée | `CONTEXTE_ACQUISITION` |
+| 20 | EVOLUTION_PRONOSTIC | Ajouts : mortalité J90 et J180, décès en réanimation, durées de traitement par ventilation mécanique, par vasopresseur et par dialyse | `EVOLUTION_PRONOSTIC.types` |
+| 21 | LABEL_NOSOLOGIQUE / FOYER_INFECTIEUX | « pneumonie » ajoutée aux valeurs des diagnostics ; « endocardite » ajoutée aux localisations | `valeurs_autorisees`, `localisations` |
 
 ## Décisions à prendre
 
@@ -37,7 +43,10 @@ désormais `signatures_relations` (33 relations).
 | B | STADE_IRA : « à réfléchir » | L'entité est gardée telle quelle. Elle est rare dans les comptes rendus. |
 | C | SOFA cardiovasculaire : relier le score aux vasopresseurs | La composante dépend du besoin en vasopresseurs, qui sont des TRAITEMENT, mais aucune relation ne relie SCORE_SOFA à un TRAITEMENT. Il faudrait une nouvelle relation (`score_sofa_inclut_traitement`, limitée aux vasopresseurs). Voir `decisions_en_attente.relation_SOFA_vasopresseurs`. |
 | D | Relier un germe ou une imagerie à une pneumopathie quand aucune localisation n'est écrite | Aucune relation ne va de MICRO_ORGANISME ou IMAGERIE_PROCEDURE vers LABEL_NOSOLOGIQUE. Proposition : `micro_organisme_responsable_de` et `imagerie_objective_label`. |
-| E | Abcès, pyélonéphrite, érysipèle, sinusite, endocardite | Ce sont des diagnostics mais ils ne sont pas dans la liste des LABEL : les ajouter, ou les laisser en FOYER ? |
+| E | Abcès, pyélonéphrite, érysipèle, sinusite | Endocardite tranchée (localisation, FOYER). Pour les autres : LABEL ou FOYER ? |
+| F | Insuline | Notée « n'est pas un traitement du sepsis » mais non barrée : la retirer ? |
+| G | Transfusion de CGR | Absente de la liste corrigée (plaquettes et PFC gardées) : retrait volontaire ? |
+| H | Classement des traitements dans les sous-groupes | Proposé dans `groupes_therapeutiques` (ex. corticoïde en hémodynamique, ECMO en respiratoire, transfusions et nutrition en « autres traitements de support ») : à confirmer |
 
 ## Impact sur le gold et sur les résultats
 
@@ -46,4 +55,4 @@ désormais `signatures_relations` (33 relations).
 - **Les résultats actuels (chapitre 6) ont été obtenus avec le guideline v1.6.** Pour passer à v1.7, il faut appliquer les mêmes corrections au gold et au prompt d'extraction, puis tout ré-évaluer. Il ne faut pas mélanger un gold v1.6 avec une extraction v1.7.
 - Le gold doit être révisé selon v1.7 **par l'annotatrice ou le médecin**, à partir du guideline, et jamais à partir des sorties du modèle.
 - **Nouvelle relation `ira_a_pour_stade`** : le gold actuel contient 21 IRA typées DEFAILLANCE_ORGANE mais **aucune entité STADE_IRA** et donc aucune relation de ce type. Il faut l'annoter dans le gold là où un stade est écrit ; sinon cette relation n'aura aucun exemple pour l'évaluation.
-- **TRACE** : les 32 anciennes signatures sont inchangées. Pour que l'étage 3 reconnaisse la nouvelle relation, il faudra lui donner les 33 signatures v1.7. Sans cela, il la marquera « non conforme » (simple indice, sans retrait).
+- **TRACE** : les 32 anciennes signatures sont inchangées. Pour que l'étage 3 reconnaisse la nouvelle relation, il faudra lui donner les 34 signatures v1.7. Sans cela, il la marquera « non conforme » (simple indice, sans retrait).

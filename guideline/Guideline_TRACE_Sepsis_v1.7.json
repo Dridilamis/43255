@@ -40,6 +40,7 @@
           "suspicion_infection",
           "infection_documentee_sans_dysfonction_organe",
           "pneumopathie",
+          "pneumonie",
           "pneumopathie_communautaire",
           "pneumopathie_nosocomiale",
           "pneumopathie_inhalation",
@@ -429,6 +430,7 @@
           "pleural",
           "prostate",
           "pelvien",
+          "endocardite",
           "inconnue",
           "indetermine"
         ],
@@ -446,6 +448,9 @@
           "foyer pulmonaire": "FOYER_INFECTIEUX (pulmonaire)",
           "lobe inferieur droit": "FOYER_INFECTIEUX (pulmonaire)",
           "pneumopathie": "pas un FOYER : LABEL_NOSOLOGIQUE"
+        },
+        "notes_localisations": {
+          "endocardite": "Localisation endocardique (infection de l'endocarde), ajoutee par le medecin."
         }
       },
       "MICRO_ORGANISME": {
@@ -585,27 +590,18 @@
           "corticoide",
           "sedatif",
           "analgesique",
-          "antalgique",
-          "anticoagulant",
-          "antiagregant",
-          "diuretique",
           "insuline",
-          "transfusion_CGR",
           "transfusion_plaquettes",
           "transfusion_PFC",
           "nutrition_enterale",
           "nutrition_parenterale",
-          "supplementation_electrolytique",
-          "kinesitherapie_respiratoire",
-          "kinesitherapie_motrice",
           "drainage",
           "drain_thoracique",
           "ponction_evacuatrice",
           "chirurgie",
           "amputation",
-          "immunoglobulines",
-          "echange_plasmatique",
-          "traitement_habituel",
+          "decubitus_ventral",
+          "ecmo",
           "autre"
         ],
         "attributs_ajoutes": [
@@ -613,8 +609,74 @@
         ],
         "note": "Les valeurs_autorisees representent des categories therapeutiques. nom_medicament conserve la DCI ou le nom commercial explicitement mentionne.",
         "attributs_optionnels": [
-          "statut_administration"
-        ]
+          "statut_administration",
+          "groupe_therapeutique"
+        ],
+        "notes_valeurs": {
+          "corticoide": "Preciser le type et la dose (posologie).",
+          "sedatif": "Lie a la defaillance respiratoire (ventilation) ; influence le score de Glasgow.",
+          "nutrition_enterale": "Liee au traitement par ventilation mecanique.",
+          "ecmo": "Extracorporeal membrane oxygenation (oxygenation par membrane extracorporelle).",
+          "insuline": "Le medecin indique que ce n'est pas un traitement du sepsis ; maintenue dans la liste en attendant sa confirmation (voir decisions_en_attente)."
+        },
+        "groupes_therapeutiques": {
+          "description": "Sous-groupes de traitements valides par le medecin : traitement de l'infection, et traitement symptomatique des defaillances d'organe (hemodynamique, respiratoire, renale). La repartition de chaque categorie ci-dessous est une proposition a confirmer par le medecin.",
+          "traitement_infection": {
+            "description": "Traitement de l'infection : anti-infectieux et traitement chirurgical (controle de la source).",
+            "valeurs": [
+              "antibiotique",
+              "antifongique",
+              "antiviral",
+              "chirurgie",
+              "drainage",
+              "drain_thoracique",
+              "ponction_evacuatrice",
+              "amputation"
+            ]
+          },
+          "traitement_symptomatique_defaillance_organe": {
+            "hemodynamique": [
+              "vasopresseur",
+              "inotrope",
+              "antiarythmique",
+              "remplissage_vasculaire",
+              "cristalloide",
+              "colloide",
+              "albumine",
+              "corticoide"
+            ],
+            "respiratoire": [
+              "ventilation_mecanique",
+              "VNI",
+              "oxygenotherapie",
+              "NO_inhale",
+              "intubation",
+              "extubation",
+              "tracheotomie",
+              "curarisation",
+              "sedatif",
+              "decubitus_ventral",
+              "ecmo"
+            ],
+            "renal": [
+              "epuration_extra_renale",
+              "hemodialyse",
+              "hemofiltration"
+            ]
+          },
+          "autres_traitements_de_support": {
+            "description": "Categories non rattachees aux sous-groupes donnes par le medecin ; classement a confirmer.",
+            "valeurs": [
+              "analgesique",
+              "insuline",
+              "transfusion_plaquettes",
+              "transfusion_PFC",
+              "nutrition_enterale",
+              "nutrition_parenterale",
+              "autre"
+            ]
+          }
+        }
       },
       "POSOLOGIE": {
         "description": "Detail d'administration d'un traitement. Justifiee comme entite (et non attribut) car : (1) structure interne multi-champs (dose, unite, schema horaire), (2) temporalite propre distincte du TRAITEMENT parent (une posologie peut etre modifiee en cours de sejour, ex. ajustement renal, sans changer la nature du traitement), (3) notation heterogene observee en pratique (schema par moments de la journee type '1-0-1' vs schema par intervalle type '1 amp/8h') necessitant une decomposition structuree.",
@@ -662,16 +724,22 @@
           "type_acquisition",
           "duree_hospitalisation_prealable_jours",
           "exposition_antibiotique_recente",
-          "exposition_dispositif_invasif"
+          "exposition_dispositif_invasif",
+          "hospitalisation_anterieure_recente"
         ],
         "valeurs_autorisees_type_acquisition": [
           "communautaire",
           "nosocomiale",
           "associee_aux_soins",
           "acquise_sous_ventilation_mecanique",
-          "post_operatoire",
-          "indeterminee"
-        ]
+          "post_operatoire"
+        ],
+        "notes_attributs": {
+          "hospitalisation_anterieure_recente": "Hospitalisation dans les 6 mois precedents."
+        },
+        "notes_type_acquisition": {
+          "post_operatoire": "Infection post-operatoire du site operatoire."
+        }
       },
       "COMORBIDITE_ANTECEDENT": {
         "description": "Antecedents medicaux et comorbidites influencant le terrain de risque infectieux.",
@@ -757,7 +825,13 @@
           "retour_domicile",
           "mortalite_hospitaliere",
           "mortalite_J28",
+          "mortalite_J90",
+          "mortalite_J180",
           "deces",
+          "deces_en_reanimation",
+          "duree_traitement_par_ventilation_mecanique_jours",
+          "duree_traitement_par_vasopresseur_jours",
+          "duree_traitement_par_dialyse_jours",
           "duree_sejour_reanimation_jours",
           "duree_sejour_hospitalier_jours"
         ]
@@ -1014,7 +1088,13 @@
         },
         "micro_organisme_isole_dans": {
           "domaine": "MICRO_ORGANISME",
-          "image": "FOYER_INFECTIEUX"
+          "image": "FOYER_INFECTIEUX",
+          "description": "Site ou le pathogene a ete preleve ou isole (ex. hemoculture, LBA)."
+        },
+        "micro_organisme_infecte_site": {
+          "domaine": "MICRO_ORGANISME",
+          "image": "FOYER_INFECTIEUX",
+          "description": "Le pathogene est responsable de l'infection de ce site (site d'infection), a distinguer de micro_organisme_isole_dans (site ou il a ete preleve ou isole). Creee uniquement si le document relie explicitement le pathogene au site infecte."
         }
       },
       "RELATIONS_TERRAIN_ET_RISQUE": {
@@ -1245,6 +1325,11 @@
         "domaine": "DONNEE_PATIENT",
         "image": "SYMPTOME",
         "groupe": "RELATIONS_SYMPTOMES"
+      },
+      "micro_organisme_infecte_site": {
+        "domaine": "MICRO_ORGANISME",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
       }
     },
     "regles_derivees": {
@@ -1258,7 +1343,8 @@
       "R7_contexte_acquisition_risque_BMR": "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR)",
       "R8_IMAGERIE_PROCEDURE": "Une relation d'imagerie est créée uniquement si l'examen et l'entité cible sont tous deux explicitement présents dans le document. Aucune inférence n'est autorisée.",
       "R9_SYMPTOME": "Une relation presente_symptome est créée uniquement si le symptôme est explicitement mentionné dans le document. Aucune inférence diagnostique n'est autorisée à partir d'un symptôme seul.",
-      "R10_stade_IRA": "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine)."
+      "R10_stade_IRA": "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine).",
+      "R11_site_infection_pathogene": "Le site d'infection ne se deduit jamais de l'espece du pathogene : un pneumocoque (Streptococcus pneumoniae, synonymes : pneumocoque, S. pneumoniae) n'est pas uniquement pulmonaire (meninges, sang, oreille, sinus...). micro_organisme_infecte_site n'est cree que si le document nomme explicitement le site infecte."
     },
     "regles_generales_annotation": {
       "R1_ancrage_textuel": "Toute entite doit correspondre a une expression explicitement presente dans le document. Aucune entite Gold ne doit etre creee uniquement par connaissance medicale externe.",
@@ -1267,7 +1353,7 @@
       "R4_wrong_type": "Une expression doit respecter la definition et les valeurs autorisees de sa categorie. Si elle correspond mieux a une autre categorie du schema, elle doit etre retypee.",
       "R5_negation": "Les informations explicitement niees peuvent etre conservees avec nie=true si elles representent un concept clinique reellement mentionne.",
       "R6_hypothese_traitement": "Un traitement seulement envisage, discute, propose ou souhaite ne doit pas recevoir traitement_administre_a.",
-      "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations (33 relations).",
+      "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations (34 relations).",
       "R8_inference": "Une relation causalement plausible mais non supportee par le document ne doit pas etre ajoutee au Gold.",
       "R9_chronique_aigu": "Une pathologie explicitement chronique ou placee dans les antecedents reste COMORBIDITE_ANTECEDENT et ne devient pas automatiquement DEFAILLANCE_ORGANE.",
       "R10_baseline": "Une valeur dite de base, habituelle ou anterieure reste un BIOMARQUEUR mais ne doit pas soutenir automatiquement une defaillance aigue.",
@@ -1348,10 +1434,12 @@
       "MICRO_ORGANISME": {
         "coque": "cocci",
         "coques": "cocci",
-        "BHRE": "bacterie_hautement_resistante_emergente"
+        "BHRE": "bacterie_hautement_resistante_emergente",
+        "pneumocoque": "Streptococcus_pneumoniae",
+        "S. pneumoniae": "Streptococcus_pneumoniae",
+        "streptococcus pneumoniae": "Streptococcus_pneumoniae"
       },
       "LABEL_NOSOLOGIQUE": {
-        "pneumonie": "pneumopathie",
         "bronchopneumonie": "pneumopathie",
         "broncho-pneumopathie": "pneumopathie",
         "pneumopathie infectieuse": "pneumopathie",
@@ -1403,7 +1491,7 @@
         "regle": "Un diagnostic infectieux est un LABEL_NOSOLOGIQUE ; FOYER_INFECTIEUX ne represente que la localisation. Une mention recoit un seul type : si le texte donne le diagnostic ET la localisation, on cree deux entites, chacune sur sa propre surface. Aucun FOYER n'est cree si aucune localisation n'est ecrite (pas de FOYER 'pulmonaire' deduit du mot pneumopathie).",
         "exemples": {
           "pneumopathie": "LABEL_NOSOLOGIQUE pneumopathie",
-          "pneumonie": "LABEL_NOSOLOGIQUE pneumopathie",
+          "pneumonie": "LABEL_NOSOLOGIQUE pneumonie",
           "pneumopathie nosocomiale": "LABEL_NOSOLOGIQUE pneumopathie_nosocomiale",
           "pneumopathie d'inhalation": "LABEL_NOSOLOGIQUE pneumopathie_inhalation",
           "pneumopathie communautaire": "LABEL_NOSOLOGIQUE pneumopathie_communautaire",
@@ -1422,14 +1510,15 @@
     },
     "validation_relations": {
       "signature_lock": true,
-      "description": "Les 33 signatures de signatures_relations doivent etre utilisees telles quelles.",
+      "description": "Les 34 signatures de signatures_relations doivent etre utilisees telles quelles.",
       "regles": [
         "Verifier domaine et image avant toute validation semantique.",
         "Une relation avec signature invalide est rejetee comme WRONG_TYPE_RELATION.",
         "Les regles de normalisation ne modifient jamais les signatures.",
         "micro_organisme_isole_dans conserve MICRO_ORGANISME -> FOYER_INFECTIEUX.",
         "biomarqueur_est_critere_de conserve BIOMARQUEUR -> LABEL_NOSOLOGIQUE.",
-        "ira_a_pour_stade relie DEFAILLANCE_ORGANE (IRA) -> STADE_IRA."
+        "ira_a_pour_stade relie DEFAILLANCE_ORGANE (IRA) -> STADE_IRA.",
+        "micro_organisme_infecte_site relie MICRO_ORGANISME -> FOYER_INFECTIEUX (site infecte), distinct de micro_organisme_isole_dans (site de prelevement)."
       ]
     },
     "politique_annotation_finale": {
@@ -1439,23 +1528,27 @@
       "R4": "Pour chaque relation, valider strictement domaine et image selon signatures_relations.",
       "R5": "Une relation dont le domaine ou l'image ne correspond pas a la signature est rejetee.",
       "R6": "Ne pas modifier le sens d'une relation pour la rendre valide.",
-      "R7": "Ne pas creer de nouvelle relation hors des 33 relations autorisees.",
+      "R7": "Ne pas creer de nouvelle relation hors des 34 relations autorisees.",
       "R8": "Les regles de typage et de normalisation ne modifient jamais les signatures relationnelles.",
       "R9": "Reconnaitre les synonymes et abreviations (voir normalisation_terminologique) ; prendre les donnees patient a l'admission."
     },
     "compatibilite": {
-      "nombre_relations": 33,
+      "nombre_relations": 34,
       "relations_inchangees_depuis_v1.5": 32,
       "relations_ajoutees": [
-        "ira_a_pour_stade"
+        "ira_a_pour_stade",
+        "micro_organisme_infecte_site"
       ],
-      "description": "Les 32 signatures v1.5 sont conservees a l'identique ; une relation est ajoutee en v1.7 apres validation medicale."
+      "description": "Les 32 signatures v1.5 sont conservees a l'identique ; deux relations sont ajoutees en v1.7 apres validation medicale."
     },
     "decisions_en_attente": {
       "seuils_SOFA": "Faire confirmer par le medecin les seuils de SCORE_SOFA.bareme.",
       "relation_SOFA_vasopresseurs": "score_sofa_inclut_traitement (SCORE_SOFA -> TRAITEMENT, vasopresseurs) : proposee, non ajoutee.",
       "relations_germe_imagerie_vers_diagnostic": "Avec FOYER = localisation seule, un germe ou une imagerie ne peut plus etre relie a une pneumopathie (LABEL) quand aucune localisation n'est ecrite (ex. 'PAVM a Stenotrophomonas'). Proposition : micro_organisme_responsable_de (MICRO_ORGANISME -> LABEL_NOSOLOGIQUE) et imagerie_objective_label (IMAGERIE_PROCEDURE -> LABEL_NOSOLOGIQUE). Non ajoutees.",
-      "autres_infections_localisees": "Meme logique pour abces, pyelonephrite, erysipele, sinusite, endocardite : ce sont des diagnostics, mais ils ne sont pas dans LABEL_NOSOLOGIQUE.valeurs_autorisees. Les ajouter a la liste, ou les laisser en FOYER_INFECTIEUX ?"
+      "autres_infections_localisees": "Endocardite ajoutee par le medecin comme localisation (FOYER_INFECTIEUX). Reste a trancher pour abces, pyelonephrite, erysipele, sinusite : LABEL_NOSOLOGIQUE ou FOYER_INFECTIEUX ?",
+      "insuline": "Notee 'n'est pas un traitement du sepsis' mais non barree : la retirer de TRAITEMENT ?",
+      "transfusion_CGR": "Absente de la liste corrigee par le medecin (transfusions plaquettes et PFC gardees) : retrait volontaire a confirmer.",
+      "repartition_groupes_therapeutiques": "Confirmer le classement de chaque categorie dans TRAITEMENT.groupes_therapeutiques (ex. corticoide en hemodynamique, ecmo en respiratoire, transfusions en support)."
     }
   }
 }
