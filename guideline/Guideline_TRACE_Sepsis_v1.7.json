@@ -4,6 +4,7 @@
     "nom_guideline": "TRACE-Sepsis v1.7",
     "description": "Ontologie et guide d'annotation du graphe de connaissances clinique du sepsis. Version 1.7 : v1.6 corrigee apres validation medicale (detail dans CORRECTIONS_v1.7.md).",
     "references_fondatrices": [
+      "Sepsis-2 (Levy et al., 2003, International Sepsis Definitions Conference)",
       "Sepsis-3 (Singer et al., 2016)",
       "Surviving Sepsis Campaign (SSC 2021)",
       "KDIGO AKI Guidelines 2012",
@@ -409,7 +410,8 @@
           "oligurie",
           "anurie",
           "epuration_extra_renale"
-        ]
+        ],
+        "a_verifier": "Verifier la prise en compte de la dialyse (epuration extra-renale) et de la diurese dans la definition du stade IRA."
       },
       "FOYER_INFECTIEUX": {
         "description": "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE.",
@@ -731,7 +733,8 @@
           "duree_hospitalisation_prealable_jours",
           "exposition_antibiotique_recente",
           "exposition_dispositif_invasif",
-          "hospitalisation_anterieure_recente"
+          "hospitalisation_anterieure_recente",
+          "voyage_recent_etranger"
         ],
         "valeurs_autorisees_type_acquisition": [
           "communautaire",
@@ -741,7 +744,8 @@
           "post_operatoire"
         ],
         "notes_attributs": {
-          "hospitalisation_anterieure_recente": "Hospitalisation dans les 6 mois precedents."
+          "hospitalisation_anterieure_recente": "Hospitalisation dans les 6 mois precedents.",
+          "voyage_recent_etranger": "Voyage recent dans un pays a forte prevalence de BMR (facteur de risque, regle R7)."
         },
         "notes_type_acquisition": {
           "post_operatoire": "Infection post-operatoire du site operatoire."
@@ -867,11 +871,16 @@
           "geriatrie",
           "SSR",
           "domicile",
+          "lieu_de_vie",
+          "hors_hopital",
+          "maison_de_retraite",
+          "EHPAD",
           "autre"
-        ]
+        ],
+        "note": "Ce qui interesse est la trajectoire du patient des l'hospitalisation, y compris le lieu de vie avant et apres le sejour (domicile, maison de retraite, EHPAD, hors hopital)."
       },
       "METADONNEES_PIPELINE": {
-        "description": "Champs transversaux obligatoires pour l'ancrage visuel et le suivi de confiance (LLM multimodal Qwen2-VL).",
+        "description": "Champs techniques associes a chaque entite extraite pour l'ancrage visuel, la tracabilite et le suivi de confiance (MLLM). Ils ne representent pas des connaissances medicales.",
         "attributs": [
           "identifiant_entite",
           "page",
@@ -880,7 +889,8 @@
           "confiance",
           "type_inference",
           "nie"
-        ]
+        ],
+        "note": "bbox et confidence_visuelle sont prevus pour l'ancrage visuel mais ne sont pas fournis par Mistral Small 4."
       },
       "IMAGERIE_PROCEDURE": {
         "description": "Examen d'imagerie ou procedure diagnostique explicitement mentionne dans le document.",
@@ -916,7 +926,6 @@
           "hemoculture",
           "ECBC",
           "aspiration_tracheale",
-          "myelogramme",
           "autre"
         ],
         "attributs": [
@@ -924,7 +933,10 @@
           "region_anatomique",
           "resultat",
           "horodatage"
-        ]
+        ],
+        "notes_valeurs": {
+          "biopsie": "Liee au foyer : sert a identifier le germe et a guider l'antibiotherapie."
+        }
       },
       "SYMPTOME": {
         "description": "Manifestation clinique rapportée par le patient ou observée lors de l'examen clinique. Un symptôme ne constitue pas un diagnostic, une défaillance d'organe ni un résultat biologique.",
@@ -936,6 +948,7 @@
           "dyspnee",
           "orthopnee",
           "polypnee",
+          "expectoration",
           "douleur_thoracique",
           "douleur_abdominale",
           "douleur_lombaire",
@@ -951,11 +964,8 @@
           "somnolence",
           "desorientation",
           "ralentissement_psychomoteur",
-          "dysphonie",
           "trouble_deglutition",
           "fausse_route",
-          "trouble_mastication",
-          "chute_mandibule",
           "cyanose",
           "marbrures",
           "extremites_froides",
@@ -964,19 +974,10 @@
           "ronchis",
           "sibilants",
           "encombrement",
-          "hypersalivation",
-          "hoquet",
           "malaise",
           "syncope",
-          "convulsions",
-          "trismus",
-          "myosis",
-          "mydriase",
-          "anisocorie",
-          "ptosis",
           "photophobie",
           "raideur_nuque",
-          "oedemes",
           "urines_foncees",
           "hematurie",
           "oligurie",
@@ -986,7 +987,10 @@
           "alteration_etat_general",
           "perte_poids"
         ],
-        "note": "Cette entité représente les manifestations cliniques observées ou rapportées. Les paramètres mesurables (température, fréquence cardiaque, SpO2, etc.) restent annotés comme SIGNE_VITAL, tandis que les diagnostics et les défaillances d'organe conservent leurs entités respectives."
+        "note": "Cette entité représente les manifestations cliniques observées ou rapportées. Les paramètres mesurables (température, fréquence cardiaque, SpO2, etc.) restent annotés comme SIGNE_VITAL, tandis que les diagnostics et les défaillances d'organe conservent leurs entités respectives.",
+        "notes_valeurs": {
+          "fausse_route": "Oriente vers une pneumopathie d'inhalation."
+        }
       }
     },
     "relations": {
@@ -1020,7 +1024,8 @@
         },
         "score_sofa_inclut_score_neurologique": {
           "domaine": "SCORE_SOFA",
-          "image": "SCORE_NEUROLOGIQUE"
+          "image": "SCORE_NEUROLOGIQUE",
+          "description": "Le SOFA inclut le score neurologique, specifiquement sa composante neurologique (Glasgow). Validee par le medecin."
         },
         "score_qsofa_calcule_pour": {
           "domaine": "SCORE_qSOFA",
@@ -1029,7 +1034,8 @@
         },
         "score_qsofa_inclut_score_neurologique": {
           "domaine": "SCORE_qSOFA",
-          "image": "SCORE_NEUROLOGIQUE"
+          "image": "SCORE_NEUROLOGIQUE",
+          "description": "Le qSOFA inclut le critere neurologique (confusion ou Glasgow < 15, voir R4bis). Validee par le medecin."
         },
         "stade_ira_calcule_pour": {
           "domaine": "STADE_IRA",
@@ -1146,16 +1152,6 @@
           "domaine": "IMAGERIE_PROCEDURE",
           "image": "FOYER_INFECTIEUX",
           "description": "L'examen d'imagerie objective un foyer infectieux."
-        },
-        "imagerie_objective_defaillance": {
-          "domaine": "IMAGERIE_PROCEDURE",
-          "image": "DEFAILLANCE_ORGANE",
-          "description": "L'examen d'imagerie objective une défaillance d'organe."
-        },
-        "imagerie_objective_comorbidite": {
-          "domaine": "IMAGERIE_PROCEDURE",
-          "image": "COMORBIDITE_ANTECEDENT",
-          "description": "L'examen d'imagerie documente une comorbidité ou un antécédent."
         }
       },
       "RELATIONS_SYMPTOMES": {
@@ -1163,6 +1159,16 @@
           "domaine": "DONNEE_PATIENT",
           "image": "SYMPTOME",
           "description": "Relie le patient aux symptômes explicitement mentionnés dans le dossier clinique."
+        },
+        "symptome_oriente_foyer": {
+          "domaine": "SYMPTOME",
+          "image": "FOYER_INFECTIEUX",
+          "description": "Le symptome oriente vers un foyer infectieux (ex. toux, expectoration -> pulmonaire ; brulures mictionnelles -> voies urinaires). Creee seulement si le document relie explicitement le symptome au foyer."
+        },
+        "symptome_associe_gravite_initiale": {
+          "domaine": "SYMPTOME",
+          "image": "SCORE_SOFA",
+          "description": "Le symptome participe a la gravite initiale du patient, evaluee par le score SOFA (ex. confusion -> composante neurologique). Creee seulement si le document l'etablit."
         }
       }
     },
@@ -1317,16 +1323,6 @@
         "image": "FOYER_INFECTIEUX",
         "groupe": "RELATIONS_IMAGERIE"
       },
-      "imagerie_objective_defaillance": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "DEFAILLANCE_ORGANE",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
-      "imagerie_objective_comorbidite": {
-        "domaine": "IMAGERIE_PROCEDURE",
-        "image": "COMORBIDITE_ANTECEDENT",
-        "groupe": "RELATIONS_IMAGERIE"
-      },
       "presente_symptome": {
         "domaine": "DONNEE_PATIENT",
         "image": "SYMPTOME",
@@ -1336,21 +1332,31 @@
         "domaine": "MICRO_ORGANISME",
         "image": "FOYER_INFECTIEUX",
         "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "symptome_oriente_foyer": {
+        "domaine": "SYMPTOME",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_SYMPTOMES"
+      },
+      "symptome_associe_gravite_initiale": {
+        "domaine": "SYMPTOME",
+        "image": "SCORE_SOFA",
+        "groupe": "RELATIONS_SYMPTOMES"
       }
     },
     "regles_derivees": {
       "description": "Regles SWRL/contraintes SHACL portant les seuils et valeurs specifiques anciennement encodes dans les noms de relations/attributs. A formaliser en syntaxe SWRL/SHACL native lors de l'implementation Neo4j/OWL.",
-      "R1_lactate_critere_choc_septique": "BIOMARQUEUR(type=lactate, valeur >= 2, unite=mmol/L) -> biomarqueur_est_critere_de(LABEL_NOSOLOGIQUE=choc_septique)",
+      "R1_lactate_critere_choc_septique": "Definition Sepsis-3 du choc septique : presence de vasopresseurs ET BIOMARQUEUR(type=lactate, valeur >= 2, unite=mmol/L) -> biomarqueur_est_critere_de(LABEL_NOSOLOGIQUE=choc_septique).",
       "R2_delai_ATB_mortalite": "EVENEMENT_TEMPOREL(type=premiere_dose_antibiotique, delai_depuis_admission_minutes > 60) -> evenement_associe_evolution(EVOLUTION_PRONOSTIC, risque=eleve)",
       "R3_qsofa_critere_frequence_respiratoire": "SIGNE_VITAL(type=frequence_respiratoire, valeur >= 22) -> SCORE_qSOFA.critere_frequence_respiratoire = true",
       "R4_qsofa_critere_pression_arterielle": "SIGNE_VITAL(type=pression_arterielle_systolique, valeur <= 100) -> SCORE_qSOFA.critere_pression_arterielle_systolique = true",
       "R5_indication_corticoides": "LABEL_NOSOLOGIQUE = choc_septique_refractaire -> traitement_indique_par_label_nosologique(TRAITEMENT=corticoides)",
-      "R6_ordre_chronologique_prelevement_ATB": "precede(EVENEMENT_TEMPOREL[type=premier_prelevement_microbiologique], EVENEMENT_TEMPOREL[type=premiere_dose_antibiotique]) attendu conforme SSC 2021",
-      "R7_contexte_acquisition_risque_BMR": "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR)",
-      "R8_IMAGERIE_PROCEDURE": "Une relation d'imagerie est créée uniquement si l'examen et l'entité cible sont tous deux explicitement présents dans le document. Aucune inférence n'est autorisée.",
+      "R7_contexte_acquisition_risque_BMR": "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true OU voyage recent a l'etranger dans un pays a forte prevalence de BMR) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR).",
+      "R8_IMAGERIE_PROCEDURE": "Une relation d'imagerie est creee uniquement si l'examen et l'entite cible sont presents dans le document. Aucune inference n'est autorisee.",
       "R9_SYMPTOME": "Une relation presente_symptome est créée uniquement si le symptôme est explicitement mentionné dans le document. Aucune inférence diagnostique n'est autorisée à partir d'un symptôme seul.",
       "R10_stade_IRA": "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine).",
-      "R11_site_infection_pathogene": "Le site d'infection ne se deduit jamais de l'espece du pathogene : un pneumocoque (Streptococcus pneumoniae, synonymes : pneumocoque, S. pneumoniae) n'est pas uniquement pulmonaire (meninges, sang, oreille, sinus...). micro_organisme_infecte_site n'est cree que si le document nomme explicitement le site infecte."
+      "R11_site_infection_pathogene": "Le site d'infection ne se deduit jamais de l'espece du pathogene : un pneumocoque (Streptococcus pneumoniae, synonymes : pneumocoque, S. pneumoniae) n'est pas uniquement pulmonaire (meninges, sang, oreille, sinus...). micro_organisme_infecte_site n'est cree que si le document nomme explicitement le site infecte.",
+      "R4bis_qsofa_critere_neurologique": "Existence d'une confusion ou d'un score de Glasgow < 15 -> SCORE_qSOFA.critere_alteration_etat_mental = true."
     },
     "regles_generales_annotation": {
       "R1_ancrage_textuel": "Toute entite doit correspondre a une expression explicitement presente dans le document. Aucune entite Gold ne doit etre creee uniquement par connaissance medicale externe.",
@@ -1407,15 +1413,18 @@
         "AKI": "IRA"
       },
       "IMAGERIE_PROCEDURE": {
-        "scanner": "scanner",
+        "scanner": "TDM",
         "TDM": "TDM",
-        "tomodensitometrie": "tomodensitometrie",
-        "ETT": "ETT",
+        "tomodensitometrie": "TDM",
+        "ETT": "echocardiographie",
         "radio thorax": "radiographie",
         "radiographie pulmonaire": "radiographie",
         "PdP": "PDP",
         "hémocultures": "hemoculture",
-        "hemocultures": "hemoculture"
+        "hemocultures": "hemoculture",
+        "echographie cardiaque": "echocardiographie",
+        "echocardiographie": "echocardiographie",
+        "echographie trans-thoracique": "echocardiographie"
       },
       "SERVICE_MEDICAL": {
         "rea": "reanimation",
@@ -1432,7 +1441,10 @@
         "fausse route": "fausse_route",
         "fausses routes": "fausse_route",
         "troubles de la deglutition": "trouble_deglutition",
-        "alteration de l'etat general": "alteration_etat_general"
+        "alteration de l'etat general": "alteration_etat_general",
+        "fièvre": "fievre",
+        "dyspnée": "dyspnee",
+        "désaturation": "desaturation"
       },
       "DEFAILLANCE_ORGANE": {
         "hemodynamique": "cardiovasculaire"
@@ -1464,7 +1476,8 @@
         "erysipele": "erysipele",
         "érysipèle": "erysipele",
         "sinusite": "sinusite"
-      }
+      },
+      "IMAGERIE_PROCEDURE_note": "scanner, TDM et tomodensitometrie sont synonymes ; ETT = echographie cardiaque par voie trans-thoracique ; radiographie peut porter sur differents organes (preciser region_anatomique)."
     },
     "regles_de_typage": {
       "SIGNE_VITAL_vs_SYMPTOME": {
@@ -1552,17 +1565,27 @@
     },
     "compatibilite": {
       "nombre_relations": 34,
-      "relations_inchangees_depuis_v1.5": 32,
+      "relations_inchangees_depuis_v1.5": 30,
       "relations_ajoutees": [
         "ira_a_pour_stade",
-        "micro_organisme_infecte_site"
+        "micro_organisme_infecte_site",
+        "symptome_oriente_foyer",
+        "symptome_associe_gravite_initiale"
       ],
-      "description": "Les 32 signatures v1.5 sont conservees a l'identique ; deux relations sont ajoutees en v1.7 apres validation medicale."
+      "relations_retirees": [
+        "imagerie_objective_defaillance",
+        "imagerie_objective_comorbidite"
+      ],
+      "description": "30 des 32 signatures v1.5 sont conservees a l'identique ; 2 relations d'imagerie sont retirees et 4 relations sont ajoutees apres validation medicale."
     },
     "decisions_en_attente": {
       "seuils_SOFA": "Faire confirmer par le medecin les seuils de SCORE_SOFA.bareme.",
       "relation_SOFA_vasopresseurs": "score_sofa_inclut_traitement (SCORE_SOFA -> TRAITEMENT, vasopresseurs) : proposee, non ajoutee.",
-      "relations_germe_imagerie_vers_diagnostic": "Avec FOYER = localisation seule, un germe ou une imagerie ne peut plus etre relie a une pneumopathie (LABEL) quand aucune localisation n'est ecrite (ex. 'PAVM a Stenotrophomonas'). Proposition : micro_organisme_responsable_de (MICRO_ORGANISME -> LABEL_NOSOLOGIQUE) et imagerie_objective_label (IMAGERIE_PROCEDURE -> LABEL_NOSOLOGIQUE). Non ajoutees."
+      "relations_germe_imagerie_vers_diagnostic": "Avec FOYER = localisation seule, un germe ou une imagerie ne peut plus etre relie a une pneumopathie (LABEL) quand aucune localisation n'est ecrite (ex. 'PAVM a Stenotrophomonas'). Proposition : micro_organisme_responsable_de (MICRO_ORGANISME -> LABEL_NOSOLOGIQUE) et imagerie_objective_label (IMAGERIE_PROCEDURE -> LABEL_NOSOLOGIQUE). Non ajoutees.",
+      "stade_IRA_dialyse_diurese": "Verifier la prise en compte de la dialyse (epuration extra-renale) et de la diurese dans la definition du stade IRA."
+    },
+    "principes_semantiques": {
+      "periode_des_dossiers": "Les dossiers datent de 2008-2015 : ils emploient souvent la terminologie et les seuils de Sepsis-2 (sepsis, sepsis severe, choc septique, criteres SIRS), anterieurs a Sepsis-3 (2016). L'annotation conserve la terminologie ecrite (ex. 'sepsis severe' reste sepsis_severe) ; l'interpretation de la gravite tient compte de la definition en vigueur a l'epoque."
     }
   }
 }
