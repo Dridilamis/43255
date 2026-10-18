@@ -8,6 +8,7 @@ Usage :
     python guideline/suggerer_annotation_v1_7.py <export_label_studio.json> <dossier_sortie> [--integrer]
     --integrer : integre les suggestions S1-S3 validees dans l'annotation et retire les relations
                  hors signature (politique R5) ; S4 reste en prediction.
+    --avec-biologie : (avec --integrer) integre aussi les biomarqueurs S4 valides.
 
 Etapes :
   1. corrections automatisables v1.7 (corriger_annotation_v1_7.py) -> champ "annotations" ;
@@ -286,7 +287,8 @@ def main():
         fin_rows = []
         for t in tasks:
             res = t["predictions"][0]["result"]
-            keep = [r for r in res if not (r.get("type") == "labels" and str(r.get("id", "")).startswith("s4"))]
+            avec_bio = "--avec-biologie" in sys.argv
+            keep = [r for r in res if avec_bio or not (r.get("type") == "labels" and str(r.get("id", "")).startswith("s4"))]
             ids = {r["id"]: r["value"]["labels"][0] for r in keep if r.get("type") == "labels"}
             final = []
             for r in keep:
@@ -306,7 +308,7 @@ def main():
                         r["origin"] = "manual"
                 final.append(r)
             t["annotations"][0]["result"] = final
-            s4 = [r for r in res if r.get("type") == "labels" and str(r.get("id", "")).startswith("s4")]
+            s4 = [] if avec_bio else [r for r in res if r.get("type") == "labels" and str(r.get("id", "")).startswith("s4")]
             t["predictions"] = [{"model_version": MODEL_VERSION + "_biologie_a_valider",
                                  "result": copy.deepcopy(final) + s4}] if s4 else []
         journal += [(d, p_, r_, e, m) for d, p_, r_, e, m in fin_rows]
