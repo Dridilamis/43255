@@ -69,6 +69,13 @@ def corriger_tache(task, sig, journal, revoir, c):
     ents = {r["id"]: r for r in ann["result"] if r.get("type") == "labels"}
     rels = [r for r in ann["result"] if r.get("type") == "relation"]
     retirees, retypees = set(), set()
+    src = task["data"].get("text", "")
+    for r in ents.values():                      # texte de region resynchronise sur le document (offsets inchanges)
+        v = r["value"]
+        if src[v["start"]:v["end"]] != v.get("text") and v["end"] <= len(src):
+            journal.append((doc, page, "T0", v.get("text", ""), "texte de la region resynchronise sur le document"))
+            v["text"] = src[v["start"]:v["end"]]
+            c["T0_texte_resynchronise"] += 1
 
     for eid, r in ents.items():
         lab, txt = r["value"]["labels"][0], r["value"].get("text", "")
@@ -100,6 +107,7 @@ def corriger_tache(task, sig, journal, revoir, c):
             regle = "G6"
         if regle:
             retirees.add(eid)
+            task.setdefault("_removed", []).append((regle, json.loads(json.dumps(r))))
             c[f"{regle}_entite_retiree"] += 1
             journal.append((doc, page, regle, txt, f"{lab} hors liste v1.7 : retire"))
             if regle == "G3":
@@ -139,6 +147,7 @@ def corriger_tache(task, sig, journal, revoir, c):
             journal.append((doc, page, "G8", txt, "signature invalide apres retypage : retiree"))
             revoir.append((doc, page, "relation_retiree", txt,
                            "Rattacher a la localisation ecrite (FOYER_INFECTIEUX) si elle existe"))
+            task.setdefault("_dropped", []).append(r)
             continue
         key = (a, b, rel)
         if touchee and key in seen:
