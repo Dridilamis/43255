@@ -123,8 +123,10 @@ correcte : les erreurs de structuration surviennent **après** la lecture.
 
 ### 2.4 Graphes et ontologies contre les hallucinations
 
-Taha, Morsey & Ali (2026) utilisent une ontologie clinique OWL et un graphe de
-connaissances pour réduire les hallucinations dans la réponse à des questions médicales.
+Ali, Taha & Morsey (2026) utilisent une ontologie clinique OWL et un graphe de
+connaissances (GraphRAG) pour réduire les hallucinations dans la réponse à des questions
+médicales : sur 60 questions, l'exactitude passe de 37 % (ChatGPT-4) et 52 % (DeepSeek-R1)
+à 98 %, résultat préliminaire vu la taille de l'évaluation.
 Ce travail porte sur la **génération de réponses**, et non sur la correction d'un graphe
 extrait de documents.
 
@@ -169,7 +171,9 @@ sortie syntaxiquement valide : JSON bien formé, étiquettes prises dans une lis
 
 Paulheim (2017) recense deux familles de méthodes appliquées à un graphe déjà construit :
 - la **complétion** ajoute les faits ou les types manquants ;
-- la **détection et correction d'erreurs** retype ou retire les éléments faux.
+- la **détection d'erreurs** repère les assertions erronées.
+
+La correction proprement dite des erreurs y reste peu traitée.
 
 Paulheim souligne aussi la difficulté d'évaluer ces méthodes, faute de vérité de terrain
 complète.
@@ -303,7 +307,7 @@ L'examen de ces travaux fait ressortir plusieurs questions encore peu traitées
 - Kim, G. et al. (2022). OCR-free Document Understanding Transformer (Donut). *ECCV 2022*.
 - Pan, S. et al. (2024). Unifying Large Language Models and Knowledge Graphs: A Roadmap. *IEEE Transactions on Knowledge and Data Engineering*, 36(7).
 - Savova, G. K. et al. (2010). Mayo clinical Text Analysis and Knowledge Extraction System (cTAKES). *JAMIA*, 17(5).
-- Taha, Z., Morsey, M. M. & Ali, M. (2026). Ontology-grounded knowledge graphs for mitigating hallucinations in large language models for clinical question answering. *Journal of Biomedical Informatics*, 175, 104993. *(Résumé non consulté : vérifier avant de citer des résultats.)*
+- Ali, M., Taha, Z. & Morsey, M. M. (2026). Ontology-grounded knowledge graphs for mitigating hallucinations in large language models for clinical question answering. *Journal of Biomedical Informatics*, 175, 104993.
 - Uzuner, Ö., South, B. R., Shen, S. & DuVall, S. L. (2011). 2010 i2b2/VA challenge on concepts, assertions, and relations in clinical text. *JAMIA*, 18(5).
 - Xu, Y. et al. (2020). LayoutLM: Pre-training of Text and Layout for Document Image Understanding. *KDD 2020*.
 - Zhu, Y. et al. (2024). LLMs for Knowledge Graph Construction and Reasoning: Recent Capabilities and Future Opportunities. *World Wide Web*, 27.
