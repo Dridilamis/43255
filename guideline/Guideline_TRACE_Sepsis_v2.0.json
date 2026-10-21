@@ -2,7 +2,7 @@
   "ontologie_sepsis_graph": {
     "version": "2.0",
     "nom_guideline": "TRACE-Sepsis v2.0",
-    "description": "Ontologie et guide d'annotation du graphe de connaissances clinique du sepsis. Version 2.0 : v1.7 validee par le medecin, completee par la distinction episode courant / episode anterieur et par le rattachement du foyer infectieux a son diagnostic (detail dans CORRECTIONS_v2.0.md).",
+    "description": "Ontologie et guide d'annotation du graphe de connaissances clinique du sepsis. Version 2.0 : v1.7 validee par le medecin, completee par la frontiere LABEL_NOSOLOGIQUE / COMORBIDITE_ANTECEDENT et par le rattachement du foyer infectieux a son diagnostic (detail dans CORRECTIONS_v2.0.md).",
     "references_fondatrices": [
       "Sepsis-2 (Levy et al., 2003, International Sepsis Definitions Conference)",
       "Sepsis-3 (Singer et al., 2016)",
@@ -30,7 +30,7 @@
         }
       },
       "LABEL_NOSOLOGIQUE": {
-        "description": "Diagnostic nosologique principal ou diagnostic clinique majeur de l'EPISODE D'HOSPITALISATION ACTUEL, explicitement mentionne dans le dossier, avec priorite aux diagnostics lies au sepsis et a ses complications. Un diagnostic d'un episode anterieur n'est jamais un LABEL_NOSOLOGIQUE : il est type COMORBIDITE_ANTECEDENT.",
+        "description": "Diagnostic nosologique principal ou diagnostic clinique majeur explicitement mentionne dans le dossier, avec priorite aux diagnostics lies au sepsis et a ses complications. Il decrit en premier lieu l'episode d'hospitalisation actuel. Un diagnostic de la liste valeurs_autorisees (ex. pneumopathie, choc septique) reste toujours un LABEL_NOSOLOGIQUE, meme s'il est rapporte a un episode anterieur : le texte porte la temporalite.",
         "valeurs_autorisees": [
           "sepsis",
           "sepsis_severe",
@@ -60,7 +60,7 @@
           "IRA": "Typee DEFAILLANCE_ORGANE lorsqu'il s'agit de la dysfonction renale de l'episode ; son stade est relie par ira_a_pour_stade.",
           "pneumopathie": "La pneumopathie et ses types (communautaire, nosocomiale, inhalation, PAVM) sont des diagnostics : toujours LABEL_NOSOLOGIQUE. Leur localisation, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte.",
           "diagnostics_infectieux_localises": "Pneumopathie, abces, pyelonephrite, erysipele et sinusite sont des diagnostics (LABEL_NOSOLOGIQUE) qui ont une localisation : celle-ci, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte.",
-          "episode_courant": "Seuls les diagnostics de l'hospitalisation en cours sont des LABEL_NOSOLOGIQUE. 'Antecedent de pneumopathie', 'choc septique en 2010' ou 'pyelonephrite il y a deux ans' decrivent un episode anterieur : COMORBIDITE_ANTECEDENT (type_antecedent infectieux)."
+          "episode": "Les diagnostics de la liste valeurs_autorisees sont toujours LABEL_NOSOLOGIQUE, quel que soit l'episode : 'antecedent de pneumopathie en 2012' et 'choc septique en 2010' restent LABEL_NOSOLOGIQUE (validation medicale). Un antecedent dont le nom n'est pas dans cette liste est une COMORBIDITE_ANTECEDENT."
         }
       },
       "SIGNE_VITAL": {
@@ -414,7 +414,7 @@
         ]
       },
       "FOYER_INFECTIEUX": {
-        "description": "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation, toujours celle d'un diagnostic : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE. Le foyer de l'episode actuel est relie a son LABEL_NOSOLOGIQUE (label_nosologique_a_pour_foyer) ; le foyer d'un episode anterieur est relie a sa COMORBIDITE_ANTECEDENT (comorbidite_a_pour_foyer).",
+        "description": "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation, toujours celle d'un diagnostic : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE. La localisation d'un LABEL_NOSOLOGIQUE lui est reliee par label_nosologique_a_pour_foyer ; celle d'une COMORBIDITE_ANTECEDENT lui est reliee par comorbidite_a_pour_foyer.",
         "localisations": [
           "pulmonaire",
           "voies_urinaires",
@@ -460,8 +460,8 @@
           "endocardite": "Localisation endocardique (infection de l'endocarde), ajoutee par le medecin."
         },
         "rattachement": {
-          "episode_actuel": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX)",
-          "episode_anterieur": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX)",
+          "localisation_d_un_label": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX)",
+          "localisation_d_une_comorbidite": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX)",
           "sans_diagnostic_ecrit": "Si aucun diagnostic auquel rattacher la localisation n'est ecrit dans le document, le FOYER_INFECTIEUX est annote sans relation de rattachement (aucune inference)."
         }
       },
@@ -757,7 +757,7 @@
         }
       },
       "COMORBIDITE_ANTECEDENT": {
-        "description": "Antecedents medicaux, comorbidites chroniques et diagnostics d'EPISODES ANTERIEURS (y compris les infections anterieures, par exemple une pneumopathie ou un sepsis lors d'une hospitalisation precedente), influencant le terrain de risque infectieux.",
+        "description": "Antecedents medicaux, comorbidites chroniques et diagnostics d'EPISODES ANTERIEURS dont le nom n'est pas dans la liste valeurs_autorisees de LABEL_NOSOLOGIQUE (y compris les antecedents infectieux hors liste, ex. tuberculose ancienne), influencant le terrain de risque infectieux.",
         "attributs": [
           "libelle",
           "type_antecedent"
@@ -787,8 +787,8 @@
           "endocrinien": "Inclut le diabete (validation medicale)."
         },
         "notes_episode_anterieur": {
-          "regle": "Tout diagnostic rapporte a une hospitalisation ou a un episode precedent est une COMORBIDITE_ANTECEDENT, meme s'il figure dans la liste des valeurs de LABEL_NOSOLOGIQUE.",
-          "localisation": "Si la localisation d'un episode anterieur est ecrite, elle est une entite FOYER_INFECTIEUX reliee a la comorbidite par comorbidite_a_pour_foyer."
+          "regle": "Tout antecedent ou diagnostic d'un episode precedent est une COMORBIDITE_ANTECEDENT, SAUF s'il figure dans la liste valeurs_autorisees de LABEL_NOSOLOGIQUE (il reste alors LABEL_NOSOLOGIQUE).",
+          "localisation": "Si la localisation d'une COMORBIDITE_ANTECEDENT est ecrite, elle est une entite FOYER_INFECTIEUX reliee a la comorbidite par comorbidite_a_pour_foyer."
         }
       },
       "EVENEMENT_TEMPOREL": {
@@ -1007,12 +1007,12 @@
         "a_pour_label_nosologique": {
           "domaine": "DONNEE_PATIENT",
           "image": "LABEL_NOSOLOGIQUE",
-          "description": "Lien entre le patient et un diagnostic de l'episode d'hospitalisation actuel."
+          "description": "Lien entre le patient et son diagnostic (LABEL_NOSOLOGIQUE)."
         },
         "label_nosologique_a_pour_foyer": {
           "domaine": "LABEL_NOSOLOGIQUE",
           "image": "FOYER_INFECTIEUX",
-          "description": "Relie un diagnostic de l'episode actuel a sa localisation (ex. 'choc septique' -> 'point de depart pulmonaire', 'pyelonephrite' -> 'droite'). Remplace presente_suspicion_infection : le foyer n'est plus relie directement au patient. Creee seulement si la localisation est ecrite."
+          "description": "Relie un diagnostic (LABEL_NOSOLOGIQUE) a sa localisation (ex. 'choc septique' -> 'point de depart pulmonaire', 'pyelonephrite' -> 'droite'). Remplace presente_suspicion_infection : le foyer n'est plus relie directement au patient. Creee seulement si la localisation est ecrite."
         },
         "presente_dysfonction_organe": {
           "domaine": "DONNEE_PATIENT",
@@ -1136,7 +1136,7 @@
         "comorbidite_a_pour_foyer": {
           "domaine": "COMORBIDITE_ANTECEDENT",
           "image": "FOYER_INFECTIEUX",
-          "description": "Relie un antecedent infectieux (episode anterieur) a sa localisation, si elle est ecrite (ex. 'antecedent de pyelonephrite droite' -> 'droite')."
+          "description": "Relie une COMORBIDITE_ANTECEDENT a sa localisation, si elle est ecrite (ex. 'ATCD de tuberculose pulmonaire' -> 'pulmonaire')."
         }
       },
       "RELATIONS_TEMPORELLES_ET_PRONOSTIC": {
@@ -1386,11 +1386,11 @@
       "R6_hypothese_traitement": "Un traitement seulement envisage, discute, propose ou souhaite ne doit pas recevoir traitement_administre_a.",
       "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations (35 relations).",
       "R8_inference": "Une relation causalement plausible mais non supportee par le document ne doit pas etre ajoutee au Gold.",
-      "R9_chronique_aigu": "Une pathologie explicitement chronique, placee dans les antecedents ou rapportee a un episode anterieur reste COMORBIDITE_ANTECEDENT et ne devient pas automatiquement DEFAILLANCE_ORGANE ni LABEL_NOSOLOGIQUE.",
+      "R9_chronique_aigu": "Une pathologie explicitement chronique ou placee dans les antecedents reste COMORBIDITE_ANTECEDENT (sauf diagnostic de la liste LABEL_NOSOLOGIQUE) et ne devient pas automatiquement DEFAILLANCE_ORGANE.",
       "R10_baseline": "Une valeur dite de base, habituelle ou anterieure reste un BIOMARQUEUR mais ne doit pas soutenir automatiquement une defaillance aigue.",
       "R11_synonymes_abreviations": "Lors de l'extraction, les synonymes et les abreviations d'un meme concept doivent etre reconnus (ex. CRP / C.R.P. / proteine C reactive ; IRA / AKI / insuffisance renale aigue ; hemodynamique / cardiovasculaire ; coque / cocci). La surface ecrite est conservee telle quelle et la forme canonique est donnee par normalisation_terminologique (validation medicale).",
-      "R12_episode_actuel": "LABEL_NOSOLOGIQUE decrit uniquement l'episode d'hospitalisation actuel ; tout diagnostic d'un episode anterieur est une COMORBIDITE_ANTECEDENT (validation medicale v2.0).",
-      "R13_rattachement_foyer": "Un FOYER_INFECTIEUX est toujours la localisation d'un diagnostic : il est relie a son LABEL_NOSOLOGIQUE (episode actuel, label_nosologique_a_pour_foyer) ou a sa COMORBIDITE_ANTECEDENT (episode anterieur, comorbidite_a_pour_foyer), jamais directement au patient (validation medicale v2.0)."
+      "R12_label_vs_comorbidite": "Un diagnostic de la liste LABEL_NOSOLOGIQUE reste LABEL_NOSOLOGIQUE quel que soit l'episode ; tout autre antecedent est une COMORBIDITE_ANTECEDENT (validation medicale v2.0).",
+      "R13_rattachement_foyer": "Un FOYER_INFECTIEUX est toujours la localisation d'un diagnostic : il est relie a son LABEL_NOSOLOGIQUE (label_nosologique_a_pour_foyer) ou a sa COMORBIDITE_ANTECEDENT (comorbidite_a_pour_foyer), jamais directement au patient (validation medicale v2.0)."
     },
     "normalisation_terminologique": {
       "principe": "La surface originale est conservee. La forme canonique sert uniquement a l'harmonisation Gold/MLLM et a l'evaluation.",
@@ -1527,7 +1527,7 @@
         "regle": "La valeur biologique reste BIOMARQUEUR. La DEFAILLANCE_ORGANE ne doit pas etre creee uniquement a partir d'une anomalie biologique si la dysfonction n'est pas explicitement documentee ou autorisee comme manifestation."
       },
       "COMORBIDITE_ANTECEDENT_vs_AIGU": {
-        "regle": "Les pathologies chroniques, les antecedents et les diagnostics d'episodes anterieurs restent COMORBIDITE_ANTECEDENT. Une condition aigue de l'episode actuel ne doit pas etre retypee en antecedent."
+        "regle": "Les pathologies chroniques, les antecedents et les diagnostics d'episodes anterieurs hors liste LABEL_NOSOLOGIQUE restent COMORBIDITE_ANTECEDENT. Une condition aigue de l'episode actuel ne doit pas etre retypee en antecedent."
       },
       "TRAITEMENT_reel_vs_envisage": {
         "regle": "Une intervention discutee ou envisagee peut rester mentionnee comme TRAITEMENT si elle est explicitement identifiee, mais aucune relation traitement_administre_a ne doit etre creee tant que sa realisation n'est pas explicitement documentee."
@@ -1535,14 +1535,14 @@
       "LABEL_NOSOLOGIQUE": {
         "regle": "Respecter strictement la liste valeurs_autorisees. Ne pas inventer une valeur hors liste (les diagnostics hors sepsis retires en v1.7, ex. ACFA, AVC, SIADH, ne sont plus des LABEL_NOSOLOGIQUE)."
       },
-      "LABEL_NOSOLOGIQUE_episode_actuel_vs_COMORBIDITE_ANTECEDENT": {
-        "regle": "LABEL_NOSOLOGIQUE est reserve aux diagnostics de l'hospitalisation en cours. Un diagnostic rapporte a un episode anterieur (section antecedents, date anterieure, 'antecedent de', 'ATCD de', 'deja hospitalise pour') est une COMORBIDITE_ANTECEDENT, meme s'il s'agit d'un diagnostic infectieux de la liste LABEL_NOSOLOGIQUE.",
+      "LABEL_NOSOLOGIQUE_vs_COMORBIDITE_ANTECEDENT": {
+        "regle": "Un diagnostic de la liste valeurs_autorisees de LABEL_NOSOLOGIQUE (pneumopathie, choc septique, pyelonephrite...) est toujours LABEL_NOSOLOGIQUE, qu'il concerne l'episode actuel ou un episode anterieur. Tout autre antecedent (pathologie chronique, terrain, antecedent infectieux hors liste) est COMORBIDITE_ANTECEDENT.",
         "exemples": {
-          "choc septique a point de depart urinaire (motif d'hospitalisation)": "LABEL_NOSOLOGIQUE 'choc septique' + FOYER_INFECTIEUX 'point de depart urinaire', relies par label_nosologique_a_pour_foyer",
-          "antecedent de pneumopathie en 2012": "COMORBIDITE_ANTECEDENT 'pneumopathie' (type_antecedent infectieux)",
-          "ATCD de pyelonephrite droite": "COMORBIDITE_ANTECEDENT 'pyelonephrite' + FOYER_INFECTIEUX 'droite', relies par comorbidite_a_pour_foyer",
-          "hospitalise en 2010 pour choc septique": "COMORBIDITE_ANTECEDENT 'choc septique'",
-          "pneumopathie nosocomiale (episode actuel)": "LABEL_NOSOLOGIQUE pneumopathie_nosocomiale"
+          "choc septique a point de depart urinaire (episode actuel)": "LABEL_NOSOLOGIQUE 'choc septique' + FOYER_INFECTIEUX 'point de depart urinaire', relies par label_nosologique_a_pour_foyer",
+          "antecedent de pneumopathie en 2012": "LABEL_NOSOLOGIQUE 'pneumopathie'",
+          "ATCD de pyelonephrite droite": "LABEL_NOSOLOGIQUE 'pyelonephrite' + FOYER_INFECTIEUX 'droite', relies par label_nosologique_a_pour_foyer",
+          "diabete de type 2": "COMORBIDITE_ANTECEDENT (endocrinien)",
+          "ATCD de tuberculose pulmonaire": "COMORBIDITE_ANTECEDENT 'tuberculose' (infectieux) + FOYER_INFECTIEUX 'pulmonaire', relies par comorbidite_a_pour_foyer"
         }
       },
       "LABEL_NOSOLOGIQUE_vs_FOYER_INFECTIEUX": {
@@ -1564,8 +1564,8 @@
         },
         "relations": {
           "patient -> pneumopathie": "a_pour_label_nosologique (DONNEE_PATIENT -> LABEL_NOSOLOGIQUE)",
-          "diagnostic (episode actuel) -> localisation": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
-          "antecedent (episode anterieur) -> localisation": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
+          "diagnostic -> localisation": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
+          "comorbidite -> localisation": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
           "germe -> localisation": "micro_organisme_isole_dans (MICRO_ORGANISME -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
           "imagerie -> localisation": "imagerie_objective_foyer (IMAGERIE_PROCEDURE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite"
         }
@@ -1582,8 +1582,8 @@
         "biomarqueur_est_critere_de conserve BIOMARQUEUR -> LABEL_NOSOLOGIQUE.",
         "ira_a_pour_stade relie DEFAILLANCE_ORGANE (IRA) -> STADE_IRA.",
         "micro_organisme_infecte_site relie MICRO_ORGANISME -> FOYER_INFECTIEUX (site infecte), distinct de micro_organisme_isole_dans (site de prelevement).",
-        "label_nosologique_a_pour_foyer relie LABEL_NOSOLOGIQUE (episode actuel) -> FOYER_INFECTIEUX.",
-        "comorbidite_a_pour_foyer relie COMORBIDITE_ANTECEDENT (episode anterieur) -> FOYER_INFECTIEUX.",
+        "label_nosologique_a_pour_foyer relie LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX (localisation du diagnostic).",
+        "comorbidite_a_pour_foyer relie COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX (localisation de l'antecedent).",
         "Aucune relation ne relie directement DONNEE_PATIENT a FOYER_INFECTIEUX (presente_suspicion_infection retiree en v2.0)."
       ]
     },
@@ -1609,8 +1609,8 @@
           "presente_suspicion_infection"
         ],
         "entites_modifiees": [
-          "LABEL_NOSOLOGIQUE (episode actuel uniquement)",
-          "COMORBIDITE_ANTECEDENT (inclut les episodes anterieurs)",
+          "LABEL_NOSOLOGIQUE (toujours pour les diagnostics de la liste, quel que soit l'episode)",
+          "COMORBIDITE_ANTECEDENT (tout antecedent hors liste LABEL_NOSOLOGIQUE)",
           "FOYER_INFECTIEUX (toujours rattache a un diagnostic)"
         ]
       },

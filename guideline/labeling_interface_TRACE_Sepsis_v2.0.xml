@@ -42,8 +42,8 @@
   <Relations>
 
     <!-- ===== Diagnostic ===== -->
-    <Relation value="a_pour_label_nosologique"/>                          <!-- DONNEE_PATIENT -> LABEL_NOSOLOGIQUE (episode actuel) -->
-    <Relation value="label_nosologique_a_pour_foyer"/>                    <!-- LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX (localisation du diagnostic actuel) -->
+    <Relation value="a_pour_label_nosologique"/>                          <!-- DONNEE_PATIENT -> LABEL_NOSOLOGIQUE -->
+    <Relation value="label_nosologique_a_pour_foyer"/>                    <!-- LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX (localisation du diagnostic) -->
     <Relation value="presente_dysfonction_organe"/>                       <!-- DONNEE_PATIENT -> DEFAILLANCE_ORGANE -->
 
     <!-- ===== SOFA ===== -->
@@ -78,7 +78,7 @@
 
     <!-- ===== Terrain / Contexte ===== -->
     <Relation value="comorbidite_est_facteur_risque_de"/>                 <!-- COMORBIDITE_ANTECEDENT -> LABEL_NOSOLOGIQUE -->
-    <Relation value="comorbidite_a_pour_foyer"/>                          <!-- COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX (localisation d'un episode anterieur) -->
+    <Relation value="comorbidite_a_pour_foyer"/>                          <!-- COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX (localisation de l'antecedent) -->
     <Relation value="a_pour_contexte_acquisition"/>                       <!-- COMORBIDITE_ANTECEDENT -> CONTEXTE_ACQUISITION -->
     <Relation value="contexte_acquisition_influence_risque_resistance"/>  <!-- CONTEXTE_ACQUISITION -> MICRO_ORGANISME -->
 
