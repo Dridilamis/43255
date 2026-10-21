@@ -1,0 +1,1634 @@
+{
+  "ontologie_sepsis_graph": {
+    "version": "2.0",
+    "nom_guideline": "TRACE-Sepsis v2.0",
+    "description": "Ontologie et guide d'annotation du graphe de connaissances clinique du sepsis. Version 2.0 : v1.7 validee par le medecin, completee par la distinction episode courant / episode anterieur et par le rattachement du foyer infectieux a son diagnostic (detail dans CORRECTIONS_v2.0.md).",
+    "references_fondatrices": [
+      "Sepsis-2 (Levy et al., 2003, International Sepsis Definitions Conference)",
+      "Sepsis-3 (Singer et al., 2016)",
+      "Surviving Sepsis Campaign (SSC 2021)",
+      "KDIGO AKI Guidelines 2012",
+      "EUCAST v14.0 (2024)",
+      "Vincent et al., 1996 (score SOFA)"
+    ],
+    "entites": {
+      "DONNEE_PATIENT": {
+        "description": "Donnees demographiques et administratives non identifiantes du patient (cardinalite : unique par dossier).",
+        "attributs": [
+          "date_naissance",
+          "age_annees",
+          "age_calcule",
+          "sexe",
+          "poids_kg",
+          "taille_cm",
+          "poids_ideal_theorique_kg",
+          "IMC"
+        ],
+        "regles_validation": {
+          "age_source": "Au moins un des deux attributs date_naissance ou age_annees doit etre renseigne (contrainte sh:or, non-exclusive).",
+          "moment_reference": "Les donnees du patient (age, poids, taille, IMC...) sont prises a l'ADMISSION. Si une valeur est donnee a plusieurs moments du sejour, on retient celle de l'admission (validation medicale)."
+        }
+      },
+      "LABEL_NOSOLOGIQUE": {
+        "description": "Diagnostic nosologique principal ou diagnostic clinique majeur de l'EPISODE D'HOSPITALISATION ACTUEL, explicitement mentionne dans le dossier, avec priorite aux diagnostics lies au sepsis et a ses complications. Un diagnostic d'un episode anterieur n'est jamais un LABEL_NOSOLOGIQUE : il est type COMORBIDITE_ANTECEDENT.",
+        "valeurs_autorisees": [
+          "sepsis",
+          "sepsis_severe",
+          "choc_septique",
+          "choc_septique_refractaire",
+          "sepsis_sans_choc",
+          "bacteriemie_isolee",
+          "suspicion_infection",
+          "infection_documentee_sans_dysfonction_organe",
+          "pneumopathie",
+          "pneumonie",
+          "pneumopathie_communautaire",
+          "pneumopathie_nosocomiale",
+          "pneumopathie_inhalation",
+          "PAVM",
+          "SDRA",
+          "CIVD",
+          "syndrome_activation_macrophagique",
+          "IRA",
+          "abces",
+          "pyelonephrite",
+          "erysipele",
+          "sinusite",
+          "gangrene_gazeuse"
+        ],
+        "notes": {
+          "IRA": "Typee DEFAILLANCE_ORGANE lorsqu'il s'agit de la dysfonction renale de l'episode ; son stade est relie par ira_a_pour_stade.",
+          "pneumopathie": "La pneumopathie et ses types (communautaire, nosocomiale, inhalation, PAVM) sont des diagnostics : toujours LABEL_NOSOLOGIQUE. Leur localisation, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte.",
+          "diagnostics_infectieux_localises": "Pneumopathie, abces, pyelonephrite, erysipele et sinusite sont des diagnostics (LABEL_NOSOLOGIQUE) qui ont une localisation : celle-ci, si elle est ecrite, est une entite FOYER_INFECTIEUX distincte.",
+          "episode_courant": "Seuls les diagnostics de l'hospitalisation en cours sont des LABEL_NOSOLOGIQUE. 'Antecedent de pneumopathie', 'choc septique en 2010' ou 'pyelonephrite il y a deux ans' decrivent un episode anterieur : COMORBIDITE_ANTECEDENT (type_antecedent infectieux)."
+        }
+      },
+      "SIGNE_VITAL": {
+        "description": "Parametres physiologiques, hemodynamiques et ventilatoires mesures ponctuellement chez le patient.",
+        "attributs": [
+          "valeur",
+          "unite",
+          "horodatage"
+        ],
+        "valeurs_autorisees": [
+          "frequence_cardiaque",
+          "pression_arterielle_systolique",
+          "pression_arterielle_diastolique",
+          "pression_arterielle_moyenne",
+          "frequence_respiratoire",
+          "temperature_corporelle",
+          "SpO2",
+          "debit_cardiaque",
+          "index_cardiaque",
+          "pression_veineuse_centrale",
+          "saturation_veineuse_centrale_O2",
+          "diurese_horaire",
+          "diurese_24h",
+          "temps_recoloration_cutanee",
+          "FiO2",
+          "PEEP",
+          "pression_plateau",
+          "poids",
+          "IMC"
+        ]
+      },
+      "BIOMARQUEUR": {
+        "description": "Resultats biologiques, gazometriques, hematologiques, biochimiques et microbiologiques quantitatifs.",
+        "valeurs_autorisees": [
+          "lactate",
+          "proteine_C_reactive",
+          "procalcitonine",
+          "creatinine",
+          "uree",
+          "DFG",
+          "sodium",
+          "potassium",
+          "chlorure",
+          "calcium",
+          "phosphate",
+          "magnesium",
+          "glycemie",
+          "bilirubine_totale",
+          "bilirubine_conjuguee",
+          "ASAT",
+          "ALAT",
+          "gamma_GT",
+          "phosphatases_alcalines",
+          "LDH",
+          "CPK",
+          "lipase",
+          "amylase",
+          "albumine",
+          "prealbumine",
+          "protides",
+          "globules_blancs",
+          "polynucleaires_neutrophiles",
+          "lymphocytes",
+          "monocytes",
+          "eosinophiles",
+          "basophiles",
+          "hemoglobine",
+          "hematocrite",
+          "hematies",
+          "VGM",
+          "plaquettes",
+          "TP",
+          "TCA",
+          "fibrinogene",
+          "D_dimeres",
+          "facteur_II",
+          "facteur_V",
+          "facteur_VII",
+          "facteur_X",
+          "pH_arteriel",
+          "PaO2",
+          "PaCO2",
+          "bicarbonates",
+          "CO2_total",
+          "saturation_arterielle_O2",
+          "rapport_PaO2_FiO2",
+          "troponine",
+          "BNP",
+          "cortisol",
+          "TSH",
+          "ferritine",
+          "triglycerides",
+          "haptoglobine",
+          "schizocytes",
+          "reticulocytes",
+          "proteinurie",
+          "natriurese",
+          "FeNa",
+          "ammoniemie",
+          "antigenemie",
+          "antigenurie",
+          "charge_microbiologique"
+        ],
+        "attributs_obligatoires_additionnels": [
+          "direction_cinetique"
+        ],
+        "valeurs_autorisees_direction_cinetique": [
+          "augmentation",
+          "diminution",
+          "stable",
+          "normalisation",
+          "inconnue"
+        ],
+        "orientation_clinique": {
+          "description": "Correspondance biomarqueur -> diagnostic ou defaillance qu'il documente, validee par le medecin. Elle guide les relations biomarqueur_est_critere_de (vers LABEL_NOSOLOGIQUE) et biomarqueur_supporte_defaillance_organe (vers DEFAILLANCE_ORGANE) ; elle ne cree jamais une relation sans support textuel (regle R8_inference).",
+          "correspondances": {
+            "choc_septique": {
+              "biomarqueurs": [
+                "lactate"
+              ],
+              "seuil": "lactate >= 2 mmol/L (voir regles_derivees.R1)"
+            },
+            "IRA": {
+              "biomarqueurs": [
+                "creatinine",
+                "uree",
+                "DFG"
+              ],
+              "synonyme": "AKI"
+            },
+            "insuffisance_hepatique": {
+              "biomarqueurs": [
+                "lactate",
+                "bilirubine_totale",
+                "bilirubine_conjuguee",
+                "ASAT",
+                "ALAT",
+                "gamma_GT",
+                "phosphatases_alcalines"
+              ]
+            },
+            "CIVD": {
+              "biomarqueurs": [
+                "plaquettes",
+                "TP",
+                "TCA",
+                "fibrinogene",
+                "D_dimeres",
+                "facteur_II",
+                "facteur_V",
+                "facteur_VII",
+                "facteur_X"
+              ]
+            },
+            "SDRA": {
+              "biomarqueurs": [
+                "pH_arteriel",
+                "PaO2",
+                "PaCO2",
+                "bicarbonates",
+                "CO2_total",
+                "saturation_arterielle_O2",
+                "rapport_PaO2_FiO2"
+              ]
+            },
+            "infection": {
+              "biomarqueurs": [
+                "antigenurie"
+              ]
+            }
+          }
+        },
+        "attributs_optionnels": [
+          "contexte_prelevement",
+          "est_baseline",
+          "valeur_normalisee"
+        ]
+      },
+      "SCORE_SOFA": {
+        "description": "Score SOFA total et ses 6 composantes (evaluation centrale de la dysfonction d'organe).",
+        "composantes": [
+          "respiratoire",
+          "coagulation",
+          "hepatique",
+          "cardiovasculaire",
+          "neurologique",
+          "renal"
+        ],
+        "attributs": [
+          "score_total",
+          "delta_par_rapport_baseline",
+          "horodatage"
+        ],
+        "definition_composantes": {
+          "respiratoire": "rapport PaO2/FiO2",
+          "coagulation": "taux de plaquettes",
+          "hepatique": "bilirubine totale",
+          "cardiovasculaire": "pression arterielle et besoin de vasopresseurs",
+          "neurologique": "score de Glasgow",
+          "renal": "creatinine et diurese des 24 h"
+        },
+        "bareme": {
+          "reference": "Vincent et al., 1996 (score SOFA) ; Sepsis-3 (Singer et al., 2016) : sepsis = infection + augmentation du SOFA >= 2 points.",
+          "principe": "6 composantes notees de 0 (normal) a 4 (defaillance grave) ; score_total de 0 a 24.",
+          "usage": "Le bareme sert a interpreter et a verifier la coherence d'un SOFA ecrit dans le dossier. Il ne sert PAS a calculer ni a annoter un SOFA absent du texte (regles R1_ancrage_textuel et R8_inference).",
+          "composantes": {
+            "respiratoire": {
+              "parametre": "rapport PaO2/FiO2 (mmHg)",
+              "entite_source": "BIOMARQUEUR rapport_PaO2_FiO2",
+              "relation": "score_sofa_inclut_biomarqueur",
+              "seuils": {
+                "0": ">= 400",
+                "1": "< 400",
+                "2": "< 300",
+                "3": "< 200 sous assistance ventilatoire",
+                "4": "< 100 sous assistance ventilatoire"
+              }
+            },
+            "coagulation": {
+              "parametre": "plaquettes (x10^3/uL = G/L)",
+              "entite_source": "BIOMARQUEUR plaquettes",
+              "relation": "score_sofa_inclut_biomarqueur",
+              "seuils": {
+                "0": ">= 150",
+                "1": "< 150",
+                "2": "< 100",
+                "3": "< 50",
+                "4": "< 20"
+              }
+            },
+            "hepatique": {
+              "parametre": "bilirubine totale (umol/L)",
+              "entite_source": "BIOMARQUEUR bilirubine_totale",
+              "relation": "score_sofa_inclut_biomarqueur",
+              "seuils": {
+                "0": "< 20",
+                "1": "20-32",
+                "2": "33-101",
+                "3": "102-204",
+                "4": "> 204"
+              }
+            },
+            "cardiovasculaire": {
+              "parametre": "pression arterielle moyenne (mmHg) et vasopresseurs (ug/kg/min)",
+              "entite_source": "SIGNE_VITAL pression_arterielle_moyenne ; TRAITEMENT vasopresseur",
+              "relation": "score_sofa_inclut_signe_vital (pression arterielle) ; vasopresseurs : aucune relation pour l'instant (voir decisions_en_attente.relation_SOFA_vasopresseurs)",
+              "seuils": {
+                "0": "PAM >= 70",
+                "1": "PAM < 70",
+                "2": "dopamine <= 5 ou dobutamine (toute dose)",
+                "3": "dopamine > 5 ou adrenaline <= 0,1 ou noradrenaline <= 0,1",
+                "4": "dopamine > 15 ou adrenaline > 0,1 ou noradrenaline > 0,1"
+              }
+            },
+            "neurologique": {
+              "parametre": "score de Glasgow",
+              "entite_source": "SCORE_NEUROLOGIQUE Glasgow",
+              "relation": "score_sofa_inclut_score_neurologique",
+              "seuils": {
+                "0": "15",
+                "1": "13-14",
+                "2": "10-12",
+                "3": "6-9",
+                "4": "< 6"
+              }
+            },
+            "renal": {
+              "parametre": "creatinine (umol/L) ou diurese des 24 h (mL/j)",
+              "entite_source": "BIOMARQUEUR creatinine ; SIGNE_VITAL diurese_24h",
+              "relation": "score_sofa_inclut_biomarqueur (creatinine) ; score_sofa_inclut_signe_vital (diurese)",
+              "seuils": {
+                "0": "< 110",
+                "1": "110-170",
+                "2": "171-299",
+                "3": "300-440 ou diurese < 500",
+                "4": "> 440 ou diurese < 200"
+              }
+            }
+          },
+          "exemple": {
+            "texte": "SOFA a 8, plaquettes 45 G/L, Glasgow 9",
+            "entites": [
+              "SCORE_SOFA (score_total = 8)",
+              "BIOMARQUEUR plaquettes = 45 G/L",
+              "SCORE_NEUROLOGIQUE Glasgow = 9"
+            ],
+            "relations": [
+              "SCORE_SOFA -> score_sofa_inclut_biomarqueur -> plaquettes 45 G/L",
+              "SCORE_SOFA -> score_sofa_inclut_score_neurologique -> Glasgow 9",
+              "SCORE_SOFA -> score_sofa_calcule_pour -> DONNEE_PATIENT"
+            ],
+            "lecture": "plaquettes 45 -> composante coagulation = 3 ; Glasgow 9 -> composante neurologique = 3."
+          },
+          "regle_relations": "Une relation score_sofa_inclut_* n'est creee que si le SOFA ET le parametre sont explicitement ecrits dans le document, et que le parametre appartient a la composante correspondante ci-dessus.",
+          "statut_seuils": "seuils du bareme de reference (Vincent et al., 1996), a confirmer par le medecin"
+        }
+      },
+      "SCORE_qSOFA": {
+        "description": "Outil de reperage rapide hors reanimation (score de 0 a 3).",
+        "attributs": [
+          "score_total",
+          "critere_frequence_respiratoire",
+          "critere_alteration_etat_mental",
+          "critere_pression_arterielle_systolique",
+          "horodatage"
+        ],
+        "note": "Les attributs critere_* sont des booleens neutres. Les seuils fixes (FR >= 22/min, PAS <= 100 mmHg) ne sont plus dans le nom : voir regles_derivees.R3/R4."
+      },
+      "SCORE_NEUROLOGIQUE": {
+        "description": "Score neurologique explicitement rapporte dans le dossier clinique.",
+        "attributs": [
+          "score_total",
+          "score_glasgow_total",
+          "ouverture_yeux",
+          "reponse_verbale",
+          "reponse_motrice",
+          "valeur_brute",
+          "horodatage"
+        ],
+        "valeurs_autorisees": [
+          "Glasgow",
+          "RASS",
+          "FOUR_score",
+          "MMS",
+          "testing_musculaire"
+        ],
+        "regles": {
+          "score_glasgow_total": "Somme des trois sous-scores : ouverture_yeux + reponse_verbale + reponse_motrice."
+        },
+        "notes": {
+          "MMS": "Antecedent ou consequence du sepsis.",
+          "testing_musculaire": "Consequence du sepsis."
+        }
+      },
+      "STADE_IRA": {
+        "description": "Stadification de la gravite de l'insuffisance renale aigue (variations relatives de creatinine et de diurese).",
+        "systeme_classification": "KDIGO 2012",
+        "note_nommage": "Renommee depuis KDIGO_AKI_STAGE : le nom du referentiel de classification (KDIGO) n'apparait quasiment jamais litteralement dans les dossiers patients francais (on y trouve plutot 'IRA', des valeurs de creatinine, une mention de diurese), contrairement a SOFA/qSOFA qui sont effectivement extraits tels quels. Le referentiel est donc deplace en metadonnee (systeme_classification) plutot que dans l'identifiant.",
+        "valeurs_autorisees": [
+          1,
+          2,
+          3
+        ],
+        "criteres": [
+          "creatinine_relative",
+          "creatinine_absolue",
+          "diurese",
+          "oligurie",
+          "anurie",
+          "epuration_extra_renale"
+        ]
+      },
+      "FOYER_INFECTIEUX": {
+        "description": "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation, toujours celle d'un diagnostic : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE. Le foyer de l'episode actuel est relie a son LABEL_NOSOLOGIQUE (label_nosologique_a_pour_foyer) ; le foyer d'un episode anterieur est relie a sa COMORBIDITE_ANTECEDENT (comorbidite_a_pour_foyer).",
+        "localisations": [
+          "pulmonaire",
+          "voies_urinaires",
+          "renal",
+          "abdominal",
+          "digestif",
+          "liquide_ascite",
+          "cutane_tissu_mou",
+          "escarre",
+          "membre_inferieur",
+          "osteo_articulaire",
+          "osseux",
+          "genou",
+          "prothese_articulaire",
+          "ORL",
+          "sinus",
+          "dentaire",
+          "systeme_nerveux_central",
+          "catheter_acces_vasculaire",
+          "pleural",
+          "prostate",
+          "pelvien",
+          "endocardite",
+          "inconnue",
+          "indetermine"
+        ],
+        "documentation": [
+          "documente_microbiologiquement",
+          "documente_radiologiquement",
+          "documente_cliniquement",
+          "probable",
+          "possible",
+          "suspecte",
+          "non_documente"
+        ],
+        "exemples": {
+          "point de depart pulmonaire": "FOYER_INFECTIEUX (pulmonaire)",
+          "foyer pulmonaire": "FOYER_INFECTIEUX (pulmonaire)",
+          "lobe inferieur droit": "FOYER_INFECTIEUX (pulmonaire)",
+          "pneumopathie": "pas un FOYER : LABEL_NOSOLOGIQUE"
+        },
+        "notes_localisations": {
+          "endocardite": "Localisation endocardique (infection de l'endocarde), ajoutee par le medecin."
+        },
+        "rattachement": {
+          "episode_actuel": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX)",
+          "episode_anterieur": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX)",
+          "sans_diagnostic_ecrit": "Si aucun diagnostic auquel rattacher la localisation n'est ecrit dans le document, le FOYER_INFECTIEUX est annote sans relation de rattachement (aucune inference)."
+        }
+      },
+      "MICRO_ORGANISME": {
+        "description": "Agent pathogene identifie lors d'un prelevement microbiologique.",
+        "attributs": [
+          "genre_espece",
+          "coloration_gram",
+          "morphologie",
+          "type_prelevement",
+          "site_prelevement",
+          "phenotype_resistance",
+          "antibiogramme",
+          "charge_quantitative"
+        ],
+        "valeurs_autorisees_coloration_gram": [
+          "gram_positif",
+          "gram_negatif",
+          "non_precise"
+        ],
+        "valeurs_autorisees_morphologie": [
+          "cocci",
+          "bacille",
+          "non_precise"
+        ],
+        "synonymes_morphologie": {
+          "coque": "cocci",
+          "coques": "cocci"
+        },
+        "valeurs_autorisees_type_prelevement": [
+          "hemoculture",
+          "ECBU",
+          "PDP",
+          "LBA",
+          "aspiration_tracheale",
+          "ECBC",
+          "liquide_pleural",
+          "liquide_ascite",
+          "LCR",
+          "prelevement_per_operatoire",
+          "prelevement_cutane",
+          "biopsie",
+          "coproculture",
+          "autre"
+        ],
+        "valeurs_autorisees_phenotype_resistance": [
+          "sensible",
+          "resistant",
+          "intermediaire",
+          "BLSE",
+          "SARM",
+          "BMR",
+          "hyperproduction_cephalosporinase",
+          "fluoroquinolone_resistant",
+          "BHRE",
+          "non_precise"
+        ],
+        "definitions_phenotype_resistance": {
+          "BHRE": "bacterie hautement resistante emergente"
+        },
+        "regles_type_prelevement": {
+          "principe": "Le type de prelevement renseigne le site d'infection.",
+          "prelevement_per_operatoire": "Identifier le site de prelevement exact (attribut site_prelevement).",
+          "biopsie": "Identifier le site de la biopsie (attribut site_prelevement)."
+        }
+      },
+      "DEFAILLANCE_ORGANE": {
+        "description": "Dysfonction d'un ou plusieurs systemes physiologiques.",
+        "organes": [
+          "respiratoire",
+          "cardiovasculaire",
+          "hemodynamique",
+          "hepatique",
+          "renal",
+          "neurologique",
+          "hematologique",
+          "coagulation",
+          "metabolique"
+        ],
+        "manifestations_autorisees": [
+          "SDRA",
+          "hypoxemie",
+          "hypercapnie",
+          "acidose_respiratoire",
+          "choc",
+          "hypotension",
+          "dependance_vasopresseurs",
+          "IRA",
+          "oligurie",
+          "anurie",
+          "insuffisance_hepatocellulaire",
+          "cytolyse_hepatique",
+          "cholestase",
+          "encephalopathie",
+          "trouble_conscience",
+          "deficit_moteur",
+          "polyneuropathie",
+          "tetraparesie",
+          "CIVD",
+          "thrombopenie",
+          "anemie",
+          "acidose_metabolique",
+          "hyperkaliemie",
+          "defaillance_multiviscerale"
+        ],
+        "synonymes_organes": {
+          "hemodynamique": "cardiovasculaire"
+        },
+        "notes_organes": {
+          "cardiovasculaire": "Synonyme de hemodynamique (validation medicale).",
+          "metabolique": "Lie a l'IRA (validation medicale)."
+        }
+      },
+      "TRAITEMENT": {
+        "description": "Interventions therapeutiques administrees au patient, medicamenteuses ou de support.",
+        "valeurs_autorisees": [
+          "antibiotique",
+          "antifongique",
+          "antiviral",
+          "vasopresseur",
+          "inotrope",
+          "antiarythmique",
+          "remplissage_vasculaire",
+          "cristalloide",
+          "colloide",
+          "albumine",
+          "ventilation_mecanique",
+          "VNI",
+          "oxygenotherapie",
+          "NO_inhale",
+          "curarisation",
+          "intubation",
+          "extubation",
+          "tracheotomie",
+          "epuration_extra_renale",
+          "hemodialyse",
+          "hemofiltration",
+          "corticoide",
+          "sedatif",
+          "analgesique",
+          "insuline",
+          "transfusion_CGR",
+          "transfusion_plaquettes",
+          "transfusion_PFC",
+          "nutrition_enterale",
+          "nutrition_parenterale",
+          "drainage",
+          "drain_thoracique",
+          "ponction_evacuatrice",
+          "chirurgie",
+          "amputation",
+          "decubitus_ventral",
+          "ecmo",
+          "autre"
+        ],
+        "attributs_ajoutes": [
+          "nom_medicament"
+        ],
+        "note": "Les valeurs_autorisees representent des categories therapeutiques. nom_medicament conserve la DCI ou le nom commercial explicitement mentionne.",
+        "attributs_optionnels": [
+          "statut_administration",
+          "groupe_therapeutique"
+        ],
+        "notes_valeurs": {
+          "corticoide": "Preciser le type et la dose (posologie).",
+          "sedatif": "Lie a la defaillance respiratoire (ventilation) ; influence le score de Glasgow.",
+          "nutrition_enterale": "Liee au traitement par ventilation mecanique.",
+          "ecmo": "Extracorporeal membrane oxygenation (oxygenation par membrane extracorporelle)."
+        },
+        "groupes_therapeutiques": {
+          "description": "Sous-groupes de traitements valides par le medecin : traitement de l'infection, et traitement symptomatique des defaillances d'organe (hemodynamique, respiratoire, renale). Les autres categories sont conservees dans autres_traitements_de_support.",
+          "traitement_infection": {
+            "description": "Traitement de l'infection : anti-infectieux et traitement chirurgical (controle de la source).",
+            "valeurs": [
+              "antibiotique",
+              "antifongique",
+              "antiviral",
+              "chirurgie",
+              "drainage",
+              "drain_thoracique",
+              "ponction_evacuatrice",
+              "amputation"
+            ]
+          },
+          "traitement_symptomatique_defaillance_organe": {
+            "hemodynamique": [
+              "vasopresseur",
+              "inotrope",
+              "antiarythmique",
+              "remplissage_vasculaire",
+              "cristalloide",
+              "colloide",
+              "albumine",
+              "corticoide"
+            ],
+            "respiratoire": [
+              "ventilation_mecanique",
+              "VNI",
+              "oxygenotherapie",
+              "NO_inhale",
+              "intubation",
+              "extubation",
+              "tracheotomie",
+              "curarisation",
+              "sedatif",
+              "decubitus_ventral",
+              "ecmo"
+            ],
+            "renal": [
+              "epuration_extra_renale",
+              "hemodialyse",
+              "hemofiltration"
+            ]
+          },
+          "autres_traitements_de_support": {
+            "description": "Categories conservees hors des sous-groupes (validation medicale).",
+            "valeurs": [
+              "analgesique",
+              "insuline",
+              "transfusion_CGR",
+              "transfusion_plaquettes",
+              "transfusion_PFC",
+              "nutrition_enterale",
+              "nutrition_parenterale",
+              "autre"
+            ]
+          }
+        }
+      },
+      "POSOLOGIE": {
+        "description": "Detail d'administration d'un traitement. Justifiee comme entite (et non attribut) car : (1) structure interne multi-champs (dose, unite, schema horaire), (2) temporalite propre distincte du TRAITEMENT parent (une posologie peut etre modifiee en cours de sejour, ex. ajustement renal, sans changer la nature du traitement), (3) notation heterogene observee en pratique (schema par moments de la journee type '1-0-1' vs schema par intervalle type '1 amp/8h') necessitant une decomposition structuree.",
+        "attributs": [
+          "dose_valeur",
+          "unite_dose",
+          "unite_administration",
+          "schema_horaire_brut",
+          "moment_matin",
+          "moment_midi",
+          "moment_soir",
+          "moment_coucher",
+          "frequence_intervalle_heures",
+          "nombre_administrations_jour",
+          "debit",
+          "unite_debit",
+          "volume",
+          "unite_volume",
+          "concentration",
+          "voie_administration",
+          "duree_traitement",
+          "date_debut",
+          "date_fin",
+          "ajustement_renal"
+        ],
+        "note_attributs": "schema_horaire_brut conserve la chaine telle qu'extraite (ancrage OCR/VLM anti-hallucination) ; moment_matin/midi/soir/coucher sont la decomposition structuree pour le format 'x-x-x-x' ; frequence_intervalle_heures couvre le format alternatif 'dose/Nh' (ex. 1 amp/8h).",
+        "valeurs_autorisees_voie_administration": [
+          "IV",
+          "IVSE",
+          "IVL",
+          "SC",
+          "IM",
+          "PO",
+          "orale",
+          "enterale",
+          "inhalation",
+          "nebulisation",
+          "sonde_gastrique",
+          "autre"
+        ]
+      },
+      "CONTEXTE_ACQUISITION": {
+        "description": "Mode et circonstances d'acquisition d'une comorbidite ou d'une exposition, anciennement attribut isole de COMORBIDITE_ANTECEDENT, promu en entite car il porte sa propre relation vers MICRO_ORGANISME.",
+        "attributs": [
+          "type_acquisition",
+          "duree_hospitalisation_prealable_jours",
+          "exposition_antibiotique_recente",
+          "exposition_dispositif_invasif",
+          "hospitalisation_anterieure_recente",
+          "voyage_recent_etranger"
+        ],
+        "valeurs_autorisees_type_acquisition": [
+          "communautaire",
+          "nosocomiale",
+          "associee_aux_soins",
+          "acquise_sous_ventilation_mecanique",
+          "post_operatoire"
+        ],
+        "notes_attributs": {
+          "hospitalisation_anterieure_recente": "Hospitalisation dans les 6 mois precedents.",
+          "voyage_recent_etranger": "Voyage recent dans un pays a forte prevalence de BMR (facteur de risque, regle R7)."
+        },
+        "notes_type_acquisition": {
+          "post_operatoire": "Infection post-operatoire du site operatoire."
+        }
+      },
+      "COMORBIDITE_ANTECEDENT": {
+        "description": "Antecedents medicaux, comorbidites chroniques et diagnostics d'EPISODES ANTERIEURS (y compris les infections anterieures, par exemple une pneumopathie ou un sepsis lors d'une hospitalisation precedente), influencant le terrain de risque infectieux.",
+        "attributs": [
+          "libelle",
+          "type_antecedent"
+        ],
+        "note": "L'attribut contexte_acquisition est retire d'ici et remplace par la relation a_pour_contexte_acquisition vers l'entite CONTEXTE_ACQUISITION.",
+        "valeurs_autorisees_type_antecedent": [
+          "cardiovasculaire",
+          "respiratoire",
+          "renal",
+          "hepatique",
+          "neurologique",
+          "psychiatrique",
+          "hematologique",
+          "oncologique",
+          "metabolique",
+          "endocrinien",
+          "digestif",
+          "infectieux",
+          "immunologique",
+          "rhumatologique",
+          "vasculaire",
+          "chirurgical",
+          "toxicologique",
+          "autre"
+        ],
+        "notes_type_antecedent": {
+          "endocrinien": "Inclut le diabete (validation medicale)."
+        },
+        "notes_episode_anterieur": {
+          "regle": "Tout diagnostic rapporte a une hospitalisation ou a un episode precedent est une COMORBIDITE_ANTECEDENT, meme s'il figure dans la liste des valeurs de LABEL_NOSOLOGIQUE.",
+          "localisation": "Si la localisation d'un episode anterieur est ecrite, elle est une entite FOYER_INFECTIEUX reliee a la comorbidite par comorbidite_a_pour_foyer."
+        }
+      },
+      "EVENEMENT_TEMPOREL": {
+        "description": "Evenements horodates cles de la trajectoire clinique et therapeutique, incluant les jalons SSC et les evenements majeurs du sejour.",
+        "valeurs_autorisees": [
+          "debut_symptomes",
+          "admission_urgences_ou_service",
+          "admission_reanimation",
+          "premier_prelevement_microbiologique",
+          "premiere_dose_antibiotique",
+          "adaptation_antibiotherapie",
+          "arret_antibiotherapie",
+          "debut_remplissage_vasculaire",
+          "debut_vasopresseurs",
+          "sevrage_vasopresseurs",
+          "mesure_lactate_T0",
+          "mesure_lactate_T2h",
+          "controle_source",
+          "intubation_orotracheale",
+          "extubation",
+          "reintubation",
+          "tracheotomie",
+          "debut_epuration_extra_renale",
+          "arret_epuration_extra_renale",
+          "transfusion",
+          "intervention_chirurgicale",
+          "transfert_service",
+          "sortie_reanimation",
+          "sortie_hopital",
+          "arret_cardiorespiratoire",
+          "deces"
+        ],
+        "attributs": [
+          "horodatage_absolu",
+          "delai_depuis_admission_minutes"
+        ]
+      },
+      "EVOLUTION_PRONOSTIC": {
+        "description": "Evolution clinique, devenir du patient et mesures de sejour.",
+        "types": [
+          "evolution_favorable",
+          "amelioration",
+          "stabilisation",
+          "aggravation",
+          "rechute",
+          "recidive",
+          "resolution_sepsis",
+          "sevrage_vasopresseur",
+          "sevrage_ventilatoire",
+          "extubation_reussie",
+          "echec_extubation",
+          "transfert",
+          "retour_domicile",
+          "mortalite_hospitaliere",
+          "mortalite_J28",
+          "mortalite_J90",
+          "mortalite_J180",
+          "deces",
+          "deces_en_reanimation",
+          "duree_traitement_par_ventilation_mecanique_jours",
+          "duree_traitement_par_vasopresseur_jours",
+          "duree_traitement_par_dialyse_jours",
+          "duree_sejour_reanimation_jours",
+          "duree_sejour_hospitalier_jours"
+        ]
+      },
+      "SERVICE_MEDICAL": {
+        "description": "Unites ou services de prise en charge successifs au cours de l'hospitalisation.",
+        "attributs": [
+          "nom_service",
+          "horodatage_entree",
+          "horodatage_sortie",
+          "type_service"
+        ],
+        "valeurs_autorisees_type_service": [
+          "SAMU",
+          "SMUR",
+          "urgences",
+          "reanimation",
+          "post_reanimation",
+          "USIC",
+          "medecine_interne",
+          "maladies_infectieuses",
+          "pneumologie",
+          "cardiologie",
+          "neurologie",
+          "chirurgie",
+          "urologie",
+          "geriatrie",
+          "SSR",
+          "domicile",
+          "lieu_de_vie",
+          "hors_hopital",
+          "maison_de_retraite",
+          "EHPAD",
+          "autre"
+        ],
+        "note": "Ce qui interesse est la trajectoire du patient des l'hospitalisation, y compris le lieu de vie avant et apres le sejour (domicile, maison de retraite, EHPAD, hors hopital)."
+      },
+      "METADONNEES_PIPELINE": {
+        "description": "Champs techniques associes a chaque entite extraite pour l'ancrage visuel, la tracabilite et le suivi de confiance (MLLM). Ils ne representent pas des connaissances medicales.",
+        "attributs": [
+          "identifiant_entite",
+          "page",
+          "bbox",
+          "confidence_visuelle",
+          "confiance",
+          "type_inference",
+          "nie"
+        ],
+        "note": "bbox et confidence_visuelle sont prevus pour l'ancrage visuel mais ne sont pas fournis par Mistral Small 4."
+      },
+      "IMAGERIE_PROCEDURE": {
+        "description": "Examen d'imagerie ou procedure diagnostique explicitement mentionne dans le document.",
+        "valeurs_autorisees": [
+          "radiographie",
+          "scanner",
+          "tomodensitometrie",
+          "TDM",
+          "angioscanner",
+          "IRM",
+          "echographie",
+          "echographie_abdominale",
+          "echographie_renale",
+          "echographie_pleurale",
+          "echocardiographie",
+          "ETT",
+          "ECG",
+          "EEG",
+          "EMG",
+          "EFR",
+          "fibroscopie",
+          "fibroscopie_bronchique",
+          "fibroscopie_oesogastroduodenale",
+          "endoscopie",
+          "angiographie",
+          "ponction_lombaire",
+          "ponction_pleurale",
+          "ponction_ascite",
+          "biopsie",
+          "PDP",
+          "LBA",
+          "ECBU",
+          "hemoculture",
+          "ECBC",
+          "aspiration_tracheale",
+          "autre"
+        ],
+        "attributs": [
+          "type_examen",
+          "region_anatomique",
+          "resultat",
+          "horodatage"
+        ],
+        "notes_valeurs": {
+          "biopsie": "Liee au foyer : sert a identifier le germe et a guider l'antibiotherapie."
+        }
+      },
+      "SYMPTOME": {
+        "description": "Manifestation clinique rapportée par le patient ou observée lors de l'examen clinique. Un symptôme ne constitue pas un diagnostic, une défaillance d'organe ni un résultat biologique.",
+        "valeurs_autorisees": [
+          "fievre",
+          "frissons",
+          "cephalees",
+          "toux",
+          "dyspnee",
+          "orthopnee",
+          "polypnee",
+          "expectoration",
+          "douleur_thoracique",
+          "douleur_abdominale",
+          "douleur_lombaire",
+          "myalgies",
+          "nausees",
+          "vomissements",
+          "diarrhee",
+          "fatigue",
+          "asthenie",
+          "anorexie",
+          "confusion",
+          "agitation",
+          "somnolence",
+          "desorientation",
+          "ralentissement_psychomoteur",
+          "trouble_deglutition",
+          "fausse_route",
+          "cyanose",
+          "marbrures",
+          "extremites_froides",
+          "tirage",
+          "crepitants",
+          "ronchis",
+          "sibilants",
+          "encombrement",
+          "malaise",
+          "syncope",
+          "photophobie",
+          "raideur_nuque",
+          "urines_foncees",
+          "hematurie",
+          "oligurie",
+          "anurie",
+          "ictere",
+          "purpura",
+          "alteration_etat_general",
+          "perte_poids"
+        ],
+        "note": "Cette entité représente les manifestations cliniques observées ou rapportées. Les paramètres mesurables (température, fréquence cardiaque, SpO2, etc.) restent annotés comme SIGNE_VITAL, tandis que les diagnostics et les défaillances d'organe conservent leurs entités respectives.",
+        "notes_valeurs": {
+          "fausse_route": "Oriente vers une pneumopathie d'inhalation."
+        }
+      }
+    },
+    "relations": {
+      "RELATIONS_DIAGNOSTIQUES": {
+        "a_pour_label_nosologique": {
+          "domaine": "DONNEE_PATIENT",
+          "image": "LABEL_NOSOLOGIQUE",
+          "description": "Lien entre le patient et un diagnostic de l'episode d'hospitalisation actuel."
+        },
+        "label_nosologique_a_pour_foyer": {
+          "domaine": "LABEL_NOSOLOGIQUE",
+          "image": "FOYER_INFECTIEUX",
+          "description": "Relie un diagnostic de l'episode actuel a sa localisation (ex. 'choc septique' -> 'point de depart pulmonaire', 'pyelonephrite' -> 'droite'). Remplace presente_suspicion_infection : le foyer n'est plus relie directement au patient. Creee seulement si la localisation est ecrite."
+        },
+        "presente_dysfonction_organe": {
+          "domaine": "DONNEE_PATIENT",
+          "image": "DEFAILLANCE_ORGANE",
+          "description": "Dysfonction d'organe induite par la reponse dysreguleee."
+        },
+        "score_sofa_calcule_pour": {
+          "domaine": "SCORE_SOFA",
+          "image": "DONNEE_PATIENT"
+        },
+        "score_sofa_inclut_biomarqueur": {
+          "domaine": "SCORE_SOFA",
+          "image": "BIOMARQUEUR"
+        },
+        "score_sofa_inclut_signe_vital": {
+          "domaine": "SCORE_SOFA",
+          "image": "SIGNE_VITAL"
+        },
+        "score_sofa_inclut_score_neurologique": {
+          "domaine": "SCORE_SOFA",
+          "image": "SCORE_NEUROLOGIQUE",
+          "description": "Le SOFA inclut le score neurologique, specifiquement sa composante neurologique (Glasgow). Validee par le medecin."
+        },
+        "score_qsofa_calcule_pour": {
+          "domaine": "SCORE_qSOFA",
+          "image": "DONNEE_PATIENT",
+          "description": "Lien entre le score qSOFA et le patient evalue."
+        },
+        "score_qsofa_inclut_score_neurologique": {
+          "domaine": "SCORE_qSOFA",
+          "image": "SCORE_NEUROLOGIQUE",
+          "description": "Le qSOFA inclut le critere neurologique (confusion ou Glasgow < 15, voir R4bis). Validee par le medecin."
+        },
+        "stade_ira_calcule_pour": {
+          "domaine": "STADE_IRA",
+          "image": "DONNEE_PATIENT",
+          "description": "Lien entre le stade d'insuffisance renale aigue (calcule selon KDIGO 2012) et le patient concerne."
+        },
+        "ira_a_pour_stade": {
+          "domaine": "DEFAILLANCE_ORGANE",
+          "image": "STADE_IRA",
+          "description": "Relie une IRA (DEFAILLANCE_ORGANE, manifestation IRA) a son stade KDIGO 2012 (STADE_IRA). Creee uniquement si le stade est explicitement ecrit dans le document (regle R8_inference)."
+        }
+      },
+      "RELATIONS_THERAPEUTIQUES": {
+        "traitement_administre_a": {
+          "domaine": "TRAITEMENT",
+          "image": "DONNEE_PATIENT"
+        },
+        "traitement_a_pour_posologie": {
+          "domaine": "TRAITEMENT",
+          "image": "POSOLOGIE"
+        },
+        "antibiotique_adequat_pour": {
+          "domaine": "TRAITEMENT",
+          "image": "MICRO_ORGANISME",
+          "description": "Conformite selon l'antibiogramme EUCAST."
+        },
+        "antibiotique_inadequat_pour": {
+          "domaine": "TRAITEMENT",
+          "image": "MICRO_ORGANISME"
+        },
+        "traitement_cible_defaillance": {
+          "domaine": "TRAITEMENT",
+          "image": "DEFAILLANCE_ORGANE"
+        },
+        "traitement_indique_par_label_nosologique": {
+          "domaine": "TRAITEMENT",
+          "image": "LABEL_NOSOLOGIQUE",
+          "description": "Relation generique remplacant corticoide_indique_par_choc_refractaire. La condition specifique (corticoides <-> choc_septique_refractaire) est portee par regles_derivees.R5, pas par le nom de la relation."
+        }
+      },
+      "RELATIONS_SIGNES_VITAUX": {
+        "signe_vital_supporte_defaillance_organe": {
+          "domaine": "SIGNE_VITAL",
+          "image": "DEFAILLANCE_ORGANE",
+          "description": "Un paramètre physiologique anormal contribue à identifier une défaillance d'organe."
+        }
+      },
+      "RELATIONS_BIOMARQUEURS_ET_MICROBIO": {
+        "biomarqueur_obtenu_a": {
+          "domaine": "BIOMARQUEUR",
+          "image": "EVENEMENT_TEMPOREL"
+        },
+        "biomarqueur_supporte_defaillance_organe": {
+          "domaine": "BIOMARQUEUR",
+          "image": "DEFAILLANCE_ORGANE",
+          "description": "Voir BIOMARQUEUR.orientation_clinique pour les biomarqueurs propres a chaque defaillance."
+        },
+        "biomarqueur_est_critere_de": {
+          "domaine": "BIOMARQUEUR",
+          "image": "LABEL_NOSOLOGIQUE",
+          "description": "Relation generique remplacant biomarqueur_est_composante_choc_septique. Le seuil (ex. lactate >= 2 mmol/L) est porte par regles_derivees.R1, pas par le nom de la relation."
+        },
+        "micro_organisme_isole_dans": {
+          "domaine": "MICRO_ORGANISME",
+          "image": "FOYER_INFECTIEUX",
+          "description": "Site ou le pathogene a ete preleve ou isole (ex. hemoculture, LBA)."
+        },
+        "micro_organisme_infecte_site": {
+          "domaine": "MICRO_ORGANISME",
+          "image": "FOYER_INFECTIEUX",
+          "description": "Le pathogene est responsable de l'infection de ce site (site d'infection), a distinguer de micro_organisme_isole_dans (site ou il a ete preleve ou isole). Creee uniquement si le document relie explicitement le pathogene au site infecte."
+        }
+      },
+      "RELATIONS_TERRAIN_ET_RISQUE": {
+        "comorbidite_est_facteur_risque_de": {
+          "domaine": "COMORBIDITE_ANTECEDENT",
+          "image": "LABEL_NOSOLOGIQUE"
+        },
+        "a_pour_contexte_acquisition": {
+          "domaine": "COMORBIDITE_ANTECEDENT",
+          "image": "CONTEXTE_ACQUISITION",
+          "description": "Relation structurelle remplacant l'ancien attribut contexte_acquisition, desormais entite autonome."
+        },
+        "contexte_acquisition_influence_risque_resistance": {
+          "domaine": "CONTEXTE_ACQUISITION",
+          "image": "MICRO_ORGANISME",
+          "description": "Relation generique remplacant contexte_acquisition_augmente_risque_BMR. Le niveau de risque specifique (ex. BMR) est porte par regles_derivees.R7, pas par le nom de la relation."
+        },
+        "comorbidite_a_pour_foyer": {
+          "domaine": "COMORBIDITE_ANTECEDENT",
+          "image": "FOYER_INFECTIEUX",
+          "description": "Relie un antecedent infectieux (episode anterieur) a sa localisation, si elle est ecrite (ex. 'antecedent de pyelonephrite droite' -> 'droite')."
+        }
+      },
+      "RELATIONS_TEMPORELLES_ET_PRONOSTIC": {
+        "precede": {
+          "domaine": "EVENEMENT_TEMPOREL",
+          "image": "EVENEMENT_TEMPOREL",
+          "description": "Relation chronologique generique remplacant ordre_chronologique_prelevement_precede_ATB, delai_admission_vers_premier_ATB et delai_T0_vers_lactate_T2h. Chaque instance relie deux valeurs de EVENEMENT_TEMPOREL.valeurs_autorisees deja definies ; aucune paire specifique n'est plus figee dans le nom.",
+          "attribut_relation": "delai_calcule_minutes"
+        },
+        "patient_a_pour_evolution": {
+          "domaine": "DONNEE_PATIENT",
+          "image": "EVOLUTION_PRONOSTIC"
+        },
+        "evenement_associe_evolution": {
+          "domaine": "EVENEMENT_TEMPOREL",
+          "image": "EVOLUTION_PRONOSTIC",
+          "description": "Relation generique remplacant delai_ATB_superieur_60min_associe_mortalite. Le seuil (60 min) est porte par regles_derivees.R2, pas par le nom de la relation."
+        },
+        "service_medical_accueille": {
+          "domaine": "SERVICE_MEDICAL",
+          "image": "DONNEE_PATIENT",
+          "description": "Lien entre un service de prise en charge et le patient qui y est hospitalise."
+        }
+      },
+      "RELATIONS_IMAGERIE": {
+        "imagerie_objective_foyer": {
+          "domaine": "IMAGERIE_PROCEDURE",
+          "image": "FOYER_INFECTIEUX",
+          "description": "L'examen d'imagerie objective un foyer infectieux."
+        }
+      },
+      "RELATIONS_SYMPTOMES": {
+        "presente_symptome": {
+          "domaine": "DONNEE_PATIENT",
+          "image": "SYMPTOME",
+          "description": "Relie le patient aux symptômes explicitement mentionnés dans le dossier clinique."
+        },
+        "symptome_oriente_foyer": {
+          "domaine": "SYMPTOME",
+          "image": "FOYER_INFECTIEUX",
+          "description": "Le symptome oriente vers un foyer infectieux (ex. toux, expectoration -> pulmonaire ; brulures mictionnelles -> voies urinaires). Creee seulement si le document relie explicitement le symptome au foyer."
+        },
+        "symptome_associe_gravite_initiale": {
+          "domaine": "SYMPTOME",
+          "image": "SCORE_SOFA",
+          "description": "Le symptome participe a la gravite initiale du patient, evaluee par le score SOFA (ex. confusion -> composante neurologique). Creee seulement si le document l'etablit."
+        }
+      }
+    },
+    "signatures_relations": {
+      "a_pour_label_nosologique": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "label_nosologique_a_pour_foyer": {
+        "domaine": "LABEL_NOSOLOGIQUE",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "presente_dysfonction_organe": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_calcule_pour": {
+        "domaine": "SCORE_SOFA",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_inclut_biomarqueur": {
+        "domaine": "SCORE_SOFA",
+        "image": "BIOMARQUEUR",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_inclut_signe_vital": {
+        "domaine": "SCORE_SOFA",
+        "image": "SIGNE_VITAL",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_sofa_inclut_score_neurologique": {
+        "domaine": "SCORE_SOFA",
+        "image": "SCORE_NEUROLOGIQUE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_qsofa_calcule_pour": {
+        "domaine": "SCORE_qSOFA",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "score_qsofa_inclut_score_neurologique": {
+        "domaine": "SCORE_qSOFA",
+        "image": "SCORE_NEUROLOGIQUE",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "stade_ira_calcule_pour": {
+        "domaine": "STADE_IRA",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "ira_a_pour_stade": {
+        "domaine": "DEFAILLANCE_ORGANE",
+        "image": "STADE_IRA",
+        "groupe": "RELATIONS_DIAGNOSTIQUES"
+      },
+      "traitement_administre_a": {
+        "domaine": "TRAITEMENT",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "traitement_a_pour_posologie": {
+        "domaine": "TRAITEMENT",
+        "image": "POSOLOGIE",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "antibiotique_adequat_pour": {
+        "domaine": "TRAITEMENT",
+        "image": "MICRO_ORGANISME",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "antibiotique_inadequat_pour": {
+        "domaine": "TRAITEMENT",
+        "image": "MICRO_ORGANISME",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "traitement_cible_defaillance": {
+        "domaine": "TRAITEMENT",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "traitement_indique_par_label_nosologique": {
+        "domaine": "TRAITEMENT",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_THERAPEUTIQUES"
+      },
+      "signe_vital_supporte_defaillance_organe": {
+        "domaine": "SIGNE_VITAL",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_SIGNES_VITAUX"
+      },
+      "biomarqueur_obtenu_a": {
+        "domaine": "BIOMARQUEUR",
+        "image": "EVENEMENT_TEMPOREL",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "biomarqueur_supporte_defaillance_organe": {
+        "domaine": "BIOMARQUEUR",
+        "image": "DEFAILLANCE_ORGANE",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "biomarqueur_est_critere_de": {
+        "domaine": "BIOMARQUEUR",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "micro_organisme_isole_dans": {
+        "domaine": "MICRO_ORGANISME",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "comorbidite_est_facteur_risque_de": {
+        "domaine": "COMORBIDITE_ANTECEDENT",
+        "image": "LABEL_NOSOLOGIQUE",
+        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
+      },
+      "a_pour_contexte_acquisition": {
+        "domaine": "COMORBIDITE_ANTECEDENT",
+        "image": "CONTEXTE_ACQUISITION",
+        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
+      },
+      "comorbidite_a_pour_foyer": {
+        "domaine": "COMORBIDITE_ANTECEDENT",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
+      },
+      "contexte_acquisition_influence_risque_resistance": {
+        "domaine": "CONTEXTE_ACQUISITION",
+        "image": "MICRO_ORGANISME",
+        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
+      },
+      "precede": {
+        "domaine": "EVENEMENT_TEMPOREL",
+        "image": "EVENEMENT_TEMPOREL",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "patient_a_pour_evolution": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "EVOLUTION_PRONOSTIC",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "evenement_associe_evolution": {
+        "domaine": "EVENEMENT_TEMPOREL",
+        "image": "EVOLUTION_PRONOSTIC",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "service_medical_accueille": {
+        "domaine": "SERVICE_MEDICAL",
+        "image": "DONNEE_PATIENT",
+        "groupe": "RELATIONS_TEMPORELLES_ET_PRONOSTIC"
+      },
+      "imagerie_objective_foyer": {
+        "domaine": "IMAGERIE_PROCEDURE",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_IMAGERIE"
+      },
+      "presente_symptome": {
+        "domaine": "DONNEE_PATIENT",
+        "image": "SYMPTOME",
+        "groupe": "RELATIONS_SYMPTOMES"
+      },
+      "micro_organisme_infecte_site": {
+        "domaine": "MICRO_ORGANISME",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_BIOMARQUEURS_ET_MICROBIO"
+      },
+      "symptome_oriente_foyer": {
+        "domaine": "SYMPTOME",
+        "image": "FOYER_INFECTIEUX",
+        "groupe": "RELATIONS_SYMPTOMES"
+      },
+      "symptome_associe_gravite_initiale": {
+        "domaine": "SYMPTOME",
+        "image": "SCORE_SOFA",
+        "groupe": "RELATIONS_SYMPTOMES"
+      }
+    },
+    "regles_derivees": {
+      "description": "Regles SWRL/contraintes SHACL portant les seuils et valeurs specifiques anciennement encodes dans les noms de relations/attributs. A formaliser en syntaxe SWRL/SHACL native lors de l'implementation Neo4j/OWL.",
+      "R1_lactate_critere_choc_septique": "Definition Sepsis-3 du choc septique : presence de vasopresseurs ET BIOMARQUEUR(type=lactate, valeur >= 2, unite=mmol/L) -> biomarqueur_est_critere_de(LABEL_NOSOLOGIQUE=choc_septique).",
+      "R2_delai_ATB_mortalite": "EVENEMENT_TEMPOREL(type=premiere_dose_antibiotique, delai_depuis_admission_minutes > 60) -> evenement_associe_evolution(EVOLUTION_PRONOSTIC, risque=eleve)",
+      "R3_qsofa_critere_frequence_respiratoire": "SIGNE_VITAL(type=frequence_respiratoire, valeur >= 22) -> SCORE_qSOFA.critere_frequence_respiratoire = true",
+      "R4_qsofa_critere_pression_arterielle": "SIGNE_VITAL(type=pression_arterielle_systolique, valeur <= 100) -> SCORE_qSOFA.critere_pression_arterielle_systolique = true",
+      "R5_indication_corticoides": "LABEL_NOSOLOGIQUE = choc_septique_refractaire -> traitement_indique_par_label_nosologique(TRAITEMENT=corticoides)",
+      "R7_contexte_acquisition_risque_BMR": "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true OU voyage recent a l'etranger dans un pays a forte prevalence de BMR) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR).",
+      "R8_IMAGERIE_PROCEDURE": "Une relation d'imagerie est creee uniquement si l'examen et l'entite cible sont presents dans le document. Aucune inference n'est autorisee.",
+      "R9_SYMPTOME": "Une relation presente_symptome est créée uniquement si le symptôme est explicitement mentionné dans le document. Aucune inférence diagnostique n'est autorisée à partir d'un symptôme seul.",
+      "R10_stade_IRA": "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine).",
+      "R11_site_infection_pathogene": "Le site d'infection ne se deduit jamais de l'espece du pathogene : un pneumocoque (Streptococcus pneumoniae, synonymes : pneumocoque, S. pneumoniae) n'est pas uniquement pulmonaire (meninges, sang, oreille, sinus...). micro_organisme_infecte_site n'est cree que si le document nomme explicitement le site infecte.",
+      "R4bis_qsofa_critere_neurologique": "Existence d'une confusion ou d'un score de Glasgow < 15 -> SCORE_qSOFA.critere_alteration_etat_mental = true."
+    },
+    "regles_generales_annotation": {
+      "R1_ancrage_textuel": "Toute entite doit correspondre a une expression explicitement presente dans le document. Aucune entite Gold ne doit etre creee uniquement par connaissance medicale externe.",
+      "R2_surface_originale": "Toujours conserver la surface textuelle originale et les offsets. La normalisation est stockee separement et ne remplace jamais la surface.",
+      "R3_normalisation_separee": "Ajouter si necessaire valeur_normalisee ou parametre_normalise sans modifier les offsets.",
+      "R4_wrong_type": "Une expression doit respecter la definition et les valeurs autorisees de sa categorie. Si elle correspond mieux a une autre categorie du schema, elle doit etre retypee.",
+      "R5_negation": "Les informations explicitement niees peuvent etre conservees avec nie=true si elles representent un concept clinique reellement mentionne.",
+      "R6_hypothese_traitement": "Un traitement seulement envisage, discute, propose ou souhaite ne doit pas recevoir traitement_administre_a.",
+      "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations (35 relations).",
+      "R8_inference": "Une relation causalement plausible mais non supportee par le document ne doit pas etre ajoutee au Gold.",
+      "R9_chronique_aigu": "Une pathologie explicitement chronique, placee dans les antecedents ou rapportee a un episode anterieur reste COMORBIDITE_ANTECEDENT et ne devient pas automatiquement DEFAILLANCE_ORGANE ni LABEL_NOSOLOGIQUE.",
+      "R10_baseline": "Une valeur dite de base, habituelle ou anterieure reste un BIOMARQUEUR mais ne doit pas soutenir automatiquement une defaillance aigue.",
+      "R11_synonymes_abreviations": "Lors de l'extraction, les synonymes et les abreviations d'un meme concept doivent etre reconnus (ex. CRP / C.R.P. / proteine C reactive ; IRA / AKI / insuffisance renale aigue ; hemodynamique / cardiovasculaire ; coque / cocci). La surface ecrite est conservee telle quelle et la forme canonique est donnee par normalisation_terminologique (validation medicale).",
+      "R12_episode_actuel": "LABEL_NOSOLOGIQUE decrit uniquement l'episode d'hospitalisation actuel ; tout diagnostic d'un episode anterieur est une COMORBIDITE_ANTECEDENT (validation medicale v2.0).",
+      "R13_rattachement_foyer": "Un FOYER_INFECTIEUX est toujours la localisation d'un diagnostic : il est relie a son LABEL_NOSOLOGIQUE (episode actuel, label_nosologique_a_pour_foyer) ou a sa COMORBIDITE_ANTECEDENT (episode anterieur, comorbidite_a_pour_foyer), jamais directement au patient (validation medicale v2.0)."
+    },
+    "normalisation_terminologique": {
+      "principe": "La surface originale est conservee. La forme canonique sert uniquement a l'harmonisation Gold/MLLM et a l'evaluation.",
+      "SIGNE_VITAL": {
+        "FC": "frequence_cardiaque",
+        "frequence cardiaque": "frequence_cardiaque",
+        "FR": "frequence_respiratoire",
+        "frequence respiratoire": "frequence_respiratoire",
+        "Temp": "temperature_corporelle",
+        "T°": "temperature_corporelle",
+        "temperature": "temperature_corporelle",
+        "SaO2": "SpO2",
+        "SatO2": "SpO2",
+        "SATO2": "SpO2",
+        "saturation O2": "SpO2",
+        "PAM": "pression_arterielle_moyenne",
+        "PAS": "pression_arterielle_systolique",
+        "PAD": "pression_arterielle_diastolique"
+      },
+      "BIOMARQUEUR": {
+        "CRP": "proteine_C_reactive",
+        "C.R.P.": "proteine_C_reactive",
+        "PCT": "procalcitonine",
+        "Procalciton.": "procalcitonine",
+        "creat": "creatinine",
+        "creatininemie": "creatinine",
+        "GB": "globules_blancs",
+        "leucocytes": "globules_blancs",
+        "PNN": "polynucleaires_neutrophiles",
+        "Hb": "hemoglobine",
+        "Hte": "hematocrite",
+        "PLQ": "plaquettes",
+        "Bili totale": "bilirubine_totale",
+        "Bili conjuguée": "bilirubine_conjuguee",
+        "Bili conjuguee": "bilirubine_conjuguee",
+        "G.G.T.": "gamma_GT",
+        "CPK": "CPK",
+        "pCO2": "PaCO2",
+        "pO2": "PaO2",
+        "HCO3": "bicarbonates",
+        "AKI": "IRA"
+      },
+      "IMAGERIE_PROCEDURE": {
+        "scanner": "TDM",
+        "TDM": "TDM",
+        "tomodensitometrie": "TDM",
+        "ETT": "echocardiographie",
+        "radio thorax": "radiographie",
+        "radiographie pulmonaire": "radiographie",
+        "PdP": "PDP",
+        "hémocultures": "hemoculture",
+        "hemocultures": "hemoculture",
+        "echographie cardiaque": "echocardiographie",
+        "echocardiographie": "echocardiographie",
+        "echographie trans-thoracique": "echocardiographie"
+      },
+      "SERVICE_MEDICAL": {
+        "rea": "reanimation",
+        "reanimation": "reanimation",
+        "post reanimation": "post_reanimation",
+        "SSR": "SSR",
+        "USIC": "USIC"
+      },
+      "SYMPTOME": {
+        "fievre": "fievre",
+        "dyspnee": "dyspnee",
+        "tachypnee": "polypnee",
+        "desaturation": "desaturation",
+        "fausse route": "fausse_route",
+        "fausses routes": "fausse_route",
+        "troubles de la deglutition": "trouble_deglutition",
+        "alteration de l'etat general": "alteration_etat_general",
+        "fièvre": "fievre",
+        "dyspnée": "dyspnee",
+        "désaturation": "desaturation"
+      },
+      "DEFAILLANCE_ORGANE": {
+        "hemodynamique": "cardiovasculaire"
+      },
+      "MICRO_ORGANISME": {
+        "coque": "cocci",
+        "coques": "cocci",
+        "BHRE": "bacterie_hautement_resistante_emergente",
+        "pneumocoque": "Streptococcus_pneumoniae",
+        "S. pneumoniae": "Streptococcus_pneumoniae",
+        "streptococcus pneumoniae": "Streptococcus_pneumoniae"
+      },
+      "LABEL_NOSOLOGIQUE": {
+        "bronchopneumonie": "pneumopathie",
+        "broncho-pneumopathie": "pneumopathie",
+        "pneumopathie infectieuse": "pneumopathie",
+        "pneumopathie acquise sous ventilation": "PAVM",
+        "pneumopathie acquise sous ventilation mecanique": "PAVM",
+        "pneumopathie d'inhalation": "pneumopathie_inhalation",
+        "inhalation": "pneumopathie_inhalation (si diagnostic)",
+        "pneumopathie nosocomiale": "pneumopathie_nosocomiale",
+        "pneumopathie communautaire": "pneumopathie_communautaire",
+        "PAC": "pneumopathie_communautaire",
+        "abces": "abces",
+        "abcès": "abces",
+        "pyelonephrite": "pyelonephrite",
+        "pyélonéphrite": "pyelonephrite",
+        "PNA": "pyelonephrite",
+        "erysipele": "erysipele",
+        "érysipèle": "erysipele",
+        "sinusite": "sinusite"
+      },
+      "IMAGERIE_PROCEDURE_note": "scanner, TDM et tomodensitometrie sont synonymes ; ETT = echographie cardiaque par voie trans-thoracique ; radiographie peut porter sur differents organes (preciser region_anatomique)."
+    },
+    "regles_de_typage": {
+      "SIGNE_VITAL_vs_SYMPTOME": {
+        "regle": "Une mesure physiologique chiffree utilise SIGNE_VITAL. La manifestation clinique qualitative utilise SYMPTOME.",
+        "exemples": {
+          "FR 30/min": "SIGNE_VITAL",
+          "polypnee": "SYMPTOME",
+          "Temperature 39 C": "SIGNE_VITAL",
+          "fievre": "SYMPTOME",
+          "SaO2 81%": "SIGNE_VITAL",
+          "desaturation": "SYMPTOME"
+        }
+      },
+      "SYMPTOME_vs_DEFAILLANCE_ORGANE": {
+        "regle": "Un symptome ne devient pas automatiquement une defaillance. DEFAILLANCE_ORGANE est reservee aux dysfonctions ou manifestations autorisees.",
+        "exemples": {
+          "dyspnee": "SYMPTOME",
+          "polypnee": "SYMPTOME",
+          "SDRA": "DEFAILLANCE_ORGANE",
+          "IRA": "DEFAILLANCE_ORGANE",
+          "acidose_respiratoire": "DEFAILLANCE_ORGANE",
+          "cytolyse_hepatique": "DEFAILLANCE_ORGANE"
+        }
+      },
+      "BIOMARQUEUR_vs_DEFAILLANCE_ORGANE": {
+        "regle": "La valeur biologique reste BIOMARQUEUR. La DEFAILLANCE_ORGANE ne doit pas etre creee uniquement a partir d'une anomalie biologique si la dysfonction n'est pas explicitement documentee ou autorisee comme manifestation."
+      },
+      "COMORBIDITE_ANTECEDENT_vs_AIGU": {
+        "regle": "Les pathologies chroniques, les antecedents et les diagnostics d'episodes anterieurs restent COMORBIDITE_ANTECEDENT. Une condition aigue de l'episode actuel ne doit pas etre retypee en antecedent."
+      },
+      "TRAITEMENT_reel_vs_envisage": {
+        "regle": "Une intervention discutee ou envisagee peut rester mentionnee comme TRAITEMENT si elle est explicitement identifiee, mais aucune relation traitement_administre_a ne doit etre creee tant que sa realisation n'est pas explicitement documentee."
+      },
+      "LABEL_NOSOLOGIQUE": {
+        "regle": "Respecter strictement la liste valeurs_autorisees. Ne pas inventer une valeur hors liste (les diagnostics hors sepsis retires en v1.7, ex. ACFA, AVC, SIADH, ne sont plus des LABEL_NOSOLOGIQUE)."
+      },
+      "LABEL_NOSOLOGIQUE_episode_actuel_vs_COMORBIDITE_ANTECEDENT": {
+        "regle": "LABEL_NOSOLOGIQUE est reserve aux diagnostics de l'hospitalisation en cours. Un diagnostic rapporte a un episode anterieur (section antecedents, date anterieure, 'antecedent de', 'ATCD de', 'deja hospitalise pour') est une COMORBIDITE_ANTECEDENT, meme s'il s'agit d'un diagnostic infectieux de la liste LABEL_NOSOLOGIQUE.",
+        "exemples": {
+          "choc septique a point de depart urinaire (motif d'hospitalisation)": "LABEL_NOSOLOGIQUE 'choc septique' + FOYER_INFECTIEUX 'point de depart urinaire', relies par label_nosologique_a_pour_foyer",
+          "antecedent de pneumopathie en 2012": "COMORBIDITE_ANTECEDENT 'pneumopathie' (type_antecedent infectieux)",
+          "ATCD de pyelonephrite droite": "COMORBIDITE_ANTECEDENT 'pyelonephrite' + FOYER_INFECTIEUX 'droite', relies par comorbidite_a_pour_foyer",
+          "hospitalise en 2010 pour choc septique": "COMORBIDITE_ANTECEDENT 'choc septique'",
+          "pneumopathie nosocomiale (episode actuel)": "LABEL_NOSOLOGIQUE pneumopathie_nosocomiale"
+        }
+      },
+      "LABEL_NOSOLOGIQUE_vs_FOYER_INFECTIEUX": {
+        "regle": "Un diagnostic infectieux (pneumopathie, abces, pyelonephrite, erysipele, sinusite) est un LABEL_NOSOLOGIQUE ; FOYER_INFECTIEUX ne represente que la localisation. Une mention recoit un seul type : si le texte donne le diagnostic ET la localisation, on cree deux entites, chacune sur sa propre surface. Aucun FOYER n'est cree si aucune localisation n'est ecrite (pas de FOYER 'pulmonaire' deduit du mot pneumopathie).",
+        "exemples": {
+          "pneumopathie": "LABEL_NOSOLOGIQUE pneumopathie",
+          "pneumonie": "LABEL_NOSOLOGIQUE pneumonie",
+          "pneumopathie nosocomiale": "LABEL_NOSOLOGIQUE pneumopathie_nosocomiale",
+          "pneumopathie d'inhalation": "LABEL_NOSOLOGIQUE pneumopathie_inhalation",
+          "pneumopathie communautaire": "LABEL_NOSOLOGIQUE pneumopathie_communautaire",
+          "PAVM / pneumopathie acquise sous ventilation": "LABEL_NOSOLOGIQUE PAVM",
+          "pneumopathie des lobes inferieur et moyen droits": "LABEL_NOSOLOGIQUE 'pneumopathie' + FOYER_INFECTIEUX 'lobes inferieur et moyen droits' (pulmonaire)",
+          "choc septique a point de depart pulmonaire": "LABEL_NOSOLOGIQUE 'choc septique' + FOYER_INFECTIEUX 'point de depart pulmonaire', relies par label_nosologique_a_pour_foyer",
+          "foyer pulmonaire": "FOYER_INFECTIEUX (pulmonaire)",
+          "abces pulmonaire": "LABEL_NOSOLOGIQUE 'abces' + FOYER_INFECTIEUX 'pulmonaire'",
+          "pyelonephrite droite": "LABEL_NOSOLOGIQUE 'pyelonephrite' + FOYER_INFECTIEUX 'droite' (renal)",
+          "erysipele du membre inferieur gauche": "LABEL_NOSOLOGIQUE 'erysipele' + FOYER_INFECTIEUX 'membre inferieur gauche'",
+          "sinusite maxillaire": "LABEL_NOSOLOGIQUE 'sinusite' + FOYER_INFECTIEUX 'maxillaire' (sinus)"
+        },
+        "relations": {
+          "patient -> pneumopathie": "a_pour_label_nosologique (DONNEE_PATIENT -> LABEL_NOSOLOGIQUE)",
+          "diagnostic (episode actuel) -> localisation": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
+          "antecedent (episode anterieur) -> localisation": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
+          "germe -> localisation": "micro_organisme_isole_dans (MICRO_ORGANISME -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
+          "imagerie -> localisation": "imagerie_objective_foyer (IMAGERIE_PROCEDURE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite"
+        }
+      }
+    },
+    "validation_relations": {
+      "signature_lock": true,
+      "description": "Les 35 signatures de signatures_relations doivent etre utilisees telles quelles.",
+      "regles": [
+        "Verifier domaine et image avant toute validation semantique.",
+        "Une relation avec signature invalide est rejetee comme WRONG_TYPE_RELATION.",
+        "Les regles de normalisation ne modifient jamais les signatures.",
+        "micro_organisme_isole_dans conserve MICRO_ORGANISME -> FOYER_INFECTIEUX.",
+        "biomarqueur_est_critere_de conserve BIOMARQUEUR -> LABEL_NOSOLOGIQUE.",
+        "ira_a_pour_stade relie DEFAILLANCE_ORGANE (IRA) -> STADE_IRA.",
+        "micro_organisme_infecte_site relie MICRO_ORGANISME -> FOYER_INFECTIEUX (site infecte), distinct de micro_organisme_isole_dans (site de prelevement).",
+        "label_nosologique_a_pour_foyer relie LABEL_NOSOLOGIQUE (episode actuel) -> FOYER_INFECTIEUX.",
+        "comorbidite_a_pour_foyer relie COMORBIDITE_ANTECEDENT (episode anterieur) -> FOYER_INFECTIEUX.",
+        "Aucune relation ne relie directement DONNEE_PATIENT a FOYER_INFECTIEUX (presente_suspicion_infection retiree en v2.0)."
+      ]
+    },
+    "politique_annotation_finale": {
+      "R1": "Appliquer les definitions, vocabulaires, attributs et regles de typage TRACE-Sepsis v2.0.",
+      "R2": "Conserver la surface textuelle originale et les offsets ; la normalisation reste separee.",
+      "R3": "Ne creer aucune entite ou relation uniquement par connaissance medicale externe.",
+      "R4": "Pour chaque relation, valider strictement domaine et image selon signatures_relations.",
+      "R5": "Une relation dont le domaine ou l'image ne correspond pas a la signature est rejetee.",
+      "R6": "Ne pas modifier le sens d'une relation pour la rendre valide.",
+      "R7": "Ne pas creer de nouvelle relation hors des 35 relations autorisees.",
+      "R8": "Les regles de typage et de normalisation ne modifient jamais les signatures relationnelles.",
+      "R9": "Reconnaitre les synonymes et abreviations (voir normalisation_terminologique) ; prendre les donnees patient a l'admission."
+    },
+    "compatibilite": {
+      "nombre_relations": 35,
+      "depuis_v1.7": {
+        "relations_ajoutees": [
+          "label_nosologique_a_pour_foyer",
+          "comorbidite_a_pour_foyer"
+        ],
+        "relations_retirees": [
+          "presente_suspicion_infection"
+        ],
+        "entites_modifiees": [
+          "LABEL_NOSOLOGIQUE (episode actuel uniquement)",
+          "COMORBIDITE_ANTECEDENT (inclut les episodes anterieurs)",
+          "FOYER_INFECTIEUX (toujours rattache a un diagnostic)"
+        ]
+      },
+      "depuis_v1.6": {
+        "relations_ajoutees": [
+          "ira_a_pour_stade",
+          "micro_organisme_infecte_site",
+          "symptome_oriente_foyer",
+          "symptome_associe_gravite_initiale"
+        ],
+        "relations_retirees": [
+          "imagerie_objective_defaillance",
+          "imagerie_objective_comorbidite"
+        ]
+      }
+    },
+    "principes_semantiques": {
+      "periode_des_dossiers": "Les dossiers datent de 2008-2015 : ils emploient souvent la terminologie et les seuils de Sepsis-2 (sepsis, sepsis severe, choc septique, criteres SIRS), anterieurs a Sepsis-3 (2016). L'annotation conserve la terminologie ecrite (ex. 'sepsis severe' reste sepsis_severe) ; l'interpretation de la gravite tient compte de la definition en vigueur a l'epoque."
+    }
+  }
+}

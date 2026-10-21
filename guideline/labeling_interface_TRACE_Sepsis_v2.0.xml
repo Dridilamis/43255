@@ -1,0 +1,101 @@
+<View>
+  <!-- TRACE-Sepsis v2.0 : 20 types d'entites, 35 relations -->
+  <Header value="$document — page $page"/>
+  <Text name="text" value="$text"/>
+
+  <Labels name="label" toName="text">
+
+    <Label value="DONNEE_PATIENT" background="#EC407A"/>
+    <Label value="LABEL_NOSOLOGIQUE" background="#E53B37"/>
+    <Label value="SIGNE_VITAL" background="#48A8F5"/>
+    <Label value="BIOMARQUEUR" background="#00ACC1"/>
+
+    <Label value="SCORE_SOFA" background="#FF7043"/>
+    <Label value="SCORE_qSOFA" background="#FFB74E"/>
+    <Label value="SCORE_NEUROLOGIQUE" background="#8E24AA"/>
+    <Label value="STADE_IRA" background="#AD4BBD"/>
+
+    <Label value="FOYER_INFECTIEUX" background="#2E7D32"/>
+    <Label value="MICRO_ORGANISME" background="#66BB6A"/>
+    <Label value="DEFAILLANCE_ORGANE" background="#8F0808"/>
+
+    <Label value="TRAITEMENT" background="#3949AB"/>
+    <Label value="POSOLOGIE" background="#FFD551"/>
+    <Label value="CONTEXTE_ACQUISITION" background="#455A64"/>
+
+    <Label value="COMORBIDITE_ANTECEDENT" background="#6D4C41"/>
+    <Label value="EVENEMENT_TEMPOREL" background="#9E9E9E"/>
+
+    <Label value="EVOLUTION_PRONOSTIC" background="#212121"/>
+    <Label value="SERVICE_MEDICAL" background="#28A79B"/>
+    <Label value="IMAGERIE_PROCEDURE" background="#00897B"/>
+
+    <Label value="SYMPTOME" background="#2B68F5"/>
+
+  </Labels>
+
+
+  <!-- ========================= -->
+  <!--          RELATIONS         -->
+  <!-- ========================= -->
+
+  <Relations>
+
+    <!-- ===== Diagnostic ===== -->
+    <Relation value="a_pour_label_nosologique"/>                          <!-- DONNEE_PATIENT -> LABEL_NOSOLOGIQUE (episode actuel) -->
+    <Relation value="label_nosologique_a_pour_foyer"/>                    <!-- LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX (localisation du diagnostic actuel) -->
+    <Relation value="presente_dysfonction_organe"/>                       <!-- DONNEE_PATIENT -> DEFAILLANCE_ORGANE -->
+
+    <!-- ===== SOFA ===== -->
+    <Relation value="score_sofa_calcule_pour"/>                           <!-- SCORE_SOFA -> DONNEE_PATIENT -->
+    <Relation value="score_sofa_inclut_biomarqueur"/>                     <!-- SCORE_SOFA -> BIOMARQUEUR -->
+    <Relation value="score_sofa_inclut_signe_vital"/>                     <!-- SCORE_SOFA -> SIGNE_VITAL -->
+    <Relation value="score_sofa_inclut_score_neurologique"/>              <!-- SCORE_SOFA -> SCORE_NEUROLOGIQUE -->
+
+    <!-- ===== qSOFA ===== -->
+    <Relation value="score_qsofa_calcule_pour"/>                          <!-- SCORE_qSOFA -> DONNEE_PATIENT -->
+    <Relation value="score_qsofa_inclut_score_neurologique"/>             <!-- SCORE_qSOFA -> SCORE_NEUROLOGIQUE -->
+
+    <!-- ===== IRA ===== -->
+    <Relation value="stade_ira_calcule_pour"/>                            <!-- STADE_IRA -> DONNEE_PATIENT -->
+    <Relation value="ira_a_pour_stade"/>                                  <!-- DEFAILLANCE_ORGANE (IRA) -> STADE_IRA -->
+
+    <!-- ===== Traitement ===== -->
+    <Relation value="traitement_administre_a"/>                           <!-- TRAITEMENT -> DONNEE_PATIENT -->
+    <Relation value="traitement_a_pour_posologie"/>                       <!-- TRAITEMENT -> POSOLOGIE -->
+    <Relation value="antibiotique_adequat_pour"/>                         <!-- TRAITEMENT -> MICRO_ORGANISME -->
+    <Relation value="antibiotique_inadequat_pour"/>                       <!-- TRAITEMENT -> MICRO_ORGANISME -->
+    <Relation value="traitement_cible_defaillance"/>                      <!-- TRAITEMENT -> DEFAILLANCE_ORGANE -->
+    <Relation value="traitement_indique_par_label_nosologique"/>          <!-- TRAITEMENT -> LABEL_NOSOLOGIQUE -->
+
+    <!-- ===== Biologie et microbiologie ===== -->
+    <Relation value="biomarqueur_obtenu_a"/>                              <!-- BIOMARQUEUR -> EVENEMENT_TEMPOREL -->
+    <Relation value="biomarqueur_supporte_defaillance_organe"/>           <!-- BIOMARQUEUR -> DEFAILLANCE_ORGANE -->
+    <Relation value="signe_vital_supporte_defaillance_organe"/>           <!-- SIGNE_VITAL -> DEFAILLANCE_ORGANE -->
+    <Relation value="biomarqueur_est_critere_de"/>                        <!-- BIOMARQUEUR -> LABEL_NOSOLOGIQUE -->
+    <Relation value="micro_organisme_isole_dans"/>                        <!-- MICRO_ORGANISME -> FOYER_INFECTIEUX (site de prelevement) -->
+    <Relation value="micro_organisme_infecte_site"/>                      <!-- MICRO_ORGANISME -> FOYER_INFECTIEUX (site infecte) -->
+
+    <!-- ===== Terrain / Contexte ===== -->
+    <Relation value="comorbidite_est_facteur_risque_de"/>                 <!-- COMORBIDITE_ANTECEDENT -> LABEL_NOSOLOGIQUE -->
+    <Relation value="comorbidite_a_pour_foyer"/>                          <!-- COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX (localisation d'un episode anterieur) -->
+    <Relation value="a_pour_contexte_acquisition"/>                       <!-- COMORBIDITE_ANTECEDENT -> CONTEXTE_ACQUISITION -->
+    <Relation value="contexte_acquisition_influence_risque_resistance"/>  <!-- CONTEXTE_ACQUISITION -> MICRO_ORGANISME -->
+
+    <!-- ===== Temporel et pronostic ===== -->
+    <Relation value="precede"/>                                           <!-- EVENEMENT_TEMPOREL -> EVENEMENT_TEMPOREL -->
+    <Relation value="patient_a_pour_evolution"/>                          <!-- DONNEE_PATIENT -> EVOLUTION_PRONOSTIC -->
+    <Relation value="evenement_associe_evolution"/>                       <!-- EVENEMENT_TEMPOREL -> EVOLUTION_PRONOSTIC -->
+    <Relation value="service_medical_accueille"/>                         <!-- SERVICE_MEDICAL -> DONNEE_PATIENT -->
+
+    <!-- ===== Imagerie ===== -->
+    <Relation value="imagerie_objective_foyer"/>                          <!-- IMAGERIE_PROCEDURE -> FOYER_INFECTIEUX -->
+
+    <!-- ===== Symptome ===== -->
+    <Relation value="presente_symptome"/>                                 <!-- DONNEE_PATIENT -> SYMPTOME -->
+    <Relation value="symptome_oriente_foyer"/>                            <!-- SYMPTOME -> FOYER_INFECTIEUX -->
+    <Relation value="symptome_associe_gravite_initiale"/>                 <!-- SYMPTOME -> SCORE_SOFA -->
+
+  </Relations>
+
+</View>
