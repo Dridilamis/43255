@@ -414,7 +414,7 @@
         ]
       },
       "FOYER_INFECTIEUX": {
-        "description": "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation, toujours celle d'un diagnostic : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE. La localisation d'un LABEL_NOSOLOGIQUE lui est reliee par label_nosologique_a_pour_foyer ; celle d'une COMORBIDITE_ANTECEDENT lui est reliee par comorbidite_a_pour_foyer.",
+        "description": "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation, toujours celle d'un diagnostic : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE. FOYER_INFECTIEUX est RESERVE a la localisation d'un LABEL_NOSOLOGIQUE, auquel il est relie par label_nosologique_a_pour_foyer ; la localisation d'une COMORBIDITE_ANTECEDENT n'est pas un FOYER_INFECTIEUX.",
         "localisations": [
           "pulmonaire",
           "voies_urinaires",
@@ -461,7 +461,7 @@
         },
         "rattachement": {
           "localisation_d_un_label": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX)",
-          "localisation_d_une_comorbidite": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX)",
+          "localisation_d_une_comorbidite": "non annotee comme FOYER_INFECTIEUX",
           "sans_diagnostic_ecrit": "Si aucun diagnostic auquel rattacher la localisation n'est ecrit dans le document, le FOYER_INFECTIEUX est annote sans relation de rattachement (aucune inference)."
         }
       },
@@ -788,7 +788,7 @@
         },
         "notes_episode_anterieur": {
           "regle": "Tout antecedent ou diagnostic d'un episode precedent est une COMORBIDITE_ANTECEDENT, SAUF s'il figure dans la liste valeurs_autorisees de LABEL_NOSOLOGIQUE (il reste alors LABEL_NOSOLOGIQUE).",
-          "localisation": "Si la localisation d'une COMORBIDITE_ANTECEDENT est ecrite, elle est une entite FOYER_INFECTIEUX reliee a la comorbidite par comorbidite_a_pour_foyer."
+          "localisation": "La localisation d'une COMORBIDITE_ANTECEDENT n'est pas annotee comme FOYER_INFECTIEUX : FOYER_INFECTIEUX est reserve a la localisation d'un LABEL_NOSOLOGIQUE."
         }
       },
       "EVENEMENT_TEMPOREL": {
@@ -1132,11 +1132,6 @@
           "domaine": "CONTEXTE_ACQUISITION",
           "image": "MICRO_ORGANISME",
           "description": "Relation generique remplacant contexte_acquisition_augmente_risque_BMR. Le niveau de risque specifique (ex. BMR) est porte par regles_derivees.R7, pas par le nom de la relation."
-        },
-        "comorbidite_a_pour_foyer": {
-          "domaine": "COMORBIDITE_ANTECEDENT",
-          "image": "FOYER_INFECTIEUX",
-          "description": "Relie une COMORBIDITE_ANTECEDENT a sa localisation, si elle est ecrite (ex. 'ATCD de tuberculose pulmonaire' -> 'pulmonaire')."
         }
       },
       "RELATIONS_TEMPORELLES_ET_PRONOSTIC": {
@@ -1307,11 +1302,6 @@
         "image": "CONTEXTE_ACQUISITION",
         "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
       },
-      "comorbidite_a_pour_foyer": {
-        "domaine": "COMORBIDITE_ANTECEDENT",
-        "image": "FOYER_INFECTIEUX",
-        "groupe": "RELATIONS_TERRAIN_ET_RISQUE"
-      },
       "contexte_acquisition_influence_risque_resistance": {
         "domaine": "CONTEXTE_ACQUISITION",
         "image": "MICRO_ORGANISME",
@@ -1384,13 +1374,13 @@
       "R4_wrong_type": "Une expression doit respecter la definition et les valeurs autorisees de sa categorie. Si elle correspond mieux a une autre categorie du schema, elle doit etre retypee.",
       "R5_negation": "Les informations explicitement niees peuvent etre conservees avec nie=true si elles representent un concept clinique reellement mentionne.",
       "R6_hypothese_traitement": "Un traitement seulement envisage, discute, propose ou souhaite ne doit pas recevoir traitement_administre_a.",
-      "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations (35 relations).",
+      "R7_relations": "Les relations doivent respecter strictement les signatures domaine/image de signatures_relations (34 relations).",
       "R8_inference": "Une relation causalement plausible mais non supportee par le document ne doit pas etre ajoutee au Gold.",
       "R9_chronique_aigu": "Une pathologie explicitement chronique ou placee dans les antecedents reste COMORBIDITE_ANTECEDENT (sauf diagnostic de la liste LABEL_NOSOLOGIQUE) et ne devient pas automatiquement DEFAILLANCE_ORGANE.",
       "R10_baseline": "Une valeur dite de base, habituelle ou anterieure reste un BIOMARQUEUR mais ne doit pas soutenir automatiquement une defaillance aigue.",
       "R11_synonymes_abreviations": "Lors de l'extraction, les synonymes et les abreviations d'un meme concept doivent etre reconnus (ex. CRP / C.R.P. / proteine C reactive ; IRA / AKI / insuffisance renale aigue ; hemodynamique / cardiovasculaire ; coque / cocci). La surface ecrite est conservee telle quelle et la forme canonique est donnee par normalisation_terminologique (validation medicale).",
       "R12_label_vs_comorbidite": "Un diagnostic de la liste LABEL_NOSOLOGIQUE reste LABEL_NOSOLOGIQUE quel que soit l'episode ; tout autre antecedent est une COMORBIDITE_ANTECEDENT (validation medicale v2.0).",
-      "R13_rattachement_foyer": "Un FOYER_INFECTIEUX est toujours la localisation d'un diagnostic : il est relie a son LABEL_NOSOLOGIQUE (label_nosologique_a_pour_foyer) ou a sa COMORBIDITE_ANTECEDENT (comorbidite_a_pour_foyer), jamais directement au patient (validation medicale v2.0)."
+      "R13_rattachement_foyer": "FOYER_INFECTIEUX est reserve a la localisation d'un LABEL_NOSOLOGIQUE, auquel il est relie par label_nosologique_a_pour_foyer ; il n'est jamais relie directement au patient et la localisation d'une COMORBIDITE_ANTECEDENT n'est pas un FOYER_INFECTIEUX (validation medicale v2.0)."
     },
     "normalisation_terminologique": {
       "principe": "La surface originale est conservee. La forme canonique sert uniquement a l'harmonisation Gold/MLLM et a l'evaluation.",
@@ -1542,7 +1532,7 @@
           "antecedent de pneumopathie en 2012": "LABEL_NOSOLOGIQUE 'pneumopathie'",
           "ATCD de pyelonephrite droite": "LABEL_NOSOLOGIQUE 'pyelonephrite' + FOYER_INFECTIEUX 'droite', relies par label_nosologique_a_pour_foyer",
           "diabete de type 2": "COMORBIDITE_ANTECEDENT (endocrinien)",
-          "ATCD de tuberculose pulmonaire": "COMORBIDITE_ANTECEDENT 'tuberculose' (infectieux) + FOYER_INFECTIEUX 'pulmonaire', relies par comorbidite_a_pour_foyer"
+          "ATCD de tuberculose pulmonaire": "COMORBIDITE_ANTECEDENT 'tuberculose' (infectieux) ; pas de FOYER_INFECTIEUX (reserve aux LABEL_NOSOLOGIQUE)"
         }
       },
       "LABEL_NOSOLOGIQUE_vs_FOYER_INFECTIEUX": {
@@ -1565,7 +1555,6 @@
         "relations": {
           "patient -> pneumopathie": "a_pour_label_nosologique (DONNEE_PATIENT -> LABEL_NOSOLOGIQUE)",
           "diagnostic -> localisation": "label_nosologique_a_pour_foyer (LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
-          "comorbidite -> localisation": "comorbidite_a_pour_foyer (COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
           "germe -> localisation": "micro_organisme_isole_dans (MICRO_ORGANISME -> FOYER_INFECTIEUX), seulement si une localisation est ecrite",
           "imagerie -> localisation": "imagerie_objective_foyer (IMAGERIE_PROCEDURE -> FOYER_INFECTIEUX), seulement si une localisation est ecrite"
         }
@@ -1573,7 +1562,7 @@
     },
     "validation_relations": {
       "signature_lock": true,
-      "description": "Les 35 signatures de signatures_relations doivent etre utilisees telles quelles.",
+      "description": "Les 34 signatures de signatures_relations doivent etre utilisees telles quelles.",
       "regles": [
         "Verifier domaine et image avant toute validation semantique.",
         "Une relation avec signature invalide est rejetee comme WRONG_TYPE_RELATION.",
@@ -1583,7 +1572,6 @@
         "ira_a_pour_stade relie DEFAILLANCE_ORGANE (IRA) -> STADE_IRA.",
         "micro_organisme_infecte_site relie MICRO_ORGANISME -> FOYER_INFECTIEUX (site infecte), distinct de micro_organisme_isole_dans (site de prelevement).",
         "label_nosologique_a_pour_foyer relie LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX (localisation du diagnostic).",
-        "comorbidite_a_pour_foyer relie COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX (localisation de l'antecedent).",
         "Aucune relation ne relie directement DONNEE_PATIENT a FOYER_INFECTIEUX (presente_suspicion_infection retiree en v2.0)."
       ]
     },
@@ -1594,16 +1582,15 @@
       "R4": "Pour chaque relation, valider strictement domaine et image selon signatures_relations.",
       "R5": "Une relation dont le domaine ou l'image ne correspond pas a la signature est rejetee.",
       "R6": "Ne pas modifier le sens d'une relation pour la rendre valide.",
-      "R7": "Ne pas creer de nouvelle relation hors des 35 relations autorisees.",
+      "R7": "Ne pas creer de nouvelle relation hors des 34 relations autorisees.",
       "R8": "Les regles de typage et de normalisation ne modifient jamais les signatures relationnelles.",
       "R9": "Reconnaitre les synonymes et abreviations (voir normalisation_terminologique) ; prendre les donnees patient a l'admission."
     },
     "compatibilite": {
-      "nombre_relations": 35,
+      "nombre_relations": 34,
       "depuis_v1.7": {
         "relations_ajoutees": [
-          "label_nosologique_a_pour_foyer",
-          "comorbidite_a_pour_foyer"
+          "label_nosologique_a_pour_foyer"
         ],
         "relations_retirees": [
           "presente_suspicion_infection"
@@ -1611,7 +1598,7 @@
         "entites_modifiees": [
           "LABEL_NOSOLOGIQUE (toujours pour les diagnostics de la liste, quel que soit l'episode)",
           "COMORBIDITE_ANTECEDENT (tout antecedent hors liste LABEL_NOSOLOGIQUE)",
-          "FOYER_INFECTIEUX (toujours rattache a un diagnostic)"
+          "FOYER_INFECTIEUX (reserve a la localisation d'un LABEL_NOSOLOGIQUE)"
         ]
       },
       "depuis_v1.6": {

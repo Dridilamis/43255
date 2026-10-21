@@ -1,5 +1,5 @@
 <View>
-  <!-- TRACE-Sepsis v2.0 : 20 types d'entites, 35 relations -->
+  <!-- TRACE-Sepsis v2.0 : 20 types d'entites, 34 relations -->
   <Header value="$document — page $page"/>
   <Text name="text" value="$text"/>
 
@@ -78,7 +78,6 @@
 
     <!-- ===== Terrain / Contexte ===== -->
     <Relation value="comorbidite_est_facteur_risque_de"/>                 <!-- COMORBIDITE_ANTECEDENT -> LABEL_NOSOLOGIQUE -->
-    <Relation value="comorbidite_a_pour_foyer"/>                          <!-- COMORBIDITE_ANTECEDENT -> FOYER_INFECTIEUX (localisation de l'antecedent) -->
     <Relation value="a_pour_contexte_acquisition"/>                       <!-- COMORBIDITE_ANTECEDENT -> CONTEXTE_ACQUISITION -->
     <Relation value="contexte_acquisition_influence_risque_resistance"/>  <!-- CONTEXTE_ACQUISITION -> MICRO_ORGANISME -->
 
