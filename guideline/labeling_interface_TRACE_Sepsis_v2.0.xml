@@ -1,7 +1,5 @@
 <View>
   <!-- TRACE-Sepsis v2.0 : 20 types d'entites, 34 relations -->
-  <Header value="$document — page $page"/>
-  <Text name="text" value="$text"/>
 
   <Labels name="label" toName="text">
 
@@ -34,16 +32,11 @@
 
   </Labels>
 
-
-  <!-- ========================= -->
-  <!--          RELATIONS         -->
-  <!-- ========================= -->
-
   <Relations>
 
     <!-- ===== Diagnostic ===== -->
     <Relation value="a_pour_label_nosologique"/>                          <!-- DONNEE_PATIENT -> LABEL_NOSOLOGIQUE -->
-    <Relation value="label_nosologique_a_pour_foyer"/>                    <!-- LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX (localisation du diagnostic) -->
+    <Relation value="label_nosologique_a_pour_foyer"/>                    <!-- LABEL_NOSOLOGIQUE -> FOYER_INFECTIEUX (v2.0, remplace presente_suspicion_infection) -->
     <Relation value="presente_dysfonction_organe"/>                       <!-- DONNEE_PATIENT -> DEFAILLANCE_ORGANE -->
 
     <!-- ===== SOFA ===== -->
@@ -96,5 +89,7 @@
     <Relation value="symptome_associe_gravite_initiale"/>                 <!-- SYMPTOME -> SCORE_SOFA -->
 
   </Relations>
+
+  <Text name="text" value="$text"/>
 
 </View>
