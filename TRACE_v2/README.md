@@ -96,12 +96,12 @@ TRACE v2 traite les deux.
 |---|---|---|---|
 | 1 | `etage1_preparation` | Retire les 455 relations guidées par le gold (définition de `run_pipeline_propre.py`, importée), normalise les noms des entités globales (NFKC), attribue les identifiants manquants | relations guidées par le gold |
 | 2 | `etage2_ancrage` | Confronte **entités et relations** au texte source : présence, mot pour mot dans la page, preuve, distance, section | seulement l'impossible : entité absente du document (A0), extrémité absente (A1), preuve absente (A2), entités jamais proches (A3) |
-| 3 | `etage3_ontologie` | Confronte chaque relation aux 32 signatures TRACE-Sepsis v1.6 | non (annote) |
+| 3 | `etage3_conformite_guideline` | Conformité au guideline : confronte chaque relation aux 32 signatures TRACE-Sepsis v1.6 | non (annote) |
 | 4 | `etage4_sgce` | Répare la forme du graphe avec **votre SGCE inchangé** (Patterns A1-A6, B1-B2, C, D, Relation Repair, Orphan Resolution, Multi-Agent), lancé dans un atelier temporaire | ce que SGCE retire |
 | 4b | `etage4b_recuperation` | **Rappel** : ajoute les entités oubliées dans les blocs à forme fixe — lignes de biologie (« Leucocytes 40.8 4.0-10.0 x10*9/L ») et lignes d'ordonnance (« Tahor 10mg 0-0-1 » → traitement + posologie) — et relie le traitement à sa posologie sur la même ligne (B3 : 128 relations, 53 justes). Chaque ajout est copié du texte de sa page | non (ajoute) |
 | 5 | `etage5_dedoublonnage` | Fusionne les entités strictement identiques, retire les relations strictement identiques, annote les répétitions | l'identique |
 | 6 | `etage6_attributs` | Qualifie chaque entité (globale et par page) : unité, temporalité, négation, hypothèse | non (annote) |
-| 7 | `etage7_arbitrage` | **Seul étage qui décide**, pour les entités puis les relations. Agents : ancrage, ontologie, redondance, contexte, provenance | voir ci-dessous |
+| 7 | `etage7_arbitrage` | **Seul étage qui décide**, pour les entités puis les relations. Agents : ancrage, conformité au guideline, redondance, contexte, provenance | voir ci-dessous |
 | 8 | `etage8_evaluation` | **Seul étage qui lit le gold** : P/R/F1 et taux d'hallucination par étage (entités et relations), stabilité pairs/impairs, structure ; entraîne et valide les votes | — |
 
 **Décisions de l'étage 7**

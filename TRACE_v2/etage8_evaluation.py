@@ -45,7 +45,7 @@ from trace_lib.texte import load_source
 STAGES = [
     ("01_preparation", C.STAGE_DIRS[1]),
     ("02_ancrage", C.STAGE_DIRS[2]),
-    ("03_ontologie", C.STAGE_DIRS[3]),
+    ("03_conformite_guideline", C.STAGE_DIRS[3]),
     ("04_sgce", C.STAGE_DIRS[4]),
     ("04b_recuperation", C.STAGE_DIRS["4b"]),
     ("05_dedoublonnage", C.STAGE_DIRS[5]),

@@ -8,7 +8,7 @@ retirer, et donner un niveau de confiance aux relations. C'est le seul etage qui
 Agents (deterministes, sans LLM, sans gold) - chacun lit les annotations des etages 2, 3, 5
 et 6 ou, pour une relation creee par SGCE, appelle le meme service :
   AgentAncrage      preuve, distance entre extremites, section            (Etage 2)
-  AgentOntologie    signature domaine/image                               (Etage 3)
+  AgentConformite   signature domaine/image du guideline                  (Etage 3)
   AgentRedondance   triplet deja vu sous d'autres identifiants            (Etage 5)
   AgentContexte     negation, hypothese, temporalite de l'entite clinique (Etage 6)
   AgentProvenance   extraction directe ou inference structurelle
@@ -48,7 +48,7 @@ import sys
 from collections import Counter
 
 import etage2_ancrage
-import etage3_ontologie
+import etage3_conformite_guideline
 from trace_lib import config as C
 from trace_lib.documents import Graph, trace
 from trace_lib.etage import run_stage
@@ -69,7 +69,7 @@ WEAK = {
 def signals(g, doc, rel):
     t = rel.get("trace_v2", {})
     anc = t.get("ancrage") or etage2_ancrage.assess(g, doc, rel)
-    ont = etage3_ontologie.assess(g, rel)          # recalcule : SGCE a pu relier autrement
+    ont = etage3_conformite_guideline.assess(g, rel)          # recalcule : SGCE a pu relier autrement
     clinical_side = "object" if g.is_patient(*g.endpoint(rel, "subject")) else "subject"
     ent, _ = g.endpoint(rel, clinical_side)
     ti = str(rel.get("type_inference") or "")

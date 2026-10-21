@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-ETAGE 3 - VALIDATION ONTOLOGIQUE
+ETAGE 3 - CONFORMITE AU GUIDELINE
 Seule responsabilite : confronter chaque relation aux signatures TRACE-Sepsis v1.6
 (relation autorisee ? type du sujet = domaine ? type de l'objet = image ?).
 
@@ -35,7 +35,7 @@ def process(path, data):
 
 
 def main(in_dir=None):
-    run_stage(3, "VALIDATION ONTOLOGIQUE", in_dir or C.STAGE_DIRS[2], process,
+    run_stage(3, "CONFORMITE AU GUIDELINE", in_dir or C.STAGE_DIRS[2], process,
               extra_report=lambda: {"signatures": ontologie.source(),
                                     "nombre_signatures": len(ontologie.load_signatures())})
     return 0

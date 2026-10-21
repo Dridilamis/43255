@@ -4,7 +4,7 @@ TRACE v2 - lanceur global. Une responsabilite par etage :
 
   1 Preparation           retire les relations guidees par le gold, normalise
   2 Ancrage documentaire  confronte entites et relations au texte ; retire l'impossible
-  3 Validation ontologie  confronte chaque relation aux signatures v1.6 (annote)
+  3 Conformite guideline confronte chaque relation aux signatures du guideline (annote)
   4 SGCE                  Patterns A-D, Relation Repair, Orphelins, Multi-Agent (code existant)
   4b Recuperation         ajoute les entites oubliees dans la biologie et les ordonnances
   5 Dedoublonnage         fusionne/retire l'identique, annote les repetitions
@@ -27,7 +27,7 @@ import time
 
 import etage1_preparation
 import etage2_ancrage
-import etage3_ontologie
+import etage3_conformite_guideline
 import etage4_sgce
 import etage4b_recuperation
 import etage5_dedoublonnage
@@ -46,7 +46,7 @@ def main():
     steps = [
         (1, lambda: etage1_preparation.main(entree)),
         (2, etage2_ancrage.main),
-        (3, etage3_ontologie.main),
+        (3, etage3_conformite_guideline.main),
         (4, etage4_sgce.main),
         (4.5, etage4b_recuperation.main),
         (5, etage5_dedoublonnage.main),

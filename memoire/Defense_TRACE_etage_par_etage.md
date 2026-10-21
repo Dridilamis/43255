@@ -32,7 +32,7 @@ PDF scanné
   │ 0b Seconde passe et filtre (rappel)
   │ 1  Préparation (nettoyage, identifiants)
   │ 2  Ancrage dans le texte ............ hallucination FACTUELLE
-  │ 3  Ontologie (signatures) ........... hallucination ONTOLOGIQUE
+  │ 3  Conformité au guideline ......... hallucination ONTOLOGIQUE
   │ 4  SGCE (réparation de la forme) .... hallucination STRUCTURELLE
   │ 4b Récupération ciblée (rappel)
   │ 5  Dédoublonnage .................... STRUCTURELLE (doublons)
@@ -141,7 +141,7 @@ biologique ou une posologie.
 
 ---
 
-## Étage 3 — Validation ontologique (hallucination **ontologique**)
+## Étage 3 — Conformité au guideline (hallucination **ontologique**)
 
 **Problème traité.** Une relation **interdite par le schéma** : par exemple, une relation prévue entre un traitement et
 un micro-organisme, mais posée sur un symptôme.

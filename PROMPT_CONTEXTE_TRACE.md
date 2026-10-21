@@ -112,7 +112,7 @@ Tu vas m'aider sur mon mémoire de master. Voici le contexte complet de mon trav
   - **A3** : les deux extrémités ne sont jamais à moins de 300 caractères.
 - Le reste est seulement annoté.
 
-### Étage 3 — Validation ontologique
+### Étage 3 — Conformité au guideline
 - Chaque relation est comparée aux signatures du guideline (34 en v1.7) : conforme, domaine invalide ou image invalide.
 - **Rien n'est retiré** : une violation est un indice. Les vérifications à la main ont montré que c'est le plus souvent le type de l'entité qui est faux, pas le lien.
 
