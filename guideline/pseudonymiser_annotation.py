@@ -14,9 +14,10 @@ Principe : chaque lettre du nom est remplacee par 'X', sans changer la longueur 
 un nom efface est resynchronise. Aucun nom n'est ecrit dans le journal.
 
 Noms recherches, dossier par dossier :
-  En-tete : le champ 'Patient : ...' de la premiere page est CONSERVE tel quel (il est deja
-      partiellement masque, ex. 'Patient : KAU BER') ; ses noms servent seulement a retrouver
-      les autres occurrences ;
+  En-tete : le champ 'Patient : ...' de la premiere page garde sa forme pseudonymisee (3 premieres
+      lettres de chaque nom, ex. 'Patient : KAU BER'). P1 : si un nom y est ecrit en entier (4 lettres
+      ou plus), seules ses 3 premieres lettres sont gardees (ex. 'VINOT' -> 'VINXX'). Les noms de
+      l'en-tete servent aussi a retrouver les autres occurrences ;
   P2  un nom apres une civilite (M., Mr, Mme, Mlle, Monsieur, Madame, Mademoiselle), dans tout le texte ;
   P3  toute autre occurrence, dans tout le dossier, d'un nom trouve en P2, en P4 ou dans l'en-tete
       (mot de 4 lettres ou plus) ;
@@ -98,6 +99,14 @@ def main():
         chars = list(txt)
         touches = []
         entete = [(m.start(2), m.end(2)) for m in ENTETE.finditer(txt)]
+        for a, b in entete:                    # P1 : en-tete, on ne garde que 3 lettres par nom
+            for w in MOT.finditer(txt[a:b]):
+                if len(w.group(0)) >= 4:
+                    c["P1"] += 1
+                    touches.append((a + w.start(), a + w.end(), "P1"))
+                    for i in range(a + w.start() + 3, a + w.end()):
+                        if chars[i].isalpha():
+                            chars[i] = "X"
         for s, e, regle in spans(txt, noms[doc]):
             if any(s < b and a < e for a, b in entete):
                 continue                       # l'en-tete 'Patient : ...' est conserve tel quel
@@ -126,7 +135,7 @@ def main():
         w = csv.writer(fh, delimiter=";")
         w.writerow(("document", "page", "regle", "debut", "fin", "contexte_masque"))
         w.writerows(journal)
-    print(f"Pages : {c['pages']} | effacements (en-tete conserve) : civilite {c['P2']}, autres occurrences {c['P3']}, "
+    print(f"Pages : {c['pages']} | effacements : en-tete (noms complets tronques a 3 lettres) {c['P1']}, civilite {c['P2']}, autres occurrences {c['P3']}, "
           f"proches {c['P4']}, telephones {c['P5']}"
           f" | entites resynchronisees {c['entites_resynchronisees']}")
     print(f"Sortie : {out / name}")
