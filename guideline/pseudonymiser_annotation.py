@@ -23,7 +23,9 @@ Noms recherches, dossier par dossier :
       (mot de 4 lettres ou plus) ;
   P4  le nom d'un proche (frere, soeur, fils, fille, epoux, epouse, mari, femme, pere, mere, tuteur,
       curateur...) ecrit juste apres le lien de parente sous la forme 'NOM Prenom' (ex. 'Frere : NOM Prenom') ;
-  P5  les numeros de telephone (chiffres remplaces par 'X').
+  P5  les numeros de telephone (chiffres remplaces par 'X') ;
+  P6  le nom ecrit dans l'en-tete de page 'CRH reanimation de <Nom Prenom>' (demande du medecin), et ses
+      autres occurrences dans le dossier (via P3).
 """
 import csv
 import json
@@ -41,6 +43,7 @@ PROCHE = re.compile(
     r"(?i:\b(?:fr[eè]re|s(?:oe|œ)ur|fils|fille|[eé]pou(?:x|se)|mari|femme|p[eè]re|m[eè]re|tut(?:eur|rice)|"
     r"curat(?:eur|rice)|compagn(?:e|on)|neveu|ni[eè]ce|personne de confiance))\s*:?\s*"
     r"([A-ZÀ-Ý][A-ZÀ-Ý'’\-]{2,}\s+[A-ZÀ-Ý][a-zà-ÿ'’\-]+)(?![A-Za-zÀ-ÿ])")
+ENTETE_CRH = re.compile(r"(CRH\s+r[ée]animation\s+de\s+)([^\n]+)")
 TELEPHONE = re.compile(r"(?<!\d)0[1-9](?:[ .\-]?\d{2}){4}(?!\d)")
 MOT = re.compile(rf"[{LETTRES}][{LETTRES}'’\-]*")
 
@@ -65,6 +68,10 @@ def noms_du_dossier(pages):
             for w in MOT.findall(m.group(1)):
                 if len(w) >= 3:
                     noms.add(w.lower())
+        for m in ENTETE_CRH.finditer(txt):
+            for w in MOT.findall(m.group(2)):
+                if len(w) >= 3 and w.lower() not in ("xxx", "xxxx"):
+                    noms.add(w.lower())
     return noms
 
 
@@ -76,6 +83,8 @@ def spans(txt, noms):
         out.append((m.start(1), m.end(1), "P4"))
     for m in TELEPHONE.finditer(txt):
         out.append((m.start(), m.end(), "P5"))
+    for m in ENTETE_CRH.finditer(txt):
+        out.append((m.start(2), m.end(2), "P6"))
     for nom in noms:
         for m in re.finditer(rf"(?<![{LETTRES}]){re.escape(nom)}(?![{LETTRES}])(\s*\[\?\])?", txt, re.I):
             out.append((m.start(), m.end(), "P3"))
@@ -136,7 +145,7 @@ def main():
         w.writerow(("document", "page", "regle", "debut", "fin", "contexte_masque"))
         w.writerows(journal)
     print(f"Pages : {c['pages']} | effacements : en-tete (noms complets tronques a 3 lettres) {c['P1']}, civilite {c['P2']}, autres occurrences {c['P3']}, "
-          f"proches {c['P4']}, telephones {c['P5']}"
+          f"proches {c['P4']}, telephones {c['P5']}, en-tete CRH {c['P6']}"
           f" | entites resynchronisees {c['entites_resynchronisees']}")
     print(f"Sortie : {out / name}")
 
