@@ -48,7 +48,7 @@ except Exception:
     pass
 
 ROOT = Path(__file__).resolve().parent
-GUIDELINE = ROOT / "guideline" / "Guideline_TRACE_Sepsis_v2.0.json"
+GUIDELINE = ROOT / "guideline" / "Guideline_TRACE_Sepsis_v2.0_valide_medecin.json"
 EXTRACTION = ROOT / "extraction_mistral" / "extraction_v1_7.py"
 CONVERTIR = ROOT / "guideline" / "convertir_gold_labelstudio.py"
 EXTRAIT = ROOT / "extraction_mistral" / "extraction_v2_0"
