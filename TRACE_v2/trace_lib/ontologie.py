@@ -5,6 +5,7 @@ Service ONTOLOGIE (unique) : signatures TRACE-Sepsis v1.6 (relation -> domaine, 
 Source : Guideline_TRACE_Sepsis_v1.6.json si le fichier est present (meme emplacement que
 pour SGCE), sinon la copie figee `ontologie_signatures_v1.6.json`, extraite du rapport
 Pattern B2 de SGCE (32 signatures, identiques au guideline).
+Si TRACE_GUIDELINE designe un guideline (ex. v2.0), ses `signatures_relations` sont utilisees.
 """
 import json
 
@@ -17,7 +18,14 @@ def load_signatures():
     if "sig" in _CACHE:
         return _CACHE["sig"]
     sig, source = None, None
-    for path in C.GUIDELINE_CANDIDATES:
+    if C.GUIDELINE_TRACE and C.GUIDELINE_TRACE.exists():
+        root = json.loads(C.GUIDELINE_TRACE.read_text(encoding="utf-8-sig"))
+        root = root.get("ontologie_sepsis_graph", root)
+        sig = {k: {"domaine": v["domaine"], "image": v["image"]}
+               for k, v in root.get("signatures_relations", {}).items()
+               if isinstance(v, dict) and v.get("domaine") and v.get("image")}
+        source = str(C.GUIDELINE_TRACE)
+    for path in ([] if sig else C.GUIDELINE_CANDIDATES):
         if path.exists():
             data = json.loads(path.read_text(encoding="utf-8-sig"))
             root = data.get("ontologie_sepsis_graph", data)

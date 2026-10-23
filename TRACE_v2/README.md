@@ -19,6 +19,26 @@ python run_trace_v2.py --garder 80 --garder-entites 80   # mode précision (déf
 
 Chaque étage se lance aussi seul (`python etage2_ancrage.py`, etc.).
 
+## Lancer en v2.0 (extraction + étages 1 à 8, gold v2.0)
+
+Depuis `Reduction_hallucinations` :
+
+```
+python lancer_trace_v2_0.py --gold-labelstudio "C:\...\Annotation_49_Pdfs_v2.0_FINALE_medecin_v4_LabelStudio.json" --essai
+python lancer_trace_v2_0.py
+```
+
+1. convertit le gold Label Studio v2.0 (`guideline/convertir_gold_labelstudio.py`) dans `gold_v2_0` ;
+2. extrait les PDF avec Mistral Small 4 et des prompts construits à partir du guideline v2.0
+   (`extraction_mistral/extraction_v1_7.py --guideline ...v2.0.json`, sortie `extraction_mistral/extraction_v2_0`) ;
+3. lance TRACE v2 (étages 1 à 8) sur cette extraction, avec les signatures v2.0 aux étages 3 et 7,
+   le gold v2.0 à l'étage 8 et le réentraînement des votes ; sorties dans `TRACE_v2/sorties_v2_0`.
+
+Options utiles : `--pdfs DOSSIER`, `--docs N`, `--sans-extraction`, `--from 4b`, `--pause 5`.
+Les chemins sont passés par les variables `TRACE_ENTREE`, `TRACE_TEXTES`, `TRACE_GOLD`,
+`TRACE_GUIDELINE`, `TRACE_SORTIES` ; sans elles, la configuration d'origine est inchangée.
+SGCE (étage 4) n'est pas modifié et garde ses signatures v1.6.
+
 ## Étage 0b — seconde passe Mistral (rappel)
 
 `extraction_mistral/seconde_passe_mistral.py` redemande à Mistral, page par page, les

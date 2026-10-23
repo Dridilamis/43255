@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-TRACE - EXTRACTION MISTRAL SMALL 4 SELON LE GUIDELINE TRACE-Sepsis v1.7
+TRACE - EXTRACTION MISTRAL SMALL 4 SELON LE GUIDELINE TRACE-Sepsis (v2.0 par defaut)
 
 Nouvelle extraction des dossiers (PDF scannes), page par page :
   1. la page est convertie en image (500 dpi) et lue par Mistral (lecture visuelle directe) ;
-  2. Mistral extrait les entites, avec un prompt construit A PARTIR DU GUIDELINE v1.7
+  2. Mistral extrait les entites, avec un prompt construit A PARTIR DU GUIDELINE
      (types, valeurs autorisees, regles de typage, synonymes) ;
-  3. Mistral extrait les relations parmi les 34 signatures v1.7 ;
+  3. Mistral extrait les relations parmi les signatures du guideline (34) ;
   4. validation deterministe, fondee uniquement sur le guideline et le texte de la page :
      entite retrouvee mot pour mot dans le texte, type autorise, signature de relation valide.
 
@@ -18,6 +18,7 @@ Usage (depuis Reduction_hallucinations) :
     python extraction_mistral\\extraction_v1_7.py --essai                 # 1 dossier, pour verifier
     python extraction_mistral\\extraction_v1_7.py                         # tous les PDF du dossier
     python extraction_mistral\\extraction_v1_7.py --pdfs "C:\\...\\mes_pdfs" --pause 3
+    python extraction_mistral\\extraction_v1_7.py --guideline guideline\\Guideline_TRACE_Sepsis_v1.7.json
 
 La cle API est lue dans MISTRAL_API_KEY, sinon demandee au clavier (jamais ecrite sur disque).
 Toutes les reponses de Mistral sont mises en cache : une relance ne repaie pas les appels faits.
@@ -37,12 +38,12 @@ import requests
 
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parent
-GUIDELINE = PROJECT / "guideline" / "Guideline_TRACE_Sepsis_v1.7.json"
+GUIDELINE = PROJECT / "guideline" / "Guideline_TRACE_Sepsis_v2.0.json"
 DEFAULT_PDFS = PROJECT.parent / "suite pdfs annotés"
-DEFAULT_OUT = HERE / "extraction_v1_7"
+DEFAULT_OUT = HERE / "extraction_v2_0"
 URL = "https://api.mistral.ai/v1/chat/completions"
 MODEL = "mistral-small-2603"
-VERSION = "extraction_v1.7_guideline_seul"
+VERSION = "extraction_guideline_seul"
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -145,6 +146,10 @@ def guideline():
     return json.loads(GUIDELINE.read_text(encoding="utf-8"))["ontologie_sepsis_graph"]
 
 
+def nom_guideline(g):
+    return g.get("nom_guideline") or f"TRACE-Sepsis v{g.get('version', '?')}"
+
+
 def _vals(spec):
     for k in ("valeurs_autorisees", "localisations", "types", "organes", "manifestations_autorisees",
               "valeurs_autorisees_type_service", "composantes"):
@@ -170,7 +175,7 @@ def prompt_entites(g, page_text):
     synonymes = json.dumps({k: v for k, v in g["normalisation_terminologique"].items() if isinstance(v, dict)},
                            ensure_ascii=False)
     return f"""Tu es un expert en extraction d'information clinique sur le sepsis. Applique strictement le
-guideline TRACE-Sepsis v1.7 ci-dessous a la page de compte rendu fournie.
+guideline {nom_guideline(g)} ci-dessous a la page de compte rendu fournie.
 
 MISSION : extraire de facon EXHAUSTIVE toutes les entites cliniques explicitement ecrites dans la page.
 
@@ -211,8 +216,9 @@ def prompt_relations(g, page_text, entites):
         for k, v in rels.items():
             sigs.append(f"- {k} : {v['domaine']} -> {v['image']}. {v.get('description', '')}")
     regles = "\n".join(f"- {k} : {v}" for k, v in g["regles_generales_annotation"].items()
-                       if k in ("R6_hypothese_traitement", "R7_relations", "R8_inference", "R10_baseline"))
-    return f"""Tu es un expert en extraction de relations cliniques sur le sepsis (guideline TRACE-Sepsis v1.7).
+                       if k in ("R6_hypothese_traitement", "R7_relations", "R8_inference", "R10_baseline",
+                                "R13_rattachement_foyer"))
+    return f"""Tu es un expert en extraction de relations cliniques sur le sepsis (guideline {nom_guideline(g)}).
 A partir de la page et de la liste d'entites ci-dessous, extrais TOUTES les relations explicitement
 supportees par le texte de la page, et uniquement celles-ci.
 
@@ -223,7 +229,7 @@ REGLES :
 - "preuve" = le passage exact de la page qui justifie la relation.
 {regles}
 
-RELATIONS AUTORISEES (34) :
+RELATIONS AUTORISEES ({len(sigs)}) :
 {chr(10).join(sigs)}
 
 ENTITES :
@@ -296,8 +302,12 @@ def valider_relations(g, raw, entites, page_no, c, n0):
 
 # ------------------------------------------------------------------ traitement d'un PDF
 def traiter_pdf(api, g, pdf, out_dir, c):
-    import fitz  # PyMuPDF
-    cible = out_dir / f"{pdf.stem}_trace_sepsis_v1.7.json"
+    try:
+        import pymupdf as fitz  # PyMuPDF recent
+    except ImportError:
+        import fitz  # PyMuPDF ancien
+    version = g.get("version", "x")
+    cible = out_dir / f"{pdf.stem}_trace_sepsis_v{version}.json"
     if cible.exists():
         print(f"  deja fait : {cible.name}")
         return
@@ -323,7 +333,7 @@ def traiter_pdf(api, g, pdf, out_dir, c):
         rels_g += rels
         print(f"  page {i} : {len(ents)} entites, {len(rels)} relations")
     data = {"source_file": pdf.name, "type_extraction": VERSION,
-            "schema": {"guideline": "TRACE-Sepsis v1.7", "modele": MODEL, "temperature": 0},
+            "schema": {"guideline": nom_guideline(g), "modele": MODEL, "temperature": 0},
             "pages": pages, "global_entities": ents_g, "global_relations": rels_g}
     cible.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     (out_dir / "textes_bruts").mkdir(exist_ok=True)
@@ -333,13 +343,16 @@ def traiter_pdf(api, g, pdf, out_dir, c):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Extraction Mistral selon le guideline TRACE-Sepsis v1.7")
+    global GUIDELINE
+    ap = argparse.ArgumentParser(description="Extraction Mistral selon le guideline TRACE-Sepsis")
+    ap.add_argument("--guideline", default=str(GUIDELINE))
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
     ap.add_argument("--sortie", default=str(DEFAULT_OUT))
     ap.add_argument("--essai", action="store_true", help="un seul dossier, pour verifier")
     ap.add_argument("--docs", type=int, default=0)
     ap.add_argument("--pause", type=float, default=1.5)
     args = ap.parse_args()
+    GUIDELINE = Path(args.guideline)
     from collections import Counter
     pdfs = sorted(p for p in Path(args.pdfs).glob("*") if p.suffix.lower() == ".pdf")
     if not pdfs:

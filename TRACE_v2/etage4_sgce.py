@@ -75,7 +75,7 @@ def run_sgce(in_dir, keep=False):
         for p in Path(in_dir).glob("*.json"):
             if not p.name.startswith("_rapport"):
                 shutil.copy2(p, inp / p.name)
-        shutil.copytree(C.RAW_TEXT_DIR, red / C.RAW_TEXT_DIR.name)
+        shutil.copytree(C.RAW_TEXT_DIR, red / "Sortie_Textes_Brut_MistralSmall4")
         guideline = _write_guideline(base, red)
         print(f"Guideline : {guideline}")
         if _run([sys.executable, "run_sgce.py", "--patch-paths", "--apply"], red / "SGCE", log):
