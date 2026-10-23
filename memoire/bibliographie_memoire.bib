@@ -1,0 +1,1132 @@
+% ==================================================================
+% BIBLIOGRAPHIE DU MÉMOIRE - fichier unique, une entrée par clé
+% Entrées vérifiées sur les pages des éditeurs (ACL Anthology, PubMed, arXiv, DOI).
+% Lignes « A VERIFIER » / « A COMPLETER » : à contrôler avant le dépôt.
+% ==================================================================
+
+% ==================================================================
+% CHAPITRE 1 - INTRODUCTION ET CONTEXTE CLINIQUE (sepsis, scores, cadre réglementaire)
+% ==================================================================
+
+@article{singer2016third,
+  author  = {Singer, Mervyn and Deutschman, Clifford S. and Seymour, Christopher Warren and Shankar-Hari, Manu and Annane, Djillali and Bauer, Michael and Bellomo, Rinaldo and Bernard, Gordon R. and Chiche, Jean-Daniel and Coopersmith, Craig M. and others},
+  title   = {The Third International Consensus Definitions for Sepsis and Septic Shock ({Sepsis-3})},
+  journal = {JAMA},
+  volume  = {315}, number = {8}, pages = {801--810},
+  year    = {2016}
+}
+
+@article{seymour2016qsofa,
+  author  = {Seymour, Christopher W. and Liu, Vincent X. and Iwashyna, Theodore J. and Brunkhorst, Frank M. and Rea, Thomas D. and Scherag, Andr{\'e} and Rubenfeld, Gordon and Kahn, Jeremy M. and Shankar-Hari, Manu and Singer, Mervyn and Deutschman, Clifford S. and Escobar, Gabriel J. and Angus, Derek C.},
+  title   = {Assessment of Clinical Criteria for Sepsis: For the Third International Consensus Definitions for Sepsis and Septic Shock ({Sepsis-3})},
+  journal = {JAMA},
+  year    = {2016}, volume = {315}, number = {8}, pages = {762--774},
+  doi     = {10.1001/jama.2016.0288}
+}
+
+@article{vincent1996sofa,
+  author  = {Vincent, Jean-Louis and Moreno, Rui and Takala, Jukka and Willatts, Sheila and De Mendon{\c{c}}a, Arnaldo and Bruining, Hajo and Reinhart, C. K. and Suter, Peter M. and Thijs, L. G.},
+  title   = {The {SOFA} ({Sepsis-related Organ Failure Assessment}) score to describe organ dysfunction/failure},
+  journal = {Intensive Care Medicine},
+  year    = {1996}, volume = {22}, number = {7}, pages = {707--710},
+  doi     = {10.1007/BF01709751}
+}
+
+@article{teasdale1974glasgow,
+  author  = {Teasdale, Graham and Jennett, Bryan},
+  title   = {Assessment of coma and impaired consciousness: a practical scale},
+  journal = {The Lancet},
+  year    = {1974}, volume = {304}, number = {7872}, pages = {81--84},
+  doi     = {10.1016/S0140-6736(74)91639-0}
+}
+
+@article{kdigo2012aki,
+  author  = {{Kidney Disease: Improving Global Outcomes (KDIGO) Acute Kidney Injury Work Group}},
+  title   = {{KDIGO} Clinical Practice Guideline for Acute Kidney Injury},
+  journal = {Kidney International Supplements},
+  volume  = {2}, number = {1}, pages = {1--138},
+  year    = {2012}
+}
+
+@article{evans2021ssc,
+  author  = {Evans, Laura and Rhodes, Andrew and Alhazzani, Waleed and others},
+  title   = {Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021},
+  journal = {Intensive Care Medicine},
+  volume  = {47}, number = {11}, pages = {1181--1247},
+  year    = {2021}
+}
+
+@article{annane2018aprocchss,
+  author  = {Annane, Djillali and Renault, Alain and Brun-Buisson, Christian and others},
+  title   = {Hydrocortisone plus Fludrocortisone for Adults with Septic Shock},
+  journal = {New England Journal of Medicine},
+  volume  = {378}, number = {9}, pages = {809--818},
+  year    = {2018}
+}
+
+@misc{eucast,
+  author       = {{European Committee on Antimicrobial Susceptibility Testing (EUCAST)}},
+  title        = {Breakpoint Tables for Interpretation of {MICs} and Zone Diameters},
+  howpublished = {Version 14.0},
+  year         = {2024}
+}
+
+@misc{rgpd2016,
+  author       = {{Parlement européen et Conseil de l'Union européenne}},
+  title        = {Règlement ({UE}) 2016/679 du 27 avril 2016 relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données (règlement général sur la protection des données)},
+  howpublished = {Journal officiel de l'Union européenne, L 119, p.~1--88},
+  year         = {2016}
+}
+
+% ==================================================================
+% CHAPITRE 2 - ÉTAT DE L'ART : extraction de texte (OCR, Document AI, MLLMs)
+% ==================================================================
+
+@inproceedings{smith2007tesseract,
+  author    = {Smith, Ray},
+  title     = {An Overview of the {Tesseract} {OCR} Engine},
+  booktitle = {Proceedings of the Ninth International Conference on Document Analysis and Recognition (ICDAR 2007)},
+  volume    = {2},
+  pages     = {629--633},
+  year      = {2007},
+  publisher = {IEEE},
+  doi       = {10.1109/ICDAR.2007.4376991}
+}
+
+@inproceedings{xu2020layoutlm,
+  author    = {Xu, Yiheng and Li, Minghao and Cui, Lei and Huang, Shaohan and Wei, Furu and Zhou, Ming},
+  title     = {{LayoutLM}: Pre-training of Text and Layout for Document Image Understanding},
+  booktitle = {Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining (KDD '20)},
+  pages     = {1192--1200},
+  year      = {2020},
+  doi       = {10.1145/3394486.3403172}
+}
+
+@inproceedings{li2023trocr,
+  author    = {Li, Minghao and Lv, Tengchao and Chen, Jingye and Cui, Lei and Lu, Yijuan and Florencio, Dinei and Zhang, Cha and Li, Zhoujun and Wei, Furu},
+  title     = {{TrOCR}: Transformer-Based Optical Character Recognition with Pre-trained Models},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {37},
+  number    = {11},
+  pages     = {13094--13102},
+  year      = {2023},
+  doi       = {10.1609/aaai.v37i11.26538}
+}
+
+@inproceedings{kim2022donut,
+  author    = {Kim, Geewook and Hong, Teakgyu and Yim, Moonbin and Nam, JeongYeon and Park, Jinyoung and Yim, Jinyeong and Hwang, Wonseok and Yun, Sangdoo and Han, Dongyoon and Park, Seunghyun},
+  title     = {{OCR}-Free Document Understanding Transformer},
+  booktitle = {Computer Vision -- ECCV 2022},
+  series    = {Lecture Notes in Computer Science},
+  pages     = {498--517},
+  year      = {2022},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-031-19815-1_29}
+}
+
+@inproceedings{neveditsin2026compact,
+  author    = {Neveditsin, Nikita and Lingras, Pawan and Patil, Salil and Patil, Swarup and Mago, Vijay},
+  title     = {Compact Multimodal Language Models as Robust {OCR} Alternatives for Noisy Textual Clinical Reports},
+  booktitle = {Proceedings of the Conference of the European Chapter of the Association for Computational Linguistics: Industry Track (EACL 2026)},
+  pages     = {48--59},
+  year      = {2026},
+  publisher = {Association for Computational Linguistics},
+  url       = {https://aclanthology.org/2026.eacl-industry.4/}
+}
+
+@misc{inoue2025context,
+  author        = {Inoue, Kotaro},
+  title         = {Context-Independent {OCR} with Multimodal {LLMs}: Effects of Image Resolution and Visual Complexity},
+  year          = {2025},
+  eprint        = {2503.23667},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
+}
+
+@misc{greif2025multimodal,
+  author        = {Greif, Gavin and Griesshaber, Niclas and Greif, Robin},
+  title         = {Multimodal {LLMs} for {OCR}, {OCR} Post-Correction, and Named Entity Recognition in Historical Documents},
+  year          = {2025},
+  eprint        = {2504.00414},
+  archivePrefix = {arXiv}
+}
+
+@misc{mistralsmall4,
+  author       = {{Mistral AI}},
+  title        = {Introducing {Mistral Small 4}},
+  year         = {2026},
+  howpublished = {\url{https://mistral.ai/news/mistral-small-4/}},
+  note         = {Modèle Mistral-Small-4-119B-2603, licence Apache 2.0. Consulté le 19 octobre 2026}
+}
+
+% ==================================================================
+% CHAPITRE 2 - ÉTAT DE L'ART : annotation clinique
+% ==================================================================
+
+@inproceedings{deleger2012building,
+  author    = {Deleger, Louise and Li, Qi and Lingren, Todd and Kaiser, Megan and Molnar, Katalin and Stoutenborough, Laura and Kouril, Michal and Marsolo, Keith and Solti, Imre},
+  title     = {Building Gold Standard Corpora for Medical Natural Language Processing Tasks},
+  booktitle = {AMIA Annual Symposium Proceedings},
+  volume    = {2012},
+  pages     = {144--153},
+  year      = {2012},
+  url       = {https://pmc.ncbi.nlm.nih.gov/articles/PMC3540456/}
+}
+
+@article{meystre2008extracting,
+  author  = {Meystre, St{\'e}phane M. and Savova, Guergana K. and Kipper-Schuler, Karin C. and Hurdle, John F.},
+  title   = {Extracting Information from Textual Documents in the Electronic Health Record: A Review of Recent Research},
+  journal = {Yearbook of Medical Informatics},
+  volume  = {17},
+  number  = {1},
+  pages   = {128--144},
+  year    = {2008},
+  doi     = {10.1055/s-0038-1638592}
+}
+
+@book{pustejovsky2012natural,
+  author    = {Pustejovsky, James and Stubbs, Amber},
+  title     = {Natural Language Annotation for Machine Learning: A Guide to Corpus-Building for Applications},
+  publisher = {O'Reilly Media},
+  address   = {Sebastopol, CA},
+  year      = {2012},
+  isbn      = {978-1-4493-0666-3}
+}
+
+@article{becker2025cardio,
+  author  = {Becker, Matthias and Krumscheid, Mario and Knobelspies, Alisa and Seydel, Markus and Richter-Pechanski, Phillip and Karl, Alexander},
+  title   = {Extending {CARDIO:DE}: Additional Annotation Guidelines and Evaluation of {NLP} Approaches for Clinical Applications},
+  journal = {International Journal of Medical Informatics},
+  volume  = {203},
+  pages   = {106009},
+  year    = {2025},
+  doi     = {10.1016/j.ijmedinf.2025.106009}
+}
+
+@article{yan2023terminology,
+  author  = {Yan, Melissa Y. and Gustad, Lise Tuset and H{\o}vik, Lise Husby and Nytr{\o}, {\O}ystein},
+  title   = {Terminology and Ontology Development for Semantic Annotation: A Use Case on Sepsis and Adverse Events},
+  journal = {Semantic Web},
+  volume  = {14},
+  number  = {4},
+  pages   = {811--871},
+  year    = {2023},
+  doi     = {10.3233/SW-223226}
+}
+
+@article{lingren2014preannotation,
+  author  = {Lingren, Todd and Deleger, Louise and Molnar, Katalin and Zhai, Haijun and Meinzen-Derr, Jareen and Kaiser, Megan and Stoutenborough, Laura and Li, Qi and Solti, Imre},
+  title   = {Evaluating the Impact of Pre-annotation on Annotation Speed and Potential Bias: Natural Language Processing Gold Standard Development for Clinical Named Entity Recognition in Clinical Trial Announcements},
+  journal = {Journal of the American Medical Informatics Association},
+  volume  = {21},
+  number  = {3},
+  pages   = {406--413},
+  year    = {2014},
+  doi     = {10.1136/amiajnl-2013-001837}
+}
+
+@inproceedings{kholodna2024llms,
+  author    = {Kholodna, Nataliia and Julka, Sahib and Khodadadi, Mohammad and Gumus, Muhammed Nurullah and Granitzer, Michael},
+  title     = {{LLMs} in the Loop: Leveraging Large Language Model Annotations for Active Learning in Low-Resource Languages},
+  booktitle = {Machine Learning and Knowledge Discovery in Databases. Applied Data Science Track (ECML PKDD 2024)},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  pages     = {397--412},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-70381-2_25}
+}
+
+@article{hripcsak2005agreement,
+  author  = {Hripcsak, George and Rothschild, Adam S.},
+  title   = {Agreement, the {F}-Measure, and Reliability in Information Retrieval},
+  journal = {Journal of the American Medical Informatics Association},
+  volume  = {12},
+  number  = {3},
+  pages   = {296--298},
+  year    = {2005},
+  doi     = {10.1197/jamia.M1733}
+}
+
+@inproceedings{james2026consensus,
+  author    = {James, Joseph H. F.},
+  title     = {Counting on Consensus: Selecting the Right Inter-Annotator Agreement Metric for {NLP} Annotation and Evaluation},
+  booktitle = {Proceedings of the Language Resources and Evaluation Conference (LREC 2026)},
+  pages     = {4434--4446},
+  year      = {2026},
+  url       = {https://aclanthology.org/2026.lrec-1.347/}
+}
+
+% ==================================================================
+% CHAPITRE 2 - ÉTAT DE L'ART : extraction d'entités et de relations
+% ==================================================================
+
+@article{aronson2010metamap,
+  author  = {Aronson, Alan R. and Lang, Fran{\c{c}}ois-Michel},
+  title   = {An overview of {MetaMap}: historical perspective and recent advances},
+  journal = {Journal of the American Medical Informatics Association},
+  year    = {2010}, volume = {17}, number = {3}, pages = {229--236},
+  doi     = {10.1136/jamia.2009.002733}
+}
+
+@article{savova2010ctakes,
+  author  = {Savova, Guergana K. and Masanz, James J. and Ogren, Philip V. and Zheng, Jiaping and Sohn, Sunghwan and Kipper-Schuler, Karin C. and Chute, Christopher G.},
+  title   = {Mayo clinical Text Analysis and Knowledge Extraction System ({cTAKES}): architecture, component evaluation and applications},
+  journal = {Journal of the American Medical Informatics Association},
+  year    = {2010}, volume = {17}, number = {5}, pages = {507--513},
+  doi     = {10.1136/jamia.2009.001560}
+}
+
+@inproceedings{lafferty2001crf,
+  author    = {Lafferty, John and McCallum, Andrew and Pereira, Fernando C. N.},
+  title     = {Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data},
+  booktitle = {Proceedings of the 18th International Conference on Machine Learning (ICML 2001)},
+  year      = {2001}, pages = {282--289}
+}
+
+@article{uzuner2011i2b2,
+  author  = {Uzuner, {\"O}zlem and South, Brett R. and Shen, Shuying and DuVall, Scott L.},
+  title   = {2010 i2b2/{VA} challenge on concepts, assertions, and relations in clinical text},
+  journal = {Journal of the American Medical Informatics Association},
+  year    = {2011}, volume = {18}, number = {5}, pages = {552--556},
+  doi     = {10.1136/amiajnl-2011-000203}
+}
+
+% Scores 0,852 et 0,936 lus dans le résumé PubMed 21597105
+@article{debruijn2011machine,
+  author  = {de Bruijn, Berry and Cherry, Colin and Kiritchenko, Svetlana and Martin, Joel and Zhu, Xiaodan},
+  title   = {Machine-learned solutions for three stages of clinical information extraction: the state of the art at i2b2 2010},
+  journal = {Journal of the American Medical Informatics Association},
+  year    = {2011}, volume = {18}, number = {5}, pages = {557--562},
+  doi     = {10.1136/amiajnl-2011-000150}
+}
+
+@inproceedings{lample2016neural,
+  author    = {Lample, Guillaume and Ballesteros, Miguel and Subramanian, Sandeep and Kawakami, Kazuya and Dyer, Chris},
+  title     = {Neural Architectures for Named Entity Recognition},
+  booktitle = {Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+  year      = {2016}, pages = {260--270}, address = {San Diego, California},
+  doi       = {10.18653/v1/N16-1030}
+}
+
+@inproceedings{devlin2019bert,
+  author    = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  title     = {{BERT}: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  booktitle = {Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)},
+  year      = {2019}, pages = {4171--4186}, address = {Minneapolis, Minnesota},
+  doi       = {10.18653/v1/N19-1423}
+}
+
+@article{lee2020biobert,
+  author  = {Lee, Jinhyuk and Yoon, Wonjin and Kim, Sungdong and Kim, Donghyeon and Kim, Sunkyu and So, Chan Ho and Kang, Jaewoo},
+  title   = {{BioBERT}: a pre-trained biomedical language representation model for biomedical text mining},
+  journal = {Bioinformatics},
+  year    = {2020}, volume = {36}, number = {4}, pages = {1234--1240},
+  doi     = {10.1093/bioinformatics/btz682}
+}
+
+@inproceedings{alsentzer2019clinicalbert,
+  author    = {Alsentzer, Emily and Murphy, John and Boag, William and Weng, Wei-Hung and Jindi, Di and Naumann, Tristan and McDermott, Matthew},
+  title     = {Publicly Available Clinical {BERT} Embeddings},
+  booktitle = {Proceedings of the 2nd Clinical Natural Language Processing Workshop},
+  year      = {2019}, pages = {72--78}, address = {Minneapolis, Minnesota},
+  doi       = {10.18653/v1/W19-1909}
+}
+
+@inproceedings{labrak2023drbert,
+  author    = {Labrak, Yanis and Bazoge, Adrien and Dufour, Richard and Rouvier, Mickael and Morin, Emmanuel and Daille, B{\'e}atrice and Gourraud, Pierre-Antoine},
+  title     = {{DrBERT}: A Robust Pre-trained Model in {F}rench for Biomedical and Clinical domains},
+  booktitle = {Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  year      = {2023}, pages = {16207--16221}, address = {Toronto, Canada},
+  doi       = {10.18653/v1/2023.acl-long.896}
+}
+
+@inproceedings{touchent2024camembertbio,
+  author    = {Touchent, Rian and de la Clergerie, {\'E}ric},
+  title     = {{CamemBERT}-bio: Leveraging Continual Pre-training for Cost-Effective Models on {F}rench Biomedical Data},
+  booktitle = {Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)},
+  year      = {2024}, pages = {2692--2701}, address = {Torino, Italia}
+}
+
+@inproceedings{neveol2014quaero,
+  author    = {N{\'e}v{\'e}ol, Aur{\'e}lie and Grouin, Cyril and Leixa, Jeremy and Rosset, Sophie and Zweigenbaum, Pierre},
+  title     = {The {QUAERO} {F}rench Medical Corpus: A Ressource for Medical Entity Recognition and Normalization},
+  booktitle = {Proceedings of the Fourth Workshop on Building and Evaluating Resources for Health and Biomedical Text Processing (BioTxtM 2014)},
+  year      = {2014}, pages = {24--30}
+}
+
+@article{henry2020n2c2,
+  author  = {Henry, Sam and Buchan, Kevin and Filannino, Michele and Stubbs, Amber and Uzuner, {\"O}zlem},
+  title   = {2018 n2c2 shared task on adverse drug events and medication extraction in electronic health records},
+  journal = {Journal of the American Medical Informatics Association},
+  year    = {2020}, volume = {27}, number = {1}, pages = {3--12},
+  doi     = {10.1093/jamia/ocz166}
+}
+
+@article{fraile2023review,
+  title   = {Clinical named entity recognition and relation extraction using natural language processing of medical free text: A systematic review},
+  author  = {Fraile Navarro, David and Ijaz, Kiran and Rezazadegan, Dana and Rahimi-Ardabili, Hania and Dras, Mark and Coiera, Enrico and Berkovsky, Shlomo},
+  journal = {International Journal of Medical Informatics},
+  volume  = {177},
+  pages   = {105122},
+  year    = {2023}
+}
+
+@inproceedings{miwa2016endtoend,
+  author    = {Miwa, Makoto and Bansal, Mohit},
+  title     = {End-to-End Relation Extraction using {LSTM}s on Sequences and Tree Structures},
+  booktitle = {Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  year      = {2016}, pages = {1105--1116}, address = {Berlin, Germany},
+  doi       = {10.18653/v1/P16-1105}
+}
+
+% A VERIFIER : volume FAIA et pages (présentation à ECAI 2020 confirmée)
+@inproceedings{eberts2020spert,
+  author    = {Eberts, Markus and Ulges, Adrian},
+  title     = {Span-based Joint Entity and Relation Extraction with Transformer Pre-training},
+  booktitle = {Proceedings of the 24th European Conference on Artificial Intelligence (ECAI 2020)},
+  series    = {Frontiers in Artificial Intelligence and Applications},
+  year      = {2020}
+}
+
+@inproceedings{zhong2021frustratingly,
+  author    = {Zhong, Zexuan and Chen, Danqi},
+  title     = {A Frustratingly Easy Approach for Entity and Relation Extraction},
+  booktitle = {Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+  year      = {2021}, pages = {50--61},
+  doi       = {10.18653/v1/2021.naacl-main.5}
+}
+
+@article{xu2024genie_survey,
+  author  = {Xu, Derong and Chen, Wei and Peng, Wenjun and Zhang, Chao and Xu, Tong and Zhao, Xiangyu and Wu, Xian and Zheng, Yefeng and Wang, Yang and Chen, Enhong},
+  title   = {Large language models for generative information extraction: a survey},
+  journal = {Frontiers of Computer Science},
+  year    = {2024}, volume = {18}, number = {6}, pages = {186357},
+  doi     = {10.1007/s11704-024-40555-y}
+}
+
+@inproceedings{agrawal2022fewshot,
+  title     = {Large Language Models are Few-Shot Clinical Information Extractors},
+  author    = {Agrawal, Monica and Hegselmann, Stefan and Lang, Hunter and Kim, Yoon and Sontag, David},
+  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2022},
+  pages = {1998--2022},
+  doi = {10.18653/v1/2022.emnlp-main.130}
+}
+
+@misc{wei2023chatie,
+  author        = {Wei, Xiang and Cui, Xingyu and Cheng, Ning and Wang, Xiaobin and Zhang, Xin and Huang, Shen and Xie, Pengjun and Xu, Jinan and Chen, Yufeng and Zhang, Meishan and Jiang, Yong and Han, Wenjuan},
+  title         = {{ChatIE}: Zero-Shot Information Extraction via Chatting with {ChatGPT}},
+  year          = {2023}, eprint = {2302.10205}, archivePrefix = {arXiv}
+}
+
+@inproceedings{gutierrez2022gpt3bioie,
+  author    = {Jim{\'e}nez Guti{\'e}rrez, Bernal and McNeal, Nikolas and Washington, Clayton and Chen, You and Li, Lang and Sun, Huan and Su, Yu},
+  title     = {Thinking about {GPT}-3 In-Context Learning for Biomedical {IE}? Think Again},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2022},
+  year      = {2022}, pages = {4497--4512},
+  doi       = {10.18653/v1/2022.findings-emnlp.329}
+}
+
+@article{chen2025benchmarking,
+  author  = {Chen, Qingyu and Hu, Yan and Peng, Xueqing and Xie, Qianqian and Jin, Qiao and Gilson, Aidan and Singer, Maxwell B. and Ai, Xuguang and Lai, Po-Ting and Wang, Zhizheng and others},
+  title   = {Benchmarking large language models for biomedical natural language processing applications and recommendations},
+  journal = {Nature Communications},
+  year    = {2025}, volume = {16}, number = {1}, pages = {3280},
+  doi     = {10.1038/s41467-025-56989-2}
+}
+
+@article{hu2024clinicalner,
+  author  = {Hu, Yan and Chen, Qingyu and Du, Jingcheng and Peng, Xueqing and Keloth, Vipina Kuttichi and Zuo, Xu and Zhou, Yujia and Li, Zehan and Jiang, Xiaoqian and Lu, Zhiyong and others},
+  title   = {Improving large language models for clinical named entity recognition via prompt engineering},
+  journal = {Journal of the American Medical Informatics Association},
+  year    = {2024}, volume = {31}, number = {9}, pages = {1812--1820},
+  doi     = {10.1093/jamia/ocad259}
+}
+
+@inproceedings{sainz2024gollie,
+  author    = {Sainz, Oscar and Garc{\'i}a-Ferrero, Iker and Agerri, Rodrigo and Lopez de Lacalle, Oier and Rigau, German and Agirre, Eneko},
+  title     = {{GoLLIE}: Annotation Guidelines improve Zero-Shot Information-Extraction},
+  booktitle = {The Twelfth International Conference on Learning Representations (ICLR 2024)},
+  year      = {2024}, note = {arXiv:2310.03668}
+}
+
+@inproceedings{zhou2024universalner,
+  author    = {Zhou, Wenxuan and Zhang, Sheng and Gu, Yu and Chen, Muhao and Poon, Hoifung},
+  title     = {{UniversalNER}: Targeted Distillation from Large Language Models for Open Named Entity Recognition},
+  booktitle = {The Twelfth International Conference on Learning Representations (ICLR 2024)},
+  year      = {2024}, note = {arXiv:2308.03279}
+}
+
+@inproceedings{wadhwa2023revisiting,
+  author    = {Wadhwa, Somin and Amir, Silvio and Wallace, Byron C.},
+  title     = {Revisiting Relation Extraction in the era of Large Language Models},
+  booktitle = {Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  year      = {2023}, pages = {15566--15589}, address = {Toronto, Canada},
+  doi       = {10.18653/v1/2023.acl-long.868}
+}
+
+@article{dagdelen2024structured,
+  author  = {Dagdelen, John and Dunn, Alexander and Lee, Sanghoon and Walker, Nicholas and Rosen, Andrew S. and Ceder, Gerbrand and Persson, Kristin A. and Jain, Anubhav},
+  title   = {Structured information extraction from scientific text with large language models},
+  journal = {Nature Communications},
+  year    = {2024}, volume = {15}, number = {1}, pages = {1418},
+  doi     = {10.1038/s41467-024-45563-x}
+}
+
+@inproceedings{wang2025gptner,
+  author    = {Wang, Shuhe and Sun, Xiaofei and Li, Xiaoya and Ouyang, Rongbin and Wu, Fei and Zhang, Tianwei and Li, Jiwei and Wang, Guoyin and Guo, Chen},
+  title     = {{GPT-NER}: Named Entity Recognition via Large Language Models},
+  booktitle = {Findings of the Association for Computational Linguistics: NAACL 2025},
+  year      = {2025}, pages = {4257--4275}
+}
+
+@inproceedings{huang2022layoutlmv3,
+  author    = {Huang, Yupan and Lv, Tengchao and Cui, Lei and Lu, Yutong and Wei, Furu},
+  title     = {{LayoutLMv3}: Pre-training for Document {AI} with Unified Text and Image Masking},
+  booktitle = {Proceedings of the 30th ACM International Conference on Multimedia (MM '22)},
+  year      = {2022}, address = {Lisboa, Portugal},
+  doi       = {10.1145/3503161.3548112}
+}
+
+@article{liu2024ocrbench,
+  author  = {Liu, Yuliang and Li, Zhang and Huang, Mingxin and Yang, Biao and Yu, Wenwen and Li, Chunyuan and Yin, Xu-Cheng and Liu, Cheng-Lin and Jin, Lianwen and Bai, Xiang},
+  title   = {{OCRBench}: On the Hidden Mystery of {OCR} in Large Multimodal Models},
+  journal = {Science China Information Sciences},
+  year    = {2024}, volume = {67}, number = {12}, pages = {220102},
+  doi     = {10.1007/s11432-024-4235-6}
+}
+
+@inproceedings{ji2026unikie,
+  author    = {Ji, Yifan and Xu, Zhipeng and Liu, Zhenghao and Chen, Zulong and Zhang, Qian and Yang, Zhibo and Lin, Junyang and Gu, Yu and Yu, Ge and Sun, Maosong},
+  title     = {{UniKIE-Bench}: Benchmarking Large Multimodal Models for Key Information Extraction in Visual Documents},
+  booktitle = {Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL 2026, Long Papers)},
+  year      = {2026}, pages = {6331--6352}, note = {arXiv:2602.07038}
+}
+
+@misc{shang2025medrepbench,
+  author        = {Shang, Fangxin and Xia, Yuan and Yang, Dalu and Wang, Yahui and Yang, Binglin},
+  title         = {{MedRepBench}: A Comprehensive Benchmark for Medical Report Interpretation},
+  year          = {2025}, eprint = {2508.16674}, archivePrefix = {arXiv}
+}
+
+@misc{schaefer2025transfusion,
+  author        = {Sch{\"a}fer, Henning and Schmidt, Cynthia S. and Wutzkowsky, Johannes and Lorek, Kamil and Reinartz, Lea and R{\"u}ckert, Johannes and Temme, Christian and B{\"o}ckmann, Britta and Horn, Peter A. and Friedrich, Christoph M.},
+  title         = {A Multimodal Pipeline for Clinical Data Extraction: Applying Vision-Language Models to Scans of Transfusion Reaction Reports},
+  year          = {2025}, eprint = {2504.20220}, archivePrefix = {arXiv}
+}
+
+@inproceedings{zhang2025ocrhindersrag,
+  author    = {Zhang, Junyuan and Zhang, Qintong and Wang, Bin and Ouyang, Linke and Wen, Zichen and Li, Ying and Chow, Ka-Ho and He, Conghui and Zhang, Wentao},
+  title     = {{OCR} Hinders {RAG}: Evaluating the Cascading Impact of {OCR} on Retrieval-Augmented Generation},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025}, note = {arXiv:2412.02592}
+}
+
+% ==================================================================
+% CHAPITRE 2 - ÉTAT DE L'ART : hallucinations
+% ==================================================================
+
+@article{huang2023survey,
+  title   = {A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions},
+  author  = {Huang, Lei and Yu, Weijiang and Ma, Weitao and Zhong, Weihong and Feng, Zhangyin and Wang, Haotian and Chen, Qianglong and Peng, Weihua and Feng, Xiaocheng and Qin, Bing and Liu, Ting},
+  journal = {ACM Transactions on Information Systems},
+  volume  = {43},
+  number  = {2},
+  pages   = {42:1--42:55},
+  year    = {2025},
+  doi     = {10.1145/3703155}
+}
+
+@inproceedings{zhou2021detecting,
+  title     = {Detecting Hallucinated Content in Conditional Neural Sequence Generation},
+  author    = {Zhou, Chunting and Neubig, Graham and Gu, Jiatao and Diab, Mona and Guzm{\'a}n, Francisco and Zettlemoyer, Luke and Ghazvininejad, Marjan},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021},
+  year      = {2021},
+  pages = {1393--1404},
+  doi = {10.18653/v1/2021.findings-acl.120}
+}
+
+@inproceedings{mishra2024fava,
+  title     = {Fine-grained Hallucination Detection and Editing for Language Models},
+  author    = {Mishra, Abhika and Asai, Akari and Balachandran, Vidhisha and Wang, Yizhong and Tsvetkov, Yulia and Neubig, Graham and Hajishirzi, Hannaneh},
+  booktitle = {Conference on Language Modeling (COLM)},
+  year      = {2024}
+}
+
+@inproceedings{min2023factscore,
+  title     = {{FActScore}: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation},
+  author    = {Min, Sewon and Krishna, Kalpesh and Lyu, Xinxi and Lewis, Mike and Yih, Wen-tau and Koh, Pang Wei and Iyyer, Mohit and Zettlemoyer, Luke and Hajishirzi, Hannaneh},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2023},
+  pages = {12076--12100},
+  doi = {10.18653/v1/2023.emnlp-main.741}
+}
+
+@inproceedings{azaria2023internal,
+  title     = {The Internal State of an {LLM} Knows When It's Lying},
+  author    = {Azaria, Amos and Mitchell, Tom},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2023},
+  year      = {2023},
+  pages = {967--976},
+  doi = {10.18653/v1/2023.findings-emnlp.68}
+}
+
+@inproceedings{chen2024inside,
+  title     = {{INSIDE}: {LLMs}' Internal States Retain the Power of Hallucination Detection},
+  author    = {Chen, Chao and Liu, Kai and Chen, Ze and Gu, Yi and Wu, Yue and Tao, Mingyuan and Fu, Zhihang and Ye, Jieping},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+@article{kadavath2022know,
+  title   = {Language Models (Mostly) Know What They Know},
+  author  = {Kadavath, Saurav and Conerly, Tom and Askell, Amanda and Henighan, Tom and Drain, Dawn and Perez, Ethan and Schiefer, Nicholas and Hatfield-Dodds, Zac and DasSarma, Nova and Tran-Johnson, Eli and Johnston, Scott and El-Showk, Sheer and Jones, Andy and Elhage, Nelson and Hume, Tristan and Chen, Anna and Bai, Yuntao and Bowman, Sam and Fort, Stanislav and Ganguli, Deep and Hernandez, Danny and Jacobson, Josh and Kernion, Jackson and Kravec, Shauna and Lovitt, Liane and Ndousse, Kamal and Olsson, Catherine and Ringer, Sam and Amodei, Dario and Brown, Tom and Clark, Jack and Joseph, Nicholas and Mann, Ben and McCandlish, Sam and Olah, Chris and Kaplan, Jared},
+  journal = {arXiv preprint arXiv:2207.05221},
+  year    = {2022}
+}
+
+@article{farquhar2024semantic,
+  title   = {Detecting hallucinations in large language models using semantic entropy},
+  author  = {Farquhar, Sebastian and Kossen, Jannik and Kuhn, Lorenz and Gal, Yarin},
+  journal = {Nature},
+  volume  = {630},
+  pages   = {625--630},
+  year    = {2024},
+  doi = {10.1038/s41586-024-07421-0}
+}
+
+@inproceedings{rohrbach2018chair,
+  title     = {Object Hallucination in Image Captioning},
+  author    = {Rohrbach, Anna and Hendricks, Lisa Anne and Burns, Kaylee and Darrell, Trevor and Saenko, Kate},
+  booktitle = {Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2018},
+  pages = {4035--4045},
+  doi = {10.18653/v1/D18-1437}
+}
+
+@inproceedings{li2023pope,
+  title     = {Evaluating Object Hallucination in Large Vision-Language Models},
+  author    = {Li, Yifan and Du, Yifan and Zhou, Kun and Wang, Jinpeng and Zhao, Wayne Xin and Wen, Ji-Rong},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2023},
+  pages = {292--305},
+  doi = {10.18653/v1/2023.emnlp-main.20}
+}
+
+@inproceedings{pal2023medhalt,
+  title     = {{Med-HALT}: Medical Domain Hallucination Test for Large Language Models},
+  author    = {Pal, Ankit and Umapathi, Logesh Kumar and Sankarasubbu, Malaikannan},
+  booktitle = {Proceedings of the 27th Conference on Computational Natural Language Learning (CoNLL)},
+  pages     = {314--334},
+  year      = {2023},
+  doi       = {10.18653/v1/2023.conll-1.21}
+}
+
+@inproceedings{deleger2012negation,
+  title     = {Detecting negation of medical problems in {French} clinical notes},
+  author    = {Del{\'e}ger, Louise and Grouin, Cyril},
+  booktitle = {Proceedings of the 2nd ACM SIGHIT International Health Informatics Symposium (IHI)},
+  pages     = {697--702},
+  year      = {2012},
+  doi       = {10.1145/2110363.2110443}
+}
+
+@inproceedings{madaan2023selfrefine,
+  title     = {Self-Refine: Iterative Refinement with Self-Feedback},
+  author    = {Madaan, Aman and Tandon, Niket and Gupta, Prakhar and Hallinan, Skyler and Gao, Luyu and Wiegreffe, Sarah and Alon, Uri and Dziri, Nouha and Prabhumoye, Shrimai and Yang, Yiming and Gupta, Shashank and Majumder, Bodhisattwa Prasad and Hermann, Katherine and Welleck, Sean and Yazdanbakhsh, Amir and Clark, Peter},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023},
+  volume = {36}
+}
+
+@inproceedings{dhuliawala2024cove,
+  title     = {Chain-of-Verification Reduces Hallucination in Large Language Models},
+  author    = {Dhuliawala, Shehzaad and Komeili, Mojtaba and Xu, Jing and Raileanu, Roberta and Li, Xian and Celikyilmaz, Asli and Weston, Jason},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
+  year      = {2024},
+  pages = {3563--3578},
+  doi = {10.18653/v1/2024.findings-acl.212}
+}
+
+@inproceedings{huang2024cannot,
+  title     = {Large Language Models Cannot Self-Correct Reasoning Yet},
+  author    = {Huang, Jie and Chen, Xinyun and Mishra, Swaroop and Zheng, Huaixiu Steven and Yu, Adams Wei and Song, Xinying and Zhou, Denny},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+@article{kamoi2024selfcorrection,
+  title   = {When Can {LLMs} Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of {LLMs}},
+  author  = {Kamoi, Ryo and Zhang, Yusen and Zhang, Nan and Han, Jiawei and Zhang, Rui},
+  journal = {Transactions of the Association for Computational Linguistics},
+  volume  = {12},
+  pages   = {1417--1440},
+  year    = {2024},
+  doi     = {10.1162/tacl_a_00713}
+}
+
+@inproceedings{du2024debate,
+  title     = {Improving Factuality and Reasoning in Language Models through Multiagent Debate},
+  author    = {Du, Yilun and Li, Shuang and Torralba, Antonio and Tenenbaum, Joshua B. and Mordatch, Igor},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2024},
+  series = {Proceedings of Machine Learning Research},
+  volume = {235},
+  pages = {11733--11763}
+}
+
+@misc{shacl2017,
+  title        = {Shapes Constraint Language ({SHACL})},
+  author       = {Knublauch, Holger and Kontokostas, Dimitris},
+  howpublished = {W3C Recommendation},
+  year         = {2017},
+  url          = {https://www.w3.org/TR/shacl/}
+}
+
+@article{paulheim2017refinement,
+  title   = {Knowledge Graph Refinement: A Survey of Approaches and Evaluation Methods},
+  author  = {Paulheim, Heiko},
+  journal = {Semantic Web},
+  volume  = {8},
+  number  = {3},
+  pages   = {489--508},
+  year    = {2017},
+  doi = {10.3233/SW-160218}
+}
+
+@inproceedings{chu2013holistic,
+  title     = {Holistic Data Cleaning: Putting Violations into Context},
+  author    = {Chu, Xu and Ilyas, Ihab F. and Papotti, Paolo},
+  booktitle = {IEEE 29th International Conference on Data Engineering (ICDE)},
+  year      = {2013},
+  pages = {458--469},
+  doi = {10.1109/ICDE.2013.6544847}
+}
+
+@inproceedings{fan2016gfd,
+  title     = {Functional Dependencies for Graphs},
+  author    = {Fan, Wenfei and Wu, Yinghui and Xu, Jingbo},
+  booktitle = {Proceedings of the 2016 International Conference on Management of Data (SIGMOD)},
+  year      = {2016},
+  pages = {1843--1857},
+  doi = {10.1145/2882903.2915232}
+}
+
+@article{rekatsinas2017holoclean,
+  title   = {{HoloClean}: Holistic Data Repairs with Probabilistic Inference},
+  author  = {Rekatsinas, Theodoros and Chu, Xu and Ilyas, Ihab F. and R{\'e}, Christopher},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {10},
+  number  = {11},
+  year    = {2017},
+  pages = {1190--1201},
+  doi = {10.14778/3137628.3137631}
+}
+
+@article{ali2026ontology,
+  title   = {Ontology-grounded knowledge graphs for mitigating hallucinations in large language models for clinical question answering},
+  author  = {Ali, Mohamed and Taha, Zaki and Morsey, Mohamed Mabrouk},
+  journal = {Journal of Biomedical Informatics},
+  volume  = {175},
+  pages   = {104993},
+  year    = {2026},
+  doi     = {10.1016/j.jbi.2026.104993}
+}
+
+@article{chow1970reject,
+  title   = {On Optimum Recognition Error and Reject Tradeoff},
+  author  = {Chow, C. K.},
+  journal = {IEEE Transactions on Information Theory},
+  volume  = {16},
+  number  = {1},
+  pages   = {41--46},
+  year    = {1970}
+}
+
+@inproceedings{he2025seeing,
+  title     = {Seeing is Believing? Mitigating {OCR} Hallucinations in Multimodal Large Language Models},
+  author    = {He, Zhentao and Zhang, Can and Wu, Ziheng and Chen, Zhenghao and Zhan, Yufei and Li, Yifan and Zhang, Zhao and Wang, Xian and Qiu, Minghui},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2025}
+}
+
+@inproceedings{baek2025ocrheads,
+  title     = {How Do Large Vision-Language Models See Text in Image? Unveiling the Distinctive Role of {OCR} Heads},
+  author    = {Baek, Ingeol and Chang, Hwan and Ryu, Sunghyun and Lee, Hwanhee},
+  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2025}
+}
+
+@article{wang2024feature,
+  title   = {An Entity Extraction Pipeline for Medical Text Records Using Large Language Models: Analytical Study},
+  author  = {Wang, Lei and Ma, Yinyao and Bi, Wenshuai and Lv, Hanlin and Li, Yuxiang},
+  journal = {Journal of Medical Internet Research},
+  volume  = {26},
+  pages   = {e54580},
+  year    = {2024},
+  doi     = {10.2196/54580}
+}
+
+@inproceedings{ghanem2024enhancing,
+  title     = {Enhancing Knowledge Graph Construction: Evaluating with Emphasis on Hallucination, Omission, and Graph Similarity Metrics},
+  author    = {Ghanem, Hussam and Cruz, Christophe},
+  booktitle = {Sixth International Knowledge Graph and Semantic Web Conference (KGSWC 2024)},
+  address   = {Paris, France},
+  year      = {2024},
+  note      = {HAL: hal-04928685}
+}
+
+@article{zhang2026latte,
+  author  = {Zhang, Xiaoqin and Nie, Shuhan and Lu, Yanjun},
+  title   = {{LATTE}: a joint entity and relation extraction model based on low-rank attention mechanism and residual task-aware bottleneck},
+  journal = {The Journal of Supercomputing},
+  volume  = {82},
+  pages   = {80},
+  year    = {2026},
+  doi     = {10.1007/s11227-025-08211-9}
+}
+
+@misc{raptorplus2026,
+  author        = {Abioye, Sofiat and Khan, Ufaq and Ashraf, Shazad and Jose, Anusha and Byfield, Adam and Akanbi, Lukman and Bilal, Muhammad},
+  title         = {{RAPTOR+}: A Visually Grounded Vision-Language Framework to Improve Clinical Trust and Auditability in Automated Cancer Referral Processing},
+  year          = {2026},
+  eprint        = {2605.25956},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
+}
+
+@inproceedings{chang2026medsight,
+  author    = {Chang, Aofei and Huang, Le and Boyd, Alex James and Bhatia, Parminder and Kass-Hout, Taha and Ma, Fenglong and Xiao, Cao},
+  title     = {{MedSIGHT}: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {306},
+  pages     = {12718--12737},
+  year      = {2026}
+}
+
+@misc{ye2026curaview,
+  author        = {Ye, Severin and Kong, Xiao and He, Xiaopeng and Yan, Guangsu and Oh, Dongsuk},
+  title         = {{CuraView}: A Multi-Agent Framework for Medical Hallucination Detection with {GraphRAG}-Enhanced Knowledge Verification},
+  year          = {2026},
+  eprint        = {2605.03476},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{lu2026dialectic,
+  author    = {Lu, Zhixiang and Su, Jionglong},
+  title     = {{Dialectic-Med}: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
+  pages     = {36877--36894},
+  year      = {2026}
+}
+
+@misc{you2026bluemed,
+  author        = {You, Saukun Thika and Tran, Nguyen Anh Khoa and Marizane, Wesley K. and Rao, Hanshu and Zhang, Qiunan and Huang, Xiaolei},
+  title         = {{BLUEmed}: Retrieval-Augmented Multi-Agent Debate for Clinical Error Detection},
+  year          = {2026},
+  eprint        = {2604.10389},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+@misc{yang2026clinhallu,
+  author        = {Yang, Sicheng and Yuan, Hangjie and Zhang, Wenjun and Wang, Jinwang and Qian, Yichen and Chen, Weihua and Wang, Fan and Zhu, Lei},
+  title         = {{ClinHallu}: A Benchmark for Diagnosing Stage-Wise Hallucinations in Medical {MLLM} Reasoning},
+  year          = {2026},
+  eprint        = {2606.14697},
+  archivePrefix = {arXiv}
+}
+
+@misc{das2026clinical,
+  title         = {Clinical Knowledge Graph Construction and Evaluation with Multi-{LLMs} via Retrieval-Augmented Generation},
+  author        = {Das, Udiptaman and Atmakuri, Krishnasai B. and Ho, Duy and Lee, Chi and Lee, Yugyung},
+  year          = {2026},
+  eprint        = {2601.01844},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+@misc{sadowski2026structured,
+  title         = {Structured Decomposition for {LLM} Reasoning: Cross-Domain Validation and Semantic Web Integration},
+  author        = {Sadowski, Albert and Chudziak, Jaros{\l}aw A.},
+  year          = {2026},
+  eprint        = {2601.01609},
+  archivePrefix = {arXiv}
+}
+
+@misc{mandarapu2026knowledge,
+  title         = {Knowledge-Graph Grounding Helps {LLMs} Only for Out-of-Training Knowledge: A Controlled Study on Clinical Question Answering},
+  author        = {Mandarapu, Madhulatha and Kunkunuru, Sandeep},
+  year          = {2026},
+  eprint        = {2606.22419},
+  archivePrefix = {arXiv}
+}
+
+% Clé conservée pour ne pas casser les \cite ; l'article date de 2025.
+@misc{zeba2026mitigating,
+  title         = {Mitigating Hallucinations in Healthcare {LLMs} with Granular Fact-Checking and Domain-Specific Adaptation},
+  author        = {Zeba, Musarrat and Al Mamun, Abdullah and Tithee, Kishoar Jahan and Sutradhar, Debopom and Raiaan, Mohaimenul Azam Khan and Mukta, Saddam and Mohamed, Reem E. and Islam, Md Rafiqul and Sebastian, Yakub and Hussain, Mukhtar and Azam, Sami},
+  year          = {2025},
+  eprint        = {2512.16189},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+@inproceedings{bn2025fact,
+  title     = {Fact-Controlled Diagnosis of Hallucinations in Medical Text Summarization},
+  author    = {BN, Suhas and Shing, Han-Chin and Xu, Lei and Strong, Mitch and Burnsky, Jon and Ofor, Jessica and Mason, Jordan R. and Chen, Susan and Srinivasan, Sundararajan and Shivade, Chaitanya and Moriarty, Jack and Cohen, Joseph Paul},
+  booktitle = {Proceedings of Interspeech 2025},
+  year      = {2025},
+  note      = {arXiv:2506.00448}
+}
+
+@misc{hybrid2512v2,
+  title         = {Hybrid-Code v2: Zero-Hallucination Clinical {ICD-10} Coding via Neuro-Symbolic Verification and Automated Knowledge Base Expansion},
+  author        = {Yu, Yunguo},
+  year          = {2026},
+  eprint        = {2512.23743},
+  archivePrefix = {arXiv},
+  note          = {Version 2}
+}
+
+@inproceedings{tran2025aspworkflow,
+  title     = {An {LLM} + {ASP} Workflow for Joint Entity-Relation Extraction},
+  author    = {Tran, Trang and Le, Trung Hoang and Cao, Huiping and Son, Tran Cao},
+  booktitle = {Proceedings of the 41st International Conference on Logic Programming (ICLP 2025)},
+  series    = {EPTCS},
+  volume    = {439},
+  pages     = {63--75},
+  year      = {2026},
+  note      = {arXiv:2508.12611}
+}
+
+@article{yang2025clines,
+  title   = {{CLINES}: Clinical {LLM}-based Information Extraction and Structuring Agent},
+  author  = {Yang, Zongxin and Yuan, Hongyi and Sayeed, Raheel and Tan, Amelia Li Min and Cai, Enci and Moro, Mohammed and Li, Xiudi and Ying, Huaiyuan and Brown, Nicholas and Weber, Griffin and Yu, Sheng and Kohane, Isaac and Cai, Tianxi},
+  journal = {medRxiv},
+  year    = {2025},
+  doi     = {10.64898/2025.12.01.25341355},
+  note    = {Preprint}
+}
+
+@inproceedings{zhao2025cyberbot,
+  title     = {{CyberBOT}: Ontology-Grounded Retrieval Augmented Generation for Reliable Cybersecurity Education},
+  author    = {Zhao, Chengshuai and De Maria, Riccardo and Kumarage, Tharindu and Chaudhary, Kumar Satvik and Agrawal, Garima and Li, Yiwen and Park, Jongchan and Deng, Yuli and Chen, Ying-Chih and Liu, Huan},
+  booktitle = {Proceedings of the 34th ACM International Conference on Information and Knowledge Management (CIKM '25)},
+  pages     = {6752--6756},
+  year      = {2025},
+  doi       = {10.1145/3746252.3761478}
+}
+
+@misc{bai2025survey,
+  title         = {Hallucination of Multimodal Large Language Models: A Survey},
+  author        = {Bai, Zechen and Wang, Pichao and Xiao, Tianjun and He, Tong and Han, Zongbo and Zhang, Zheng and Shou, Mike Zheng},
+  year          = {2025},
+  eprint        = {2404.18930},
+  archivePrefix = {arXiv},
+  note          = {Version 2}
+}
+
+@article{woodpecker2023,
+  title   = {Woodpecker: Hallucination Correction for Multimodal Large Language Models},
+  author  = {Yin, Shukang and Fu, Chaoyou and Zhao, Sirui and Xu, Tong and Wang, Hao and Sui, Dianbo and Shen, Yunhang and Li, Ke and Sun, Xing and Chen, Enhong},
+  journal = {Science China Information Sciences},
+  volume  = {67},
+  number  = {12},
+  pages   = {220105},
+  year    = {2024}
+}
+
+@article{ji2023survey,
+  title   = {Survey of Hallucination in Natural Language Generation},
+  author  = {Ji, Ziwei and Lee, Nayeon and Frieske, Rita and Yu, Tiezheng and Su, Dan and Xu, Yan and Ishii, Etsuko and Bang, Ye Jin and Madotto, Andrea and Fung, Pascale},
+  journal = {ACM Computing Surveys},
+  volume  = {55},
+  number  = {12},
+  pages   = {248:1--248:38},
+  year    = {2023},
+  doi     = {10.1145/3571730}
+}
+
+@inproceedings{wang2023selfconsistency,
+  title     = {Self-Consistency Improves Chain of Thought Reasoning in Language Models},
+  author    = {Wang, Xuezhi and Wei, Jason and Schuurmans, Dale and Le, Quoc and Chi, Ed and Narang, Sharan and Chowdhery, Aakanksha and Zhou, Denny},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023}
+}
+
+@inproceedings{manakul2023selfcheckgpt,
+  title     = {{SelfCheckGPT}: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models},
+  author    = {Manakul, Potsawee and Liusie, Adian and Gales, Mark},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  pages     = {9004--9017},
+  year      = {2023},
+  doi       = {10.18653/v1/2023.emnlp-main.557}
+}
+
+@article{chapman2001negex,
+  title   = {A Simple Algorithm for Identifying Negated Findings and Diseases in Discharge Summaries},
+  author  = {Chapman, Wendy W. and Bridewell, Will and Hanbury, Paul and Cooper, Gregory F. and Buchanan, Bruce G.},
+  journal = {Journal of Biomedical Informatics},
+  volume  = {34},
+  number  = {5},
+  pages   = {301--310},
+  year    = {2001},
+  doi     = {10.1006/jbin.2001.1029}
+}
+
+@article{harkema2009context,
+  title   = {{ConText}: An Algorithm for Determining Negation, Experiencer, and Temporal Status from Clinical Reports},
+  author  = {Harkema, Henk and Dowling, John N. and Thornblade, Tyler and Chapman, Wendy W.},
+  journal = {Journal of Biomedical Informatics},
+  volume  = {42},
+  number  = {5},
+  pages   = {839--851},
+  year    = {2009},
+  doi     = {10.1016/j.jbi.2009.05.002}
+}
+
+@article{ratner2017snorkel,
+  title   = {Snorkel: Rapid Training Data Creation with Weak Supervision},
+  author  = {Ratner, Alexander and Bach, Stephen H. and Ehrenberg, Henry and Fries, Jason and Wu, Sen and R{\'e}, Christopher},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {11},
+  number  = {3},
+  pages   = {269--282},
+  year    = {2017},
+  doi     = {10.14778/3157794.3157797}
+}
+
+@inproceedings{geifman2017selective,
+  title     = {Selective Classification for Deep Neural Networks},
+  author    = {Geifman, Yonatan and El-Yaniv, Ran},
+  booktitle = {Advances in Neural Information Processing Systems (NIPS)},
+  volume    = {30},
+  pages     = {4878--4887},
+  year      = {2017}
+}
+
+@inproceedings{hong2024metagpt,
+  title     = {{MetaGPT}: Meta Programming for a Multi-Agent Collaborative Framework},
+  author    = {Hong, Sirui and Zhuge, Mingchen and Chen, Jiaqi and Zheng, Xiawu and Cheng, Yuheng and Zhang, Ceyao and Wang, Jinlin and Wang, Zili and Yau, Steven Ka Shing and Lin, Zijuan and Zhou, Liyang and Ran, Chenyu and Xiao, Lingfeng and Wu, Chenglin and Schmidhuber, J{\"u}rgen},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+@article{anhhoang2025survey,
+  title   = {Survey and analysis of hallucinations in large language models: attribution to prompting strategies or model behavior},
+  author  = {Anh-Hoang, Dang and Tran, Vu and Nguyen, Le-Minh},
+  journal = {Frontiers in Artificial Intelligence},
+  volume  = {8},
+  pages   = {1622292},
+  year    = {2025},
+  doi     = {10.3389/frai.2025.1622292}
+}
+
+% ==================================================================
+% CHAPITRE 3 - CORPUS, GUIDELINE ET ANNOTATION
+% ==================================================================
+
+@article{biber1993,
+  author  = {Biber, Douglas},
+  title   = {Representativeness in Corpus Design},
+  journal = {Literary and Linguistic Computing},
+  volume  = {8}, number = {4}, pages = {243--257},
+  year    = {1993}
+}
+
+@article{cohen1960,
+  author  = {Cohen, Jacob},
+  title   = {A Coefficient of Agreement for Nominal Scales},
+  journal = {Educational and Psychological Measurement},
+  volume  = {20}, number = {1}, pages = {37--46},
+  year    = {1960}
+}
+
+@article{elazzouzi2024,
+  author  = {El Azzouzi, Mohamed and others},
+  title   = {Automatic De-identification of {French} Electronic Health Records: A Cost-effective Approach Exploiting Distant Supervision and Deep Learning Models},
+  journal = {BMC Medical Informatics and Decision Making},
+  volume  = {24}, pages = {54},
+  year    = {2024}
+}
+
+@inproceedings{patel2018annotation,
+  author    = {Patel, Pinal and Davey, Disha and Panchal, Vishal and Pathak, Parth},
+  title     = {Annotation of a Large Clinical Entity Corpus},
+  booktitle = {Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  pages     = {2033--2042},
+  year      = {2018}
+}
+
+@inproceedings{roberts2007clef,
+  author    = {Roberts, Angus and Gaizauskas, Robert and Hepple, Mark and Davis, Neil and Demetriou, George and Guo, Yikun and Kola, Jay and Roberts, Ian and Setzer, Andrea and Tapuria, Archana and Wheeldin, Bill},
+  title     = {The {CLEF} Corpus: Semantic Annotation of Clinical Text},
+  booktitle = {AMIA Annual Symposium Proceedings},
+  pages     = {625--629},
+  year      = {2007}
+}
+
+@misc{labelstudio,
+  author       = {Tkachenko, Maxim and Malyuk, Mikhail and Holmanyuk, Andrey and Liubimov, Nikolai},
+  title        = {{Label Studio}: Data Labeling Software},
+  howpublished = {Logiciel open source, \url{https://github.com/HumanSignal/label-studio}},
+  year         = {2020--2022}
+}
+
+% A COMPLETER : revue ou conférence, et année (un champ year non numérique peut casser le tri de certains styles)
+@misc{kgeds,
+  author       = {Ben Dhiaf, E. and Sadi, Y. and Ben Said, L. and Heming, N. and Annane, D. and Chelly Dagdia, Z.},
+  title        = {Neuro-symbolic Construction of a Clinical Ontology from Unstructured Patient Records: Application to Sepsis},
+  howpublished = {Revue ou conférence À COMPLÉTER},
+  year         = {À COMPLÉTER}
+}
+
+% ==================================================================
+% CHAPITRE 4 - MÉTHODE TRACE (références supplémentaires ; les autres sont déjà dans le chapitre 2)
+% ==================================================================
+
+@article{cox1958regression,
+  author  = {Cox, David R.},
+  title   = {The Regression Analysis of Binary Sequences},
+  journal = {Journal of the Royal Statistical Society: Series B (Methodological)},
+  year    = {1958}, volume = {20}, number = {2}, pages = {215--242},
+  doi     = {10.1111/j.2517-6161.1958.tb00292.x}
+}
+
+@article{stone1974crossvalidation,
+  author  = {Stone, Mervyn},
+  title   = {Cross-Validatory Choice and Assessment of Statistical Predictions},
+  journal = {Journal of the Royal Statistical Society: Series B (Methodological)},
+  year    = {1974}, volume = {36}, number = {2}, pages = {111--147},
+  doi     = {10.1111/j.2517-6161.1974.tb00994.x}
+}
+
+@inproceedings{gangemi2005odp,
+  author    = {Gangemi, Aldo},
+  title     = {Ontology Design Patterns for Semantic Web Content},
+  booktitle = {The Semantic Web -- ISWC 2005},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {3729},
+  pages     = {262--276},
+  publisher = {Springer},
+  year      = {2005},
+  doi       = {10.1007/11574620_21}
+}
+
+@misc{noy2006nary,
+  author       = {Noy, Natasha and Rector, Alan},
+  title        = {Defining {N}-ary Relations on the {Semantic Web}},
+  howpublished = {W3C Working Group Note},
+  year         = {2006},
+  url          = {https://www.w3.org/TR/swbp-n-aryRelations/}
+}
+
+@article{garcez2023neurosymbolic,
+  author  = {d'Avila Garcez, Artur and Lamb, Lu{\'i}s C.},
+  title   = {Neurosymbolic {AI}: the 3rd wave},
+  journal = {Artificial Intelligence Review},
+  year    = {2023}, volume = {56}, pages = {12387--12406},
+  doi     = {10.1007/s10462-023-10448-w}
+}
