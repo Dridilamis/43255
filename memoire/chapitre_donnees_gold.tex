@@ -1,0 +1,515 @@
+\chapter{Données, schéma d’annotation et Gold Standard}
+\label{chap:donnees-gold}
+
+\section{Introduction}\label{sec:c3-3-1}
+
+Pour évaluer un système qui extrait automatiquement des informations cliniques, il faut pouvoir comparer ce qu’il produit à ce que contiennent réellement les dossiers. Avec les modèles génératifs multimodaux, cette comparaison est indispensable : leurs réponses sont souvent bien formées et médicalement vraisemblables, alors même qu’une partie de leur contenu ne se trouve pas dans le document analysé.
+
+Ce mémoire a été réalisé au sein de l’IHU PROMETHEUS (\emph{PRecisiOn MedicinE for healTHcare associatEd and commUnity acquired Sepsis}), dans le Work Package 6, qui étudie le sepsis sous ses différents aspects. Pour TRACE, extraire des entités et des relations à partir de dossiers numérisés ne suffit pas : il faut aussi savoir si ces extractions sont fiables et repérer les erreurs qui fausseraient les connaissances cliniques construites à partir d’elles. Cela suppose une référence établie sans l’aide des modèles que l’on veut évaluer.
+
+Le travail fait suite au cadre KG-EDS (\emph{Knowledge Graph for Early Diagnosis of Sepsis})~\cite{kgeds}. L’extraction y reposait sur l’apprentissage en contexte (\emph{In-Context Learning}) et avait été évaluée sur 58 dossiers de la cohorte APROCCHSS, sans corpus annoté. Faute de référence, ni la fiabilité des extractions ni les hallucinations ne pouvaient être mesurées précisément. Le Gold Standard présenté ici a été construit pour lever cette limite.
+
+Sa construction a été traitée comme une étape méthodologique à part entière. Avant d’annoter, nous avons rédigé un guide propre au sepsis, le \emph{TRACE-Sepsis Annotation Guideline}. Il fixe les concepts cliniques à représenter, les relations permises entre eux et la conduite à tenir face à la négation, à la temporalité, aux valeurs chiffrées et aux cas ambigus ; le schéma d’annotation en est la partie structurelle. Le Pr Nicholas Heming, médecin réanimateur spécialiste du sepsis, a validé le guideline puis revu les annotations, ce qui assure la pertinence clinique de la référence.
+
+Parce qu’il s’agit de dossiers médicaux, la préparation du corpus devait aussi respecter les règles de protection des données de santé. La pseudonymisation, la minimisation et la confidentialité prévues par le Règlement général sur la protection des données (RGPD) ont été appliquées dès cette étape.
+
+Le chapitre décrit d’abord le corpus clinique (section~\ref{sec:c3-3-2}), puis le guideline et ses fondements (section~\ref{sec:c3-3-3}), le schéma d’entités (section~\ref{sec:c3-3-4}) et celui des relations (section~\ref{sec:c3-3-5}). Viennent ensuite les règles d’annotation (section~\ref{sec:c3-3-6}), le protocole d’annotation (section~\ref{sec:c3-3-7}), la construction du Gold Standard (section~\ref{sec:c3-3-8}), sa validation médicale (section~\ref{sec:c3-3-9}), sa caractérisation (section~\ref{sec:c3-3-10}) et son usage dans l’évaluation (section~\ref{sec:c3-3-11}). La section~\ref{sec:c3-3-12} discute les limites de la démarche.
+
+\section{Corpus clinique}\label{sec:c3-3-2}
+
+\subsection{Nature et origine des données}\label{sec:c3-3-2-1}
+
+Les documents étudiés sont des dossiers médicaux numérisés de patients pris en charge pour un sepsis. Ils proviennent de la cohorte APROCCHSS (1\,240 patients), constituée lors de l’essai multicentrique du même nom chez des patients en choc septique~\cite{annane2018aprocchss}. L’Assistance Publique -- Hôpitaux de Paris (AP-HP) les a mis à disposition dans le cadre du Work Package 6 de l’IHU PROMETHEUS. Ils couvrent les années 2008 à 2015 et viennent du service de médecine intensive--réanimation de l’Hôpital Raymond-Poincaré (AP-HP).
+
+Ces dossiers n’ont rien d’une base de données structurée, où chaque information aurait son champ. Ils ont été rédigés au fil de la prise en charge et mêlent observations médicales, paramètres physiologiques, résultats biologiques et microbiologiques, prescriptions, comptes rendus d’examens, diagnostics et notes d’évolution. La plupart sont antérieurs à la définition Sepsis-3 de 2016~\cite{singer2016third} et emploient donc le vocabulaire de Sepsis-2~\cite{levy2003sccm}, comme « sepsis sévère ».
+
+Une même information revient souvent à plusieurs endroits, sous une forme plus ou moins précise. Une suspicion d’infection peut ainsi apparaître dans l’observation d’entrée, être précisée par une imagerie, puis confirmée par un prélèvement. Une phrase ou une page isolée ne suffit donc pas toujours à comprendre le contexte clinique. C’est pourquoi \textbf{le dossier patient est l’unité clinique de référence} dans ce travail, même si certaines opérations se font page par page.
+
+\subsection{Hétérogénéité documentaire}\label{sec:c3-3-2-2}
+
+Les dossiers sont des fichiers PDF obtenus par numérisation de documents papier. D’une page à l’autre, la mise en page, la densité du texte, l’orientation et la qualité du scan changent. Une partie de l’information est rédigée en texte libre, une autre est rangée dans des tableaux ou des formulaires, d’autres zones juxtaposent texte, valeurs et unités.
+
+La variabilité est aussi sémantique. Un même fait peut être écrit de plusieurs façons, abrégé, ou complété sur une autre page. Certains éléments n’ont de sens qu’avec leur contexte : une valeur biologique doit être rattachée à son biomarqueur et à son unité, un traitement à sa posologie, à sa voie d’administration ou à sa date. Une information donnée sur une page peut enfin être confirmée, précisée ou contredite plus loin, ce qui conforte le choix du dossier comme unité de représentation.
+
+Comme il s’agit de scans, ces documents ne se comportent pas comme des textes nativement numériques : la disposition de la page, la position relative des informations et la qualité de l’image influencent l’extraction. C’est l’une des raisons du recours à des modèles vision-langage, qui lisent directement les pages scannées. Dans TRACE, le document est traité comme une source multimodale, et non comme une image qu’il faudrait d’abord convertir en texte par OCR.
+
+\subsection{Taille et description du corpus}\label{sec:c3-3-2-3}
+
+Le corpus final compte \textbf{246 dossiers médicaux}, réunis progressivement au rythme des mises à disposition. \textbf{49 dossiers}, soit environ 20\,\% du corpus, ont été retenus pour construire la référence annotée. Ils représentent \textbf{291 pages}, de 4 à 12 pages par dossier (5,9 en moyenne). Les autres dossiers serviront aux étapes ultérieures d’extraction et d’exploitation. Le tableau~\ref{tab:c3-3-1} résume ces caractéristiques.
+
+\begin{table}[H]
+\centering
+\caption{Caractéristiques du corpus}\label{tab:c3-3-1}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.404\linewidth}>{\raggedright\arraybackslash}p{0.231\linewidth}>{\raggedright\arraybackslash}p{0.231\linewidth}}
+\toprule
+\textbf{Caractéristique} & \textbf{Corpus complet} & \textbf{Sous-corpus de référence} \\
+\midrule
+Nombre de dossiers & 246 & 49 ($\approx$ 20\,\%) \\
+Nombre total de pages & \acompleter{à compléter} & 291 \\
+Pages par dossier (min--max) & \acompleter{à compléter} & 4--12 (moyenne : 5,9) \\
+Période couverte & 2008--2015 & 2008--2015 \\
+Établissement / service & Médecine intensive--réanimation, Hôpital Raymond-Poincaré (AP-HP) & Médecine intensive--réanimation, Hôpital Raymond-Poincaré (AP-HP) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Protection des données et cadre réglementaire}\label{sec:c3-3-2-4}
+
+Les dossiers contiennent des données de santé. Leur confidentialité a donc été prise en compte dès la préparation du corpus, en limitant le traitement à ce qui était nécessaire aux objectifs scientifiques.
+
+Une première pseudonymisation a été faite à la main par l’AP-HP, avant la mise à disposition. Les comptes rendus ont été imprimés et le nom et le prénom du patient partiellement masqués au stylo noir : quelques lettres ont été recouvertes, sans que l’identité soit entièrement effacée. Les pages ont ensuite été scannées et regroupées en fichiers PDF, que nous avons récupérés sur l’intranet de l’AP-HP. C’est pour cette raison que les dossiers n’ont pas de couche texte : l’information n’est accessible qu’à travers l’image des pages (section~\ref{sec:c3-3-2-2}).
+
+Ce masquage ne concerne que le nom du patient, et quelques lettres peuvent rester lisibles. D’autres éléments permettant une identification indirecte restent parfois visibles, comme la date de naissance, les dates d’entrée et de sortie ou l’identifiant hospitalier. Au sens du RGPD, ces données sont donc pseudonymisées et non anonymisées : elles restent des données à caractère personnel et ont été traitées comme telles.
+
+Une seconde pseudonymisation, automatique, a été appliquée aux textes transcrits des pages et aux annotations, à la demande du médecin référent. Elle repose sur des règles explicites : effacement des noms du patient restés lisibles hors de l’en-tête, de ceux de ses proches et des noms de médecins figurant dans l’en-tête des comptes rendus, ainsi que des numéros de téléphone. Chaque lettre effacée est remplacée par un caractère de même longueur, ce qui préserve les positions des annotations. Les outils de désidentification automatique fondés sur l’apprentissage, qui existent pour les dossiers cliniques en français~\cite{elazzouzi2024}, n’ont pas été utilisés.
+
+Les informations qui identifient directement un patient ne sont ni annotées ni extraites : le schéma se limite aux éléments utiles pour représenter le contexte clinique. Ce choix applique le principe de minimisation de l’article 5 du RGPD (Règlement (UE) 2016/679~\cite{rgpd2016}), selon lequel les données doivent être adéquates, pertinentes et limitées à ce qui est nécessaire aux finalités du traitement. Le même article pose aussi les principes de limitation des finalités, d’intégrité et de confidentialité. L’article 89 demande en outre que les traitements à des fins de recherche scientifique soient entourés de garanties appropriées, parmi lesquelles la pseudonymisation lorsqu’elle permet d’atteindre les objectifs de la recherche.
+
+Le format des documents impose une précaution supplémentaire. Dans un scan, une information sensible peut se trouver dans l’image même de la page, indépendamment de tout texte. La protection des données doit donc porter sur le document visuel entier. C’est d’autant plus important dans TRACE que les modèles multimodaux lisent directement les pages : la protection des données accompagne tout le protocole, de la préparation du corpus jusqu’à l’évaluation.
+
+\section{Le TRACE-Sepsis Annotation Guideline}\label{sec:c3-3-3}
+
+\subsection{Motivation}\label{sec:c3-3-3-1}
+
+Dans un dossier clinique, une même expression peut se lire de plusieurs façons. Selon le contexte, une manifestation relève d’un symptôme, d’un paramètre physiologique ou d’une défaillance d’organe. Deux concepts cités côte à côte ne sont pas pour autant liés. Sans règles écrites, chaque annotateur trancherait à sa manière ; il fallait donc formaliser ces décisions pour obtenir une annotation homogène et reproductible.
+
+Le TRACE-Sepsis Annotation Guideline, dont la version finale est la v2.0, répond à ce besoin. Il traite deux questions. La première, \emph{quelles informations représenter ?}, relève du schéma d’entités et de relations (sections~\ref{sec:c3-3-4} et~\ref{sec:c3-3-5}). La seconde, \emph{selon quelles règles les annoter ?}, relève des règles d’annotation (section~\ref{sec:c3-3-6}).
+
+\subsection{Principes de conception}\label{sec:c3-3-3-2}
+
+Quatre principes ont orienté sa rédaction.
+
+\begin{itemize}
+  \item \textbf{Ancrage documentaire.} Ne sont représentées que les informations réellement présentes dans le dossier. Aucune entité ni relation n’est ajoutée à partir de connaissances médicales extérieures, même plausibles : un antibiotique habituellement prescrit contre une infection ne suffit pas à annoter le diagnostic correspondant. C’est sur ce principe que repose l’évaluation des hallucinations, puisqu’une information sans preuve dans le document ne doit pas figurer dans le Gold Standard.
+  \item \textbf{Séparation entre mention et normalisation.} La mention est conservée telle qu’elle est écrite, pour garder le lien avec la preuve ; sa normalisation est traitée à part.
+  \item \textbf{Cohérence relationnelle.} Une relation doit être justifiée par le dossier et respecter les types d’entités autorisés pour son sujet et pour son objet.
+  \item \textbf{Dimension longitudinale.} Des informations relatives à des moments différents du parcours ne sont pas fusionnées sans tenir compte de leur date.
+\end{itemize}
+
+\subsection{Fondements cliniques}\label{sec:c3-3-3-3}
+
+Le guideline s’appuie sur les références qui font autorité dans le sepsis : les définitions Sepsis-2~\cite{levy2003sccm} et Sepsis-3~\cite{singer2016third}, les recommandations de la Surviving Sepsis Campaign~\cite{evans2021ssc}, le score SOFA~\cite{vincent1996sofa}, les recommandations KDIGO sur l’insuffisance rénale aiguë~\cite{kdigo2012aki} et, pour la microbiologie, les tables EUCAST en version 14.0~\cite{eucast}. Ces références cadrent la définition des concepts et une partie des règles de typage. Le vocabulaire de Sepsis-2 présent dans les dossiers (« sepsis sévère ») est conservé tel quel : on annote le diagnostic écrit, sans le traduire dans les termes de Sepsis-3.
+
+Le guideline n’est pas pour autant un outil diagnostique. Il dit comment représenter une information quand elle est écrite, et non comment déduire un diagnostic à partir des recommandations. La nuance compte pour l’étude des hallucinations : une information médicalement juste mais absente du dossier n’a pas sa place dans le Gold Standard.
+
+\subsection{Évolution et validation du guideline}\label{sec:c3-3-3-4}
+
+Une première version a été rédigée avant la campagne d’annotation. En l’appliquant aux premiers dossiers, plusieurs points se sont révélés insuffisamment précis : catégories dont les frontières se recouvrent, informations qui pouvaient relever de deux types, conditions d’usage de certaines relations. Le guideline a donc été révisé à plusieurs reprises. La version 1.5 a fixé un premier jeu de 32 signatures de relations ; la version 1.6 n’a pas modifié ces signatures mais a précisé les frontières entre catégories, ajouté des règles de typage explicites et normalisé les variantes lexicales (« CRP » et « C.R.P. » ramenés à la forme proteine\_C\_reactive), afin de réduire les erreurs de typage.
+
+La validation médicale a été menée avec le Pr Nicholas Heming, professeur de médecine intensive--réanimation à l’Hôpital Raymond-Poincaré (AP-HP) et à l’Université Versailles-Saint-Quentin-en-Yvelines (Université Paris-Saclay), dont les recherches portent principalement sur le sepsis et le choc septique. Elle s’est déroulée en plusieurs séances de travail, pour un total d’environ cinq heures. Le médecin a examiné les catégories d’entités, leurs vocabulaires, les relations autorisées et les règles d’annotation, en particulier les cas où seule une décision clinique permet de choisir entre deux catégories. Ses remarques ont donné la version 1.7 : douze diagnostics étrangers au sepsis ont été retirés des valeurs autorisées, deux relations d’imagerie ont été supprimées et quatre relations ont été ajoutées (stade d’IRA, site infecté par un micro-organisme, symptôme orientant vers un foyer, symptôme associé à la gravité initiale), portant le schéma à 34 relations.
+
+La version finale, la v2.0, conserve ces 34 relations mais en remplace une : la relation qui reliait directement le patient à un foyer infectieux est remplacée par une relation qui rattache le foyer au diagnostic dont il est la localisation (\emph{label\_nosologique\_a\_pour\_foyer}). Elle ajoute deux règles. Un diagnostic de la liste autorisée reste un \entite{LABEL\_NOSOLOGIQUE}, qu’il concerne l’hospitalisation en cours ou un épisode antérieur ; tout autre antécédent est une \entite{COMORBIDITE\_ANTECEDENT}. Un \entite{FOYER\_INFECTIEUX} sert uniquement à localiser un diagnostic. C’est cette version validée qui a servi à produire et à contrôler les annotations du Gold Standard.
+
+\section{Schéma d’entités}\label{sec:c3-3-4}
+
+\subsection{Organisation des entités par dimension clinique}\label{sec:c3-3-4-1}
+
+Le schéma d’annotation sert à passer du contenu des dossiers à une connaissance structurée. Il comprend deux volets : les entités, qui représentent les informations cliniques, et les relations, qui les relient. Il ne s’agit pas seulement de repérer des termes médicaux, mais de reconstituer de façon ordonnée le parcours clinique du patient.
+
+Le schéma compte \textbf{20 types d’entités cliniques}, plus une catégorie technique de métadonnées (section~\ref{sec:c3-3-4-2}). Le tableau~\ref{tab:c3-3-2} les regroupe selon les grandes dimensions du dossier. Chaque type dispose d’un vocabulaire contrôlé et d’attributs propres : \entite{LABEL\_NOSOLOGIQUE} admet par exemple 23 valeurs (sepsis, choc septique, SDRA, IRA, pneumopathie…), et \entite{BIOMARQUEUR} porte une valeur, une unité et une direction d’évolution (augmentation, diminution, stable, normalisation, inconnue).
+
+\begin{table}[H]
+\centering
+\caption{Types d’entités du schéma TRACE-Sepsis, par dimension clinique}\label{tab:c3-3-2}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.192\linewidth}>{\raggedright\arraybackslash}p{0.260\linewidth}>{\raggedright\arraybackslash}p{0.413\linewidth}}
+\toprule
+\textbf{Dimension} & \textbf{Type d’entité} & \textbf{Contenu représenté} \\
+\midrule
+Patient et diagnostic & \entite{DONNEE\_\allowbreak{}PATIENT} & Le patient et ses données démographiques non identifiantes (âge, sexe, poids, taille, IMC), relevées à l’admission \\
+ & \entite{LABEL\_\allowbreak{}NOSOLOGIQUE} & Diagnostic écrit dans le dossier et figurant dans la liste autorisée (sepsis, choc septique, pneumopathie…), y compris pour un épisode antérieur \\
+Évaluation clinique et physiologique & \entite{SIGNE\_\allowbreak{}VITAL} & Paramètre physiologique, hémodynamique ou ventilatoire mesuré (valeur, unité, horodatage) \\
+ & \entite{SCORE\_\allowbreak{}SOFA}, \entite{SCORE\_\allowbreak{}qSOFA} & Scores de dysfonction d’organes et de dépistage du sepsis \\
+ & \entite{SCORE\_\allowbreak{}NEUROLOGIQUE} & Score neurologique rapporté (Glasgow, RASS, FOUR, MMS, testing musculaire) \\
+ & \entite{STADE\_\allowbreak{}IRA} & Stade 1 à 3 d’insuffisance rénale aiguë (classification KDIGO 2012) \\
+Infection et biologie & \entite{BIOMARQUEUR} & Résultat biologique quantitatif, avec valeur, unité et direction d’évolution (ex. CRP 245 mg/L) \\
+ & \entite{FOYER\_\allowbreak{}INFECTIEUX} & Localisation d’un diagnostic infectieux (organe, région, site) \\
+ & \entite{MICRO\_\allowbreak{}ORGANISME} & Agent microbiologique identifié \\
+Manifestations et atteintes & \entite{SYMPTOME} & Manifestation qualitative observée ou rapportée \\
+ & \entite{DEFAILLANCE\_\allowbreak{}ORGANE} & Dysfonction ou défaillance d’un organe \\
+Prise en charge thérapeutique & \entite{TRAITEMENT} & Médicament ou intervention thérapeutique \\
+ & \entite{POSOLOGIE} & Dose, schéma horaire, voie, débit et durée d’administration \\
+Terrain et contexte & \entite{COMORBIDITE\_\allowbreak{}ANTECEDENT} & Pathologie préexistante ou antécédent hors liste des diagnostics \\
+ & \entite{CONTEXTE\_\allowbreak{}ACQUISITION} & Mode d’acquisition (communautaire, nosocomiale, associée aux soins…) et expositions \\
+Temporalité et parcours de soins & \entite{EVENEMENT\_\allowbreak{}TEMPOREL} & Événement daté (admission, administration, transfert…) \\
+ & \entite{EVOLUTION\_\allowbreak{}PRONOSTIC} & Évolution clinique et devenir du patient \\
+ & \entite{SERVICE\_\allowbreak{}MEDICAL} & Type de service de prise en charge (réanimation, urgences, SSR…), sans le nom de l’établissement \\
+Examens & \entite{IMAGERIE\_\allowbreak{}PROCEDURE} & Examen d’imagerie ou procédure diagnostique (type, région, résultat, horodatage) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Plusieurs distinctions structurent ce schéma. \entite{DONNEE\_PATIENT} et \entite{LABEL\_NOSOLOGIQUE} sont séparés pour ne pas confondre le patient avec les pathologies qui lui sont attribuées. Le contexte infectieux est découpé en trois concepts : une CRP élevée, un foyer pulmonaire et un germe isolé sont trois informations distinctes, même quand elles décrivent le même épisode. Un \entite{SYMPTOME} n’est ni un diagnostic, ni une défaillance d’organe, ni un résultat biologique. Enfin, séparer \entite{TRAITEMENT} et \entite{POSOLOGIE} permettra de distinguer plusieurs erreurs : mauvais médicament, mauvaise dose, ou mauvais lien entre le traitement et le patient. La posologie est une entité et non un simple attribut, pour trois raisons : elle a une structure interne (dose, unité, schéma horaire), une temporalité propre (une dose peut être ajustée sans que le médicament change), et des notations variées (« 1-0-1 », « 1 amp/8h ») qu’il faut pouvoir décomposer.
+
+\subsection{Métadonnées de traçabilité}\label{sec:c3-3-4-2}
+
+Le guideline prévoit aussi des métadonnées techniques : identifiant de l’entité, page d’origine, boîte englobante (\emph{bbox}) situant l’information sur la page, confiance visuelle et confiance globale, type d’inférence et indicateur de négation (\emph{nie}). Elles ne décrivent aucune connaissance médicale. Leur rôle est de relier chaque information structurée à l’endroit du document d’où elle vient, ce qui est précieux pour repérer et analyser les hallucinations.
+
+\section{Schéma de relations}\label{sec:c3-3-5}
+
+\subsection{Principe et familles de relations}\label{sec:c3-3-5-1}
+
+Repérer les entités ne suffit pas à rendre compte de l’organisation d’un dossier. Savoir qu’un antibiotique, un patient et un germe sont mentionnés ne dit pas si l’antibiotique a été donné au patient, ni s’il visait ce germe. TRACE-Sepsis définit donc un ensemble fermé de relations orientées, de la forme \emph{sujet $\rightarrow$ relation $\rightarrow$ objet}. Chaque type de relation a un domaine (\emph{domain}) et une portée (\emph{range}) autorisés.
+
+La version finale du guideline comporte \textbf{34 signatures relationnelles}. Leur liste et leurs couples domaine--portée sont figés, pour qu’aucune normalisation ni correction ne modifie la structure du schéma. Le tableau~\ref{tab:c3-3-3} les regroupe en huit familles ; la liste complète figure en annexe~\ref{annexe:relations}.
+
+\begin{table}[H]
+\centering
+\caption{Familles de relations du schéma TRACE-Sepsis v2.0}\label{tab:c3-3-3}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.173\linewidth}>{\raggedright\arraybackslash}p{0.264\linewidth}>{\raggedright\arraybackslash}p{0.319\linewidth}>{\raggedright\arraybackslash}p{0.064\linewidth}}
+\toprule
+\textbf{Famille} & \textbf{Rôle} & \textbf{Exemple de signature} & \textbf{Nb} \\
+\midrule
+Diagnostiques & Relier le patient à ses diagnostics et à ses défaillances d’organes, rattacher un foyer à son diagnostic, relier les scores SOFA, qSOFA et le stade d’IRA & \entite{LABEL\_\allowbreak{}NOSOLOGIQUE} $\rightarrow$ label\_\allowbreak{}nosologique\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}foyer $\rightarrow$ \entite{FOYER\_\allowbreak{}INFECTIEUX} & 11 \\
+Thérapeutiques & Relier un traitement au patient, à sa posologie, à un germe, à une défaillance ciblée ou à un diagnostic & \entite{TRAITEMENT} $\rightarrow$ traitement\_\allowbreak{}administre\_\allowbreak{}a $\rightarrow$ \entite{DONNEE\_\allowbreak{}PATIENT} & 6 \\
+Biomarqueurs et microbiologie & Rattacher un biomarqueur à un événement, une défaillance ou un diagnostic, et un germe au site de prélèvement ou au site infecté & \entite{MICRO\_\allowbreak{}ORGANISME} $\rightarrow$ micro\_\allowbreak{}organisme\_\allowbreak{}isole\_\allowbreak{}dans $\rightarrow$ \entite{FOYER\_\allowbreak{}INFECTIEUX} & 5 \\
+Temporelles et pronostiques & Ordonner les événements, les associer à une évolution, relier le patient à son évolution et à ses services & \entite{EVENEMENT\_\allowbreak{}TEMPOREL} $\rightarrow$ precede $\rightarrow$ \entite{EVENEMENT\_\allowbreak{}TEMPOREL} & 4 \\
+Terrain et risque & Relier comorbidités et contexte d’acquisition au risque infectieux et au risque de résistance & \entite{COMORBIDITE\_\allowbreak{}ANTECEDENT} $\rightarrow$ comorbidite\_\allowbreak{}est\_\allowbreak{}facteur\_\allowbreak{}risque\_\allowbreak{}de $\rightarrow$ \entite{LABEL\_\allowbreak{}NOSOLOGIQUE} & 3 \\
+Symptômes & Relier le patient à ses symptômes, et un symptôme à un foyer ou à la gravité initiale & \entite{DONNEE\_\allowbreak{}PATIENT} $\rightarrow$ presente\_\allowbreak{}symptome $\rightarrow$ \entite{SYMPTOME} & 3 \\
+Signes vitaux & Rattacher un paramètre physiologique anormal à une défaillance d’organe & \entite{SIGNE\_\allowbreak{}VITAL} $\rightarrow$ signe\_\allowbreak{}vital\_\allowbreak{}supporte\_\allowbreak{}defaillance\_\allowbreak{}organe $\rightarrow$ \entite{DEFAILLANCE\_\allowbreak{}ORGANE} & 1 \\
+Imagerie & Indiquer qu’un examen objective un foyer infectieux & \entite{IMAGERIE\_\allowbreak{}PROCEDURE} $\rightarrow$ imagerie\_\allowbreak{}objective\_\allowbreak{}foyer $\rightarrow$ \entite{FOYER\_\allowbreak{}INFECTIEUX} & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Certaines relations demandent une preuve particulière. Annoter \emph{Amiklin $\rightarrow$ traitement\_administre\_a $\rightarrow$ Patient} suppose que le dossier indique que le traitement a bien été administré ; un traitement seulement envisagé ou discuté ne compte pas comme une administration. De même, \emph{precede} n’est utilisée que si le document permet d’ordonner les deux événements, ce qui évite de mélanger des moments différents du parcours.
+
+\subsection{Contraintes structurelles}\label{sec:c3-3-5-2}
+
+Un triplet n’est accepté que si toutes les conditions suivantes sont réunies :
+
+\begin{itemize}
+  \item le sujet appartient au domaine de la relation ;
+  \item l’objet appartient à sa portée ;
+  \item le sens de la relation est respecté ;
+  \item la relation fait partie du vocabulaire contrôlé ;
+  \item le lien est justifié par le contenu du dossier.
+\end{itemize}
+
+La politique d’annotation du guideline est stricte sur ce point : une relation dont le domaine ou la portée ne correspond pas à sa signature est rejetée, et il est interdit d’en détourner le sens pour la rendre valide. Ces contraintes servent à construire le Gold Standard, mais elles serviront aussi plus loin, car certaines violations correspondront à des erreurs structurelles commises par les modèles.
+
+Les seuils cliniques ne figurent pas dans les noms des relations. Ils sont portés par des règles dérivées, destinées à être exprimées en SWRL ou en contraintes SHACL. Selon la règle R1, par exemple, la présence de vasopresseurs associée à un lactate d’au moins 2 mmol/L fait du lactate un critère du choc septique (définition Sepsis-3) ; selon la règle R3, une fréquence respiratoire d’au moins 22/min valide le critère respiratoire du qSOFA. Deux règles interdisent toute inférence : une relation d’imagerie n’est créée que si l’examen et l’entité cible sont tous deux écrits dans le document (R8), et une relation presente\_symptome seulement si le symptôme est explicitement mentionné (R9).
+
+\section{Règles d’annotation}\label{sec:c3-3-6}
+
+Le schéma dit quels concepts existent ; les règles d’annotation disent quand les utiliser. En plus du principe d’ancrage documentaire déjà présenté (section~\ref{sec:c3-3-3-2}), elles portent sur les points suivants.
+
+\subsection{Délimitation des mentions}\label{sec:c3-3-6-1}
+
+On conserve le texte tel qu’il apparaît dans le document, pour garder le lien avec la source. Une mention couvre le concept, sans les mots voisins qui ne lui appartiennent pas. Lorsqu’une normalisation est utile (« FC » ou « fréquence cardiaque » ramenés à frequence\_cardiaque), elle est enregistrée à part et ne modifie jamais les positions (\emph{offsets}) de la mention. On dispose ainsi d’une forme standardisée sans perdre la preuve.
+
+\subsection{Distinction entre catégories proches}\label{sec:c3-3-6-2}
+
+Une partie des erreurs vient de concepts voisins mais différents. Le guideline pose notamment cette règle : une mesure physiologique chiffrée est un \entite{SIGNE\_VITAL}, sa traduction qualitative un \entite{SYMPTOME}. Une dyspnée est donc un symptôme, une fréquence respiratoire mesurée un signe vital. La même attention vaut entre symptôme et diagnostic, entre traitement et posologie, entre paramètre biologique et signe vital.
+
+D’autres règles séparent l’épisode aigu du terrain. Un diagnostic de la liste autorisée reste un \entite{LABEL\_NOSOLOGIQUE} même lorsqu’il concerne un épisode antérieur, le texte portant alors la temporalité ; un autre antécédent est une \entite{COMORBIDITE\_ANTECEDENT}. Une pathologie chronique ou citée dans les antécédents ne devient pas, à elle seule, une \entite{DEFAILLANCE\_ORGANE}. Une valeur biologique dite de base ou habituelle reste un \entite{BIOMARQUEUR}, sans justifier une défaillance aiguë. Une anomalie biologique isolée ne suffit pas non plus à créer une \entite{DEFAILLANCE\_ORGANE} si la dysfonction n’est pas écrite. Enfin, un \entite{FOYER\_INFECTIEUX} ne s’emploie que pour localiser un diagnostic : la localisation d’un antécédent n’est pas un foyer infectieux.
+
+\subsection{Valeurs numériques et unités}\label{sec:c3-3-6-3}
+
+Une valeur chiffrée ne se lit jamais seule. Dans « CRP 245 mg/L », un biomarqueur, une valeur et une unité vont ensemble, et l’annotation doit préserver ce lien pour qu’aucune valeur ne soit attribuée au mauvais paramètre. Il en va de même pour les signes vitaux et les posologies. Ce point compte pour la suite, car certaines hallucinations ne portent pas sur l’existence d’une entité mais sur sa valeur, son unité ou son rattachement.
+
+\subsection{Négation}\label{sec:c3-3-6-4}
+
+Un fait nié ne doit pas devenir un fait affirmé : « absence de foyer pulmonaire » et « foyer pulmonaire identifié » ne peuvent pas recevoir la même représentation. Les marqueurs comme \emph{absence de}, \emph{pas de}, \emph{sans} ou \emph{négatif} sont donc pris en compte au moment d’annoter.
+
+La règle R5 du guideline autorise à conserver dans le Gold Standard une information niée, à condition qu’elle renvoie à un concept clinique réellement mentionné. Dans le Gold Standard consolidé, la polarité n’est pas codée par un attribut séparé : elle se lit dans la mention elle-même, qui inclut le marqueur de négation lorsqu’il a été annoté (« pas de marbrures »). L’indicateur \emph{nie} prévu parmi les métadonnées (section~\ref{sec:c3-3-4-2}) concerne surtout les sorties des modèles.
+
+Ce choix a une conséquence sur l’évaluation. Les entités sont appariées sur leur mention normalisée, leur type et leur page, et les relations sur leur triplet sujet--relation--objet ; l’attribut \emph{nie} produit par un modèle n’entre pas dans cette comparaison. Une entité extraite est donc jugée correcte dès que sa mention et son type correspondent à la référence, quelle que soit la polarité que lui attribue le modèle. La référence et la procédure d’évaluation restent ainsi cohérentes, mais l’évaluation ne détecte pas une inversion de polarité, qu’un fait nié soit présenté comme présent ou l’inverse.
+
+La négation n’est pas ignorée pour autant. Elle est traitée en amont de l’évaluation, dans la chaîne TRACE, qui repère les marqueurs de négation dans le texte source et retire du graphe final les faits niés et les relations qui les affirment (chapitre~\acompleter{numéro à compléter}). Ajouter au Gold Standard un attribut de négation explicite rendrait l’évaluation sensible à la polarité ; c’est une perspective de ce travail (section~\ref{sec:c3-3-12}).
+
+\subsection{Incertitude}\label{sec:c3-3-6-5}
+
+Une hypothèse ou une suspicion ne doit pas devenir un diagnostic confirmé : on conserve le degré de certitude exprimé par le document. Le guideline encode ce degré dans le vocabulaire contrôlé plutôt que par un attribut générique. Un foyer infectieux est ainsi qualifié de documenté (microbiologiquement, radiologiquement ou cliniquement), probable, possible ou suspecté, et le diagnostic suspicion\_infection reste distinct d’une infection documentée. De même, un traitement seulement envisagé, discuté ou proposé peut être annoté comme \entite{TRAITEMENT}, mais il ne reçoit pas de relation traitement\_administre\_a tant que son administration n’est pas écrite.
+
+\subsection{Temporalité}\label{sec:c3-3-6-6}
+
+Les informations d’un dossier ne datent pas toutes du même moment : une pathologie ancienne, la situation actuelle et l’évolution ultérieure doivent rester distinctes. Un ordre entre deux événements n’est annoté que si le document permet de l’établir. Cette règle pèse surtout dans les dossiers qui décrivent plusieurs épisodes de prise en charge.
+
+\subsection{Relations}\label{sec:c3-3-6-7}
+
+Deux entités proches dans le texte, ou sur la même page, ne sont pas liées pour autant. Un triplet n’est créé que s’il remplit deux conditions : le lien est justifié par le contenu du dossier, et la relation respecte la signature prévue par le schéma.
+
+\subsection{Cas ambigus}\label{sec:c3-3-6-8}
+
+Malgré des règles détaillées, certains passages restent difficiles à interpréter : scan de mauvaise qualité, abréviation inconnue, contexte incomplet, formulation médicalement ambiguë. Dans ces cas, on ne force pas l’annotation. Le cas est signalé pour révision et, s’il se répète, il donne lieu à une précision du guideline. Le référentiel évolue ainsi à partir des difficultés rencontrées dans le corpus.
+
+\section{Sous-corpus de référence et protocole d’annotation}\label{sec:c3-3-7}
+
+La figure~\ref{fig:c3-3-1} résume le chemin qui mène du corpus clinique au Gold Standard final. Les étapes sont détaillées dans cette section et les deux suivantes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/fig_gold.png}
+\caption{Processus de construction du Gold Standard}\label{fig:c3-3-1}
+\end{figure}
+
+\subsection{Sélection et justification du sous-corpus}\label{sec:c3-3-7-1}
+
+L’annotation a porté sur 49 dossiers, soit environ 20\,\% du corpus et 291 pages. Le corpus ayant été réuni progressivement (section~\ref{sec:c3-3-2-3}), les dossiers ont été retenus dans l’ordre où l’AP-HP les a mis à disposition. Ils proviennent de deux lots successifs :
+
+\begin{itemize}
+  \item \textbf{un premier lot}, disponible dès le début du projet ;
+  \item \textbf{un second lot}, mis à disposition par l’AP-HP fin juillet 2026.
+\end{itemize}
+
+Une partie de chaque lot a été annotée. Commencer par le premier lot a permis de lancer l’annotation et de stabiliser le guideline sans attendre la livraison suivante ; des dossiers du second lot ont été ajoutés à mesure qu’ils arrivaient. Les dossiers n’ont donc pas été choisis pour leur facilité ou leur difficulté. Rien ne garantit en revanche que le sous-corpus soit représentatif des 246 dossiers, puisque la composition de chaque lot dépend de facteurs administratifs comme la période de prise en charge ou l’ordre d’archivage.
+
+Annoter un sous-corpus plutôt que l’ensemble répond au coût de l’annotation experte. Chaque dossier doit être annoté selon le schéma, ses relations vérifiées et ses annotations consolidées avant la revue clinique. Mieux vaut une référence soignée sur une partie du corpus qu’une annotation superficielle de tous les dossiers. La représentativité d’un corpus annoté dépend d’ailleurs davantage de la diversité des données et de la manière de les sélectionner que de leur nombre~\cite{biber1993}, et plusieurs ressources cliniques annotées ont été construites de la même façon, à partir de sous-ensembles~\cite{roberts2007clef,patel2018annotation}.
+
+\subsection{Annotateurs et environnement d’annotation}\label{sec:c3-3-7-2}
+
+Les 49 dossiers ont été annotés par l’auteure de ce mémoire, en suivant le TRACE-Sepsis Annotation Guideline. La campagne a duré près de 25 jours. Trois raisons l’expliquent : le volume (291 pages), la densité des comptes rendus de réanimation, et le fait que l’annotatrice n’est pas médecin. Chaque décision devait être confrontée au guideline, et les cas douteux étaient mis de côté pour la validation médicale.
+
+L’annotation a été faite dans Label Studio~\cite{labelstudio}, qui permet de délimiter les entités dans le document et de tracer les relations entre elles. Un outil dédié garantit une structure homogène des annotations et en facilite l’export.
+
+L’annotation initiale a été faite entièrement à la main, sans pré-annotation et sans recours à un modèle de langage ou à un modèle multimodal. La référence est ainsi indépendante des systèmes évalués (section~\ref{sec:c3-3-10-1}). En revanche, une annotation produite par une personne qui n’est pas médecin devait être validée cliniquement : c’est l’objet de la section~\ref{sec:c3-3-9}.
+
+\subsection{Organisation des tâches}\label{sec:c3-3-7-3}
+
+Les dossiers étant de longueur variable, chaque page a constitué une tâche d’annotation. Ce découpage rend les documents plus lisibles, facilite la localisation des preuves et rend l’annotation plus maniable. Il ne fait pas de chaque page une référence indépendante : \textbf{la page est l’unité pratique d’annotation, le dossier l’unité finale du Gold Standard}. On conserve ainsi la précision locale des annotations sans perdre la cohérence clinique du dossier.
+
+\subsection{Annotation des entités et des relations}\label{sec:c3-3-7-4}
+
+Sur chaque page, les mentions relevant des catégories du schéma ont été repérées selon le guideline, en tenant compte du type de concept et du contexte. Une information insuffisamment étayée était écartée ou signalée pour vérification. Les relations ont ensuite été tracées entre les entités repérées : chacune devait respecter les signatures du guideline et s’appuyer sur un lien écrit ou documenté, jamais sur la seule proximité des entités.
+
+\subsection{Contrôle des annotations}\label{sec:c3-3-7-5}
+
+Avant la validation médicale, un contrôle a permis de repérer les anomalies qui auraient dégradé la référence :
+
+\begin{itemize}
+  \item frontières incorrectes et mauvais types ;
+  \item doublons et chevauchements injustifiés ;
+  \item relations dont une extrémité manque ;
+  \item signatures de relation invalides ;
+  \item annotations créées malgré une négation ;
+  \item informations reposant sur une inférence non justifiée.
+\end{itemize}
+
+\section{Construction du Gold Standard}\label{sec:c3-3-8}
+
+\subsection{Consolidation à l’échelle du dossier}\label{sec:c3-3-8-1}
+
+Les annotations faites page par page ont ensuite été réunies pour former une représentation de chaque dossier. Les concaténer n’aurait pas suffi, car plusieurs pages d’un même dossier peuvent mentionner le même concept, de façon répétée ou complémentaire. La consolidation a consisté à regrouper les annotations d’un même patient, à harmoniser les mentions équivalentes, à retirer les répétitions inutiles et à garder la provenance de chaque information.
+
+Toutes les répétitions ne disparaissent pas. Une information qui a une portée temporelle, clinique ou contextuelle différente reste représentée séparément : deux dosages d’un même biomarqueur à des moments différents ne sont pas fusionnés si leur évolution a un intérêt clinique. La consolidation garde ainsi la richesse du dossier sans multiplier artificiellement des informations identiques.
+
+\subsection{Contrôle structurel}\label{sec:c3-3-8-2}
+
+Un contrôle structurel a ensuite vérifié que les annotations respectaient le schéma TRACE-Sepsis : types d’entités valides, relations appartenant au vocabulaire contrôlé, cohérence entre sujet, relation et objet, présence réelle des entités utilisées dans les relations, absence d’éléments techniques ou de catégories non résolues. Une relation n’a été gardée que si son sujet et son objet relevaient du domaine et de la portée prévus. Les incohérences formelles ont ainsi été éliminées avant la revue clinique.
+
+\subsection{Mise en conformité avec la version 2.0}\label{sec:c3-3-8-3}
+
+L’annotation ayant commencé avant la version finale du guideline, elle a été mise en conformité avec la v2.0 par des programmes qui appliquent uniquement les règles écrites du guideline. Ils ont converti l’ancienne relation entre le patient et un foyer infectieux en relation entre le diagnostic et sa localisation, retiré les foyers qui localisaient un antécédent, retypé en \entite{LABEL\_NOSOLOGIQUE} les diagnostics de la liste annotés comme foyers, et supprimé les relations devenues hors signature. Ces programmes ne lisent aucune sortie de modèle. Les cas qu’ils ne pouvaient pas trancher seuls, par exemple un foyer pouvant se rattacher à plusieurs diagnostics, ont été listés puis examinés un par un en appliquant le guideline.
+
+\subsection{Format de représentation et traçabilité}\label{sec:c3-3-8-4}
+
+L’export de Label Studio conserve les annotations page par page : entités, types, positions, et relations définies par les identifiants des entités. Un post-traitement regroupe ensuite les annotations d’un même dossier, résout les références entre entités et relations, harmonise les mentions équivalentes et produit une représentation par dossier patient.
+
+Le Gold Standard consolidé comporte deux parties. Les entités cliniques sont accompagnées de ce qu’il faut pour les identifier et retrouver leur origine ; les relations sont des liens orientés entre elles. Chaque information garde, quand c’est utile, sa page d’origine et une preuve. Cette preuve est volontairement courte, limitée au fragment qui justifie l’annotation, pour être vérifiée rapidement sans recopier de longs passages du dossier. Cette traçabilité sert pendant la validation médicale, puis lors de l’analyse des écarts entre le Gold Standard et les extractions des modèles.
+
+On obtient à ce stade une première version structurée et contrôlée de la référence : le Gold Standard initial.
+
+\section{Validation médicale du Gold Standard}\label{sec:c3-3-9}
+
+Une annotation peut être structurellement correcte et cliniquement fausse : une relation peut respecter toutes les contraintes du schéma sans correspondre à ce que décrit le dossier. Après la validation du guideline (section~\ref{sec:c3-3-3-4}), une seconde validation médicale a donc porté sur les annotations elles-mêmes. Le Pr Nicholas Heming l’a menée sur le Gold Standard initial, après l’annotation et la consolidation. Elle a demandé \acompleter{durée à compléter} de travail avec le médecin.
+
+Le tableau~\ref{tab:c3-3-val} résume les deux niveaux de validation médicale.
+
+\begin{table}[H]
+\centering
+\caption{Les deux niveaux de validation médicale}\label{tab:c3-3-val}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}}
+\toprule
+\textbf{Objet} & \textbf{Contenu examiné} & \textbf{Durée} & \textbf{Moment} \\
+\midrule
+Guideline & Catégories d’entités, vocabulaires contrôlés, relations autorisées, règles d’annotation & Environ 5 heures & Avant la campagne d’annotation \\
+Annotations & Entités et relations du Gold Standard initial & \acompleter{à compléter} & Après annotation et consolidation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Objectif et protocole}\label{sec:c3-3-9-1}
+
+Il s’agit de vérifier que la représentation structurée reste fidèle à ce que le dossier documente. Le médecin a confronté les annotations à leur source, présentées avec des preuves aussi courtes et ciblées que possible. Le but n’était ni de reconstituer le dossier ni de produire une seconde annotation indépendante, mais de faire une revue experte du Gold Standard initial pour savoir quelles annotations confirmer et lesquelles corriger.
+
+\subsection{Validation des entités}\label{sec:c3-3-9-2}
+
+Pour chaque entité examinée, la revue a porté sur sa présence réelle dans le dossier, l’adéquation entre la mention et le type attribué, la délimitation de la mention, son interprétation dans le contexte clinique, et la prise en compte d’une négation ou d’une incertitude éventuelles. Les catégories voisines demandaient une attention particulière : une manifestation clinique doit être distinguée d’un diagnostic ou d’une défaillance d’organe, et une pathologie préexistante d’un diagnostic lié à l’épisode en cours.
+
+\subsection{Validation des relations}\label{sec:c3-3-9-3}
+
+Une relation doit être structurellement valide, mais aussi correspondre au lien clinique réellement décrit. La revue a porté sur l’entité source, l’entité cible, le type de relation, son sens, et sur ce qui, dans le dossier, justifie l’association. Un triplet peut en effet respecter la signature \entite{TRAITEMENT} $\rightarrow$ relation $\rightarrow$ \entite{MICRO\_ORGANISME} sans que le dossier permette de relier ce traitement à ce germe. La revue médicale fait apparaître ces relations formellement correctes mais mal étayées.
+
+\subsection{Intégration des corrections}\label{sec:c3-3-9-4}
+
+À l’issue de la revue, chaque annotation a été confirmée, modifiée (information présente mais mal représentée), supprimée (justification insuffisante) ou ajoutée (information pertinente oubliée lors de l’annotation initiale), en restant cohérent avec le guideline. Lorsqu’une correction du médecin traduisait une règle générale, cette règle a été appliquée à tous les dossiers concernés, et pas seulement au dossier corrigé. C’est le cas, par exemple, de l’exclusion des noms d’établissements des \entite{SERVICE\_MEDICAL}, ou de la non-annotation des valeurs témoins du laboratoire. Lorsqu’une correction contredisait une règle écrite du guideline, c’est la règle du guideline qui a été appliquée, afin que le référentiel reste cohérent d’un dossier à l’autre.
+
+\section{Gold Standard final et caractérisation}\label{sec:c3-3-10}
+
+\subsection{Version finale et indépendance de la référence}\label{sec:c3-3-10-1}
+
+Une fois les corrections intégrées, une dernière consolidation a vérifié qu’elles n’introduisaient pas de nouvelles incohérences et que les entités et les relations respectaient toujours le schéma TRACE-Sepsis v2.0. Le résultat est le Gold Standard final, utilisé comme référence dans les expériences.
+
+Cette référence a été construite sans les modèles multimodaux évalués : ni les prédictions de Qwen2.5-VL, ni celles de Mistral Small 4, ni celles d’un autre modèle n’en déterminent le contenu. On évite ainsi un raisonnement circulaire où un modèle contribuerait à définir sa propre vérité de référence. L’indépendance doit valoir dans les deux sens : aucune sortie évaluée ne doit avoir été construite ou corrigée à l’aide du Gold Standard. Dans la chaîne de traitement, seule l’étape d’évaluation a accès à la référence (chapitre~\ref{chap:architecture}).
+
+\subsection{Statistiques descriptives}\label{sec:c3-3-10-2}
+
+Le tableau~\ref{tab:c3-3-4} donne les principales statistiques du Gold Standard final, compté au niveau des annotations de pages. Les tableaux~\ref{tab:c3-3-5} et~\ref{tab:c3-3-6} détaillent la répartition par type d’entité et par type de relation.
+
+\begin{table}[H]
+\centering
+\caption{Statistiques globales du Gold Standard final (49 dossiers, 291 pages)}\label{tab:c3-3-4}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.346\linewidth}>{\raggedright\arraybackslash}p{0.260\linewidth}>{\raggedright\arraybackslash}p{0.260\linewidth}}
+\toprule
+\textbf{Indicateur} & \textbf{Entités} & \textbf{Relations} \\
+\midrule
+Total & 12\,174 & 5\,543 \\
+Moyenne par dossier (écart-type) & 248,4 (82,2) & 113,1 (46,6) \\
+Minimum -- maximum par dossier & 90 -- 474 & 25 -- 242 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Répartition des entités par type}\label{tab:c3-3-5}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.432\linewidth}>{\raggedright\arraybackslash}p{0.216\linewidth}>{\raggedright\arraybackslash}p{0.216\linewidth}}
+\toprule
+\textbf{Type d’entité} & \textbf{Effectif} & \textbf{Proportion (\%)} \\
+\midrule
+\entite{BIOMARQUEUR} & 2\,989 & 24,6 \\
+\entite{TRAITEMENT} & 2\,465 & 20,2 \\
+\entite{SYMPTOME} & 1\,177 & 9,7 \\
+\entite{POSOLOGIE} & 1\,056 & 8,7 \\
+\entite{COMORBIDITE\_\allowbreak{}ANTECEDENT} & 585 & 4,8 \\
+\entite{SIGNE\_\allowbreak{}VITAL} & 565 & 4,6 \\
+\entite{LABEL\_\allowbreak{}NOSOLOGIQUE} & 500 & 4,1 \\
+\entite{DEFAILLANCE\_\allowbreak{}ORGANE} & 485 & 4,0 \\
+\entite{IMAGERIE\_\allowbreak{}PROCEDURE} & 470 & 3,9 \\
+\entite{DONNEE\_\allowbreak{}PATIENT} & 438 & 3,6 \\
+\entite{EVENEMENT\_\allowbreak{}TEMPOREL} & 403 & 3,3 \\
+\entite{EVOLUTION\_\allowbreak{}PRONOSTIC} & 240 & 2,0 \\
+\entite{MICRO\_\allowbreak{}ORGANISME} & 235 & 1,9 \\
+\entite{FOYER\_\allowbreak{}INFECTIEUX} & 187 & 1,5 \\
+\entite{SERVICE\_\allowbreak{}MEDICAL} & 184 & 1,5 \\
+\entite{CONTEXTE\_\allowbreak{}ACQUISITION} & 125 & 1,0 \\
+\entite{SCORE\_\allowbreak{}NEUROLOGIQUE} & 67 & 0,6 \\
+\entite{SCORE\_\allowbreak{}SOFA} & 3 & 0,0 \\
+\midrule
+\textbf{Total} & 12\,174 & 100,0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Répartition des relations par famille et par type}\label{tab:c3-3-6}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.200\linewidth}>{\raggedright\arraybackslash}p{0.380\linewidth}>{\raggedright\arraybackslash}p{0.120\linewidth}>{\raggedright\arraybackslash}p{0.140\linewidth}}
+\toprule
+\textbf{Famille} & \textbf{Type de relation} & \textbf{Effectif} & \textbf{Proportion (\%)} \\
+\midrule
+Thérapeutiques & traitement\_\allowbreak{}administre\_\allowbreak{}a & 1\,861 & 33,6 \\
+ & traitement\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}posologie & 1\,012 & 18,3 \\
+ & traitement\_\allowbreak{}cible\_\allowbreak{}defaillance & 65 & 1,2 \\
+ & traitement\_\allowbreak{}indique\_\allowbreak{}par\_\allowbreak{}label\_\allowbreak{}nosologique & 58 & 1,0 \\
+ & antibiotique\_\allowbreak{}adequat\_\allowbreak{}pour & 37 & 0,7 \\
+ & antibiotique\_\allowbreak{}inadequat\_\allowbreak{}pour & 8 & 0,1 \\
+\addlinespace
+Symptômes & presente\_\allowbreak{}symptome & 936 & 16,9 \\
+\addlinespace
+Diagnostiques & presente\_\allowbreak{}dysfonction\_\allowbreak{}organe & 410 & 7,4 \\
+ & a\_\allowbreak{}pour\_\allowbreak{}label\_\allowbreak{}nosologique & 326 & 5,9 \\
+ & label\_\allowbreak{}nosologique\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}foyer & 80 & 1,4 \\
+ & score\_\allowbreak{}sofa\_\allowbreak{}calcule\_\allowbreak{}pour & 3 & 0,1 \\
+\addlinespace
+Temporelles et pronostiques & patient\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}evolution & 163 & 2,9 \\
+ & service\_\allowbreak{}medical\_\allowbreak{}accueille & 145 & 2,6 \\
+ & evenement\_\allowbreak{}associe\_\allowbreak{}evolution & 20 & 0,4 \\
+ & precede & 2 & 0,0 \\
+\addlinespace
+Biomarqueurs et microbiologie & biomarqueur\_\allowbreak{}supporte\_\allowbreak{}defaillance\_\allowbreak{}organe & 114 & 2,1 \\
+ & micro\_\allowbreak{}organisme\_\allowbreak{}isole\_\allowbreak{}dans & 98 & 1,8 \\
+ & biomarqueur\_\allowbreak{}est\_\allowbreak{}critere\_\allowbreak{}de & 57 & 1,0 \\
+ & biomarqueur\_\allowbreak{}obtenu\_\allowbreak{}a & 22 & 0,4 \\
+\addlinespace
+Imagerie & imagerie\_\allowbreak{}objective\_\allowbreak{}foyer & 69 & 1,2 \\
+\addlinespace
+Signes vitaux & signe\_\allowbreak{}vital\_\allowbreak{}supporte\_\allowbreak{}defaillance\_\allowbreak{}organe & 39 & 0,7 \\
+\addlinespace
+Terrain et risque & comorbidite\_\allowbreak{}est\_\allowbreak{}facteur\_\allowbreak{}risque\_\allowbreak{}de & 15 & 0,3 \\
+ & contexte\_\allowbreak{}acquisition\_\allowbreak{}influence\_\allowbreak{}risque\_\allowbreak{}resistance & 3 & 0,1 \\
+\midrule
+\textbf{Total} & & 5\,543 & 100,0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ces répartitions sont très déséquilibrées. Les biomarqueurs et les traitements représentent à eux seuls près de la moitié des entités, et deux relations, l’administration d’un traitement et sa posologie, plus de la moitié des relations. À l’inverse, deux types d’entités (\entite{SCORE\_qSOFA} et \entite{STADE\_IRA}) et onze types de relations n’apparaissent jamais, notamment les relations liées aux scores SOFA et qSOFA, au stade d’IRA et les relations ajoutées en version 1.7 pour les symptômes et le site infecté. Ces écarts doivent être gardés en tête pour interpréter les résultats : un bon score global peut masquer des performances faibles sur des catégories rares, et aucune performance ne peut être mesurée sur une catégorie absente de la référence. Les écarts entre dossiers, de 90 à 474 entités, permettent par ailleurs de situer les performances selon la complexité des documents.
+
+\subsection{Effet de la validation médicale}\label{sec:c3-3-10-3}
+
+Le tableau~\ref{tab:c3-3-7} compare la référence avant et après la revue médicale. Il ne s’agit pas d’une mesure d’accord inter-annotateurs, mais d’une façon de chiffrer ce que la validation a apporté à la consolidation du Gold Standard.
+
+\begin{table}[H]
+\centering
+\caption{Gold Standard avant et après validation médicale}\label{tab:c3-3-7}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.404\linewidth}>{\raggedright\arraybackslash}p{0.231\linewidth}>{\raggedright\arraybackslash}p{0.231\linewidth}}
+\toprule
+\textbf{Indicateur} & \textbf{Avant validation} & \textbf{Après validation} \\
+\midrule
+Nombre total d’entités & \acompleter{à compléter} & 12\,174 \\
+Nombre total de relations & \acompleter{à compléter} & 5\,543 \\
+Entités ajoutées / supprimées / reclassées & --- & \acompleter{à compléter} \\
+Relations ajoutées / supprimées / corrigées & --- & \acompleter{à compléter} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Utilisation du Gold Standard dans l’évaluation}\label{sec:c3-3-11}
+
+Le Gold Standard final sert de référence pour mesurer les performances des systèmes d’extraction. Pour chaque dossier, la sortie structurée d’un modèle est comparée à la référence, ce qui permet de compter les prédictions correctes (vrais positifs, TP), les informations en trop (faux positifs, FP) et les informations manquantes (faux négatifs, FN). La précision, le rappel et le F1-score s’en déduisent :
+
+\begin{equation}
+\text{Précision} = \frac{TP}{TP + FP}
+\end{equation}
+\begin{equation}
+\text{Rappel} = \frac{TP}{TP + FN}
+\end{equation}
+\begin{equation}
+F_1 = \frac{2 \times \text{Précision} \times \text{Rappel}}{\text{Précision} + \text{Rappel}}
+\end{equation}
+
+Ces mesures sont calculées séparément pour les entités et pour les relations, selon les modes d’appariement (\emph{matching}) décrits au chapitre~\acompleter{numéro à compléter}.
+
+Au-delà des scores globaux, la comparaison détaillée avec la référence permet de qualifier les écarts : information de la référence non retrouvée, entité en trop, mauvais type, valeur ou unité erronée, relation manquante, relation que le dossier ne justifie pas, sens inversé, incohérence structurelle, temporelle ou contextuelle. Ces écarts sont la base de l’analyse des erreurs et des hallucinations présentée dans la suite.
+
+Le Gold Standard ne change pas pendant l’évaluation de la chaîne TRACE : les sorties de chaque étape sont comparées à la même référence. On peut ainsi savoir si une étape corrige réellement une extraction ou si elle se contente d’en changer la forme.
+
+\section{Limites}\label{sec:c3-3-12}
+
+Plusieurs limites sont à garder en tête pour interpréter les résultats obtenus avec cette référence.
+
+\begin{itemize}
+  \item \textbf{Annotation.} Une seule personne a annoté le corpus et aucun accord inter-annotateurs n’a été mesuré. Une double annotation d’un échantillon de dossiers, avec un coefficient kappa~\cite{cohen1960} ou un F1 inter-annotateurs, permettrait d’estimer la reproductibilité du guideline.
+  \item \textbf{Validation médicale.} Un seul médecin, le Pr Heming, a validé le guideline et les annotations. Il s’agit d’une revue experte destinée à fiabiliser la référence, et non d’une étude de concordance entre plusieurs évaluateurs.
+  \item \textbf{Taille et représentativité.} Les 49 dossiers annotés (291 pages) représentent environ 20\,\% des 246 dossiers. Issus de deux lots successifs et choisis selon leur ordre de mise à disposition, et non par tirage aléatoire ou stratifié, ils ne forment pas forcément un échantillon représentatif. Certaines catégories y sont rares ou absentes (section~\ref{sec:c3-3-10-2}), ce qui limite la portée des résultats par catégorie.
+  \item \textbf{Pseudonymisation.} Le masquage au stylo fait avant la numérisation ne couvre qu’une partie des noms, et des informations indirectement identifiantes restent visibles dans les images. La pseudonymisation automatique appliquée ensuite porte sur les textes transcrits et les annotations, pas sur les images des pages.
+  \item \textbf{Polarité.} La négation n’étant pas codée par un attribut séparé, l’évaluation, qui compare mentions, types et triplets, ne détecte pas une inversion de polarité entre la référence et les sorties des modèles.
+  \item \textbf{Spécificité du domaine.} Le guideline a été conçu pour le sepsis ; l’appliquer à d’autres contextes cliniques demanderait d’adapter le schéma et les règles.
+\end{itemize}
+
+\section{Conclusion}\label{sec:c3-3-13}
+
+Ce chapitre a décrit la manière dont a été construite la référence clinique qui sert à évaluer TRACE. Elle s’appuie d’abord sur le TRACE-Sepsis Annotation Guideline, qui fixe les concepts cliniques à représenter, les relations qui les relient et les règles qui garantissent une annotation cohérente et fidèle aux dossiers.
+
+Un sous-corpus de 49 dossiers (291 pages) a été annoté à la main dans Label Studio, avec la page comme unité de travail et le dossier comme unité de référence. Les annotations ont été contrôlées, consolidées, mises en conformité avec la version 2.0 du guideline, puis revues par le Pr Nicholas Heming, qui avait également validé le guideline. Ses corrections ont été intégrées et étendues aux dossiers concernés avant une dernière consolidation, qui a donné le Gold Standard final.
+
+Indépendante des modèles évalués et traçable jusqu’aux documents, cette référence est le point de comparaison qui permet de mesurer les performances des systèmes d’extraction et d’analyser les écarts entre information générée et information de référence. Elle sert de base aux chapitres suivants, consacrés à l’analyse des erreurs et à l’étude des hallucinations dans l’extraction de connaissances cliniques.
