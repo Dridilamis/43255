@@ -352,6 +352,8 @@ def traiter_pdf(api, g, pdf, out_dir, c):
         texte = api.ask([{"type": "text", "text": TRANSCRIPTION},
                          {"type": "image_url", "image_url": f"data:image/png;base64,{b64}"}],
                         json_mode=False, max_tokens=4000).strip()
+        del b64
+        png.unlink(missing_ok=True)   # image de 500 dpi tres lourde : supprimee une fois lue
         raw_e = parse_json(api.ask(prompt_entites(g, texte), json_mode=True, max_tokens=12000))
         ents = valider_entites(g, raw_e, texte, i, c)
         raw_r = parse_json(api.ask(prompt_relations(g, texte, ents), json_mode=True, max_tokens=8000)) \
