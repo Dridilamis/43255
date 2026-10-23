@@ -1,0 +1,45 @@
+\chapter*{Introduction générale}
+\addcontentsline{toc}{chapter}{Introduction générale}
+
+Les données de santé sont de plus en plus numérisées, ce qui ouvre la voie à leur exploitation automatique. Une grande partie de l’information clinique reste pourtant enfermée dans des documents peu ou pas structurés : comptes rendus d’hospitalisation, prescriptions, résultats biologiques, ou dossiers papier qui ont simplement été scannés.
+
+Exploiter automatiquement ces dossiers n’est pas simple. La qualité des images varie d’une page à l’autre, la mise en page compte autant que le texte, et les informations utiles sont dispersées dans tout le dossier. Ces difficultés pèsent particulièrement dans le cas du \textbf{sepsis}, une affection grave dont l’étude demande une lecture rigoureuse des données médicales.
+
+Le consensus Sepsis-3 définit le sepsis comme une dysfonction d’organe menaçant le pronostic vital, causée par une réponse dérégulée de l’hôte à une infection~\cite{singer2016third}. Dans ses formes les plus sévères, il évolue vers le choc septique, marqué par des anomalies circulatoires et métaboliques profondes (figure~\ref{fig:progression_sepsis}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/Infection.png}
+    \caption{Progression clinique de l’infection vers le sepsis puis le choc septique, d’après les définitions Sepsis-3~\cite{singer2016third}.}
+    \label{fig:progression_sepsis}
+\end{figure}
+
+Étudier le sepsis suppose de réunir des informations de nature très différente : signes vitaux, biomarqueurs, foyers infectieux, traitements, défaillances d’organes. Les extraire automatiquement permet de les organiser sous forme d’entités et de relations, puis de construire des représentations de connaissances que des systèmes intelligents peuvent exploiter.
+
+Les grands modèles de langage multimodaux (\textit{Multimodal Large Language Models}, \textbf{MLLMs}) changent la donne pour cette tâche, car ils lisent directement les documents scannés en combinant l’image et le texte. Ils ont toutefois un défaut connu : ils peuvent produire des informations plausibles mais absentes du document, ou inexactes. C’est ce qu’on appelle une \textbf{hallucination}. En médecine, de telles erreurs altèrent la fidélité des informations extraites et, par ricochet, la cohérence des connaissances construites à partir d’elles.
+
+Ce mémoire part donc de la question suivante :
+
+\begin{quote}
+\centering
+\textbf{\textit{
+Comment extraire de manière fiable des entités et des relations cliniques à partir de dossiers médicaux scannés dans le contexte du sepsis, tout en identifiant, caractérisant et réduisant les hallucinations produites par les modèles multimodaux ?
+}}
+\end{quote}
+
+\section*{Objectifs et contributions}
+
+L’objectif est de rendre plus fiable l’extraction multimodale de connaissances cliniques. Nous proposons pour cela l’approche \textbf{TRACE} (\textit{Taxonomy and Reduction of hAllucinations in Clinical knowledge Extraction}).
+
+Le travail apporte les contributions suivantes :
+\begin{itemize}
+    \item une taxonomie des hallucinations adaptée à l’extraction clinique multimodale ;
+    \item un Gold Standard clinique, annoté puis validé par un médecin réanimateur, qui sert de référence pour évaluer les extractions ;
+    \item un pipeline en plusieurs étages qui détecte et réduit les hallucinations ;
+    \item un mécanisme d’ancrage structurel (\textit{Structural Grounding}) qui renforce la cohérence des entités et des relations ;
+    \item une validation multi-agent chargée de vérifier et de corriger les informations extraites.
+\end{itemize}
+
+\section*{Organisation du mémoire}
+
+Le chapitre~1 présente le contexte clinique du sepsis et les difficultés propres à l’extraction d’informations depuis des dossiers médicaux scannés. Le chapitre~2 dresse l’état de l’art : extraction documentaire, extraction d’entités et de relations (des méthodes classiques aux MLLMs), annotation clinique, puis détection et réduction des hallucinations. Le chapitre~3 décrit le corpus, le schéma d’annotation et la construction du Gold Standard. Le chapitre~4 expose la démarche d’extraction multimodale et l’étude des modèles utilisés. Le chapitre~5 détaille l’approche TRACE et ses mécanismes de réduction des hallucinations, et le chapitre~6 en présente les expérimentations et les résultats. Le chapitre~7, enfin, discute ces résultats, les limites du travail et ses perspectives.
