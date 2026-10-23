@@ -274,7 +274,7 @@ def valider_entites(g, raw, page_text, page_no, c):
     return out
 
 
-def valider_relations(g, raw, entites, page_no, c, n0):
+def valider_relations(g, raw, entites, page_no, c, n0, rejets=None):
     sig = {k: (v["domaine"], v["image"]) for k, v in g["signatures_relations"].items()}
     by = {e["identifiant_entite"]: e for e in entites}
     out, vus = [], set()
@@ -284,9 +284,17 @@ def valider_relations(g, raw, entites, page_no, c, n0):
         a, b, t = r.get("sujet"), r.get("objet"), str(r.get("type_relation") or "").strip()
         if a not in by or b not in by:
             c["relations_extremite_inconnue"] += 1
+            if rejets is not None:
+                rejets.append({"type_relation": t, "raison": "extremite_inconnue", "sujet": a, "objet": b})
             continue
         if sig.get(t) != (by[a]["categorie"], by[b]["categorie"]):
             c["relations_hors_signature"] += 1
+            if rejets is not None:
+                obtenu = (by[a]["categorie"], by[b]["categorie"])
+                rejets.append({"type_relation": t, "raison": "hors_signature" if t in sig else "relation_inconnue",
+                               "types_obtenus": list(obtenu), "signature": list(sig.get(t, ())),
+                               "sens_inverse": sig.get(t) == obtenu[::-1],
+                               "sujet": by[a]["name"], "objet": by[b]["name"]})
             continue
         if (a, t, b) in vus:
             continue
@@ -327,8 +335,10 @@ def traiter_pdf(api, g, pdf, out_dir, c):
         raw_e = parse_json(api.ask(prompt_entites(g, texte), json_mode=True, max_tokens=12000))
         ents = valider_entites(g, raw_e, texte, i, c)
         raw_r = parse_json(api.ask(prompt_relations(g, texte, ents), json_mode=True, max_tokens=8000)) if ents else {}
-        rels = valider_relations(g, raw_r, ents, i, c, len(rels_g))
-        pages.append({"page": i, "texte_brut": texte, "entities": ents, "relations": rels, "statut": "ok"})
+        rejets = []
+        rels = valider_relations(g, raw_r, ents, i, c, len(rels_g), rejets)
+        pages.append({"page": i, "texte_brut": texte, "entities": ents, "relations": rels,
+                      "relations_rejetees": rejets, "statut": "ok"})
         ents_g += ents
         rels_g += rels
         print(f"  page {i} : {len(ents)} entites, {len(rels)} relations")
