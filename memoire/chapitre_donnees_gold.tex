@@ -109,14 +109,23 @@ Le schéma d’annotation sert à passer du contenu des dossiers à une connaiss
 
 Le schéma compte \textbf{20 types d’entités cliniques}, plus une catégorie technique de métadonnées (section~\ref{sec:c3-3-4-2}). Le tableau~\ref{tab:c3-3-2} les regroupe selon les grandes dimensions du dossier. Chaque type dispose d’un vocabulaire contrôlé et d’attributs propres : \entite{LABEL\_NOSOLOGIQUE} admet par exemple 23 valeurs (sepsis, choc septique, SDRA, IRA, pneumopathie…), et \entite{BIOMARQUEUR} porte une valeur, une unité et une direction d’évolution (augmentation, diminution, stable, normalisation, inconnue).
 
-\begin{table}[H]
-\centering
-\caption{Types d’entités du schéma TRACE-Sepsis, par dimension clinique}\label{tab:c3-3-2}
-\small
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.192\linewidth}>{\raggedright\arraybackslash}p{0.260\linewidth}>{\raggedright\arraybackslash}p{0.413\linewidth}}
+\begingroup\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.192\linewidth}>{\raggedright\arraybackslash}p{0.260\linewidth}>{\raggedright\arraybackslash}p{0.413\linewidth}}
+\caption{Types d’entités du schéma TRACE-Sepsis, par dimension clinique}\label{tab:c3-3-2}\\
 \toprule
 \textbf{Dimension} & \textbf{Type d’entité} & \textbf{Contenu représenté} \\
 \midrule
+\endfirsthead
+\multicolumn{3}{l}{\emph{Tableau~\ref{tab:c3-3-2} (suite)}}\\
+\toprule
+\textbf{Dimension} & \textbf{Type d’entité} & \textbf{Contenu représenté} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\emph{Suite page suivante}}\\
+\endfoot
+\bottomrule
+\endlastfoot
 Patient et diagnostic & \entite{DONNEE\_\allowbreak{}PATIENT} & Le patient et ses données démographiques non identifiantes (âge, sexe, poids, taille, IMC), relevées à l’admission \\
  & \entite{LABEL\_\allowbreak{}NOSOLOGIQUE} & Diagnostic écrit dans le dossier et figurant dans la liste autorisée (sepsis, choc septique, pneumopathie…), y compris pour un épisode antérieur \\
 Évaluation clinique et physiologique & \entite{SIGNE\_\allowbreak{}VITAL} & Paramètre physiologique, hémodynamique ou ventilatoire mesuré (valeur, unité, horodatage) \\
@@ -136,9 +145,8 @@ Temporalité et parcours de soins & \entite{EVENEMENT\_\allowbreak{}TEMPOREL} & 
  & \entite{EVOLUTION\_\allowbreak{}PRONOSTIC} & Évolution clinique et devenir du patient \\
  & \entite{SERVICE\_\allowbreak{}MEDICAL} & Type de service de prise en charge (réanimation, urgences, SSR…), sans le nom de l’établissement \\
 Examens & \entite{IMAGERIE\_\allowbreak{}PROCEDURE} & Examen d’imagerie ou procédure diagnostique (type, région, résultat, horodatage) \\
-\bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\endgroup
 
 Plusieurs distinctions structurent ce schéma. \entite{DONNEE\_PATIENT} et \entite{LABEL\_NOSOLOGIQUE} sont séparés pour ne pas confondre le patient avec les pathologies qui lui sont attribuées. Le contexte infectieux est découpé en trois concepts : une CRP élevée, un foyer pulmonaire et un germe isolé sont trois informations distinctes, même quand elles décrivent le même épisode. Un \entite{SYMPTOME} n’est ni un diagnostic, ni une défaillance d’organe, ni un résultat biologique. Enfin, séparer \entite{TRAITEMENT} et \entite{POSOLOGIE} permettra de distinguer plusieurs erreurs : mauvais médicament, mauvaise dose, ou mauvais lien entre le traitement et le patient. La posologie est une entité et non un simple attribut, pour trois raisons : elle a une structure interne (dose, unité, schéma horaire), une temporalité propre (une dose peut être ajustée sans que le médicament change), et des notations variées (« 1-0-1 », « 1 amp/8h ») qu’il faut pouvoir décomposer.
 
@@ -154,14 +162,23 @@ Repérer les entités ne suffit pas à rendre compte de l’organisation d’un 
 
 La version finale du guideline comporte \textbf{34 signatures relationnelles}. Leur liste et leurs couples domaine--portée sont figés, pour qu’aucune normalisation ni correction ne modifie la structure du schéma. Le tableau~\ref{tab:c3-3-3} les regroupe en huit familles ; la liste complète figure en annexe~\ref{annexe:relations}.
 
-\begin{table}[H]
-\centering
-\caption{Familles de relations du schéma TRACE-Sepsis v2.0}\label{tab:c3-3-3}
-\small
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.173\linewidth}>{\raggedright\arraybackslash}p{0.264\linewidth}>{\raggedright\arraybackslash}p{0.319\linewidth}>{\raggedright\arraybackslash}p{0.064\linewidth}}
+\begingroup\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.173\linewidth}>{\raggedright\arraybackslash}p{0.264\linewidth}>{\raggedright\arraybackslash}p{0.319\linewidth}>{\raggedright\arraybackslash}p{0.064\linewidth}}
+\caption{Familles de relations du schéma TRACE-Sepsis v2.0}\label{tab:c3-3-3}\\
 \toprule
 \textbf{Famille} & \textbf{Rôle} & \textbf{Exemple de signature} & \textbf{Nb} \\
 \midrule
+\endfirsthead
+\multicolumn{4}{l}{\emph{Tableau~\ref{tab:c3-3-3} (suite)}}\\
+\toprule
+\textbf{Famille} & \textbf{Rôle} & \textbf{Exemple de signature} & \textbf{Nb} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\emph{Suite page suivante}}\\
+\endfoot
+\bottomrule
+\endlastfoot
 Diagnostiques & Relier le patient à ses diagnostics et à ses défaillances d’organes, rattacher un foyer à son diagnostic, relier les scores SOFA, qSOFA et le stade d’IRA & \entite{LABEL\_\allowbreak{}NOSOLOGIQUE} $\rightarrow$ label\_\allowbreak{}nosologique\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}foyer $\rightarrow$ \entite{FOYER\_\allowbreak{}INFECTIEUX} & 11 \\
 Thérapeutiques & Relier un traitement au patient, à sa posologie, à un germe, à une défaillance ciblée ou à un diagnostic & \entite{TRAITEMENT} $\rightarrow$ traitement\_\allowbreak{}administre\_\allowbreak{}a $\rightarrow$ \entite{DONNEE\_\allowbreak{}PATIENT} & 6 \\
 Biomarqueurs et microbiologie & Rattacher un biomarqueur à un événement, une défaillance ou un diagnostic, et un germe au site de prélèvement ou au site infecté & \entite{MICRO\_\allowbreak{}ORGANISME} $\rightarrow$ micro\_\allowbreak{}organisme\_\allowbreak{}isole\_\allowbreak{}dans $\rightarrow$ \entite{FOYER\_\allowbreak{}INFECTIEUX} & 5 \\
@@ -170,9 +187,8 @@ Terrain et risque & Relier comorbidités et contexte d’acquisition au risque i
 Symptômes & Relier le patient à ses symptômes, et un symptôme à un foyer ou à la gravité initiale & \entite{DONNEE\_\allowbreak{}PATIENT} $\rightarrow$ presente\_\allowbreak{}symptome $\rightarrow$ \entite{SYMPTOME} & 3 \\
 Signes vitaux & Rattacher un paramètre physiologique anormal à une défaillance d’organe & \entite{SIGNE\_\allowbreak{}VITAL} $\rightarrow$ signe\_\allowbreak{}vital\_\allowbreak{}supporte\_\allowbreak{}defaillance\_\allowbreak{}organe $\rightarrow$ \entite{DEFAILLANCE\_\allowbreak{}ORGANE} & 1 \\
 Imagerie & Indiquer qu’un examen objective un foyer infectieux & \entite{IMAGERIE\_\allowbreak{}PROCEDURE} $\rightarrow$ imagerie\_\allowbreak{}objective\_\allowbreak{}foyer $\rightarrow$ \entite{FOYER\_\allowbreak{}INFECTIEUX} & 1 \\
-\bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\endgroup
 
 Certaines relations demandent une preuve particulière. Annoter \emph{Amiklin $\rightarrow$ traitement\_administre\_a $\rightarrow$ Patient} suppose que le dossier indique que le traitement a bien été administré ; un traitement seulement envisagé ou discuté ne compte pas comme une administration. De même, \emph{precede} n’est utilisée que si le document permet d’ordonner les deux événements, ce qui évite de mélanger des moments différents du parcours.
 
@@ -407,14 +423,23 @@ Minimum -- maximum par dossier & 90 -- 474 & 25 -- 242 \\
 \end{tabular}
 \end{table}
 
-\begin{table}[H]
-\centering
-\caption{Répartition des relations par famille et par type}\label{tab:c3-3-6}
-\small
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.200\linewidth}>{\raggedright\arraybackslash}p{0.380\linewidth}>{\raggedright\arraybackslash}p{0.120\linewidth}>{\raggedright\arraybackslash}p{0.140\linewidth}}
+\begingroup\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.200\linewidth}>{\raggedright\arraybackslash}p{0.380\linewidth}>{\raggedright\arraybackslash}p{0.120\linewidth}>{\raggedright\arraybackslash}p{0.140\linewidth}}
+\caption{Répartition des relations par famille et par type}\label{tab:c3-3-6}\\
 \toprule
 \textbf{Famille} & \textbf{Type de relation} & \textbf{Effectif} & \textbf{Proportion (\%)} \\
 \midrule
+\endfirsthead
+\multicolumn{4}{l}{\emph{Tableau~\ref{tab:c3-3-6} (suite)}}\\
+\toprule
+\textbf{Famille} & \textbf{Type de relation} & \textbf{Effectif} & \textbf{Proportion (\%)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\emph{Suite page suivante}}\\
+\endfoot
+\bottomrule
+\endlastfoot
 Thérapeutiques & traitement\_\allowbreak{}administre\_\allowbreak{}a & 1\,861 & 33,6 \\
  & traitement\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}posologie & 1\,012 & 18,3 \\
  & traitement\_\allowbreak{}cible\_\allowbreak{}defaillance & 65 & 1,2 \\
@@ -447,9 +472,8 @@ Terrain et risque & comorbidite\_\allowbreak{}est\_\allowbreak{}facteur\_\allowb
  & contexte\_\allowbreak{}acquisition\_\allowbreak{}influence\_\allowbreak{}risque\_\allowbreak{}resistance & 3 & 0,1 \\
 \midrule
 \textbf{Total} & & 5\,543 & 100,0 \\
-\bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\endgroup
 
 Ces répartitions sont très déséquilibrées. Les biomarqueurs et les traitements représentent à eux seuls près de la moitié des entités, et deux relations, l’administration d’un traitement et sa posologie, plus de la moitié des relations. À l’inverse, deux types d’entités (\entite{SCORE\_qSOFA} et \entite{STADE\_IRA}) et onze types de relations n’apparaissent jamais, notamment les relations liées aux scores SOFA et qSOFA, au stade d’IRA et les relations ajoutées en version 1.7 pour les symptômes et le site infecté. Ces écarts doivent être gardés en tête pour interpréter les résultats : un bon score global peut masquer des performances faibles sur des catégories rares, et aucune performance ne peut être mesurée sur une catégorie absente de la référence. Les écarts entre dossiers, de 90 à 474 entités, permettent par ailleurs de situer les performances selon la complexité des documents.
 
