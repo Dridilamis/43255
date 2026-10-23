@@ -209,12 +209,28 @@ PAGE :
 \"\"\"{page_text}\"\"\""""
 
 
-def prompt_relations(g, page_text, entites):
-    liste = "\n".join(f"- {e['identifiant_entite']} [{e['categorie']}] {e['name']}" for e in entites)
-    sigs = []
+def relations_possibles(g, entites):
+    """Relations du guideline realisables sur la page : un sujet du type domaine ET un objet du
+    type image existent parmi les entites validees. Avec, pour chacune, les identifiants permis."""
+    par_type = {}
+    for e in entites:
+        par_type.setdefault(e["categorie"], []).append(e["identifiant_entite"])
+    out = []
     for groupe, rels in g["relations"].items():
         for k, v in rels.items():
-            sigs.append(f"- {k} : {v['domaine']} -> {v['image']}. {v.get('description', '')}")
+            sujets, objets = par_type.get(v["domaine"], []), par_type.get(v["image"], [])
+            if sujets and objets:
+                out.append((k, v, sujets, objets))
+    return out
+
+
+def prompt_relations(g, page_text, entites):
+    ordre = sorted(entites, key=lambda e: (e["categorie"], e["identifiant_entite"]))
+    liste = "\n".join(f"- {e['identifiant_entite']} [{e['categorie']}] {e['name']}" for e in ordre)
+    sigs = []
+    for k, v, sujets, objets in relations_possibles(g, entites):
+        sigs.append(f"- {k} : {v['domaine']} -> {v['image']}. {v.get('description', '')}\n"
+                    f"    sujet parmi : {', '.join(sujets)}\n    objet parmi : {', '.join(objets)}")
     regles = "\n".join(f"- {k} : {v}" for k, v in g["regles_generales_annotation"].items()
                        if k in ("R6_hypothese_traitement", "R7_relations", "R8_inference", "R10_baseline",
                                 "R13_rattachement_foyer"))
@@ -223,16 +239,20 @@ A partir de la page et de la liste d'entites ci-dessous, extrais TOUTES les rela
 supportees par le texte de la page, et uniquement celles-ci.
 
 REGLES :
-- Utilise uniquement les relations listees, avec un sujet du type domaine et un objet du type image.
+- Utilise uniquement les relations listees ci-dessous. Pour chacune, le sujet DOIT etre choisi dans
+  sa liste "sujet parmi" et l'objet dans sa liste "objet parmi" : verifie le type entre crochets
+  de chaque identifiant avant de l'utiliser.
+- Si aucune entite du bon type ne correspond au lien ecrit, ne cree pas la relation : n'utilise
+  jamais une entite d'un autre type a la place.
 - N'inverse jamais le sens d'une relation pour la rendre valide.
 - Une relation plausible mais non ecrite dans la page n'est pas extraite.
 - "preuve" = le passage exact de la page qui justifie la relation.
 {regles}
 
-RELATIONS AUTORISEES ({len(sigs)}) :
+RELATIONS POSSIBLES SUR CETTE PAGE ({len(sigs)}) :
 {chr(10).join(sigs)}
 
-ENTITES :
+ENTITES (classees par type) :
 {liste}
 
 FORMAT DE SORTIE (JSON uniquement) :
@@ -334,7 +354,8 @@ def traiter_pdf(api, g, pdf, out_dir, c):
                         json_mode=False, max_tokens=4000).strip()
         raw_e = parse_json(api.ask(prompt_entites(g, texte), json_mode=True, max_tokens=12000))
         ents = valider_entites(g, raw_e, texte, i, c)
-        raw_r = parse_json(api.ask(prompt_relations(g, texte, ents), json_mode=True, max_tokens=8000)) if ents else {}
+        raw_r = parse_json(api.ask(prompt_relations(g, texte, ents), json_mode=True, max_tokens=8000)) \
+            if relations_possibles(g, ents) else {}
         rejets = []
         rels = valider_relations(g, raw_r, ents, i, c, len(rels_g), rejets)
         pages.append({"page": i, "texte_brut": texte, "entities": ents, "relations": rels,

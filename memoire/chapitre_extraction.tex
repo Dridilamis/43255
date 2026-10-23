@@ -78,7 +78,7 @@ Pour chaque entité, le modèle indique aussi son niveau de confiance (élevée,
 
 Le prompt des relations donne au modèle le texte de la page et la liste des entités retenues, chacune avec son identifiant et son type. Il impose quatre règles : n’utiliser que les relations du guideline, avec un sujet et un objet des types prévus ; ne jamais inverser le sens d’une relation pour la rendre valide ; ne pas extraire une relation plausible mais non écrite ; citer comme preuve le passage exact de la page qui justifie la relation. Les règles du guideline sur les traitements envisagés, les relations et l’interdiction d’inférer sont recopiées dans le prompt.
 
-Faire référencer les entités par leur identifiant, plutôt que par leur texte, évite qu’une relation pointe vers une entité inexistante ou mal recopiée.
+Faire référencer les entités par leur identifiant, plutôt que par leur texte, évite qu’une relation pointe vers une entité inexistante ou mal recopiée. Le prompt ne présente d’ailleurs que les relations réalisables sur la page, c’est-à-dire celles pour lesquelles il existe au moins une entité du type attendu comme sujet et une comme objet ; pour chacune, il indique la liste des identifiants autorisés de part et d’autre. Lors des premiers essais, le modèle utilisait souvent une relation avec une entité du mauvais type, par exemple une administration de traitement dirigée vers un biomarqueur plutôt que vers le patient ; ces relations étaient rejetées par la validation. Restreindre explicitement les candidats, à partir des seules signatures du guideline, vise à réduire ces rejets. Si aucune relation n’est réalisable sur une page, l’appel au modèle n’est pas fait.
 
 \subsection{Format JSON structuré}\label{sec:c4-4-4}
 
