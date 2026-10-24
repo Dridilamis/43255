@@ -227,6 +227,10 @@ PAGE :
 
 
 FAMILLE_TRAITEMENT = ("TRAITEMENT", "POSOLOGIE")
+# DONNEE_PATIENT (guideline) : le patient et ses donnees demographiques. Une mention de ce type doit
+# designer le patient ou porter une de ces donnees ; un titre ("Sur le plan renal") est rejete.
+PATIENT_OK_RE = re.compile(r"\b(patiente?s?|mr|mme|monsieur|madame|homme|femme|sexe|ans?|age|ag[ée]e?|"
+                           r"poids|kg|taille|cm|imc|n[ée]e?\s+le|date\s+de\s+naissance)\b|\bm\.", re.IGNORECASE)
 PATIENT_RE = re.compile(r"\b(?:(?:le|la|un|une|cette|ce|du|de la)\s+)?patiente?\b(?:\s+de\s+\d{1,3}\s*ans)?",
                         re.IGNORECASE)
 
@@ -399,6 +403,9 @@ def valider_entites(g, raw, page_text, page_no, c):
         cat = str(e.get("categorie") or "").strip().upper().replace("SCORE_QSOFA", "SCORE_qSOFA")
         if cat not in types:
             c["entites_type_inconnu"] += 1
+            continue
+        if cat == "DONNEE_PATIENT" and not PATIENT_OK_RE.search(str(e.get("texte") or "")):
+            c["entites_patient_invalides"] += 1
             continue
         spans = find_spans(e.get("texte"), page_text)
         if not spans:
