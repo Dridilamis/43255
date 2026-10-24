@@ -236,11 +236,22 @@ def main():
     # 1. Trouver le rapport Relation Repair
     # --------------------------------------------------------
 
-    (
-        report_path,
-        items,
-        review_count,
-    ) = find_relation_repair_report()
+    try:
+        (
+            report_path,
+            items,
+            review_count,
+        ) = find_relation_repair_report()
+    except FileNotFoundError as exc:
+        # Aucun cas REVIEW residuel (ex. nouvelle extraction) : la queue de
+        # l'Agent D est simplement vide, ce n'est pas une erreur.
+        print(exc)
+        save_json(OUTPUT_FILE, [])
+        print("REVIEW résiduels routés vers D     : 0")
+        print(f"Sortie                              : {OUTPUT_FILE}")
+        print()
+        print("Aucune donnée clinique n'a été modifiée.")
+        return
 
     print(
         f"Rapport Relation Repair            : "
