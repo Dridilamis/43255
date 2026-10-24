@@ -147,6 +147,8 @@ def main():
     ap.add_argument("--sans-reentrainer", action="store_true")
     ap.add_argument("--garder", type=int, default=80)
     ap.add_argument("--pause", type=float, default=1.5)
+    ap.add_argument("--sans-exemples", action="store_true",
+                    help="extraction sans exemples annotes (par defaut : 2 pages de l'autre moitie des dossiers)")
     args = ap.parse_args()
     verifier(args)
     t0 = time.perf_counter()
@@ -160,6 +162,10 @@ def main():
         demander_cle()
         cmd = [sys.executable, EXTRACTION, "--guideline", GUIDELINE, "--pdfs", args.pdfs,
                "--sortie", EXTRAIT, "--pause", str(args.pause)]
+        if not args.sans_exemples:
+            if not GOLD.is_dir():
+                sys.exit("Exemples annotes : gold_v2_0 absent (ajoutez --gold-labelstudio ou --sans-exemples).")
+            cmd += ["--gold-exemples", GOLD]
         if args.essai:
             cmd.append("--essai")
         elif args.docs:

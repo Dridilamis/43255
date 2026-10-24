@@ -57,14 +57,19 @@ def norm(text):
     return "".join(c for c in text if unicodedata.category(c) != "Mn")
 
 
-def find_span(surface, page_text):
-    """Position de la surface dans le texte de la page (casse et espaces ignores), ou None."""
+def find_spans(surface, page_text):
+    """Toutes les positions de la surface dans le texte de la page (casse et espaces ignores)."""
     surface = str(surface or "").strip()
     if len(surface) < 2:
-        return None
+        return []
     pattern = r"\s+".join(re.escape(t) for t in surface.split())
-    m = re.search(pattern, page_text, re.IGNORECASE)
-    return (m.start(), m.end(), m.group(0)) if m else None
+    return [(m.start(), m.end(), m.group(0)) for m in re.finditer(pattern, page_text, re.IGNORECASE)]
+
+
+def find_span(surface, page_text):
+    """Premiere position de la surface dans la page, ou None."""
+    spans = find_spans(surface, page_text)
+    return spans[0] if spans else None
 
 
 def parse_json(text):
@@ -157,7 +162,7 @@ def _vals(spec):
             yield k, spec[k]
 
 
-def prompt_entites(g, page_text):
+def prompt_entites(g, page_text, exemples=""):
     blocs = []
     for t, spec in g["entites"].items():
         if t == "METADONNEES_PIPELINE":
@@ -216,8 +221,115 @@ FORMAT DE SORTIE (JSON uniquement) :
   "valeur": null, "unite": null, "nie": false, "hypothese": false, "confiance": "elevee|moyenne|faible",
   "type_inference": "extraction_directe"}}]}}
 
+{exemples}
 PAGE :
 \"\"\"{page_text}\"\"\""""
+
+
+FAMILLE_TRAITEMENT = ("TRAITEMENT", "POSOLOGIE")
+PATIENT_RE = re.compile(r"\b(?:(?:le|la|un|une|cette|ce|du|de la)\s+)?patiente?\b(?:\s+de\s+\d{1,3}\s*ans)?",
+                        re.IGNORECASE)
+
+
+def prompt_traitements(g, page_text, exemples=""):
+    """Seconde consigne, ciblee : traitements et posologies seulement (definitions du guideline)."""
+    blocs = []
+    for t in FAMILLE_TRAITEMENT:
+        spec = g["entites"][t]
+        lignes = [f"### {t}\n{spec.get('description', '')}"]
+        for k, v in _vals(spec):
+            lignes.append(f"  {k} : {', '.join(map(str, v))}")
+        for k in ("note", "notes_valeurs", "attributs", "note_attributs"):
+            if spec.get(k):
+                lignes.append(f"  {k} : {json.dumps(spec[k], ensure_ascii=False)}")
+        blocs.append("\n".join(lignes))
+    regle = g["regles_de_typage"].get("TRAITEMENT_reel_vs_envisage", {})
+    return f"""Tu es un expert en pharmacologie clinique. Applique le guideline {nom_guideline(g)} a la page fournie.
+
+MISSION : extraire de facon EXHAUSTIVE tous les TRAITEMENTS et toutes les POSOLOGIES ecrits dans la
+page, y compris dans les listes d'ordonnance (traitement habituel, traitement de sortie), les
+tableaux et les formulaires.
+
+REGLES :
+- Un TRAITEMENT = un medicament ou une intervention, avec son nom seul tel qu'ecrit ("Claforan",
+  "noradrenaline", "remplissage"). Une ligne qui cite plusieurs medicaments donne plusieurs TRAITEMENT.
+- La dose, le schema horaire, le debit, la voie et la duree forment une POSOLOGIE separee, copiee
+  telle qu'ecrite ("1g x 3 par jour", "1-0-1", "12 mg/h"). Ne mets jamais la posologie dans le
+  texte du TRAITEMENT.
+- "texte" = surface EXACTE, copiee mot pour mot dans la page.
+- Traitement seulement envisage, discute ou propose : "hypothese": true. Traitement nie ou arrete : "nie": true.
+  {regle.get('regle', '')}
+
+DEFINITIONS :
+{chr(10).join(blocs)}
+
+FORMAT DE SORTIE (JSON uniquement) :
+{{"entites": [{{"categorie": "TRAITEMENT|POSOLOGIE", "texte": "surface exacte", "parametre": null,
+  "valeur": null, "unite": null, "nie": false, "hypothese": false, "confiance": "elevee|moyenne|faible",
+  "type_inference": "extraction_directe"}}]}}
+
+{exemples}
+PAGE :
+\"\"\"{page_text}\"\"\""""
+
+
+def ancre_patient(entites, page_text, page_no):
+    """Regle deterministe : si la page nomme le patient ("le patient", "la patiente de 77 ans") et
+    qu'aucune entite DONNEE_PATIENT ne le designe deja, la premiere mention devient l'entite patient
+    de la page (sujet ou objet des relations du patient). Aucune information clinique n'est creee."""
+    if any(e["categorie"] == "DONNEE_PATIENT" and PATIENT_RE.search(e["name"]) for e in entites):
+        return None
+    m = PATIENT_RE.search(page_text)
+    if not m:
+        return None
+    return {"identifiant_entite": f"P{page_no}_E{len(entites) + 1:03d}", "categorie": "DONNEE_PATIENT",
+            "type": "DONNEE_PATIENT", "name": m.group(0), "preuve": m.group(0), "parametre": None,
+            "valeur": None, "unite": None, "nie": False, "hypothese": False, "confiance": "elevee",
+            "type_inference": "regle_ancre_patient", "page": page_no, "start": m.start(), "end": m.end()}
+
+
+# ------------------------------------------------------------------ exemples annotes (validation croisee)
+EXEMPLES = {}   # cle de dossier -> {"entites": texte, "traitements": texte, "relations": texte}
+
+
+def preparer_exemples(gold_dir, n_pages):
+    """Exemples annotes en VALIDATION CROISEE a 2 plis, avec les memes plis que l'etage 8 de TRACE
+    (dossiers tries, rangs pairs / impairs) : un dossier ne recoit que des pages annotees de
+    l'AUTRE moitie. Aucun dossier ne voit sa propre annotation. Les pages choisies sont celles qui
+    couvrent le plus de types d'entites (choix deterministe, independant des sorties du modele)."""
+    docs = sorted((json.loads(f.read_text(encoding="utf-8")) for f in Path(gold_dir).glob("*.json")),
+                  key=lambda d: d["document"])
+    plis = [docs[0::2], docs[1::2]]
+    for k, pli in enumerate(plis):
+        autres = plis[1 - k]
+        pages = [(len({e["type"] for e in p["entities"]}), d["document"], p) for d in autres
+                 for p in d["pages"] if 600 <= len(p.get("text", "")) <= 2500 and p["entities"]]
+        pages.sort(key=lambda x: (-x[0], x[1], x[2]["page"]))
+        choix = [p for _, _, p in pages[:n_pages]]
+        ent, trt, rel = [], [], []
+        for i, p in enumerate(choix, start=1):
+            texte = p["text"].strip()
+            e_all = [{"categorie": e["type"], "texte": e["name"]} for e in p["entities"]]
+            e_trt = [e for e in e_all if e["categorie"] in FAMILLE_TRAITEMENT]
+            r_all = [f"{r['subject']} [{r['subject_type']}] | {r['relation']} | {r['object']} [{r['object_type']}]"
+                     for r in p["relations"]]
+            ent.append(f"EXEMPLE {i} - texte :\n\"\"\"{texte}\"\"\"\nentites annotees :\n"
+                       + json.dumps({"entites": e_all}, ensure_ascii=False))
+            trt.append(f"EXEMPLE {i} - texte :\n\"\"\"{texte}\"\"\"\ntraitements et posologies annotes :\n"
+                       + json.dumps({"entites": e_trt}, ensure_ascii=False))
+            rel.append(f"EXEMPLE {i} - texte :\n\"\"\"{texte}\"\"\"\nrelations annotees :\n" + "\n".join(r_all))
+        bloc = {"entites": "\n\n".join(ent), "traitements": "\n\n".join(trt), "relations": "\n\n".join(rel)}
+        for d in plis[k]:
+            EXEMPLES[d["document"]] = bloc
+
+
+def bloc_exemples(doc, cle):
+    ex = EXEMPLES.get(doc, {}).get(cle)
+    if not ex:
+        return ""
+    return ("\nEXEMPLES ANNOTES (autres dossiers, meme guideline) : ils montrent la convention d'annotation"
+            " (decoupage court des mentions, posologie separee, mention du patient). Ne recopie jamais leur"
+            " contenu : extrais uniquement ce qui est ecrit dans la PAGE.\n" + ex + "\n")
 
 
 def relations_possibles(g, entites):
@@ -235,7 +347,7 @@ def relations_possibles(g, entites):
     return out
 
 
-def prompt_relations(g, page_text, entites):
+def prompt_relations(g, page_text, entites, exemples=""):
     ordre = sorted(entites, key=lambda e: (e["categorie"], e["identifiant_entite"]))
     liste = "\n".join(f"- {e['identifiant_entite']} [{e['categorie']}] {e['name']}" for e in ordre)
     sigs = []
@@ -272,6 +384,7 @@ FORMAT DE SORTIE (JSON uniquement) :
 {{"relations": [{{"sujet": "ID", "type_relation": "nom", "objet": "ID", "preuve": "passage exact",
   "confiance": "elevee|moyenne|faible"}}]}}
 
+{exemples}
 PAGE :
 \"\"\"{page_text}\"\"\""""
 
@@ -287,15 +400,18 @@ def valider_entites(g, raw, page_text, page_no, c):
         if cat not in types:
             c["entites_type_inconnu"] += 1
             continue
-        span = find_span(e.get("texte"), page_text)
-        if not span:
+        spans = find_spans(e.get("texte"), page_text)
+        if not spans:
             c["entites_non_ancrees"] += 1
             continue
-        start, end, surface = span
-        cle = (cat, start, end)
-        if cle in vus:
+        # une mention repetee (ex. "1-0-0" sur chaque ligne d'ordonnance) prend l'occurrence
+        # suivante encore libre, au lieu d'etre fusionnee avec la premiere
+        libre = [s for s in spans if (cat, s[0], s[1]) not in vus]
+        if not libre:
             c["entites_doublons"] += 1
             continue
+        start, end, surface = libre[0]
+        cle = (cat, start, end)
         vus.add(cle)
         out.append({"identifiant_entite": f"P{page_no}_E{len(out) + 1:03d}", "categorie": cat, "type": cat,
                     "name": surface, "preuve": surface, "parametre": e.get("parametre"),
@@ -367,9 +483,24 @@ def traiter_pdf(api, g, pdf, out_dir, c):
                         json_mode=False, max_tokens=4000).strip()
         del b64
         png.unlink(missing_ok=True)   # image de 500 dpi tres lourde : supprimee une fois lue
-        raw_e = parse_json(api.ask(prompt_entites(g, texte), json_mode=True, max_tokens=12000))
+        doc = pdf.stem
+        raw_e = parse_json(api.ask(prompt_entites(g, texte, bloc_exemples(doc, "entites")),
+                                   json_mode=True, max_tokens=12000))
+        raw_t = parse_json(api.ask(prompt_traitements(g, texte, bloc_exemples(doc, "traitements")),
+                                   json_mode=True, max_tokens=8000))
+        # traitements et posologies : la consigne ciblee remplace ceux de la consigne generale
+        raw_e = {"entites": [e for e in raw_e.get("entites", []) or []
+                             if isinstance(e, dict)
+                             and str(e.get("categorie") or "").upper() not in FAMILLE_TRAITEMENT]
+                 + [e for e in raw_t.get("entites", []) or []
+                    if isinstance(e, dict) and str(e.get("categorie") or "").upper() in FAMILLE_TRAITEMENT]}
         ents = valider_entites(g, raw_e, texte, i, c)
-        raw_r = parse_json(api.ask(prompt_relations(g, texte, ents), json_mode=True, max_tokens=8000)) \
+        ancre = ancre_patient(ents, texte, i)
+        if ancre:
+            ents.append(ancre)
+            c["ancre_patient_ajoutee"] += 1
+        raw_r = parse_json(api.ask(prompt_relations(g, texte, ents, bloc_exemples(doc, "relations")),
+                                   json_mode=True, max_tokens=8000)) \
             if relations_possibles(g, ents) else {}
         rejets = []
         rels = valider_relations(g, raw_r, ents, i, c, len(rels_g), rejets)
@@ -392,6 +523,8 @@ def main():
     global GUIDELINE
     ap = argparse.ArgumentParser(description="Extraction Mistral selon le guideline TRACE-Sepsis")
     ap.add_argument("--guideline", default=str(GUIDELINE))
+    ap.add_argument("--gold-exemples", default="", help="gold converti (dossier gold_v2_0) : active les exemples annotes")
+    ap.add_argument("--exemples", type=int, default=2, help="pages annotees montrees par consigne (defaut 2)")
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
     ap.add_argument("--sortie", default=str(DEFAULT_OUT))
     ap.add_argument("--essai", action="store_true", help="un seul dossier, pour verifier")
@@ -412,6 +545,10 @@ def main():
     out = Path(args.sortie)
     out.mkdir(parents=True, exist_ok=True)
     g, c = guideline(), Counter()
+    if args.gold_exemples:
+        preparer_exemples(args.gold_exemples, args.exemples)
+        print(f"Exemples annotes : {args.exemples} page(s) par consigne, pris dans l'autre moitie des dossiers"
+              f" ({len(EXEMPLES)} dossiers couverts)")
     api = Mistral(out / "_cache", args.pause)
     print(f"Guideline : {GUIDELINE.name} | {len(g['signatures_relations'])} relations | {len(pdfs)} dossier(s)")
     for k, pdf in enumerate(pdfs, start=1):

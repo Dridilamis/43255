@@ -11,12 +11,12 @@ Le chapitre présente d’abord l’architecture générale du pipeline (section
 
 \section{Architecture générale du pipeline d’extraction}\label{sec:c4-2}
 
-Le pipeline traite chaque dossier page par page. Pour chaque page, il enchaîne quatre opérations :
+Le pipeline traite chaque dossier page par page. Pour chaque page, il enchaîne les opérations suivantes :
 
 \begin{enumerate}
   \item la page du PDF est convertie en image ;
   \item le modèle lit l’image et en transcrit le texte ;
-  \item à partir de ce texte, le modèle extrait les entités cliniques ;
+  \item à partir de ce texte, le modèle extrait les entités cliniques, puis, dans une consigne ciblée, les traitements et leurs posologies ;
   \item à partir du texte et de la liste des entités retenues, il extrait les relations.
 \end{enumerate}
 
@@ -28,7 +28,7 @@ Chaque appel au modèle est suivi d’une validation déterministe : seules les 
 \caption{Pipeline d’extraction multimodale, de la page scannée à la sortie JSON du dossier}\label{fig:c4-pipeline}
 \end{figure}
 
-Séparer la transcription, les entités et les relations en trois appels a deux avantages. Chaque consigne reste courte et ciblée, ce qui limite les oublis quand la page est dense. Surtout, les entités et les relations s’appuient sur un texte fixé une fois pour toutes, celui de la transcription : c’est ce texte qui sert ensuite à vérifier que chaque élément est bien écrit dans la page, ici comme dans la chaîne TRACE.
+Séparer la transcription, les entités et les relations en appels distincts a deux avantages. Chaque consigne reste courte et ciblée, ce qui limite les oublis quand la page est dense. Surtout, les entités et les relations s’appuient sur un texte fixé une fois pour toutes, celui de la transcription : c’est ce texte qui sert ensuite à vérifier que chaque élément est bien écrit dans la page, ici comme dans la chaîne TRACE.
 
 \section{Préparation des dossiers médicaux}\label{sec:c4-3}
 
@@ -113,6 +113,16 @@ Pour chaque page, le modèle reçoit le prompt des entités et le texte transcri
 Le deuxième contrôle est le plus important. Une entité que le modèle « voit » mais qui n’est écrite nulle part dans la page est par définition une invention. L’écarter dès l’extraction ne coûte rien en rappel et retire une première catégorie d’hallucinations factuelles, avant même l’entrée dans TRACE. Il ne protège pas, en revanche, contre une erreur de transcription : si le modèle lit mal une valeur et la recopie à l’identique dans ses entités, l’entité sera ancrée dans une transcription elle-même fausse. Ce cas relève des hallucinations visuelles, que TRACE ne traite qu’indirectement.
 
 Pour chaque page, le pipeline compte les entités écartées pour chacune de ces raisons, ce qui permet de suivre la qualité brute des réponses du modèle.
+
+Trois compléments ont été ajoutés après les premiers essais. Ils corrigent des écarts systématiques entre la sortie du modèle et les conventions du guideline.
+
+\begin{itemize}
+  \item \textbf{Consigne ciblée pour les traitements.} Dans la consigne générale, le modèle rattachait la posologie au nom du médicament (« Claforan, 1g x 3 par jour » extrait comme un seul traitement) et ignorait souvent les listes d'ordonnance. Une seconde consigne, limitée aux définitions de TRAITEMENT et de POSOLOGIE du guideline, demande d'extraire chaque médicament et sa posologie comme deux entités distinctes, y compris dans les ordonnances. Ses traitements et posologies remplacent ceux de la consigne générale.
+  \item \textbf{Ancre patient.} Les relations du patient (diagnostic, traitement administré, symptôme, défaillance) ont toutes pour extrémité une entité \entite{DONNEE\_PATIENT}. Le modèle réservait ce type aux données démographiques (« 56 ans ») et ne produisait donc presque aucune de ces relations. Une règle déterministe ajoute, sur chaque page qui en contient une, la première mention désignant le patient (« la patiente de 77 ans »), si aucune entité patient ne la désigne déjà. Elle ne crée aucune information clinique.
+  \item \textbf{Mentions répétées.} Une même mention peut apparaître plusieurs fois sur une page, par exemple « 1-0-0 » sur chaque ligne d'ordonnance. Chaque occurrence renvoyée par le modèle est rattachée à la position suivante encore libre, au lieu d'être fusionnée avec la première.
+\end{itemize}
+
+\paragraph{Exemples annotés en validation croisée.} Les consignes peuvent enfin inclure deux pages annotées du Gold Standard, qui montrent la convention d'annotation : découpage court des mentions, posologie séparée, mention du patient. Pour éviter toute fuite, ces exemples sont choisis en validation croisée à deux plis, avec les mêmes plis que l'évaluation de TRACE (dossiers de rang pair et impair) : un dossier ne reçoit que des pages issues de l'autre moitié du corpus, et jamais sa propre annotation. Les pages retenues sont celles qui couvrent le plus de types d'entités, un choix fixé à l'avance et indépendant des sorties du modèle. Cette option utilise donc la référence pour construire les consignes ; les résultats obtenus avec elle sont présentés séparément de ceux obtenus sans exemples (chapitre~\acompleter{numéro}).
 
 \section{Extraction des relations}\label{sec:c4-7}
 
@@ -208,7 +218,7 @@ Mistral Small~4 a donc été retenu comme modèle d’extraction pour TRACE. Ce 
 
 \section{Conclusion}\label{sec:c4-12}
 
-Ce chapitre a décrit la façon dont on passe d’un dossier scanné à une extraction structurée. Chaque page est convertie en image à haute résolution, lue directement par le modèle, puis traitée en trois appels : transcription, entités, relations. Les consignes sont générées à partir du guideline, et chaque réponse est contrôlée de façon déterministe : type autorisé, ancrage dans la page, signature valide, absence de doublon. Aucune de ces étapes ne consulte le Gold Standard.
+Ce chapitre a décrit la façon dont on passe d’un dossier scanné à une extraction structurée. Chaque page est convertie en image à haute résolution, lue directement par le modèle, puis traitée en appels successifs : transcription, entités, traitements et posologies, relations. Les consignes sont générées à partir du guideline, et chaque réponse est contrôlée de façon déterministe : type autorisé, ancrage dans la page, signature valide, absence de doublon. Aucune de ces étapes ne consulte le Gold Standard.
 
 Les sorties sont évaluées selon trois niveaux d’appariement, du strict au relâché, avec la précision, le rappel et le F1 en micro et en macro-moyenne. La comparaison des deux modèles a conduit à retenir Mistral Small~4, nettement meilleur sur les relations.
 
