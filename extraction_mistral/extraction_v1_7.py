@@ -194,7 +194,10 @@ REGLES ABSOLUES :
 - Le patient lui-meme est une entite DONNEE_PATIENT : chaque mention qui le designe dans la page
   ("patient", "la patiente", "Mr X.", "patient de 66 ans") est extraite en DONNEE_PATIENT, car
   c'est elle qui sert de sujet ou d'objet aux relations du patient (a_pour_label_nosologique,
-  traitement_administre_a, presente_symptome...).
+  traitement_administre_a, presente_symptome...). DONNEE_PATIENT ne s'applique JAMAIS a un titre de
+  section ("Examen cutane", "Biologie"), a un examen, a un resultat ni a un evenement.
+- Les traitements des listes d'ordonnance (traitement habituel, traitement de sortie) sont aussi
+  extraits : un TRAITEMENT par medicament et sa POSOLOGIE.
 
 REGLES GENERALES :
 {regles}
