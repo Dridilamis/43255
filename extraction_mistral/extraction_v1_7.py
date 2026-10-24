@@ -187,6 +187,14 @@ REGLES ABSOLUES :
 - Une information niee est extraite avec "nie": true ; une hypothese avec "hypothese": true.
 - Reconnais les synonymes et abreviations ; "parametre" = forme canonique (voir synonymes).
 - Les donnees du patient sont celles de l'admission. N'extrais pas de donnee directement identifiante.
+- TRAITEMENT et POSOLOGIE sont deux entites DISTINCTES (definition de POSOLOGIE ci-dessous) :
+  le TRAITEMENT est le nom du medicament ou de l'intervention seul ("Claforan") ; la dose, le
+  schema horaire, le debit, la voie et la duree forment une entite POSOLOGIE separee
+  ("1g x 3 par jour"). Ne mets jamais la posologie dans le texte du TRAITEMENT.
+- Le patient lui-meme est une entite DONNEE_PATIENT : chaque mention qui le designe dans la page
+  ("patient", "la patiente", "Mr X.", "patient de 66 ans") est extraite en DONNEE_PATIENT, car
+  c'est elle qui sert de sujet ou d'objet aux relations du patient (a_pour_label_nosologique,
+  traitement_administre_a, presente_symptome...).
 
 REGLES GENERALES :
 {regles}
@@ -245,7 +253,9 @@ REGLES :
 - Si aucune entite du bon type ne correspond au lien ecrit, ne cree pas la relation : n'utilise
   jamais une entite d'un autre type a la place.
 - N'inverse jamais le sens d'une relation pour la rendre valide.
-- Une relation plausible mais non ecrite dans la page n'est pas extraite.
+- Une relation plausible mais non ecrite dans la page n'est pas extraite. Deux entites presentes
+  sur la meme page ne sont pas liees pour autant : les relations d'interpretation (indication,
+  cible, facteur de risque, critere, orientation) exigent une phrase qui enonce le lien.
 - "preuve" = le passage exact de la page qui justifie la relation.
 {regles}
 
