@@ -668,7 +668,18 @@ def extract_pred_relations(data):
             "index": index
         })
 
-    return output
+    # Le gold est consolide au niveau du dossier (une relation = un triplet unique).
+    # Meme traitement pour la prediction : un triplet repete sur plusieurs pages
+    # (ex. traitement -> patient a chaque page) n'est compte qu'une fois.
+    unique, seen = [], set()
+    for rel in output:
+        key = (normalize_text(rel["subject"]), normalize_relation_type(rel["relation"]),
+               normalize_text(rel["object"]))
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(rel)
+    return unique
 
 
 # ============================================================
