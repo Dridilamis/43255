@@ -34,7 +34,10 @@ EXCLUDE = {"MultiAgent a supp", "F1_optimizer_audit", "__pycache__"}
 
 def _copy_sgce(dst):
     def ignore(_, names):
-        return [n for n in names if n in EXCLUDE]
+        # Les sorties de documents laissees par d'anciennes executions de SGCE (dossiers
+        # corrected/...) ne sont pas copiees : sinon SGCE les compte comme documents ajoutes
+        # des que les noms de fichiers de l'entree changent (ex. extraction v2.0).
+        return [n for n in names if n in EXCLUDE or (n.endswith(".json") and "_trace_" in n)]
     shutil.copytree(C.SGCE_DIR, dst, ignore=ignore)
 
 
