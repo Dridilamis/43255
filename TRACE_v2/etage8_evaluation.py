@@ -55,6 +55,14 @@ STAGES = [
 ]
 
 
+def _colonnes(rows):
+    """Toutes les colonnes, dans l'ordre d'apparition (les etages n'ont pas tous les memes compteurs)."""
+    cols = []
+    for r in rows:
+        cols += [k for k in r if k not in cols]
+    return cols
+
+
 def gold_dir():
     for p in C.GOLD_DIR_CANDIDATES:
         if p.is_dir():
@@ -234,7 +242,7 @@ def train_vote():
         rows.append({"garder_pct": k, "ent_P": ep, "ent_R": er, "ent_F1": ef, "ent_hallucination": 1 - ep,
                      "rel_P": rp, "rel_R": rr, "rel_F1": rf, "rel_hallucination": 1 - rp})
     with open(out / "vote_agents_validation.csv", "w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter=";")
+        w = csv.DictWriter(fh, fieldnames=_colonnes(rows), delimiter=";", restval="")
         w.writeheader()
         w.writerows(rows)
 
@@ -287,7 +295,7 @@ def main():
               f"| ontologie {s['violations_ontologie']} identiques {s['identiques']}")
 
     with open(out / "tableau.csv", "w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()), delimiter=";")
+        w = csv.DictWriter(fh, fieldnames=_colonnes(rows), delimiter=";", restval="")
         w.writeheader()
         w.writerows(rows)
     write_json(out / "tableau.json", rows)
@@ -304,7 +312,7 @@ def main():
     if model and model.get("validation_croisee") and "ent_P" in model["validation_croisee"][0]:
         cv = model["validation_croisee"]
         with open(out / "vote_agents_validation.csv", "w", newline="", encoding="utf-8-sig") as fh:
-            w = csv.DictWriter(fh, fieldnames=list(cv[0]), delimiter=";")
+            w = csv.DictWriter(fh, fieldnames=_colonnes(cv), delimiter=";", restval="")
             w.writeheader()
             w.writerows(cv)
         _print_cv(cv)
