@@ -9,7 +9,8 @@ propre gold.
 
 Regles apprises (seuil fixe a priori : precision < SEUIL sur l'autre moitie => retrait) :
   - entites : precision par "profil" = type x mention niee x presence d'un chiffre x mention longue
-    (>= 6 mots). Ex. SYMPTOME nie ("pas de sueurs"), EVENEMENT_TEMPOREL sans date ;
+    (>= 6 mots). Ex. EVENEMENT_TEMPOREL sans date. Les mentions NIEES ("pas de sueurs") ne sont
+    jamais retirees : l'absence d'un signe est une information clinique ;
   - relations : precision par type de relation (les relations d'interpretation rarement justes).
 Une entite retiree emporte ses relations.
 
@@ -98,7 +99,8 @@ def apprendre(pred_files, gold_files):
             rel[r["gold_relation"]][1] += 1
         elif r["status"] in ("FP", "WRONG_TYPE"):
             rel[r["pred_relation"]][0] += 1
-    mauvais_profils = {k for k, (f, t) in prof.items() if f + t >= 5 and t / (f + t) < SEUIL}
+    # une mention niee ("pas de sueurs") n'est jamais retiree : l'absence est une information clinique
+    mauvais_profils = {k for k, (f, t) in prof.items() if f + t >= 5 and t / (f + t) < SEUIL and not k[1]}
     mauvaises_relations = {k for k, (f, t) in rel.items() if f + t >= 5 and t / (f + t) < SEUIL}
     return mauvais_profils, mauvaises_relations
 

@@ -16,15 +16,15 @@ et 6 ou, pour une relation creee par SGCE, appelle le meme service :
 Politique de decision pour les ENTITES (entites de pages[], fixee a priori) :
   RETRAIT  E1  l'entite ne figure pas mot pour mot dans le texte de sa page (reformulation
                ou invention du LLM)
-           E2  l'entite est niee dans le texte ("pas de fievre") ou marquee nie=True : un
-               fait absent n'est pas une entite clinique presente
+           (E2 : une entite niee - "pas de fievre" - n'est PAS retiree : l'absence d'un signe
+               est une information clinique. Elle est conservee avec nie=True.)
            E3  le LLM lui-meme a donne une confiance "moyenne" ou "faible"
   Une entite retiree emporte les relations qui pointent vers elle.
 
 Politique de decision pour les RELATIONS (fixee a priori) :
-  RETRAIT  R2  l'extraction a marque l'entite clinique comme niee (nie=True) alors que la
-               relation l'affirme
-           R3  relation creee par SGCE qui echoue a l'ancrage (memes regles que l'Etage 2)
+  (R2 : une relation vers une entite niee n'est PAS retiree ; elle est conservee avec
+               nie=True, ex. patient -presente_symptome-> "pas de fievre" = absence de fievre.)
+  RETRAIT  R3  relation creee par SGCE qui echoue a l'ancrage (memes regles que l'Etage 2)
   CONFIANCE  HIGH   aucun signal faible
              MEDIUM 1 signal faible   (preuve absente / note systeme, extremites eloignees,
              LOW    2 signaux faibles ou plus     inference structurelle, doublon, indice de
@@ -36,7 +36,7 @@ Politique de decision pour les RELATIONS (fixee a priori) :
   qui est faux, pas le lien. Elle baisse seulement la confiance.
 
 Modes :
-  --mode standard   (defaut) E1-E3, R2-R3.
+  --mode standard   (defaut) E1, E3, R3 (les negations sont conservees, nie=True).
   --mode precision  en plus, E4 et R4 : vote appris des agents (modele/vote_agents.json,
                     entraine par l'Etage 8). Garde la part --garder-entites des entites et
                     --garder des relations les mieux notees (defaut 80 % chacun). Sans
@@ -121,8 +121,6 @@ def decide_entity(s, mode, model=None, keep=80):
     motifs = []
     if not s["mot_pour_mot"]:
         motifs.append("E1_PAS_MOT_POUR_MOT")
-    if s["negation"]:
-        motifs.append("E2_NIEE")
     if s["confiance_llm"] in LOW_LLM_CONFIDENCE:
         motifs.append("E3_CONFIANCE_LLM_BASSE")
     p = None
@@ -135,8 +133,6 @@ def decide_entity(s, mode, model=None, keep=80):
 
 def decide(s, mode, rel_type="", model=None, keep=80):
     motifs = []
-    if s["nie"]:
-        motifs.append("R2_ENTITE_NIEE_AFFIRMEE")
     if s["creee_par_sgce"] and s["ancrage"]["motifs_retrait"]:
         motifs.append("R3_SGCE_NON_ANCREE")
     weak = [k for k, f in WEAK.items() if f(s)]
@@ -170,6 +166,9 @@ def make_process(mode, keep=80, keep_ent=80, models=None):
         for _, e in g.page_entities():
             s = entity_signals(g, e, linked, seen)
             motifs, p = decide_entity(s, mode, m_ent, keep_ent)
+            if s["negation"]:
+                e["nie"] = True              # absence conservee comme information clinique
+                c["E2_NIEE_CONSERVEE"] += 1
             trace(e, "arbitrage", {"decision": "RETIREE" if motifs else "GARDEE", "motifs": motifs,
                                    "score_vote": p, "mode": mode})
             for m in motifs:
@@ -186,6 +185,9 @@ def make_process(mode, keep=80, keep_ent=80, models=None):
         for rel in g.relations:
             s = signals(g, doc, rel)
             motifs, level, weak, p = decide(s, mode, str(rel.get("type_relation") or ""), m_rel, keep)
+            if s["nie"]:
+                rel["nie"] = True            # relation vers une absence ("pas de fievre"), conservee
+                c["R2_RELATION_NIEE_CONSERVEE"] += 1
             trace(rel, "arbitrage", {"decision": "RETIREE" if motifs else "GARDEE", "motifs": motifs,
                                      "niveau_confiance": level, "signaux_faibles": weak,
                                      "score_vote": p, "ontologie": s["ontologie"], "mode": mode})
