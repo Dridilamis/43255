@@ -22,9 +22,10 @@ Politique de decision pour les ENTITES (entites de pages[], fixee a priori) :
   Une entite retiree emporte les relations qui pointent vers elle.
 
 Politique de decision pour les RELATIONS (fixee a priori) :
-  (R2 : une relation vers une entite niee n'est PAS retiree ; elle est conservee avec
-               nie=True, ex. patient -presente_symptome-> "pas de fievre" = absence de fievre.)
-  RETRAIT  R3  relation creee par SGCE qui echoue a l'ancrage (memes regles que l'Etage 2)
+  RETRAIT  R2  la relation affirme une entite niee (ex. patient -presente_symptome-> "pas de
+               fievre") : l'entite niee est gardee, mais pas une relation qui la donne comme
+               presente (convention du gold valide par le medecin : mention niee sans relation)
+           R3  relation creee par SGCE qui echoue a l'ancrage (memes regles que l'Etage 2)
   CONFIANCE  HIGH   aucun signal faible
              MEDIUM 1 signal faible   (preuve absente / note systeme, extremites eloignees,
              LOW    2 signaux faibles ou plus     inference structurelle, doublon, indice de
@@ -36,7 +37,7 @@ Politique de decision pour les RELATIONS (fixee a priori) :
   qui est faux, pas le lien. Elle baisse seulement la confiance.
 
 Modes :
-  --mode standard   (defaut) E1, E3, R3 (les negations sont conservees, nie=True).
+  --mode standard   (defaut) E1, E3, R2, R3 (les entites niees sont conservees, nie=True).
   --mode precision  en plus, E4 et R4 : vote appris des agents (modele/vote_agents.json,
                     entraine par l'Etage 8). Garde la part --garder-entites des entites et
                     --garder des relations les mieux notees (defaut 80 % chacun). Sans
@@ -133,6 +134,8 @@ def decide_entity(s, mode, model=None, keep=80):
 
 def decide(s, mode, rel_type="", model=None, keep=80):
     motifs = []
+    if s["nie"]:
+        motifs.append("R2_ENTITE_NIEE_AFFIRMEE")
     if s["creee_par_sgce"] and s["ancrage"]["motifs_retrait"]:
         motifs.append("R3_SGCE_NON_ANCREE")
     weak = [k for k, f in WEAK.items() if f(s)]
@@ -185,9 +188,6 @@ def make_process(mode, keep=80, keep_ent=80, models=None):
         for rel in g.relations:
             s = signals(g, doc, rel)
             motifs, level, weak, p = decide(s, mode, str(rel.get("type_relation") or ""), m_rel, keep)
-            if s["nie"]:
-                rel["nie"] = True            # relation vers une absence ("pas de fievre"), conservee
-                c["R2_RELATION_NIEE_CONSERVEE"] += 1
             trace(rel, "arbitrage", {"decision": "RETIREE" if motifs else "GARDEE", "motifs": motifs,
                                      "niveau_confiance": level, "signaux_faibles": weak,
                                      "score_vote": p, "ontologie": s["ontologie"], "mode": mode})
