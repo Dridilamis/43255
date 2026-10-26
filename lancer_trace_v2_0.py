@@ -147,6 +147,8 @@ def main():
     ap.add_argument("--sans-reentrainer", action="store_true")
     ap.add_argument("--garder", type=int, default=80)
     ap.add_argument("--pause", type=float, default=1.5)
+    ap.add_argument("--sans-regles", action="store_true",
+                    help="ne pas appliquer les regles apprises sur le gold (validation croisee) avant TRACE")
     ap.add_argument("--sans-exemples", action="store_true",
                     help="extraction sans exemples annotes (par defaut : 2 pages de l'autre moitie des dossiers)")
     args = ap.parse_args()
@@ -178,7 +180,12 @@ def main():
     if not any(EXTRAIT.glob("*_trace_*.json")):
         sys.exit(f"Aucune extraction dans {EXTRAIT}.")
     titre("3. TRACE v2, ETAGES 1 A 8 (signatures et gold v2.0)")
-    env = {**os.environ, "TRACE_ENTREE": str(EXTRAIT), "TRACE_TEXTES": str(EXTRAIT / "textes_bruts"),
+    entree = EXTRAIT
+    if not args.sans_regles:
+        titre("2b. REGLES STRICTES APPRISES SUR LE GOLD (validation croisee)")
+        entree = EXTRAIT.parent / (EXTRAIT.name + "_regles")
+        lancer([sys.executable, ROOT / "extraction_mistral" / "regles_apprises.py", EXTRAIT, GOLD, entree], ROOT)
+    env = {**os.environ, "TRACE_ENTREE": str(entree), "TRACE_TEXTES": str(EXTRAIT / "textes_bruts"),
            "TRACE_GOLD": str(GOLD), "TRACE_GUIDELINE": str(GUIDELINE), "TRACE_SORTIES": str(SORTIES),
            "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}
     env.pop("MISTRAL_API_KEY", None)         # TRACE n'appelle jamais Mistral
