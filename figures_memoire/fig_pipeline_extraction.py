@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
 plt.rcParams.update({"font.family": "DejaVu Sans"})
-fig = plt.figure(figsize=(13, 4.6))
-ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 130); ax.set_ylim(0, 46); ax.axis("off")
+fig = plt.figure(figsize=(13, 6.4))
+ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 130); ax.set_ylim(0, 64); ax.axis("off")
 INK, MUTED, EDGE = "#1f1f1d", "#52514e", "#b9b7af"
 BLUE, NAVY, VIOLET, GREEN = "#2a78d6", "#1d3f73", "#6250d6", "#1b8f66"
 
@@ -33,18 +33,22 @@ def arrow(p, q, color="#6b6a64", lw=1.7):
     ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=15, color=color, lw=lw, shrinkA=1, shrinkB=1))
 
 # cadre d'ensemble en pointillés
-box(0.8, 1.0, 128.4, 44.0, "none", "#7a8fb0", lw=1.0, r=0.6, ls=(0, (4, 3)))
-ymid = 21
+box(0.8, 1.0, 128.4, 62.0, "none", "#7a8fb0", lw=1.0, r=0.6, ls=(0, (4, 3)))
+ymid = 39
 
 # 1. entrée
-box(3, 13, 17, 16, "#eef4fc", BLUE, lw=1.2)
-ax.text(11.5, 24.2, "Dossiers cliniques", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
-ax.text(11.5, 21.0, "numérisés et", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
-ax.text(11.5, 17.8, "pseudonymisés", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
-arrow((20, ymid), (24, ymid))
+box(3, 42, 17, 13, "#eef4fc", BLUE, lw=1.2)
+ax.text(11.5, 51.2, "Dossiers cliniques", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+ax.text(11.5, 48.4, "numérisés et", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+ax.text(11.5, 45.6, "pseudonymisés", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+arrow((11.5, 42), (11.5, 35.5))
+box(3, 27, 17, 8.5, "#eef4fc", BLUE, lw=1.2)
+ax.text(11.5, 31.25, "Conversion en images", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+ax.add_patch(FancyArrowPatch((20, 31.25), (23.5, 31.25), arrowstyle="-|>", mutation_scale=15, color="#6b6a64",
+             lw=1.7, shrinkA=1, shrinkB=1))
 
 # 2. couche d'extraction basée sur les MLLM
-px, pw, py, ph = 23.5, 43, 4.5, 37
+px, pw, py, ph = 23.5, 43, 22.5, 37
 panel(px, py, pw, ph, BLUE, "#eef4fc", "Couche d'extraction d'informations cliniques\nbasée sur les MLLM", hh=7.0)
 box(px + 2, py + 11, 18, 16.5, "white", EDGE, lw=0.9, r=0.7)
 ax.text(px + 11, py + 23.8, "Qwen2.5-VL", ha="center", va="center", fontsize=9.2, fontweight="bold", color=INK)
@@ -79,15 +83,25 @@ bloc(py + 15.0, 13.0, "NER", "Reconnaissance d'entités nommées", BLUE,
      [("« CRP 245 mg/L »", "BIOMARQUEUR", None), ("« Choc septique »", "LABEL_NOSOLOGIQUE", None)])
 bloc(py + 2.5, 10.5, "RE", "Extraction des relations", GREEN,
      [("« Amiklin »", "traitement_administre_a", "« Patient »")])
+# filtres et fusion, sous l'extraction
+fx, fy, fw, fh = ex, 3.5, ew, 15.5
+box(fx, fy, fw, fh, "#ecf7f2", GREEN, lw=1.4)
+ax.text(fx + 2.5, fy + fh - 2.8, "Filtres et fusion", ha="left", va="center", fontsize=9.4, fontweight="bold", color=GREEN)
+for i, ln in enumerate(["Entité retrouvée mot pour mot dans la page", "Relation dans les 34 signatures",
+                        "Fusion des pages par dossier"]):
+    yy = fy + fh - 6.6 - i * 3.0
+    ax.text(fx + 3.2, yy, "•", fontsize=9.6, color=GREEN, va="center", fontweight="bold")
+    ax.text(fx + 5.0, yy, ln, fontsize=8.4, color=INK, va="center")
+arrow((ex + ew / 2, py), (ex + ew / 2, fy + fh))
 jx = 114.5
-arrow((ex + ew, ymid), (jx, ymid))
+arrow((fx + fw, fy + fh / 2), (jx, fy + fh / 2))
 
 # 4. sortie JSON
 jx = 114.5
-box(jx, 13, 13.5, 16, "#e9eef6", NAVY, lw=1.2)
-ax.text(jx + 6.75, 25.0, "JSON", ha="center", va="center", fontsize=13, fontweight="bold", color=NAVY)
-ax.text(jx + 6.75, 20.6, "Sortie structurée :", ha="center", va="center", fontsize=8.2, color=INK)
-ax.text(jx + 6.75, 17.6, "entités + relations", ha="center", va="center", fontsize=8.2, color=INK)
+box(jx, 3.25, 13.5, 16, "#e9eef6", NAVY, lw=1.2)
+ax.text(jx + 6.75, 15.2, "JSON", ha="center", va="center", fontsize=13, fontweight="bold", color=NAVY)
+ax.text(jx + 6.75, 10.8, "Sortie structurée :", ha="center", va="center", fontsize=8.2, color=INK)
+ax.text(jx + 6.75, 7.8, "entités + relations", ha="center", va="center", fontsize=8.2, color=INK)
 
 out = "/home/user/43255/figures_memoire/fig_pipeline_extraction"
 fig.savefig(out + ".pdf"); fig.savefig(out + ".png", dpi=300)
