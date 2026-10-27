@@ -375,14 +375,14 @@ Concernant les métriques d'évaluation, la plupart des travaux d'extraction se 
 
 \subsection{Analyse critique et synthèse}
 
-L'analyse de la littérature fait apparaître une couverture inégale des différentes dimensions du problème. L'ancrage visuel sur documents dégradés est partiellement couvert, principalement par RAPTOR+~\cite{raptorplus2026}, mais hors du cadre d'une extraction structurée vers un graphe de connaissances. La validation ontologique est bien établie sur texte propre, et la réparation sous contraintes est bien étudiée en bases de données, mais sans exiger que la correction soit justifiée par un document source. Les méthodes d'auto-correction et les architectures multi-agents introduisent des mécanismes de vérification, mais sans typologie fine des erreurs et en s'appuyant le plus souvent sur des modèles de langage comme juges, dont la fiabilité dépend de l'existence d'un retour extérieur~\cite{kamoi2024selfcorrection}. Hybrid-Code v2~\cite{hybrid2512v2} atteint une garantie formelle sur une catégorie d'erreur, mais sur une tâche de classification fermée qui ne pose jamais la question de la frontière entre entité et relation. Enfin, les méthodes de vérification sans modèle juge restent étudiées isolément, rarement au sein d'un pipeline de construction de graphe de connaissances à partir d'un MLLM.
+L'analyse de la littérature fait apparaître une couverture inégale des différentes dimensions du problème. L'ancrage visuel sur documents dégradés est partiellement couvert, principalement par RAPTOR+~\cite{raptorplus2026}, mais hors du cadre d'une extraction structurée vers un graphe de connaissances. La validation ontologique est bien établie sur texte propre, et la réparation sous contraintes est bien étudiée en bases de données, mais sans exiger que la correction soit justifiée par un document source. Les méthodes d'auto-correction et les architectures multi-agents introduisent des mécanismes de vérification, mais sans typologie fine des erreurs et en s'appuyant le plus souvent sur des modèles de langage comme juges, dont la fiabilité dépend de l'existence d'un retour extérieur~\cite{kamoi2024selfcorrection}. Hybrid-Code v2~\cite{hybrid2512v2} atteint une garantie formelle sur une catégorie d'erreur, mais sur une tâche de classification fermée qui ne pose jamais la question de la frontière entre entité et relation. Enfin, les méthodes de vérification sans modèle juge restent étudiées isolément et, à notre connaissance, pas encore au sein d'un pipeline de construction de graphe de connaissances à partir d'un MLLM.
 
-Cette cartographie met ainsi en évidence un espace de recherche encore ouvert à l'intersection de trois éléments rarement combinés dans la littérature actuelle : le traitement direct de documents cliniques scannés, l'extraction structurée d'entités et de relations vers un graphe de connaissances, et une validation combinant ancrage dans la source, cohérence symbolique et vérification explicite de la stabilité de la frontière entité--relation. LATTE~\cite{zhang2026latte} aborde bien cette instabilité, mais au niveau de l'architecture du modèle et non en validation \textit{post-hoc}.
+Cette cartographie met ainsi en évidence un espace de recherche encore ouvert à l'intersection de trois éléments que la littérature actuelle, à notre connaissance, ne combine pas encore : le traitement direct de documents cliniques scannés, l'extraction structurée d'entités et de relations vers un graphe de connaissances, et une validation combinant ancrage dans la source, cohérence symbolique et vérification explicite de la stabilité de la frontière entité--relation. LATTE~\cite{zhang2026latte} aborde bien cette instabilité, mais au niveau de l'architecture du modèle et non en validation \textit{post-hoc}.
 
 
 \subsection{Synthèse des hallucinations identifiées dans la littérature}
 
-Le Tableau~\ref{tab:hallucinations} synthétise les principaux types d'hallucinations identifiés dans cette section, les travaux qui les étudient et les approches proposées pour les réduire. Il montre que les hallucinations ne se limitent pas à l'invention d'informations : elles peuvent affecter la perception visuelle, les entités, les relations, le contexte clinique de la mention, le raisonnement ou la cohérence structurelle du graphe.
+Le Tableau~\ref{tab:hallucinations} synthétise les principaux types d'hallucinations identifiés dans cette section, les travaux qui les étudient et les approches proposées pour les réduire. Il montre que les hallucinations ne se limitent pas à l'invention d'informations : elles peuvent affecter la perception visuelle, les entités, les relations, le contexte clinique de la mention, l'association à une terminologie, le respect du schéma, le raisonnement ou la forme du graphe.
 
 
 {\footnotesize
@@ -435,10 +435,16 @@ ConText \cite{harkema2009context}, Hybrid-Code v2 \cite{hybrid2512v2} &
 Détermination du statut temporel de la mention, vérification de la cohérence temporelle.\\
 \hline
 
-Hallucination ontologique &
-Association erronée entre une entité extraite et un concept médical normalisé (UMLS, SNOMED CT ou ICD-10). &
+Hallucination terminologique &
+Association erronée entre une entité extraite et un concept d'une terminologie médicale (UMLS, SNOMED CT) ou un code d'une classification (ICD-10). &
 CLINES \cite{yang2025clines}, Das et al. \cite{das2026clinical}, Hybrid-Code v2 \cite{hybrid2512v2} &
-Validation ontologique, bases de connaissances symboliques, consensus multi-LLM et vérification des codes.\\
+Normalisation explicite vers une terminologie, vérification des codes dans une base de connaissances symbolique, consensus multi-LLM.\\
+\hline
+
+Hallucination ontologique &
+Entité rangée dans un type que le schéma ne lui attribue pas, ou relation reliant deux types que sa signature n'autorise pas. &
+Tran et al. \cite{tran2025aspworkflow}, SHACL \cite{shacl2017}, Sadowski et Chudziak \cite{sadowski2026structured} &
+Vérification de la compatibilité entre types et relations par des règles logiques, des contraintes déclaratives ou un raisonneur.\\
 \hline
 
 Hallucination de raisonnement &
@@ -454,12 +460,12 @@ Atomisation des faits, extraction modulaire, vérification factuelle déterminis
 \hline
 
 Hallucination structurelle &
-Incohérences dans le graphe de connaissances, relations incompatibles ou non-respect des contraintes du schéma ou de l'ontologie. &
-SHACL \cite{shacl2017}, Paulheim \cite{paulheim2017refinement}, HoloClean \cite{rekatsinas2017holoclean}, CyberBOT \cite{zhao2025cyberbot}, Sadowski et al. \cite{sadowski2026structured}, Ghanem et Cruz \cite{ghanem2024enhancing}, Hybrid-Code v2 \cite{hybrid2512v2} &
-Validation par contraintes, réparation minimale, vérification ontologique après génération, raisonneurs logiques et mesure de similarité entre graphes.\\
+Graphe mal formé : élément composite, doublon, relation orpheline dont une extrémité manque. &
+Paulheim \cite{paulheim2017refinement}, HoloClean \cite{rekatsinas2017holoclean}, CyberBOT \cite{zhao2025cyberbot}, Ghanem et Cruz \cite{ghanem2024enhancing} &
+Détection et réparation des erreurs du graphe, réparation minimale sous contraintes, mesure de similarité entre graphes.\\
 \end{longtable}
 }
 
 \section{Conclusion du chapitre}
 
-Ce chapitre a montré que les briques nécessaires à une extraction clinique fiable existent séparément dans la littérature : extraction multimodale, extraction d'entités et de relations par des modèles supervisés ou génératifs, annotation guidée par des règles explicites, ancrage dans la source, validation par contraintes et réparation de graphes, détection du contexte clinique, vote entre générations et décision sélective. Il a également montré que l'auto-correction par le modèle lui-même ou par d'autres modèles juges reste fragile en l'absence d'un retour extérieur fiable. En revanche, ces briques ont rarement été assemblées dans un même pipeline appliqué à des documents cliniques scannés et orienté vers la construction d'un graphe de connaissances. Le chapitre suivant présente l'approche proposée pour répondre à cette limite.
+Ce chapitre a montré que les briques nécessaires à une extraction clinique fiable existent séparément dans la littérature : extraction multimodale, extraction d'entités et de relations par des modèles supervisés ou génératifs, annotation guidée par des règles explicites, ancrage dans la source, validation par contraintes et réparation de graphes, détection du contexte clinique, vote entre générations et décision sélective. Il a également montré que l'auto-correction par le modèle lui-même ou par d'autres modèles juges reste fragile en l'absence d'un retour extérieur fiable. En revanche, à notre connaissance, ces briques n'ont pas encore été assemblées dans un même pipeline appliqué à des documents cliniques scannés et orienté vers la construction d'un graphe de connaissances. Le chapitre suivant présente l'approche proposée pour répondre à cette limite.
