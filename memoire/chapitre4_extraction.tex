@@ -17,16 +17,15 @@ Le chapitre présente d'abord l'architecture générale du pipeline (section~\re
 % ------------------------------------------------------------
 \section{Architecture générale du pipeline d'extraction}\label{sec:c4-archi}
 
-Le pipeline traite chaque dossier page par page. Chaque page est convertie en image, puis soumise au modèle en trois étapes successives : la transcription du texte de la page, l'extraction des entités, puis l'extraction des relations entre ces entités. Chaque étape produit une sortie au format JSON. Deux filtres sont appliqués aux sorties : une entité n'est conservée que si elle est retrouvée mot pour mot dans la page, et une relation que si elle respecte l'une des 34 signatures du schéma. Les résultats des pages sont enfin réunis à l'échelle du dossier. La figure~\ref{fig:c4-pipeline} résume ce déroulement.
+Le pipeline traite chaque dossier page par page. Chaque page est convertie en image, puis soumise au modèle en deux étapes successives : l'extraction des entités, puis l'extraction des relations entre ces entités. Chaque étape produit une sortie au format JSON. Deux filtres sont appliqués aux sorties : une entité n'est conservée que si elle est retrouvée mot pour mot dans la page, et une relation que si elle respecte l'une des 34 signatures du schéma. Les résultats des pages sont enfin réunis à l'échelle du dossier. La figure~\ref{fig:c4-pipeline} résume ce déroulement.
 
 \begin{figure}[H]
 \centering
-% \includegraphics[width=\textwidth]{images/fig_pipeline_extraction.pdf}
-\acompleter{Figure du pipeline : PDF $\rightarrow$ images 500 dpi $\rightarrow$ transcription $\rightarrow$ entités $\rightarrow$ relations $\rightarrow$ filtres $\rightarrow$ JSON par dossier.}
+\includegraphics[width=\textwidth]{images/fig_pipeline_extraction.pdf}
 \caption{Pipeline d'extraction multimodale (étage~0 de TRACE)}\label{fig:c4-pipeline}
 \end{figure}
 
-Découper l'extraction en trois appels plutôt qu'en un seul présente trois avantages. Chaque appel porte sur une tâche plus simple, avec une consigne plus courte. La transcription fournit un texte de référence auquel les entités extraites peuvent être confrontées mot pour mot. Enfin, les relations sont extraites à partir d'une liste d'entités déjà établie, ce qui limite la création de relations entre des éléments qui n'existent pas.
+Séparer l'extraction des entités de celle des relations présente deux avantages. Chaque appel porte sur une tâche plus simple, avec une consigne plus courte. Surtout, les relations sont extraites à partir d'une liste d'entités déjà établie et filtrée, ce qui limite la création de relations entre des éléments qui n'existent pas.
 
 % ------------------------------------------------------------
 \section{Préparation des dossiers médicaux}\label{sec:c4-preparation}
@@ -116,7 +115,7 @@ Mistral Small 4~\cite{mistralsmall4} réunit dans un seul modèle des capacités
 Pour que la comparaison soit équitable, les deux modèles ont été évalués dans les mêmes conditions :
 \begin{itemize}
   \item les mêmes \acompleter{49} dossiers, convertis en images de la même façon ;
-  \item les mêmes consignes, dans les trois étapes ;
+  \item les mêmes consignes, pour les entités comme pour les relations ;
   \item les mêmes filtres et la même mise en forme des sorties ;
   \item la même évaluation, contre le même Gold Standard, avec les mêmes modes d'appariement et les mêmes métriques (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}).
 \end{itemize}
@@ -125,9 +124,9 @@ Pour que la comparaison soit équitable, les deux modèles ont été évalués d
 % ------------------------------------------------------------
 \section{Extraction des entités}\label{sec:c4-entites}
 
-Pour chaque page, le modèle reçoit d'abord l'image et une consigne de transcription, et renvoie le texte de la page. Il reçoit ensuite l'image, la transcription et la consigne d'extraction des entités (section~\ref{sec:c4-contraintes-entites}), et renvoie la liste des entités au format JSON. \acompleter{Vérifier : la transcription est-elle fournie au modèle lors de l'extraction des entités, ou seulement utilisée pour le filtre ?}
+Pour chaque page, le modèle reçoit l'image et la consigne d'extraction des entités (section~\ref{sec:c4-contraintes-entites}), et renvoie la liste des entités au format JSON.
 
-Chaque entité renvoyée est ensuite confrontée à la transcription de sa page : elle n'est conservée que si sa mention y figure mot pour mot. Ce filtre écarte dès l'extraction les entités inventées ou reformulées par le modèle, c'est-à-dire la forme la plus directe d'hallucination factuelle. Il est volontairement strict : une entité correcte mais légèrement reformulée est elle aussi écartée, ce qui privilégie la fidélité au document sur l'exhaustivité.
+Chaque entité renvoyée est ensuite confrontée au texte de sa page : elle n'est conservée que si sa mention y figure mot pour mot. Ce filtre écarte dès l'extraction les entités inventées ou reformulées par le modèle, c'est-à-dire la forme la plus directe d'hallucination factuelle. Il est volontairement strict : une entité correcte mais légèrement reformulée est elle aussi écartée, ce qui privilégie la fidélité au document sur l'exhaustivité.
 
 % ------------------------------------------------------------
 \section{Extraction des relations}\label{sec:c4-relations}
@@ -260,6 +259,6 @@ Le tableau~\ref{tab:c4-comparaison} compare les deux modèles sur les \acomplete
 % ------------------------------------------------------------
 \section{Conclusion}\label{sec:c4-conclusion}
 
-Ce chapitre a décrit la manière dont un graphe d'entités et de relations est extrait des dossiers scannés. Les pages sont lues directement par un modèle multimodal, sans OCR intermédiaire, en trois étapes : transcription, entités, relations. Les consignes sont construites à partir du seul guideline TRACE-Sepsis, et deux filtres écartent dès l'extraction les entités absentes de la page et les relations hors du schéma. Le chapitre a aussi défini la manière dont une extraction est comparée au Gold Standard, avec trois modes d'appariement et des métriques en micro- et macro-moyenne, qui serviront à l'évaluation de tout le mémoire.
+Ce chapitre a décrit la manière dont un graphe d'entités et de relations est extrait des dossiers scannés. Les pages sont lues directement par un modèle multimodal, sans OCR intermédiaire, en deux étapes : l'extraction des entités, puis celle des relations. Les consignes sont construites à partir du seul guideline TRACE-Sepsis, et deux filtres écartent dès l'extraction les entités absentes de la page et les relations hors du schéma. Le chapitre a aussi défini la manière dont une extraction est comparée au Gold Standard, avec trois modes d'appariement et des métriques en micro- et macro-moyenne, qui serviront à l'évaluation de tout le mémoire.
 
 Ces filtres ne suffisent pas à garantir la fidélité de l'extraction. Une entité peut être écrite dans la page et pourtant niée, hypothétique ou relative à un antécédent ; une relation peut respecter le schéma sans être justifiée par le texte. Le chapitre suivant présente TRACE, la chaîne de vérification construite pour détecter et réduire ces hallucinations.
