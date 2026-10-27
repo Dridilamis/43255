@@ -1,90 +1,93 @@
-# Figure : pipeline d'extraction multimodale, étage 0 de TRACE (chapitre 4)
+# Figure : pipeline d'extraction multimodale (chapitre 4), d'après la figure de l'auteure
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch, Circle
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
 plt.rcParams.update({"font.family": "DejaVu Sans"})
-fig = plt.figure(figsize=(13, 6.0))
-ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 130); ax.set_ylim(0, 60); ax.axis("off")
+fig = plt.figure(figsize=(13, 4.6))
+ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 130); ax.set_ylim(0, 46); ax.axis("off")
 INK, MUTED, EDGE = "#1f1f1d", "#52514e", "#b9b7af"
-PREP, MLLM, GUIDE, FILT, OUT = "#2a78d6", "#d9622b", "#6250d6", "#1b8f66", "#1d3f73"
+BLUE, NAVY, VIOLET, GREEN = "#2a78d6", "#1d3f73", "#6250d6", "#1b8f66"
 
 def box(x, y, w, h, fc, ec, lw=1.2, r=1.0, ls="-"):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle=f"round,pad=0,rounding_size={r}", fc=fc, ec=ec, lw=lw, ls=ls))
 
-def panel(x, y, w, h, color, tint, title):
+def panel(x, y, w, h, color, tint, title, hh=5.0):
     box(x, y, w, h, tint, color, lw=1.4)
-    box(x, y + h - 4.6, w, 4.6, color, "none")
-    ax.add_patch(plt.Rectangle((x, y + h - 4.6), w, 2.0, fc=color, ec="none"))
-    ax.text(x + w / 2, y + h - 2.3, title, ha="center", va="center", color="white", fontsize=9.6, fontweight="bold")
+    box(x, y + h - hh, w, hh, color, "none")
+    ax.add_patch(plt.Rectangle((x, y + h - hh), w, 2.2, fc=color, ec="none"))
+    ax.text(x + w / 2, y + h - hh / 2, title, ha="center", va="center", color="white", fontsize=9.6,
+            fontweight="bold", linespacing=1.15)
 
-def card(x, y, w, h, lines, bold_first=True, size=8.0, ec=EDGE):
-    box(x, y, w, h, "white", ec, lw=0.9, r=0.7)
-    n = len(lines); top = y + h / 2 + (n - 1) * 1.25
-    for i, ln in enumerate(lines):
-        ax.text(x + w / 2, top - i * 2.5, ln, ha="center", va="center", fontsize=size, color=INK,
-                fontweight="bold" if (i == 0 and bold_first) else "normal")
+R = fig.canvas.get_renderer()
+def seq(x, y, parts):
+    """Écrit des morceaux de texte à la suite, en mesurant chacun."""
+    for txt, color, bold in parts:
+        t = ax.text(x, y, txt, ha="left", va="center", fontsize=8.2, color=color,
+                    fontweight="bold" if bold else "normal")
+        bb = t.get_window_extent(renderer=R).transformed(ax.transData.inverted())
+        x = bb.x1 + 0.9
 
-def arrow(p, q, color="#6b6a64", ls="-", lw=1.6, rad=0.0):
-    ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=14, color=color, lw=lw, ls=ls,
-                 shrinkA=1, shrinkB=1, connectionstyle=f"arc3,rad={rad}"))
+def arrow(p, q, color="#6b6a64", lw=1.7):
+    ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=15, color=color, lw=lw, shrinkA=1, shrinkB=1))
 
-ymid = 27
+# cadre d'ensemble en pointillés
+box(0.8, 1.0, 128.4, 44.0, "none", "#7a8fb0", lw=1.0, r=0.6, ls=(0, (4, 3)))
+ymid = 21
+
 # 1. entrée
-panel(1.5, 13, 17.5, 28, PREP, "#eef4fc", "Dossiers et images")
-card(3, 27.2, 14.5, 8.0, ["Dossiers scannés", "PDF sans couche texte,", "pseudonymisés"])
-card(3, 16.2, 14.5, 8.0, ["Conversion en images", "500 dpi,", "page par page"])
-arrow((10.25, 27.2), (10.25, 24.2))
+box(3, 13, 17, 16, "#eef4fc", BLUE, lw=1.2)
+ax.text(11.5, 24.2, "Dossiers cliniques", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+ax.text(11.5, 21.0, "numérisés et", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+ax.text(11.5, 17.8, "pseudonymisés", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+arrow((20, ymid), (24, ymid))
 
-# 2. MLLM : trois appels successifs par page
-mx, mw = 23, 54
-panel(mx, 13, mw, 28, MLLM, "#fdf1ec", "Extraction par un MLLM, pour chaque page")
-cw, cy, ch = 15.2, 22.5, 11.5
-xs = [mx + 2, mx + 19.4, mx + 36.8]
-card(xs[0], cy, cw, ch, ["1. Transcription", "texte de la page"])
-card(xs[1], cy, cw, ch, ["2. Entités (NER)", "« CRP 245 mg/L »", "→ BIOMARQUEUR"])
-card(xs[2], cy, cw, ch, ["3. Relations (RE)", "Amiklin →", "traitement_administre_a", "→ Patient"], size=7.6)
-arrow((xs[0] + cw, cy + ch / 2), (xs[1], cy + ch / 2))
-arrow((xs[1] + cw, cy + ch / 2), (xs[2], cy + ch / 2))
-ax.text(mx + mw / 2, 17.6, "Qwen2.5-VL (local, GPU universitaire)     ou     Mistral Small 4 (API, température 0)",
-        ha="center", va="center", fontsize=8.0, color=MUTED)
-ax.text(mx + mw / 2, 15.0, "Sortie de chaque étape au format JSON", ha="center", va="center",
-        fontsize=7.8, color=MUTED, style="italic")
-arrow((19, ymid), (mx, ymid))
+# 2. couche d'extraction basée sur les MLLM
+px, pw, py, ph = 23.5, 43, 4.5, 37
+panel(px, py, pw, ph, BLUE, "#eef4fc", "Couche d'extraction d'informations cliniques\nbasée sur les MLLM", hh=7.0)
+box(px + 2, py + 11, 18, 16.5, "white", EDGE, lw=0.9, r=0.7)
+ax.text(px + 11, py + 23.8, "Qwen2.5-VL", ha="center", va="center", fontsize=9.2, fontweight="bold", color=INK)
+ax.text(px + 11, py + 20.4, "Mistral Small 4", ha="center", va="center", fontsize=9.2, fontweight="bold", color=INK)
+ax.text(px + 11, py + 15.4, "Modèles multimodaux", ha="center", va="center", fontsize=8.0, color=MUTED)
+ax.text(px + 11, py + 13.0, "(MLLM)", ha="center", va="center", fontsize=8.0, color=MUTED)
+ax.text(px + 21.5, py + 19.2, "+", ha="center", va="center", fontsize=18, color=MUTED)
+box(px + 23, py + 11, 18, 16.5, "white", VIOLET, lw=0.9, r=0.7)
+ax.text(px + 32, py + 23.4, "Guide d'extraction", ha="center", va="center", fontsize=9.0, fontweight="bold", color=VIOLET)
+ax.text(px + 32, py + 20.2, "TRACE-Sepsis", ha="center", va="center", fontsize=9.0, fontweight="bold", color=VIOLET)
+ax.text(px + 32, py + 14.2, "(guide d'annotation)", ha="center", va="center", fontsize=8.0, color=MUTED)
+box(px + 2, py + 2.5, pw - 4, 7, BLUE, "none", r=0.7)
+ax.text(px + pw / 2, py + 6.0, "Ingénierie de prompts guidée par le guide d'annotation", ha="center",
+        va="center", fontsize=8.3, fontweight="bold", color="white")
+arrow((px + pw, ymid), (px + pw + 4, ymid))
 
-# guideline au-dessus, qui alimente les trois consignes
-gx, gw, gy, gh = mx, mw, 46, 11
-box(gx, gy, gw, gh, "#f1effc", GUIDE, lw=1.4)
-ax.text(gx + gw / 2, gy + gh - 2.6, "TRACE-Sepsis Annotation Guideline v2.0", ha="center", va="center",
-        fontsize=9.6, fontweight="bold", color=GUIDE)
-ax.text(gx + gw / 2, gy + 4.6, "Consignes construites uniquement à partir du guideline :", ha="center", va="center",
-        fontsize=8.0, color=INK)
-ax.text(gx + gw / 2, gy + 2.2, "20 types d'entités, 34 relations à signature fixe, règles d'annotation, format JSON",
-        ha="center", va="center", fontsize=8.0, color=INK)
-for x in xs:
-    arrow((x + cw / 2, gy), (x + cw / 2, cy + ch), color=GUIDE, ls=(0, (3, 2.5)), lw=1.1)
+# 3. extraction structurée
+ex, ew = 70.5, 40
+panel(ex, py, ew, ph, NAVY, "#e9eef6", "Extraction structurée\nde l'information", hh=7.0)
+def bloc(y, h, tag, title, color, lines):
+    box(ex + 2, y, ew - 4, h, "white", EDGE, lw=0.9, r=0.7)
+    box(ex + 3.2, y + h - 5.4, 6.4, 4.2, color, "none", r=0.6)
+    ax.text(ex + 6.4, y + h - 3.3, tag, ha="center", va="center", fontsize=9.4, fontweight="bold", color="white")
+    ax.text(ex + 11.0, y + h - 3.3, title, ha="left", va="center", fontsize=8.6, fontweight="bold", color=INK)
+    for i, (a, b, c) in enumerate(lines):
+        yy = y + h - 8.4 - i * 3.0
+        parts = [(a, INK, False), ("→", MUTED, False), (b, color, True)]
+        if c:
+            parts += [("→", MUTED, False), (c, INK, False)]
+        seq(ex + 4.0, yy, parts)
+bloc(py + 15.0, 13.0, "NER", "Reconnaissance d'entités nommées", BLUE,
+     [("« CRP 245 mg/L »", "BIOMARQUEUR", None), ("« Choc septique »", "LABEL_NOSOLOGIQUE", None)])
+bloc(py + 2.5, 10.5, "RE", "Extraction des relations", GREEN,
+     [("« Amiklin »", "traitement_administre_a", "« Patient »")])
+jx = 114.5
+arrow((ex + ew, ymid), (jx, ymid))
 
-# 3. filtres
-fx, fw = 81, 22
-panel(fx, 13, fw, 28, FILT, "#ecf7f2", "Filtres et fusion")
-card(fx + 1.5, 29.0, fw - 3, 6.6, ["Entité retrouvée mot", "pour mot dans la page"], bold_first=False, size=7.8)
-card(fx + 1.5, 21.6, fw - 3, 6.6, ["Relation dans les", "34 signatures"], bold_first=False, size=7.8)
-card(fx + 1.5, 14.2, fw - 3, 6.6, ["Fusion des pages", "par dossier"], bold_first=False, size=7.8)
-arrow((mx + mw, ymid), (fx, ymid))
-
-# 4. sortie
-ox, ow = 107, 21.5
-panel(ox, 13, ow, 28, OUT, "#e9eef6", "Sortie brute")
-card(ox + 1.5, 24.0, ow - 3, 10.0, ["Un JSON par dossier", "entités et relations,", "avec preuve et page"], size=7.8)
-ax.text(ox + ow / 2, 18.8, "Point de départ", ha="center", va="center", fontsize=8.2, color=OUT, fontweight="bold")
-ax.text(ox + ow / 2, 16.3, "de TRACE (étage 0b)", ha="center", va="center", fontsize=8.2, color=OUT, fontweight="bold")
-arrow((fx + fw, ymid), (ox, ymid))
-
-# bandeau : étage 0
-ax.plot([1.5, 1.5, 128.5, 128.5], [9.6, 8.4, 8.4, 9.6], color=MLLM, lw=1.4)
-ax.text(65, 6.0, "Étage 0 de TRACE : extraction multimodale (chapitre 4)", ha="center", va="center",
-        fontsize=9.2, fontweight="bold", color=MLLM)
+# 4. sortie JSON
+jx = 114.5
+box(jx, 13, 13.5, 16, "#e9eef6", NAVY, lw=1.2)
+ax.text(jx + 6.75, 25.0, "JSON", ha="center", va="center", fontsize=13, fontweight="bold", color=NAVY)
+ax.text(jx + 6.75, 20.6, "Sortie structurée :", ha="center", va="center", fontsize=8.2, color=INK)
+ax.text(jx + 6.75, 17.6, "entités + relations", ha="center", va="center", fontsize=8.2, color=INK)
 
 out = "/home/user/43255/figures_memoire/fig_pipeline_extraction"
 fig.savefig(out + ".pdf"); fig.savefig(out + ".png", dpi=300)
