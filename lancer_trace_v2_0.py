@@ -195,9 +195,12 @@ def main():
     titre("3. TRACE v2, ETAGES 1 A 8 (signatures et gold v2.0)")
     entree = EXTRAIT
     if not args.sans_regles:
-        titre("2b. REGLES STRICTES APPRISES SUR LE GOLD (validation croisee)")
+        titre("2b. LEXIQUE APPRIS SUR LE GOLD (types, bornes, valeurs, rappel ; validation croisee)")
+        lexique = EXTRAIT.parent / (EXTRAIT.name + "_lexique")
+        lancer([sys.executable, ROOT / "extraction_mistral" / "lexique_appris.py", entree, GOLD, lexique], ROOT)
+        titre("2c. REGLES STRICTES APPRISES SUR LE GOLD (validation croisee)")
         entree = EXTRAIT.parent / (EXTRAIT.name + "_regles")
-        lancer([sys.executable, ROOT / "extraction_mistral" / "regles_apprises.py", EXTRAIT, GOLD, entree], ROOT)
+        lancer([sys.executable, ROOT / "extraction_mistral" / "regles_apprises.py", lexique, GOLD, entree], ROOT)
     env = {**os.environ, "TRACE_ENTREE": str(entree), "TRACE_TEXTES": str(EXTRAIT / "textes_bruts"),
            "TRACE_GOLD": str(GOLD), "TRACE_GUIDELINE": str(GUIDELINE), "TRACE_SORTIES": str(SORTIES),
            "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}

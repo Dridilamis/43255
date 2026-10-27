@@ -27,6 +27,8 @@ import argparse
 import getpass
 import hashlib
 import json
+from collections import Counter
+import math
 import os
 import re
 import sys
@@ -293,47 +295,81 @@ def ancre_patient(entites, page_text, page_no):
 
 
 # ------------------------------------------------------------------ exemples annotes (validation croisee)
-EXEMPLES = {}   # cle de dossier -> {"entites": texte, "traitements": texte, "relations": texte}
+
+
+POOL = {}       # cle de dossier -> pages annotees de l'AUTRE moitie (candidates comme exemples)
+N_EXEMPLES = 2
+_MOT = re.compile(r"[a-z0-9]{3,}")
+
+
+def _sac(texte):
+    return Counter(_MOT.findall(norm(texte)))
 
 
 def preparer_exemples(gold_dir, n_pages):
     """Exemples annotes en VALIDATION CROISEE a 2 plis, avec les memes plis que l'etage 8 de TRACE
     (dossiers tries, rangs pairs / impairs) : un dossier ne recoit que des pages annotees de
-    l'AUTRE moitie. Aucun dossier ne voit sa propre annotation. Les pages choisies sont celles qui
-    couvrent le plus de types d'entites (choix deterministe, independant des sorties du modele)."""
+    l'AUTRE moitie, jamais sa propre annotation. Pour chaque page a extraire, on choisit les pages
+    annotees les plus SEMBLABLES (similarite cosinus TF-IDF des mots) : une page de biologie recoit
+    des exemples de biologie, une ordonnance des exemples d'ordonnance."""
+    global N_EXEMPLES
+    N_EXEMPLES = n_pages
     docs = sorted((json.loads(f.read_text(encoding="utf-8")) for f in Path(gold_dir).glob("*.json")),
                   key=lambda d: d["document"])
     plis = [docs[0::2], docs[1::2]]
-    for k, pli in enumerate(plis):
-        autres = plis[1 - k]
-        pages = [(len({e["type"] for e in p["entities"]}), d["document"], p) for d in autres
-                 for p in d["pages"] if 600 <= len(p.get("text", "")) <= 2500 and p["entities"]]
-        pages.sort(key=lambda x: (-x[0], x[1], x[2]["page"]))
-        choix = [p for _, _, p in pages[:n_pages]]
-        ent, trt, rel = [], [], []
-        for i, p in enumerate(choix, start=1):
-            texte = p["text"].strip()
-            e_all = [{"categorie": e["type"], "texte": e["name"]} for e in p["entities"]]
-            e_trt = [e for e in e_all if e["categorie"] in FAMILLE_TRAITEMENT]
-            r_all = [f"{r['subject']} [{r['subject_type']}] | {r['relation']} | {r['object']} [{r['object_type']}]"
-                     for r in p["relations"]]
-            ent.append(f"EXEMPLE {i} - texte :\n\"\"\"{texte}\"\"\"\nentites annotees :\n"
-                       + json.dumps({"entites": e_all}, ensure_ascii=False))
-            trt.append(f"EXEMPLE {i} - texte :\n\"\"\"{texte}\"\"\"\ntraitements et posologies annotes :\n"
-                       + json.dumps({"entites": e_trt}, ensure_ascii=False))
-            rel.append(f"EXEMPLE {i} - texte :\n\"\"\"{texte}\"\"\"\nrelations annotees :\n" + "\n".join(r_all))
-        bloc = {"entites": "\n\n".join(ent), "traitements": "\n\n".join(trt), "relations": "\n\n".join(rel)}
+    for k in (0, 1):
+        pages = []
+        for d in plis[1 - k]:
+            for pg in d["pages"]:
+                if pg["entities"] and 300 <= len(pg.get("text", "")) <= 3000:
+                    pages.append({"texte": pg["text"].strip(), "sac": _sac(pg["text"]),
+                                  "entites": [{"categorie": x["type"], "texte": x["name"]} for x in pg["entities"]],
+                                  "relations": [f"{r['subject']} [{r['subject_type']}] | {r['relation']} | "
+                                                f"{r['object']} [{r['object_type']}]" for r in pg["relations"]]})
+        df = Counter(m for pg in pages for m in pg["sac"])
+        n = len(pages)
+        for pg in pages:
+            pg["vec"] = {m: c * math.log(n / df[m]) for m, c in pg["sac"].items()}
+            pg["norme"] = math.sqrt(sum(v * v for v in pg["vec"].values())) or 1.0
         for d in plis[k]:
-            EXEMPLES[d["document"]] = bloc
+            POOL[d["document"]] = (pages, df, n)
 
 
-def bloc_exemples(doc, cle):
-    ex = EXEMPLES.get(doc, {}).get(cle)
-    if not ex:
+def _semblables(doc, page_text):
+    pages, df, n = POOL[doc]
+    sac = _sac(page_text)
+    vec = {m: c * math.log(n / df[m]) for m, c in sac.items() if m in df}
+    norme = math.sqrt(sum(v * v for v in vec.values())) or 1.0
+    score = [(sum(v * pg["vec"].get(m, 0.0) for m, v in vec.items()) / (norme * pg["norme"]), i)
+             for i, pg in enumerate(pages)]
+    score.sort(key=lambda x: (-x[0], x[1]))
+    choix, vus = [], set()
+    for _, i in score:
+        if pages[i]["texte"][:200] not in vus:     # pas deux fois la meme page
+            vus.add(pages[i]["texte"][:200])
+            choix.append(pages[i])
+        if len(choix) == N_EXEMPLES:
+            break
+    return choix
+
+
+def bloc_exemples(doc, cle, page_text=""):
+    if doc not in POOL:
         return ""
-    return ("\nEXEMPLES ANNOTES (autres dossiers, meme guideline) : ils montrent la convention d'annotation"
-            " (decoupage court des mentions, posologie separee, mention du patient). Ne recopie jamais leur"
-            " contenu : extrais uniquement ce qui est ecrit dans la PAGE.\n" + ex + "\n")
+    blocs = []
+    for i, pg in enumerate(_semblables(doc, page_text), start=1):
+        if cle == "relations":
+            contenu = "relations annotees :\n" + "\n".join(pg["relations"])
+        elif cle == "traitements":
+            contenu = "traitements et posologies annotes :\n" + json.dumps(
+                {"entites": [x for x in pg["entites"] if x["categorie"] in FAMILLE_TRAITEMENT]}, ensure_ascii=False)
+        else:
+            contenu = "entites annotees :\n" + json.dumps({"entites": pg["entites"]}, ensure_ascii=False)
+        blocs.append(f"EXEMPLE {i} - texte :\n\"\"\"{pg['texte']}\"\"\"\n{contenu}")
+    return ("\nEXEMPLES ANNOTES (pages semblables d'autres dossiers, meme guideline) : ils montrent la"
+            " convention d'annotation (decoupage des mentions, types, posologie separee, mention du patient,"
+            " absences). Ne recopie jamais leur contenu : extrais uniquement ce qui est ecrit dans la PAGE.\n"
+            + "\n\n".join(blocs) + "\n")
 
 
 # ------------------------------------------------------------------ regles strictes apprises (validation croisee)
@@ -555,9 +591,9 @@ def traiter_pdf(api, g, pdf, out_dir, c):
         del b64
         png.unlink(missing_ok=True)   # image de 500 dpi tres lourde : supprimee une fois lue
         doc = pdf.stem
-        raw_e = parse_json(api.ask(prompt_entites(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "entites")),
+        raw_e = parse_json(api.ask(prompt_entites(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "entites", texte)),
                                    json_mode=True, max_tokens=12000))
-        raw_t = parse_json(api.ask(prompt_traitements(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "traitements")),
+        raw_t = parse_json(api.ask(prompt_traitements(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "traitements", texte)),
                                    json_mode=True, max_tokens=8000))
         # traitements et posologies : la consigne ciblee remplace ceux de la consigne generale
         raw_e = {"entites": [e for e in raw_e.get("entites", []) or []
@@ -576,7 +612,7 @@ def traiter_pdf(api, g, pdf, out_dir, c):
             c["ancre_patient_ajoutee"] += 1
         interdites = GUIDE.get(doc, {}).get("relations_interdites", set())
         raw_r = parse_json(api.ask(prompt_relations(g, texte, ents,
-                                                    bloc_regles(doc, "relations") + bloc_exemples(doc, "relations"),
+                                                    bloc_regles(doc, "relations") + bloc_exemples(doc, "relations", texte),
                                                     interdites),
                                    json_mode=True, max_tokens=8000)) \
             if relations_possibles(g, ents, interdites) else {}
@@ -608,7 +644,7 @@ def main():
     ap = argparse.ArgumentParser(description="Extraction Mistral selon le guideline TRACE-Sepsis")
     ap.add_argument("--guideline", default=str(GUIDELINE))
     ap.add_argument("--gold-exemples", default="", help="gold converti (dossier gold_v2_0) : active les exemples annotes")
-    ap.add_argument("--exemples", type=int, default=2, help="pages annotees montrees par consigne (defaut 2)")
+    ap.add_argument("--exemples", type=int, default=3, help="pages annotees semblables montrees par consigne (defaut 3)")
     ap.add_argument("--guide", default="", help="regles strictes apprises (apprendre_guide.py), par moitie de corpus")
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
     ap.add_argument("--sortie", default=str(DEFAULT_OUT))
@@ -636,7 +672,7 @@ def main():
     if args.gold_exemples:
         preparer_exemples(args.gold_exemples, args.exemples)
         print(f"Exemples annotes : {args.exemples} page(s) par consigne, pris dans l'autre moitie des dossiers"
-              f" ({len(EXEMPLES)} dossiers couverts)")
+              f" ({len(POOL)} dossiers couverts)")
     api = Mistral(out / "_cache", args.pause)
     print(f"Guideline : {GUIDELINE.name} | {len(g['signatures_relations'])} relations | {len(pdfs)} dossier(s)")
     for k, pdf in enumerate(pdfs, start=1):
