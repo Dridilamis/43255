@@ -1,0 +1,430 @@
+{
+ "seuil": 0.3,
+ "plis": [
+  {
+   "documents": [
+    "img20250709_16142502",
+    "img20250709_16164845",
+    "img20250709_16193836",
+    "img20250709_16205810",
+    "img20250709_16225557",
+    "img20250709_16254831",
+    "img20250709_16271908",
+    "img20250709_16281006",
+    "img20250709_16295211",
+    "img20250709_16304515",
+    "img20250709_16321359",
+    "img20250709_16340712",
+    "img20250709_16351550",
+    "img20250709_16374548",
+    "img20250709_16393818",
+    "img20250709_16414914",
+    "img20250709_16432163",
+    "img20250709_16510509",
+    "img20250709_16523752",
+    "img20250709_16545673",
+    "img20250709_16560274",
+    "img20250709_16573733",
+    "img20250709_17005010",
+    "img20250709_17064897",
+    "img20250709_17093027"
+   ],
+   "appris_sur": [
+    "img20250709_16154161",
+    "img20250709_16190789",
+    "img20250709_16201504",
+    "img20250709_16223922",
+    "img20250709_16233563",
+    "img20250709_16270030",
+    "img20250709_16273897",
+    "img20250709_16283177",
+    "img20250709_16301193",
+    "img20250709_16313543",
+    "img20250709_16331952",
+    "img20250709_16344492",
+    "img20250709_16360688",
+    "img20250709_16381567",
+    "img20250709_16395936",
+    "img20250709_16430466",
+    "img20250709_16491432",
+    "img20250709_16520260",
+    "img20250709_16531341",
+    "img20250709_16553580",
+    "img20250709_16562087",
+    "img20250709_16583921",
+    "img20250709_17020518",
+    "img20250709_17081913"
+   ],
+   "relations_interdites": [
+    "a_pour_contexte_acquisition",
+    "antibiotique_adequat_pour",
+    "biomarqueur_est_critere_de",
+    "biomarqueur_obtenu_a",
+    "biomarqueur_supporte_defaillance_organe",
+    "comorbidite_est_facteur_risque_de",
+    "contexte_acquisition_influence_risque_resistance",
+    "evenement_associe_evolution",
+    "imagerie_objective_foyer",
+    "label_nosologique_a_pour_foyer",
+    "micro_organisme_infecte_site",
+    "micro_organisme_isole_dans",
+    "precede",
+    "score_sofa_inclut_signe_vital",
+    "signe_vital_supporte_defaillance_organe",
+    "symptome_oriente_foyer",
+    "traitement_cible_defaillance",
+    "traitement_indique_par_label_nosologique"
+   ],
+   "profils_interdits": [
+    [
+     "BIOMARQUEUR",
+     false,
+     false,
+     false
+    ],
+    [
+     "BIOMARQUEUR",
+     false,
+     false,
+     true
+    ],
+    [
+     "CONTEXTE_ACQUISITION",
+     false,
+     false,
+     true
+    ],
+    [
+     "DEFAILLANCE_ORGANE",
+     false,
+     false,
+     true
+    ],
+    [
+     "EVENEMENT_TEMPOREL",
+     false,
+     false,
+     false
+    ],
+    [
+     "EVENEMENT_TEMPOREL",
+     false,
+     false,
+     true
+    ],
+    [
+     "EVENEMENT_TEMPOREL",
+     false,
+     true,
+     true
+    ],
+    [
+     "EVOLUTION_PRONOSTIC",
+     false,
+     false,
+     true
+    ],
+    [
+     "FOYER_INFECTIEUX",
+     false,
+     false,
+     false
+    ],
+    [
+     "LABEL_NOSOLOGIQUE",
+     false,
+     false,
+     true
+    ],
+    [
+     "LABEL_NOSOLOGIQUE",
+     false,
+     true,
+     false
+    ],
+    [
+     "POSOLOGIE",
+     false,
+     false,
+     false
+    ],
+    [
+     "SIGNE_VITAL",
+     false,
+     false,
+     false
+    ],
+    [
+     "SIGNE_VITAL",
+     false,
+     true,
+     true
+    ]
+   ],
+   "precision_types": {
+    "DEFAILLANCE_ORGANE": 0.462,
+    "COMORBIDITE_ANTECEDENT": 0.47,
+    "SYMPTOME": 0.422,
+    "EVENEMENT_TEMPOREL": 0.319,
+    "TRAITEMENT": 0.797,
+    "POSOLOGIE": 0.671,
+    "DONNEE_PATIENT": 0.693,
+    "EVOLUTION_PRONOSTIC": 0.369,
+    "SIGNE_VITAL": 0.432,
+    "LABEL_NOSOLOGIQUE": 0.392,
+    "FOYER_INFECTIEUX": 0.294,
+    "CONTEXTE_ACQUISITION": 0.547,
+    "MICRO_ORGANISME": 0.692,
+    "BIOMARQUEUR": 0.813,
+    "SERVICE_MEDICAL": 0.375,
+    "IMAGERIE_PROCEDURE": 0.634,
+    "SCORE_NEUROLOGIQUE": 0.882
+   },
+   "longueur_mots_gold": {
+    "SERVICE_MEDICAL": 1,
+    "DEFAILLANCE_ORGANE": 2.0,
+    "DONNEE_PATIENT": 2.0,
+    "COMORBIDITE_ANTECEDENT": 3,
+    "SYMPTOME": 3.0,
+    "EVENEMENT_TEMPOREL": 1,
+    "TRAITEMENT": 1.0,
+    "POSOLOGIE": 2,
+    "EVOLUTION_PRONOSTIC": 4,
+    "SIGNE_VITAL": 4.0,
+    "LABEL_NOSOLOGIQUE": 2,
+    "FOYER_INFECTIEUX": 4,
+    "CONTEXTE_ACQUISITION": 4.0,
+    "MICRO_ORGANISME": 2,
+    "BIOMARQUEUR": 3.0,
+    "SCORE_NEUROLOGIQUE": 2.5,
+    "IMAGERIE_PROCEDURE": 2.0,
+    "SCORE_SOFA": 3.0
+   }
+  },
+  {
+   "documents": [
+    "img20250709_16154161",
+    "img20250709_16190789",
+    "img20250709_16201504",
+    "img20250709_16223922",
+    "img20250709_16233563",
+    "img20250709_16270030",
+    "img20250709_16273897",
+    "img20250709_16283177",
+    "img20250709_16301193",
+    "img20250709_16313543",
+    "img20250709_16331952",
+    "img20250709_16344492",
+    "img20250709_16360688",
+    "img20250709_16381567",
+    "img20250709_16395936",
+    "img20250709_16430466",
+    "img20250709_16491432",
+    "img20250709_16520260",
+    "img20250709_16531341",
+    "img20250709_16553580",
+    "img20250709_16562087",
+    "img20250709_16583921",
+    "img20250709_17020518",
+    "img20250709_17081913"
+   ],
+   "appris_sur": [
+    "img20250709_16142502",
+    "img20250709_16164845",
+    "img20250709_16193836",
+    "img20250709_16205810",
+    "img20250709_16225557",
+    "img20250709_16254831",
+    "img20250709_16271908",
+    "img20250709_16281006",
+    "img20250709_16295211",
+    "img20250709_16304515",
+    "img20250709_16321359",
+    "img20250709_16340712",
+    "img20250709_16351550",
+    "img20250709_16374548",
+    "img20250709_16393818",
+    "img20250709_16414914",
+    "img20250709_16432163",
+    "img20250709_16510509",
+    "img20250709_16523752",
+    "img20250709_16545673",
+    "img20250709_16560274",
+    "img20250709_16573733",
+    "img20250709_17005010",
+    "img20250709_17064897",
+    "img20250709_17093027"
+   ],
+   "relations_interdites": [
+    "a_pour_contexte_acquisition",
+    "antibiotique_adequat_pour",
+    "biomarqueur_est_critere_de",
+    "biomarqueur_obtenu_a",
+    "biomarqueur_supporte_defaillance_organe",
+    "comorbidite_est_facteur_risque_de",
+    "contexte_acquisition_influence_risque_resistance",
+    "evenement_associe_evolution",
+    "imagerie_objective_foyer",
+    "label_nosologique_a_pour_foyer",
+    "micro_organisme_infecte_site",
+    "micro_organisme_isole_dans",
+    "precede",
+    "score_sofa_inclut_signe_vital",
+    "service_medical_accueille",
+    "signe_vital_supporte_defaillance_organe",
+    "symptome_oriente_foyer",
+    "traitement_cible_defaillance",
+    "traitement_indique_par_label_nosologique"
+   ],
+   "profils_interdits": [
+    [
+     "BIOMARQUEUR",
+     false,
+     false,
+     false
+    ],
+    [
+     "BIOMARQUEUR",
+     false,
+     false,
+     true
+    ],
+    [
+     "CONTEXTE_ACQUISITION",
+     false,
+     false,
+     true
+    ],
+    [
+     "DEFAILLANCE_ORGANE",
+     false,
+     false,
+     true
+    ],
+    [
+     "DEFAILLANCE_ORGANE",
+     false,
+     true,
+     false
+    ],
+    [
+     "EVENEMENT_TEMPOREL",
+     false,
+     false,
+     false
+    ],
+    [
+     "EVENEMENT_TEMPOREL",
+     false,
+     false,
+     true
+    ],
+    [
+     "EVENEMENT_TEMPOREL",
+     false,
+     true,
+     true
+    ],
+    [
+     "EVOLUTION_PRONOSTIC",
+     false,
+     false,
+     true
+    ],
+    [
+     "EVOLUTION_PRONOSTIC",
+     false,
+     true,
+     true
+    ],
+    [
+     "FOYER_INFECTIEUX",
+     false,
+     false,
+     false
+    ],
+    [
+     "LABEL_NOSOLOGIQUE",
+     false,
+     false,
+     true
+    ],
+    [
+     "LABEL_NOSOLOGIQUE",
+     false,
+     true,
+     false
+    ],
+    [
+     "POSOLOGIE",
+     false,
+     false,
+     false
+    ],
+    [
+     "POSOLOGIE",
+     false,
+     true,
+     true
+    ],
+    [
+     "SERVICE_MEDICAL",
+     false,
+     true,
+     false
+    ],
+    [
+     "SIGNE_VITAL",
+     false,
+     false,
+     false
+    ],
+    [
+     "SIGNE_VITAL",
+     false,
+     false,
+     true
+    ]
+   ],
+   "precision_types": {
+    "COMORBIDITE_ANTECEDENT": 0.454,
+    "IMAGERIE_PROCEDURE": 0.601,
+    "TRAITEMENT": 0.758,
+    "POSOLOGIE": 0.658,
+    "SYMPTOME": 0.464,
+    "SERVICE_MEDICAL": 0.363,
+    "FOYER_INFECTIEUX": 0.281,
+    "LABEL_NOSOLOGIQUE": 0.37,
+    "SIGNE_VITAL": 0.435,
+    "DONNEE_PATIENT": 0.729,
+    "BIOMARQUEUR": 0.832,
+    "EVENEMENT_TEMPOREL": 0.38,
+    "DEFAILLANCE_ORGANE": 0.524,
+    "EVOLUTION_PRONOSTIC": 0.396,
+    "SCORE_NEUROLOGIQUE": 0.875,
+    "MICRO_ORGANISME": 0.647,
+    "CONTEXTE_ACQUISITION": 0.516
+   },
+   "longueur_mots_gold": {
+    "SERVICE_MEDICAL": 1.0,
+    "DONNEE_PATIENT": 2.0,
+    "SYMPTOME": 2.0,
+    "LABEL_NOSOLOGIQUE": 2,
+    "COMORBIDITE_ANTECEDENT": 3.0,
+    "DEFAILLANCE_ORGANE": 2,
+    "IMAGERIE_PROCEDURE": 2.0,
+    "EVENEMENT_TEMPOREL": 1.0,
+    "TRAITEMENT": 1.0,
+    "POSOLOGIE": 2,
+    "FOYER_INFECTIEUX": 4.0,
+    "MICRO_ORGANISME": 2,
+    "BIOMARQUEUR": 3.0,
+    "SIGNE_VITAL": 4,
+    "SCORE_NEUROLOGIQUE": 2,
+    "EVOLUTION_PRONOSTIC": 4.0,
+    "CONTEXTE_ACQUISITION": 4,
+    "SCORE_SOFA": 2
+   }
+  }
+ ]
+}

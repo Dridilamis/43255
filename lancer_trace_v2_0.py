@@ -147,6 +147,8 @@ def main():
     ap.add_argument("--sans-reentrainer", action="store_true")
     ap.add_argument("--garder", type=int, default=80)
     ap.add_argument("--pause", type=float, default=1.5)
+    ap.add_argument("--refaire-extraction", action="store_true",
+                    help="archive l'extraction existante (sous-dossier archive_AAAAMMJJ_HHMM) et refait tout")
     ap.add_argument("--sans-regles", action="store_true",
                     help="ne pas appliquer les regles apprises sur le gold (validation croisee) avant TRACE")
     ap.add_argument("--sans-exemples", action="store_true",
@@ -160,6 +162,14 @@ def main():
         lancer([sys.executable, CONVERTIR, args.gold_labelstudio, GOLD], ROOT)
 
     if not args.sans_extraction:
+        if args.refaire_extraction and not args.essai:
+            anciens = list(EXTRAIT.glob("*_trace_*.json"))
+            if anciens:
+                archive = EXTRAIT / time.strftime("archive_%Y%m%d_%H%M")
+                archive.mkdir(parents=True, exist_ok=True)
+                for f in anciens:
+                    f.rename(archive / f.name)
+                print(f"Ancienne extraction archivee : {archive} ({len(anciens)} fichiers)")
         titre("2. EXTRACTION MISTRAL SMALL 4 (guideline v2.0)")
         demander_cle()
         cmd = [sys.executable, EXTRACTION, "--guideline", GUIDELINE, "--pdfs", args.pdfs,
@@ -168,6 +178,9 @@ def main():
             if not GOLD.is_dir():
                 sys.exit("Exemples annotes : gold_v2_0 absent (ajoutez --gold-labelstudio ou --sans-exemples).")
             cmd += ["--gold-exemples", GOLD]
+        guide = ROOT / "extraction_mistral" / "guide_appris_v2_0.json"
+        if not args.sans_regles and guide.exists():
+            cmd += ["--guide", guide]
         if args.essai:
             cmd.append("--essai")
         elif args.docs:

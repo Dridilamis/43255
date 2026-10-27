@@ -336,7 +336,71 @@ def bloc_exemples(doc, cle):
             " contenu : extrais uniquement ce qui est ecrit dans la PAGE.\n" + ex + "\n")
 
 
-def relations_possibles(g, entites):
+# ------------------------------------------------------------------ regles strictes apprises (validation croisee)
+GUIDE = {}      # cle de dossier -> regles de sa moitie (apprises sur l'AUTRE moitie, apprendre_guide.py)
+NEG_MENTION = re.compile(r"^\s*(pas d|absence|sans |ni |non |aucun)", re.IGNORECASE)
+
+
+def charger_guide(path):
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    for pli in data["plis"]:
+        regles = {"relations_interdites": set(pli["relations_interdites"]),
+                  "profils_interdits": {tuple(x) for x in pli["profils_interdits"]},
+                  "precision_types": pli["precision_types"], "longueur_mots_gold": pli["longueur_mots_gold"]}
+        for d in pli["documents"]:
+            GUIDE[d] = regles
+
+
+def profil_entite(cat, texte):
+    texte = str(texte or "")
+    return (cat, bool(NEG_MENTION.match(texte)), bool(re.search(r"\d", texte)), len(texte.split()) >= 6)
+
+
+def entite_interdite(doc, cat, texte):
+    r = GUIDE.get(doc)
+    p = profil_entite(cat, texte)
+    return bool(r) and not p[1] and p in r["profils_interdits"]
+
+
+def _decrire_profils(profils):
+    par = {}
+    for cat, neg, chiffre, long_ in sorted(profils):
+        if not neg:
+            par.setdefault((cat, chiffre), set()).add(long_)
+    out = []
+    for (cat, chiffre), longs in sorted(par.items()):
+        s = f"{cat} " + ("contenant un chiffre" if chiffre else "sans aucun chiffre ni date")
+        if longs == {True}:
+            s += " de 6 mots ou plus"
+        elif longs == {False}:
+            s += " de moins de 6 mots"
+        out.append(s)
+    return out
+
+
+def bloc_regles(doc, cle):
+    r = GUIDE.get(doc)
+    if not r:
+        return ""
+    if cle == "relations":
+        return ("\nREGLES STRICTES (apprises sur d'autres dossiers annotes, a respecter imperativement) :\n"
+                "- N'utilise QUE les relations listees ci-dessus ; les relations d'interpretation suivantes sont"
+                f" INTERDITES : {', '.join(sorted(r['relations_interdites']))}.\n"
+                "- Aucune relation vers une entite niee (absence, \"pas de ...\") : une absence n'a pas de relation.\n"
+                "- Une relation exige une phrase de la page qui l'enonce. En cas de doute, ne l'extrais pas.\n")
+    peu_fiables = sorted(t for t, p in r["precision_types"].items() if p < 0.5)
+    longueurs = ", ".join(f"{t} <= {int(round(v)) + 1} mots" for t, v in sorted(r["longueur_mots_gold"].items()))
+    lignes = ["", "REGLES STRICTES (apprises sur d'autres dossiers annotes, a respecter imperativement) :",
+              "- N'extrais JAMAIS : " + " ; ".join(_decrire_profils(r["profils_interdits"])) + ".",
+              f"- Mentions COURTES, sans phrase entiere ni titre de section : {longueurs}.",
+              "- Types peu fiables : " + ", ".join(peu_fiables) + ". N'extrais ces types que si la mention correspond"
+              " exactement a leur definition du guideline ; en cas de doute, ne l'extrais pas.",
+              "- Une absence (\"pas de toux\", \"absence de marbrures\") est UNE seule mention couvrant la"
+              " proposition niee, avec \"nie\": true.", ""]
+    return "\n".join(lignes)
+
+
+def relations_possibles(g, entites, interdites=()):
     """Relations du guideline realisables sur la page : un sujet du type domaine ET un objet du
     type image existent parmi les entites validees. Avec, pour chacune, les identifiants permis."""
     par_type = {}
@@ -346,16 +410,16 @@ def relations_possibles(g, entites):
     for groupe, rels in g["relations"].items():
         for k, v in rels.items():
             sujets, objets = par_type.get(v["domaine"], []), par_type.get(v["image"], [])
-            if sujets and objets:
+            if sujets and objets and k not in interdites:
                 out.append((k, v, sujets, objets))
     return out
 
 
-def prompt_relations(g, page_text, entites, exemples=""):
+def prompt_relations(g, page_text, entites, exemples="", interdites=()):
     ordre = sorted(entites, key=lambda e: (e["categorie"], e["identifiant_entite"]))
     liste = "\n".join(f"- {e['identifiant_entite']} [{e['categorie']}] {e['name']}" for e in ordre)
     sigs = []
-    for k, v, sujets, objets in relations_possibles(g, entites):
+    for k, v, sujets, objets in relations_possibles(g, entites, interdites):
         sigs.append(f"- {k} : {v['domaine']} -> {v['image']}. {v.get('description', '')}\n"
                     f"    sujet parmi : {', '.join(sujets)}\n    objet parmi : {', '.join(objets)}")
     regles = "\n".join(f"- {k} : {v}" for k, v in g["regles_generales_annotation"].items()
@@ -491,9 +555,9 @@ def traiter_pdf(api, g, pdf, out_dir, c):
         del b64
         png.unlink(missing_ok=True)   # image de 500 dpi tres lourde : supprimee une fois lue
         doc = pdf.stem
-        raw_e = parse_json(api.ask(prompt_entites(g, texte, bloc_exemples(doc, "entites")),
+        raw_e = parse_json(api.ask(prompt_entites(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "entites")),
                                    json_mode=True, max_tokens=12000))
-        raw_t = parse_json(api.ask(prompt_traitements(g, texte, bloc_exemples(doc, "traitements")),
+        raw_t = parse_json(api.ask(prompt_traitements(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "traitements")),
                                    json_mode=True, max_tokens=8000))
         # traitements et posologies : la consigne ciblee remplace ceux de la consigne generale
         raw_e = {"entites": [e for e in raw_e.get("entites", []) or []
@@ -502,15 +566,28 @@ def traiter_pdf(api, g, pdf, out_dir, c):
                  + [e for e in raw_t.get("entites", []) or []
                     if isinstance(e, dict) and str(e.get("categorie") or "").upper() in FAMILLE_TRAITEMENT]}
         ents = valider_entites(g, raw_e, texte, i, c)
+        # regle stricte : profils d'entites interdits pour cette moitie (jamais une mention niee)
+        avant = len(ents)
+        ents = [e for e in ents if not entite_interdite(doc, e["categorie"], e["name"])]
+        c["entites_interdites_guide"] += avant - len(ents)
         ancre = ancre_patient(ents, texte, i)
         if ancre:
             ents.append(ancre)
             c["ancre_patient_ajoutee"] += 1
-        raw_r = parse_json(api.ask(prompt_relations(g, texte, ents, bloc_exemples(doc, "relations")),
+        interdites = GUIDE.get(doc, {}).get("relations_interdites", set())
+        raw_r = parse_json(api.ask(prompt_relations(g, texte, ents,
+                                                    bloc_regles(doc, "relations") + bloc_exemples(doc, "relations"),
+                                                    interdites),
                                    json_mode=True, max_tokens=8000)) \
-            if relations_possibles(g, ents) else {}
+            if relations_possibles(g, ents, interdites) else {}
         rejets = []
         rels = valider_relations(g, raw_r, ents, i, c, len(rels_g), rejets)
+        # regles strictes : types de relation interdits, et aucune relation vers une absence
+        nies = {e["identifiant_entite"] for e in ents if e.get("nie") or NEG_MENTION.match(e["name"])}
+        avant = len(rels)
+        rels = [r for r in rels if r["type_relation"] not in interdites
+                and r["identifiant_entite_sujet"] not in nies and r["identifiant_entite_objet"] not in nies]
+        c["relations_interdites_guide"] += avant - len(rels)
         pages.append({"page": i, "texte_brut": texte, "entities": ents, "relations": rels,
                       "relations_rejetees": rejets, "statut": "ok"})
         ents_g += ents
@@ -532,6 +609,7 @@ def main():
     ap.add_argument("--guideline", default=str(GUIDELINE))
     ap.add_argument("--gold-exemples", default="", help="gold converti (dossier gold_v2_0) : active les exemples annotes")
     ap.add_argument("--exemples", type=int, default=2, help="pages annotees montrees par consigne (defaut 2)")
+    ap.add_argument("--guide", default="", help="regles strictes apprises (apprendre_guide.py), par moitie de corpus")
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
     ap.add_argument("--sortie", default=str(DEFAULT_OUT))
     ap.add_argument("--essai", action="store_true", help="un seul dossier, pour verifier")
@@ -552,6 +630,9 @@ def main():
     out = Path(args.sortie)
     out.mkdir(parents=True, exist_ok=True)
     g, c = guideline(), Counter()
+    if args.guide:
+        charger_guide(args.guide)
+        print(f"Regles strictes apprises : {args.guide} ({len(GUIDE)} dossiers couverts)")
     if args.gold_exemples:
         preparer_exemples(args.gold_exemples, args.exemples)
         print(f"Exemples annotes : {args.exemples} page(s) par consigne, pris dans l'autre moitie des dossiers"
