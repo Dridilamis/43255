@@ -229,6 +229,7 @@ PAGE :
 
 
 FAMILLE_TRAITEMENT = ("TRAITEMENT", "POSOLOGIE")
+PAR_FAMILLES = True   # une consigne par famille d'entites (option --consigne-generale pour l'ancienne)
 # DONNEE_PATIENT (guideline) : le patient et ses donnees demographiques. Une mention de ce type doit
 # designer le patient ou porter une de ces donnees ; un titre ("Sur le plan renal") est rejete.
 PATIENT_OK_RE = re.compile(r"\b(patiente?s?|mr|mme|monsieur|madame|homme|femme|sexe|ans?|age|ag[ée]e?|"
@@ -271,6 +272,90 @@ DEFINITIONS :
 
 FORMAT DE SORTIE (JSON uniquement) :
 {{"entites": [{{"categorie": "TRAITEMENT|POSOLOGIE", "texte": "surface exacte", "parametre": null,
+  "valeur": null, "unite": null, "nie": false, "hypothese": false, "confiance": "elevee|moyenne|faible",
+  "type_inference": "extraction_directe"}}]}}
+
+{exemples}
+PAGE :
+\"\"\"{page_text}\"\"\""""
+
+
+FAMILLES = {
+    "biologie": {
+        "types": ("BIOMARQUEUR", "SIGNE_VITAL", "SCORE_SOFA", "SCORE_qSOFA", "SCORE_NEUROLOGIQUE", "STADE_IRA"),
+        "expert": "biologie clinique et reanimation",
+        "mission": "tous les resultats biologiques, parametres vitaux et scores ecrits dans la page, y compris"
+                   " dans les tableaux de biologie et les gaz du sang",
+        "regles": ["Une mesure = UNE entite qui reunit le nom du parametre, sa valeur et son unite, telle"
+                   " qu'ecrite (\"CRP 245 mg/L\", \"FC 120/min\", \"Glasgow 8\").",
+                   "Chaque ligne d'un tableau de biologie qui donne une valeur est une entite.",
+                   "Un nom de parametre sans valeur, ou une valeur sans parametre, n'est pas extrait."]},
+    "clinique": {
+        "types": ("SYMPTOME", "DEFAILLANCE_ORGANE"),
+        "expert": "semiologie medicale",
+        "mission": "tous les symptomes et signes cliniques (interrogatoire, examen clinique) et toutes les"
+                   " defaillances d'organe ecrits dans la page",
+        "regles": ["Un signe present est une mention courte (\"marbrures\", \"dyspnee\").",
+                   "Une absence (\"pas de toux\", \"absence de marbrures\") est UNE seule mention couvrant la"
+                   " proposition niee, avec \"nie\": true.",
+                   "Une DEFAILLANCE_ORGANE n'est extraite que si la dysfonction est ecrite ; une valeur"
+                   " biologique anormale seule n'est pas une defaillance."]},
+    "diagnostic": {
+        "types": ("LABEL_NOSOLOGIQUE", "COMORBIDITE_ANTECEDENT", "FOYER_INFECTIEUX", "MICRO_ORGANISME",
+                  "CONTEXTE_ACQUISITION", "IMAGERIE_PROCEDURE"),
+        "expert": "infectiologie et reanimation",
+        "mission": "tous les diagnostics, antecedents, foyers infectieux, germes, contextes d'acquisition et"
+                   " examens d'imagerie ou procedures ecrits dans la page",
+        "regles": ["Un diagnostic de la liste LABEL_NOSOLOGIQUE reste LABEL_NOSOLOGIQUE meme s'il est ancien ;"
+                   " tout autre antecedent est une COMORBIDITE_ANTECEDENT.",
+                   "FOYER_INFECTIEUX = seulement la localisation ecrite d'un diagnostic infectieux.",
+                   "Un germe est extrait tel qu'ecrit (\"E. coli\", \"pneumocoque\")."]},
+    "parcours": {
+        "types": ("DONNEE_PATIENT", "EVENEMENT_TEMPOREL", "EVOLUTION_PRONOSTIC", "SERVICE_MEDICAL"),
+        "expert": "dossier patient",
+        "mission": "le patient (ses mentions et ses donnees demographiques), les evenements dates, l'evolution"
+                   " et les services de prise en charge ecrits dans la page",
+        "regles": ["DONNEE_PATIENT : les mentions qui designent le patient (\"le patient\", \"la patiente de"
+                   " 77 ans\") et ses donnees demographiques (\"77 ans\", \"Poids : 70 kg\"). Jamais un titre.",
+                   "EVENEMENT_TEMPOREL : une date ou un moment ecrit (\"le 03/05/2013\", \"J3\").",
+                   "SERVICE_MEDICAL : le type de service (\"reanimation\", \"urgences\"), sans nom d'hopital."]},
+}
+
+
+def prompt_famille(g, page_text, famille, exemples=""):
+    """Consigne ciblee sur une famille d'entites (definitions et regles de typage du guideline)."""
+    f = FAMILLES[famille]
+    blocs = []
+    for t in f["types"]:
+        spec = g["entites"][t]
+        lignes = [f"### {t}\n{spec.get('description', '')}"]
+        for k, v in _vals(spec):
+            lignes.append(f"  {k} : {', '.join(map(str, v))}")
+        for k in ("notes", "notes_valeurs", "regles", "regles_validation", "note"):
+            if spec.get(k):
+                lignes.append(f"  {k} : {json.dumps(spec[k], ensure_ascii=False)}")
+        blocs.append("\n".join(lignes))
+    typage = "\n".join(f"- {k} : {v['regle']}" for k, v in g["regles_de_typage"].items()
+                       if any(t.split("_")[0] in k for t in f["types"]))
+    synonymes = json.dumps({k: v for k, v in g["normalisation_terminologique"].items()
+                            if isinstance(v, dict) and k in f["types"]}, ensure_ascii=False)
+    return f"""Tu es un expert en {f['expert']}. Applique le guideline {nom_guideline(g)} a la page fournie.
+
+MISSION : extraire de facon EXHAUSTIVE {f['mission']}. N'extrais AUCUN autre type que : {', '.join(f['types'])}.
+
+REGLES :
+- "texte" = surface EXACTE, copiee mot pour mot dans la page. Aucune entite deduite de connaissances externes.
+{chr(10).join('- ' + r for r in f['regles'])}
+- Une hypothese ou une suspicion : "hypothese": true.
+{typage}
+
+SYNONYMES : {synonymes}
+
+DEFINITIONS :
+{chr(10).join(blocs)}
+
+FORMAT DE SORTIE (JSON uniquement) :
+{{"entites": [{{"categorie": "TYPE", "texte": "surface exacte", "parametre": "forme canonique ou null",
   "valeur": null, "unite": null, "nie": false, "hypothese": false, "confiance": "elevee|moyenne|faible",
   "type_inference": "extraction_directe"}}]}}
 
@@ -360,6 +445,10 @@ def bloc_exemples(doc, cle, page_text=""):
     for i, pg in enumerate(_semblables(doc, page_text), start=1):
         if cle == "relations":
             contenu = "relations annotees :\n" + "\n".join(pg["relations"])
+        elif cle in FAMILLES:
+            contenu = "entites annotees :\n" + json.dumps(
+                {"entites": [x for x in pg["entites"] if x["categorie"] in FAMILLES[cle]["types"]]},
+                ensure_ascii=False)
         elif cle == "traitements":
             contenu = "traitements et posologies annotes :\n" + json.dumps(
                 {"entites": [x for x in pg["entites"] if x["categorie"] in FAMILLE_TRAITEMENT]}, ensure_ascii=False)
@@ -414,10 +503,14 @@ def _decrire_profils(profils):
     return out
 
 
-def bloc_regles(doc, cle):
+def bloc_regles(doc, cle, types=None):
     r = GUIDE.get(doc)
     if not r:
         return ""
+    if types:
+        r = {**r, "profils_interdits": {p for p in r["profils_interdits"] if p[0] in types},
+             "precision_types": {k: v for k, v in r["precision_types"].items() if k in types},
+             "longueur_mots_gold": {k: v for k, v in r["longueur_mots_gold"].items() if k in types}}
     if cle == "relations":
         return ("\nREGLES STRICTES (apprises sur d'autres dossiers annotes, a respecter imperativement) :\n"
                 "- N'utilise QUE les relations listees ci-dessus ; les relations d'interpretation suivantes sont"
@@ -427,10 +520,12 @@ def bloc_regles(doc, cle):
     peu_fiables = sorted(t for t, p in r["precision_types"].items() if p < 0.5)
     longueurs = ", ".join(f"{t} <= {int(round(v)) + 1} mots" for t, v in sorted(r["longueur_mots_gold"].items()))
     lignes = ["", "REGLES STRICTES (apprises sur d'autres dossiers annotes, a respecter imperativement) :",
-              "- N'extrais JAMAIS : " + " ; ".join(_decrire_profils(r["profils_interdits"])) + ".",
+              ("- N'extrais JAMAIS : " + " ; ".join(_decrire_profils(r["profils_interdits"])) + ".")
+              if _decrire_profils(r["profils_interdits"]) else "",
               f"- Mentions COURTES, sans phrase entiere ni titre de section : {longueurs}.",
-              "- Types peu fiables : " + ", ".join(peu_fiables) + ". N'extrais ces types que si la mention correspond"
-              " exactement a leur definition du guideline ; en cas de doute, ne l'extrais pas.",
+              ("- Types peu fiables : " + ", ".join(peu_fiables) + ". N'extrais ces types que si la mention"
+               " correspond exactement a leur definition du guideline ; en cas de doute, ne l'extrais pas.")
+              if peu_fiables else "",
               "- Une absence (\"pas de toux\", \"absence de marbrures\") est UNE seule mention couvrant la"
               " proposition niee, avec \"nie\": true.", ""]
     return "\n".join(lignes)
@@ -591,8 +686,19 @@ def traiter_pdf(api, g, pdf, out_dir, c):
         del b64
         png.unlink(missing_ok=True)   # image de 500 dpi tres lourde : supprimee une fois lue
         doc = pdf.stem
-        raw_e = parse_json(api.ask(prompt_entites(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "entites", texte)),
-                                   json_mode=True, max_tokens=12000))
+        if PAR_FAMILLES:
+            # une consigne ciblee par famille d'entites (au lieu de la consigne generale)
+            raw_e = {"entites": []}
+            for fam, spec in FAMILLES.items():
+                rep = parse_json(api.ask(prompt_famille(g, texte, fam, bloc_regles(doc, "entites", spec["types"])
+                                                        + bloc_exemples(doc, fam, texte)),
+                                         json_mode=True, max_tokens=8000))
+                raw_e["entites"] += [e for e in rep.get("entites", []) or [] if isinstance(e, dict)
+                                     and str(e.get("categorie") or "").strip().upper().replace("SCORE_QSOFA", "SCORE_qSOFA")
+                                     in spec["types"]]
+        else:
+            raw_e = parse_json(api.ask(prompt_entites(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "entites", texte)),
+                                       json_mode=True, max_tokens=12000))
         raw_t = parse_json(api.ask(prompt_traitements(g, texte, bloc_regles(doc, "entites") + bloc_exemples(doc, "traitements", texte)),
                                    json_mode=True, max_tokens=8000))
         # traitements et posologies : la consigne ciblee remplace ceux de la consigne generale
@@ -602,6 +708,15 @@ def traiter_pdf(api, g, pdf, out_dir, c):
                  + [e for e in raw_t.get("entites", []) or []
                     if isinstance(e, dict) and str(e.get("categorie") or "").upper() in FAMILLE_TRAITEMENT]}
         ents = valider_entites(g, raw_e, texte, i, c)
+        # une meme mention typee deux fois par deux consignes : on garde le type le plus fiable
+        prec = GUIDE.get(doc, {}).get("precision_types", {})
+        meilleur = {}
+        for e in ents:
+            k = (e["start"], e["end"])
+            if k not in meilleur or prec.get(e["categorie"], 0.5) > prec.get(meilleur[k]["categorie"], 0.5):
+                meilleur[k] = e
+        c["entites_double_type"] += len(ents) - len(meilleur)
+        ents = [e for e in ents if meilleur[(e["start"], e["end"])] is e]
         # regle stricte : profils d'entites interdits pour cette moitie (jamais une mention niee)
         avant = len(ents)
         ents = [e for e in ents if not entite_interdite(doc, e["categorie"], e["name"])]
@@ -646,6 +761,8 @@ def main():
     ap.add_argument("--gold-exemples", default="", help="gold converti (dossier gold_v2_0) : active les exemples annotes")
     ap.add_argument("--exemples", type=int, default=3, help="pages annotees semblables montrees par consigne (defaut 3)")
     ap.add_argument("--guide", default="", help="regles strictes apprises (apprendre_guide.py), par moitie de corpus")
+    ap.add_argument("--consigne-generale", action="store_true",
+                    help="une seule consigne pour toutes les entites (au lieu d'une consigne par famille)")
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
     ap.add_argument("--sortie", default=str(DEFAULT_OUT))
     ap.add_argument("--essai", action="store_true", help="un seul dossier, pour verifier")
@@ -666,6 +783,8 @@ def main():
     out = Path(args.sortie)
     out.mkdir(parents=True, exist_ok=True)
     g, c = guideline(), Counter()
+    global PAR_FAMILLES
+    PAR_FAMILLES = not args.consigne_generale
     if args.guide:
         charger_guide(args.guide)
         print(f"Regles strictes apprises : {args.guide} ({len(GUIDE)} dossiers couverts)")
