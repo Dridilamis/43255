@@ -755,12 +755,14 @@ def traiter_pdf(api, g, pdf, out_dir, c):
 
 
 def main():
-    global GUIDELINE
+    global GUIDELINE, MODEL
     ap = argparse.ArgumentParser(description="Extraction Mistral selon le guideline TRACE-Sepsis")
     ap.add_argument("--guideline", default=str(GUIDELINE))
     ap.add_argument("--gold-exemples", default="", help="gold converti (dossier gold_v2_0) : active les exemples annotes")
     ap.add_argument("--exemples", type=int, default=3, help="pages annotees semblables montrees par consigne (defaut 3)")
     ap.add_argument("--guide", default="", help="regles strictes apprises (apprendre_guide.py), par moitie de corpus")
+    ap.add_argument("--modele", default=MODEL,
+                    help="modele Mistral (defaut mistral-small-2603 ; ex. mistral-medium-latest, mistral-large-latest)")
     ap.add_argument("--par-familles", action="store_true",
                     help="une consigne par famille d'entites au lieu de la consigne generale (moins bon a l'essai)")
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
@@ -785,6 +787,7 @@ def main():
     g, c = guideline(), Counter()
     global PAR_FAMILLES
     PAR_FAMILLES = args.par_familles
+    MODEL = args.modele
     if args.guide:
         charger_guide(args.guide)
         print(f"Regles strictes apprises : {args.guide} ({len(GUIDE)} dossiers couverts)")

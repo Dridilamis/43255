@@ -147,6 +147,7 @@ def main():
     ap.add_argument("--sans-reentrainer", action="store_true")
     ap.add_argument("--garder", type=int, default=80)
     ap.add_argument("--pause", type=float, default=1.5)
+    ap.add_argument("--modele", default="", help="modele Mistral pour l'extraction (defaut : mistral-small-2603)")
     ap.add_argument("--refaire-extraction", action="store_true",
                     help="archive l'extraction existante (sous-dossier archive_AAAAMMJJ_HHMM) et refait tout")
     ap.add_argument("--sans-regles", action="store_true",
@@ -178,6 +179,8 @@ def main():
             if not GOLD.is_dir():
                 sys.exit("Exemples annotes : gold_v2_0 absent (ajoutez --gold-labelstudio ou --sans-exemples).")
             cmd += ["--gold-exemples", GOLD]
+        if args.modele:
+            cmd += ["--modele", args.modele]
         guide = ROOT / "extraction_mistral" / "guide_appris_v2_0.json"
         if not args.sans_regles and guide.exists():
             cmd += ["--guide", guide]
