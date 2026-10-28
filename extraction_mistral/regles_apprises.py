@@ -125,17 +125,24 @@ def appliquer(data, mauvais_profils, mauvaises_relations, c):
 
 
 def main():
-    if len(sys.argv) != 4:
+    dev = "--developpement" in sys.argv
+    argv = [a for a in sys.argv[1:] if a != "--developpement"]
+    if len(argv) != 3:
         sys.exit(__doc__)
-    src, gold, out = map(Path, sys.argv[1:])
+    src, gold, out = map(Path, argv)
     out.mkdir(parents=True, exist_ok=True)
     preds = {cle_doc(f): f for f in src.glob("*_trace_*.json")}
     golds = {cle_doc(f): f for f in gold.glob("*.json")}
     docs = sorted(set(preds) & set(golds))
-    plis = [docs[0::2], docs[1::2]]
+    # validation croisee (defaut) : chaque moitie corrigee avec ce qui est appris sur l'autre.
+    # --developpement : appris sur TOUS les dossiers puis applique a ces memes dossiers (comme
+    # l'ancienne chaine V1.6) ; resultats a presenter comme "corpus de developpement" (optimistes).
+    plis = [docs, docs] if dev else [docs[0::2], docs[1::2]]
+    if dev:
+        print("MODE DEVELOPPEMENT : regles apprises sur tous les dossiers evalues (resultats optimistes)")
     c = Counter()
     rapport = {}
-    for k in (0, 1):
+    for k in ((0,) if dev else (0, 1)):
         autres = plis[1 - k]
         mp, mr = apprendre([preds[d] for d in autres], [golds[d] for d in autres])
         rapport[f"pli_{k + 1}"] = {"profils_entites_retires": sorted(map(str, mp)),

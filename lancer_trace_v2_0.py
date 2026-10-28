@@ -104,9 +104,10 @@ def pct(v):
     return v * 100 if v <= 1 else v
 
 
-def afficher_resultats():
+def afficher_resultats(eval_dir=None):
+    eval_dir = eval_dir or EVAL_DIR
     titre("RESULTATS SUR LE GOLD v2.0 (micro, appariement souple, en %)")
-    chemin = EVAL_DIR / "tableau.csv"
+    chemin = eval_dir / "tableau.csv"
     if not chemin.exists():
         print(f"Pas de tableau : {chemin}")
         return
@@ -121,7 +122,7 @@ def afficher_resultats():
             continue
         print(f"{NOMS.get(r['etage'], r['etage']):30} | " + " ".join(f"{x:6.2f}" for x in e[:3]) + f" {e[3]:5.1f} | "
               + " ".join(f"{x:6.2f}" for x in rl[:3]) + f" {rl[3]:5.1f}")
-    cv = EVAL_DIR / "vote_agents_validation.csv"
+    cv = eval_dir / "vote_agents_validation.csv"
     if cv.exists():
         with open(cv, encoding="utf-8-sig", newline="") as fh:
             rows = list(csv.DictReader(fh, delimiter=";"))
@@ -147,6 +148,9 @@ def main():
     ap.add_argument("--sans-reentrainer", action="store_true")
     ap.add_argument("--garder", type=int, default=80)
     ap.add_argument("--pause", type=float, default=1.5)
+    ap.add_argument("--developpement", action="store_true",
+                    help="regles et lexique appris sur TOUS les dossiers evalues (comme V1.6) : resultats optimistes,"
+                         " a presenter comme 'corpus de developpement' ; sorties dans TRACE_v2/sorties_v2_0_dev")
     ap.add_argument("--modele", default="", help="modele Mistral pour l'extraction (defaut : mistral-small-2603)")
     ap.add_argument("--refaire-extraction", action="store_true",
                     help="archive l'extraction existante (sous-dossier archive_AAAAMMJJ_HHMM) et refait tout")
@@ -200,12 +204,15 @@ def main():
     if not args.sans_regles:
         titre("2b. LEXIQUE APPRIS SUR LE GOLD (types, bornes, valeurs, rappel ; validation croisee)")
         lexique = EXTRAIT.parent / (EXTRAIT.name + "_lexique")
-        lancer([sys.executable, ROOT / "extraction_mistral" / "lexique_appris.py", entree, GOLD, lexique], ROOT)
+        dev = ["--developpement"] if args.developpement else []
+        if args.developpement:
+            lexique = EXTRAIT.parent / (EXTRAIT.name + "_lexique_dev")
+        lancer([sys.executable, ROOT / "extraction_mistral" / "lexique_appris.py", entree, GOLD, lexique] + dev, ROOT)
         titre("2c. REGLES STRICTES APPRISES SUR LE GOLD (validation croisee)")
-        entree = EXTRAIT.parent / (EXTRAIT.name + "_regles")
-        lancer([sys.executable, ROOT / "extraction_mistral" / "regles_apprises.py", lexique, GOLD, entree], ROOT)
+        entree = EXTRAIT.parent / (EXTRAIT.name + ("_regles_dev" if args.developpement else "_regles"))
+        lancer([sys.executable, ROOT / "extraction_mistral" / "regles_apprises.py", lexique, GOLD, entree] + dev, ROOT)
     env = {**os.environ, "TRACE_ENTREE": str(entree), "TRACE_TEXTES": str(EXTRAIT / "textes_bruts"),
-           "TRACE_GOLD": str(GOLD), "TRACE_GUIDELINE": str(GUIDELINE), "TRACE_SORTIES": str(SORTIES),
+           "TRACE_GOLD": str(GOLD), "TRACE_GUIDELINE": str(GUIDELINE), "TRACE_SORTIES": str(SORTIES.parent / (SORTIES.name + "_dev") if args.developpement else SORTIES),
            "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}
     env.pop("MISTRAL_API_KEY", None)         # TRACE n'appelle jamais Mistral
     cmd = [sys.executable, "run_trace_v2.py", "--garder", str(args.garder), "--garder-entites", str(args.garder)]
@@ -215,7 +222,7 @@ def main():
         cmd.append("--entrainer-vote")
     lancer(cmd, TRACE_DIR, env)
 
-    afficher_resultats()
+    afficher_resultats((SORTIES.parent / (SORTIES.name + "_dev") / "08_evaluation") if args.developpement else None)
     print(f"\nTermine en {(time.perf_counter() - t0) / 60:.0f} min. Sorties : {SORTIES}")
     return 0
 
