@@ -229,7 +229,7 @@ PAGE :
 
 
 FAMILLE_TRAITEMENT = ("TRAITEMENT", "POSOLOGIE")
-PAR_FAMILLES = True   # une consigne par famille d'entites (option --consigne-generale pour l'ancienne)
+PAR_FAMILLES = False  # option --par-familles : une consigne par famille d'entites (essai : pas de gain)
 # DONNEE_PATIENT (guideline) : le patient et ses donnees demographiques. Une mention de ce type doit
 # designer le patient ou porter une de ces donnees ; un titre ("Sur le plan renal") est rejete.
 PATIENT_OK_RE = re.compile(r"\b(patiente?s?|mr|mme|monsieur|madame|homme|femme|sexe|ans?|age|ag[ée]e?|"
@@ -761,8 +761,8 @@ def main():
     ap.add_argument("--gold-exemples", default="", help="gold converti (dossier gold_v2_0) : active les exemples annotes")
     ap.add_argument("--exemples", type=int, default=3, help="pages annotees semblables montrees par consigne (defaut 3)")
     ap.add_argument("--guide", default="", help="regles strictes apprises (apprendre_guide.py), par moitie de corpus")
-    ap.add_argument("--consigne-generale", action="store_true",
-                    help="une seule consigne pour toutes les entites (au lieu d'une consigne par famille)")
+    ap.add_argument("--par-familles", action="store_true",
+                    help="une consigne par famille d'entites au lieu de la consigne generale (moins bon a l'essai)")
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
     ap.add_argument("--sortie", default=str(DEFAULT_OUT))
     ap.add_argument("--essai", action="store_true", help="un seul dossier, pour verifier")
@@ -784,7 +784,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     g, c = guideline(), Counter()
     global PAR_FAMILLES
-    PAR_FAMILLES = not args.consigne_generale
+    PAR_FAMILLES = args.par_familles
     if args.guide:
         charger_guide(args.guide)
         print(f"Regles strictes apprises : {args.guide} ({len(GUIDE)} dossiers couverts)")
