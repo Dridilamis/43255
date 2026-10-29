@@ -1,21 +1,23 @@
 <html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
 <style>
-#root{width:1500px;padding:24px}
-table{border-collapse:separate;border-spacing:0 8px;width:100%}
-td{padding:9px 12px;font-size:14px;vertical-align:middle;background:#fff;border-top:2px solid;border-bottom:2px solid}
-td:first-child{border-left:2px solid;border-radius:10px 0 0 10px;font-weight:bold;width:210px}
-td:last-child{border-right:2px solid;border-radius:0 10px 10px 0;width:190px;text-align:center}
-th{font-size:14px;text-align:left;padding:0 12px;color:#555}
-.ex{font-family:"DejaVu Sans Mono",monospace;font-size:12.5px;color:#444}
-</style></head><body><div id="root"><div class="dash purple">
-<div class="t" style="font-size:19px">🧭 Taxonomie des hallucinations en extraction clinique multimodale</div>
-<table>
-<tr><th>Type</th><th>Définition</th><th>Exemple</th><th style="text-align:center">Traité par</th></tr>
-<tr style="border-color:#e78a8a"><td style="border-color:#e78a8a;background:#fff1f1">Factuelle</td><td style="border-color:#e78a8a">entité ou valeur absente du document, preuve inventée</td><td style="border-color:#e78a8a" class="ex">« CRP 186 » alors que la page indique « CRP 86 »</td><td style="border-color:#e78a8a">étages 2 et 7</td></tr>
-<tr><td style="border-color:#f0a35e;background:#fff6ec">Relationnelle</td><td style="border-color:#f0a35e">lien entre deux entités réelles que le texte n'énonce pas</td><td style="border-color:#f0a35e" class="ex">antibiotique relié à un germe cité dans une autre partie du dossier</td><td style="border-color:#f0a35e">étages 2 et 7</td></tr>
-<tr><td style="border-color:#5b8fd6;background:#eef5ff">Ontologique</td><td style="border-color:#5b8fd6">type d'entité faux ou relation hors des signatures du guideline</td><td style="border-color:#5b8fd6" class="ex">traitement_administre_a dirigé vers un biomarqueur</td><td style="border-color:#5b8fd6">étages 3, 4 et 7</td></tr>
-<tr><td style="border-color:#3aa6a6;background:#eafafa">Structurelle</td><td style="border-color:#3aa6a6">graphe mal formé : entité composite, nœud manquant, orphelin, doublon</td><td style="border-color:#3aa6a6" class="ex">« Augmentin 1 g x 3 » extrait comme un seul traitement</td><td style="border-color:#3aa6a6">étages 4 et 5</td></tr>
-<tr><td style="border-color:#a47ad1;background:#f6efff">Contextuelle</td><td style="border-color:#a47ad1">négation ou incertitude ignorée</td><td style="border-color:#a47ad1" class="ex">« pas de fièvre » donné comme un symptôme présent</td><td style="border-color:#a47ad1">étages 6 et 7</td></tr>
-<tr><td style="border-color:#e3b23c;background:#fffbe9">Temporelle</td><td style="border-color:#e3b23c">fait d'une autre période pris pour un fait du séjour</td><td style="border-color:#e3b23c" class="ex">traitement habituel compté comme administré en réanimation</td><td style="border-color:#e3b23c">étages 6 et 7</td></tr>
-<tr><td style="border-color:#999;background:#f7f7f7">Visuelle</td><td style="border-color:#999">valeur mal lue sur l'image puis recopiée</td><td style="border-color:#999" class="ex">« 1,8 » lu « 7,8 » sur un scan peu lisible</td><td style="border-color:#999">indirectement (limite)</td></tr>
-</table></div></div></body></html>
+#root{width:1600px;padding:26px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.c{border-width:2px;border-style:dashed;border-radius:16px;padding:12px;text-align:center}
+.ic{font-size:36px}
+.nm{font-weight:bold;font-size:16px;margin:4px 0}
+.df{font-size:12.5px;color:#444;line-height:1.35;min-height:34px}
+.ex{background:#fff;border:2px solid;border-radius:10px;padding:6px;margin-top:8px;font-size:12px;font-family:"DejaVu Sans Mono",monospace}
+.st{margin-top:8px;font-size:11.5px;font-weight:bold;color:#555}
+.center{border:3px solid #a47ad1;background:#f6efff;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px}
+</style></head><body><div id="root">
+<div class="grid">
+ <div class="center"><div class="ic">🧭</div><div class="nm" style="font-size:18px">Hallucination</div><div class="df">élément du graphe que le dossier ne justifie pas</div></div>
+ <div class="c pink"><div class="ic">❌</div><div class="nm">Factuelle</div><div class="df">entité, valeur ou preuve absente du document</div><div class="ex" style="border-color:#e78a8a">« CRP 186 » au lieu de « CRP 86 »</div><div class="st">étages 2 · 7</div></div>
+ <div class="c orange"><div class="ic">🔗</div><div class="nm">Relationnelle</div><div class="df">lien que le texte n'énonce pas</div><div class="ex" style="border-color:#f0a35e">antibiotique relié à un germe d'une autre page</div><div class="st">étages 2 · 7</div></div>
+ <div class="c blue"><div class="ic">📘</div><div class="nm">Ontologique</div><div class="df">type faux, signature du guideline non respectée</div><div class="ex" style="border-color:#5b8fd6">traitement administré à un biomarqueur</div><div class="st">étages 3 · 4 · 7</div></div>
+ <div class="c teal"><div class="ic">🧱</div><div class="nm">Structurelle</div><div class="df">entité composite, nœud manquant, orphelin, doublon</div><div class="ex" style="border-color:#3aa6a6">« Augmentin 1 g x 3 » en une seule entité</div><div class="st">étages 4 · 5</div></div>
+ <div class="c purple"><div class="ic">🚫</div><div class="nm">Contextuelle</div><div class="df">négation ou hypothèse ignorée</div><div class="ex" style="border-color:#a47ad1">« pas de fièvre » donné comme présent</div><div class="st">étages 6 · 7</div></div>
+ <div class="c yellow"><div class="ic">⏳</div><div class="nm">Temporelle</div><div class="df">fait d'une autre période pris pour le séjour</div><div class="ex" style="border-color:#e3b23c">traitement habituel compté comme administré</div><div class="st">étages 6 · 7</div></div>
+ <div class="c grey"><div class="ic">👁️</div><div class="nm">Visuelle</div><div class="df">valeur mal lue sur l'image puis recopiée</div><div class="ex" style="border-color:#999">« 1,8 » lu « 7,8 »</div><div class="st">indirectement · limite</div></div>
+</div>
+</div></body></html>

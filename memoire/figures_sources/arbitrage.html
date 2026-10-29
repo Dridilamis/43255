@@ -1,25 +1,36 @@
 <html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
-<style>#root{width:1500px;padding:24px;display:flex;gap:14px;align-items:stretch}
-.col{display:flex;flex-direction:column;gap:12px;justify-content:center}
-ul{margin-left:16px} li{margin:4px 0}
-.bar{height:22px;border-radius:11px;background:linear-gradient(90deg,#5aaa6a,#e3b23c,#e78a8a);position:relative;margin:10px 0 4px}
+<style>
+#root{width:max-content;padding:26px;display:flex;gap:16px;align-items:center}
+.grp{border-width:2px;border-style:dashed;border-radius:16px;padding:14px}
+.gt{font-weight:bold;font-size:15px;text-align:center;margin-bottom:10px}
+.ag{display:flex;align-items:center;gap:8px;background:#fff;border:2px solid #5b8fd6;border-radius:10px;padding:6px 10px;margin:6px 0;font-size:13px}
+.ag span{font-size:22px}
+.r{background:#fff;border:2px solid;border-radius:10px;padding:6px 10px;margin:6px 0;font-size:12.5px}
+.k{font-weight:bold}
+.a{font-size:26px;color:#555}
+.bar{height:20px;border-radius:10px;background:linear-gradient(90deg,#5aaa6a,#e3b23c,#e78a8a);margin:10px 0 4px}
+.out{background:#fff;border:2px solid;border-radius:12px;padding:8px;text-align:center;font-size:13px;margin:6px 0}
 </style></head><body><div id="root">
-<div class="col" style="width:300px">
- <div class="dash blue small"><div class="t">🤖 Agents déterministes</div>
- <ul><li><b>Ancrage</b> : preuve, distance, section (étage 2)</li><li><b>Conformité</b> : signature du guideline 📘 (étage 3)</li><li><b>Redondance</b> : triplet répété (étage 5)</li><li><b>Contexte</b> : négation, hypothèse, temporalité (étage 6)</li><li><b>Provenance</b> : extraction directe ou inférence</li></ul></div>
+<div class="grp blue" style="width:260px"><div class="gt">🤖 5 agents déterministes</div>
+ <div class="ag"><span>⚓</span>Ancrage</div><div class="ag"><span>📘</span>Conformité</div><div class="ag"><span>🧬</span>Redondance</div><div class="ag"><span>🏷️</span>Contexte</div><div class="ag"><span>🧭</span>Provenance</div>
+ <div style="font-size:11.5px;color:#555;text-align:center;margin-top:6px">aucun LLM juge</div>
 </div>
-<div class="arrow">➜</div>
-<div class="col" style="width:470px">
- <div class="dash yellow small"><div class="t">⚖️ Mode standard — règles fixées a priori</div>
- <b>Entités</b><ul><li>E1 : pas mot pour mot dans sa page → retirée</li><li>E2 : entité niée → <b>gardée</b>, marquée <i>niée</i></li><li>E3 : confiance du modèle moyenne ou faible → retirée</li></ul>
- <b>Relations</b><ul><li>R2 : relation qui affirme une entité niée → retirée</li><li>R3 : relation créée par SGCE non ancrée → retirée</li><li>une entité retirée emporte ses relations</li></ul>
- <b>Confiance</b> : élevée, moyenne ou faible selon le nombre de signaux faibles</div>
+<div class="a">➜</div>
+<div style="display:flex;flex-direction:column;gap:14px;width:560px">
+ <div class="grp yellow"><div class="gt">⚖️ Mode standard · règles fixées a priori</div>
+  <div style="display:flex;gap:10px">
+   <div style="flex:1"><div class="r" style="border-color:#e78a8a"><span class="k">E1</span> pas mot pour mot → retirée</div><div class="r" style="border-color:#5aaa6a"><span class="k">E2</span> niée → gardée, marquée niée</div><div class="r" style="border-color:#e78a8a"><span class="k">E3</span> confiance du modèle basse → retirée</div></div>
+   <div style="flex:1"><div class="r" style="border-color:#e78a8a"><span class="k">R2</span> affirme une entité niée → retirée</div><div class="r" style="border-color:#e78a8a"><span class="k">R3</span> créée par SGCE, non ancrée → retirée</div><div class="r" style="border-color:#999">entité retirée → ses relations aussi</div></div>
+  </div></div>
+ <div class="grp purple"><div class="gt">🎚️ Mode précision · vote appris</div>
+  <div style="display:flex;gap:10px;align-items:center;font-size:13px;justify-content:center"><div class="r" style="border-color:#a47ad1">signaux des agents</div>➜<div class="r" style="border-color:#a47ad1">régression logistique</div>➜<div class="r" style="border-color:#a47ad1">score 0 – 1</div>➜<div class="r" style="border-color:#a47ad1">garder les k % meilleurs</div></div>
+  <div class="bar"></div><div style="display:flex;justify-content:space-between;font-size:12px"><span>k = 100 % · rappel</span><span>k = 30 % · précision</span></div>
+  <div style="font-size:12px;text-align:center;margin-top:8px">🔒 validation croisée : appris sur une moitié des dossiers, appliqué à l'autre</div></div>
 </div>
-<div class="arrow">➜</div>
-<div class="col" style="width:520px">
- <div class="dash purple small"><div class="t">🎚️ Mode précision — vote appris</div>
- <ul><li>chaque élément décrit par des variables binaires issues des agents (type, section, preuve, mots…)</li><li><b>régression logistique</b> : un poids par variable, score de fiabilité entre 0 et 1</li><li>on garde la part <b>k %</b> des éléments les mieux notés</li></ul>
- <div class="bar"></div><div style="display:flex;justify-content:space-between"><span>k = 100 % : rappel maximal</span><span>k = 30 % : précision maximale</span></div>
- <div class="solid green" style="margin-top:10px;background:#fff">🔒 <b>Validation croisée</b> : appris sur une moitié des dossiers, appliqué à l'autre, puis l'inverse</div></div>
+<div class="a">➜</div>
+<div class="grp teal" style="width:220px"><div class="gt">Décision</div>
+ <div class="out" style="border-color:#5aaa6a">✅ gardé</div>
+ <div class="out" style="border-color:#e78a8a">🗑️ retiré, avec sa règle</div>
+ <div class="out" style="border-color:#e3b23c">🟢 🟡 🔴 confiance<br><span style="font-size:11.5px">élevée · moyenne · faible</span></div>
 </div>
 </div></body></html>

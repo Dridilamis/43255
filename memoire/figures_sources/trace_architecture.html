@@ -1,51 +1,58 @@
 <html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
 <style>
-#root{width:1750px;padding:24px}
-.row{display:flex;gap:10px;align-items:stretch}
-.st{width:182px;display:flex;flex-direction:column}
-.st .solid{flex:1;background:#fff}
-.n{font-weight:bold;font-size:15px;margin-bottom:4px}
-.tag{margin-top:6px;font-size:11.5px;font-weight:bold;border-radius:8px;padding:2px 6px;display:inline-block}
-.ann{background:#e8f2ff;color:#2f5f9e}.ret{background:#ffe9e9;color:#b33}.add{background:#e9f8ec;color:#2d7a3c}.dec{background:#fff3d6;color:#9a6a00}
-.arrow{font-size:24px}
+#root{width:max-content;padding:26px;display:flex;gap:16px;align-items:center}
+.grp{border-width:2px;border-style:dashed;border-radius:16px;padding:14px 12px 12px;position:relative}
+.gt{font-weight:bold;font-size:15px;text-align:center;margin-bottom:10px}
+.card{background:#fff;border:2px solid;border-radius:12px;padding:10px 8px;text-align:center;width:138px}
+.ic{font-size:34px;line-height:1.1}
+.nm{font-weight:bold;font-size:14px;margin-top:4px}
+.ds{font-size:11.5px;color:#555;margin-top:3px;line-height:1.3}
+.pill{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:bold;border-radius:9px;padding:2px 7px}
+.flow{display:flex;gap:8px;align-items:center}
+.a{font-size:24px;color:#555}
+.ann{background:#e3efff;color:#2f5f9e}.rep{background:#e6f7f7;color:#1f7a7a}.add{background:#e6f6e9;color:#2d7a3c}.dec{background:#fff0c7;color:#8a5f00}
+.in{width:150px}
+.stack div{background:#fff;border:2px solid #3aa6a6;border-radius:8px;margin:5px 0;padding:5px;font-size:12px;text-align:center}
 </style></head><body><div id="root">
-<div class="row" style="margin-bottom:12px">
- <div class="dash teal small" style="width:250px;text-align:center"><div class="t">{ } Sortie de l'extraction</div>graphe d'entités et de relations par dossier, texte transcrit de chaque page (chapitre 4)</div>
- <div class="arrow">➜</div>
- <div class="dash grey small" style="flex:1"><div class="t">Principes de TRACE</div>
-  <div style="display:flex;gap:18px;justify-content:space-between">
-   <div>📄 le <b>texte du dossier</b> est la seule référence</div>
-   <div>🚫 <b>aucun LLM juge</b> : agents déterministes</div>
-   <div>1️⃣ <b>une responsabilité</b> par étage</div>
-   <div>✍️ annoter d'abord, <b>un seul étage décide</b></div>
-   <div>🔒 le <b>Gold Standard</b> n'est lu qu'à l'étage 8</div>
-  </div></div>
+
+<div class="grp teal in"><div class="gt">Sortie de l'extraction</div>
+ <div class="ic" style="text-align:center">🗂️</div>
+ <div class="stack"><div>entités</div><div>relations</div><div>texte de chaque page</div></div>
 </div>
-<div class="dash blue">
-<div class="t" style="font-size:18px">🔎 Chaîne TRACE — détection et réduction des hallucinations</div>
-<div class="row">
- <div class="st"><div class="solid blue small"><div class="n">1 · Préparation</div>normalisation Unicode, identifiants, retrait des éléments issus de règles construites sur la référence<br><span class="tag ret">retire</span></div></div>
- <div class="arrow">➜</div>
- <div class="st"><div class="solid blue small"><div class="n">2 · Ancrage</div>entité dans le texte, mot pour mot dans sa page ; preuve, distance et section de chaque relation<br><i>hallucination factuelle</i><br><span class="tag ann">annote</span> <span class="tag ret">retire l'impossible</span></div></div>
- <div class="arrow">➜</div>
- <div class="st"><div class="solid blue small"><div class="n">3 · Conformité 📘</div>chaque relation confrontée aux 34 signatures du guideline<br><i>hallucination ontologique</i><br><span class="tag ann">annote</span></div></div>
- <div class="arrow">➜</div>
- <div class="st"><div class="solid blue small"><div class="n">4 · SGCE</div>réparation de la forme du graphe : entités composites, nœuds manquants, orphelins, multi-agent<br><i>hallucination structurelle</i><br><span class="tag ann">répare</span></div></div>
- <div class="arrow">➜</div>
- <div class="st"><div class="solid blue small"><div class="n">4b · Récupération</div>lignes de biologie et d'ordonnance copiées du texte ; traitement relié à sa posologie<br><i>oublis</i><br><span class="tag add">ajoute</span></div></div>
+<div class="a">➜</div>
+
+<div class="grp blue"><div class="gt">① Vérifier · les étages annotent</div>
+ <div class="flow">
+  <div class="card" style="border-color:#5b8fd6"><div class="ic">🧹</div><div class="nm">1 · Préparation</div><div class="ds">normalisation, identifiants</div></div>
+  <div class="a">›</div>
+  <div class="card" style="border-color:#5b8fd6"><div class="ic">⚓</div><div class="nm">2 · Ancrage</div><div class="ds">l'élément est-il dans le texte ?</div><span class="pill ann">factuelle</span></div>
+  <div class="a">›</div>
+  <div class="card" style="border-color:#5b8fd6"><div class="ic">📘</div><div class="nm">3 · Conformité</div><div class="ds">34 signatures du guideline</div><span class="pill ann">ontologique</span></div>
+ </div>
 </div>
-<div style="text-align:right;font-size:24px;color:#444;margin:4px 90px 4px 0">⤵</div>
-<div class="row" style="justify-content:flex-end">
- <div class="st" style="width:230px"><div class="solid green small" style="background:#effaf0"><div class="n">8 · Évaluation 🔒</div>seul étage qui lit le Gold Standard : P, R, F1, taux d'hallucination après chaque étage ; entraîne le vote en validation croisée</div></div>
- <div class="arrow">⬅</div>
- <div class="st" style="width:300px"><div class="solid yellow small" style="background:#fffbe9;border-width:3px"><div class="n">7 · Arbitrage ⚖️</div><b>seul étage qui décide</b><br>agents : ancrage, conformité, redondance, contexte, provenance<br>mode <b>standard</b> : règles fixées a priori<br>mode <b>précision</b> : vote appris, curseur précision / rappel<br><span class="tag dec">garde · retire · confiance</span></div></div>
- <div class="arrow">⬅</div>
- <div class="st"><div class="solid blue small"><div class="n">6 · Attributs</div>négation, hypothèse, temporalité (antérieur, séjour, sortie), unités<br><i>hallucinations contextuelle et temporelle</i><br><span class="tag ann">annote</span></div></div>
- <div class="arrow">⬅</div>
- <div class="st"><div class="solid blue small"><div class="n">5 · Dédoublonnage</div>fusion des entités identiques, retrait des relations identiques, répétitions signalées<br><span class="tag ann">annote</span> <span class="tag ret">retire l'identique</span></div></div>
+<div class="a">➜</div>
+
+<div class="grp" style="border-color:#3aa6a6;background:#f3fbfb"><div class="gt">② Réparer, compléter, qualifier</div>
+ <div class="flow">
+  <div class="card" style="border-color:#3aa6a6"><div class="ic">🔧</div><div class="nm">4 · SGCE</div><div class="ds">forme du graphe, multi-agent</div><span class="pill rep">structurelle</span></div>
+  <div class="a">›</div>
+  <div class="card" style="border-color:#5aaa6a"><div class="ic">➕</div><div class="nm">4b · Récupération</div><div class="ds">biologie, ordonnances copiées du texte</div><span class="pill add">oublis</span></div>
+  <div class="a">›</div>
+  <div class="card" style="border-color:#3aa6a6"><div class="ic">🧬</div><div class="nm">5 · Dédoublonnage</div><div class="ds">fusion des identiques</div><span class="pill rep">structurelle</span></div>
+  <div class="a">›</div>
+  <div class="card" style="border-color:#a47ad1"><div class="ic">🏷️</div><div class="nm">6 · Attributs</div><div class="ds">négation, hypothèse, temporalité</div><span class="pill" style="background:#f0e6ff;color:#6b3fa0">contextuelle</span></div>
+ </div>
 </div>
+<div class="a">➜</div>
+
+<div class="grp yellow"><div class="gt">③ Décider</div>
+ <div class="card" style="border-color:#e3b23c;border-width:3px;width:170px"><div class="ic">⚖️</div><div class="nm">7 · Arbitrage</div><div class="ds">seul étage qui décide<br>standard · précision</div><span class="pill dec">garde · retire · confiance</span></div>
 </div>
-<div class="row" style="margin-top:12px;justify-content:center">
- <div class="dash teal small" style="width:520px;text-align:center"><div class="t">🧩 Graphe de connaissances vérifié</div>chaque élément porte sa page, sa preuve, sa trace de décision et un niveau de confiance</div>
+<div class="a">➜</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+ <div class="grp teal" style="width:170px;text-align:center"><div class="gt">Graphe vérifié</div><div class="ic">🧩</div><div class="ds">preuve, trace de décision et confiance pour chaque élément</div></div>
+ <div class="grp green" style="width:170px;text-align:center"><div class="gt">8 · Évaluation</div><div class="ic">🔒</div><div class="ds">seul étage qui lit le Gold Standard</div></div>
 </div>
+
 </div></body></html>
