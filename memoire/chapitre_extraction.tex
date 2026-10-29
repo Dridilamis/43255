@@ -12,14 +12,13 @@ Le chapitre présente d'abord l'architecture générale du pipeline (section~\re
 % ------------------------------------------------------------
 \section{Architecture générale du pipeline d'extraction}\label{sec:c4-archi}
 
-Le pipeline traite chaque dossier page par page. Chaque page est convertie en image, puis soumise au modèle en plusieurs appels successifs :
+Le pipeline traite chaque dossier page par page. Chaque page est convertie en image, puis soumise au modèle en trois étapes successives :
 \begin{enumerate}
   \item \textbf{transcription} : le modèle lit l'image et en transcrit fidèlement le texte ;
   \item \textbf{entités} : à partir de ce texte, le modèle extrait les entités cliniques ;
-  \item \textbf{traitements et posologies} : une consigne ciblée extrait les médicaments et leurs posologies, qui remplacent ceux de l'appel précédent ;
   \item \textbf{relations} : à partir du texte et de la liste des entités conservées, le modèle extrait les relations.
 \end{enumerate}
-Chaque appel produit une sortie au format JSON, contrôlée de façon déterministe avant l'appel suivant : une entité n'est conservée que si elle est retrouvée mot pour mot dans le texte de la page, une relation que si elle respecte l'une des 34 signatures du schéma. Les résultats des pages sont ensuite réunis à l'échelle du dossier, puis passent par les corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}) avant d'entrer dans TRACE. La figure~\ref{fig:c4-pipeline} résume ce déroulement ; le guideline y intervient à trois endroits : dans les consignes, dans la validation et dans les corrections.
+Chaque étape produit une sortie au format JSON, contrôlée de façon déterministe avant l'étape suivante : une entité n'est conservée que si elle est retrouvée mot pour mot dans le texte de la page, une relation que si elle respecte l'une des 34 signatures du schéma. Les résultats des pages sont ensuite réunis à l'échelle du dossier, puis passent par les corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}) avant d'entrer dans TRACE. La figure~\ref{fig:c4-pipeline} résume ce déroulement ; le guideline y intervient à trois endroits : dans les consignes, dans la validation et dans les corrections.
 
 \begin{figure}[H]
 \centering
@@ -27,7 +26,7 @@ Chaque appel produit une sortie au format JSON, contrôlée de façon détermini
 \caption{Pipeline d'extraction multimodale}\label{fig:c4-pipeline}
 \end{figure}
 
-La transcription n'est pas un OCR au sens classique : c'est le même modèle multimodal qui lit l'image. Elle fixe une fois pour toutes le texte de la page, sur lequel s'appuient ensuite l'extraction et toutes les vérifications d'ancrage, ici comme dans TRACE. Séparer les entités des relations présente deux autres avantages. Chaque appel porte sur une tâche plus simple, avec une consigne plus courte. Surtout, les relations sont extraites à partir d'une liste d'entités déjà établie et filtrée, ce qui empêche le modèle de relier des éléments qui n'existent pas dans la page.
+La transcription n'est pas un OCR au sens classique : c'est le même modèle multimodal qui lit l'image. Elle fixe une fois pour toutes le texte de la page, sur lequel s'appuient ensuite l'extraction et toutes les vérifications d'ancrage, ici comme dans TRACE. Séparer les entités des relations présente deux autres avantages. Chaque étape porte sur une tâche plus simple, avec une consigne plus courte. Surtout, les relations sont extraites à partir d'une liste d'entités déjà établie et filtrée, ce qui empêche le modèle de relier des éléments qui n'existent pas dans la page.
 
 % ------------------------------------------------------------
 \section{Préparation des dossiers médicaux}\label{sec:c4-preparation}
@@ -107,7 +106,7 @@ La consigne d'extraction des entités impose les règles suivantes :
   \item les synonymes et abréviations sont reconnus et ramenés à une forme canonique, stockée à part ;
   \item aucune donnée directement identifiante n'est extraite.
 \end{itemize}
-La consigne ciblée sur les traitements reprend les définitions de \entite{TRAITEMENT} et \entite{POSOLOGIE} du guideline et demande d'extraire chaque médicament d'une ligne qui en cite plusieurs. Elle a été ajoutée parce que, dans la consigne générale, le modèle rattachait la posologie au nom du médicament (\og Claforan, 1g x 3 par jour \fg{} extrait comme un seul traitement).
+Avec la seule consigne générale, le modèle rattachait souvent la posologie au nom du médicament (\og Claforan, 1g x 3 par jour \fg{} extrait comme un seul traitement). L'étape des entités comporte donc une seconde passe, limitée aux médicaments : une consigne courte reprend les définitions de \entite{TRAITEMENT} et \entite{POSOLOGIE} du guideline et demande d'extraire séparément chaque médicament d'une ligne qui en cite plusieurs ; ses entités remplacent les traitements et posologies de la première passe.
 
 \subsection{Contraintes sur les relations}\label{sec:c4-contraintes-relations}
 
@@ -172,7 +171,7 @@ Mistral Small 4 (\texttt{mistral-small-2603})~\cite{mistralsmall4} réunit dans 
 Pour que la comparaison soit équitable, les deux modèles ont été évalués avec exactement le même pipeline (figure~\ref{fig:c4-pipeline}) :
 \begin{itemize}
   \item les mêmes 49 dossiers, convertis en images de la même façon ;
-  \item les mêmes quatre appels par page (transcription, entités, traitements et posologies, relations) et les mêmes consignes, avec des exemples semblables et des règles strictes construits de la même manière et sur les mêmes plis ;
+  \item les mêmes trois étapes par page (transcription, entités, relations) et les mêmes consignes, avec des exemples semblables et des règles strictes construits de la même manière et sur les mêmes plis ;
   \item la même validation déterministe et les mêmes corrections apprises sur le Gold Standard ;
   \item la même évaluation, contre le même Gold Standard, avec les mêmes modes d'appariement et les mêmes métriques (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}).
 \end{itemize}
@@ -181,7 +180,7 @@ Seul le modèle change : Qwen2.5-VL est exécuté localement sur le GPU de l'uni
 % ------------------------------------------------------------
 \section{Extraction des entités}\label{sec:c4-entites}
 
-Pour chaque page, le modèle reçoit le texte transcrit et la consigne d'extraction des entités (section~\ref{sec:c4-contraintes-entites}), puis la consigne ciblée sur les traitements ; il renvoie la liste des entités au format JSON. Chaque entité renvoyée est ensuite contrôlée de façon déterministe :
+Pour chaque page, le modèle reçoit le texte transcrit et la consigne d'extraction des entités (section~\ref{sec:c4-contraintes-entites}), complétée par la seconde passe sur les médicaments ; il renvoie la liste des entités au format JSON. Chaque entité renvoyée est ensuite contrôlée de façon déterministe :
 \begin{enumerate}
   \item \textbf{type autorisé} : son type doit faire partie des 20 types du guideline ;
   \item \textbf{ancrage dans la page} : sa mention doit être retrouvée dans le texte de la page, sans tenir compte de la casse ni des espaces ; c'est la surface trouvée dans la page qui est conservée, avec sa position ; une mention répétée (\og 1-0-0 \fg{} sur chaque ligne d'ordonnance) est rattachée à l'occurrence suivante encore libre ;
@@ -327,6 +326,6 @@ Les résultats de cette comparaison sont présentés au chapitre~\ref{chap:exper
 % ------------------------------------------------------------
 \section{Conclusion}\label{sec:c4-conclusion}
 
-Ce chapitre a décrit la manière dont un graphe d'entités et de relations est extrait des dossiers scannés. Les pages sont lues directement par un modèle multimodal, qui en transcrit le texte, puis en extrait les entités, les traitements et les relations. Les consignes sont construites à partir du guideline TRACE-Sepsis et complétées par des exemples semblables et des règles strictes appris sur le Gold Standard en validation croisée ; des contrôles déterministes écartent dès l'extraction les entités absentes de la page et les relations hors du schéma. Les deux modèles comparés, Qwen2.5-VL et Mistral Small~4, suivent exactement le même pipeline, et les critères qui départagent les deux modèles ont été fixés avant l'expérience. Le chapitre a aussi défini la manière dont une extraction est comparée au Gold Standard, avec trois modes d'appariement et des métriques en micro- et macro-moyenne, qui serviront à l'évaluation de tout le mémoire.
+Ce chapitre a décrit la manière dont un graphe d'entités et de relations est extrait des dossiers scannés. Les pages sont lues directement par un modèle multimodal, qui en transcrit le texte, puis en extrait les entités et les relations. Les consignes sont construites à partir du guideline TRACE-Sepsis et complétées par des exemples semblables et des règles strictes appris sur le Gold Standard en validation croisée ; des contrôles déterministes écartent dès l'extraction les entités absentes de la page et les relations hors du schéma. Les deux modèles comparés, Qwen2.5-VL et Mistral Small~4, suivent exactement le même pipeline, et les critères qui départagent les deux modèles ont été fixés avant l'expérience. Le chapitre a aussi défini la manière dont une extraction est comparée au Gold Standard, avec trois modes d'appariement et des métriques en micro- et macro-moyenne, qui serviront à l'évaluation de tout le mémoire.
 
 Ces contrôles ne suffisent pas à garantir la fidélité de l'extraction. Une entité peut être écrite dans la page et pourtant hypothétique ou relative à un antécédent ; une relation peut respecter le schéma sans être justifiée par le texte. Le chapitre suivant présente TRACE, la chaîne de vérification construite pour détecter et réduire ces hallucinations.
