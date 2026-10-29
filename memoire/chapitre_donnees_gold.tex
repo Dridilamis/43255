@@ -499,7 +499,7 @@ Relations ajoutées / supprimées / corrigées & --- & \acompleter{à compléter
 
 \section{Utilisation du Gold Standard dans l’évaluation}\label{sec:c3-3-11}
 
-Le Gold Standard final sert de référence pour mesurer les performances des systèmes d’extraction. Pour chaque dossier, la sortie structurée d’un modèle est comparée à la référence, ce qui permet de compter les prédictions correctes (vrais positifs, TP), les informations en trop (faux positifs, FP) et les informations manquantes (faux négatifs, FN). La précision, le rappel et le F1-score s’en déduisent :
+Le Gold Standard final sert de référence pour mesurer les performances des systèmes d’extraction. Pour chaque dossier, la sortie structurée d’un modèle est comparée à la référence, ce qui permet de compter les prédictions correctes (vrais positifs, TP), les informations en trop (faux positifs, FP) et les informations manquantes (faux négatifs, FN). La précision, le rappel et le F1-score s’en déduisent~\cite{vanrijsbergen1979} :
 
 \begin{equation}
 \text{Précision} = \frac{TP}{TP + FP}
@@ -511,7 +511,7 @@ Le Gold Standard final sert de référence pour mesurer les performances des sys
 F_1 = \frac{2 \times \text{Précision} \times \text{Rappel}}{\text{Précision} + \text{Rappel}}
 \end{equation}
 
-Ces mesures sont calculées séparément pour les entités et pour les relations, selon les modes d’appariement (\emph{matching}) décrits au chapitre~\acompleter{numéro à compléter}.
+Ces mesures sont calculées séparément pour les entités et pour les relations, selon les modes d’appariement (\emph{matching}) décrits au chapitre~\ref{chap:extraction} (section~\ref{sec:c4-matching}).
 
 Au-delà des scores globaux, la comparaison détaillée avec la référence permet de qualifier les écarts : information de la référence non retrouvée, entité en trop, mauvais type, valeur ou unité erronée, relation manquante, relation que le dossier ne justifie pas, sens inversé, incohérence structurelle, temporelle ou contextuelle. Ces écarts sont la base de l’analyse des erreurs et des hallucinations présentée dans la suite.
 

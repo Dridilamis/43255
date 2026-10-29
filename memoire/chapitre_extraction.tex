@@ -251,9 +251,9 @@ Pour les relations, les extrémités sont comparées par la similarité de Leven
 \begin{equation}
 \mathrm{sim}_R(a, b) = 1 - \frac{d_{\mathrm{Lev}}(a, b)}{\max(|a|, |b|)}
 \end{equation}
-où $d_{\mathrm{Lev}}(a,b)$ est le nombre minimal d'insertions, de suppressions et de substitutions de caractères nécessaires pour transformer $a$ en $b$.
+où $d_{\mathrm{Lev}}(a,b)$ est le nombre minimal d'insertions, de suppressions et de substitutions de caractères nécessaires pour transformer $a$ en $b$. La division par la longueur de la plus longue chaîne ramène la distance entre 0 et 1, ce qui est la normalisation habituelle de la distance d'édition~\cite{navarro2001}.
 
-Le score d'inclusion vérifie si la mention la plus courte apparaît, comme suite de mots complets, dans la plus longue :
+Le score d'inclusion vérifie si la mention la plus courte apparaît, comme suite de mots complets, dans la plus longue. Il traduit une idée classique de l'évaluation de la reconnaissance d'entités biomédicales : une mention dont seules les bornes diffèrent de la référence peut être comptée comme correcte selon un critère moins strict que la correspondance exacte~\cite{tsai2006criteria}. Nous le définissons ainsi :
 \begin{equation}
 \mathrm{inc}(a, b) =
 \begin{cases}
@@ -261,7 +261,7 @@ Le score d'inclusion vérifie si la mention la plus courte apparaît, comme suit
 0 & \text{sinon.}
 \end{cases}
 \end{equation}
-La longueur minimale de quatre caractères évite qu'une abréviation très courte soit retrouvée par hasard dans une mention plus longue. Pour les entités, une inclusion qui couvre moins de 35~\% de la mention la plus longue n'est pas retenue.
+La longueur minimale de quatre caractères évite qu'une abréviation très courte soit retrouvée par hasard dans une mention plus longue. Pour les entités, une inclusion qui couvre moins de 35~\% de la mention la plus longue n'est pas retenue. Ces deux seuils, comme ceux des correspondances approximatives, ont été fixés empiriquement pour ce travail.
 
 \subsection{Appariement des entités}
 
@@ -278,7 +278,7 @@ Les relations sont comparées à l'échelle du dossier. Le Gold Standard étant 
 \begin{equation}
 e(a, b) = \max\big(\mathrm{sim}_R(a,b),\ \mathrm{inc}(a,b)\big),
 \end{equation}
-et la proximité de deux relations est la moyenne des scores de leur sujet et de leur objet :
+et la proximité de deux relations est la moyenne des scores de leur sujet et de leur objet. Cette combinaison est propre à notre évaluation ; elle applique aux relations, extrémité par extrémité, la tolérance aux variations de surface recommandée pour évaluer l'extraction de relations par un modèle génératif~\cite{wadhwa2023revisiting} :
 \begin{equation}
 s(r_g, r_p) = \frac{e(\mathrm{sujet}_g, \mathrm{sujet}_p) + e(\mathrm{objet}_g, \mathrm{objet}_p)}{2}.
 \end{equation}
@@ -286,7 +286,7 @@ Les trois passes sont les mêmes que pour les entités : correspondance exacte d
 
 \subsection{Trois modes d'appariement}
 
-Les trois passes définissent trois modes d'évaluation emboîtés :
+Les trois passes définissent trois modes d'évaluation emboîtés, sur le modèle des critères exact, de bornes et approché distingués pour la reconnaissance d'entités biomédicales~\cite{tsai2006criteria} :
 \begin{itemize}
   \item \textbf{Strict} : seules les correspondances exactes sont comptées comme correctes ;
   \item \textbf{Boundary-Relaxed} : les correspondances exactes et par inclusion sont comptées comme correctes, ce qui tolère une différence de délimitation de la mention ;
@@ -297,14 +297,14 @@ Dans tous les modes, un élément retrouvé avec le bon texte mais un type diff�
 % ------------------------------------------------------------
 \section{Métriques d'évaluation}\label{sec:c4-metriques}
 
-À partir des appariements, on compte pour chaque dossier les vrais positifs, les faux positifs et les faux négatifs, puis on calcule la précision, le rappel et le F1-score définis au chapitre~\ref{chap:donnees-gold} (section~\ref{sec:c3-3-11}). Ces mesures sont agrégées de deux façons :
+À partir des appariements, on compte pour chaque dossier les vrais positifs, les faux positifs et les faux négatifs, puis on calcule la précision, le rappel et le F1-score définis au chapitre~\ref{chap:donnees-gold} (section~\ref{sec:c3-3-11})~\cite{vanrijsbergen1979}. Ces mesures sont agrégées de deux façons~\cite{sokolova2009} :
 \begin{itemize}
   \item la \textbf{micro-moyenne} additionne les vrais positifs, faux positifs et faux négatifs de tous les dossiers avant de calculer les mesures ; chaque élément pèse le même poids, si bien que les dossiers les plus riches pèsent davantage ;
   \item la \textbf{macro-moyenne} calcule le F1-score de chaque dossier, puis en fait la moyenne ; chaque dossier pèse alors le même poids, quelle que soit sa taille.
 \end{itemize}
 Les deux agrégations sont complémentaires : un écart important entre elles signale que les performances varient fortement d'un dossier à l'autre.
 
-Nous rapportons enfin le taux d'hallucination, défini comme la part des éléments extraits qui ne correspondent à aucun élément de la référence :
+Nous rapportons enfin le taux d'hallucination, défini comme la part des éléments extraits qui ne correspondent à aucun élément de la référence. Cette définition reprend celle de la métrique CHAIR, qui mesure en description d'images la proportion d'objets mentionnés par le modèle et absents de la vérité terrain~\cite{rohrbach2018chair} :
 \begin{equation}
 H = 1 - \text{Précision} = \frac{FP}{TP + FP}.
 \end{equation}
