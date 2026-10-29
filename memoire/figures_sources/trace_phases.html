@@ -1,0 +1,117 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+#root{width:1500px;padding:26px}
+.box{border-width:2px;border-style:dashed;border-radius:16px;padding:12px 14px}
+.ph{border-width:2px;border-style:dashed;border-radius:18px;padding:12px 14px 14px;margin:0}
+.pt{font-weight:bold;font-size:17px}
+.pq{font-size:13px;font-style:italic;color:#555;margin:2px 0 10px}
+.cards{display:flex;gap:12px;align-items:stretch}
+.card{flex:1;background:#fff;border:2px solid;border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:5px}
+.hd{display:flex;align-items:center;gap:8px}
+.num{width:32px;height:32px;border-radius:50%;color:#fff;font-weight:bold;display:flex;align-items:center;justify-content:center;flex:none;font-size:14px}
+.ic{font-size:24px}
+.nm{font-weight:bold;font-size:15px}
+.q{font-size:12.5px;color:#333}
+.q b{color:#000}
+.rl{font-size:12.5px;line-height:1.35}
+.ex{font-family:"DejaVu Sans Mono",monospace;font-size:11.3px;background:#fafafa;border:1px solid #e3e3e3;border-radius:8px;padding:5px 7px;line-height:1.35}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:4px}
+.act{font-size:11.5px;font-weight:bold;border-radius:9px;padding:2px 8px}
+.ty{font-size:11px;font-weight:bold;border-radius:9px;padding:2px 8px;border:1.5px solid}
+.ann{background:#e3efff;color:#2f5f9e}.ret{background:#ffe3e3;color:#b33}.rep{background:#dff5f5;color:#1f7a7a}.add{background:#e2f5e6;color:#2d7a3c}.dec{background:#ffeebf;color:#8a5f00}.nor{background:#eee;color:#444}
+.down{text-align:center;font-size:24px;color:#777;line-height:1.1;margin:4px 0}
+.rules{display:flex;gap:18px;justify-content:center;font-size:13px;flex-wrap:wrap}
+.r{font-size:12.3px;margin:2px 0}
+.r b{display:inline-block;width:24px}
+.bar{height:16px;border-radius:8px;background:linear-gradient(90deg,#5aaa6a,#e3b23c,#e78a8a);margin:6px 0 2px}
+</style></head><body><div id="root">
+
+<div style="display:flex;gap:14px">
+ <div class="box teal" style="flex:1.3"><div class="t">🗂️ ENTRÉE · Sortie de l'extraction</div><div class="small" style="text-align:center">entités et relations de chaque dossier, avec leur page et leur preuve<br>le texte transcrit des pages sert de <b>seule référence</b></div></div>
+ <div class="box grey" style="flex:1"><div class="t">Règles de la chaîne</div><div class="rules"><span>🚫 aucun LLM juge</span><span>1️⃣ un rôle par étage</span><span>✍️ les étages annotent, <b>un seul décide</b></span><span>🔒 Gold Standard lu seulement à l'évaluation</span></div></div>
+</div>
+<div class="down">▼</div>
+
+<div class="ph blue">
+ <div class="pt" style="color:#2f5f9e">PHASE 1 · CONTRÔLER</div><div class="pq">Chaque élément est-il fidèle au texte et au guideline ?</div>
+ <div class="cards">
+  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">1</div><span class="ic">🧹</span><span class="nm">Préparation</span></div>
+   <div class="q"><b>?</b> L'entrée est-elle uniforme ?</div><div class="rl">Unifie l'écriture et attribue les identifiants manquants.</div>
+   <div class="ex">« µmol/L » et « μmol/L » → un seul nœud</div>
+   <div class="foot"><span class="act nor">normalise</span><span class="ty" style="border-color:#bbb;color:#777">—</span></div></div>
+  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">2</div><span class="ic">⚓</span><span class="nm">Ancrage</span></div>
+   <div class="q"><b>?</b> L'élément est-il écrit dans le dossier ?</div><div class="rl">Vérifie chaque entité mot pour mot ; note la preuve, la distance et la section de chaque relation.</div>
+   <div class="ex">« CRP 186 » → retirée<br>(la page indique « CRP 86 »)</div>
+   <div class="foot"><span><span class="act ann">annote</span> <span class="act ret">retire l'impossible</span></span><span class="ty" style="border-color:#e78a8a;color:#b33">factuelle · relationnelle</span></div></div>
+  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">3</div><span class="ic">📘</span><span class="nm">Conformité au guideline</span></div>
+   <div class="q"><b>?</b> La relation respecte-t-elle le schéma ?</div><div class="rl">Compare chaque relation aux 34 signatures du guideline.</div>
+   <div class="ex">traitement « administré à » un biomarqueur → signalé</div>
+   <div class="foot"><span class="act ann">annote</span><span class="ty" style="border-color:#5b8fd6;color:#2f5f9e">ontologique</span></div></div>
+ </div>
+</div>
+<div class="down">▼</div>
+
+<div class="ph" style="border-color:#3aa6a6;background:#f1fafa">
+ <div class="pt" style="color:#1f7a7a">PHASE 2 · RÉPARER ET COMPLÉTER</div><div class="pq">Le graphe est-il bien formé et complet ?</div>
+ <div class="cards">
+  <div class="card" style="border-color:#3aa6a6"><div class="hd"><div class="num" style="background:#3aa6a6">4</div><span class="ic">🔧</span><span class="nm">SGCE</span></div>
+   <div class="q"><b>?</b> Le graphe est-il bien construit ?</div><div class="rl">Découpe les entités composites, crée les nœuds manquants, rattache les orphelins ; s'abstient en cas de doute.</div>
+   <div class="ex">« Augmentin 1 g x 3 » → Augmentin + 1 g x 3, reliés</div>
+   <div class="foot"><span class="act rep">répare</span><span class="ty" style="border-color:#3aa6a6;color:#1f7a7a">structurelle</span></div></div>
+  <div class="card" style="border-color:#5aaa6a"><div class="hd"><div class="num" style="background:#5aaa6a">4b</div><span class="ic">➕</span><span class="nm">Récupération</span></div>
+   <div class="q"><b>?</b> Une ligne de biologie ou d'ordonnance a-t-elle été oubliée ?</div><div class="rl">Copie la ligne du texte ; relie le traitement à sa posologie.</div>
+   <div class="ex">« Tahor 10mg 0-0-1 » → traitement + posologie</div>
+   <div class="foot"><span class="act add">ajoute</span><span class="ty" style="border-color:#5aaa6a;color:#2d7a3c">oubli</span></div></div>
+  <div class="card" style="border-color:#3aa6a6"><div class="hd"><div class="num" style="background:#3aa6a6">5</div><span class="ic">🧬</span><span class="nm">Dédoublonnage</span></div>
+   <div class="q"><b>?</b> Un élément est-il répété ?</div><div class="rl">Fusionne les doublons exacts ; signale les répétitions.</div>
+   <div class="ex">triplet extrait deux fois → gardé une fois</div>
+   <div class="foot"><span><span class="act ann">annote</span> <span class="act ret">retire l'identique</span></span><span class="ty" style="border-color:#3aa6a6;color:#1f7a7a">structurelle</span></div></div>
+ </div>
+</div>
+<div class="down">▼</div>
+
+<div class="ph purple">
+ <div class="pt" style="color:#6b3fa0">PHASE 3 · QUALIFIER</div><div class="pq">Que veut dire l'élément dans son contexte ?</div>
+ <div class="cards">
+  <div class="card" style="border-color:#a47ad1;flex-direction:row;gap:16px;align-items:center">
+   <div style="width:330px;display:flex;flex-direction:column;gap:5px"><div class="hd"><div class="num" style="background:#a47ad1">6</div><span class="ic">🏷️</span><span class="nm">Attributs cliniques</span></div>
+    <div class="q"><b>?</b> L'entité est-elle niée, hypothétique ou antérieure au séjour ?</div><div class="rl">Détecte la négation, l'hypothèse, la période et l'unité.</div></div>
+   <div style="flex:1;display:flex;gap:10px">
+    <div class="ex" style="flex:1">« pas de toux »<br>→ <b>niée</b>, gardée</div>
+    <div class="ex" style="flex:1">« suspicion de pneumopathie »<br>→ <b>hypothèse</b></div>
+    <div class="ex" style="flex:1">traitement habituel<br>→ <b>antérieur</b></div>
+   </div>
+   <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="act ann">annote</span><span class="ty" style="border-color:#a47ad1;color:#6b3fa0">contextuelle · temporelle</span></div>
+  </div>
+ </div>
+</div>
+<div class="down">▼</div>
+
+<div class="ph yellow" style="border-width:3px">
+ <div class="pt" style="color:#8a5f00">PHASE 4 · DÉCIDER</div><div class="pq">Que garde-t-on, et avec quelle confiance ?</div>
+ <div class="card" style="border-color:#e3b23c;border-width:3px">
+  <div class="hd"><div class="num" style="background:#e3b23c">7</div><span class="ic">⚖️</span><span class="nm">Arbitrage</span><span class="act dec" style="margin-left:8px">seul étage qui décide</span><span class="ty" style="margin-left:auto;border-color:#e3b23c;color:#8a5f00">tous les types</span></div>
+  <div style="display:flex;gap:14px;margin-top:4px">
+   <div style="flex:1.1;border:2px solid #e3b23c;border-radius:12px;padding:8px 10px;background:#fffdf3"><div style="font-weight:bold;font-size:13px;margin-bottom:3px">Mode standard · règles fixées à l'avance</div>
+    <div class="r"><b>E1</b> entité pas écrite mot pour mot → retirée</div>
+    <div class="r"><b>E2</b> entité niée → <span style="color:#2d7a3c;font-weight:bold">gardée</span></div>
+    <div class="r"><b>E3</b> confiance du modèle basse → retirée</div>
+    <div class="r"><b>R2</b> relation qui affirme une entité niée → retirée</div>
+    <div class="r"><b>R3</b> relation créée par SGCE, non ancrée → retirée</div></div>
+   <div style="flex:1;border:2px solid #a47ad1;border-radius:12px;padding:8px 10px;background:#fbf8ff"><div style="font-weight:bold;font-size:13px;margin-bottom:3px">Mode précision · vote appris</div>
+    <div class="r">signaux des agents → régression logistique → score de fiabilité</div>
+    <div class="r">on garde les <b style="width:auto">k %</b> éléments les mieux notés</div>
+    <div class="bar"></div><div style="display:flex;justify-content:space-between;font-size:11.5px"><span>k = 100 % · rappel</span><span>k = 30 % · précision</span></div>
+    <div class="r" style="margin-top:4px">🔒 appris en validation croisée</div></div>
+   <div style="flex:0.9;display:flex;flex-direction:column;gap:6px;justify-content:center"><div style="font-weight:bold;font-size:12.5px">Exemple</div>
+    <div class="ex">patient —presente_symptome→ « pas de toux »<br>→ relation <span style="color:#b33">retirée</span><br>→ entité niée <span style="color:#2d7a3c">gardée</span></div></div>
+  </div>
+ </div>
+</div>
+<div class="down">▼</div>
+
+<div style="display:flex;gap:14px">
+ <div class="box teal" style="flex:1.3;text-align:center"><div class="t">🧩 SORTIE · Graphe de connaissances vérifié</div><div class="small">chaque élément garde sa page, sa preuve, la trace des étages qui l'ont examiné<br>et un niveau de confiance : 🟢 élevée · 🟡 moyenne · 🔴 faible</div></div>
+ <div class="box green" style="flex:1;text-align:center"><div class="t">🔒 8 · Évaluation</div><div class="small">seul étage qui lit le Gold Standard<br>précision, rappel, F1 et taux d'hallucination après chaque étage · entraîne le vote en validation croisée</div></div>
+</div>
+</div></body></html>
