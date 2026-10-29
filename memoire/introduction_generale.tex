@@ -40,6 +40,16 @@ Pour y répondre, nous proposons l’approche \textbf{TRACE} (\textit{Taxonomy a
     \item \textbf{La chaîne TRACE de réduction des hallucinations}, organisée en étages qui ont chacun une seule responsabilité : ancrage de chaque élément dans le texte de sa page, conformité aux signatures du guideline, réparation structurelle du graphe (\textit{Structural Grounding}, avec une validation multi-agent), récupération des éléments oubliés dans les blocs de biologie et d’ordonnance, dédoublonnage, qualification des entités (unité, temporalité, négation), puis arbitrage. L’arbitrage propose un mode standard, fondé sur des règles fixées à l’avance, et un mode précision, qui ne garde que les éléments les mieux notés par les agents. Le Gold Standard n’est lu que par le dernier étage, l’évaluation, pour que la mesure reste indépendante des corrections.
 \end{itemize}
 
+\section*{Valorisation scientifique}
+
+Ce travail s'inscrit dans un projet mené en équipe au sein du WP6. Il prolonge et améliore les travaux d'Eya Ben Dhiaf sur la construction d'un graphe de connaissances à partir des mêmes dossiers (cadre KG-EDS~\cite{kgeds}). Il a donné lieu aux communications suivantes :
+\begin{itemize}
+    \item un \textbf{article}, « Multimodal Extraction of Clinical Information from Digitized Patient Records and Gold Standard Evaluation in the Context of Sepsis »~\cite{dridi2026jdse}, présenté à la conférence JDSE \acompleter{nom complet, lieu et date}, qui compare Qwen2.5-VL et Mistral Small~4 sur un premier Gold Standard, et qui a fait l'objet d'une \textbf{présentation orale} ;
+    \item une \textbf{présentation orale} à la conférence IFA \acompleter{nom complet et lieu} le 1\textsuperscript{er} juillet \acompleter{année}, consacrée aux travaux d'Eya Ben Dhiaf et à une partie de ce mémoire ;
+    \item un \textbf{poster} présenté le 23 avril \acompleter{année} à \acompleter{nom de la conférence et lieu} ;
+    \item une participation à \acompleter{troisième conférence : nom, date et forme de la participation}.
+\end{itemize}
+
 \section*{Organisation du mémoire}
 
 Le chapitre~1 présente le contexte clinique du sepsis et les difficultés propres à l’extraction d’informations depuis des dossiers médicaux scannés. Le chapitre~2 dresse l’état de l’art : extraction documentaire, extraction d’entités et de relations (des méthodes classiques aux MLLMs), annotation clinique, puis détection et réduction des hallucinations. Le chapitre~3 décrit le corpus, le guideline d’annotation et la construction du Gold Standard. Le chapitre~4 expose l’étude des modèles et l’extraction multimodale avec Mistral Small 4. Le chapitre~5 détaille la chaîne TRACE, étage par étage, et le chapitre~6 en présente les expérimentations et les résultats. Le chapitre~7, enfin, discute ces résultats, les limites du travail et ses perspectives.
