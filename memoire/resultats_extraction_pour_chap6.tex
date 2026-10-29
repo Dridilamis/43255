@@ -1,0 +1,27 @@
+% À intégrer au chapitre d'expérimentations (\label{chap:experimentations}).
+% Comparaison des modèles d'extraction, retirée du chapitre 4.
+
+\section{Comparaison des modèles d'extraction}\label{sec:c6-modeles}
+
+Le tableau~\ref{tab:c6-comparaison-modeles} compare les deux modèles sur les 49 dossiers du Gold Standard, à la sortie du pipeline d'extraction décrit au chapitre~\ref{chap:extraction}, avant TRACE, en mode Relaxed et en micro-moyenne. Les critères de comparaison sont ceux de la section~\ref{sec:c4-selection}.
+
+\begin{table}[H]
+\centering
+\caption{Comparaison des deux modèles à la sortie du pipeline d'extraction, avant TRACE (49 dossiers, Gold Standard v2.0, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-comparaison-modeles}
+\small
+\begin{tabular}{llcccc}
+\toprule
+& \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} & \textbf{H} \\
+\midrule
+\multirow{2}{*}{Entités} & Qwen2.5-VL & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+ & Mistral Small 4 & 66,20 & 68,45 & 67,31 & 33,80 \\
+\midrule
+\multirow{2}{*}{Relations} & Qwen2.5-VL & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+ & Mistral Small 4 & 54,77 & 45,46 & 49,68 & 45,23 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Avec ce pipeline, Mistral Small~4 retrouve un peu plus des deux tiers des entités de la référence (rappel de 68,45~\%), et deux entités extraites sur trois sont justes (précision de 66,20~\%). Les relations sont plus difficiles : moins d'une relation de la référence sur deux est retrouvée, et 45~\% des relations extraites ne sont pas justifiées par la référence. \acompleter{Commenter l'écart avec Qwen2.5-VL sur les entités et sur les relations, en précision et en rappel ; ajouter les modes Strict et Boundary-Relaxed et la macro-moyenne s'ils changent la conclusion.}
+
+\acompleter{Conclure sur le choix du modèle, par exemple : « Mistral Small~4 obtient les meilleurs résultats, en particulier sur les relations ; c'est donc sa sortie qui sert de point de départ à la chaîne TRACE. »}

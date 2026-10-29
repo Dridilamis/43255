@@ -7,7 +7,7 @@ Ce chapitre décrit la manière dont est obtenue la sortie d'un modèle multimod
 
 Trois choix guident ce pipeline. Le premier est de faire lire directement les pages scannées par un grand modèle de langage multimodal (MLLM), sans logiciel de reconnaissance optique de caractères (OCR) intermédiaire, dont les erreurs se propagent aux étapes suivantes~\cite{zhang2025ocrhindersrag}. Le deuxième est de construire les consignes à partir du TRACE-Sepsis Annotation Guideline présenté au chapitre~\ref{chap:donnees-gold}, afin que le modèle et l'annotatrice suivent les mêmes règles. Le troisième est de compléter ces consignes par des exemples et des règles appris sur le Gold Standard, toujours en validation croisée : un dossier n'est jamais guidé par sa propre annotation.
 
-Le chapitre présente d'abord l'architecture générale du pipeline (section~\ref{sec:c4-archi}), la préparation des dossiers (section~\ref{sec:c4-preparation}) et la construction des consignes (section~\ref{sec:c4-prompt}). Il décrit ensuite les deux modèles comparés (section~\ref{sec:c4-modeles}), l'extraction des entités et des relations (sections~\ref{sec:c4-entites} et~\ref{sec:c4-relations}), la mise en forme des sorties (section~\ref{sec:c4-postproc}) et les corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}). Il définit enfin la manière dont une extraction est comparée au Gold Standard (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}), avant de présenter la comparaison des deux modèles et le choix du modèle utilisé dans TRACE (section~\ref{sec:c4-selection}).
+Le chapitre présente d'abord l'architecture générale du pipeline (section~\ref{sec:c4-archi}), la préparation des dossiers (section~\ref{sec:c4-preparation}) et la construction des consignes (section~\ref{sec:c4-prompt}). Il décrit ensuite les deux modèles comparés (section~\ref{sec:c4-modeles}), l'extraction des entités et des relations (sections~\ref{sec:c4-entites} et~\ref{sec:c4-relations}), la mise en forme des sorties (section~\ref{sec:c4-postproc}) et les corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}). Il définit enfin la manière dont une extraction est comparée au Gold Standard (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}), avant de présenter les critères de choix du modèle utilisé dans TRACE (section~\ref{sec:c4-selection}), dont les résultats sont donnés au chapitre~\ref{chap:experimentations}.
 
 % ------------------------------------------------------------
 \section{Architecture générale du pipeline d'extraction}\label{sec:c4-archi}
@@ -310,30 +310,17 @@ H = 1 - \text{Précision} = \frac{FP}{TP + FP}.
 Ce taux mesure la proportion d'informations produites par le modèle que le Gold Standard ne justifie pas. Il ne distingue pas, à lui seul, une information inventée d'une information correcte mais absente de la référence ; cette distinction relève de l'analyse des erreurs.
 
 % ------------------------------------------------------------
-\section{Sélection du modèle d'extraction}\label{sec:c4-selection}
+\section{Critères de sélection du modèle d'extraction}\label{sec:c4-selection}
 
-Le tableau~\ref{tab:c4-comparaison} compare les deux modèles sur les 49 dossiers du Gold Standard, à la sortie du pipeline d'extraction, avant TRACE, en mode Relaxed et en micro-moyenne.
+Les deux modèles sont comparés sur la sortie du pipeline d'extraction, avant TRACE, avec le protocole de la section~\ref{sec:c4-protocole}. La comparaison repose sur trois critères, fixés avant l'expérience :
+\begin{itemize}
+  \item la qualité de l'extraction des \textbf{relations}, mesurée par le F1-score en mode Relaxed et en micro-moyenne, critère principal parce que la valeur d'un graphe de connaissances dépend directement de ses relations : un graphe dont les entités sont justes mais mal reliées ne permet pas de reconstituer le parcours du patient ;
+  \item la qualité de l'extraction des \textbf{entités}, mesurée de la même façon ;
+  \item le \textbf{taux d'hallucination} des entités et des relations, qui indique la part des éléments extraits que la référence ne justifie pas.
+\end{itemize}
+Les modes Strict et Boundary-Relaxed et la macro-moyenne servent à vérifier que la conclusion ne dépend pas du mode d'appariement ni de quelques dossiers. Les conditions d'exécution entrent aussi en compte : Qwen2.5-VL tourne sur l'infrastructure de l'université, tandis que Mistral Small~4 passe par une API externe.
 
-\begin{table}[H]
-\centering
-\caption{Comparaison des deux modèles à la sortie du pipeline d'extraction, avant TRACE (49 dossiers, Gold Standard v2.0, mode Relaxed, micro-moyenne, en \%)}\label{tab:c4-comparaison}
-\small
-\begin{tabular}{llcccc}
-\toprule
-& \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} & \textbf{H} \\
-\midrule
-\multirow{2}{*}{Entités} & Qwen2.5-VL & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
- & Mistral Small 4 & 66,20 & 68,45 & 67,31 & 33,80 \\
-\midrule
-\multirow{2}{*}{Relations} & Qwen2.5-VL & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
- & Mistral Small 4 & 54,77 & 45,46 & 49,68 & 45,23 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Avec ce pipeline, Mistral Small~4 retrouve un peu plus des deux tiers des entités de la référence (rappel de 68,45~\%), et deux entités extraites sur trois sont justes (précision de 66,20~\%). Les relations sont plus difficiles : moins d'une relation de la référence sur deux est retrouvée, et 45~\% des relations extraites ne sont pas justifiées par la référence. \acompleter{Commenter l'écart avec Qwen2.5-VL sur les entités et sur les relations, en précision et en rappel, à partir des chiffres du run Qwen avec le même pipeline ; ajouter les modes Strict et Boundary-Relaxed et la macro-moyenne s'ils changent la conclusion.}
-
-Or la qualité d'un graphe de connaissances dépend directement de ses relations : un graphe dont les entités sont justes mais mal reliées ne permet pas de reconstituer le parcours du patient. \acompleter{Justifier le choix à partir des résultats, par exemple : « Mistral Small~4 obtient les meilleurs résultats, en particulier sur les relations ; c'est donc sa sortie qui sert de point de départ à la chaîne TRACE. »} Ce choix a un coût : l'exécution passe par une API externe, alors que Qwen2.5-VL tourne sur l'infrastructure de l'université. Le modèle retenu fournit l'extraction à partir de laquelle TRACE est évaluée : chaque étage de la chaîne est mesuré par rapport à cette sortie de départ (chapitre~\acompleter{numéro du chapitre des résultats}).
+Les résultats de cette comparaison sont présentés au chapitre~\ref{chap:experimentations}. Le modèle retenu fournit l'extraction à partir de laquelle TRACE est évaluée : chaque étage de la chaîne est mesuré par rapport à cette sortie de départ.
 
 % ------------------------------------------------------------
 \section{Conclusion}\label{sec:c4-conclusion}
