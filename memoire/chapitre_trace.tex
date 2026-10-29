@@ -23,7 +23,7 @@ Les taxonomies présentées au chapitre~2 ont été construites pour la généra
   \item \textbf{Relationnelle} : un lien entre deux entités bien présentes dans le dossier, mais que le texte n'énonce pas. Le modèle déduit la relation de la seule présence des deux entités.
   \item \textbf{Ontologique} : une entité du mauvais type ou une relation qui ne respecte pas les signatures du guideline, par exemple une administration de traitement dirigée vers un biomarqueur.
   \item \textbf{Structurelle} : un graphe mal formé, avec des entités composites qui regroupent deux concepts, des nœuds intermédiaires manquants, des relations orphelines ou des doublons.
-  \item \textbf{Contextuelle} : une mention bien écrite dans le texte, mais dont le contexte change le sens, comme une négation (\og pas de fièvre \fg{}) ou une hypothèse (\og suspicion de pneumopathie \fg{}).
+  \item \textbf{Contextuelle} : une mention bien écrite dans le texte, mais dont le contexte change le sens, comme une négation ou une hypothèse (\og suspicion de pneumopathie \fg{}). Une absence explicitement mentionnée, comme \og pas de toux \fg{}, n'est pas une hallucination : c'est une information clinique, extraite comme une entité niée, conformément au guideline. L'hallucination consiste à ignorer la négation, en extrayant \og toux \fg{} seul ou en reliant \og pas de toux \fg{} au patient comme un symptôme présent.
   \item \textbf{Temporelle} : un fait d'une autre période pris pour un fait du séjour, par exemple un traitement habituel compté comme administré en réanimation.
   \item \textbf{Visuelle} : une valeur mal lue sur l'image puis recopiée telle quelle dans la transcription, et donc ancrée dans un texte lui-même erroné.
 \end{itemize}
@@ -165,13 +165,13 @@ En mode standard, les décisions suivent des règles fixées avant toute évalua
 \paragraph{Entités.}
 \begin{itemize}
   \item \textbf{E1} : une entité qui ne figure pas mot pour mot dans le texte de sa page est retirée ; c'est une reformulation ou une invention du modèle.
-  \item \textbf{E2} : une entité niée (\og pas de fièvre \fg{}) est \emph{conservée} et marquée comme niée. L'absence d'un signe est une information clinique, et le Gold Standard validé par le médecin l'annote comme telle.
+  \item \textbf{E2} : une entité niée (\og pas de toux \fg{}) est \emph{conservée} et marquée comme niée. L'absence d'un signe est une information clinique, et le Gold Standard validé par le médecin l'annote comme telle.
   \item \textbf{E3} : une entité à laquelle le modèle lui-même a attribué une confiance moyenne ou faible est retirée.
 \end{itemize}
 
 \paragraph{Relations.}
 \begin{itemize}
-  \item \textbf{R2} : une relation qui affirme une entité niée (par exemple \og le patient présente le symptôme \emph{pas de fièvre} \fg{}) est retirée. L'entité niée reste dans le graphe, mais aucune relation ne la donne comme présente, conformément à la convention du guideline.
+  \item \textbf{R2} : une relation qui affirme une entité niée (par exemple \og le patient présente le symptôme \emph{pas de toux} \fg{}) est retirée. L'entité niée reste dans le graphe, mais aucune relation ne la donne comme présente, conformément à la convention du guideline.
   \item \textbf{R3} : une relation créée par SGCE qui échoue aux contrôles d'ancrage de l'étage~2 est retirée.
   \item Une entité retirée emporte les relations qui pointent vers elle, afin que le graphe reste cohérent.
 \end{itemize}
