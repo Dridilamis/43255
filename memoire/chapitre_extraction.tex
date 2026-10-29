@@ -167,13 +167,14 @@ Mistral Small 4 (\texttt{mistral-small-2603})~\cite{mistralsmall4} réunit dans 
 
 \subsection{Protocole comparatif}\label{sec:c4-protocole}
 
-La comparaison des deux modèles provient d'une évaluation préliminaire, publiée séparément~\acompleter{référence de l'article}. Les deux modèles y ont été évalués dans les mêmes conditions :
+Pour que la comparaison soit équitable, les deux modèles ont été évalués avec exactement le même pipeline (figure~\ref{fig:c4-pipeline}) :
 \begin{itemize}
-  \item les mêmes dossiers, convertis en images de la même façon ;
-  \item les mêmes consignes, pour les entités comme pour les relations ;
-  \item la même évaluation, contre le même Gold Standard, avec les mêmes métriques.
+  \item les mêmes 49 dossiers, convertis en images de la même façon ;
+  \item les mêmes quatre appels par page (transcription, entités, traitements et posologies, relations) et les mêmes consignes, avec les mêmes exemples semblables et les mêmes règles strictes apprises ;
+  \item la même validation déterministe et les mêmes corrections apprises sur le Gold Standard ;
+  \item la même évaluation, contre le Gold Standard v2.0, avec les mêmes modes d'appariement et les mêmes métriques (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}).
 \end{itemize}
-Ce protocole préliminaire est antérieur aux consignes définitives décrites dans ce chapitre (exemples semblables, règles strictes apprises, consigne ciblée sur les traitements) et à la version~2.0 du Gold Standard. Il sert uniquement à choisir le modèle ; il ne constitue pas le point de départ chiffré de TRACE. \acompleter{Préciser le nombre de dossiers et la version du schéma utilisés dans l'évaluation préliminaire.}
+Seul le modèle change : Qwen2.5-VL est exécuté localement sur le GPU de l'université, Mistral Small~4 par l'API de Mistral AI, tous deux à température~0. \acompleter{Préciser toute différence inévitable, par exemple la longueur maximale de contexte ou de réponse de Qwen2.5-VL.}
 
 % ------------------------------------------------------------
 \section{Extraction des entités}\label{sec:c4-entites}
@@ -311,28 +312,28 @@ Ce taux mesure la proportion d'informations produites par le modèle que le Gold
 % ------------------------------------------------------------
 \section{Sélection du modèle d'extraction}\label{sec:c4-selection}
 
-Le tableau~\ref{tab:c4-comparaison} compare les deux modèles lors de l'évaluation préliminaire (section~\ref{sec:c4-protocole}), en micro-moyenne.
+Le tableau~\ref{tab:c4-comparaison} compare les deux modèles sur les 49 dossiers du Gold Standard, à la sortie du pipeline d'extraction, avant TRACE, en mode Relaxed et en micro-moyenne.
 
 \begin{table}[H]
 \centering
-\caption{Comparaison des deux modèles (évaluation préliminaire, micro-moyenne, en \%)}\label{tab:c4-comparaison}
+\caption{Comparaison des deux modèles à la sortie du pipeline d'extraction, avant TRACE (49 dossiers, Gold Standard v2.0, mode Relaxed, micro-moyenne, en \%)}\label{tab:c4-comparaison}
 \small
 \begin{tabular}{llcccc}
 \toprule
 & \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} & \textbf{H} \\
 \midrule
-\multirow{2}{*}{Entités} & Qwen2.5-VL & 64,10 & 63,67 & 63,88 & 35,90 \\
- & Mistral Small 4 & 67,38 & 71,89 & 69,57 & 32,62 \\
+\multirow{2}{*}{Entités} & Qwen2.5-VL & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+ & Mistral Small 4 & 66,20 & 68,45 & 67,31 & 33,80 \\
 \midrule
-\multirow{2}{*}{Relations} & Qwen2.5-VL & 50,83 & 30,31 & 37,98 & 49,17 \\
- & Mistral Small 4 & 67,42 & 58,17 & 62,43 & 32,58 \\
+\multirow{2}{*}{Relations} & Qwen2.5-VL & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+ & Mistral Small 4 & 54,77 & 45,46 & 49,68 & 45,23 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Mistral Small~4 l'emporte sur toutes les mesures. L'écart est modéré pour les entités (environ 6 points de F1) mais très net pour les relations, où le F1 passe de 37,98 à 62,43~\%. La différence tient surtout au rappel : Qwen2.5-VL ne retrouve qu'environ trois relations sur dix, contre près de six sur dix pour Mistral Small~4, avec une précision également plus élevée. Or la qualité d'un graphe de connaissances dépend directement de ses relations : un graphe dont les entités sont justes mais mal reliées ne permet pas de reconstituer le parcours du patient. \acompleter{Ajouter les modes Strict et Boundary-Relaxed et la macro-moyenne s'ils sont disponibles pour l'évaluation préliminaire.}
+Avec ce pipeline, Mistral Small~4 retrouve un peu plus des deux tiers des entités de la référence (rappel de 68,45~\%), et deux entités extraites sur trois sont justes (précision de 66,20~\%). Les relations sont plus difficiles : moins d'une relation de la référence sur deux est retrouvée, et 45~\% des relations extraites ne sont pas justifiées par la référence. \acompleter{Commenter l'écart avec Qwen2.5-VL sur les entités et sur les relations, en précision et en rappel, à partir des chiffres du run Qwen avec le même pipeline ; ajouter les modes Strict et Boundary-Relaxed et la macro-moyenne s'ils changent la conclusion.}
 
-Mistral Small~4 obtient les meilleurs résultats, en particulier sur les relations ; c'est donc sa sortie qui sert de point de départ à la chaîne TRACE. Ce choix a un coût : l'exécution passe par une API externe, alors que Qwen2.5-VL tournait sur l'infrastructure de l'université. Le modèle retenu fournit l'extraction à partir de laquelle TRACE est évaluée : chaque étage de la chaîne est mesuré par rapport à cette sortie de départ, avec le protocole et le Gold Standard définitifs (chapitre~\acompleter{numéro du chapitre des résultats}).
+Or la qualité d'un graphe de connaissances dépend directement de ses relations : un graphe dont les entités sont justes mais mal reliées ne permet pas de reconstituer le parcours du patient. \acompleter{Justifier le choix à partir des résultats, par exemple : « Mistral Small~4 obtient les meilleurs résultats, en particulier sur les relations ; c'est donc sa sortie qui sert de point de départ à la chaîne TRACE. »} Ce choix a un coût : l'exécution passe par une API externe, alors que Qwen2.5-VL tourne sur l'infrastructure de l'université. Le modèle retenu fournit l'extraction à partir de laquelle TRACE est évaluée : chaque étage de la chaîne est mesuré par rapport à cette sortie de départ (chapitre~\acompleter{numéro du chapitre des résultats}).
 
 % ------------------------------------------------------------
 \section{Conclusion}\label{sec:c4-conclusion}
