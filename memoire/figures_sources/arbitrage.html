@@ -1,0 +1,25 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>#root{width:1500px;padding:24px;display:flex;gap:14px;align-items:stretch}
+.col{display:flex;flex-direction:column;gap:12px;justify-content:center}
+ul{margin-left:16px} li{margin:4px 0}
+.bar{height:22px;border-radius:11px;background:linear-gradient(90deg,#5aaa6a,#e3b23c,#e78a8a);position:relative;margin:10px 0 4px}
+</style></head><body><div id="root">
+<div class="col" style="width:300px">
+ <div class="dash blue small"><div class="t">🤖 Agents déterministes</div>
+ <ul><li><b>Ancrage</b> : preuve, distance, section (étage 2)</li><li><b>Conformité</b> : signature du guideline 📘 (étage 3)</li><li><b>Redondance</b> : triplet répété (étage 5)</li><li><b>Contexte</b> : négation, hypothèse, temporalité (étage 6)</li><li><b>Provenance</b> : extraction directe ou inférence</li></ul></div>
+</div>
+<div class="arrow">➜</div>
+<div class="col" style="width:470px">
+ <div class="dash yellow small"><div class="t">⚖️ Mode standard — règles fixées a priori</div>
+ <b>Entités</b><ul><li>E1 : pas mot pour mot dans sa page → retirée</li><li>E2 : entité niée → <b>gardée</b>, marquée <i>niée</i></li><li>E3 : confiance du modèle moyenne ou faible → retirée</li></ul>
+ <b>Relations</b><ul><li>R2 : relation qui affirme une entité niée → retirée</li><li>R3 : relation créée par SGCE non ancrée → retirée</li><li>une entité retirée emporte ses relations</li></ul>
+ <b>Confiance</b> : élevée, moyenne ou faible selon le nombre de signaux faibles</div>
+</div>
+<div class="arrow">➜</div>
+<div class="col" style="width:520px">
+ <div class="dash purple small"><div class="t">🎚️ Mode précision — vote appris</div>
+ <ul><li>chaque élément décrit par des variables binaires issues des agents (type, section, preuve, mots…)</li><li><b>régression logistique</b> : un poids par variable, score de fiabilité entre 0 et 1</li><li>on garde la part <b>k %</b> des éléments les mieux notés</li></ul>
+ <div class="bar"></div><div style="display:flex;justify-content:space-between"><span>k = 100 % : rappel maximal</span><span>k = 30 % : précision maximale</span></div>
+ <div class="solid green" style="margin-top:10px;background:#fff">🔒 <b>Validation croisée</b> : appris sur une moitié des dossiers, appliqué à l'autre, puis l'inverse</div></div>
+</div>
+</div></body></html>

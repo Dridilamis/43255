@@ -1,0 +1,51 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+#root{width:1750px;padding:24px}
+.row{display:flex;gap:10px;align-items:stretch}
+.st{width:182px;display:flex;flex-direction:column}
+.st .solid{flex:1;background:#fff}
+.n{font-weight:bold;font-size:15px;margin-bottom:4px}
+.tag{margin-top:6px;font-size:11.5px;font-weight:bold;border-radius:8px;padding:2px 6px;display:inline-block}
+.ann{background:#e8f2ff;color:#2f5f9e}.ret{background:#ffe9e9;color:#b33}.add{background:#e9f8ec;color:#2d7a3c}.dec{background:#fff3d6;color:#9a6a00}
+.arrow{font-size:24px}
+</style></head><body><div id="root">
+<div class="row" style="margin-bottom:12px">
+ <div class="dash teal small" style="width:250px;text-align:center"><div class="t">{ } Sortie de l'extraction</div>graphe d'entités et de relations par dossier, texte transcrit de chaque page (chapitre 4)</div>
+ <div class="arrow">➜</div>
+ <div class="dash grey small" style="flex:1"><div class="t">Principes de TRACE</div>
+  <div style="display:flex;gap:18px;justify-content:space-between">
+   <div>📄 le <b>texte du dossier</b> est la seule référence</div>
+   <div>🚫 <b>aucun LLM juge</b> : agents déterministes</div>
+   <div>1️⃣ <b>une responsabilité</b> par étage</div>
+   <div>✍️ annoter d'abord, <b>un seul étage décide</b></div>
+   <div>🔒 le <b>Gold Standard</b> n'est lu qu'à l'étage 8</div>
+  </div></div>
+</div>
+<div class="dash blue">
+<div class="t" style="font-size:18px">🔎 Chaîne TRACE — détection et réduction des hallucinations</div>
+<div class="row">
+ <div class="st"><div class="solid blue small"><div class="n">1 · Préparation</div>normalisation Unicode, identifiants, retrait des éléments issus de règles construites sur la référence<br><span class="tag ret">retire</span></div></div>
+ <div class="arrow">➜</div>
+ <div class="st"><div class="solid blue small"><div class="n">2 · Ancrage</div>entité dans le texte, mot pour mot dans sa page ; preuve, distance et section de chaque relation<br><i>hallucination factuelle</i><br><span class="tag ann">annote</span> <span class="tag ret">retire l'impossible</span></div></div>
+ <div class="arrow">➜</div>
+ <div class="st"><div class="solid blue small"><div class="n">3 · Conformité 📘</div>chaque relation confrontée aux 34 signatures du guideline<br><i>hallucination ontologique</i><br><span class="tag ann">annote</span></div></div>
+ <div class="arrow">➜</div>
+ <div class="st"><div class="solid blue small"><div class="n">4 · SGCE</div>réparation de la forme du graphe : entités composites, nœuds manquants, orphelins, multi-agent<br><i>hallucination structurelle</i><br><span class="tag ann">répare</span></div></div>
+ <div class="arrow">➜</div>
+ <div class="st"><div class="solid blue small"><div class="n">4b · Récupération</div>lignes de biologie et d'ordonnance copiées du texte ; traitement relié à sa posologie<br><i>oublis</i><br><span class="tag add">ajoute</span></div></div>
+</div>
+<div style="text-align:right;font-size:24px;color:#444;margin:4px 90px 4px 0">⤵</div>
+<div class="row" style="justify-content:flex-end">
+ <div class="st" style="width:230px"><div class="solid green small" style="background:#effaf0"><div class="n">8 · Évaluation 🔒</div>seul étage qui lit le Gold Standard : P, R, F1, taux d'hallucination après chaque étage ; entraîne le vote en validation croisée</div></div>
+ <div class="arrow">⬅</div>
+ <div class="st" style="width:300px"><div class="solid yellow small" style="background:#fffbe9;border-width:3px"><div class="n">7 · Arbitrage ⚖️</div><b>seul étage qui décide</b><br>agents : ancrage, conformité, redondance, contexte, provenance<br>mode <b>standard</b> : règles fixées a priori<br>mode <b>précision</b> : vote appris, curseur précision / rappel<br><span class="tag dec">garde · retire · confiance</span></div></div>
+ <div class="arrow">⬅</div>
+ <div class="st"><div class="solid blue small"><div class="n">6 · Attributs</div>négation, hypothèse, temporalité (antérieur, séjour, sortie), unités<br><i>hallucinations contextuelle et temporelle</i><br><span class="tag ann">annote</span></div></div>
+ <div class="arrow">⬅</div>
+ <div class="st"><div class="solid blue small"><div class="n">5 · Dédoublonnage</div>fusion des entités identiques, retrait des relations identiques, répétitions signalées<br><span class="tag ann">annote</span> <span class="tag ret">retire l'identique</span></div></div>
+</div>
+</div>
+<div class="row" style="margin-top:12px;justify-content:center">
+ <div class="dash teal small" style="width:520px;text-align:center"><div class="t">🧩 Graphe de connaissances vérifié</div>chaque élément porte sa page, sa preuve, sa trace de décision et un niveau de confiance</div>
+</div>
+</div></body></html>
