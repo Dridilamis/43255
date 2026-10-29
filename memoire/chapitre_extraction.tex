@@ -3,9 +3,9 @@
 
 \section{Introduction}\label{sec:c4-intro}
 
-Ce chapitre décrit la manière dont est obtenue la sortie d'un modèle multimodal, c'est-à-dire le graphe d'entités et de relations produit à partir des dossiers scannés avant les vérifications de TRACE. Cette étape correspond à l'étage~0 de la chaîne ; les étages suivants, consacrés à la détection et à la réduction des hallucinations, sont présentés au chapitre~\ref{chap:architecture}.
+Ce chapitre décrit comment un modèle multimodal produit, à partir des dossiers scannés, un premier graphe d'entités et de relations cliniques. Cette sortie constitue l'étage~0 de la chaîne : c'est elle que TRACE vérifie ensuite pour détecter et réduire les hallucinations (chapitre~\ref{chap:architecture}). La qualité de ce point de départ conditionne donc tout le reste du travail.
 
-Trois choix guident ce pipeline. Le premier est de faire lire directement les pages scannées par un grand modèle de langage multimodal (MLLM), sans logiciel de reconnaissance optique de caractères (OCR) intermédiaire, dont les erreurs se propagent aux étapes suivantes~\cite{zhang2025ocrhindersrag}. Le deuxième est de construire les consignes à partir du TRACE-Sepsis Annotation Guideline présenté au chapitre~\ref{chap:donnees-gold}, afin que le modèle et l'annotatrice suivent les mêmes règles. Le troisième est de compléter ces consignes par des exemples et des règles appris sur le Gold Standard, toujours en validation croisée : un dossier n'est jamais guidé par sa propre annotation.
+Trois choix structurent ce pipeline. Le premier consiste à faire lire directement les pages scannées par un grand modèle de langage multimodal (MLLM), sans logiciel de reconnaissance optique de caractères (OCR) intermédiaire, dont les erreurs se propagent aux étapes suivantes~\cite{zhang2025ocrhindersrag}. Le deuxième consiste à construire les consignes à partir du TRACE-Sepsis Annotation Guideline présenté au chapitre~\ref{chap:donnees-gold}, afin que le modèle et l'annotatrice suivent les mêmes règles. Le troisième consiste à compléter ces consignes par des exemples et des règles appris sur le Gold Standard, toujours en validation croisée : un dossier n'est jamais guidé par sa propre annotation.
 
 Le chapitre présente d'abord l'architecture générale du pipeline (section~\ref{sec:c4-archi}), la préparation des dossiers (section~\ref{sec:c4-preparation}) et la construction des consignes (section~\ref{sec:c4-prompt}). Il décrit ensuite les deux modèles comparés (section~\ref{sec:c4-modeles}), l'extraction des entités et des relations (sections~\ref{sec:c4-entites} et~\ref{sec:c4-relations}), la mise en forme des sorties (section~\ref{sec:c4-postproc}) et les corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}). Il définit enfin la manière dont une extraction est comparée au Gold Standard (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}), avant de présenter les critères de choix du modèle utilisé dans TRACE (section~\ref{sec:c4-selection}), dont les résultats sont donnés au chapitre~\ref{chap:experimentations}.
 
@@ -19,7 +19,7 @@ Le pipeline traite chaque dossier page par page. Chaque page est convertie en im
   \item \textbf{traitements et posologies} : une consigne ciblée extrait les médicaments et leurs posologies, qui remplacent ceux de l'appel précédent ;
   \item \textbf{relations} : à partir du texte et de la liste des entités conservées, le modèle extrait les relations.
 \end{enumerate}
-Chaque appel produit une sortie au format JSON. Une entité n'est conservée que si elle est retrouvée mot pour mot dans le texte de la page, et une relation que si elle respecte l'une des 34 signatures du schéma. Les résultats des pages sont enfin réunis à l'échelle du dossier. La figure~\ref{fig:c4-pipeline} résume ce déroulement.
+Chaque appel produit une sortie au format JSON, contrôlée de façon déterministe avant l'appel suivant : une entité n'est conservée que si elle est retrouvée mot pour mot dans le texte de la page, une relation que si elle respecte l'une des 34 signatures du schéma. Les résultats des pages sont ensuite réunis à l'échelle du dossier, puis passent par les corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}) avant d'entrer dans TRACE. La figure~\ref{fig:c4-pipeline} résume ce déroulement ; le guideline y intervient à trois endroits : dans les consignes, dans la validation et dans les corrections.
 
 \begin{figure}[H]
 \centering
@@ -27,7 +27,7 @@ Chaque appel produit une sortie au format JSON. Une entité n'est conservée que
 \caption{Pipeline d'extraction multimodale}\label{fig:c4-pipeline}
 \end{figure}
 
-La transcription n'est pas un OCR au sens classique : c'est le même modèle multimodal qui lit l'image. Elle fixe une fois pour toutes le texte de la page, sur lequel s'appuient ensuite l'extraction et toutes les vérifications d'ancrage, ici comme dans TRACE. Séparer les entités des relations présente deux autres avantages. Chaque appel porte sur une tâche plus simple, avec une consigne plus courte. Surtout, les relations sont extraites à partir d'une liste d'entités déjà établie et filtrée, ce qui limite la création de relations entre des éléments qui n'existent pas.
+La transcription n'est pas un OCR au sens classique : c'est le même modèle multimodal qui lit l'image. Elle fixe une fois pour toutes le texte de la page, sur lequel s'appuient ensuite l'extraction et toutes les vérifications d'ancrage, ici comme dans TRACE. Séparer les entités des relations présente deux autres avantages. Chaque appel porte sur une tâche plus simple, avec une consigne plus courte. Surtout, les relations sont extraites à partir d'une liste d'entités déjà établie et filtrée, ce qui empêche le modèle de relier des éléments qui n'existent pas dans la page.
 
 % ------------------------------------------------------------
 \section{Préparation des dossiers médicaux}\label{sec:c4-preparation}
@@ -76,20 +76,22 @@ La transcription utilise une consigne à part, volontairement simple : transcrir
 
 \subsection{Exemples annotés choisis par similarité}\label{sec:c4-exemples}
 
-Chaque consigne contient trois pages annotées du Gold Standard, qui montrent la convention d'annotation : découpage des mentions, choix du type, posologie séparée, mention du patient, absences. Ces exemples ne sont pas fixes : pour chaque page à extraire, on retient les trois pages annotées dont le vocabulaire est le plus proche, mesuré par la similarité cosinus de vecteurs TF-IDF des mots. Une page de biologie reçoit ainsi des exemples de biologie, une ordonnance des exemples d'ordonnance. Le choix d'exemples proches de la donnée à traiter est une manière reconnue d'améliorer l'apprentissage en contexte.
+Le modèle n'est pas entraîné sur nos données : ses paramètres restent inchangés. Il apprend la tâche uniquement à partir de ce que contient la consigne, en particulier d'exemples de pages accompagnées de leur annotation. C'est ce que l'on appelle l'apprentissage en contexte (\emph{in-context learning}), dont l'intérêt pour l'extraction d'information clinique a été montré avec peu d'exemples~\cite{agrawal2022fewshot}.
+
+Chaque consigne contient ainsi trois pages annotées du Gold Standard, qui montrent concrètement la convention d'annotation : découpage des mentions, choix du type, posologie séparée du traitement, mention du patient, absences. Ces exemples ne sont pas fixes : pour chaque page à extraire, on retient les trois pages annotées dont le vocabulaire est le plus proche, mesuré par la similarité cosinus de leurs vecteurs TF-IDF. Une page de biologie reçoit ainsi des exemples de biologie, une ordonnance des exemples d'ordonnance. Choisir des exemples proches de la donnée à traiter améliore nettement l'apprentissage en contexte par rapport à des exemples tirés au hasard~\cite{liu2022incontext}.
 
 Pour éviter toute fuite, les exemples sont choisis en validation croisée à deux plis, avec les mêmes plis que l'évaluation de TRACE (dossiers triés, de rang pair et impair) : un dossier ne reçoit que des pages de l'autre moitié du corpus, jamais sa propre annotation. Pour les traitements, l'exemple ne montre que les traitements et posologies annotés ; pour les relations, que les relations annotées.
 
 \subsection{Règles strictes apprises}\label{sec:c4-regles-strictes}
 
-Les consignes contiennent aussi des règles strictes, apprises pour chaque moitié du corpus sur l'autre moitié, en comparant une extraction précédente au Gold Standard. Une catégorie d'éléments dont moins de 30~\% étaient justes est interdite :
+Les consignes contiennent aussi des règles strictes, apprises pour chaque moitié du corpus sur l'autre moitié, en comparant une extraction précédente au Gold Standard. Toute catégorie d'éléments observée au moins cinq fois et dont moins de 30~\% étaient justes est interdite :
 \begin{itemize}
   \item des \textbf{profils d'entités}, définis par le type, la présence d'un chiffre et la longueur de la mention (par exemple un événement temporel sans date, un signe vital ou un biomarqueur sans valeur, une posologie sans chiffre) ; une mention niée n'est jamais interdite, car l'absence d'un signe est une information clinique ;
   \item des \textbf{types de relations d'interprétation}, presque toujours faux dans l'extraction précédente (par exemple \emph{biomarqueur\_obtenu\_a}, \emph{precede}, \emph{comorbidite\_est\_facteur\_risque\_de}).
 \end{itemize}
 Les consignes indiquent aussi la longueur habituelle des mentions de chaque type dans le Gold Standard et signalent les types peu fiables, à n'extraire qu'en cas de correspondance exacte à leur définition. Ces règles sont ensuite réappliquées sans exception lors de la validation (sections~\ref{sec:c4-entites} et~\ref{sec:c4-relations}).
 
-Ces règles et ces exemples utilisent la référence pour construire les consignes. C'est pourquoi ils sont systématiquement appris sur l'autre moitié du corpus : la performance mesurée reste une estimation sur des dossiers dont l'annotation n'a pas servi à les construire.
+Ces règles, comme les exemples, s'appuient sur la référence pour construire les consignes. C'est pourquoi elles sont systématiquement apprises sur l'autre moitié du corpus : la performance mesurée reste une estimation obtenue sur des dossiers dont l'annotation n'a pas servi à guider l'extraction. Ce guide appris ne contient aucun texte de dossier, seulement des types, des profils et des taux.
 
 \subsection{Contraintes sur les entités}\label{sec:c4-contraintes-entites}
 
@@ -118,7 +120,7 @@ La consigne d'extraction des relations fournit au modèle le texte de la page et
   \item aucune relation ne pointe vers une absence ;
   \item un traitement seulement envisagé ne reçoit pas de relation \emph{traitement\_administre\_a}.
 \end{itemize}
-Restreindre explicitement les candidats répond à une erreur observée lors des premiers essais : le modèle choisissait le bon type de relation mais l'orientait vers une entité d'un autre type, par exemple une administration de traitement dirigée vers un biomarqueur plutôt que vers le patient. Sur un dossier d'essai, les relations rejetées par la validation sont passées de 74 à 5 après cette modification. Si aucune relation n'est réalisable sur une page, l'appel au modèle n'est pas fait.
+Restreindre explicitement les candidats répond à une erreur fréquente lors des premiers essais : le modèle choisissait le bon type de relation mais l'orientait vers une entité d'un autre type, par exemple une administration de traitement dirigée vers un biomarqueur plutôt que vers le patient. Sur un dossier d'essai, le nombre de relations rejetées par la validation pour non-respect de la signature est passé de 74 à 5 après cette modification. Lorsqu'aucune relation n'est réalisable sur une page, l'appel au modèle n'est pas effectué.
 
 \subsection{Format JSON structuré}\label{sec:c4-json}
 
@@ -159,20 +161,20 @@ Deux modèles multimodaux ont été comparés. Tous deux acceptent en entrée un
 
 \subsection{Qwen2.5-VL}\label{sec:c4-qwen}
 
-Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version \acompleter{taille du modèle}, exécutée localement sur un GPU \acompleter{modèle et mémoire} de l'université, avec \acompleter{paramètres de génération : température, longueur maximale}. L'exécution locale garantit que les images des dossiers ne quittent pas l'infrastructure universitaire.
+Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version \acompleter{taille du modèle}, exécutée localement sur un GPU \acompleter{modèle et mémoire} de l'université, à température~0, avec une longueur maximale de génération de \acompleter{nombre de jetons}. L'exécution locale garantit que les images des dossiers ne quittent pas l'infrastructure universitaire.
 
 \subsection{Mistral Small 4}\label{sec:c4-mistral}
 
-Mistral Small 4 (\texttt{mistral-small-2603})~\cite{mistralsmall4} réunit dans un seul modèle des capacités de vision, de raisonnement et de génération, et accepte en entrée du texte et des images. Il a été utilisé par l'intermédiaire de l'offre payante de l'API de Mistral AI, dans les conditions décrites à la section~\ref{sec:c3-3-2-4}~\cite{mistral_retention}, avec une température de~0.
+Mistral Small 4 (\texttt{mistral-small-2603})~\cite{mistralsmall4} réunit dans un seul modèle des capacités de vision, de raisonnement et de génération, et accepte en entrée du texte et des images. Il a été utilisé par l'intermédiaire de l'offre payante de l'API de Mistral AI, à température~0, sur les pages scannées, pseudonymisées à la main par l'AP-HP (section~\ref{sec:c3-3-2-4}). \acompleter{Préciser les conditions contractuelles de traitement des données par l'API : durée de conservation, absence de réutilisation pour l'entraînement, localisation des serveurs.}
 
 \subsection{Protocole comparatif}\label{sec:c4-protocole}
 
 Pour que la comparaison soit équitable, les deux modèles ont été évalués avec exactement le même pipeline (figure~\ref{fig:c4-pipeline}) :
 \begin{itemize}
   \item les mêmes 49 dossiers, convertis en images de la même façon ;
-  \item les mêmes quatre appels par page (transcription, entités, traitements et posologies, relations) et les mêmes consignes, avec les mêmes exemples semblables et les mêmes règles strictes apprises ;
+  \item les mêmes quatre appels par page (transcription, entités, traitements et posologies, relations) et les mêmes consignes, avec des exemples semblables et des règles strictes construits de la même manière et sur les mêmes plis ;
   \item la même validation déterministe et les mêmes corrections apprises sur le Gold Standard ;
-  \item la même évaluation, contre le Gold Standard v2.0, avec les mêmes modes d'appariement et les mêmes métriques (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}).
+  \item la même évaluation, contre le même Gold Standard, avec les mêmes modes d'appariement et les mêmes métriques (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}).
 \end{itemize}
 Seul le modèle change : Qwen2.5-VL est exécuté localement sur le GPU de l'université, Mistral Small~4 par l'API de Mistral AI, tous deux à température~0. \acompleter{Préciser toute différence inévitable, par exemple la longueur maximale de contexte ou de réponse de Qwen2.5-VL.}
 
@@ -224,10 +226,10 @@ Les relations dont le type ne fait pas partie du schéma, dont une extrémité e
 
 Avant d'entrer dans TRACE, la sortie de l'extraction passe par deux corrections déterministes, apprises sur le Gold Standard en validation croisée (chaque moitié du corpus est corrigée avec ce qui est appris sur l'autre) :
 \begin{itemize}
-  \item un \textbf{lexique} des mentions annotées, avec leur type, qui corrige le type d'une mention presque toujours annotée avec un autre type, recadre une mention trop longue sur le terme annoté, ajoute à un biomarqueur extrait sans valeur la valeur et l'unité écrites juste après (\og Urée \fg{} devient \og Urée 33 mmol/L \fg{}), et ajoute les termes très fiables oubliés par le modèle là où ils sont écrits ;
+  \item un \textbf{lexique} des mentions annotées et de leur type. Une mention vue au moins deux fois et annotée avec un même type dans au moins 80~\% des cas prend ce type ; une mention trop longue qui contient un terme du lexique de même type est recadrée sur ce terme ; un biomarqueur extrait sans valeur reçoit la valeur et l'unité écrites juste après (\og Urée \fg{} devient \og Urée 33 mmol/L \fg{}), conformément à la convention du guideline ; enfin, un terme très fiable (annoté avec ce type dans au moins 80~\% de ses occurrences) et oublié par le modèle est ajouté là où il est écrit dans la page ;
   \item les \textbf{règles strictes} de la section~\ref{sec:c4-regles-strictes}, réappliquées à la sortie : profils d'entités et types de relations dont la précision était inférieure au seuil sur l'autre moitié.
 \end{itemize}
-Une mention niée n'est jamais modifiée ni retirée par ces corrections.
+Une mention niée n'est jamais modifiée ni retirée par ces corrections. Toutes sont déterministes et ancrées dans le texte : elles ne peuvent ajouter qu'un terme effectivement écrit dans la page, jamais une information absente du document.
 
 % ------------------------------------------------------------
 \section{Appariement entre Gold Standard et extraction}\label{sec:c4-matching}
@@ -325,6 +327,6 @@ Les résultats de cette comparaison sont présentés au chapitre~\ref{chap:exper
 % ------------------------------------------------------------
 \section{Conclusion}\label{sec:c4-conclusion}
 
-Ce chapitre a décrit la manière dont un graphe d'entités et de relations est extrait des dossiers scannés. Les pages sont lues directement par un modèle multimodal, qui en transcrit le texte, puis en extrait les entités, les traitements et les relations. Les consignes sont construites à partir du guideline TRACE-Sepsis, complétées par des exemples semblables et des règles strictes appris sur le Gold Standard en validation croisée, et des contrôles déterministes écartent dès l'extraction les entités absentes de la page et les relations hors du schéma. Le chapitre a aussi défini la manière dont une extraction est comparée au Gold Standard, avec trois modes d'appariement et des métriques en micro- et macro-moyenne, qui serviront à l'évaluation de tout le mémoire.
+Ce chapitre a décrit la manière dont un graphe d'entités et de relations est extrait des dossiers scannés. Les pages sont lues directement par un modèle multimodal, qui en transcrit le texte, puis en extrait les entités, les traitements et les relations. Les consignes sont construites à partir du guideline TRACE-Sepsis et complétées par des exemples semblables et des règles strictes appris sur le Gold Standard en validation croisée ; des contrôles déterministes écartent dès l'extraction les entités absentes de la page et les relations hors du schéma. Les deux modèles comparés, Qwen2.5-VL et Mistral Small~4, suivent exactement le même pipeline, et les critères qui départagent les deux modèles ont été fixés avant l'expérience. Le chapitre a aussi défini la manière dont une extraction est comparée au Gold Standard, avec trois modes d'appariement et des métriques en micro- et macro-moyenne, qui serviront à l'évaluation de tout le mémoire.
 
 Ces contrôles ne suffisent pas à garantir la fidélité de l'extraction. Une entité peut être écrite dans la page et pourtant hypothétique ou relative à un antécédent ; une relation peut respecter le schéma sans être justifiée par le texte. Le chapitre suivant présente TRACE, la chaîne de vérification construite pour détecter et réduire ces hallucinations.
