@@ -161,7 +161,7 @@ Deux modèles multimodaux ont été comparés. Tous deux acceptent en entrée un
 
 \subsection{Qwen2.5-VL}\label{sec:c4-qwen}
 
-Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version \acompleter{taille du modèle}, exécutée localement sur un GPU \acompleter{modèle et mémoire} de l'université, à température~0, avec une longueur maximale de génération de \acompleter{nombre de jetons}. L'exécution locale garantit que les images des dossiers ne quittent pas l'infrastructure universitaire.
+Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version à 7~milliards de paramètres ajustée pour suivre des instructions, Qwen2.5-VL-7B-Instruct, exécutée localement sur l'infrastructure de l'université (GPU \acompleter{modèle et mémoire}), à température~0, avec une longueur maximale de génération de \acompleter{nombre de jetons}. L'exécution locale garantit que les images des dossiers ne quittent pas l'infrastructure universitaire.
 
 \subsection{Mistral Small 4}\label{sec:c4-mistral}
 
@@ -270,7 +270,7 @@ Une entité prédite ne peut être appariée qu'à une entité de référence si
 \begin{enumerate}
   \item \textbf{correspondance exacte} : les deux mentions normalisées sont identiques ;
   \item \textbf{correspondance par inclusion} : $\mathrm{inc}(a,b) > 0$, les meilleurs scores étant retenus en premier (par exemple \og noradrénaline \fg{} et \og noradrénaline IVSE \fg{}) ;
-  \item \textbf{correspondance approximative} : $\mathrm{sim}_E(a,b) \geq 0{,}85$, les meilleurs scores étant retenus en premier.
+  \item \textbf{correspondance approximative} : $\mathrm{sim}_E(a,b) \geq 0{,}85$, seuil fixé empiriquement, les meilleurs scores étant retenus en premier.
 \end{enumerate}
 
 \subsection{Appariement des relations}

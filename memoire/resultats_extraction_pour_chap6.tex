@@ -24,4 +24,25 @@ Le tableau~\ref{tab:c6-comparaison-modeles} compare les deux modèles sur les 49
 
 Avec ce pipeline, Mistral Small~4 retrouve un peu plus des deux tiers des entités de la référence (rappel de 68,45~\%), et deux entités extraites sur trois sont justes (précision de 66,20~\%). Les relations sont plus difficiles : moins d'une relation de la référence sur deux est retrouvée, et 45~\% des relations extraites ne sont pas justifiées par la référence. \acompleter{Commenter l'écart avec Qwen2.5-VL sur les entités et sur les relations, en précision et en rappel ; ajouter les modes Strict et Boundary-Relaxed et la macro-moyenne s'ils changent la conclusion.}
 
+\paragraph{Résultats préliminaires.} Une première comparaison des deux modèles a été présentée dans un article préliminaire \acompleter{référence de l'article JDSE}. Elle portait sur un sous-ensemble de 43 dossiers, annotés selon une version antérieure du guideline (21 types d'entités et 32 types de relations) avant la validation médicale, avec une consigne commune et une température de~0 pour les deux modèles. Le tableau~\ref{tab:c6-preliminaire} en reprend les résultats en mode Relaxed. Ils ne sont pas directement comparables à ceux du tableau~\ref{tab:c6-comparaison-modeles}, obtenus sur 49 dossiers, avec le Gold Standard validé par le médecin et le pipeline complet du chapitre~\ref{chap:extraction}. Ils montrent toutefois déjà la même hiérarchie : Mistral Small~4 dépasse Qwen2.5-VL sur les entités (F1 de 69,57~\% contre 63,88~\%) et surtout sur les relations (62,43~\% contre 37,98~\%), principalement grâce à un rappel des relations presque deux fois plus élevé.
+
+\begin{table}[H]
+\centering
+\caption{Résultats préliminaires de l'article (43 dossiers, version antérieure du Gold Standard, mode Relaxed, en \%)}\label{tab:c6-preliminaire}
+\small
+\begin{tabular}{llccc}
+\toprule
+& \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} \\
+\midrule
+\multirow{2}{*}{Entités} & Qwen2.5-VL-7B-Instruct & 64,10 & 63,67 & 63,88 \\
+ & Mistral Small 4 & 67,38 & 71,89 & 69,57 \\
+\midrule
+\multirow{2}{*}{Relations} & Qwen2.5-VL-7B-Instruct & 50,83 & 30,31 & 37,98 \\
+ & Mistral Small 4 & 67,42 & 58,17 & 62,43 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Les écarts avec la référence relevés dans cette première étude concernaient surtout des entités omises ou extraites à tort parmi les traitements et les biomarqueurs, et des relations omises ou erronées (par exemple \emph{service\_medical\_accueille} ou \emph{presente\_symptome}). Ces difficultés sont celles que visent la consigne ciblée sur les traitements et la restriction des relations candidates décrites au chapitre~\ref{chap:extraction}.
+
 \acompleter{Conclure sur le choix du modèle, par exemple : « Mistral Small~4 obtient les meilleurs résultats, en particulier sur les relations ; c'est donc sa sortie qui sert de point de départ à la chaîne TRACE. »}
