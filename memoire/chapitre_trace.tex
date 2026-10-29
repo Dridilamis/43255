@@ -83,6 +83,7 @@ Chaque étage écrit enfin ses annotations dans un champ de traçabilité propre
   \item l'entité est-elle \textbf{attestée} dans le dossier, c'est-à-dire présente à l'identique, ou avec l'essentiel de ses mots et \emph{tous} ses nombres ?
   \item figure-t-elle \textbf{mot pour mot} dans le texte de sa propre page ?
 \end{itemize}
+Les deux comparaisons se font après normalisation : la casse, les accents, la ponctuation et les espaces ne comptent pas. \og 15,2 \fg{} et \og 15.2 \fg{} sont ainsi identiques.
 Pour chaque \textbf{relation}, il relève quatre signaux :
 \begin{itemize}
   \item la présence de ses deux extrémités dans le texte ;
@@ -98,7 +99,7 @@ L'étage ne retire que ce que le document rend impossible : une entité absente 
 \caption{Étage~2 : confrontation des entités et des relations au texte de la page (exemple construit)}\label{fig:c5-ancrage}
 \end{figure}
 
-\paragraph{Exemple.} Dans la figure~\ref{fig:c5-ancrage}, l'entité \og CRP 186 mg/L \fg{} est retirée : le nombre 186 n'est écrit nulle part, la page indiquant \og CRP 86 mg/L \fg{}. L'entité \og leucocytes 15,2 G/L \fg{} est attestée, mais pas mot pour mot, car la page écrit \og 15.2 \fg{} : elle est seulement annotée, et c'est l'arbitrage qui décidera.
+\paragraph{Exemple.} Dans la figure~\ref{fig:c5-ancrage}, l'entité \og CRP 186 mg/L \fg{} est retirée : le nombre 186 n'est écrit nulle part, la page indiquant \og CRP 86 mg/L \fg{}. L'entité \og leucocytes 15,2 G/L \fg{} est gardée : elle ne diffère de la page \og leucocytes 15.2 G/L \fg{} que par la ponctuation. L'entité \og pneumopathie droite \fg{} est attestée, puisque ses mots figurent dans le dossier, mais elle n'est pas écrite telle quelle : la page indique \og pneumopathie du lobe inférieur droit \fg{}. C'est une reformulation du modèle ; elle est seulement annotée, et c'est l'arbitrage qui décidera.
 
 \paragraph{Justification.} Exiger la présence de tous les nombres répond au risque le plus grave en médecine : un chiffre faux. Ne pas retirer une mention simplement reformulée évite en revanche de perdre des éléments justes, car le modèle développe souvent une abréviation ou accorde un mot. Ce contrôle correspond à la vérification de fidélité à la source décrite dans la littérature~\cite{ji2023survey}, et à ce que RAPTOR+ appelle les extractions non ancrées~\cite{raptorplus2026}.
 
@@ -224,7 +225,7 @@ En mode standard, les décisions suivent des règles fixées avant toute évalua
 
 \paragraph{Entités.}
 \begin{itemize}
-  \item \textbf{E1} : une entité qui ne figure pas mot pour mot dans le texte de sa page est retirée ; c'est une reformulation ou une invention du modèle.
+  \item \textbf{E1} : une entité qui ne figure pas mot pour mot dans le texte de sa page, même après normalisation, est retirée ; c'est une reformulation du modèle, comme \og pneumopathie droite \fg{} pour \og pneumopathie du lobe inférieur droit \fg{}. Le Gold Standard annotant la mention telle qu'elle est écrite, une reformulation ne peut pas être appariée à la référence, et elle n'est pas traçable jusqu'au texte.
   \item \textbf{E2} : une entité niée (\og pas de toux \fg{}) est \emph{conservée} et marquée comme niée. L'absence d'un signe est une information clinique, et le Gold Standard validé par le médecin l'annote comme telle.
   \item \textbf{E3} : une entité à laquelle le modèle lui-même a attribué une confiance moyenne ou faible est retirée.
 \end{itemize}

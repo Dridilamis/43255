@@ -3,23 +3,26 @@
 .box{border-width:2px;border-style:dashed;border-radius:16px;padding:14px}
 .page{background:#fff;border:2px solid #ccc;border-radius:8px;padding:12px 14px;font-family:"DejaVu Sans Mono",monospace;font-size:13px;line-height:1.7;width:430px}
 .hl{background:#d9f2dd;border-radius:3px;padding:0 2px}
-.it{display:grid;grid-template-columns:230px 70px 70px 1fr;gap:8px;align-items:center;background:#fff;border:2px solid #ddd;border-radius:10px;padding:7px 10px;margin:6px 0;font-size:13px}
-.h{font-weight:bold;color:#555;font-size:12px;display:grid;grid-template-columns:230px 70px 70px 1fr;gap:8px;padding:0 12px}
+.it{display:grid;grid-template-columns:300px 70px 70px 1fr;gap:8px;align-items:center;background:#fff;border:2px solid #ddd;border-radius:10px;padding:7px 10px;margin:6px 0;font-size:13px}
+.h{font-weight:bold;color:#555;font-size:12px;display:grid;grid-template-columns:300px 70px 70px 1fr;gap:8px;padding:0 12px}
 .ok{color:#2d7a3c;font-weight:bold;text-align:center}.ko{color:#b33;font-weight:bold;text-align:center}.mid{color:#8a5f00;font-weight:bold;text-align:center}
 .m{font-family:"DejaVu Sans Mono",monospace;font-size:12px}
 .pill{font-size:11.5px;font-weight:bold;border-radius:8px;padding:2px 7px;display:inline-block}
 .a{font-size:28px;color:#555;align-self:center}
 </style></head><body><div id="root">
 <div class="box orange"><div class="t">📄 Texte transcrit de la page</div>
-<div class="page">BIOLOGIE<br><span class="hl">CRP 86 mg/L</span>, leucocytes 15.2 G/L<br><br>EXAMEN CLINIQUE<br>Patiente fébrile à 39,2 °C.<br><span class="hl">Pas de toux</span>.<br><br>TRAITEMENT<br><span class="hl">Claforan</span> 1g x 3/j</div></div>
+<div class="page">BIOLOGIE<br><span class="hl">CRP 86 mg/L</span>, leucocytes 15.2 G/L<br><br>RADIOGRAPHIE<br>pneumopathie du lobe inférieur droit<br><br>EXAMEN CLINIQUE<br>Patiente fébrile à 39,2 °C.<br><span class="hl">Pas de toux</span>.<br><br>TRAITEMENT<br><span class="hl">Claforan</span> 1g x 3/j</div></div>
 <div class="a">➜</div>
 <div class="box blue"><div class="t">⚓ Étage 2 : chaque élément confronté au texte</div>
-<div class="h"><div>Élément extrait</div><div style="text-align:center">dans le dossier</div><div style="text-align:center">mot pour mot</div><div>Décision de l'étage 2</div></div>
+<div class="h"><div>Élément extrait</div><div style="text-align:center">dans le dossier</div><div style="text-align:center">mot pour mot*</div><div>Décision de l'étage 2</div></div>
 <div class="it"><div class="m">CRP 86 mg/L</div><div class="ok">✓</div><div class="ok">✓</div><div><span class="pill" style="background:#e3efff;color:#2f5f9e">annotée, gardée</span></div></div>
 <div class="it"><div class="m">CRP 186 mg/L</div><div class="ko">✗</div><div class="ko">✗</div><div><span class="pill" style="background:#ffe3e3;color:#b33">retirée</span> le nombre 186 n'est écrit nulle part</div></div>
-<div class="it"><div class="m">leucocytes 15,2 G/L</div><div class="ok">✓</div><div class="mid">✗</div><div><span class="pill" style="background:#e3efff;color:#2f5f9e">annotée</span> « 15.2 » écrit avec un point : décision à l'étage 7</div></div>
+<div class="it"><div class="m">leucocytes 15,2 G/L</div><div class="ok">✓</div><div class="ok">✓</div><div><span class="pill" style="background:#e3efff;color:#2f5f9e">annotée, gardée</span> « 15,2 » = « 15.2 » après normalisation</div></div>
+<div class="it"><div class="m">pneumopathie droite</div><div class="ok">✓</div><div class="mid">✗</div><div><span class="pill" style="background:#e3efff;color:#2f5f9e">annotée</span> reformulation de « pneumopathie du lobe inférieur droit » : décision à l'étage 7</div></div>
 <div class="it"><div class="m">pas de toux</div><div class="ok">✓</div><div class="ok">✓</div><div><span class="pill" style="background:#e3efff;color:#2f5f9e">annotée, gardée</span> négation traitée à l'étage 6</div></div>
+<div class="small" style="color:#555;margin:4px 2px">* après normalisation : casse, accents, ponctuation et espaces ne comptent pas</div>
 <div style="font-weight:bold;font-size:13px;margin:12px 0 2px">Relations : preuve, distance, section</div>
+<div class="h"><div>Relation extraite</div><div style="text-align:center">extrémités dans le dossier</div><div style="text-align:center">distance</div><div>Décision de l'étage 2</div></div>
 <div class="it"><div class="m">Claforan —traitement_a_pour_posologie→ 1g x 3/j</div><div class="ok">✓</div><div class="ok">ligne</div><div><span class="pill" style="background:#e3efff;color:#2f5f9e">annotée</span> preuve attestée, même ligne, section TRAITEMENT</div></div>
-<div class="it"><div class="m">Claforan —traitement_indique_par_label_nosologique→ « pneumonie »</div><div class="ko">✗</div><div class="ko">—</div><div><span class="pill" style="background:#ffe3e3;color:#b33">retirée</span> extrémité absente du texte</div></div>
+<div class="it"><div class="m">Claforan —antibiotique_adequat_pour→ « E. coli »</div><div class="ko">✗</div><div class="ko">—</div><div><span class="pill" style="background:#ffe3e3;color:#b33">retirée</span> « E. coli » n'est écrit nulle part dans le dossier</div></div>
 </div></div></body></html>
