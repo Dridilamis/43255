@@ -37,8 +37,8 @@ TRACE est une chaîne d'étages appliquée à la sortie de l'extraction (figure~
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/fig_trace_architecture.png}
-\caption{Architecture de la chaîne TRACE}\label{fig:c5-architecture}
+\includegraphics[width=\textwidth]{images/fig_trace_pipeline.png}
+\caption{La chaîne TRACE, étage par étage : question posée, traitement, action, exemple et type d'hallucination traité (exemples construits pour l'illustration)}\label{fig:c5-architecture}
 \end{figure}
 
 \paragraph{Le texte du dossier est la seule référence.} En extraction, l'erreur grave n'est pas une erreur sur une connaissance générale, mais un manque de fidélité au document source~\cite{huang2023survey}. Chaque vérification compare donc l'élément extrait au texte transcrit de sa page, établi une fois pour toutes par le pipeline d'extraction.
