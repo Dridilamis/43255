@@ -1,16 +1,23 @@
 \chapter{TRACE : détection et réduction des hallucinations}
 \label{chap:architecture}
 
+% ============================================================
 \section{Introduction}\label{sec:c5-intro}
 
-Le pipeline du chapitre~\ref{chap:extraction} produit, pour chaque dossier, un graphe d'entités et de relations dont chaque élément est ancré dans le texte de sa page et conforme au schéma. Ces contrôles ne suffisent pas à garantir la fidélité du graphe au dossier. Une entité peut être écrite dans la page et pourtant niée, hypothétique ou relative à un antécédent ; une relation peut respecter le schéma sans que le texte l'énonce ; un même fait peut être répété ou découpé en plusieurs nœuds mal reliés.
+Le pipeline du chapitre~\ref{chap:extraction} produit, pour chaque dossier, un graphe d'entités et de relations dont chaque élément est ancré dans le texte de sa page et conforme au schéma. Ces contrôles ne suffisent pas à garantir la fidélité du graphe au dossier. Une entité peut être écrite dans la page et pourtant hypothétique ou relative à un antécédent ; une relation peut respecter le schéma sans que le texte l'énonce ; une absence (\og pas de toux \fg{}) peut être reliée au patient comme un symptôme présent ; un même fait peut être répété, ou découpé en plusieurs nœuds mal reliés.
 
-Ce chapitre présente TRACE (\textit{Taxonomy and Reduction of hAllucinations in Clinical knowledge Extraction}), la chaîne de vérification construite pour détecter et réduire ces hallucinations après l'extraction. Il définit d'abord la taxonomie des hallucinations sur laquelle elle repose (section~\ref{sec:c5-taxonomie}), puis les principes de son architecture (section~\ref{sec:c5-principes}). Il décrit ensuite chacun de ses étages (sections~\ref{sec:c5-etage1} à~\ref{sec:c5-etage8}), avant de conclure sur ce que la chaîne couvre et sur ses limites (section~\ref{sec:c5-conclusion}). Les résultats sont présentés au chapitre~\ref{chap:experimentations}.
+Ce chapitre présente TRACE (\textit{Taxonomy and Reduction of hAllucinations in Clinical knowledge Extraction}), la chaîne de vérification construite pour détecter et réduire ces hallucinations après l'extraction. Il répond à trois questions :
+\begin{itemize}
+  \item \textbf{quelles erreurs} faut-il chercher ? C'est l'objet de la taxonomie des hallucinations (section~\ref{sec:c5-taxonomie}) ;
+  \item \textbf{comment les chercher} sans introduire de nouvelles erreurs ? C'est l'objet des principes de l'architecture (section~\ref{sec:c5-principes}) ;
+  \item \textbf{que fait chaque étage} de la chaîne ? Chacun est décrit selon le même plan : le problème qu'il traite, ce qu'il fait, un exemple et la justification de ses choix (sections~\ref{sec:c5-etage1} à~\ref{sec:c5-etage8}).
+\end{itemize}
+Un exemple complet, suivi à travers toute la chaîne, est donné à la section~\ref{sec:c5-exemple}. Les résultats sont présentés au chapitre~\ref{chap:experimentations}.
 
-% ------------------------------------------------------------
+% ============================================================
 \section{Taxonomie des hallucinations en extraction clinique multimodale}\label{sec:c5-taxonomie}
 
-Les taxonomies présentées au chapitre~2 ont été construites pour la génération libre de texte~\cite{huang2023survey,ji2023survey} ou pour la description d'images~\cite{bai2025survey}. Dans une tâche d'extraction, la référence n'est pas une connaissance générale du monde mais le document lui-même : une hallucination est un élément du graphe que le dossier ne justifie pas, ou qu'il justifie sous une autre forme. Nous distinguons sept types d'hallucinations, résumés dans la figure~\ref{fig:c5-taxonomie}.
+Les taxonomies présentées au chapitre~2 ont été construites pour la génération libre de texte~\cite{huang2023survey,ji2023survey} ou pour la description d'images~\cite{bai2025survey}. Dans une tâche d'extraction, la référence n'est pas une connaissance générale du monde, mais le document lui-même. Nous appelons donc \textbf{hallucination} tout élément du graphe que le dossier ne justifie pas, ou qu'il justifie sous une autre forme. Nous en distinguons sept types (figure~\ref{fig:c5-taxonomie}).
 
 \begin{figure}[H]
 \centering
@@ -21,19 +28,19 @@ Les taxonomies présentées au chapitre~2 ont été construites pour la généra
 \begin{itemize}
   \item \textbf{Factuelle} : une entité, une valeur ou une preuve absente du document. C'est la forme la plus directe de l'hallucination, et la plus dangereuse en médecine lorsqu'elle porte sur un chiffre, comme une valeur biologique ou une posologie.
   \item \textbf{Relationnelle} : un lien entre deux entités bien présentes dans le dossier, mais que le texte n'énonce pas. Le modèle déduit la relation de la seule présence des deux entités.
-  \item \textbf{Ontologique} : une entité du mauvais type ou une relation qui ne respecte pas les signatures du guideline, par exemple une administration de traitement dirigée vers un biomarqueur.
-  \item \textbf{Structurelle} : un graphe mal formé, avec des entités composites qui regroupent deux concepts, des nœuds intermédiaires manquants, des relations orphelines ou des doublons.
-  \item \textbf{Contextuelle} : une mention bien écrite dans le texte, mais dont le contexte change le sens, comme une négation ou une hypothèse (\og suspicion de pneumopathie \fg{}). Une absence explicitement mentionnée, comme \og pas de toux \fg{}, n'est pas une hallucination : c'est une information clinique, extraite comme une entité niée, conformément au guideline. L'hallucination consiste à ignorer la négation, en extrayant \og toux \fg{} seul ou en reliant \og pas de toux \fg{} au patient comme un symptôme présent.
+  \item \textbf{Ontologique} : une entité du mauvais type ou une relation qui ne respecte pas les signatures du guideline, par exemple une administration de traitement dirigée vers un biomarqueur plutôt que vers le patient.
+  \item \textbf{Structurelle} : un graphe mal formé, avec des entités composites qui regroupent deux concepts, des nœuds manquants, des relations orphelines ou des doublons.
+  \item \textbf{Contextuelle} : une mention bien écrite dans le texte, dont le contexte change le sens, comme une négation ou une hypothèse (\og suspicion de pneumopathie \fg{}). Une absence explicitement mentionnée, comme \og pas de toux \fg{}, n'est pas une hallucination : c'est une information clinique, extraite comme une entité niée, conformément au guideline. L'hallucination consiste à ignorer la négation, en extrayant \og toux \fg{} seul ou en reliant \og pas de toux \fg{} au patient comme un symptôme présent.
   \item \textbf{Temporelle} : un fait d'une autre période pris pour un fait du séjour, par exemple un traitement habituel compté comme administré en réanimation.
-  \item \textbf{Visuelle} : une valeur mal lue sur l'image puis recopiée telle quelle dans la transcription, et donc ancrée dans un texte lui-même erroné.
+  \item \textbf{Visuelle} : une valeur mal lue sur l'image, puis recopiée telle quelle dans la transcription, et donc ancrée dans un texte lui-même erroné.
 \end{itemize}
 
-Les hallucinations contextuelles et temporelles échappent aux contrôles d'ancrage : le mot \og fièvre \fg{} est bien écrit dans la page. Elles demandent une analyse du contexte de la mention. Les hallucinations visuelles ne sont traitées qu'indirectement, lorsque la valeur mal lue n'est pas cohérente avec le reste du texte ; elles constituent une limite de l'approche.
+Ces types n'appellent pas les mêmes vérifications. Les hallucinations factuelles et relationnelles se détectent en comparant l'élément au texte. Les hallucinations ontologiques se détectent en le comparant au guideline, les hallucinations structurelles en examinant la forme du graphe. Les hallucinations contextuelles et temporelles échappent à ces contrôles, puisque le mot \og toux \fg{} est bien écrit dans la page : elles demandent une analyse du contexte de la mention. Les hallucinations visuelles, enfin, ne sont traitées qu'indirectement et constituent une limite de l'approche. C'est cette diversité qui conduit à une chaîne de plusieurs étages spécialisés plutôt qu'à un filtre unique.
 
-% ------------------------------------------------------------
+% ============================================================
 \section{Principes de l'architecture}\label{sec:c5-principes}
 
-TRACE est une chaîne d'étages appliquée à la sortie de l'extraction (figure~\ref{fig:c5-architecture}). Sa conception repose sur cinq principes.
+TRACE est une chaîne de huit étages appliquée à la sortie de l'extraction. La figure~\ref{fig:c5-architecture} la présente dans son ensemble : pour chaque étage, la question qu'il pose, ce qu'il fait, son action sur le graphe, un exemple et le type d'hallucination qu'il traite. Les étages sont regroupés en quatre temps : \textbf{vérifier} chaque élément contre le texte et le guideline (étages~1 à~3), \textbf{réparer} le graphe et compléter les oublis (étages~4, 4b et~5), \textbf{qualifier} le contexte clinique (étage~6), puis \textbf{décider} (étage~7). L'étage~8 mesure le résultat.
 
 \begin{figure}[H]
 \centering
@@ -41,61 +48,87 @@ TRACE est une chaîne d'étages appliquée à la sortie de l'extraction (figure~
 \caption{La chaîne TRACE, étage par étage : question posée, traitement, action, exemple et type d'hallucination traité (exemples construits pour l'illustration)}\label{fig:c5-architecture}
 \end{figure}
 
+La conception de la chaîne repose sur cinq principes.
+
 \paragraph{Le texte du dossier est la seule référence.} En extraction, l'erreur grave n'est pas une erreur sur une connaissance générale, mais un manque de fidélité au document source~\cite{huang2023survey}. Chaque vérification compare donc l'élément extrait au texte transcrit de sa page, établi une fois pour toutes par le pipeline d'extraction.
 
-\paragraph{Aucun LLM ne sert de juge.} Un grand modèle de langage ne corrige pas de façon fiable ses propres erreurs sans retour extérieur~\cite{huang2024cannot,kamoi2024selfcorrection}, et un modèle juge pourrait lui-même halluciner. Toutes les vérifications de TRACE sont donc déterministes : règles explicites, comparaisons au texte et modèles statistiques simples.
+\paragraph{Aucun LLM ne sert de juge.} Un grand modèle de langage ne corrige pas de façon fiable ses propres erreurs sans retour extérieur~\cite{huang2024cannot,kamoi2024selfcorrection}, et un modèle juge pourrait lui-même halluciner. Toutes les vérifications de TRACE sont donc déterministes : règles explicites, comparaisons au texte et modèle statistique simple.
 
 \paragraph{Une seule responsabilité par étage.} Chaque étage traite un seul type de problème. Le gain ou la perte de chaque étage peut ainsi être mesuré séparément, ce qui permet les études d'ablation.
 
 \paragraph{Annoter d'abord, un seul étage décide.} Les étages intermédiaires annotent les éléments sans les retirer, sauf lorsque le document rend l'élément impossible. Un seul étage, l'arbitrage, décide de garder ou de retirer chaque élément, avec toutes les annotations en main. Cette séparation évite les conflits entre étages et les suppressions en cascade incontrôlées.
 
-\paragraph{Le Gold Standard n'est lu que par l'évaluation.} Aucune règle de TRACE n'est réglée sur la référence. Le seul composant appris, le vote du mode précision, est entraîné en validation croisée~\cite{stone1974crossvalidation} : un dossier n'est jamais noté par un modèle qui l'a vu.
+\paragraph{Le Gold Standard n'est lu que par l'évaluation.} Aucune règle de TRACE n'est réglée sur la référence. Le seul composant appris, le vote du mode précision, est entraîné en validation croisée (section~\ref{sec:c5-validation}) : un dossier n'est jamais noté par un modèle qui a vu son annotation.
 
-Chaque étage écrit ses annotations dans un champ de traçabilité propre à chaque élément. À la sortie de la chaîne, on sait pour tout élément quels étages l'ont examiné, quels signaux ils ont relevés et, s'il a été retiré, quelle règle l'a décidé.
+Chaque étage écrit enfin ses annotations dans un champ de traçabilité propre à chaque élément. À la sortie de la chaîne, on sait pour tout élément quels étages l'ont examiné, quels signaux ils ont relevés et, s'il a été retiré, quelle règle l'a décidé. C'est ce qui rend chaque décision explicable au médecin.
 
-% ------------------------------------------------------------
+% ============================================================
 \section{Étage 1 : préparation}\label{sec:c5-etage1}
 
-Le premier étage rend l'entrée propre et uniforme, sans juger aucun élément. Il retire les éléments qui proviendraient d'un post-traitement construit en regardant la référence, afin que l'évaluation reste valide ; la nouvelle extraction n'en contient pas, mais cette garantie protège la chaîne si elle est appliquée à une sortie plus ancienne. Il met les noms des entités du graphe sous une forme Unicode normalisée (NFKC), de sorte que deux caractères équivalents, comme les deux formes du symbole micro (\og µ \fg{} et \og μ \fg{}), désignent le même nœud. Les mentions des pages restent en revanche telles qu'elles sont écrites dans le texte, puisque l'arbitrage vérifie qu'elles y figurent mot pour mot. Il attribue enfin un identifiant unique à chaque relation qui n'en a pas.
+\paragraph{Problème.} Les sorties à vérifier doivent être propres et uniformes, faute de quoi deux écritures d'un même élément seraient traitées comme deux éléments différents.
 
-% ------------------------------------------------------------
+\paragraph{Traitement.} L'étage met les noms des entités du graphe sous une forme Unicode normalisée (NFKC), attribue un identifiant unique à chaque relation qui n'en a pas, et retire tout élément qui proviendrait d'un post-traitement construit en regardant la référence. La nouvelle extraction n'en contient pas, mais cette garantie protège la chaîne si elle est appliquée à une sortie plus ancienne.
+
+\paragraph{Exemple.} Les deux formes du symbole micro, \og µmol/L \fg{} et \og μmol/L \fg{}, désignent le même nœud du graphe. Les mentions des pages restent en revanche telles qu'elles sont écrites dans le texte, puisque l'arbitrage vérifie qu'elles y figurent mot pour mot.
+
+\paragraph{Justification.} Cet étage ne juge aucun élément : il garantit que les étages suivants travaillent sur une entrée cohérente et que l'évaluation n'est pas faussée par une règle réglée sur la référence.
+
+% ============================================================
 \section{Étage 2 : ancrage documentaire}\label{sec:c5-etage2}
 
-Le deuxième étage traite les hallucinations factuelles et relationnelles en confrontant chaque élément au texte source.
+\paragraph{Problème.} Le modèle invente une entité ou une valeur absente du dossier (hallucination factuelle), ou relie deux entités que le texte ne relie pas (hallucination relationnelle).
 
-Pour chaque \textbf{entité}, il vérifie deux propriétés : l'entité est-elle attestée dans le document, c'est-à-dire présente à l'identique ou avec l'essentiel de ses mots et tous ses nombres ? Figure-t-elle mot pour mot dans le texte de sa propre page ? Exiger la présence de tous les nombres répond au risque le plus grave en médecine : une entité \og CRP 186 \fg{} n'est pas attestée si la page indique \og CRP 86 \fg{}.
-
+\paragraph{Traitement.} L'étage confronte chaque élément au texte source (figure~\ref{fig:c5-ancrage}). Pour chaque \textbf{entité}, il vérifie deux propriétés :
+\begin{itemize}
+  \item l'entité est-elle \textbf{attestée} dans le dossier, c'est-à-dire présente à l'identique, ou avec l'essentiel de ses mots et \emph{tous} ses nombres ?
+  \item figure-t-elle \textbf{mot pour mot} dans le texte de sa propre page ?
+\end{itemize}
 Pour chaque \textbf{relation}, il relève quatre signaux :
 \begin{itemize}
   \item la présence de ses deux extrémités dans le texte ;
-  \item le statut de sa \textbf{preuve} : attestée dans le texte, inventée, absente ou simple note du système ;
-  \item la \textbf{distance} entre ses deux extrémités : même ligne, même paragraphe, éloignées ou introuvables ; une relation dont une extrémité est le patient n'est pas soumise à cette mesure ;
-  \item la \textbf{section} du compte rendu où elle est citée (antécédents, histoire de la maladie, biologie, traitement habituel, sortie\dots).
+  \item le statut de sa \textbf{preuve} : attestée, inventée, absente, ou simple note du système ;
+  \item la \textbf{distance} entre ses deux extrémités : même ligne, même paragraphe, éloignées ou introuvables, une relation qui concerne le patient n'étant pas soumise à cette mesure ;
+  \item la \textbf{section} du compte rendu où elle est citée (antécédents, examen clinique, biologie, traitement habituel, sortie\dots).
 \end{itemize}
+L'étage ne retire que ce que le document rend impossible : une entité absente de tout le dossier, avec les relations qui pointent vers elle ; une relation dont une extrémité n'existe pas dans le texte ; une relation dont la preuve citée n'existe pas ; une relation dont les deux extrémités ne sont jamais à moins de 300~caractères l'une de l'autre. Tout le reste est annoté.
 
-L'étage ne retire que ce que le document rend impossible : une entité absente de tout le texte du dossier, ainsi que les relations qui pointent vers elle ; une relation dont une extrémité n'existe pas dans le texte ; une relation dont la preuve citée n'existe pas ; une relation dont les deux extrémités ne sont jamais à moins de 300~caractères l'une de l'autre. Tout le reste est annoté. Une mention reformulée par le modèle, par exemple une abréviation développée, peut en effet être correcte ; c'est l'arbitrage qui en décide. Ce contrôle correspond à la vérification de fidélité à la source décrite dans la littérature~\cite{ji2023survey}, et à ce que RAPTOR+ appelle les extractions non ancrées~\cite{raptorplus2026}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/fig_ancrage.png}
+\caption{Étage~2 : confrontation des entités et des relations au texte de la page (exemple construit)}\label{fig:c5-ancrage}
+\end{figure}
 
-% ------------------------------------------------------------
+\paragraph{Exemple.} Dans la figure~\ref{fig:c5-ancrage}, l'entité \og CRP 186 mg/L \fg{} est retirée : le nombre 186 n'est écrit nulle part, la page indiquant \og CRP 86 mg/L \fg{}. L'entité \og leucocytes 15,2 G/L \fg{} est attestée, mais pas mot pour mot, car la page écrit \og 15.2 \fg{} : elle est seulement annotée, et c'est l'arbitrage qui décidera.
+
+\paragraph{Justification.} Exiger la présence de tous les nombres répond au risque le plus grave en médecine : un chiffre faux. Ne pas retirer une mention simplement reformulée évite en revanche de perdre des éléments justes, car le modèle développe souvent une abréviation ou accorde un mot. Ce contrôle correspond à la vérification de fidélité à la source décrite dans la littérature~\cite{ji2023survey}, et à ce que RAPTOR+ appelle les extractions non ancrées~\cite{raptorplus2026}.
+
+% ============================================================
 \section{Étage 3 : conformité au guideline}\label{sec:c5-etage3}
 
-Le troisième étage traite les hallucinations ontologiques. Il confronte chaque relation aux 34 signatures du TRACE-Sepsis Annotation Guideline : la relation est-elle autorisée, le type de son sujet correspond-il au domaine attendu, et celui de son objet à l'image attendue ? Chaque relation reçoit le statut conforme, violation de domaine ou violation d'image.
+\paragraph{Problème.} Une relation ne respecte pas le schéma du guideline (hallucination ontologique), par exemple une administration de traitement dirigée vers un biomarqueur.
 
-Cet étage annote sans rien retirer, et ce choix est délibéré. Lors de la mise au point de la chaîne, l'examen des relations en violation a montré que la plupart étaient justes : c'est le type d'une de leurs entités qui était faux, non le lien lui-même. Retirer la relation ferait perdre une information correcte, alors que l'étage suivant peut corriger le type de l'entité. La violation devient donc un indice, utilisé par la réparation structurelle et par l'arbitrage. Cette approche rejoint la validation par contraintes des graphes de connaissances~\cite{shacl2017} et les travaux qui combinent LLM et programmation logique~\cite{tran2025aspworkflow}, avec une même réserve : un graphe conforme au schéma n'est pas forcément fidèle au document.
+\paragraph{Traitement.} L'étage confronte chaque relation aux 34 signatures du TRACE-Sepsis Annotation Guideline : la relation est-elle autorisée, le type de son sujet correspond-il au domaine attendu, et celui de son objet à l'image attendue ? Chaque relation reçoit le statut conforme, violation de domaine ou violation d'image. L'étage annote sans rien retirer.
 
-% ------------------------------------------------------------
+\paragraph{Exemple.} La relation \emph{traitement\_administre\_a} attend un \entite{TRAITEMENT} comme sujet et une \entite{DONNEE\_PATIENT} comme objet. Dirigée vers \og lactates \fg{}, un \entite{BIOMARQUEUR}, elle reçoit le statut violation d'image.
+
+\paragraph{Justification.} Ne rien retirer à ce stade est un choix délibéré. Lors de la mise au point de la chaîne, l'examen des relations en violation a montré que la plupart étaient justes : c'est le type d'une de leurs entités qui était faux, non le lien lui-même. Retirer la relation ferait perdre une information correcte, alors que l'étage suivant peut corriger le type de l'entité. La violation devient donc un indice, utilisé par la réparation structurelle et par l'arbitrage. Cette approche rejoint la validation par contraintes des graphes de connaissances~\cite{shacl2017} et les travaux qui combinent LLM et programmation logique~\cite{tran2025aspworkflow}, avec une même réserve : un graphe conforme au schéma n'est pas forcément fidèle au document.
+
+% ============================================================
 \section{Étage 4 : réparation structurelle (SGCE)}\label{sec:c5-etage4}
 
-Le quatrième étage traite les hallucinations structurelles avec SGCE (\textit{Structural Grounding for Clinical Knowledge Extraction}), un moteur de réparation développé dans le projet. SGCE applique des motifs d'erreur typés, résumés dans le tableau~\ref{tab:c5-sgce}.
+\paragraph{Problème.} Le graphe est mal formé (hallucination structurelle) : entités composites, références vers des entités absentes, liens extraits comme des entités, signatures violées, entités isolées.
+
+\paragraph{Traitement.} L'étage applique SGCE (\textit{Structural Grounding for Clinical Knowledge Extraction}), un moteur de réparation développé dans le projet. SGCE reconnaît des motifs d'erreur typés et leur associe une réparation (tableau~\ref{tab:c5-sgce} et figure~\ref{fig:c5-sgce}).
 
 \begin{table}[H]
 \centering
 \caption{Motifs d'erreur de SGCE et réparations associées}\label{tab:c5-sgce}
 \small
-\begin{tabular}{p{2.6cm}p{5.4cm}p{5.4cm}}
+\begin{tabular}{p{2.8cm}p{5.2cm}p{5.4cm}}
 \toprule
 \textbf{Motif} & \textbf{Erreur} & \textbf{Réparation} \\
 \midrule
-A & entité composite (\og Augmentin 1 g x 3 \fg{}) & découpage en traitement et posologie, reliés entre eux \\
+A & entité composite & découpage en deux entités reliées \\
 B1 & relation vers une entité absente du graphe & rattachement, ou création de l'entité si le texte la contient \\
 B2 & nœud intermédiaire manquant & création du nœud à partir du texte \\
 C & lien extrait comme une entité & réécriture en relation \\
@@ -107,42 +140,69 @@ Multi-agent & cas ambigus & vote de plusieurs agents déterministes ; abstention
 \end{tabular}
 \end{table}
 
-Chaque correction suit un cycle de détection, validation, correction et post-validation : elle n'est conservée que si la structure du graphe s'améliore. Lorsque les agents ne s'accordent pas, SGCE s'abstient plutôt que de corriger au hasard, selon le principe de la décision sélective~\cite{geifman2017selective}. Ses réparations s'inscrivent dans la tradition du raffinement des graphes de connaissances~\cite{paulheim2017refinement} et de la réparation minimale de données sous contraintes~\cite{chu2013holistic,rekatsinas2017holoclean}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/fig_sgce.png}
+\caption{Étage~4 : exemples de réparations structurelles de SGCE (exemples construits)}\label{fig:c5-sgce}
+\end{figure}
 
-SGCE répare la forme du graphe, non son contenu factuel. Son rôle est de rendre le graphe connexe et conforme au schéma, donc interrogeable, sans dégrader les éléments extraits. Il est utilisé tel quel, dans un espace de travail temporaire, et chaque relation qu'il crée est marquée comme telle afin que l'arbitrage puisse la vérifier à nouveau.
+Chaque correction suit un cycle de détection, validation, correction et post-validation : elle n'est conservée que si la structure du graphe s'améliore. Lorsque les agents ne s'accordent pas, SGCE s'abstient plutôt que de corriger au hasard, selon le principe de la décision sélective~\cite{geifman2017selective}. Chaque relation créée par SGCE est marquée comme telle, afin que l'arbitrage la vérifie à nouveau.
 
-% ------------------------------------------------------------
+\paragraph{Exemple.} Le traitement composite \og Augmentin 1 g x 3 \fg{} devient un \entite{TRAITEMENT} \og Augmentin \fg{} relié à une \entite{POSOLOGIE} \og 1 g x 3 \fg{} (motif~A). La relation \emph{traitement\_administre\_a} dirigée vers un biomarqueur est redirigée vers le patient (motif~D).
+
+\paragraph{Justification.} SGCE répare la forme du graphe, non son contenu factuel. Un F1 calculé élément par élément ne voit pas qu'un graphe est éclaté en morceaux isolés ; or un graphe clinique doit être connexe et conforme au schéma pour être interrogé. Ces réparations s'inscrivent dans la tradition du raffinement des graphes de connaissances~\cite{paulheim2017refinement} et de la réparation minimale de données sous contraintes~\cite{chu2013holistic,rekatsinas2017holoclean}.
+
+% ============================================================
 \section{Étage 4b : récupération structurée}\label{sec:c5-etage4b}
 
-Les étages précédents réduisent les erreurs, mais ne retrouvent pas les éléments que le modèle a oubliés. L'étage~4b ajoute des entités dans les blocs du compte rendu dont la forme est fixe, où le modèle saute souvent des lignes. Il n'invente rien : chaque élément ajouté est un morceau de ligne copié du texte de sa page.
+\paragraph{Problème.} Les étages précédents réduisent les erreurs, mais ne retrouvent pas les éléments que le modèle a oubliés. Les oublis sont fréquents dans les blocs à forme fixe, comme les tableaux de biologie et les listes d'ordonnance, où le modèle saute des lignes.
+
+\paragraph{Traitement.} L'étage ajoute des éléments dans ces blocs, en copiant le texte de la page, sans jamais rien inventer :
 \begin{itemize}
-  \item \textbf{B1, biologie} : dans la section de biologie, une ligne de la forme \og libellé, valeur, normes, unité \fg{} (par exemple \og Leucocytes 40.8 4.0-10.0 x10*9/L \fg{}) devient un biomarqueur. Une liste d'exclusion écarte les valeurs témoins du laboratoire et les réglages du ventilateur.
-  \item \textbf{B2, ordonnances} : dans les sections de traitement habituel et de sortie, une ligne \og médicament posologie \fg{} (\og Tahor 10mg 0-0-1 \fg{}) donne un traitement et une posologie distincts.
+  \item \textbf{B1, biologie} : dans la section de biologie, une ligne de la forme \og libellé, valeur, normes, unité \fg{} devient un \entite{BIOMARQUEUR}. Une liste d'exclusion écarte les valeurs témoins du laboratoire et les réglages du ventilateur ;
+  \item \textbf{B2, ordonnances} : dans les sections de traitement habituel et de sortie, une ligne \og médicament posologie \fg{} donne un \entite{TRAITEMENT} et une \entite{POSOLOGIE} distincts ;
   \item \textbf{B3, posologie} : sur cette même ligne, le traitement est relié à sa posologie par la relation \emph{traitement\_a\_pour\_posologie}, la ligne servant de preuve.
 \end{itemize}
-Une entité n'est ajoutée que si aucune entité de même type ne la recouvre déjà dans la page, et une relation que si elle n'existe pas déjà. Une quatrième règle, qui reliait chaque traitement d'ordonnance au patient, a été testée puis écartée, car elle ajoutait plus de relations fausses que justes. Ces règles décrivent un format de document et non des réponses de la référence ; elles ont été fixées avant l'évaluation.
+Une entité n'est ajoutée que si aucune entité de même type ne la recouvre déjà dans la page, et une relation que si elle n'existe pas déjà.
 
-% ------------------------------------------------------------
+\paragraph{Exemple.} La ligne d'ordonnance \og Tahor 10mg 0-0-1 \fg{}, oubliée par le modèle, donne le traitement \og Tahor \fg{}, la posologie \og 10mg 0-0-1 \fg{} et la relation qui les relie. La ligne \og Leucocytes 40.8 4.0-10.0 x10*9/L \fg{} donne un biomarqueur.
+
+\paragraph{Justification.} Ces règles décrivent un format de document, non des réponses de la référence ; elles ont été fixées avant l'évaluation. Comme tout élément ajouté est copié du texte, le risque d'hallucination est très faible. Une quatrième règle, qui reliait chaque traitement d'ordonnance au patient, a été testée puis écartée, car elle ajoutait plus de relations fausses que justes : un traitement habituel n'est pas forcément administré pendant le séjour.
+
+% ============================================================
 \section{Étage 5 : dédoublonnage}\label{sec:c5-etage5}
 
-Le cinquième étage supprime la redondance sans perdre d'information. Il fusionne les entités strictement identiques (même type, même mention, même page, même valeur, même unité, même négation) et reporte leurs relations sur l'entité conservée. Il retire les relations strictement identiques, c'est-à-dire de même sujet, même type et même objet. Il annote enfin, sans les retirer, les relations qui répètent un triplet déjà vu sous d'autres identifiants. Une telle répétition est souvent une erreur, mais elle peut être légitime, comme une même mesure rapportée deux jours de suite : la décision revient à l'arbitrage.
+\paragraph{Problème.} Un même élément est extrait plusieurs fois, ce qui gonfle le graphe et fausse les comptes (hallucination structurelle).
 
-% ------------------------------------------------------------
+\paragraph{Traitement.} L'étage fusionne les entités strictement identiques (même type, même mention, même page, même valeur, même unité, même négation) et reporte leurs relations sur l'entité conservée. Il retire les relations strictement identiques, de même sujet, même type et même objet. Il annote enfin, sans les retirer, les relations qui répètent un triplet déjà vu sous d'autres identifiants.
+
+\paragraph{Exemple.} Un même triplet \og Claforan, \emph{traitement\_a\_pour\_posologie}, 1g x 3/j \fg{} extrait deux fois sur la même page n'est gardé qu'une fois.
+
+\paragraph{Justification.} Seul l'identique est retiré. Une répétition est souvent une erreur, mais elle peut être légitime, comme une même mesure rapportée deux jours de suite : la répétition devient un indice, et la décision revient à l'arbitrage.
+
+% ============================================================
 \section{Étage 6 : attributs cliniques}\label{sec:c5-etage6}
 
-Le sixième étage traite les hallucinations contextuelles et temporelles. Il qualifie chaque entité, sans rien retirer, selon quatre attributs :
+\paragraph{Problème.} Une entité bien écrite dans le texte change de sens selon son contexte (hallucinations contextuelle et temporelle). Ces erreurs échappent à l'ancrage, puisque le mot est présent dans la page.
+
+\paragraph{Traitement.} L'étage qualifie chaque entité, sans rien retirer, selon quatre attributs :
 \begin{itemize}
   \item la \textbf{négation} : un mot déclencheur (\og pas de \fg{}, \og absence de \fg{}, \og sans \fg{}, \og aucun \fg{}\dots) précède la mention dans une courte fenêtre, ou l'extraction l'a déjà marquée comme niée ;
   \item l'\textbf{hypothèse} : un indice d'incertitude précède la mention (\og suspicion de \fg{}, \og probable \fg{}, \og à discuter \fg{}\dots) ;
   \item la \textbf{temporalité}, déduite de la section où l'entité est citée : antérieure (antécédents, traitement habituel), de sortie (prescription de sortie) ou du séjour ;
   \item l'\textbf{unité} des valeurs numériques, lorsque la mention contient un nombre suivi d'une unité.
 \end{itemize}
-La détection de la négation et de l'hypothèse suit le principe de NegEx~\cite{chapman2001negex} et de ConText~\cite{harkema2009context}, adaptés au français~\cite{deleger2012negation} : une liste de déclencheurs et une fenêtre de portée limitée avant la mention. Cette fenêtre couvre \og pas de toux \fg{} sans attraper la négation d'une autre phrase. Sa limite est connue : une expression comme \og arrêt du Lasilix \fg{} ressemble à une négation alors qu'elle décrit un fait réel.
 
-% ------------------------------------------------------------
+\paragraph{Exemple.} \og Pas de toux \fg{} est marquée comme niée et reste une entité du graphe ; \og suspicion de pneumopathie \fg{} est marquée comme hypothèse ; un médicament cité dans le traitement habituel est marqué comme antérieur au séjour.
+
+\paragraph{Justification.} La détection de la négation et de l'hypothèse suit le principe de NegEx~\cite{chapman2001negex} et de ConText~\cite{harkema2009context}, adaptés au français~\cite{deleger2012negation} : une liste de déclencheurs et une fenêtre de portée limitée avant la mention. Cette fenêtre couvre \og pas de toux \fg{} sans attraper la négation d'une autre phrase. Sa limite est connue : une expression comme \og arrêt du Lasilix \fg{} ressemble à une négation alors qu'elle décrit un fait réel.
+
+% ============================================================
 \section{Étage 7 : agents et arbitrage}\label{sec:c5-etage7}
 
-Le septième étage est le seul qui décide. Pour chaque entité et chaque relation, il choisit de la garder ou de la retirer et attribue un niveau de confiance aux relations. Il s'appuie sur cinq agents déterministes, qui lisent les annotations des étages précédents (figure~\ref{fig:c5-arbitrage}) :
+\paragraph{Problème.} Les étages précédents ont relevé de nombreux signaux, mais aucun n'a décidé. Il faut maintenant, pour chaque élément, choisir de le garder ou de le retirer, et indiquer la confiance que l'on peut accorder à chaque relation.
+
+\paragraph{Traitement.} L'arbitrage est le seul étage qui décide. Il s'appuie sur cinq agents déterministes, qui lisent les annotations des étages précédents (figure~\ref{fig:c5-arbitrage}) :
 \begin{itemize}
   \item l'\textbf{agent d'ancrage} : preuve, distance entre les extrémités, section (étage~2) ;
   \item l'\textbf{agent de conformité} : respect de la signature du guideline (étage~3) ;
@@ -150,12 +210,12 @@ Le septième étage est le seul qui décide. Pour chaque entité et chaque relat
   \item l'\textbf{agent de contexte} : négation, hypothèse et temporalité de l'entité clinique (étage~6) ;
   \item l'\textbf{agent de provenance} : extraction directe par le modèle ou inférence structurelle.
 \end{itemize}
-Pour une relation créée par SGCE après l'étage~2, les agents appellent les mêmes fonctions de vérification que les étages correspondants.
+Pour une relation créée par SGCE après l'étage~2, les agents appellent les mêmes fonctions de vérification que les étages correspondants. Deux modes de décision sont proposés.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/fig_arbitrage.png}
-\caption{Arbitrage de l'étage~7 : agents, mode standard et mode précision}\label{fig:c5-arbitrage}
+\caption{Étage~7 : agents, mode standard et mode précision}\label{fig:c5-arbitrage}
 \end{figure}
 
 \subsection{Mode standard : règles fixées a priori}\label{sec:c5-standard}
@@ -171,39 +231,73 @@ En mode standard, les décisions suivent des règles fixées avant toute évalua
 
 \paragraph{Relations.}
 \begin{itemize}
-  \item \textbf{R2} : une relation qui affirme une entité niée (par exemple \og le patient présente le symptôme \emph{pas de toux} \fg{}) est retirée. L'entité niée reste dans le graphe, mais aucune relation ne la donne comme présente, conformément à la convention du guideline.
+  \item \textbf{R2} : une relation qui affirme une entité niée est retirée, par exemple \og le patient présente le symptôme \emph{pas de toux} \fg{}. L'entité niée reste dans le graphe, mais aucune relation ne la donne comme présente, conformément à la convention du guideline.
   \item \textbf{R3} : une relation créée par SGCE qui échoue aux contrôles d'ancrage de l'étage~2 est retirée.
   \item Une entité retirée emporte les relations qui pointent vers elle, afin que le graphe reste cohérent.
 \end{itemize}
 
-Une violation de signature n'est pas un motif de retrait, pour la raison donnée à la section~\ref{sec:c5-etage3}. Elle compte parmi les \textbf{signaux faibles} qui déterminent le niveau de confiance d'une relation : preuve non citée, extrémités éloignées, inférence structurelle, doublon, indice de négation ou d'hypothèse, violation de signature non réparée. Une relation sans signal faible reçoit une confiance élevée, avec un signal une confiance moyenne, avec deux signaux ou plus une confiance faible. Ce niveau ne retire rien : il indique au médecin quelles relations vérifier en priorité.
+\paragraph{Confiance.} Une violation de signature n'est pas un motif de retrait, pour la raison donnée à la section~\ref{sec:c5-etage3}. Elle compte parmi les \textbf{signaux faibles} qui déterminent le niveau de confiance d'une relation : preuve non citée, extrémités éloignées, inférence structurelle, doublon, indice de négation ou d'hypothèse, violation de signature non réparée. Une relation sans signal faible reçoit une confiance élevée, avec un signal une confiance moyenne, avec deux signaux ou plus une confiance faible. Ce niveau ne retire rien : il indique au médecin quelles relations vérifier en priorité.
 
 \subsection{Mode précision : vote appris des agents}\label{sec:c5-precision}
 
 Le mode standard ne retire que ce que des règles sûres permettent d'écarter. Le mode précision ajoute un \textbf{vote appris}, qui permet de régler le compromis entre la quantité d'information conservée et sa fiabilité.
 
-Chaque élément est décrit par des variables binaires issues des signaux des agents. Pour une relation : statut de la preuve, distance, section, type de relation, conformité, provenance, temporalité, doublon, négation, hypothèse, ainsi que les mots porteurs de sens de l'entité clinique et des croisements entre ces variables (section et type de relation, type de relation et mot). Pour une entité : type, section, présence d'une relation, longueur de la mention, présence d'un chiffre, provenance, répétition, hypothèse, mots de la mention et leurs croisements avec le type.
-
-Une \textbf{régression logistique}~\cite{cox1958regression}, régularisée, apprend un poids pour chaque variable et fournit un score de fiabilité compris entre 0 et 1. Deux modèles sont appris, un pour les entités et un pour les relations. On conserve ensuite la part $k$ des éléments les mieux notés, parmi ceux que les règles du mode standard n'ont pas déjà retirés. Le paramètre $k$, compris entre 30~\% et 100~\%, agit comme un curseur : une valeur élevée privilégie le rappel, une valeur faible la précision.
+Chaque élément est d'abord décrit par des variables binaires issues des signaux des agents :
+\begin{itemize}
+  \item pour une \textbf{relation} : statut de la preuve, distance, section, type de relation, conformité, provenance, temporalité, doublon, négation, hypothèse, mots porteurs de sens de l'entité clinique, et croisements entre ces variables (section et type de relation, type de relation et mot) ;
+  \item pour une \textbf{entité} : type, section, présence d'une relation, longueur de la mention, présence d'un chiffre, provenance, répétition, hypothèse, mots de la mention et leurs croisements avec le type.
+\end{itemize}
+Une \textbf{régression logistique}~\cite{cox1958regression}, régularisée, apprend ensuite un poids pour chaque variable et fournit un score de fiabilité compris entre 0 et 1. Deux modèles sont appris, un pour les entités et un pour les relations. On conserve enfin la part $k$ des éléments les mieux notés, parmi ceux que les règles du mode standard n'ont pas déjà retirés. Le paramètre $k$, compris entre 30~\% et 100~\%, agit comme un curseur : une valeur élevée privilégie le rappel, une valeur faible la précision.
 
 Ce choix de modèle répond à trois exigences :
 \begin{itemize}
-  \item \textbf{l'interprétabilité} : chaque poids a un sens clinique et peut être montré (un biomarqueur cité avec sa valeur dans la section de biologie est fiable, un triplet répété est suspect) ;
+  \item \textbf{l'interprétabilité} : chaque poids a un sens clinique et peut être montré ; un biomarqueur cité avec sa valeur dans la section de biologie est fiable, un triplet répété est suspect ;
   \item \textbf{la frugalité} : le modèle s'apprend sur un petit corpus ;
   \item \textbf{le déterminisme} : il ne peut pas halluciner à son tour.
 \end{itemize}
 L'agrégation pondérée de signaux imparfaits reprend l'idée de Snorkel~\cite{ratner2017snorkel}, et le choix de ne garder que les éléments les plus sûrs celle de la décision avec rejet~\cite{chow1970reject,geifman2017selective}.
 
-Le vote est le seul composant de TRACE qui apprend de la référence. Il est donc entraîné et évalué en validation croisée à deux plis : les dossiers sont triés puis séparés en rangs pairs et impairs ; le modèle appris sur une moitié note l'autre, puis l'inverse. Ce sont les mêmes plis que ceux des exemples et des règles du pipeline d'extraction (section~\ref{sec:c4-exemples}). Aucun dossier n'est ainsi noté par un modèle qui a vu son annotation.
+\subsection{Validation croisée du vote}\label{sec:c5-validation}
 
-% ------------------------------------------------------------
+Le vote est le seul composant de TRACE qui apprend de la référence. Il est donc entraîné et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}) : les dossiers sont triés, puis séparés en rangs pairs et impairs ; le modèle appris sur une moitié note l'autre, puis l'inverse. Ce sont les mêmes plis que ceux des exemples, des règles strictes et du lexique du pipeline d'extraction (section~\ref{sec:c4-exemples}). Aucun dossier n'est ainsi traité avec ce qui a été appris sur sa propre annotation, et les performances mesurées valent pour des dossiers non vus.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/fig_validation_croisee.png}
+\caption{Validation croisée à deux plis, commune à l'extraction et au vote de l'étage~7}\label{fig:c5-validation}
+\end{figure}
+
+% ============================================================
 \section{Étage 8 : évaluation}\label{sec:c5-etage8}
 
-Le dernier étage est le seul qui lit le Gold Standard. Il compare à la référence la sortie de chaque étage, avec les modes d'appariement et les métriques définis au chapitre~\ref{chap:extraction} (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}). Mesurer après chaque étage montre ce que chacun apporte et vérifie qu'aucun ne dégrade le résultat.
+\paragraph{Problème.} Il faut mesurer ce que la chaîne apporte, sans que cette mesure influence les corrections.
 
-Il entraîne aussi les deux modèles du vote et calcule leurs seuils pour chaque valeur de $k$, puis évalue le mode précision en validation croisée. Il produit enfin des indicateurs de structure qui ne demandent pas la référence : nombre de relations orphelines, de relations identiques et d'éléments absents du texte.
+\paragraph{Traitement.} L'étage~8 est le seul qui lit le Gold Standard. Il compare à la référence la sortie de \emph{chaque} étage, avec les modes d'appariement et les métriques définis au chapitre~\ref{chap:extraction} (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}) : précision, rappel, F1 et taux d'hallucination, pour les entités et pour les relations. Il entraîne aussi les deux modèles du vote, calcule leurs seuils pour chaque valeur de $k$, et évalue le mode précision en validation croisée. Il produit enfin des indicateurs de structure qui ne demandent pas la référence : nombre de relations orphelines, de relations identiques et d'éléments absents du texte.
 
-% ------------------------------------------------------------
+\paragraph{Justification.} Mesurer après chaque étage montre ce que chacun apporte et vérifie qu'aucun ne dégrade le résultat. C'est la preuve expérimentale de l'architecture, présentée au chapitre~\ref{chap:experimentations}.
+
+% ============================================================
+\section{Un exemple à travers la chaîne}\label{sec:c5-exemple}
+
+La figure~\ref{fig:c5-exemple} suit six éléments extraits d'un court passage, construit pour l'illustration, à travers les étages qui les concernent.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/fig_exemple_trace.png}
+\caption{Six éléments extraits suivis à travers TRACE (exemple construit, sans donnée patient)}\label{fig:c5-exemple}
+\end{figure}
+
+\begin{itemize}
+  \item \og CRP 186 mg/L \fg{}, dont le nombre n'est pas écrit dans la page, est retirée dès l'ancrage : c'est une hallucination factuelle.
+  \item \og Claforan 1g x 3/j \fg{}, extrait comme un seul traitement, est découpé par SGCE en un traitement et une posologie reliés : l'hallucination structurelle est réparée sans perte d'information.
+  \item \og Pas de toux \fg{} est marquée comme niée à l'étage~6 et conservée par l'arbitrage : l'absence de toux est une information clinique.
+  \item La relation qui donne \og pas de toux \fg{} comme un symptôme présent est retirée par la règle R2 : c'est une hallucination contextuelle.
+  \item Le diagnostic \og pneumopathie \fg{}, précédé de \og suspicion de \fg{}, est gardé avec une confiance moyenne : le médecin sait qu'il doit le vérifier.
+  \item L'administration du Kardegic, cité dans le traitement habituel, est marquée comme antérieure au séjour ; en mode précision, son score est bas, et elle est retirée ou gardée selon le niveau d'exigence choisi.
+\end{itemize}
+Dans les six cas, la décision peut être expliquée : on sait quel étage a relevé le problème, et quelle règle a tranché.
+
+% ============================================================
 \section{Conclusion}\label{sec:c5-conclusion}
 
 TRACE organise la réduction des hallucinations en étages spécialisés. Les premiers annotent chaque élément : ancrage dans le texte, conformité au guideline, forme du graphe, répétitions, négation, hypothèse et temporalité. Un étage unique, l'arbitrage, décide ensuite avec toutes ces annotations en main. Ce découpage couvre six des sept types d'hallucinations de la taxonomie, sans recourir à un LLM juge. Chaque décision reste traçable, et le Gold Standard n'intervient que dans l'évaluation et dans le vote appris en validation croisée.

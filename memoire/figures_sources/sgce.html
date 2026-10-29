@@ -1,0 +1,38 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>#root{width:max-content;padding:26px}
+.grid{display:grid;grid-template-columns:200px 1fr 40px 1fr;gap:12px;align-items:center}
+.lab{border-width:2px;border-style:dashed;border-radius:14px;padding:10px;text-align:center;font-size:13px}
+.g{background:#fff;border:2px solid #ddd;border-radius:12px;padding:12px;display:flex;gap:8px;align-items:center;justify-content:center;font-size:12.5px;min-height:70px}
+.n{border:2px solid;border-radius:20px;padding:5px 10px;background:#fff;white-space:nowrap}
+.e{font-size:11px;color:#555;font-style:italic}
+.ar{font-size:26px;color:#3aa6a6;text-align:center}
+.T{border-color:#5b8fd6}.P{border-color:#e3b23c}.B{border-color:#e78a8a}.X{border-color:#a47ad1}.bad{border-style:dashed;border-color:#b33;color:#b33}
+</style></head><body><div id="root"><div class="dash teal" style="padding:16px">
+<div class="t" style="font-size:18px">🔧 Étage 4 · SGCE : exemples de réparations structurelles</div>
+<div class="grid" style="font-weight:bold;color:#555;font-size:13px;margin-bottom:4px"><div>Motif</div><div style="text-align:center">Avant</div><div></div><div style="text-align:center">Après</div></div>
+<div class="grid" style="margin:8px 0">
+ <div class="lab teal"><b>A</b> · entité composite</div>
+ <div class="g"><span class="n T">TRAITEMENT « Augmentin 1 g x 3 »</span></div>
+ <div class="ar">➜</div>
+ <div class="g"><span class="n T">TRAITEMENT Augmentin</span><span class="e">—traitement_a_pour_posologie→</span><span class="n P">POSOLOGIE 1 g x 3</span></div>
+</div>
+<div class="grid" style="margin:8px 0">
+ <div class="lab teal"><b>B1</b> · référence absente</div>
+ <div class="g"><span class="n X">DONNEE_PATIENT</span><span class="e">—presente_symptome→</span><span class="n bad">? (identifiant inconnu)</span></div>
+ <div class="ar">➜</div>
+ <div class="g"><span class="n X">DONNEE_PATIENT</span><span class="e">—presente_symptome→</span><span class="n B">SYMPTOME frissons</span><span class="e">(trouvé dans le texte)</span></div>
+</div>
+<div class="grid" style="margin:8px 0">
+ <div class="lab teal"><b>C</b> · lien extrait comme entité</div>
+ <div class="g"><span class="n bad">ENTITÉ « traité par Claforan pour la pneumopathie »</span></div>
+ <div class="ar">➜</div>
+ <div class="g"><span class="n T">TRAITEMENT Claforan</span><span class="e">—traitement_indique_par_label_nosologique→</span><span class="n B">LABEL_NOSOLOGIQUE pneumopathie</span></div>
+</div>
+<div class="grid" style="margin:8px 0">
+ <div class="lab teal"><b>D</b> · signature violée</div>
+ <div class="g"><span class="n T">TRAITEMENT noradrénaline</span><span class="e">—traitement_administre_a→</span><span class="n bad">BIOMARQUEUR lactates</span></div>
+ <div class="ar">➜</div>
+ <div class="g"><span class="n T">TRAITEMENT noradrénaline</span><span class="e">—traitement_administre_a→</span><span class="n X">DONNEE_PATIENT</span></div>
+</div>
+<div class="small" style="text-align:center;margin-top:8px">chaque correction : détection → validation → correction → post-validation · cas ambigus : vote multi-agent, <b>abstention</b> sans consensus</div>
+</div></div></body></html>

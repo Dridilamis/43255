@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>#root{width:max-content;padding:26px}
+table{border-collapse:separate;border-spacing:0 6px}
+th{font-size:12.5px;color:#555;padding:4px 8px;text-align:center}
+td{background:#fff;border-top:2px solid #ddd;border-bottom:2px solid #ddd;padding:7px 9px;font-size:12px;text-align:center;width:150px}
+td:first-child{border-left:2px solid #ddd;border-radius:10px 0 0 10px;text-align:left;width:250px;font-family:"DejaVu Sans Mono",monospace;font-size:11.5px}
+td:last-child{border-right:2px solid #ddd;border-radius:0 10px 10px 0;font-weight:bold;width:130px}
+.g{color:#2d7a3c}.r{color:#b33}.b{color:#2f5f9e}.y{color:#8a5f00}.d{color:#bbb}
+.page{background:#fff;border:2px solid #ccc;border-radius:8px;padding:10px 14px;font-family:"DejaVu Sans Mono",monospace;font-size:12.5px;line-height:1.6}
+</style></head><body><div id="root"><div class="dash purple" style="padding:16px">
+<div class="t" style="font-size:18px">🧪 Un exemple suivi à travers TRACE (exemple construit)</div>
+<div style="display:flex;gap:16px;align-items:center;margin-bottom:8px">
+<div class="page">Pas de toux. Suspicion de pneumopathie.<br>CRP 86 mg/L.<br>Claforan 1g x 3/j. Traitement habituel : Kardegic 75 mg.</div>
+<div class="small">Le modèle a extrait les 6 éléments ci-dessous, dont plusieurs hallucinations.<br>Chaque colonne montre ce que fait l'étage ; seul l'étage 7 décide.</div></div>
+<table>
+<tr><th style="text-align:left">Élément extrait</th><th>2 · Ancrage</th><th>4 · SGCE</th><th>6 · Attributs</th><th>7 · Arbitrage</th><th>Résultat</th></tr>
+<tr><td>CRP 186 mg/L</td><td class="r">absent du texte</td><td class="d">—</td><td class="d">—</td><td class="d">—</td><td class="r">🗑️ retirée (2)</td></tr>
+<tr><td>Claforan 1g x 3/j</td><td class="b">mot pour mot</td><td class="b">découpé en Claforan + 1g x 3/j</td><td class="d">—</td><td class="g">gardés</td><td class="g">✅ 2 entités reliées</td></tr>
+<tr><td>pas de toux</td><td class="b">mot pour mot</td><td class="d">—</td><td class="b">niée</td><td class="g">gardée (E2)</td><td class="g">✅ entité niée</td></tr>
+<tr><td>patient —presente_symptome→ pas de toux</td><td class="b">preuve attestée</td><td class="d">—</td><td class="b">objet nié</td><td class="r">retirée (R2)</td><td class="r">🗑️ retirée</td></tr>
+<tr><td>patient —a_pour_label_nosologique→ pneumopathie</td><td class="b">preuve attestée</td><td class="d">—</td><td class="b">hypothèse</td><td class="y">confiance moyenne</td><td class="y">🟡 à vérifier</td></tr>
+<tr><td>Kardegic —traitement_administre_a→ patient</td><td class="b">preuve attestée</td><td class="d">—</td><td class="b">antérieur</td><td class="y">mode précision : score bas</td><td class="y">🟡 / 🗑️ selon k</td></tr>
+</table></div></div></body></html>
