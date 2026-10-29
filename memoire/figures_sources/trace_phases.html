@@ -27,23 +27,25 @@
 </style></head><body><div id="root">
 
 <div style="display:flex;gap:14px">
- <div class="box teal" style="flex:1.3"><div class="t">🗂️ ENTRÉE · Sortie de l'extraction</div><div class="small" style="text-align:center">entités et relations de chaque dossier, avec leur page et leur preuve<br>le texte transcrit des pages sert de <b>seule référence</b></div></div>
- <div class="box grey" style="flex:1"><div class="t">Règles de la chaîne</div><div class="rules"><span>🚫 aucun LLM juge</span><span>1️⃣ un rôle par étage</span><span>✍️ les étages annotent, <b>un seul décide</b></span><span>🔒 Gold Standard lu seulement à l'évaluation</span></div></div>
+ <div class="box teal" style="flex:1.3"><div class="t">🗂️ ENTRÉE · Sortie de l'extraction (étage 0, chapitre 4)</div><div class="small" style="text-align:center">entités et relations de chaque dossier, avec leur page et leur preuve<br>le texte transcrit des pages sert de <b>seule référence</b></div></div>
+ <div class="box grey" style="flex:1"><div class="t">Règles de la chaîne</div><div class="rules"><span>🚫 aucun LLM juge</span><span>1️⃣ <b>un rôle par étage</b></span><span>➡️ les étages s'enchaînent : chacun lit la sortie du précédent</span><span>✍️ les étages annotent, <b>un seul décide</b></span><span>🔒 Gold Standard lu seulement à l'évaluation</span></div></div>
 </div>
 <div class="down">▼</div>
 
 <div class="ph blue">
- <div class="pt" style="color:#2f5f9e">PHASE 1 · CONTRÔLER</div><div class="pq">Chaque élément est-il fidèle au texte et au guideline ?</div>
+ <div class="pt" style="color:#2f5f9e">PHASE 1 · CONTRÔLER <span style="font-weight:normal;font-size:13px;color:#666">— étages 1 à 3</span></div><div class="pq">Chaque élément est-il fidèle au texte et au guideline ?</div>
  <div class="cards">
-  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">1</div><span class="ic">🧹</span><span class="nm">Préparation</span></div>
+  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">1</div><span class="ic">🧹</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 1 ·</span> Préparation</span></div>
    <div class="q"><b>?</b> L'entrée est-elle uniforme ?</div><div class="rl">Unifie l'écriture et attribue les identifiants manquants.</div>
    <div class="ex">« µmol/L » et « μmol/L » → un seul nœud</div>
    <div class="foot"><span class="act nor">normalise</span><span class="ty" style="border-color:#bbb;color:#777">—</span></div></div>
-  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">2</div><span class="ic">⚓</span><span class="nm">Ancrage</span></div>
+  <div style="align-self:center;font-size:22px;color:#777">➜</div>
+  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">2</div><span class="ic">⚓</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 2 ·</span> Ancrage</span></div>
    <div class="q"><b>?</b> L'élément est-il écrit dans le dossier ?</div><div class="rl">Vérifie chaque entité mot pour mot ; note la preuve, la distance et la section de chaque relation.</div>
    <div class="ex">« CRP 186 » → retirée<br>(la page indique « CRP 86 »)</div>
    <div class="foot"><span><span class="act ann">annote</span> <span class="act ret">retire l'impossible</span></span><span class="ty" style="border-color:#e78a8a;color:#b33">factuelle · relationnelle</span></div></div>
-  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">3</div><span class="ic">📘</span><span class="nm">Conformité au guideline</span></div>
+  <div style="align-self:center;font-size:22px;color:#777">➜</div>
+  <div class="card" style="border-color:#5b8fd6"><div class="hd"><div class="num" style="background:#5b8fd6">3</div><span class="ic">📘</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 3 ·</span> Conformité au guideline</span></div>
    <div class="q"><b>?</b> La relation respecte-t-elle le schéma ?</div><div class="rl">Compare chaque relation aux 34 signatures du guideline.</div>
    <div class="ex">traitement « administré à » un biomarqueur → signalé</div>
    <div class="foot"><span class="act ann">annote</span><span class="ty" style="border-color:#5b8fd6;color:#2f5f9e">ontologique</span></div></div>
@@ -52,17 +54,19 @@
 <div class="down">▼</div>
 
 <div class="ph" style="border-color:#3aa6a6;background:#f1fafa">
- <div class="pt" style="color:#1f7a7a">PHASE 2 · RÉPARER ET COMPLÉTER</div><div class="pq">Le graphe est-il bien formé et complet ?</div>
+ <div class="pt" style="color:#1f7a7a">PHASE 2 · RÉPARER ET COMPLÉTER <span style="font-weight:normal;font-size:13px;color:#666">— étages 4, 4b et 5</span></div><div class="pq">Le graphe est-il bien formé et complet ?</div>
  <div class="cards">
-  <div class="card" style="border-color:#3aa6a6"><div class="hd"><div class="num" style="background:#3aa6a6">4</div><span class="ic">🔧</span><span class="nm">SGCE</span></div>
+  <div class="card" style="border-color:#3aa6a6"><div class="hd"><div class="num" style="background:#3aa6a6">4</div><span class="ic">🔧</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 4 ·</span> SGCE</span></div>
    <div class="q"><b>?</b> Le graphe est-il bien construit ?</div><div class="rl">Découpe les entités composites, crée les nœuds manquants, rattache les orphelins ; s'abstient en cas de doute.</div>
    <div class="ex">« Augmentin 1 g x 3 » → Augmentin + 1 g x 3, reliés</div>
    <div class="foot"><span class="act rep">répare</span><span class="ty" style="border-color:#3aa6a6;color:#1f7a7a">structurelle</span></div></div>
-  <div class="card" style="border-color:#5aaa6a"><div class="hd"><div class="num" style="background:#5aaa6a">4b</div><span class="ic">➕</span><span class="nm">Récupération</span></div>
+  <div style="align-self:center;font-size:22px;color:#777">➜</div>
+  <div class="card" style="border-color:#5aaa6a"><div class="hd"><div class="num" style="background:#5aaa6a">4b</div><span class="ic">➕</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 4b ·</span> Récupération</span></div>
    <div class="q"><b>?</b> Une ligne de biologie ou d'ordonnance a-t-elle été oubliée ?</div><div class="rl">Copie la ligne du texte ; relie le traitement à sa posologie.</div>
    <div class="ex">« Tahor 10mg 0-0-1 » → traitement + posologie</div>
    <div class="foot"><span class="act add">ajoute</span><span class="ty" style="border-color:#5aaa6a;color:#2d7a3c">oubli</span></div></div>
-  <div class="card" style="border-color:#3aa6a6"><div class="hd"><div class="num" style="background:#3aa6a6">5</div><span class="ic">🧬</span><span class="nm">Dédoublonnage</span></div>
+  <div style="align-self:center;font-size:22px;color:#777">➜</div>
+  <div class="card" style="border-color:#3aa6a6"><div class="hd"><div class="num" style="background:#3aa6a6">5</div><span class="ic">🧬</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 5 ·</span> Dédoublonnage</span></div>
    <div class="q"><b>?</b> Un élément est-il répété ?</div><div class="rl">Fusionne les doublons exacts ; signale les répétitions.</div>
    <div class="ex">triplet extrait deux fois → gardé une fois</div>
    <div class="foot"><span><span class="act ann">annote</span> <span class="act ret">retire l'identique</span></span><span class="ty" style="border-color:#3aa6a6;color:#1f7a7a">structurelle</span></div></div>
@@ -71,10 +75,10 @@
 <div class="down">▼</div>
 
 <div class="ph purple">
- <div class="pt" style="color:#6b3fa0">PHASE 3 · QUALIFIER</div><div class="pq">Que veut dire l'élément dans son contexte ?</div>
+ <div class="pt" style="color:#6b3fa0">PHASE 3 · QUALIFIER <span style="font-weight:normal;font-size:13px;color:#666">— étage 6</span></div><div class="pq">Que veut dire l'élément dans son contexte ?</div>
  <div class="cards">
   <div class="card" style="border-color:#a47ad1;flex-direction:row;gap:16px;align-items:center">
-   <div style="width:330px;display:flex;flex-direction:column;gap:5px"><div class="hd"><div class="num" style="background:#a47ad1">6</div><span class="ic">🏷️</span><span class="nm">Attributs cliniques</span></div>
+   <div style="width:330px;display:flex;flex-direction:column;gap:5px"><div class="hd"><div class="num" style="background:#a47ad1">6</div><span class="ic">🏷️</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 6 ·</span> Attributs cliniques</span></div>
     <div class="q"><b>?</b> L'entité est-elle niée, hypothétique ou antérieure au séjour ?</div><div class="rl">Détecte la négation, l'hypothèse, la période et l'unité.</div></div>
    <div style="flex:1;display:flex;gap:10px">
     <div class="ex" style="flex:1">« pas de toux »<br>→ <b>niée</b>, gardée</div>
@@ -88,9 +92,9 @@
 <div class="down">▼</div>
 
 <div class="ph yellow" style="border-width:3px">
- <div class="pt" style="color:#8a5f00">PHASE 4 · DÉCIDER</div><div class="pq">Que garde-t-on, et avec quelle confiance ?</div>
+ <div class="pt" style="color:#8a5f00">PHASE 4 · DÉCIDER <span style="font-weight:normal;font-size:13px;color:#666">— étage 7</span></div><div class="pq">Que garde-t-on, et avec quelle confiance ?</div>
  <div class="card" style="border-color:#e3b23c;border-width:3px">
-  <div class="hd"><div class="num" style="background:#e3b23c">7</div><span class="ic">⚖️</span><span class="nm">Arbitrage</span><span class="act dec" style="margin-left:8px">seul étage qui décide</span><span class="ty" style="margin-left:auto;border-color:#e3b23c;color:#8a5f00">tous les types</span></div>
+  <div class="hd"><div class="num" style="background:#e3b23c">7</div><span class="ic">⚖️</span><span class="nm"><span style="color:#888;font-weight:normal">Étage 7 ·</span> Arbitrage</span><span class="act dec" style="margin-left:8px">seul étage qui décide</span><span class="ty" style="margin-left:auto;border-color:#e3b23c;color:#8a5f00">tous les types</span></div>
   <div style="display:flex;gap:14px;margin-top:4px">
    <div style="flex:1.1;border:2px solid #e3b23c;border-radius:12px;padding:8px 10px;background:#fffdf3"><div style="font-weight:bold;font-size:13px;margin-bottom:3px">Mode standard · règles fixées à l'avance</div>
     <div class="r"><b>E1</b> entité pas écrite mot pour mot → retirée</div>
@@ -112,6 +116,6 @@
 
 <div style="display:flex;gap:14px">
  <div class="box teal" style="flex:1.3;text-align:center"><div class="t">🧩 SORTIE · Graphe de connaissances vérifié</div><div class="small">chaque élément garde sa page, sa preuve, la trace des étages qui l'ont examiné<br>et un niveau de confiance : 🟢 élevée · 🟡 moyenne · 🔴 faible</div></div>
- <div class="box green" style="flex:1;text-align:center"><div class="t">🔒 8 · Évaluation</div><div class="small">seul étage qui lit le Gold Standard<br>précision, rappel, F1 et taux d'hallucination après chaque étage · entraîne le vote en validation croisée</div></div>
+ <div class="box green" style="flex:1;text-align:center"><div class="t">🔒 Étage 8 · Évaluation</div><div class="small">seul étage qui lit le Gold Standard<br>précision, rappel, F1 et taux d'hallucination après chaque étage · entraîne le vote en validation croisée</div></div>
 </div>
 </div></body></html>
