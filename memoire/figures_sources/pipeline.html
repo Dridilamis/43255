@@ -43,7 +43,7 @@ ul{margin-left:16px} li{margin:3px 0}
  <div class="dash purple">
   <div class="t">🧠 Apprentissage en contexte (consignes)</div>
   <div style="display:flex;gap:10px">
-   <div class="solid purple small" style="flex:1;background:#fff"><b>Guideline TRACE-Sepsis v2.0</b><br>types, définitions, règles de typage, synonymes, 34 signatures</div>
+   <div class="solid small" style="flex:1.2;background:#eef5ff;border:3px solid #3f73c0"><b style="color:#3f73c0">📘 Guideline TRACE-Sepsis v2.0</b><br><i>validé par le médecin</i><br>20 types et définitions, règles d'annotation et de typage, synonymes, 34 signatures</div>
    <div class="solid purple small" style="flex:1;background:#fff"><b>Exemples semblables</b><br>3 pages annotées les plus proches (TF-IDF), prises dans l'autre moitié du corpus</div>
    <div class="solid purple small" style="flex:1;background:#fff"><b>Règles strictes apprises</b><br>profils d'entités et relations interdits (précision &lt; 30 % sur l'autre moitié)</div>
   </div>
@@ -55,14 +55,15 @@ ul{margin-left:16px} li{margin:3px 0}
  <div class="dash green">
   <div class="t">✔ Validation déterministe</div>
   <ul class="small">
-   <li>type autorisé (20 types)</li>
+   <li>type autorisé (20 types) <span style="color:#3f73c0">📘</span></li>
    <li>mention retrouvée <b>mot pour mot</b> dans la page</li>
    <li>DONNEE_PATIENT valide · ancre patient</li>
    <li>profils d'entités interdits retirés</li>
-   <li>relation : extrémités connues, <b>signature</b> exacte (34)</li>
+   <li>relation : extrémités connues, <b>signature</b> exacte (34) <span style="color:#3f73c0">📘</span></li>
    <li>aucune relation vers une absence</li>
    <li>doublons stricts retirés</li>
   </ul>
+  <div class="small" style="color:#3f73c0;margin-top:4px">📘 = contrôle fondé sur le guideline</div>
  </div>
  <div class="dash yellow">
   <div class="t">📚 Corrections apprises</div>

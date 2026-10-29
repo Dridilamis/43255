@@ -13,18 +13,18 @@ code{font-family:"DejaVu Sans Mono",monospace;font-size:11.5px}
 <div class="row"><div class="dash purple">Tu es un expert en extraction d'information clinique sur le sepsis. Applique strictement le guideline TRACE-Sepsis v2.0 à la page fournie.<br>
 MISSION : extraire de façon <b>exhaustive</b> toutes les entités cliniques <b>explicitement écrites</b> dans la page.</div><div class="lab" style="color:#8a5cc0">① Rôle et mission</div></div>
 
-<div class="row"><div class="dash pink">• « texte » = surface EXACTE, copiée mot pour mot · une mention = un seul type · aucune entité déduite de connaissances externes<br>
+<div style="border:3px solid #3f73c0;border-radius:14px;padding:8px 10px 2px;margin:12px 0;background:#f7faff"><div style="font-weight:bold;color:#3f73c0;font-size:16px;margin:2px 4px 4px">📘 Extraits du guideline TRACE-Sepsis v2.0 (validé par le médecin) — générés automatiquement à partir du fichier du guideline</div><div class="row"><div class="dash pink">• « texte » = surface EXACTE, copiée mot pour mot · une mention = un seul type · aucune entité déduite de connaissances externes<br>
 • TRAITEMENT et POSOLOGIE sont distincts (« Claforan » / « 1g x 3 par jour ») · la mention du patient est une DONNEE_PATIENT<br>
-• une absence (« pas de toux ») = une seule mention avec <code>"nie": true</code> · hypothèse : <code>"hypothese": true</code></div><div class="lab" style="color:#c55">② Règles absolues</div></div>
+• une absence (« pas de toux ») = une seule mention avec <code>"nie": true</code> · hypothèse : <code>"hypothese": true</code></div><div class="lab" style="color:#c55">② Règles absolues<br><span style="font-size:12px;font-weight:normal">(guideline)</span></div></div>
 
 <div class="row"><div class="dash orange">R1 ancrage textuel · R5 négation · R6 traitement envisagé · R9 chronique / aigu · R12 LABEL vs COMORBIDITÉ · R13 foyer rattaché à un diagnostic …<br>
 Typage : SIGNE_VITAL vs SYMPTOME · SYMPTOME vs DEFAILLANCE_ORGANE · LABEL_NOSOLOGIQUE vs FOYER_INFECTIEUX …<br>
-Synonymes : CRP / C.R.P. → proteine_C_reactive · IRA / AKI → IRA …</div><div class="lab" style="color:#d0802c">③ Règles du guideline</div></div>
+Synonymes : CRP / C.R.P. → proteine_C_reactive · IRA / AKI → IRA …</div><div class="lab" style="color:#d0802c">③ Règles générales,<br>typage, synonymes<br><span style="font-size:12px;font-weight:normal">(guideline)</span></div></div>
 
 <div class="row"><div class="dash blue">### BIOMARQUEUR — résultat biologique quantitatif (valeur, unité, direction) …<br>
-### LABEL_NOSOLOGIQUE — diagnostic de la liste autorisée : sepsis, choc_septique, pneumopathie … (20 types)</div><div class="lab" style="color:#3f73c0">④ Définitions des types</div></div>
+### LABEL_NOSOLOGIQUE — diagnostic de la liste autorisée : sepsis, choc_septique, pneumopathie … (20 types)</div><div class="lab" style="color:#3f73c0">④ Définitions des<br>20 types<br><span style="font-size:12px;font-weight:normal">(guideline)</span></div></div>
 
-<div class="row"><div class="dash yellow">RÈGLES STRICTES (apprises sur d'autres dossiers annotés) :<br>
+</div><div class="row"><div class="dash yellow">RÈGLES STRICTES (apprises sur d'autres dossiers annotés) :<br>
 • N'extrais JAMAIS : EVENEMENT_TEMPOREL sans date · SIGNE_VITAL sans valeur · POSOLOGIE sans chiffre …<br>
 • Mentions courtes : TRAITEMENT ≤ 2 mots · SYMPTOME ≤ 3 mots · BIOMARQUEUR ≤ 4 mots …<br>
 • Types peu fiables : en cas de doute, ne pas extraire.</div><div class="lab" style="color:#b88a10">⑤ Règles strictes<br>apprises<br><span style="font-size:12px;font-weight:normal">(autre moitié du corpus)</span></div></div>
