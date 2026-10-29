@@ -1,0 +1,100 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+#root{width:1700px;padding:24px;display:flex;gap:14px;align-items:stretch}
+.col{display:flex;flex-direction:column;gap:14px;justify-content:center}
+.call{display:flex;gap:10px;align-items:center;margin:7px 0}
+.num{width:30px;height:30px;border-radius:50%;background:#5b8fd6;color:#fff;font-weight:bold;display:flex;align-items:center;justify-content:center;flex:none}
+.icon{font-size:46px;text-align:center}
+ul{margin-left:16px} li{margin:3px 0}
+</style></head><body><div id="root">
+
+<div class="col" style="width:180px">
+ <div class="dash orange">
+  <div class="t">Dossiers scannés</div>
+  <div class="icon">📄📄</div>
+  <div class="small" style="text-align:center">PDF sans couche texte<br>49 dossiers · 291 pages<br>Réanimation, AP-HP<br>2008–2015</div>
+ </div>
+</div>
+<div class="arrow">➜</div>
+
+<div class="col" style="width:210px">
+ <div class="dash pink">
+  <div class="t">Préparation</div>
+  <ul class="small">
+   <li>PDF → image PNG<br><b>500 dpi</b> (PyMuPDF)</li>
+   <li>aucun prétraitement d'image</li>
+   <li>une page à la fois, sans contexte des autres pages</li>
+   <li>réponses du modèle en cache</li>
+  </ul>
+ </div>
+</div>
+<div class="arrow">➜</div>
+
+<div class="col" style="width:560px">
+ <div class="dash blue">
+  <div class="t" style="font-size:18px">🤖 Mistral Small 4 — extraction page par page</div>
+  <div class="small" style="text-align:center;margin-bottom:6px">température 0 · sortie JSON · 4 appels par page</div>
+  <div class="call"><div class="num">1</div><div class="solid blue small" style="flex:1;background:#fff"><b>Transcription</b> : le modèle lit l'image et en transcrit fidèlement le texte (zones illisibles notées [?])</div></div>
+  <div class="call"><div class="num">2</div><div class="solid blue small" style="flex:1;background:#fff"><b>Entités</b> : 20 types du guideline, mention exacte, absences (« pas de toux ») niées</div></div>
+  <div class="call"><div class="num">3</div><div class="solid blue small" style="flex:1;background:#fff"><b>Traitements et posologies</b> : consigne ciblée, médicament et posologie séparés, ordonnances</div></div>
+  <div class="call"><div class="num">4</div><div class="solid blue small" style="flex:1;background:#fff"><b>Relations</b> : seulement les relations réalisables sur la page, avec les identifiants autorisés</div></div>
+ </div>
+ <div style="text-align:center;font-size:22px;color:#777">⇡ consignes construites pour chaque page</div>
+ <div class="dash purple">
+  <div class="t">🧠 Apprentissage en contexte (consignes)</div>
+  <div style="display:flex;gap:10px">
+   <div class="solid purple small" style="flex:1;background:#fff"><b>Guideline TRACE-Sepsis v2.0</b><br>types, définitions, règles de typage, synonymes, 34 signatures</div>
+   <div class="solid purple small" style="flex:1;background:#fff"><b>Exemples semblables</b><br>3 pages annotées les plus proches (TF-IDF), prises dans l'autre moitié du corpus</div>
+   <div class="solid purple small" style="flex:1;background:#fff"><b>Règles strictes apprises</b><br>profils d'entités et relations interdits (précision &lt; 30 % sur l'autre moitié)</div>
+  </div>
+ </div>
+</div>
+<div class="arrow">➜</div>
+
+<div class="col" style="width:290px">
+ <div class="dash green">
+  <div class="t">✔ Validation déterministe</div>
+  <ul class="small">
+   <li>type autorisé (20 types)</li>
+   <li>mention retrouvée <b>mot pour mot</b> dans la page</li>
+   <li>DONNEE_PATIENT valide · ancre patient</li>
+   <li>profils d'entités interdits retirés</li>
+   <li>relation : extrémités connues, <b>signature</b> exacte (34)</li>
+   <li>aucune relation vers une absence</li>
+   <li>doublons stricts retirés</li>
+  </ul>
+ </div>
+ <div class="dash yellow">
+  <div class="t">📚 Corrections apprises</div>
+  <div class="small" style="text-align:center;margin-bottom:4px"><i>validation croisée : chaque moitié corrigée avec l'autre</i></div>
+  <ul class="small">
+   <li>lexique : type, bornes, valeur des biomarqueurs, termes oubliés</li>
+   <li>règles strictes réappliquées</li>
+  </ul>
+ </div>
+</div>
+<div class="arrow">➜</div>
+
+<div class="col" style="width:250px">
+ <div class="dash teal">
+  <div class="t">{ } Sortie JSON par dossier</div>
+<div class="mono">{"entities": [
+ {"id": "P2_E011",
+  "categorie": "TRAITEMENT",
+  "name": "Claforan"},
+ {"id": "P2_E012",
+  "categorie": "POSOLOGIE",
+  "name": "1g x 3 par jour"}],
+ "relations": [
+ {"sujet": "P2_E011",
+  "relation":
+   "traitement_a_pour_posologie",
+  "objet": "P2_E012"}]}</div>
+ </div>
+ <div class="dash grey" style="text-align:center">
+  <div class="t">➜ TRACE</div>
+  <div class="small">étages 1 à 8<br>réduction des hallucinations</div>
+ </div>
+</div>
+
+</div></body></html>

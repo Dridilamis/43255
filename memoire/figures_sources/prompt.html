@@ -1,0 +1,39 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+#root{width:1250px;padding:24px}
+.frame{border:2px solid #bbb;border-radius:16px;padding:18px;background:#fff}
+.head{border:2px solid #e3b23c;background:#fff3cf;border-radius:12px;text-align:center;font-weight:bold;font-size:22px;color:#c8860a;padding:10px;margin-bottom:14px}
+.row{display:flex;align-items:stretch;gap:14px;margin:10px 0}
+.row .dash{flex:1;font-size:12.5px;line-height:1.4}
+.lab{width:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:bold;font-size:17px}
+code{font-family:"DejaVu Sans Mono",monospace;font-size:11.5px}
+</style></head><body><div id="root"><div class="frame">
+<div class="head">Construction d'une consigne d'extraction des entités</div>
+
+<div class="row"><div class="dash purple">Tu es un expert en extraction d'information clinique sur le sepsis. Applique strictement le guideline TRACE-Sepsis v2.0 à la page fournie.<br>
+MISSION : extraire de façon <b>exhaustive</b> toutes les entités cliniques <b>explicitement écrites</b> dans la page.</div><div class="lab" style="color:#8a5cc0">① Rôle et mission</div></div>
+
+<div class="row"><div class="dash pink">• « texte » = surface EXACTE, copiée mot pour mot · une mention = un seul type · aucune entité déduite de connaissances externes<br>
+• TRAITEMENT et POSOLOGIE sont distincts (« Claforan » / « 1g x 3 par jour ») · la mention du patient est une DONNEE_PATIENT<br>
+• une absence (« pas de toux ») = une seule mention avec <code>"nie": true</code> · hypothèse : <code>"hypothese": true</code></div><div class="lab" style="color:#c55">② Règles absolues</div></div>
+
+<div class="row"><div class="dash orange">R1 ancrage textuel · R5 négation · R6 traitement envisagé · R9 chronique / aigu · R12 LABEL vs COMORBIDITÉ · R13 foyer rattaché à un diagnostic …<br>
+Typage : SIGNE_VITAL vs SYMPTOME · SYMPTOME vs DEFAILLANCE_ORGANE · LABEL_NOSOLOGIQUE vs FOYER_INFECTIEUX …<br>
+Synonymes : CRP / C.R.P. → proteine_C_reactive · IRA / AKI → IRA …</div><div class="lab" style="color:#d0802c">③ Règles du guideline</div></div>
+
+<div class="row"><div class="dash blue">### BIOMARQUEUR — résultat biologique quantitatif (valeur, unité, direction) …<br>
+### LABEL_NOSOLOGIQUE — diagnostic de la liste autorisée : sepsis, choc_septique, pneumopathie … (20 types)</div><div class="lab" style="color:#3f73c0">④ Définitions des types</div></div>
+
+<div class="row"><div class="dash yellow">RÈGLES STRICTES (apprises sur d'autres dossiers annotés) :<br>
+• N'extrais JAMAIS : EVENEMENT_TEMPOREL sans date · SIGNE_VITAL sans valeur · POSOLOGIE sans chiffre …<br>
+• Mentions courtes : TRAITEMENT ≤ 2 mots · SYMPTOME ≤ 3 mots · BIOMARQUEUR ≤ 4 mots …<br>
+• Types peu fiables : en cas de doute, ne pas extraire.</div><div class="lab" style="color:#b88a10">⑤ Règles strictes<br>apprises<br><span style="font-size:12px;font-weight:normal">(autre moitié du corpus)</span></div></div>
+
+<div class="row"><div class="dash teal">EXEMPLE 1 — texte : « Leucocytes 18.1 G/L … CRP 245 mg/L … »<br>
+entités annotées : <code>{"entites": [{"categorie": "BIOMARQUEUR", "texte": "CRP 245 mg/L"}, …]}</code><br>
+EXEMPLE 2 … EXEMPLE 3 … <i>(les 3 pages annotées les plus semblables, similarité TF-IDF)</i></div><div class="lab" style="color:#2a8a8a">⑥ Exemples<br>semblables<br><span style="font-size:12px;font-weight:normal">(autre moitié du corpus)</span></div></div>
+
+<div class="row"><div class="dash green"><code>{"entites": [{"categorie": "TYPE", "texte": "surface exacte", "parametre": "forme canonique ou null", "valeur": null, "unite": null, "nie": false, "hypothese": false, "confiance": "elevee|moyenne|faible"}]}</code> — JSON uniquement</div><div class="lab" style="color:#3c8a4c">⑦ Format de sortie</div></div>
+
+<div class="row"><div class="dash grey">PAGE : « … texte transcrit de la page par le modèle … »</div><div class="lab" style="color:#666">⑧ Page à traiter</div></div>
+</div></div></body></html>
