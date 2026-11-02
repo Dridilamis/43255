@@ -160,7 +160,7 @@ Deux modèles multimodaux ont été comparés. Tous deux acceptent en entrée un
 
 \subsection{Qwen2.5-VL}\label{sec:c4-qwen}
 
-Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version à 7~milliards de paramètres ajustée pour suivre des instructions, Qwen2.5-VL-7B-Instruct, exécutée localement sur l'infrastructure de l'université (GPU \acompleter{modèle et mémoire}), à température~0, avec une longueur maximale de génération de \acompleter{nombre de jetons}. Les conditions de protection des données sont décrites à la section~\ref{sec:c3-3-2-4}.
+Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version à 7~milliards de paramètres ajustée pour suivre des instructions, Qwen2.5-VL-7B-Instruct, exécutée localement sur un GPU de l'infrastructure de l'université, à température~0. Les conditions de protection des données sont décrites à la section~\ref{sec:c3-3-2-4}.
 
 \subsection{Mistral Small 4}\label{sec:c4-mistral}
 
@@ -175,7 +175,7 @@ Pour que la comparaison soit équitable, les deux modèles ont été évalués a
   \item la même validation déterministe et les mêmes corrections apprises sur le Gold Standard ;
   \item la même évaluation, contre le même Gold Standard, avec les mêmes modes d'appariement et les mêmes métriques (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}).
 \end{itemize}
-Seul le modèle change : Qwen2.5-VL est exécuté localement sur le GPU de l'université, Mistral Small~4 par l'API de Mistral AI, tous deux à température~0. \acompleter{Préciser toute différence inévitable, par exemple la longueur maximale de contexte ou de réponse de Qwen2.5-VL.}
+Les paramètres de génération sont eux aussi identiques : température~0 pour tous les appels, et une même longueur maximale de réponse pour chaque étape, de 4\,000~jetons pour la transcription, 8\,000 pour les entités et les relations, et 12\,000 pour la seconde passe sur les médicaments. Seul le modèle change, ainsi que ses conditions d'exécution : Qwen2.5-VL est exécuté localement sur le GPU de l'université, Mistral Small~4 par l'API de Mistral AI.
 
 % ------------------------------------------------------------
 \section{Extraction des entités}\label{sec:c4-entites}
