@@ -230,11 +230,7 @@ Une valeur chiffrée ne se lit jamais seule. Dans « CRP 245 mg/L », un biomarq
 
 Un fait nié ne doit pas devenir un fait affirmé : « absence de foyer pulmonaire » et « foyer pulmonaire identifié » ne peuvent pas recevoir la même représentation. Les marqueurs comme \emph{absence de}, \emph{pas de}, \emph{sans} ou \emph{négatif} sont donc pris en compte au moment d’annoter.
 
-La règle R5 du guideline autorise à conserver dans le Gold Standard une information niée, à condition qu’elle renvoie à un concept clinique réellement mentionné. Dans le Gold Standard consolidé, la polarité n’est pas codée par un attribut séparé : elle se lit dans la mention elle-même, qui inclut le marqueur de négation lorsqu’il a été annoté (« pas de marbrures »). L’indicateur \emph{nie} prévu parmi les métadonnées (section~\ref{sec:c3-3-4-2}) concerne surtout les sorties des modèles.
-
-Ce choix a une conséquence sur l’évaluation. Les entités sont appariées sur leur mention normalisée, leur type et leur page, et les relations sur leur triplet sujet--relation--objet ; l’attribut \emph{nie} produit par un modèle n’entre pas dans cette comparaison. Une entité extraite est donc jugée correcte dès que sa mention et son type correspondent à la référence, quelle que soit la polarité que lui attribue le modèle. La référence et la procédure d’évaluation restent ainsi cohérentes, mais l’évaluation ne détecte pas une inversion de polarité, qu’un fait nié soit présenté comme présent ou l’inverse.
-
-La négation n’est pas ignorée pour autant : elle est traitée en amont de l’évaluation, dans la chaîne TRACE présentée au chapitre~\ref{chap:architecture}. Ajouter au Gold Standard un attribut de négation explicite rendrait l’évaluation sensible à la polarité ; c’est une perspective de ce travail (section~\ref{sec:c3-3-12}).
+Une absence explicitement mentionnée est une information clinique : savoir qu’un patient n’a « pas de toux » ou « pas de marbrures » est aussi utile au médecin que la présence d’un signe. La règle R5 du guideline prévoit donc de conserver dans le Gold Standard les informations niées, à condition qu’elles renvoient à un concept clinique réellement mentionné. Ces absences sont annotées comme des entités dont la mention inclut le marqueur de négation (« pas de toux ») ; elles ne reçoivent aucune relation, puisqu’un fait absent ne peut pas être relié au patient comme présent.
 
 \subsection{Incertitude}\label{sec:c3-3-6-5}
 
@@ -526,7 +522,6 @@ Plusieurs limites sont à garder en tête pour interpréter les résultats obten
   \item \textbf{Validation médicale.} Un seul médecin, le Pr Heming, a validé le guideline et les annotations. Il s’agit d’une revue experte destinée à fiabiliser la référence, et non d’une étude de concordance entre plusieurs évaluateurs.
   \item \textbf{Taille et représentativité.} Les 49 dossiers annotés (291 pages) représentent environ 20\,\% des 246 dossiers. Issus de deux lots successifs et choisis selon leur ordre de mise à disposition, et non par tirage aléatoire ou stratifié, ils ne forment pas forcément un échantillon représentatif. Certaines catégories y sont rares ou absentes (section~\ref{sec:c3-3-10-2}), ce qui limite la portée des résultats par catégorie.
   \item \textbf{Pseudonymisation.} Le masquage au stylo fait avant la numérisation ne couvre qu’une partie des noms, et des informations indirectement identifiantes restent visibles dans les images. La pseudonymisation automatique appliquée ensuite porte sur les textes transcrits et les annotations, pas sur les images des pages.
-  \item \textbf{Polarité.} La négation n’étant pas codée par un attribut séparé, l’évaluation, qui compare mentions, types et triplets, ne détecte pas une inversion de polarité entre la référence et les sorties des modèles.
   \item \textbf{Spécificité du domaine.} Le guideline a été conçu pour le sepsis ; l’appliquer à d’autres contextes cliniques demanderait d’adapter le schéma et les règles.
 \end{itemize}
 
