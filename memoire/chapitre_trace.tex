@@ -78,7 +78,7 @@ Chaque étage écrit enfin ses annotations dans un champ de traçabilité propre
 
 \paragraph{Problème.} Le modèle invente une entité ou une valeur absente du dossier (hallucination factuelle), ou relie deux entités que le texte ne relie pas (hallucination relationnelle).
 
-\paragraph{Traitement.} L'étage confronte chaque élément au texte source (figure~\ref{fig:c5-ancrage}). Pour chaque \textbf{entité}, il vérifie deux propriétés :
+\paragraph{Traitement.} L'étage confronte chaque élément au texte source. Pour chaque \textbf{entité}, il vérifie deux propriétés :
 \begin{itemize}
   \item l'entité est-elle \textbf{attestée} dans le dossier, c'est-à-dire présente à l'identique, ou avec l'essentiel de ses mots et \emph{tous} ses nombres ?
   \item figure-t-elle \textbf{mot pour mot} dans le texte de sa propre page ?
@@ -93,13 +93,7 @@ Pour chaque \textbf{relation}, il relève quatre signaux :
 \end{itemize}
 L'étage ne retire que ce que le document rend impossible : une entité absente de tout le dossier, avec les relations qui pointent vers elle ; une relation dont une extrémité n'existe pas dans le texte ; une relation dont la preuve citée n'existe pas ; une relation dont les deux extrémités ne sont jamais à moins de 300~caractères l'une de l'autre. Tout le reste est annoté.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{images/fig_ancrage.png}
-\caption{Étage~2 : confrontation des entités et des relations au texte de la page (exemple construit)}\label{fig:c5-ancrage}
-\end{figure}
-
-\paragraph{Exemple.} Dans la figure~\ref{fig:c5-ancrage}, l'entité \og CRP 186 mg/L \fg{} est retirée : le nombre 186 n'est écrit nulle part, la page indiquant \og CRP 86 mg/L \fg{}. L'entité \og leucocytes 15,2 G/L \fg{} est gardée : elle ne diffère de la page \og leucocytes 15.2 G/L \fg{} que par la ponctuation. L'entité \og pneumopathie droite \fg{} est attestée, puisque ses mots figurent dans le dossier, mais elle n'est pas écrite telle quelle : la page indique \og pneumopathie du lobe inférieur droit \fg{}. C'est une reformulation du modèle ; elle est seulement annotée, et c'est l'arbitrage qui décidera.
+\paragraph{Exemple.} Une entité \og CRP 186 mg/L \fg{} est retirée si la page indique \og CRP 86 mg/L \fg{} : le nombre 186 n'est écrit nulle part. Une entité \og leucocytes 15,2 G/L \fg{} est gardée si la page écrit \og leucocytes 15.2 G/L \fg{}, car elles ne diffèrent que par la ponctuation. Une entité \og pneumopathie droite \fg{} est attestée si la page indique \og pneumopathie du lobe inférieur droit \fg{}, puisque ses mots figurent dans le dossier, mais elle n'est pas écrite telle quelle : c'est une reformulation du modèle, seulement annotée ici, et c'est l'arbitrage qui décidera. Ces cas sont repris dans l'exemple complet de la section~\ref{sec:c5-exemple}.
 
 \paragraph{Justification.} Exiger la présence de tous les nombres répond au risque le plus grave en médecine : un chiffre faux. Ne pas retirer une mention simplement reformulée évite en revanche de perdre des éléments justes, car le modèle développe souvent une abréviation ou accorde un mot. Ce contrôle correspond à la vérification de fidélité à la source décrite dans la littérature~\cite{ji2023survey}, et à ce que RAPTOR+ appelle les extractions non ancrées~\cite{raptorplus2026}.
 
@@ -280,23 +274,25 @@ Le vote est le seul composant de TRACE qui apprend de la référence. Il est don
 % ============================================================
 \section{Un exemple à travers la chaîne}\label{sec:c5-exemple}
 
-La figure~\ref{fig:c5-exemple} suit six éléments extraits d'un court passage, construit pour l'illustration, à travers les étages qui les concernent.
+La figure~\ref{fig:c5-exemple} suit huit éléments extraits d'un court passage, construit pour l'illustration, à travers les étages qui les concernent.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/fig_exemple_trace.png}
-\caption{Six éléments extraits suivis à travers TRACE (exemple construit, sans donnée patient)}\label{fig:c5-exemple}
+\caption{Huit éléments extraits suivis à travers TRACE (exemple construit, sans donnée patient)}\label{fig:c5-exemple}
 \end{figure}
 
 \begin{itemize}
   \item \og CRP 186 mg/L \fg{}, dont le nombre n'est pas écrit dans la page, est retirée dès l'ancrage : c'est une hallucination factuelle.
+  \item \og Leucocytes 15,2 G/L \fg{} est gardée : elle ne diffère de la page (\og 15.2 \fg{}) que par la ponctuation, qui ne compte pas.
+  \item \og Pneumopathie droite \fg{} est retirée par la règle E1 : ses mots sont dans le dossier, mais la page écrit \og pneumopathie du lobe inférieur droit \fg{} ; c'est une reformulation du modèle.
   \item \og Claforan 1g x 3/j \fg{}, extrait comme un seul traitement, est découpé par SGCE en un traitement et une posologie reliés : l'hallucination structurelle est réparée sans perte d'information.
   \item \og Pas de toux \fg{} est marquée comme niée à l'étage~6 et conservée par l'arbitrage : l'absence de toux est une information clinique.
   \item La relation qui donne \og pas de toux \fg{} comme un symptôme présent est retirée par la règle R2 : c'est une hallucination contextuelle.
   \item Le diagnostic \og pneumopathie \fg{}, précédé de \og suspicion de \fg{}, est gardé avec une confiance moyenne : le médecin sait qu'il doit le vérifier.
   \item L'administration du Kardegic, cité dans le traitement habituel, est marquée comme antérieure au séjour ; en mode précision, son score est bas, et elle est retirée ou gardée selon le niveau d'exigence choisi.
 \end{itemize}
-Dans les six cas, la décision peut être expliquée : on sait quel étage a relevé le problème, et quelle règle a tranché.
+Dans les huit cas, la décision peut être expliquée : on sait quel étage a relevé le problème, et quelle règle a tranché.
 
 % ============================================================
 \section{Conclusion}\label{sec:c5-conclusion}
