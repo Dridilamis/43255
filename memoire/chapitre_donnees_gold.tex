@@ -230,7 +230,9 @@ Une valeur chiffrée ne se lit jamais seule. Dans « CRP 245 mg/L », un biomarq
 
 Un fait nié ne doit pas devenir un fait affirmé : « absence de foyer pulmonaire » et « foyer pulmonaire identifié » ne peuvent pas recevoir la même représentation. Les marqueurs comme \emph{absence de}, \emph{pas de}, \emph{sans} ou \emph{négatif} sont donc pris en compte au moment d’annoter.
 
-Une absence explicitement mentionnée est une information clinique : savoir qu’un patient n’a « pas de toux » ou « pas de marbrures » est aussi utile au médecin que la présence d’un signe. La règle R5 du guideline prévoit donc de conserver dans le Gold Standard les informations niées, à condition qu’elles renvoient à un concept clinique réellement mentionné. Ces absences sont annotées comme des entités dont la mention inclut le marqueur de négation (« pas de toux ») ; elles ne reçoivent aucune relation, puisqu’un fait absent ne peut pas être relié au patient comme présent.
+Une absence explicitement mentionnée est une information clinique : savoir qu’un patient n’a « pas de toux » ou « pas de marbrures » est aussi utile au médecin que la présence d’un signe. La règle R5 du guideline prévoit donc de conserver dans le Gold Standard les informations niées, à condition qu’elles renvoient à un concept clinique réellement mentionné.
+
+Dans le Gold Standard, la polarité n’est pas codée par un attribut séparé : elle se lit dans la mention elle-même, qui inclut le marqueur de négation (« pas de toux », « pas de marbrures »). Une entité niée ne reçoit aucune relation, puisqu’un fait absent ne peut pas être relié au patient comme présent. L’indicateur \emph{nie} prévu parmi les métadonnées (section~\ref{sec:c3-3-4-2}) concerne les sorties des modèles. Le traitement de la négation dans ces sorties est présenté au chapitre~\ref{chap:architecture}.
 
 \subsection{Incertitude}\label{sec:c3-3-6-5}
 
