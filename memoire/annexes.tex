@@ -1,0 +1,135 @@
+% ============================================================
+% ANNEXES
+% À inclure dans le document principal après \appendix :
+%   \appendix
+%   \input{annexes}
+% ============================================================
+
+\chapter{Signatures des relations du TRACE-Sepsis Annotation Guideline}\label{annexe:relations}
+
+Cette annexe donne la liste complète des 34 relations de la version~2.0 du guideline, validée par le médecin. Chaque relation est orientée, du sujet (domaine) vers l'objet (image). Une relation n'est valide que si les types de ses deux extrémités correspondent exactement à sa signature (section~\ref{sec:c3-3-5-2}).
+
+\begingroup\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}}
+\caption{Les 34 signatures relationnelles du schéma TRACE-Sepsis v2.0}\label{tab:annexe-relations}\\
+\toprule
+\textbf{Relation} & \textbf{Domaine (sujet)} & \textbf{Image (objet)} & \textbf{Signification} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\emph{Tableau~\ref{tab:annexe-relations} (suite)}}\\
+\toprule
+\textbf{Relation} & \textbf{Domaine (sujet)} & \textbf{Image (objet)} & \textbf{Signification} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\emph{Suite page suivante}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{4}{l}{\textbf{Relations diagnostiques (11)}}\\
+a\_\allowbreak{}pour\_\allowbreak{}label\_\allowbreak{}nosologique & DONNEE\_\allowbreak{}PATIENT & LABEL\_\allowbreak{}NOSOLOGIQUE & le patient a ce diagnostic \\
+label\_\allowbreak{}nosologique\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}foyer & LABEL\_\allowbreak{}NOSOLOGIQUE & FOYER\_\allowbreak{}INFECTIEUX & localisation du diagnostic \\
+presente\_\allowbreak{}dysfonction\_\allowbreak{}organe & DONNEE\_\allowbreak{}PATIENT & DEFAILLANCE\_\allowbreak{}ORGANE & le patient présente cette défaillance \\
+score\_\allowbreak{}sofa\_\allowbreak{}calcule\_\allowbreak{}pour & SCORE\_\allowbreak{}SOFA & DONNEE\_\allowbreak{}PATIENT & score SOFA du patient \\
+score\_\allowbreak{}sofa\_\allowbreak{}inclut\_\allowbreak{}biomarqueur & SCORE\_\allowbreak{}SOFA & BIOMARQUEUR & composante biologique du SOFA \\
+score\_\allowbreak{}sofa\_\allowbreak{}inclut\_\allowbreak{}signe\_\allowbreak{}vital & SCORE\_\allowbreak{}SOFA & SIGNE\_\allowbreak{}VITAL & composante physiologique du SOFA \\
+score\_\allowbreak{}sofa\_\allowbreak{}inclut\_\allowbreak{}score\_\allowbreak{}neurologique & SCORE\_\allowbreak{}SOFA & SCORE\_\allowbreak{}NEUROLOGIQUE & composante neurologique du SOFA (Glasgow) \\
+score\_\allowbreak{}qsofa\_\allowbreak{}calcule\_\allowbreak{}pour & SCORE\_\allowbreak{}qSOFA & DONNEE\_\allowbreak{}PATIENT & score qSOFA du patient \\
+score\_\allowbreak{}qsofa\_\allowbreak{}inclut\_\allowbreak{}score\_\allowbreak{}neurologique & SCORE\_\allowbreak{}qSOFA & SCORE\_\allowbreak{}NEUROLOGIQUE & critère neurologique du qSOFA \\
+stade\_\allowbreak{}ira\_\allowbreak{}calcule\_\allowbreak{}pour & STADE\_\allowbreak{}IRA & DONNEE\_\allowbreak{}PATIENT & stade KDIGO d'IRA du patient \\
+ira\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}stade & DEFAILLANCE\_\allowbreak{}ORGANE & STADE\_\allowbreak{}IRA & stade d'une IRA, s'il est écrit \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Relations thérapeutiques (6)}}\\
+traitement\_\allowbreak{}administre\_\allowbreak{}a & TRAITEMENT & DONNEE\_\allowbreak{}PATIENT & traitement réellement administré \\
+traitement\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}posologie & TRAITEMENT & POSOLOGIE & dose, schéma, voie du traitement \\
+antibiotique\_\allowbreak{}adequat\_\allowbreak{}pour & TRAITEMENT & MICRO\_\allowbreak{}ORGANISME & antibiotique actif sur le germe (EUCAST) \\
+antibiotique\_\allowbreak{}inadequat\_\allowbreak{}pour & TRAITEMENT & MICRO\_\allowbreak{}ORGANISME & antibiotique inactif sur le germe \\
+traitement\_\allowbreak{}cible\_\allowbreak{}defaillance & TRAITEMENT & DEFAILLANCE\_\allowbreak{}ORGANE & traitement d'une défaillance \\
+traitement\_\allowbreak{}indique\_\allowbreak{}par\_\allowbreak{}label\_\allowbreak{}nosologique & TRAITEMENT & LABEL\_\allowbreak{}NOSOLOGIQUE & traitement indiqué par le diagnostic \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Relation des signes vitaux (1)}}\\
+signe\_\allowbreak{}vital\_\allowbreak{}supporte\_\allowbreak{}defaillance\_\allowbreak{}organe & SIGNE\_\allowbreak{}VITAL & DEFAILLANCE\_\allowbreak{}ORGANE & paramètre anormal qui étaye une défaillance \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Relations des biomarqueurs et de la microbiologie (5)}}\\
+biomarqueur\_\allowbreak{}obtenu\_\allowbreak{}a & BIOMARQUEUR & EVENEMENT\_\allowbreak{}TEMPOREL & moment du prélèvement \\
+biomarqueur\_\allowbreak{}supporte\_\allowbreak{}defaillance\_\allowbreak{}organe & BIOMARQUEUR & DEFAILLANCE\_\allowbreak{}ORGANE & valeur qui étaye une défaillance \\
+biomarqueur\_\allowbreak{}est\_\allowbreak{}critere\_\allowbreak{}de & BIOMARQUEUR & LABEL\_\allowbreak{}NOSOLOGIQUE & critère d'un diagnostic (ex. lactate et choc septique) \\
+micro\_\allowbreak{}organisme\_\allowbreak{}isole\_\allowbreak{}dans & MICRO\_\allowbreak{}ORGANISME & FOYER\_\allowbreak{}INFECTIEUX & site de prélèvement ou d'isolement \\
+micro\_\allowbreak{}organisme\_\allowbreak{}infecte\_\allowbreak{}site & MICRO\_\allowbreak{}ORGANISME & FOYER\_\allowbreak{}INFECTIEUX & site infecté par le germe, s'il est écrit \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Relations du terrain et du risque (3)}}\\
+comorbidite\_\allowbreak{}est\_\allowbreak{}facteur\_\allowbreak{}risque\_\allowbreak{}de & COMORBIDITE\_\allowbreak{}ANTECEDENT & LABEL\_\allowbreak{}NOSOLOGIQUE & terrain qui favorise le diagnostic \\
+a\_\allowbreak{}pour\_\allowbreak{}contexte\_\allowbreak{}acquisition & COMORBIDITE\_\allowbreak{}ANTECEDENT & CONTEXTE\_\allowbreak{}ACQUISITION & contexte d'acquisition lié au terrain \\
+contexte\_\allowbreak{}acquisition\_\allowbreak{}influence\_\allowbreak{}risque\_\allowbreak{}resistance & CONTEXTE\_\allowbreak{}ACQUISITION & MICRO\_\allowbreak{}ORGANISME & contexte qui augmente le risque de résistance \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Relations temporelles et pronostiques (4)}}\\
+precede & EVENEMENT\_\allowbreak{}TEMPOREL & EVENEMENT\_\allowbreak{}TEMPOREL & ordre de deux événements datés \\
+patient\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}evolution & DONNEE\_\allowbreak{}PATIENT & EVOLUTION\_\allowbreak{}PRONOSTIC & évolution ou devenir du patient \\
+evenement\_\allowbreak{}associe\_\allowbreak{}evolution & EVENEMENT\_\allowbreak{}TEMPOREL & EVOLUTION\_\allowbreak{}PRONOSTIC & événement lié à l'évolution \\
+service\_\allowbreak{}medical\_\allowbreak{}accueille & SERVICE\_\allowbreak{}MEDICAL & DONNEE\_\allowbreak{}PATIENT & service qui prend en charge le patient \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Relation d'imagerie (1)}}\\
+imagerie\_\allowbreak{}objective\_\allowbreak{}foyer & IMAGERIE\_\allowbreak{}PROCEDURE & FOYER\_\allowbreak{}INFECTIEUX & examen qui montre le foyer \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Relations des symptômes (3)}}\\
+presente\_\allowbreak{}symptome & DONNEE\_\allowbreak{}PATIENT & SYMPTOME & symptôme explicitement mentionné \\
+symptome\_\allowbreak{}oriente\_\allowbreak{}foyer & SYMPTOME & FOYER\_\allowbreak{}INFECTIEUX & symptôme qui oriente vers un foyer \\
+symptome\_\allowbreak{}associe\_\allowbreak{}gravite\_\allowbreak{}initiale & SYMPTOME & SCORE\_\allowbreak{}SOFA & symptôme lié à la gravité initiale \\
+\end{longtable}
+\endgroup
+
+Pour les relations qui expriment une interprétation clinique (\emph{symptome\_oriente\_foyer}, \emph{micro\_organisme\_infecte\_site}, \emph{ira\_a\_pour\_stade}\dots), le guideline exige que le lien soit explicitement écrit dans le dossier : il ne doit jamais être déduit de connaissances médicales.
+
+% ------------------------------------------------------------
+\chapter{Règles du TRACE-Sepsis Annotation Guideline}\label{annexe:regles}
+
+Cette annexe reprend les règles de la version~2.0 du guideline, validée par le médecin, qui ont servi à produire le Gold Standard et à construire les consignes d'extraction.
+
+\section{Règles générales d'annotation}\label{annexe:regles-generales}
+
+\begin{description}
+  \item[R1 -- Ancrage textuel.] Toute entité doit correspondre à une expression explicitement présente dans le document. Aucune entité ne doit être créée uniquement à partir de connaissances médicales extérieures.
+  \item[R2 -- Surface originale.] La mention est conservée telle qu'elle est écrite, avec ses positions dans le texte. La normalisation est enregistrée à part et ne remplace jamais la mention.
+  \item[R3 -- Normalisation séparée.] Une valeur ou un paramètre normalisé peut être ajouté, sans modifier les positions de la mention.
+  \item[R4 -- Type correct.] Une mention doit respecter la définition et les valeurs autorisées de sa catégorie. Si elle correspond mieux à une autre catégorie du schéma, elle doit être retypée.
+  \item[R5 -- Négation.] Une information explicitement niée est conservée lorsqu'elle renvoie à un concept clinique réellement mentionné. La mention inclut le marqueur de négation (« pas de toux ») et ne reçoit aucune relation.
+  \item[R6 -- Traitement envisagé.] Un traitement seulement envisagé, discuté, proposé ou souhaité ne reçoit pas de relation \emph{traitement\_administre\_a}.
+  \item[R7 -- Relations.] Les relations respectent strictement les signatures domaine--image des 34 relations (annexe~\ref{annexe:relations}).
+  \item[R8 -- Inférence.] Une relation médicalement plausible mais non énoncée par le document n'est pas ajoutée.
+  \item[R9 -- Chronique et aigu.] Une pathologie chronique ou citée dans les antécédents reste une \entite{COMORBIDITE\_ANTECEDENT}, sauf si c'est un diagnostic de la liste \entite{LABEL\_NOSOLOGIQUE}, et ne devient pas automatiquement une \entite{DEFAILLANCE\_ORGANE}.
+  \item[R10 -- Valeur de base.] Une valeur biologique dite de base, habituelle ou antérieure reste un \entite{BIOMARQUEUR}, mais ne justifie pas à elle seule une défaillance aiguë.
+  \item[R11 -- Synonymes et abréviations.] Les synonymes et abréviations d'un même concept sont reconnus (« CRP », « C.R.P. », « protéine C réactive » ; « IRA », « AKI », « insuffisance rénale aiguë »). La mention écrite est conservée et la forme canonique est donnée par la table de normalisation du guideline.
+  \item[R12 -- Diagnostic et antécédent.] Un diagnostic de la liste \entite{LABEL\_NOSOLOGIQUE} reste un \entite{LABEL\_NOSOLOGIQUE}, quel que soit l'épisode qu'il concerne ; tout autre antécédent est une \entite{COMORBIDITE\_ANTECEDENT}.
+  \item[R13 -- Rattachement du foyer.] Un \entite{FOYER\_INFECTIEUX} désigne uniquement la localisation d'un \entite{LABEL\_NOSOLOGIQUE}, auquel il est relié par \emph{label\_nosologique\_a\_pour\_foyer}. Il n'est jamais relié directement au patient, et la localisation d'un antécédent n'est pas un foyer infectieux.
+\end{description}
+
+\section{Règles de typage entre catégories proches}\label{annexe:regles-typage}
+
+\begin{description}
+  \item[Signe vital ou symptôme.] Une mesure physiologique chiffrée est un \entite{SIGNE\_VITAL}, sa traduction qualitative un \entite{SYMPTOME} : « FR 30/min » est un signe vital, « polypnée » un symptôme ; « température 39 °C » est un signe vital, « fièvre » un symptôme.
+  \item[Symptôme ou défaillance d'organe.] Un symptôme ne devient pas automatiquement une défaillance : « dyspnée » est un \entite{SYMPTOME}, « SDRA » ou « IRA » une \entite{DEFAILLANCE\_ORGANE}.
+  \item[Biomarqueur ou défaillance d'organe.] Une valeur biologique reste un \entite{BIOMARQUEUR} ; une défaillance n'est pas créée à partir d'une seule anomalie biologique si la dysfonction n'est pas écrite.
+  \item[Antécédent ou épisode aigu.] Les pathologies chroniques et les antécédents hors liste restent des \entite{COMORBIDITE\_ANTECEDENT} ; une condition aiguë de l'épisode en cours n'est pas retypée en antécédent.
+  \item[Traitement réel ou envisagé.] Un traitement discuté ou envisagé peut être annoté comme \entite{TRAITEMENT}, mais ne reçoit pas de relation d'administration tant que celle-ci n'est pas écrite.
+  \item[Liste des diagnostics.] Un \entite{LABEL\_NOSOLOGIQUE} doit appartenir à la liste des valeurs autorisées ; les diagnostics hors sepsis (fibrillation atriale, accident vasculaire cérébral\dots) n'en font pas partie.
+  \item[Diagnostic ou antécédent.] Un diagnostic de la liste (pneumopathie, choc septique, pyélonéphrite\dots) est toujours un \entite{LABEL\_NOSOLOGIQUE}, qu'il concerne l'épisode actuel ou un épisode antérieur.
+  \item[Diagnostic ou foyer.] Un diagnostic infectieux (pneumopathie, abcès, pyélonéphrite, érysipèle, sinusite) est un \entite{LABEL\_NOSOLOGIQUE} ; le \entite{FOYER\_INFECTIEUX} n'en représente que la localisation. Une mention reçoit un seul type : si le texte donne le diagnostic et la localisation, deux entités sont créées.
+\end{description}
+
+\section{Règles dérivées}\label{annexe:regles-derivees}
+
+Les seuils cliniques ne figurent pas dans les noms des relations. Ils sont portés par des règles dérivées, destinées à être exprimées en SWRL ou en contraintes SHACL.
+
+\begin{description}
+  \item[R1 -- Lactate et choc septique.] Selon la définition Sepsis-3, la présence de vasopresseurs associée à un lactate d'au moins 2~mmol/L fait du lactate un critère du choc septique (\emph{biomarqueur\_est\_critere\_de}).
+  \item[R2 -- Délai d'antibiothérapie.] Une première dose d'antibiotique administrée plus de 60~minutes après l'admission est associée à un risque élevé (\emph{evenement\_associe\_evolution}).
+  \item[R3 -- qSOFA, fréquence respiratoire.] Une fréquence respiratoire d'au moins 22/min valide le critère respiratoire du qSOFA.
+  \item[R4 -- qSOFA, pression artérielle.] Une pression artérielle systolique inférieure ou égale à 100~mmHg valide le critère hémodynamique du qSOFA.
+  \item[R4bis -- qSOFA, critère neurologique.] Une confusion ou un score de Glasgow inférieur à 15 valide le critère neurologique du qSOFA.
+  \item[R5 -- Corticoïdes.] Un choc septique réfractaire est une indication des corticoïdes (\emph{traitement\_indique\_par\_label\_nosologique}).
+  \item[R7 -- Risque de bactérie multirésistante.] Une acquisition nosocomiale, une exposition antibiotique récente ou un voyage récent dans un pays à forte prévalence de bactéries multirésistantes augmentent le risque de résistance (\emph{contexte\_acquisition\_influence\_risque\_resistance}).
+  \item[R8 -- Imagerie.] Une relation d'imagerie n'est créée que si l'examen et l'entité cible sont tous deux écrits dans le document.
+  \item[R9 -- Symptôme.] Une relation \emph{presente\_symptome} n'est créée que si le symptôme est explicitement mentionné ; aucune inférence diagnostique n'est faite à partir d'un symptôme seul.
+  \item[R10 -- Stade d'IRA.] La relation \emph{ira\_a\_pour\_stade} n'est créée que si le stade est explicitement écrit, et jamais calculée à partir de la créatinine.
+  \item[R11 -- Site d'infection.] Le site d'infection ne se déduit jamais de l'espèce du germe : un pneumocoque n'est pas uniquement pulmonaire. La relation \emph{micro\_organisme\_infecte\_site} n'est créée que si le document nomme le site infecté.
+\end{description}
