@@ -136,7 +136,7 @@ def main():
                 continue
             n_id += 1
             r = {"value": {"start": debut, "end": fin, "text": prop, "labels": [trouve[1]]}, "id": f"neg{n_id}",
-                 "from_name": "label", "to_name": "text", "type": "labels", "origin": "regle_negation"}
+                 "from_name": "label", "to_name": "text", "type": "labels", "origin": "manual"}  # Label Studio n'accepte que manual, prediction ou prediction-changed ; la provenance est dans le journal
             res.append(r)
             ents.append(r)
             c["negation_ajoutee"] += 1
