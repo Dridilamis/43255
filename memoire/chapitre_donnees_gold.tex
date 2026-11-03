@@ -5,7 +5,7 @@
 
 Pour évaluer un système qui extrait automatiquement des informations cliniques, il faut pouvoir comparer ce qu’il produit à ce que contiennent réellement les dossiers. Avec les modèles génératifs multimodaux, cette comparaison est indispensable : leurs réponses sont souvent bien formées et médicalement vraisemblables, alors même qu’une partie de leur contenu ne se trouve pas dans le document analysé.
 
-Ce mémoire a été réalisé au sein de l’IHU PROMETHEUS (\emph{PRecisiOn MedicinE for healTHcare associatEd and commUnity acquired Sepsis}), dans le Work Package 6, qui étudie le sepsis sous ses différents aspects. Pour TRACE, extraire des entités et des relations à partir de dossiers numérisés ne suffit pas : il faut aussi savoir si ces extractions sont fiables et repérer les erreurs qui fausseraient les connaissances cliniques construites à partir d’elles. Cela suppose une référence établie sans l’aide des modèles que l’on veut évaluer.
+Le travail relaté dans ce mémoire a été réalisé dans le cadre de l’IHU SEPSIS. Pour notre projet TRACE, extraire des entités et des relations à partir de dossiers numérisés ne suffit pas : il faut aussi savoir si ces extractions sont fiables et repérer les erreurs qui fausseraient les connaissances cliniques construites à partir d’elles. Cela suppose une référence établie sans l’aide des modèles que l’on veut évaluer.
 
 Le travail fait suite au cadre KG-EDS (\emph{Knowledge Graph for Early Diagnosis of Sepsis})~\cite{kgeds}. L’extraction y reposait sur l’apprentissage en contexte (\emph{In-Context Learning}) et avait été évaluée sur 58 dossiers de la cohorte APROCCHSS, sans corpus annoté. Faute de référence, ni la fiabilité des extractions ni les hallucinations ne pouvaient être mesurées précisément. Le Gold Standard présenté ici a été construit pour lever cette limite.
 
@@ -19,19 +19,19 @@ Le chapitre décrit d’abord le corpus clinique (section~\ref{sec:c3-3-2}), pui
 
 \subsection{Nature et origine des données}\label{sec:c3-3-2-1}
 
-Les documents étudiés sont des dossiers médicaux numérisés de patients pris en charge pour un sepsis. Ils proviennent de la cohorte APROCCHSS (1\,240 patients), constituée lors de l’essai multicentrique du même nom chez des patients en choc septique~\cite{annane2018aprocchss}. L’Assistance Publique -- Hôpitaux de Paris (AP-HP) les a mis à disposition dans le cadre du Work Package 6 de l’IHU PROMETHEUS. Ils couvrent les années 2008 à 2015 et viennent du service de médecine intensive--réanimation de l’Hôpital Raymond-Poincaré (AP-HP).
+Les documents étudiés sont des dossiers médicaux numérisés de patients pris en charge pour un sepsis. Ils proviennent de la cohorte APROCCHSS (1\,240 patients), constituée lors de l’essai multicentrique du même nom chez des patients en choc septique~\cite{annane2018aprocchss}. L’Assistance Publique - Hôpitaux de Paris (AP-HP) les a mis à disposition dans le cadre du Work Package 6 de l’IHU SEPSIS. Ils couvrent les années 2008 à 2015 et viennent du service de médecine intensive-réanimation de l’Hôpital Raymond-Poincaré (AP-HP).
 
-Ces dossiers n’ont rien d’une base de données structurée, où chaque information aurait son champ. Ils ont été rédigés au fil de la prise en charge et mêlent observations médicales, paramètres physiologiques, résultats biologiques et microbiologiques, prescriptions, comptes rendus d’examens, diagnostics et notes d’évolution. La plupart sont antérieurs à la définition Sepsis-3 de 2016~\cite{singer2016third} et emploient donc le vocabulaire de Sepsis-2~\cite{levy2003sccm}, comme « sepsis sévère ».
+Ces dossiers n’ont rien d’une base de données structurée, où chaque information aurait son champ. Ils ont été rédigés au fil de la prise en charge du patient et mêlent observations médicales, paramètres physiologiques, résultats biologiques et microbiologiques, prescriptions, comptes rendus d’examens, diagnostics et notes d’évolution. La plupart sont antérieurs à la définition Sepsis-3 de 2016~\cite{singer2016third} et emploient donc le vocabulaire de Sepsis-2~\cite{levy2003sccm}, comme « sepsis sévère ».
 
 Une même information revient souvent à plusieurs endroits, sous une forme plus ou moins précise. Une suspicion d’infection peut ainsi apparaître dans l’observation d’entrée, être précisée par une imagerie, puis confirmée par un prélèvement. Une phrase ou une page isolée ne suffit donc pas toujours à comprendre le contexte clinique. C’est pourquoi \textbf{le dossier patient est l’unité clinique de référence} dans ce travail, même si certaines opérations se font page par page.
 
 \subsection{Hétérogénéité documentaire}\label{sec:c3-3-2-2}
 
-Les dossiers sont des fichiers PDF obtenus par numérisation de documents papier. D’une page à l’autre, la mise en page, la densité du texte, l’orientation et la qualité du scan changent. Une partie de l’information est rédigée en texte libre, une autre est rangée dans des tableaux ou des formulaires. Ailleurs, des résultats sont simplement alignés sur une même ligne : le nom d’un paramètre, sa valeur et son unité, parfois suivis des valeurs normales du laboratoire (par exemple « Leucocytes 40,8 4,0--10,0 G/L »).
+Les dossiers sont des fichiers PDF obtenus par numérisation de documents papier. D’une page à l’autre, la mise en page, la densité du texte, l’orientation et la qualité du scan changent. Une partie de l’information est rédigée en texte libre, une autre est rangée dans des tableaux ou des formulaires. Ailleurs, des résultats sont simplement alignés sur une même ligne : le nom d’un paramètre, sa valeur et son unité, parfois suivis des valeurs normales du laboratoire (par exemple « Leucocytes 40,8 4,0–10,0 G/L »).
 
 La variabilité est aussi sémantique. Un même fait peut être écrit de plusieurs façons, abrégé, ou complété sur une autre page. Certains éléments n’ont de sens qu’avec leur contexte : une valeur biologique doit être rattachée à son biomarqueur et à son unité, un traitement à sa posologie, à sa voie d’administration ou à sa date. Une information donnée sur une page peut enfin être confirmée, précisée ou contredite plus loin, ce qui conforte le choix du dossier comme unité de représentation.
 
-Comme il s’agit de scans, ces documents ne se comportent pas comme des textes nativement numériques : la disposition de la page, la position relative des informations et la qualité de l’image influencent l’extraction. C’est l’une des raisons du recours à des modèles vision-langage, qui lisent directement les pages scannées. Dans TRACE, le document est traité comme une source multimodale, et non comme une image qu’il faudrait d’abord convertir en texte par OCR.
+Comme il s’agit de scans, ces documents ne se comportent pas comme des textes nativement numériques : la disposition de la page, la position relative des informations et la qualité de l’image comptent autant que le texte lui-même. Ils doivent donc être traités comme des sources multimodales ; la manière dont ils sont lus pour l’extraction est présentée au chapitre~\ref{chap:extraction}.
 
 \subsection{Taille et description du corpus}\label{sec:c3-3-2-3}
 
@@ -46,8 +46,8 @@ Le corpus final compte \textbf{246 dossiers médicaux}, réunis progressivement 
 \textbf{Caractéristique} & \textbf{Corpus complet} & \textbf{Sous-corpus de référence} \\
 \midrule
 Nombre de dossiers & 246 & 49 ($\approx$ 20\,\%) \\
-Nombre total de pages & \acompleter{à compléter} & 291 \\
-Pages par dossier (min--max) & \acompleter{à compléter} & 4--12 (moyenne : 5,9) \\
+Nombre total de pages & 1278 & 291 \\
+Pages par dossier (min--max) & 2--12 (moyenne : 5,2) & 4--8 (moyenne : 5,7) \\
 Période couverte & 2008--2015 & 2008--2015 \\
 Établissement / service & Médecine intensive--réanimation, Hôpital Raymond-Poincaré (AP-HP) & Médecine intensive--réanimation, Hôpital Raymond-Poincaré (AP-HP) \\
 \bottomrule
@@ -58,17 +58,22 @@ Période couverte & 2008--2015 & 2008--2015 \\
 
 Les dossiers contiennent des données de santé. Leur confidentialité a donc été prise en compte dès la préparation du corpus, en limitant le traitement à ce qui était nécessaire aux objectifs scientifiques.
 
-Une première pseudonymisation a été faite à la main par l'AP-HP, avant la mise à disposition. Les comptes rendus ont été imprimés et le nom et le prénom du patient partiellement masqués au stylo noir : quelques lettres ont été recouvertes, sans que l'identité soit entièrement effacée. Les pages ont ensuite été scannées et regroupées en fichiers PDF, que nous avons récupérés sur l'intranet de l'AP-HP. C'est pour cette raison que les dossiers n'ont pas de couche texte : l'information n'est accessible qu'à travers l'image des pages (section~\ref{sec:c3-3-2-2}).
+\paragraph{Cadre réglementaire.} Le traitement de ces données relève du Règlement général sur la protection des données (RGPD, Règlement (UE) 2016/679~\cite{rgpd2016}), et en particulier de deux de ses articles :
+\begin{itemize}
+  \item l'\textbf{article~5} fixe les principes qui s'appliquent à tout traitement de données personnelles : la \emph{minimisation}, selon laquelle les données doivent être adéquates, pertinentes et limitées à ce qui est nécessaire aux finalités du traitement ; la \emph{limitation des finalités}, selon laquelle elles ne servent qu'aux objectifs pour lesquels elles ont été collectées ; l'\emph{intégrité et la confidentialité}, qui exigent de les protéger contre tout accès ou usage non autorisé ;
+  \item l'\textbf{article~89} précise comment appliquer ces principes lorsque les données servent à la recherche scientifique. Il impose des \emph{garanties appropriées} pour les droits et libertés des personnes, sous la forme de mesures techniques et organisationnelles qui assurent notamment le respect de la minimisation. La \emph{pseudonymisation} fait partie de ces mesures, dès lors qu'elle permet encore d'atteindre les objectifs de la recherche ; et lorsque ces objectifs peuvent être atteints avec des données qui ne permettent plus d'identifier les personnes, c'est cette solution qui doit être retenue.
+\end{itemize}
+Les mesures décrites ci-dessous répondent à ces deux articles.
+
+\paragraph{Première pseudonymisation, manuelle.} Elle a été faite par l'AP-HP, avant la mise à disposition. Les comptes rendus ont été imprimés et le nom et le prénom du patient partiellement masqués au stylo noir : quelques lettres ont été recouvertes, sans que l'identité soit entièrement effacée. Les pages ont ensuite été scannées et regroupées en fichiers PDF, que nous avons récupérés sur l'intranet de l'AP-HP. C'est pour cette raison que les dossiers n'ont pas de couche texte : l'information n'est accessible qu'à travers l'image des pages (section~\ref{sec:c3-3-2-2}).
 
 Ce masquage ne concerne que le nom du patient, et quelques lettres peuvent rester lisibles ; lorsque le nom est répété ailleurs dans le compte rendu, il est effacé par la seconde pseudonymisation décrite ci-dessous. Les dates, comme la date de naissance ou les dates d'entrée et de sortie, ont en revanche été conservées, car elles sont nécessaires pour reconstituer la chronologie de la prise en charge. Au sens du RGPD, ces données sont donc pseudonymisées et non anonymisées : elles restent des données à caractère personnel et ont été traitées comme telles.
 
-Une seconde pseudonymisation, automatique, a été appliquée aux textes transcrits des pages et aux annotations, à la demande du médecin référent. Elle repose sur des règles explicites : effacement des noms du patient restés lisibles hors de l'en-tête, de ceux de ses proches et des noms de médecins figurant dans l'en-tête des comptes rendus, ainsi que des numéros de téléphone. Chaque caractère effacé est remplacé par un caractère de substitution, ce qui conserve la longueur du texte et donc les positions des annotations. Les outils de désidentification automatique fondés sur l'apprentissage, qui existent pour les dossiers cliniques en français~\cite{elazzouzi2024}, n'ont pas été utilisés.
+\paragraph{Seconde pseudonymisation, automatique.} À la demande du médecin référent, elle a été appliquée aux textes transcrits des pages et aux annotations. Elle repose sur des règles explicites : effacement des noms du patient restés lisibles hors de l'en-tête, de ceux de ses proches et des noms de médecins figurant dans l'en-tête des comptes rendus, ainsi que des numéros de téléphone. Chaque caractère effacé est remplacé par un caractère de substitution, ce qui conserve la longueur du texte et donc les positions des annotations. Les outils de désidentification automatique fondés sur l'apprentissage, qui existent pour les dossiers cliniques en français~\cite{elazzouzi2024}, n'ont pas été utilisés.
 
-Les informations qui identifient directement un patient ne sont ni annotées ni extraites : le schéma se limite aux éléments utiles pour représenter le contexte clinique. Ce choix applique le principe de minimisation de l'article~5 du RGPD (Règlement (UE) 2016/679~\cite{rgpd2016}), selon lequel les données doivent être adéquates, pertinentes et limitées à ce qui est nécessaire aux finalités du traitement. Le même article pose aussi les principes de limitation des finalités, selon lequel les données ne servent qu'aux objectifs pour lesquels elles ont été collectées, et d'intégrité et de confidentialité, qui exige de les protéger contre tout accès ou usage non autorisé. L'article~89 précise comment appliquer ces principes lorsque les données servent à la recherche scientifique : il impose des garanties appropriées pour les droits et libertés des personnes concernées, sous la forme de mesures techniques et organisationnelles qui assurent notamment le respect de la minimisation. La pseudonymisation fait partie de ces mesures, dès lors qu'elle permet encore d'atteindre les objectifs de la recherche ; et lorsque ces objectifs peuvent être atteints avec des données qui ne permettent plus d'identifier les personnes, c'est cette solution qui doit être retenue. Les deux pseudonymisations décrites ci-dessus et l'exclusion des données directement identifiantes constituent les garanties mises en place dans ce travail.
+\paragraph{Minimisation.} Les informations qui identifient directement un patient ne sont ni annotées ni extraites : le schéma se limite aux éléments utiles pour représenter le contexte clinique. C'est l'application directe du principe de minimisation de l'article~5.
 
-Le format des documents impose une précaution supplémentaire. Dans un scan, une information sensible peut se trouver dans l'image même de la page, indépendamment de tout texte. La protection des données doit donc porter sur le document visuel entier. C'est d'autant plus important dans ce travail que les modèles multimodaux lisent directement les pages : la protection des données accompagne tout le protocole, de la préparation du corpus jusqu'à l'évaluation.
-
-Les conditions dans lesquelles les modèles d'extraction ont traité ces pages sont décrites avec ces modèles, au chapitre~\ref{chap:extraction} (section~\ref{sec:c4-donnees}).
+\paragraph{Protection du document visuel.} Le format des documents impose une précaution supplémentaire. Dans un scan, une information sensible peut se trouver dans l'image même de la page, indépendamment de tout texte. La protection des données doit donc porter sur le document visuel entier, de la préparation du corpus jusqu'à l'évaluation. Les conditions dans lesquelles les modèles d'extraction ont traité ces pages sont décrites au chapitre~\ref{chap:extraction} (section~\ref{sec:c4-donnees}).
 
 \section{Le TRACE-Sepsis Annotation Guideline}\label{sec:c3-3-3}
 
@@ -258,7 +263,7 @@ La figure~\ref{fig:c3-3-1} résume le chemin qui mène du corpus clinique au Gol
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/fig_gold.png}
+\includegraphics[width=\textwidth]{images/gold.png}
 \caption{Processus de construction du Gold Standard}\label{fig:c3-3-1}
 \end{figure}
 
@@ -300,7 +305,7 @@ Avant la validation médicale, un contrôle a permis de repérer les anomalies q
   \item doublons et chevauchements injustifiés ;
   \item relations dont une extrémité manque ;
   \item signatures de relation invalides ;
-  \item annotations créées malgré une négation ;
+  \item relations attachées à une information niée ;
   \item informations reposant sur une inférence non justifiée.
 \end{itemize}
 
@@ -330,7 +335,7 @@ On obtient à ce stade une première version structurée et contrôlée de la r�
 
 \section{Validation médicale du Gold Standard}\label{sec:c3-3-9}
 
-Une annotation peut être structurellement correcte et cliniquement fausse : une relation peut respecter toutes les contraintes du schéma sans correspondre à ce que décrit le dossier. Après la validation du guideline (section~\ref{sec:c3-3-3-4}), une seconde validation médicale a donc porté sur les annotations elles-mêmes. Le Pr Nicholas Heming l’a menée sur le Gold Standard initial, après l’annotation et la consolidation. Elle a demandé en moyenne environ 2,5 heures de travail par dossier avec le médecin.
+Une annotation peut être structurellement correcte et cliniquement fausse : une relation peut respecter toutes les contraintes du schéma sans correspondre à ce que décrit le dossier. Après la validation du guideline (section~\ref{sec:c3-3-3-4}), une seconde validation médicale a donc porté sur les annotations elles-mêmes. Le Pr Nicholas Heming l’a menée sur le Gold Standard initial, après l’annotation et la consolidation.
 
 Le tableau~\ref{tab:c3-3-val} résume les deux niveaux de validation médicale.
 
@@ -350,7 +355,7 @@ Annotations & Entités et relations du Gold Standard initial & Environ 2,5 heure
 
 \subsection{Objectif et protocole}\label{sec:c3-3-9-1}
 
-Il s’agit de vérifier que la représentation structurée reste fidèle à ce que le dossier documente. Le médecin a confronté les annotations à leur source, présentées avec des preuves aussi courtes et ciblées que possible. Le but n’était ni de reconstituer le dossier ni de produire une seconde annotation indépendante, mais de faire une revue experte du Gold Standard initial pour savoir quelles annotations confirmer et lesquelles corriger.
+Il s’agit de vérifier que la représentation structurée reste fidèle à ce que le dossier documente. Le médecin a confronté les annotations à leur source, présentées avec des preuves aussi courtes et ciblées que possible, et a appliqué lui-même ses corrections dans les annotations. Le but n'était pas de produire une seconde annotation indépendante, mais de réviser le Gold Standard initial : chaque annotation a été examinée, puis confirmée ou corrigée directement par le médecin. Cette revue a représenté environ 2,5 heures de travail par dossier, ce qui reflète le niveau de détail de la vérification.
 
 \subsection{Validation des entités}\label{sec:c3-3-9-2}
 
@@ -362,7 +367,9 @@ Une relation doit être structurellement valide, mais aussi correspondre au lien
 
 \subsection{Intégration des corrections}\label{sec:c3-3-9-4}
 
-À l’issue de la revue, chaque annotation a été confirmée, modifiée (information présente mais mal représentée), supprimée (justification insuffisante) ou ajoutée (information pertinente oubliée lors de l’annotation initiale), en restant cohérent avec le guideline. Lorsqu’une correction du médecin traduisait une règle générale, cette règle a été appliquée à tous les dossiers concernés, et pas seulement au dossier corrigé. C’est le cas, par exemple, de l’exclusion des noms d’établissements des \entite{SERVICE\_MEDICAL}, ou de la non-annotation des valeurs témoins du laboratoire. Lorsqu’une correction contredisait une règle écrite du guideline, c’est la règle du guideline qui a été appliquée, afin que le référentiel reste cohérent d’un dossier à l’autre.
+Au cours de la revue, le médecin a confirmé, modifié (information présente mais mal représentée), supprimé (justification insuffisante) ou ajouté (information pertinente oubliée lors de l'annotation initiale) les annotations, en appliquant directement ses corrections. Lorsqu'une de ses corrections traduisait une règle générale, nous l'avons ensuite appliquée à tous les dossiers concernés, et pas seulement au dossier corrigé. C'est le cas, par exemple, de l'exclusion des noms d'établissements des \entite{SERVICE\_MEDICAL}, de la non-annotation des valeurs témoins du laboratoire, ou de l'annotation systématique des absences explicitement mentionnées (section~\ref{sec:c3-3-6-4}). Lorsqu'une correction contredisait une règle écrite du guideline, le cas a été rediscuté avec le médecin, point par point. Le guideline ayant été validé par lui en amont, sa règle a été maintenue, afin que le référentiel reste cohérent d'un dossier à l'autre.
+
+La version ainsi corrigée a ensuite été soumise au médecin pour une revue finale, afin de vérifier que l'extension de ses corrections à l'ensemble des dossiers était conforme à ses décisions.
 
 \section{Gold Standard final et caractérisation}\label{sec:c3-3-10}
 
@@ -370,7 +377,7 @@ Une relation doit être structurellement valide, mais aussi correspondre au lien
 
 Une fois les corrections intégrées, une dernière consolidation a vérifié qu’elles n’introduisaient pas de nouvelles incohérences et que les entités et les relations respectaient toujours le schéma TRACE-Sepsis v2.0. Le résultat est le Gold Standard final, utilisé comme référence dans les expériences.
 
-Cette référence a été construite sans les modèles multimodaux évalués : ni les prédictions de Qwen2.5-VL, ni celles de Mistral Small 4, ni celles d’un autre modèle n’en déterminent le contenu. On évite ainsi un raisonnement circulaire où un modèle contribuerait à définir sa propre vérité de référence. L’indépendance doit valoir dans les deux sens : aucune sortie évaluée ne doit avoir été construite ou corrigée à l’aide du Gold Standard. Dans la chaîne de traitement, seule l’étape d’évaluation a accès à la référence (chapitre~\ref{chap:architecture}).
+Cette référence a été construite sans les modèles multimodaux évalués : ni les prédictions de Qwen2.5-VL, ni celles de Mistral Small 4, ni celles d’un autre modèle n’en déterminent le contenu. On évite ainsi un raisonnement circulaire où un modèle contribuerait à définir sa propre vérité de référence. L’indépendance doit valoir dans les deux sens : aucun dossier évalué ne doit être traité à l’aide de sa propre annotation. Lorsque l’extraction ou la chaîne TRACE s’appuient sur la référence, par exemple pour choisir des exemples annotés ou apprendre des règles, elles le font toujours en validation croisée, à partir des autres dossiers uniquement (chapitres~\ref{chap:extraction} et~\ref{chap:architecture}).
 
 \subsection{Statistiques descriptives}\label{sec:c3-3-10-2}
 
@@ -384,9 +391,9 @@ Le tableau~\ref{tab:c3-3-4} donne les principales statistiques du Gold Standard 
 \toprule
 \textbf{Indicateur} & \textbf{Entités} & \textbf{Relations} \\
 \midrule
-Total & 12\,174 & 5\,543 \\
-Moyenne par dossier (écart-type) & 248,4 (82,2) & 113,1 (46,6) \\
-Minimum -- maximum par dossier & 90 -- 474 & 25 -- 242 \\
+Total & 12\,396 & 5\,546 \\
+Moyenne par dossier (écart-type) & 253,0 (83,2) & 113,2 (46,6) \\
+Minimum -- maximum par dossier & 94 -- 484 & 25 -- 242 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -399,26 +406,26 @@ Minimum -- maximum par dossier & 90 -- 474 & 25 -- 242 \\
 \toprule
 \textbf{Type d’entité} & \textbf{Effectif} & \textbf{Proportion (\%)} \\
 \midrule
-\entite{BIOMARQUEUR} & 2\,989 & 24,6 \\
-\entite{TRAITEMENT} & 2\,465 & 20,2 \\
-\entite{SYMPTOME} & 1\,177 & 9,7 \\
-\entite{POSOLOGIE} & 1\,056 & 8,7 \\
-\entite{COMORBIDITE\_\allowbreak{}ANTECEDENT} & 585 & 4,8 \\
-\entite{SIGNE\_\allowbreak{}VITAL} & 565 & 4,6 \\
-\entite{LABEL\_\allowbreak{}NOSOLOGIQUE} & 500 & 4,1 \\
-\entite{DEFAILLANCE\_\allowbreak{}ORGANE} & 485 & 4,0 \\
-\entite{IMAGERIE\_\allowbreak{}PROCEDURE} & 470 & 3,9 \\
-\entite{DONNEE\_\allowbreak{}PATIENT} & 438 & 3,6 \\
-\entite{EVENEMENT\_\allowbreak{}TEMPOREL} & 403 & 3,3 \\
-\entite{EVOLUTION\_\allowbreak{}PRONOSTIC} & 240 & 2,0 \\
-\entite{MICRO\_\allowbreak{}ORGANISME} & 235 & 1,9 \\
-\entite{FOYER\_\allowbreak{}INFECTIEUX} & 187 & 1,5 \\
-\entite{SERVICE\_\allowbreak{}MEDICAL} & 184 & 1,5 \\
+\entite{BIOMARQUEUR} & 2\,990 & 24,1 \\
+\entite{TRAITEMENT} & 2\,469 & 19,9 \\
+\entite{SYMPTOME} & 1\,284 & 10,4 \\
+\entite{POSOLOGIE} & 1\,058 & 8,5 \\
+\entite{COMORBIDITE\_\allowbreak{}ANTECEDENT} & 614 & 5,0 \\
+\entite{SIGNE\_\allowbreak{}VITAL} & 558 & 4,5 \\
+\entite{LABEL\_\allowbreak{}NOSOLOGIQUE} & 521 & 4,2 \\
+\entite{DEFAILLANCE\_\allowbreak{}ORGANE} & 516 & 4,2 \\
+\entite{IMAGERIE\_\allowbreak{}PROCEDURE} & 481 & 3,9 \\
+\entite{DONNEE\_\allowbreak{}PATIENT} & 438 & 3,5 \\
+\entite{EVENEMENT\_\allowbreak{}TEMPOREL} & 405 & 3,3 \\
+\entite{MICRO\_\allowbreak{}ORGANISME} & 243 & 2,0 \\
+\entite{EVOLUTION\_\allowbreak{}PRONOSTIC} & 243 & 2,0 \\
+\entite{FOYER\_\allowbreak{}INFECTIEUX} & 198 & 1,6 \\
+\entite{SERVICE\_\allowbreak{}MEDICAL} & 183 & 1,5 \\
 \entite{CONTEXTE\_\allowbreak{}ACQUISITION} & 125 & 1,0 \\
-\entite{SCORE\_\allowbreak{}NEUROLOGIQUE} & 67 & 0,6 \\
+\entite{SCORE\_\allowbreak{}NEUROLOGIQUE} & 67 & 0,5 \\
 \entite{SCORE\_\allowbreak{}SOFA} & 3 & 0,0 \\
 \midrule
-\textbf{Total} & 12\,174 & 100,0 \\
+\textbf{Total} & 12\,396 & 100,0 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -441,17 +448,17 @@ Minimum -- maximum par dossier & 90 -- 474 & 25 -- 242 \\
 \bottomrule
 \endlastfoot
 Thérapeutiques & traitement\_\allowbreak{}administre\_\allowbreak{}a & 1\,861 & 33,6 \\
- & traitement\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}posologie & 1\,012 & 18,3 \\
+ & traitement\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}posologie & 1\,014 & 18,3 \\
  & traitement\_\allowbreak{}cible\_\allowbreak{}defaillance & 65 & 1,2 \\
- & traitement\_\allowbreak{}indique\_\allowbreak{}par\_\allowbreak{}label\_\allowbreak{}nosologique & 58 & 1,0 \\
+ & traitement\_\allowbreak{}indique\_\allowbreak{}par\_\allowbreak{}label\_\allowbreak{}nosologique & 59 & 1,1 \\
  & antibiotique\_\allowbreak{}adequat\_\allowbreak{}pour & 37 & 0,7 \\
  & antibiotique\_\allowbreak{}inadequat\_\allowbreak{}pour & 8 & 0,1 \\
 \addlinespace
-Symptômes & presente\_\allowbreak{}symptome & 936 & 16,9 \\
+Symptômes & presente\_\allowbreak{}symptome & 935 & 16,9 \\
 \addlinespace
 Diagnostiques & presente\_\allowbreak{}dysfonction\_\allowbreak{}organe & 410 & 7,4 \\
  & a\_\allowbreak{}pour\_\allowbreak{}label\_\allowbreak{}nosologique & 326 & 5,9 \\
- & label\_\allowbreak{}nosologique\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}foyer & 80 & 1,4 \\
+ & label\_\allowbreak{}nosologique\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}foyer & 82 & 1,5 \\
  & score\_\allowbreak{}sofa\_\allowbreak{}calcule\_\allowbreak{}pour & 3 & 0,1 \\
 \addlinespace
 Temporelles et pronostiques & patient\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}evolution & 163 & 2,9 \\
@@ -464,42 +471,46 @@ Biomarqueurs et microbiologie & biomarqueur\_\allowbreak{}supporte\_\allowbreak{
  & biomarqueur\_\allowbreak{}est\_\allowbreak{}critere\_\allowbreak{}de & 57 & 1,0 \\
  & biomarqueur\_\allowbreak{}obtenu\_\allowbreak{}a & 22 & 0,4 \\
 \addlinespace
-Imagerie & imagerie\_\allowbreak{}objective\_\allowbreak{}foyer & 69 & 1,2 \\
+Imagerie & imagerie\_\allowbreak{}objective\_\allowbreak{}foyer & 68 & 1,2 \\
 \addlinespace
 Signes vitaux & signe\_\allowbreak{}vital\_\allowbreak{}supporte\_\allowbreak{}defaillance\_\allowbreak{}organe & 39 & 0,7 \\
 \addlinespace
 Terrain et risque & comorbidite\_\allowbreak{}est\_\allowbreak{}facteur\_\allowbreak{}risque\_\allowbreak{}de & 15 & 0,3 \\
  & contexte\_\allowbreak{}acquisition\_\allowbreak{}influence\_\allowbreak{}risque\_\allowbreak{}resistance & 3 & 0,1 \\
 \midrule
-\textbf{Total} & & 5\,543 & 100,0 \\
+\textbf{Total} & & 5\,546 & 100,0 \\
 \end{longtable}
 \endgroup
 
-Ces répartitions sont très déséquilibrées. Les biomarqueurs et les traitements représentent à eux seuls près de la moitié des entités, et deux relations, l’administration d’un traitement et sa posologie, plus de la moitié des relations. À l’inverse, deux types d’entités (\entite{SCORE\_qSOFA} et \entite{STADE\_IRA}) et onze types de relations n’apparaissent jamais, notamment les relations liées aux scores SOFA et qSOFA, au stade d’IRA et certaines relations portant sur les symptômes et le site infecté. Ces écarts doivent être gardés en tête pour interpréter les résultats : un bon score global peut masquer des performances faibles sur des catégories rares, et aucune performance ne peut être mesurée sur une catégorie absente de la référence. Les écarts entre dossiers, de 90 à 474 entités, permettent par ailleurs de situer les performances selon la complexité des documents.
+Ces répartitions sont très déséquilibrées. Les biomarqueurs et les traitements représentent à eux seuls près de la moitié des entités, et deux relations, l’administration d’un traitement et sa posologie, plus de la moitié des relations. À l’inverse, deux types d’entités (\entite{SCORE\_qSOFA} et \entite{STADE\_IRA}) et onze types de relations n’apparaissent jamais, notamment les relations liées aux scores SOFA et qSOFA, au stade d’IRA et certaines relations portant sur les symptômes et le site infecté. Ces écarts doivent être gardés en tête pour interpréter les résultats : un bon score global peut masquer des performances faibles sur des catégories rares, et aucune performance ne peut être mesurée sur une catégorie absente de la référence. Les écarts entre dossiers, de 94 à 484 entités, permettent par ailleurs de situer les performances selon la complexité des documents.
 
 \subsection{Effet de la validation médicale}\label{sec:c3-3-10-3}
 
-Le tableau~\ref{tab:c3-3-7} compare la référence avant et après la revue médicale. Il ne s’agit pas d’une mesure d’accord inter-annotateurs, mais d’une façon de chiffrer ce que la validation a apporté à la consolidation du Gold Standard.
+Le tableau~\ref{tab:c3-3-7} compare le Gold Standard avant et après la revue médicale. Il ne s'agit pas d'une mesure d'accord inter-annotateurs : les deux versions ne sont pas indépendantes, puisque la seconde résulte de la révision de la première. Cette comparaison permet en revanche de chiffrer ce que la validation a apporté à la référence.
+
+Pour chaque entité et chaque relation, on distingue quatre cas : l'élément est confirmé lorsqu'il est identique dans les deux versions ; il est modifié lorsqu'il est conservé mais que son type, sa délimitation ou, pour une relation, son sujet, son objet ou son sens ont changé ; il est supprimé lorsqu'il ne figure plus dans la version finale ; il est ajouté lorsqu'il n'existait pas dans la version initiale.
 
 \begin{table}[H]
 \centering
-\caption{Gold Standard avant et après validation médicale}\label{tab:c3-3-7}
+\caption{Effet de la validation médicale sur le Gold Standard}\label{tab:c3-3-7}
 \small
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.404\linewidth}>{\raggedright\arraybackslash}p{0.231\linewidth}>{\raggedright\arraybackslash}p{0.231\linewidth}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}}
 \toprule
-\textbf{Indicateur} & \textbf{Avant validation} & \textbf{Après validation} \\
+\textbf{Cas} & \textbf{Entités} & \textbf{Relations} \\
 \midrule
-Nombre total d’entités & \acompleter{à compléter} & 12\,174 \\
-Nombre total de relations & \acompleter{à compléter} & 5\,543 \\
-Entités ajoutées / supprimées / reclassées & --- & \acompleter{à compléter} \\
-Relations ajoutées / supprimées / corrigées & --- & \acompleter{à compléter} \\
+Confirmées & \acompleter{} & \acompleter{} \\
+Modifiées & \acompleter{} & \acompleter{} \\
+Supprimées & \acompleter{} & \acompleter{} \\
+Ajoutées & \acompleter{} & \acompleter{} \\
+\midrule
+\textbf{Total après validation} & \acompleter{} & \acompleter{} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \section{Utilisation du Gold Standard dans l’évaluation}\label{sec:c3-3-11}
 
-Le Gold Standard final sert de référence pour mesurer les performances des systèmes d’extraction. Pour chaque dossier, la sortie structurée d’un modèle est comparée à la référence, ce qui permet de compter les prédictions correctes (vrais positifs, TP), les informations en trop (faux positifs, FP) et les informations manquantes (faux négatifs, FN). La précision, le rappel et le F1-score s’en déduisent~\cite{vanrijsbergen1979} :
+Le Gold Standard final sert de référence pour mesurer les performances des systèmes d'extraction. Pour chaque dossier, la sortie structurée d'un modèle est comparée à la référence, ce qui permet de compter les prédictions correctes (vrais positifs, TP), les informations en trop (faux positifs, FP) et les informations manquantes (faux négatifs, FN). La précision, le rappel et le F1-score s'en déduisent~\cite{hicks2022metrics,jurafsky2026slp} :
 
 \begin{equation}
 \text{Précision} = \frac{TP}{TP + FP}
@@ -511,7 +522,7 @@ Le Gold Standard final sert de référence pour mesurer les performances des sys
 F_1 = \frac{2 \times \text{Précision} \times \text{Rappel}}{\text{Précision} + \text{Rappel}}
 \end{equation}
 
-Ces mesures sont calculées séparément pour les entités et pour les relations, selon les modes d’appariement (\emph{matching}) décrits au chapitre~\ref{chap:extraction} (section~\ref{sec:c4-matching}).
+Ces mesures sont le standard de l'évaluation en extraction d'information clinique, comme en témoignent les campagnes d'évaluation partagées et les études comparatives récentes~\cite{henry2020n2c2,fraile2023review,chen2025benchmarking}. Elles sont calculées séparément pour les entités et pour les relations, selon les modes d'appariement (\emph{matching}) décrits au chapitre~\ref{chap:extraction} (section~\ref{sec:c4-matching}).
 
 Au-delà des scores globaux, la comparaison détaillée avec la référence permet de qualifier les écarts : information de la référence non retrouvée, entité en trop, mauvais type, valeur ou unité erronée, relation manquante, relation que le dossier ne justifie pas, sens inversé, incohérence structurelle, temporelle ou contextuelle. Ces écarts sont la base de l’analyse des erreurs et des hallucinations présentée dans la suite.
 
@@ -525,7 +536,7 @@ Plusieurs limites sont à garder en tête pour interpréter les résultats obten
   \item \textbf{Annotation.} Une seule personne a annoté le corpus et aucun accord inter-annotateurs n’a été mesuré. Une double annotation d’un échantillon de dossiers, avec un coefficient kappa~\cite{cohen1960} ou un F1 inter-annotateurs, permettrait d’estimer la reproductibilité du guideline.
   \item \textbf{Validation médicale.} Un seul médecin, le Pr Heming, a validé le guideline et les annotations. Il s’agit d’une revue experte destinée à fiabiliser la référence, et non d’une étude de concordance entre plusieurs évaluateurs.
   \item \textbf{Taille et représentativité.} Les 49 dossiers annotés (291 pages) représentent environ 20\,\% des 246 dossiers. Issus de deux lots successifs et choisis selon leur ordre de mise à disposition, et non par tirage aléatoire ou stratifié, ils ne forment pas forcément un échantillon représentatif. Certaines catégories y sont rares ou absentes (section~\ref{sec:c3-3-10-2}), ce qui limite la portée des résultats par catégorie.
-  \item \textbf{Pseudonymisation.} Le masquage au stylo fait avant la numérisation ne couvre qu’une partie des noms, et des informations indirectement identifiantes restent visibles dans les images. La pseudonymisation automatique appliquée ensuite porte sur les textes transcrits et les annotations, pas sur les images des pages.
+  \item \textbf{Pseudonymisation.} Le masquage au stylo fait avant la numérisation ne couvre qu’une partie des noms, et des informations indirectement identifiantes, comme les dates, restent visibles dans les images. La pseudonymisation automatique appliquée ensuite porte sur les textes transcrits et les annotations, pas sur les images des pages.
   \item \textbf{Spécificité du domaine.} Le guideline a été conçu pour le sepsis ; l’appliquer à d’autres contextes cliniques demanderait d’adapter le schéma et les règles.
 \end{itemize}
 
@@ -533,6 +544,6 @@ Plusieurs limites sont à garder en tête pour interpréter les résultats obten
 
 Ce chapitre a décrit la manière dont a été construite la référence clinique qui sert à évaluer TRACE. Elle s’appuie d’abord sur le TRACE-Sepsis Annotation Guideline, qui fixe les concepts cliniques à représenter, les relations qui les relient et les règles qui garantissent une annotation cohérente et fidèle aux dossiers.
 
-Un sous-corpus de 49 dossiers (291 pages) a été annoté à la main dans Label Studio, avec la page comme unité de travail et le dossier comme unité de référence. Les annotations ont été contrôlées, consolidées, mises en conformité avec la version 2.0 du guideline, puis revues par le Pr Nicholas Heming, qui avait également validé le guideline. Ses corrections ont été intégrées et étendues aux dossiers concernés avant une dernière consolidation, qui a donné le Gold Standard final.
+Un sous-corpus de 49 dossiers (291 pages) a été annoté à la main dans Label Studio, avec la page comme unité de travail et le dossier comme unité de référence. Les annotations ont été contrôlées, consolidées, mises en conformité avec la version 2.0 du guideline, puis revues par le Pr Nicholas Heming, qui avait également validé le guideline. Ses corrections ont été intégrées et étendues aux dossiers concernés avant une dernière consolidation, qui a donné le Gold Standard final : 12\,396 entités et 5\,546 relations.
 
-Indépendante des modèles évalués et traçable jusqu’aux documents, cette référence est le point de comparaison qui permet de mesurer les performances des systèmes d’extraction et d’analyser les écarts entre information générée et information de référence. Elle sert de base aux chapitres suivants, consacrés à l’analyse des erreurs et à l’étude des hallucinations dans l’extraction de connaissances cliniques.
+Indépendante des modèles évalués et traçable jusqu’aux documents, cette référence est le point de comparaison qui permet de mesurer les performances des systèmes d’extraction et d’analyser les écarts entre information générée et information de référence. Le chapitre suivant présente le pipeline d’extraction multimodale dont les sorties lui sont comparées.
