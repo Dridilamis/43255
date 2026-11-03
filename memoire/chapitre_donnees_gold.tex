@@ -68,15 +68,7 @@ Les informations qui identifient directement un patient ne sont ni annotées ni 
 
 Le format des documents impose une précaution supplémentaire. Dans un scan, une information sensible peut se trouver dans l'image même de la page, indépendamment de tout texte. La protection des données doit donc porter sur le document visuel entier. C'est d'autant plus important dans ce travail que les modèles multimodaux lisent directement les pages : la protection des données accompagne tout le protocole, de la préparation du corpus jusqu'à l'évaluation.
 
-Les deux modèles multimodaux utilisés dans ce travail ont été mis en œuvre dans des conditions compatibles avec le RGPD. Qwen2.5-VL~\cite{bai2025qwen25vl} a été exécuté localement, sur un GPU de l'université, de sorte que les images des dossiers traitées par ce modèle n'ont pas quitté l'infrastructure universitaire. Mistral Small~4~\cite{mistralsmall4} a été utilisé par l'intermédiaire de l'offre payante de l'API de Mistral AI, société française établie dans l'Union européenne et donc directement soumise au RGPD. Son utilisation a été paramétrée de façon à limiter au strict nécessaire ce qui est transmis et ce qui peut en être fait :
-\begin{itemize}
-  \item \textbf{aucune réutilisation pour l'entraînement} : l'option d'amélioration des modèles à partir des données des utilisateurs (\emph{Anonymous improvement data}) a été désactivée dans les paramètres de confidentialité de la console d'administration. Les pages envoyées ne servent donc qu'à produire la réponse demandée, et jamais à entraîner les modèles de Mistral AI~\cite{mistral_retention} ;
-  \item \textbf{aucun stockage de notre fait} : seul le point d'accès standard de génération (\texttt{https://api.mistral.ai/v1/chat/completions}) a été appelé. Il traite chaque requête de façon indépendante, sans historique de conversation ; les services qui stockent des données sur les serveurs de Mistral AI, comme les agents, les fichiers ou l'affinage de modèles (\emph{fine-tuning}), n'ont pas été utilisés ;
-  \item \textbf{un hébergement européen} : les données de ce point d'accès sont traitées par défaut dans des centres de données situés dans l'Union européenne ;
-  \item \textbf{des données déjà pseudonymisées} : l'API ne reçoit que les images des pages, déjà pseudonymisées à la main par l'AP-HP, leur transcription et les consignes d'extraction, qui contiennent trois pages annotées d'autres dossiers issues de ces mêmes documents pseudonymisés. Aucune donnée directement identifiante n'est demandée au modèle ni extraite par lui ;
-  \item \textbf{un accès protégé} : la clé d'accès à l'API est fournie au moment de l'exécution et n'est jamais enregistrée dans le code ni dans les fichiers du projet.
-\end{itemize}
-Ces précautions appliquent directement les principes de l'article~5 : la limitation des finalités, puisque les données ne servent qu'à l'extraction, et l'intégrité et la confidentialité, puisque les données restent dans l'Union européenne, chez un prestataire soumis au RGPD, sans réutilisation ni stockage durable de notre fait.
+Les conditions dans lesquelles les modèles d'extraction ont traité ces pages sont décrites avec ces modèles, au chapitre~\ref{chap:extraction} (section~\ref{sec:c4-donnees}).
 
 \section{Le TRACE-Sepsis Annotation Guideline}\label{sec:c3-3-3}
 
