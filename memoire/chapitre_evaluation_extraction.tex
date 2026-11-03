@@ -1,0 +1,248 @@
+\chapter{Évaluation de l'extraction multimodale}
+\label{chap:experimentations}
+
+% ============================================================
+\section{Introduction}\label{sec:c6-intro}
+
+Ce chapitre évalue l'extraction multimodale décrite au chapitre~\ref{chap:extraction}, avant toute intervention de TRACE. Cette évaluation poursuit trois objectifs. Le premier est de \textbf{choisir le modèle d'extraction} entre Qwen2.5-VL et Mistral Small~4, selon les critères fixés à la section~\ref{sec:c4-selection}. Le deuxième est d'établir la \textbf{performance de référence} de l'extraction retenue : c'est le point de départ à partir duquel l'apport de chaque étage de TRACE sera mesuré. Le troisième est d'\textbf{analyser les erreurs} de cette extraction, pour savoir lesquelles relèvent des hallucinations que TRACE doit réduire, et lesquelles relèvent d'oublis qu'aucun post-traitement ne pourra corriger.
+
+Le chapitre présente d'abord le protocole expérimental (section~\ref{sec:c6-protocole}), puis la comparaison des deux modèles et le choix de Mistral Small~4 (section~\ref{sec:c6-choix}). Il donne ensuite les performances de l'extraction retenue (section~\ref{sec:c6-reference}), avant de les analyser en détail : effet du mode d'appariement, apport des composantes du pipeline, résultats par type d'entité et de relation (section~\ref{sec:c6-analyse}). Il se termine par la nature des erreurs et ce qu'elles impliquent pour TRACE (sections~\ref{sec:c6-erreurs} et~\ref{sec:c6-discussion}).
+
+% ============================================================
+\section{Protocole expérimental}\label{sec:c6-protocole}
+
+\subsection{Données}
+
+Toutes les évaluations portent sur les 49 dossiers du Gold Standard (291 pages), dans sa version finale : 12\,396 entités et 5\,546 relations (chapitre~\ref{chap:donnees-gold}). Les dossiers sont traités page par page, puis leurs résultats sont réunis à l'échelle du dossier.
+
+\subsection{Configuration de l'extraction}
+
+L'extraction suit le pipeline du chapitre~\ref{chap:extraction} : conversion des pages en images à 500~dpi, transcription par le modèle, extraction des entités avec une seconde passe sur les médicaments, puis extraction des relations, toutes à température~0. Les consignes sont générées à partir du guideline v2.0 et complétées par trois exemples annotés semblables et par les règles strictes apprises ; la sortie passe ensuite par les corrections apprises sur le Gold Standard.
+
+Tout ce qui s'appuie sur la référence est appris en \textbf{validation croisée à deux plis} : les dossiers sont triés, puis séparés en rangs pairs et impairs, et chaque moitié est traitée avec ce qui a été appris sur l'autre. Aucun dossier n'est donc extrait ni corrigé à l'aide de sa propre annotation, et les performances rapportées valent pour des dossiers non vus.
+
+\subsection{Mesures}
+
+Les extractions sont comparées au Gold Standard avec les trois modes d'appariement définis à la section~\ref{sec:c4-matching} (Strict, Boundary-Relaxed et Relaxed), et les mesures de la section~\ref{sec:c4-metriques} : précision, rappel, F1-score et taux d'hallucination $H = 1 - \text{Précision}$, en micro- et en macro-moyenne. Sauf mention contraire, les résultats sont donnés en mode Relaxed et en micro-moyenne, et exprimés en pourcentage.
+
+% ============================================================
+\section{Choix du modèle d'extraction}\label{sec:c6-choix}
+
+\subsection{Étude préliminaire}
+
+Une première comparaison des deux modèles a été menée sur un sous-ensemble de 43 dossiers, annotés selon une version antérieure du guideline (21 types d'entités et 32 types de relations), avant la validation médicale. Elle a été présentée à la conférence JDSE~2026~\cite{dridi2026jdse}. Les deux modèles y recevaient la même consigne, à température~0. Le tableau~\ref{tab:c6-preliminaire} en reprend les résultats en mode Relaxed.
+
+\begin{table}[H]
+\centering
+\caption{Comparaison préliminaire des deux modèles (43 dossiers, version antérieure du Gold Standard, mode Relaxed, en \%)}\label{tab:c6-preliminaire}
+\small
+\begin{tabular}{llccc}
+\toprule
+& \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} \\
+\midrule
+\multirow{2}{*}{Entités} & Qwen2.5-VL-7B-Instruct & 64,10 & 63,67 & 63,88 \\
+ & Mistral Small 4 & \textbf{67,38} & \textbf{71,89} & \textbf{69,57} \\
+\midrule
+\multirow{2}{*}{Relations} & Qwen2.5-VL-7B-Instruct & 50,83 & 30,31 & 37,98 \\
+ & Mistral Small 4 & \textbf{67,42} & \textbf{58,17} & \textbf{62,43} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Mistral Small~4 dépasse Qwen2.5-VL sur toutes les mesures. L'écart est modéré sur les entités, avec 5,7~points de F1, et très net sur les relations, avec 24,5~points. Il vient surtout du rappel des relations, presque deux fois plus élevé avec Mistral Small~4 (58,17~\% contre 30,31~\%) : Qwen2.5-VL retrouve une partie des entités, mais relie beaucoup moins d'entre elles. La précision des relations est elle aussi nettement supérieure (67,42~\% contre 50,83~\%), ce qui signifie que les relations produites par Mistral Small~4 sont à la fois plus nombreuses et plus souvent justes.
+
+\subsection{Comparaison avec le pipeline final}
+
+Les deux modèles ont ensuite été évalués avec le pipeline final, sur les 49 dossiers du Gold Standard validé par le médecin, selon le protocole de la section~\ref{sec:c4-protocole}. Le tableau~\ref{tab:c6-comparaison-modeles} donne les résultats à la sortie de l'extraction, avant TRACE.
+
+\begin{table}[H]
+\centering
+\caption{Comparaison des deux modèles avec le pipeline final, avant TRACE (49 dossiers, Gold Standard final, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-comparaison-modeles}
+\small
+\begin{tabular}{llcccc}
+\toprule
+& \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} & \textbf{H} \\
+\midrule
+\multirow{2}{*}{Entités} & Qwen2.5-VL-7B-Instruct & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+ & Mistral Small 4 & 66,20 & 68,45 & 67,31 & 33,80 \\
+\midrule
+\multirow{2}{*}{Relations} & Qwen2.5-VL-7B-Instruct & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+ & Mistral Small 4 & 54,77 & 45,46 & 49,68 & 45,23 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\acompleter{Commenter l'écart entre les deux modèles avec le pipeline final, sur les entités et sur les relations.}
+
+\subsection{Décision}
+
+Selon les critères fixés avant l'expérience (section~\ref{sec:c4-selection}), le critère principal est la qualité de l'extraction des relations, puisque la valeur d'un graphe de connaissances dépend directement de ses liens ; viennent ensuite la qualité des entités et le taux d'hallucination. Mistral Small~4 obtient les meilleurs résultats sur ces trois critères, avec l'écart le plus important précisément sur le critère principal, les relations. C'est donc \textbf{Mistral Small~4 qui a été retenu} : sa sortie sert de point de départ à la chaîne TRACE, et toutes les mesures qui suivent portent sur elle.
+
+Ce choix a une contrepartie : Qwen2.5-VL s'exécute sur l'infrastructure de l'université, alors que Mistral Small~4 passe par une API externe. Cette contrepartie a été traitée par le paramétrage décrit à la section~\ref{sec:c4-donnees} : réutilisation pour l'entraînement désactivée, aucun stockage de notre fait, hébergement dans l'Union européenne et pages déjà pseudonymisées. Ces garanties ont permis de retenir le modèle le plus performant sans renoncer à la protection des données.
+
+% ============================================================
+\section{Performance de référence de l'extraction retenue}\label{sec:c6-reference}
+
+Le tableau~\ref{tab:c6-reference} donne les performances de Mistral Small~4 à la sortie du pipeline d'extraction, avant TRACE. C'est la performance de référence de tout le reste du mémoire.
+
+\begin{table}[H]
+\centering
+\caption{Performance de référence de Mistral Small~4 avant TRACE (49 dossiers, Gold Standard final, validation croisée, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-reference}
+\small
+\begin{tabular}{lcccc}
+\toprule
+& \textbf{Précision} & \textbf{Rappel} & \textbf{F1} & \textbf{Taux d'hallucination} \\
+\midrule
+Entités & 66,20 & 68,45 & 67,31 & 33,80 \\
+Relations & 54,77 & 45,46 & 49,68 & 45,23 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Sur les entités, l'extraction retrouve un peu plus des deux tiers des éléments de la référence, et deux entités extraites sur trois sont justes. Le tiers restant, soit un taux d'hallucination de 33,8~\%, correspond à des entités que le Gold Standard ne justifie pas : entités inventées, mal délimitées, mal typées, ou absentes de la référence. Sur les relations, la tâche est nettement plus difficile : moins d'une relation de la référence sur deux est retrouvée, et 45,2~\% des relations produites ne sont pas justifiées. Ce résultat est cohérent avec la littérature, où l'extraction de relations par les modèles génératifs reste systématiquement moins bonne que l'extraction d'entités~\cite{wadhwa2023revisiting}. Une relation suppose en effet que ses deux extrémités soient correctement extraites, puis correctement reliées : ses erreurs s'additionnent à celles des entités.
+
+Ces résultats sont plus faibles que ceux de l'étude préliminaire (tableau~\ref{tab:c6-preliminaire}). La comparaison n'est pas directe : la référence finale est plus exigeante, puisqu'elle a été revue par le médecin, mise en conformité avec la version~2.0 du guideline et complétée par les absences explicitement mentionnées ; et toutes les composantes apprises sont désormais évaluées en validation croisée, sur des dossiers non vus.
+
+% ============================================================
+\section{Analyse détaillée}\label{sec:c6-analyse}
+
+L'analyse détaillée qui suit a été menée sur une exécution du pipeline réalisée avant les derniers ajustements des consignes, sur les mêmes 49 dossiers, avec le même Gold Standard et la même validation croisée. Ses performances globales, avec un F1 de 65,0~\% sur les entités et de 47,5~\% sur les relations, sont proches de celles de l'exécution de référence (tableau~\ref{tab:c6-reference}) ; ses tendances sont donc représentatives de l'extraction retenue.
+
+\subsection{Effet du mode d'appariement}
+
+Le tableau~\ref{tab:c6-modes} donne les performances selon les trois modes d'appariement, en micro- et en macro-moyenne.
+
+\begin{table}[H]
+\centering
+\caption{Performances selon le mode d'appariement (exécution d'analyse, 49 dossiers, en \%)}\label{tab:c6-modes}
+\small
+\begin{tabular}{llcccc}
+\toprule
+& \textbf{Mode} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1 micro} & \textbf{F1 macro} \\
+\midrule
+\multirow{3}{*}{Entités} & Strict & 47,05 & 52,66 & 49,70 & 49,97 \\
+ & Boundary-Relaxed & 60,63 & 67,87 & 64,05 & 64,50 \\
+ & Relaxed & 61,55 & 68,89 & 65,01 & 65,51 \\
+\midrule
+\multirow{3}{*}{Relations} & Strict & 28,60 & 24,40 & 26,33 & 25,86 \\
+ & Boundary-Relaxed & 50,02 & 42,68 & 46,06 & 45,26 \\
+ & Relaxed & 51,53 & 43,97 & 47,45 & 46,61 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Le passage du mode Strict au mode Boundary-Relaxed fait gagner plus de 14~points de F1 sur les entités et près de 20~points sur les relations. Une grande partie des écarts avec la référence ne sont donc pas des erreurs de contenu, mais des différences de délimitation : le modèle extrait \og noradrénaline IVSE \fg{} quand la référence annote \og noradrénaline \fg{}, ou l'inverse. Le passage au mode Relaxed n'ajoute ensuite qu'environ un point : les variations d'écriture sont rares, puisque l'extraction recopie la surface de la page. Ces résultats justifient le choix du mode Relaxed comme mode principal, qui juge le contenu sans pénaliser une différence de bornes. Enfin, les micro- et macro-moyennes sont très proches, à moins d'un point d'écart : les performances sont homogènes d'un dossier à l'autre, et ne reposent pas sur quelques dossiers particulièrement faciles.
+
+\subsection{Apport des composantes du pipeline}
+
+Le tableau~\ref{tab:c6-composantes} mesure l'apport des deux corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}), en partant de la sortie brute du modèle.
+
+\begin{table}[H]
+\centering
+\caption{Apport des corrections apprises, en validation croisée (exécution d'analyse, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-composantes}
+\small
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{4}{c}{\textbf{Entités}} & \multicolumn{4}{c}{\textbf{Relations}} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+\textbf{Sortie} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} \\
+\midrule
+Sortie brute du modèle & 59,69 & 67,62 & 63,41 & 40,3 & 29,63 & 47,36 & 36,45 & 70,4 \\
++ lexique appris & 60,03 & 69,30 & 64,34 & 40,0 & 30,65 & 47,38 & 37,22 & 69,4 \\
++ règles strictes & 61,55 & 68,89 & 65,01 & 38,5 & 51,53 & 43,97 & 47,45 & 48,5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Le lexique appris améliore surtout le rappel des entités (+1,7~point), en ajoutant des termes oubliés par le modèle et en complétant les biomarqueurs sans valeur. Les règles strictes ont un effet beaucoup plus fort sur les relations : la précision passe de 29,6~\% à 51,5~\%, et le taux d'hallucination des relations de 70,4~\% à 48,5~\%, au prix d'une baisse de 3,4~points du rappel. Ces règles interdisent en effet des types de relations presque toujours faux dans l'extraction brute. Par exemple, sur les 490 relations \emph{biomarqueur\_supporte\_defaillance\_organe} produites par le modèle, 52 seulement étaient justes ; sur les 273 relations \emph{biomarqueur\_est\_critere\_de}, 12 seulement. Ce sont des relations d'interprétation clinique, que le modèle tend à déduire de la seule présence des deux entités, alors que le guideline exige qu'elles soient énoncées par le texte.
+
+\subsection{Résultats par type d'entité}
+
+Le tableau~\ref{tab:c6-types-entites} détaille les performances par type d'entité.
+
+\begin{table}[H]
+\centering
+\caption{Performances par type d'entité (exécution d'analyse, mode Relaxed, en \%), par F1 décroissant}\label{tab:c6-types-entites}
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Type d'entité} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} \\
+\midrule
+\entite{BIOMARQUEUR} & 83,5 & 81,0 & 82,2 \\
+\entite{TRAITEMENT} & 77,4 & 75,6 & 76,5 \\
+\entite{MICRO\_\allowbreak{}ORGANISME} & 65,9 & 82,7 & 73,4 \\
+\entite{SCORE\_\allowbreak{}NEUROLOGIQUE} & 87,8 & 53,7 & 66,7 \\
+\entite{CONTEXTE\_\allowbreak{}ACQUISITION} & 56,0 & 78,4 & 65,3 \\
+\entite{POSOLOGIE} & 71,2 & 54,2 & 61,5 \\
+\entite{SIGNE\_\allowbreak{}VITAL} & 50,1 & 77,1 & 60,7 \\
+\entite{DONNEE\_\allowbreak{}PATIENT} & 70,1 & 53,0 & 60,3 \\
+\entite{IMAGERIE\_\allowbreak{}PROCEDURE} & 57,6 & 61,5 & 59,5 \\
+\entite{COMORBIDITE\_\allowbreak{}ANTECEDENT} & 45,1 & 68,9 & 54,6 \\
+\entite{DEFAILLANCE\_\allowbreak{}ORGANE} & 52,4 & 53,5 & 52,9 \\
+\entite{SYMPTOME} & 43,3 & 66,7 & 52,5 \\
+\entite{SERVICE\_\allowbreak{}MEDICAL} & 45,6 & 61,8 & 52,4 \\
+\entite{EVENEMENT\_\allowbreak{}TEMPOREL} & 41,4 & 63,5 & 50,1 \\
+\entite{LABEL\_\allowbreak{}NOSOLOGIQUE} & 40,1 & 52,8 & 45,6 \\
+\entite{EVOLUTION\_\allowbreak{}PRONOSTIC} & 39,3 & 42,4 & 40,8 \\
+\entite{FOYER\_\allowbreak{}INFECTIEUX} & 29,1 & 39,4 & 33,5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Trois groupes se dégagent. Les entités \textbf{à forme régulière} sont bien extraites : biomarqueurs (82,2~\%), traitements (76,5~\%) et micro-organismes (73,4~\%) ont un nom identifiable, souvent suivi d'une valeur, et apparaissent dans des sections prévisibles. Les entités \textbf{à frontière floue} ont une précision faible et un rappel élevé : symptômes, comorbidités, signes vitaux et événements temporels sont bien repérés, mais le modèle en extrait beaucoup plus que la référence n'en annote, souvent avec un type voisin (un signe vital chiffré typé comme symptôme, une pathologie ancienne typée comme défaillance). Les entités \textbf{d'interprétation clinique}, enfin, sont les plus difficiles : diagnostics (45,6~\%), évolution (40,8~\%) et foyers infectieux (33,5~\%) demandent de savoir si un terme désigne un diagnostic de l'épisode, un antécédent ou une simple localisation, distinction que le guideline v2.0 a dû préciser avec le médecin (section~\ref{sec:c3-3-3-4}). Les types \entite{SCORE\_SOFA}, présent seulement trois fois, \entite{SCORE\_qSOFA} et \entite{STADE\_IRA}, absents de la référence, ne permettent pas de mesure significative et ne figurent pas dans le tableau.
+
+\subsection{Résultats par type de relation}
+
+Le tableau~\ref{tab:c6-types-relations} détaille les performances des relations présentes dans les sorties.
+
+\begin{table}[H]
+\centering
+\caption{Performances par type de relation (exécution d'analyse, mode Relaxed, en \%), par F1 décroissant}\label{tab:c6-types-relations}
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Type de relation} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} \\
+\midrule
+traitement\_\allowbreak{}administre\_\allowbreak{}a & 64,3 & 52,2 & 57,6 \\
+traitement\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}posologie & 63,8 & 47,2 & 54,2 \\
+presente\_\allowbreak{}dysfonction\_\allowbreak{}organe & 49,7 & 50,6 & 50,2 \\
+a\_\allowbreak{}pour\_\allowbreak{}label\_\allowbreak{}nosologique & 42,3 & 50,2 & 45,9 \\
+presente\_\allowbreak{}symptome & 38,5 & 55,3 & 45,4 \\
+patient\_\allowbreak{}a\_\allowbreak{}pour\_\allowbreak{}evolution & 34,6 & 40,0 & 37,1 \\
+service\_\allowbreak{}medical\_\allowbreak{}accueille & 32,3 & 33,9 & 33,1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Les relations les mieux extraites sont aussi les plus fréquentes et les plus explicites : l'administration d'un traitement au patient et le lien entre un traitement et sa posologie, souvent écrits sur une même ligne d'ordonnance. Les relations qui relient le patient à un symptôme, à un diagnostic ou à une évolution ont une précision plus faible : le modèle relie volontiers au patient toutes les entités d'une page, y compris celles que la référence ne relie pas, par exemple un symptôme cité dans les antécédents.
+
+Les relations d'interprétation clinique, interdites par les règles strictes, n'apparaissent pas dans le tableau : relations entre un biomarqueur ou un signe vital et une défaillance, entre un germe et son site, entre une imagerie et un foyer, entre un diagnostic et sa localisation, entre un traitement et une défaillance ou un diagnostic. Elles représentent environ 13~\% des relations de la référence, que l'extraction ne retrouve donc pas. C'est le prix de la forte réduction des hallucinations relationnelles mesurée au tableau~\ref{tab:c6-composantes} : dans l'extraction brute, ces relations étaient fausses dans la grande majorité des cas.
+
+% ============================================================
+\section{Nature des erreurs}\label{sec:c6-erreurs}
+
+Sur l'exécution d'analyse, les 13\,876 entités extraites se répartissent en 8\,540 entités justes (61,5~\%), 705 entités retrouvées avec un mauvais type (5,1~\%) et 4\,631 entités sans correspondance dans la référence (33,4~\%). Du côté de la référence, 3\,151 entités ne sont pas retrouvées. Ces chiffres permettent de distinguer trois familles d'erreurs.
+
+\paragraph{Les éléments en trop.} Ce sont les faux positifs, qui définissent le taux d'hallucination. Leur examen montre plusieurs situations : entités réellement inventées ou dont la valeur n'est pas écrite ; entités écrites mais mal délimitées au-delà de la tolérance de l'appariement ; entités de contexte que la référence n'annote pas, comme un symptôme cité dans les antécédents ou un traitement seulement envisagé ; et relations déduites de la seule présence de deux entités sur la même page. Toutes ne sont pas des inventions au sens strict, mais toutes produisent dans le graphe une connaissance que le dossier n'exprime pas sous cette forme : elles relèvent des hallucinations factuelles, relationnelles, contextuelles et temporelles de la taxonomie (section~\ref{sec:c5-taxonomie}).
+
+\paragraph{Les erreurs de type.} Une entité sur vingt est trouvée au bon endroit mais avec un mauvais type, le plus souvent entre catégories voisines : signe vital et symptôme, diagnostic et foyer, antécédent et défaillance. Ce sont des hallucinations ontologiques. Elles comptent doublement dans l'évaluation, comme un faux positif et un faux négatif.
+
+\paragraph{Les oublis.} Ce sont les faux négatifs. Ils se concentrent dans deux situations : les blocs à forme fixe, comme les tableaux de biologie et les listes d'ordonnance, où le modèle saute des lignes ; et les relations d'interprétation clinique, que les règles strictes ont interdites. Les oublis ne sont pas des hallucinations, mais ils limitent ce qu'un post-traitement peut améliorer.
+
+% ============================================================
+\section{Conséquences pour TRACE}\label{sec:c6-discussion}
+
+Cette évaluation fixe le point de départ de TRACE et en précise les objectifs.
+
+La marge d'amélioration porte d'abord sur la \textbf{précision}. Avec un taux d'hallucination de 33,8~\% sur les entités et de 45,2~\% sur les relations, une part importante du graphe n'est pas justifiée par le dossier. C'est l'objet principal de TRACE : retirer ces éléments, ou au moins signaler ceux qui sont douteux, sans perdre les éléments justes.
+
+Le \textbf{rappel}, en revanche, est en grande partie borné par l'extraction. Un post-traitement ne peut pas retrouver ce que le modèle n'a jamais extrait, à l'exception des blocs à forme fixe, où les lignes oubliées peuvent être recopiées du texte : c'est le rôle de la récupération structurée (section~\ref{sec:c5-etage4b}). On ne doit donc pas attendre de TRACE une forte hausse du rappel, mais une hausse de la précision et une baisse du taux d'hallucination, à rappel à peu près constant en mode standard.
+
+Enfin, la répartition des erreurs justifie l'architecture de TRACE. Les erreurs de type appellent la conformité au guideline et la réparation structurelle ; les éléments de contexte non annotés appellent la qualification de la négation, de l'hypothèse et de la temporalité ; les relations déduites sans appui textuel appellent le contrôle d'ancrage et l'arbitrage. Aucun contrôle unique ne couvre ces situations, ce qui confirme le choix d'une chaîne d'étages spécialisés.
+
+% ============================================================
+\section{Conclusion}\label{sec:c6-conclusion}
+
+Ce chapitre a évalué l'extraction multimodale avant TRACE. La comparaison des deux modèles a conduit à retenir Mistral Small~4, meilleur que Qwen2.5-VL sur les entités et surtout sur les relations, le critère principal fixé avant l'expérience. Avec le pipeline final et en validation croisée, l'extraction retenue atteint un F1 de 67,3~\% sur les entités et de 49,7~\% sur les relations, avec des taux d'hallucination de 33,8~\% et de 45,2~\%.
+
+L'analyse détaillée montre que les entités à forme régulière, comme les biomarqueurs et les traitements, sont bien extraites, alors que les entités d'interprétation clinique et les relations restent difficiles. Les règles strictes apprises réduisent fortement les hallucinations relationnelles, au prix des relations d'interprétation clinique. Les erreurs restantes relèvent de plusieurs types d'hallucinations de la taxonomie, ce qui justifie une chaîne de vérification à plusieurs étages. Le chapitre suivant mesure l'apport de chacun de ces étages, à partir de la performance de référence établie ici.
