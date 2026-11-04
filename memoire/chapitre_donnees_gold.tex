@@ -102,7 +102,7 @@ Le guideline n’est pas pour autant un outil diagnostique. Il dit comment repr�
 
 \subsection{Élaboration et validation du guideline}\label{sec:c3-3-3-4}
 
-Le guideline a été rédigé avant la campagne d’annotation. En l’appliquant aux premiers dossiers, plusieurs points se sont révélés insuffisamment précis : catégories dont les frontières se recouvrent, informations qui pouvaient relever de deux types, conditions d’usage de certaines relations, variantes d’écriture d’un même concept (« CRP » et « C.R.P. »). Ces difficultés ont été reprises avec le médecin référent, et le guideline a été précisé jusqu’à sa version 2.0, validée par le médecin.
+Une première version du guideline a été rédigée avant la campagne d’annotation. En l’appliquant aux premiers dossiers, plusieurs points se sont révélés insuffisamment précis : catégories dont les frontières se recouvrent, informations qui pouvaient relever de deux types, conditions d’usage de certaines relations, variantes d’écriture d’un même concept (« CRP » et « C.R.P. »). Ces difficultés ont été reprises avec le médecin référent, et le guideline a été révisé jusqu’à sa version finale, la version 2.0.
 
 La validation médicale a été menée avec le Pr Nicholas Heming, professeur de médecine intensive--réanimation à l’Hôpital Raymond-Poincaré (AP-HP) et à l’Université Versailles-Saint-Quentin-en-Yvelines (Université Paris-Saclay), dont les recherches portent principalement sur le sepsis et le choc septique. Elle s’est déroulée en plusieurs séances de travail, pour un total d’environ cinq heures. Le médecin a examiné les catégories d’entités, leurs vocabulaires, les relations autorisées et les règles d’annotation, en particulier les cas où seule une décision clinique permet de choisir entre deux catégories. Ses remarques ont notamment conduit à restreindre les diagnostics autorisés à ceux qui concernent le sepsis et à ajuster les relations, pour aboutir à un schéma de 34 relations.
 
@@ -323,7 +323,7 @@ Un contrôle structurel a ensuite vérifié que les annotations respectaient le 
 
 \subsection{Mise en conformité avec la version 2.0}\label{sec:c3-3-8-3}
 
-L’annotation ayant commencé avant que le guideline ne soit finalisé, elle a été mise en conformité avec la version 2.0 par des programmes qui appliquent uniquement les règles écrites du guideline. Ils ont rattaché chaque foyer infectieux au diagnostic dont il est la localisation, retiré les foyers qui localisaient un antécédent, retypé en \entite{LABEL\_NOSOLOGIQUE} les diagnostics de la liste annotés comme foyers, et supprimé les relations devenues hors signature. Ces programmes ne lisent aucune sortie de modèle. Les cas qu’ils ne pouvaient pas trancher seuls, par exemple un foyer pouvant se rattacher à plusieurs diagnostics, ont été listés puis examinés un par un en appliquant le guideline.
+L’annotation ayant commencé avec la première version du guideline, elle a été mise en conformité avec la version 2.0 par des programmes qui appliquent uniquement les règles écrites du guideline. Ils ont rattaché chaque foyer infectieux au diagnostic dont il est la localisation, retiré les foyers qui localisaient un antécédent, retypé en \entite{LABEL\_NOSOLOGIQUE} les diagnostics de la liste annotés comme foyers, et supprimé les relations devenues hors signature. Ces programmes ne lisent aucune sortie de modèle. Les cas qu’ils ne pouvaient pas trancher seuls, par exemple un foyer pouvant se rattacher à plusieurs diagnostics, ont été listés puis examinés un par un en appliquant le guideline.
 
 \subsection{Format de représentation et traçabilité}\label{sec:c3-3-8-4}
 
@@ -331,7 +331,7 @@ L’export de Label Studio conserve les annotations page par page : entités, ty
 
 Le Gold Standard consolidé comporte deux parties. Les entités cliniques sont accompagnées de ce qu’il faut pour les identifier et retrouver leur origine ; les relations sont des liens orientés entre elles. Chaque information garde, quand c’est utile, sa page d’origine et une preuve. Cette preuve est volontairement courte, limitée au fragment qui justifie l’annotation, pour être vérifiée rapidement sans recopier de longs passages du dossier. Cette traçabilité sert pendant la validation médicale, puis lors de l’analyse des écarts entre le Gold Standard et les extractions des modèles.
 
-On obtient à ce stade une référence structurée et contrôlée : le Gold Standard initial.
+On obtient à ce stade une première version structurée et contrôlée de la référence : le Gold Standard initial.
 
 \section{Validation médicale du Gold Standard}\label{sec:c3-3-9}
 
@@ -369,11 +369,11 @@ Une relation doit être structurellement valide, mais aussi correspondre au lien
 
 Au cours de la revue, le médecin a confirmé, modifié (information présente mais mal représentée), supprimé (justification insuffisante) ou ajouté (information pertinente oubliée lors de l'annotation initiale) les annotations, en appliquant directement ses corrections. Lorsqu'une de ses corrections traduisait une règle générale, nous l'avons ensuite appliquée à tous les dossiers concernés, et pas seulement au dossier corrigé. C'est le cas, par exemple, de l'exclusion des noms d'établissements des \entite{SERVICE\_MEDICAL}, de la non-annotation des valeurs témoins du laboratoire, ou de l'annotation systématique des absences explicitement mentionnées (section~\ref{sec:c3-3-6-4}). Lorsqu'une correction contredisait une règle écrite du guideline, le cas a été rediscuté avec le médecin, point par point. Le guideline ayant été validé par lui en amont, sa règle a été maintenue, afin que le référentiel reste cohérent d'un dossier à l'autre.
 
-La référence ainsi corrigée a ensuite été soumise au médecin pour une revue finale, afin de vérifier que l'extension de ses corrections à l'ensemble des dossiers était conforme à ses décisions.
+La version ainsi corrigée a ensuite été soumise au médecin pour une revue finale, afin de vérifier que l'extension de ses corrections à l'ensemble des dossiers était conforme à ses décisions.
 
 \section{Gold Standard final et caractérisation}\label{sec:c3-3-10}
 
-\subsection{Gold Standard final et indépendance de la référence}\label{sec:c3-3-10-1}
+\subsection{Version finale et indépendance de la référence}\label{sec:c3-3-10-1}
 
 Une fois les corrections intégrées, une dernière consolidation a vérifié qu’elles n’introduisaient pas de nouvelles incohérences et que les entités et les relations respectaient toujours le schéma TRACE-Sepsis v2.0. Le résultat est le Gold Standard final, utilisé comme référence dans les expériences.
 
@@ -486,7 +486,7 @@ Ces répartitions sont très déséquilibrées. Les biomarqueurs et les traiteme
 
 \subsection{Effet de la validation médicale}\label{sec:c3-3-10-3}
 
-La validation médicale a porté sur chaque entité et chaque relation du Gold Standard initial. Un élément pouvait être confirmé, s'il était correct ; modifié, s'il était conservé mais que son type, sa délimitation ou, pour une relation, son sujet, son objet ou son sens devaient changer ; supprimé, s'il n'était pas justifié par le dossier ; ou ajouté, s'il manquait dans l'annotation initiale. Cette revue ne constitue pas une mesure d'accord inter-annotateurs, puisque la référence finale résulte de la révision de la référence initiale. Elle garantit en revanche que chaque élément de la référence a été examiné par un médecin.
+La validation médicale a porté sur chaque entité et chaque relation du Gold Standard initial. Un élément pouvait être confirmé, s'il était correct ; modifié, s'il était conservé mais que son type, sa délimitation ou, pour une relation, son sujet, son objet ou son sens devaient changer ; supprimé, s'il n'était pas justifié par le dossier ; ou ajouté, s'il manquait dans l'annotation initiale. Cette revue ne constitue pas une mesure d'accord inter-annotateurs, puisque la version finale résulte de la révision de la version initiale. Elle garantit en revanche que chaque élément de la référence a été examiné par un médecin.
 
 \section{Utilisation du Gold Standard dans l’évaluation}\label{sec:c3-3-11}
 
