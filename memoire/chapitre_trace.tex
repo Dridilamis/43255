@@ -339,19 +339,35 @@ L'arbitrage s'appuie sur cinq agents déterministes (figure~\ref{fig:c5-arbitrag
 \centering
 \caption{Signaux des agents de l'arbitrage et leur calcul}\label{tab:c5-signaux}
 \small
-\begin{tabular}{p{2.3cm}p{3.1cm}p{3.0cm}p{5.0cm}}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{6.6cm}>{\centering\arraybackslash}p{1.2cm}}
 \toprule
-\textbf{Agent} & \textbf{Signal} & \textbf{Valeurs} & \textbf{Calcul} \\
+\textbf{Signal} & \textbf{Valeurs possibles} & \textbf{Calcul} & \textbf{Étage} \\
 \midrule
-Ancrage & mot pour mot (entité) & oui, non & la mention normalisée apparaît comme suite de mots complets dans le texte normalisé de sa page (section~\ref{sec:c5-etage2}) \\
- & preuve (relation) & attestée, inventée, absente, note du système & la citation fournie par le modèle est recherchée dans le texte du dossier selon le même critère d'attestation que les entités (section~\ref{sec:c5-etage2}) \\
- & distance (relation) & ligne, paragraphe, loin, introuvable, patient & plus petite distance en caractères entre une occurrence du sujet et une occurrence de l'objet : au plus 80 (ligne), au plus 300 (paragraphe), au-delà (loin) ; \og patient \fg{} si une extrémité est le patient \\
- & section & titre de section & section du compte rendu où se trouve la preuve, ou à défaut la première occurrence de l'entité clinique, repérée par les titres habituels des comptes rendus \\
-Conformité & signature & conforme, violation de domaine, violation d'image & types du sujet et de l'objet comparés au domaine et à l'image de la relation dans les 34 signatures (section~\ref{sec:c5-etage3}), recalculé à ce stade \\
-Redondance & doublon & oui, non & le triplet (sujet normalisé, type, objet normalisé) a déjà été rencontré sous d'autres identifiants (section~\ref{sec:c5-etage5}) \\
-Contexte & négation, hypothèse & oui, non & déclencheur dans les 40 caractères qui précèdent la mention, selon le principe de NegEx~\cite{chapman2001negex} (section~\ref{sec:c5-etage6}) \\
- & temporalité & antérieure, séjour, sortie & déduite de la section où l'entité est citée (section~\ref{sec:c5-etage6}) \\
-Provenance & origine & directe, SGCE, inférence & champ d'origine écrit par l'étage qui a créé l'élément : extraction par le modèle, réparation par SGCE ou récupération structurée \\
+\multicolumn{4}{l}{\textbf{Agent d'ancrage} : l'élément est-il soutenu par le texte ?}\\
+\addlinespace[2pt]
+Mot pour mot (entité) & oui, non & la mention normalisée apparaît comme suite de mots complets dans le texte normalisé de sa page & 2 \\
+Preuve (relation) & attestée, inventée, absente, note du système & la citation fournie par le modèle est recherchée dans le texte du dossier, avec le même critère d'attestation que les entités & 2 \\
+Distance (relation) & ligne, paragraphe, loin, introuvable, patient & plus petite distance, en caractères, entre une occurrence du sujet et une occurrence de l'objet : ligne si $\leq 80$, paragraphe si $\leq 300$, loin au-delà ; patient si une extrémité est le patient & 2 \\
+Section & motif, antécédents, traitement habituel, examen, biologie, évolution, sortie\dots & section du compte rendu où se trouve la preuve, ou à défaut la première occurrence de l'entité, repérée par les titres de section & 2 \\
+\midrule
+\multicolumn{4}{l}{\textbf{Agent de conformité} : la relation respecte-t-elle le schéma ?}\\
+\addlinespace[2pt]
+Signature (relation) & conforme, violation de domaine, violation d'image & types du sujet et de l'objet comparés au domaine et à l'image de la relation dans les 34 signatures du guideline ; recalculée à ce stade & 3, 7 \\
+\midrule
+\multicolumn{4}{l}{\textbf{Agent de redondance} : l'élément est-il répété ?}\\
+\addlinespace[2pt]
+Doublon (relation) & oui, non & le triplet (sujet normalisé, type, objet normalisé) a déjà été rencontré sous d'autres identifiants & 5 \\
+\midrule
+\multicolumn{4}{l}{\textbf{Agent de contexte} : quel est le sens clinique de l'entité ?}\\
+\addlinespace[2pt]
+Négation & oui, non & un déclencheur (\og pas de \fg{}, \og absence de \fg{}, \og sans \fg{}\dots) termine les 40 caractères qui précèdent la mention, selon le principe de NegEx~\cite{chapman2001negex} & 6 \\
+Hypothèse & oui, non & un indice d'incertitude (\og suspicion de \fg{}, \og probable \fg{}\dots) termine la même fenêtre & 6 \\
+Temporalité & antérieure, séjour, sortie & antérieure si l'entité est dans les antécédents ou le traitement habituel, sortie si elle est dans la prescription de sortie, séjour sinon & 6 \\
+\midrule
+\multicolumn{4}{l}{\textbf{Agent de provenance} : d'où vient l'élément ?}\\
+\addlinespace[2pt]
+Origine & directe, SGCE, inférence & champ d'origine écrit par l'étage qui a créé l'élément : extraction par le modèle, réparation par SGCE ou récupération structurée & 0, 4, 4b \\
 \bottomrule
 \end{tabular}
 \end{table}
