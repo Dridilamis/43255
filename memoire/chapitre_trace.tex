@@ -325,17 +325,23 @@ La détection de la négation et de l'hypothèse suit le principe de NegEx~\cite
 % ============================================================
 \section{Étage 7 : agents et arbitrage}\label{sec:c5-etage7}
 
-\subsection{Rôle}
+\subsection{Rôle : passer des indices à la décision}
 
-Les étages précédents ont relevé de nombreux signaux, mais aucun n'a décidé. L'arbitrage est le seul étage qui décide : pour chaque entité et chaque relation, il choisit de la garder ou de la retirer, et il attribue un niveau de confiance aux relations conservées. Il s'appuie sur cinq agents déterministes, qui lisent les annotations des étages précédents (figure~\ref{fig:c5-arbitrage}) :
+À l'entrée de cet étage, chaque élément du graphe porte un dossier d'indices. L'étage~2 a noté si l'entité est écrite mot pour mot dans sa page, si la preuve d'une relation existe et à quelle distance se trouvent ses deux extrémités ; l'étage~3 a noté si la relation respecte sa signature ; l'étage~5 a signalé les répétitions ; l'étage~6 a indiqué si l'entité est niée, hypothétique ou antérieure au séjour. Aucun de ces étages n'a pourtant tranché, conformément au principe \og annoter d'abord, un seul étage décide \fg{}.
+
+L'arbitrage est cet étage unique. Pour chaque entité et chaque relation, il répond à deux questions : \emph{faut-il la garder ?} et, si oui, \emph{quelle confiance peut-on lui accorder ?} Il joue en quelque sorte le rôle d'un jury, qui ne rassemble pas les preuves lui-même, mais statue à partir de tout ce que les étages précédents ont relevé.
+
+\subsection{Cinq agents, cinq points de vue}
+
+Pour organiser ces indices, l'arbitrage s'appuie sur cinq agents déterministes (figure~\ref{fig:c5-arbitrage}). Chacun examine l'élément sous un seul angle et résume ce qu'il voit en quelques signaux :
 \begin{itemize}
-  \item l'\textbf{agent d'ancrage} : preuve, distance entre les extrémités, section (étage~2) ;
-  \item l'\textbf{agent de conformité} : respect de la signature du guideline (étage~3), recalculé à ce stade, puisque SGCE a pu modifier les types ou les liens ;
-  \item l'\textbf{agent de redondance} : triplet déjà vu sous d'autres identifiants (étage~5) ;
-  \item l'\textbf{agent de contexte} : négation, hypothèse et temporalité de l'entité clinique (étage~6) ;
-  \item l'\textbf{agent de provenance} : extraction directe par le modèle, ou inférence structurelle par SGCE ou par la récupération.
+  \item l'\textbf{agent d'ancrage} regarde le lien avec le texte : la preuve est-elle citée et retrouvée, les deux extrémités sont-elles sur la même ligne, dans le même paragraphe ou éloignées, et dans quelle section du compte rendu la relation apparaît-elle (étage~2) ?
+  \item l'\textbf{agent de conformité} regarde le schéma : la relation respecte-t-elle sa signature ? Ce contrôle est refait à ce stade, puisque SGCE a pu changer le type d'une entité ou rediriger une relation depuis l'étage~3 ;
+  \item l'\textbf{agent de redondance} regarde les répétitions : le même triplet a-t-il déjà été vu sous d'autres identifiants (étage~5) ?
+  \item l'\textbf{agent de contexte} regarde le sens clinique : l'entité est-elle niée, hypothétique, antérieure au séjour (étage~6) ?
+  \item l'\textbf{agent de provenance} regarde l'origine de l'élément : a-t-il été extrait directement par le modèle, ou ajouté ensuite par SGCE ou par la récupération structurée ?
 \end{itemize}
-Pour une relation créée par SGCE après l'étage~2, les agents appellent les mêmes fonctions de vérification que les étages correspondants : une relation créée tardivement est donc contrôlée exactement comme les autres. Deux modes de décision sont proposés.
+Une relation créée par SGCE après l'étage~2 n'a pas encore été confrontée au texte. Les agents lui appliquent alors les mêmes fonctions de vérification que les étages correspondants : une relation créée tardivement est contrôlée exactement comme les autres, sans passe-droit.
 
 \begin{figure}[H]
 \centering
@@ -343,67 +349,91 @@ Pour une relation créée par SGCE après l'étage~2, les agents appellent les m
 \caption{Étage~7 : agents, mode standard et mode précision}\label{fig:c5-arbitrage}
 \end{figure}
 
-\subsection{Mode standard : règles fixées a priori}\label{sec:c5-standard}
+À partir de ces signaux, l'arbitrage propose deux façons de décider. Le \textbf{mode standard} applique quelques règles sûres, fixées avant toute évaluation. Le \textbf{mode précision} va plus loin : il combine tous les signaux dans un score appris, et laisse choisir le niveau d'exigence.
 
-En mode standard, les décisions suivent des règles fixées avant toute évaluation, qui ne retirent que des éléments que l'on sait faux ou intraçables.
+\subsection{Mode standard : des règles sûres, fixées a priori}\label{sec:c5-standard}
 
-\paragraph{Entités.}
+Le mode standard repose sur une idée simple : ne retirer que ce que l'on sait faux ou impossible à justifier, et ne jamais retirer une information seulement parce qu'elle est douteuse. Ses règles ont été écrites à partir du guideline et de l'examen des erreurs lors de la mise au point de la chaîne, avant toute évaluation.
+
+\paragraph{Les entités.} Trois règles s'appliquent aux entités.
 \begin{itemize}
-  \item \textbf{E1} : une entité qui ne figure pas mot pour mot dans le texte de sa page, même après normalisation, est retirée. C'est une reformulation du modèle, comme \og pneumopathie droite \fg{} pour \og pneumopathie du lobe inférieur droit \fg{}. Une telle mention n'est pas traçable jusqu'au texte : on ne peut pas montrer au médecin l'endroit exact d'où elle vient. Et le Gold Standard annotant la mention telle qu'elle est écrite, elle ne peut pas non plus être comparée correctement à la référence.
-  \item \textbf{E2} : une entité niée (\og pas de toux \fg{}) est \emph{conservée} et marquée comme niée. L'absence d'un signe est une information clinique, et le Gold Standard validé par le médecin l'annote comme telle.
-  \item \textbf{E3} : une entité à laquelle le modèle lui-même a attribué une confiance moyenne ou faible est retirée. Le modèle signale ainsi ses propres doutes, et la chaîne en tient compte plutôt que de les ignorer.
+  \item \textbf{E1 -- La mention doit être écrite dans la page.} Une entité qui ne figure pas mot pour mot dans le texte de sa page, même après normalisation, est retirée. C'est une reformulation du modèle, comme \og pneumopathie droite \fg{} pour \og pneumopathie du lobe inférieur droit \fg{}. Même si son sens paraît juste, une telle mention pose deux problèmes : on ne peut pas montrer au médecin l'endroit exact d'où elle vient, et, le Gold Standard annotant la mention telle qu'elle est écrite, on ne peut pas non plus la comparer correctement à la référence.
+  \item \textbf{E2 -- Une absence est une information.} Une entité niée, comme \og pas de toux \fg{}, est \emph{conservée} et marquée comme niée. Savoir qu'un patient ne tousse pas est utile au médecin, et le Gold Standard validé par lui annote cette absence. La règle E2 est donc une règle de protection : elle empêche que la négation détectée à l'étage~6 conduise à effacer une information juste.
+  \item \textbf{E3 -- Le modèle signale ses propres doutes.} Lors de l'extraction, le modèle attribue à chaque entité un niveau de confiance. Une entité qu'il juge lui-même de confiance moyenne ou faible est retirée : la chaîne tient compte de cet aveu d'incertitude plutôt que de l'ignorer.
 \end{itemize}
-
-\paragraph{Relations.}
-\begin{itemize}
-  \item \textbf{R2} : une relation qui affirme une entité niée est retirée, par exemple \og le patient présente le symptôme \emph{pas de toux} \fg{}. L'entité niée reste dans le graphe, mais aucune relation ne la donne comme présente, conformément à la convention du guideline.
-  \item \textbf{R3} : une relation créée par SGCE qui échoue aux contrôles d'ancrage de l'étage~2 est retirée : une réparation n'est acceptée que si elle reste ancrée dans le texte.
-  \item Une entité retirée emporte les relations qui pointent vers elle, afin que le graphe reste cohérent et ne contienne aucune relation orpheline.
-\end{itemize}
-
-\paragraph{Confiance.} Une violation de signature n'est pas un motif de retrait, pour la raison donnée à la section~\ref{sec:c5-etage3}. Elle compte parmi les \textbf{signaux faibles} qui déterminent le niveau de confiance d'une relation :
-\begin{itemize}
-  \item preuve non citée, ou réduite à une note du système ;
-  \item extrémités éloignées (dans le même paragraphe seulement) ou introuvables ;
-  \item inférence structurelle, plutôt qu'extraction directe ;
-  \item doublon d'un triplet déjà vu ;
-  \item indice de négation ou d'hypothèse sur l'entité clinique ;
-  \item violation de signature non réparée.
-\end{itemize}
-Une relation sans signal faible reçoit une confiance élevée, avec un signal une confiance moyenne, avec deux signaux ou plus une confiance faible. Ce niveau ne retire rien : il indique au médecin quelles relations vérifier en priorité. Ce n'est pas une probabilité, mais un classement ordinal, explicable par la liste des signaux qui l'ont déterminé.
-
-\subsection{Mode précision : vote appris des agents}\label{sec:c5-precision}
-
-Le mode standard ne retire que ce que des règles sûres permettent d'écarter : il améliore la qualité du graphe sans sacrifier d'information juste, mais laisse passer des erreurs plus subtiles. Le mode précision ajoute un \textbf{vote appris}, qui permet de régler le compromis entre la quantité d'information conservée et sa fiabilité.
-
-\paragraph{Les variables.} Chaque élément est décrit par des variables binaires issues des signaux des agents :
-\begin{itemize}
-  \item pour une \textbf{relation} : statut de la preuve, distance, section, type de relation, conformité, provenance, temporalité, doublon, négation, hypothèse, mots porteurs de sens de l'entité clinique, et croisements entre ces variables (section et type de relation, type de relation et mot) ;
-  \item pour une \textbf{entité} : type, section, présence d'une relation, longueur de la mention (courte, moyenne, longue), présence d'un chiffre, provenance, répétition, hypothèse, mots de la mention et leurs croisements avec le type.
-\end{itemize}
-Les croisements permettent d'exprimer qu'un même signal n'a pas le même sens selon le contexte : un traitement cité dans la section de biologie est suspect, alors qu'il est attendu dans la section des traitements.
-
-\paragraph{Le modèle.} Une \textbf{régression logistique}~\cite{cox1958regression}, régularisée (pénalité $L_2$), apprend un poids pour chaque variable, puis fournit un score de fiabilité compris entre 0 et 1 :
+Ces trois règles se résument en une seule condition. Une entité $e$ est retirée si
 \begin{equation}
-p(\text{juste} \mid x) = \frac{1}{1 + e^{-\sum_j w_j x_j}},
+\underbrace{e \text{ n'est pas écrite mot pour mot dans sa page}}_{\text{E1}} \quad \text{ou} \quad \underbrace{\text{le modèle lui a donné une confiance moyenne ou faible}}_{\text{E3}},
 \end{equation}
-où $x_j$ vaut 1 si la variable $j$ est présente et 0 sinon, et $w_j$ est son poids appris. Deux modèles sont appris, un pour les entités et un pour les relations. Les exemples d'apprentissage sont les éléments de la sortie de l'étage~6, étiquetés comme justes ou faux par comparaison au Gold Standard, uniquement sur les dossiers d'apprentissage.
+la négation n'intervenant pas dans cette condition, puisqu'une entité niée est gardée (E2).
 
-\paragraph{Le curseur $k$.} On conserve la part $k$ des éléments les mieux notés, parmi ceux que les règles du mode standard n'ont pas déjà retirés. Concrètement, le seuil de score correspondant à chaque valeur de $k$ est calculé sur les dossiers d'apprentissage, comme le quantile d'ordre $1 - k$ de leurs scores, puis appliqué tel quel aux dossiers notés. Le paramètre $k$, compris entre 30~\% et 100~\%, agit comme un curseur : une valeur élevée privilégie le rappel, une valeur faible la précision. Le choix de $k$ dépend de l'usage : l'exploration d'un dossier tolère quelques erreurs pour ne rien perdre, un graphe destiné à l'aide à la décision exige au contraire une grande fiabilité.
-
-\paragraph{Pourquoi ce modèle.} La régression logistique répond à trois exigences :
+\paragraph{Les relations.} Trois règles s'appliquent ensuite aux relations.
 \begin{itemize}
-  \item \textbf{l'interprétabilité} : chaque poids a un sens clinique et peut être montré ; un biomarqueur cité avec sa valeur dans la section de biologie est fiable, un triplet répété est suspect ;
-  \item \textbf{la frugalité} : avec 49 dossiers, un modèle plus complexe, comme un réseau de neurones, sur-apprendrait les particularités des dossiers d'apprentissage ;
-  \item \textbf{le déterminisme} : il ne peut pas halluciner à son tour, et la même entrée donne toujours le même score.
+  \item \textbf{R2 -- On ne relie pas une absence comme si elle était présente.} Une relation qui affirme une entité niée est retirée, par exemple \og le patient présente le symptôme \emph{pas de toux} \fg{}. L'entité niée reste dans le graphe, mais aucune relation ne la donne comme présente, conformément à la convention du guideline. C'est le complément naturel de la règle E2 : on garde l'absence, mais pas le contresens.
+  \item \textbf{R3 -- Une réparation doit rester ancrée.} Une relation créée par SGCE qui échoue aux contrôles d'ancrage de l'étage~2 est retirée : réparer la forme du graphe ne doit jamais introduire un lien que le texte ne soutient pas.
+  \item \textbf{Cascade.} Une entité retirée emporte les relations qui pointent vers elle. Le graphe reste ainsi cohérent, et ne contient aucune relation suspendue dans le vide.
 \end{itemize}
-L'agrégation pondérée de signaux imparfaits reprend l'idée de Snorkel~\cite{ratner2017snorkel}, et le choix de ne garder que les éléments les plus sûrs celle de la décision avec rejet~\cite{chow1970reject,geifman2017selective}.
+
+\paragraph{La confiance des relations conservées.} Toutes les relations gardées ne se valent pas. Plutôt que de retirer les plus douteuses, le mode standard leur attribue un niveau de confiance, calculé à partir de six \textbf{signaux faibles} :
+\begin{enumerate}
+  \item la preuve n'est pas citée, ou se réduit à une note produite par le système ;
+  \item les deux extrémités sont seulement dans le même paragraphe, ou introuvables ;
+  \item la relation a été inférée par la chaîne plutôt qu'extraite directement par le modèle ;
+  \item elle répète un triplet déjà vu ;
+  \item l'entité clinique porte un indice de négation ou d'hypothèse ;
+  \item elle viole sa signature sans avoir été réparée.
+\end{enumerate}
+Une violation de signature n'est pas un motif de retrait, pour la raison donnée à la section~\ref{sec:c5-etage3} : la relation est souvent juste, et c'est le type d'une entité qui est faux. Elle compte donc seulement comme un signal faible. Le niveau de confiance dépend du nombre $n_f$ de signaux faibles relevés :
+\begin{equation}
+\text{confiance} =
+\begin{cases}
+\text{élevée} & \text{si } n_f = 0,\\
+\text{moyenne} & \text{si } n_f = 1,\\
+\text{faible} & \text{si } n_f \geq 2.
+\end{cases}
+\end{equation}
+Ce niveau ne retire rien. Il sert de guide de lecture : face à un graphe de plusieurs centaines de relations, le médecin sait par lesquelles commencer sa vérification. Ce n'est pas une probabilité, mais un classement, toujours accompagné de la liste des signaux qui l'expliquent.
+
+\subsection{Mode précision : un vote appris des agents}\label{sec:c5-precision}
+
+\paragraph{Pourquoi un second mode.} Le mode standard est prudent : il améliore la qualité du graphe sans sacrifier d'information juste, mais il laisse passer des erreurs plus subtiles, qu'aucune règle simple ne permet de repérer. Une relation peut par exemple avoir une preuve attestée et des extrémités proches, mais relier au patient un symptôme cité dans les antécédents ; chacun de ses signaux, pris isolément, semble rassurant, alors que leur combinaison est suspecte. Le mode précision cherche à exploiter ces combinaisons. Au lieu de règles écrites à la main, il apprend, à partir d'exemples, quels signaux accompagnent le plus souvent un élément juste ou un élément faux.
+
+\paragraph{Décrire chaque élément.} Chaque élément est d'abord traduit en une liste de variables binaires, qui valent 1 lorsqu'un signal est présent et 0 sinon.
+\begin{itemize}
+  \item Une \textbf{relation} est décrite par le statut de sa preuve, la distance entre ses extrémités, sa section, son type, sa conformité, sa provenance, la temporalité de son entité clinique, le fait qu'elle soit un doublon, les indices de négation et d'hypothèse, et les mots porteurs de sens de son entité clinique.
+  \item Une \textbf{entité} est décrite par son type, sa section, le fait qu'elle soit reliée ou non, la longueur de sa mention (courte, moyenne ou longue), la présence d'un chiffre, sa provenance, sa répétition, un indice d'hypothèse et les mots de sa mention.
+\end{itemize}
+À ces variables s'ajoutent des \textbf{croisements}, comme \og section et type de relation \fg{} ou \og type et mot \fg{}. Ils traduisent le fait qu'un même signal n'a pas le même sens selon le contexte : un traitement cité dans la section des traitements est attendu, le même traitement cité dans la section de biologie est suspect ; un biomarqueur qui contient un chiffre est probablement juste, un événement temporel sans date l'est beaucoup moins.
+
+\paragraph{Apprendre un poids pour chaque signal.} Une \textbf{régression logistique}~\cite{cox1958regression} associe ensuite à chaque variable $j$ un poids $w_j$. Un poids positif signifie que la variable accompagne le plus souvent des éléments justes, un poids négatif qu'elle accompagne surtout des erreurs. Pour un élément décrit par les variables $x_1, \dots, x_D$, on additionne les poids des signaux présents, puis on transforme cette somme en un score compris entre 0 et 1 :
+\begin{equation}
+\text{score} = \sigma\Big(w_0 + \sum_{j} w_j\, x_j\Big), \qquad \text{avec } \sigma(z) = \frac{1}{1 + e^{-z}},
+\end{equation}
+où $w_0$ est un terme constant. Un score proche de 1 indique un élément très probablement juste, un score proche de 0 un élément très probablement faux. On peut lire ce calcul comme un barème : chaque signal rapporte ou coûte des points, et la fonction $\sigma$ convertit le total en une note de fiabilité.
+
+Les poids sont appris sur des exemples. Chaque élément de la sortie de l'étage~6 est étiqueté comme juste s'il est apparié à la référence, et comme faux sinon, mais uniquement sur les dossiers d'apprentissage. L'apprentissage cherche les poids qui donnent les meilleurs scores aux éléments justes et les plus mauvais aux éléments faux, avec une pénalité $L_2$ qui empêche une variable rare, comme un mot vu une seule fois, de recevoir un poids extrême. Deux modèles sont appris : l'un pour les entités, l'autre pour les relations.
+
+\paragraph{Le curseur $k$.} Une fois chaque élément noté, il reste à décider lesquels garder. On choisit pour cela la part $k$ des éléments à conserver, parmi ceux que les règles du mode standard n'ont pas déjà retirés. Le seuil correspondant, noté $\theta_k$, est fixé sur les dossiers d'apprentissage : c'est le score au-dessous duquel se trouvent les $(1 - k)$ éléments les moins bien notés. Il est ensuite appliqué tel quel aux dossiers évalués :
+\begin{equation}
+\text{garder l'élément} \iff \text{score} \geq \theta_k.
+\end{equation}
+Avec $k = 80~\%$, par exemple, on retire les 20~\% d'éléments que le modèle juge les moins fiables. Le paramètre $k$, compris entre 30~\% et 100~\%, agit comme un curseur entre deux exigences contradictoires. Une valeur élevée privilégie le \emph{rappel} : on garde presque tout, au risque de garder des erreurs. Une valeur faible privilégie la \emph{précision} : on ne garde que les éléments les plus sûrs, au prix d'informations justes perdues. Le bon réglage dépend de l'usage : explorer un dossier tolère quelques erreurs pour ne rien manquer, alors qu'un graphe destiné à l'aide à la décision exige d'abord de la fiabilité.
+
+\paragraph{Pourquoi une régression logistique.} Ce choix répond à trois exigences propres au contexte clinique.
+\begin{itemize}
+  \item \textbf{L'interprétabilité.} Chaque poids a un sens et peut être montré : on peut expliquer qu'un biomarqueur cité avec sa valeur dans la section de biologie est jugé fiable, et qu'un triplet répété est jugé suspect. Un médecin peut ainsi comprendre pourquoi un élément a été écarté.
+  \item \textbf{La frugalité.} Avec 49 dossiers, un modèle plus complexe, comme un réseau de neurones, apprendrait par cœur les particularités des dossiers d'apprentissage et généraliserait mal à de nouveaux dossiers. La régression logistique reste robuste sur un petit corpus.
+  \item \textbf{Le déterminisme.} Elle ne peut pas halluciner à son tour, et la même entrée donne toujours le même score, ce qu'aucun modèle génératif ne garantit.
+\end{itemize}
+L'idée de combiner des signaux imparfaits en les pondérant reprend celle de Snorkel~\cite{ratner2017snorkel}, et le choix de ne garder que les éléments les plus sûrs, en acceptant de s'abstenir sur les autres, celle de la décision avec rejet~\cite{chow1970reject,geifman2017selective}.
 
 \subsection{Validation croisée du vote}\label{sec:c5-validation}
 
-Le vote est le seul composant de TRACE qui apprend de la référence. Il est donc entraîné et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}) : les dossiers sont triés, puis séparés en rangs pairs et impairs ; le modèle appris sur une moitié note l'autre, puis l'inverse. Chaque dossier est ainsi noté par un modèle qui ne l'a jamais vu, et les performances mesurées valent pour des dossiers nouveaux.
+Le vote est le seul composant de TRACE qui apprend de la référence. Il faut donc s'assurer qu'il ne \og triche \fg{} pas : un modèle évalué sur les dossiers qui ont servi à l'entraîner obtiendrait des résultats flatteurs, mais trompeurs, comme un étudiant qui corrigerait sa propre copie avec le corrigé sous les yeux.
 
-Ce sont les mêmes plis que ceux des exemples, des règles strictes et du lexique du pipeline d'extraction (section~\ref{sec:c4-exemples}). Utiliser partout les mêmes plis garantit qu'aucune information ne circule d'une moitié à l'autre par un chemin détourné : un dossier n'est jamais traité, à aucune étape, avec ce qui a été appris sur sa propre annotation. Deux plis plutôt que davantage permettent de garder, pour chaque apprentissage, environ 25~dossiers, soit plusieurs milliers d'éléments étiquetés ; ils permettent aussi de vérifier la stabilité des résultats en comparant les deux moitiés.
+Le vote est pour cela entraîné et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}). Les 49 dossiers sont triés, puis séparés selon la parité de leur rang en deux moitiés fixes, $A$ (25 dossiers) et $B$ (24 dossiers). Le modèle appris sur $A$ note les dossiers de $B$ ; le modèle appris sur $B$ note ceux de $A$ ; les deux résultats sont ensuite réunis. Chaque dossier est ainsi noté par un modèle qui ne l'a jamais vu, et les performances mesurées valent pour des dossiers nouveaux.
+
+Ce sont les mêmes moitiés que celles des exemples, des règles strictes et du lexique du pipeline d'extraction (section~\ref{sec:c4-exemples}). Utiliser partout le même découpage garantit qu'aucune information ne circule d'une moitié à l'autre par un chemin détourné : un dossier n'est jamais traité, à aucune étape, avec ce qui a été appris sur sa propre annotation. Deux plis plutôt que davantage permettent de garder, pour chaque apprentissage, environ 25 dossiers, soit plusieurs milliers d'éléments étiquetés ; ils permettent aussi de vérifier la stabilité des résultats, en comparant ce que l'on obtient sur chacune des deux moitiés.
 
 \begin{figure}[H]
 \centering
