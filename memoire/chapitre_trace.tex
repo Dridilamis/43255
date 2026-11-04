@@ -61,22 +61,6 @@ L'étage~8 mesure le résultat de chaque étage par rapport au Gold Standard.
 \caption{La chaîne TRACE, étage par étage : question posée, traitement, action, exemple et type d'hallucination traité (exemples construits pour l'illustration)}\label{fig:c5-architecture}
 \end{figure}
 
-\subsection{Notations}\label{sec:c5-notations}
-
-Les étages de la chaîne sont décrits plus loin à l'aide des notations suivantes.
-
-\paragraph{Dossier et texte.} Un dossier $d$ est composé de pages $P_1, \dots, P_n$. On note $T(P)$ le texte transcrit de la page $P$ et $T(d)$ la concaténation des textes de toutes ses pages. Le texte est découpé en lignes, et chaque ligne est rattachée à une \emph{section} du compte rendu (antécédents, biologie, traitement habituel\dots) repérée par son titre ; on note $\mathrm{sec}(x)$ la section où se trouve la position $x$ du texte.
-
-\paragraph{Graphe.} L'extraction d'un dossier est un graphe $G = (\mathcal{E}, \mathcal{R})$. Chaque entité $e \in \mathcal{E}$ a une mention $m(e)$, un type $\tau(e)$ parmi les 20 types du guideline et une page $\pi(e)$. Chaque relation $r \in \mathcal{R}$ est un triplet $r = (s, \rho, o)$, où $s$ et $o$ sont deux entités et $\rho$ un type de relation ; elle porte aussi une preuve textuelle $\mathrm{pr}(r)$, la citation fournie par le modèle.
-
-\paragraph{Chaîne.} En notant $G_0$ la sortie de l'extraction, chaque étage $j$ transforme le graphe produit par l'étage précédent :
-\begin{equation}
-G_j = f_j\big(G_{j-1},\, T(d)\big), \qquad j = 1, 2, 3, 4, \mathrm{4b}, 5, 6, 7,
-\end{equation}
-où $f_j$ ne lit que le graphe et le texte du dossier, jamais le Gold Standard. Chaque étage ajoute à chaque élément des annotations, notées par des prédicats comme $\mathrm{att}(e)$ ou $\mathrm{nie}(e)$, qui valent 1 si la propriété est vraie et 0 sinon.
-
-\paragraph{Normalisation.} Toutes les comparaisons au texte se font après une normalisation $\nu$ : passage en minuscules, suppression des accents, remplacement de tout caractère qui n'est ni une lettre ni un chiffre par une espace, et réduction des espaces multiples. Ainsi $\nu(\text{\og Leucocytes 15,2 G/L \fg{}}) = \nu(\text{\og leucocytes 15.2 g/l \fg{}}) = \text{\og leucocytes 15 2 g l \fg{}}$. On note $a \sqsubseteq b$ le fait que la chaîne $a$ apparaisse dans $b$ comme suite de mots complets, c'est-à-dire sans être précédée ni suivie d'une lettre ou d'un chiffre.
-
 \subsection{Cinq principes de conception}
 
 La conception de la chaîne repose sur cinq principes, qui découlent directement de la nature du problème.
@@ -138,21 +122,7 @@ Pour chaque entité, l'étage vérifie deux propriétés :
   \item l'entité est-elle \textbf{attestée} dans le dossier ? Elle l'est si sa mention y figure à l'identique, ou si au moins la moitié de ses mots porteurs de sens y figurent et que \emph{tous} ses nombres y sont écrits. Pour tolérer les accords et les flexions, deux mots sont considérés comme identiques lorsqu'ils partagent leurs cinq premières lettres (\og pulmonaire \fg{} et \og pulmonaires \fg{}) ;
   \item figure-t-elle \textbf{mot pour mot} dans le texte de sa propre page ?
 \end{itemize}
-Les deux comparaisons se font après normalisation : la casse, les accents, la ponctuation et les espaces ne comptent pas. \og 15,2 \fg{} et \og 15.2 \fg{} sont ainsi identiques.
-
-Formellement, notons $W(m)$ l'ensemble des mots porteurs de sens de la mention $m$, c'est-à-dire ses mots normalisés d'au moins trois lettres ou numériques, hors mots grammaticaux, et $N(m)$ l'ensemble de ses nombres. Un mot $w$ est retrouvé dans le dossier si
-\begin{equation}
-w \in_5 T(d) \iff w \in W(T(d)) \;\;\text{ou}\;\; \big(|w| \geq 5 \;\text{et}\; \exists\, u \in W(T(d)) : w_{1..5} = u_{1..5}\big),
-\end{equation}
-où $w_{1..5}$ désigne les cinq premières lettres de $w$ ; un nombre doit en revanche être retrouvé à l'identique. Une entité est alors attestée si
-\begin{equation}
-\mathrm{att}(e) = 1 \iff \nu(m(e)) \sqsubseteq \nu(T(d)) \;\;\text{ou}\;\; \left(\frac{|\{w \in W(m(e)) : w \in_5 T(d)\}|}{|W(m(e))|} \geq \frac{1}{2} \;\;\text{et}\;\; N(m(e)) \subseteq N(T(d))\right),
-\end{equation}
-et elle figure mot pour mot dans sa page si
-\begin{equation}
-\mathrm{mpm}(e) = 1 \iff \nu(m(e)) \sqsubseteq \nu\big(T(P_{\pi(e)})\big).
-\end{equation}
-La première propriété sert à retirer les inventions ; la seconde est seulement annotée, et sera utilisée par l'arbitrage.
+Les deux comparaisons se font après normalisation : la casse, les accents, la ponctuation et les espaces ne comptent pas. \og 15,2 \fg{} et \og 15.2 \fg{} sont ainsi identiques. La première propriété sert à retirer les inventions ; la seconde est seulement annotée, et sera utilisée par l'arbitrage.
 
 \subsection{Vérification des relations}
 
@@ -163,21 +133,6 @@ Pour chaque relation, l'étage relève quatre signaux :
   \item la \textbf{distance} entre ses deux extrémités dans le texte : même ligne (moins de 80~caractères), même paragraphe (moins de 300~caractères), éloignées ou introuvables. Une relation dont une extrémité est le patient n'est pas soumise à cette mesure, puisque le patient est le sujet implicite de tout le dossier ;
   \item la \textbf{section} du compte rendu où elle est citée : motif d'hospitalisation, antécédents, traitement habituel, histoire de la maladie, examen clinique, biologie et imagerie, évolution, conclusion ou prescription de sortie. Les sections sont repérées par leurs titres habituels dans les comptes rendus.
 \end{itemize}
-La distance entre les deux extrémités est la plus petite distance, en caractères, entre une occurrence de la mention du sujet et une occurrence de la mention de l'objet dans le texte normalisé du dossier :
-\begin{equation}
-\delta(s, o) = \min_{x \in \mathrm{occ}(s),\; y \in \mathrm{occ}(o)} |x - y|,
-\end{equation}
-où $\mathrm{occ}(e)$ est l'ensemble des positions où $m(e)$ apparaît. Elle est ensuite classée en quatre niveaux :
-\begin{equation}
-\mathrm{dist}(r) =
-\begin{cases}
-\textsc{ligne} & \text{si } \delta(s,o) \leq 80,\\
-\textsc{paragraphe} & \text{si } 80 < \delta(s,o) \leq 300,\\
-\textsc{loin} & \text{si } \delta(s,o) > 300,\\
-\textsc{introuvable} & \text{si } \mathrm{occ}(s) = \varnothing \text{ ou } \mathrm{occ}(o) = \varnothing,
-\end{cases}
-\end{equation}
-une relation dont une extrémité est le patient recevant le niveau \textsc{patient}. Le statut de la preuve vaut \textsc{attestée} si $\mathrm{att}(\mathrm{pr}(r)) = 1$, \textsc{inventée} si la preuve est donnée mais non attestée, et \textsc{absente} si le modèle n'en a pas fourni.
 
 \subsection{Ce qui est retiré, et ce qui ne l'est pas}
 
@@ -188,12 +143,7 @@ L'étage ne retire que ce que le document rend impossible :
   \item une relation dont la preuve citée n'existe pas dans le texte ;
   \item une relation dont les deux extrémités ne sont jamais à moins de 300~caractères l'une de l'autre, c'est-à-dire jamais dans un même paragraphe.
 \end{itemize}
-Ces quatre cas se résument par deux prédicats de retrait :
-\begin{align}
-\mathrm{ret}_2(e) &= 1 - \mathrm{att}(e),\\
-\mathrm{ret}_2(r) &= \big(1 - \mathrm{att}(s)\big) \lor \big(1 - \mathrm{att}(o)\big) \lor \big[\mathrm{pr}(r) = \textsc{inventée}\big] \lor \big[\mathrm{dist}(r) = \textsc{loin}\big],
-\end{align}
-l'entité patient étant toujours considérée comme attestée, et toute relation dont une extrémité est retirée étant retirée avec elle. Tout le reste est annoté. En particulier, une mention reformulée n'est pas retirée à ce stade : conformément au principe \og annoter d'abord, un seul étage décide \fg{}, cette décision revient à l'arbitrage, qui dispose de tous les signaux.
+Tout le reste est annoté. En particulier, une mention reformulée n'est pas retirée à ce stade : conformément au principe \og annoter d'abord, un seul étage décide \fg{}, cette décision revient à l'arbitrage, qui dispose de tous les signaux.
 
 \begin{figure}[H]
 \centering
@@ -210,11 +160,7 @@ Exiger la présence de \emph{tous} les nombres, alors qu'une partie des mots peu
 % ============================================================
 \section{Étage 3 : conformité au guideline}\label{sec:c5-etage3}
 
-Le troisième étage traite les hallucinations ontologiques : une relation ne respecte pas le schéma du guideline. Il confronte chaque relation aux 34 signatures du TRACE-Sepsis Annotation Guideline (annexe~\ref{annexe:relations}) et pose trois questions : la relation fait-elle partie du schéma ? Le type de son sujet correspond-il au domaine attendu ? Le type de son objet correspond-il à l'image attendue ? En notant $\mathcal{S}$ l'ensemble des 34 signatures, chacune de la forme $(\rho, \mathrm{dom}(\rho), \mathrm{img}(\rho))$, une relation est conforme si
-\begin{equation}
-\mathrm{conf}(r) = 1 \iff \rho \in \mathcal{S} \;\;\text{et}\;\; \tau(s) = \mathrm{dom}(\rho) \;\;\text{et}\;\; \tau(o) = \mathrm{img}(\rho).
-\end{equation}
-Chaque relation reçoit le statut \emph{conforme}, \emph{violation de domaine} (si $\tau(s) \neq \mathrm{dom}(\rho)$) ou \emph{violation d'image} (si $\tau(o) \neq \mathrm{img}(\rho)$). Par exemple, la relation \emph{traitement\_administre\_a} attend un \entite{TRAITEMENT} comme sujet et une \entite{DONNEE\_PATIENT} comme objet ; dirigée vers \og lactates \fg{}, un \entite{BIOMARQUEUR}, elle reçoit le statut violation d'image.
+Le troisième étage traite les hallucinations ontologiques : une relation ne respecte pas le schéma du guideline. Il confronte chaque relation aux 34 signatures du TRACE-Sepsis Annotation Guideline (annexe~\ref{annexe:relations}) et pose trois questions : la relation fait-elle partie du schéma ? Le type de son sujet correspond-il au domaine attendu ? Le type de son objet correspond-il à l'image attendue ? Chaque relation reçoit le statut \emph{conforme}, \emph{violation de domaine} ou \emph{violation d'image}. Par exemple, la relation \emph{traitement\_administre\_a} attend un \entite{TRAITEMENT} comme sujet et une \entite{DONNEE\_PATIENT} comme objet ; dirigée vers \og lactates \fg{}, un \entite{BIOMARQUEUR}, elle reçoit le statut violation d'image.
 
 L'étage annote sans rien retirer, et ce choix est délibéré. Lors de la mise au point de la chaîne, l'examen des relations en violation a montré que la plupart étaient justes : c'est le type d'une de leurs entités qui était faux, non le lien lui-même. Un médicament typé par erreur comme biomarqueur, par exemple, produit une violation alors que le lien \og administré au patient \fg{} est exact. Retirer la relation ferait perdre une information correcte, alors que l'étage suivant peut corriger le type de l'entité. La violation devient donc un indice, utilisé par la réparation structurelle, puis par l'arbitrage, où elle abaisse le niveau de confiance.
 
@@ -225,11 +171,35 @@ Cette approche rejoint la validation par contraintes des graphes de connaissance
 
 \subsection{Rôle}
 
-Le quatrième étage traite les hallucinations structurelles : un graphe mal formé, même composé d'éléments exacts, ne peut pas être interrogé correctement. Il applique SGCE (\textit{Structural Grounding for Clinical Knowledge Extraction}), un moteur de réparation développé dans le projet. SGCE répare la forme du graphe, non son contenu factuel.
+Le quatrième étage traite les hallucinations structurelles : un graphe mal formé, même composé d'éléments exacts, ne peut pas être interrogé correctement. Un traitement qui n'est relié à aucune posologie, une relation qui pointe vers une entité inexistante, un lien extrait comme une entité ou une relation dirigée vers une entité du mauvais type rendent le graphe incomplet ou incohérent, alors même que chaque élément, pris isolément, peut être juste. L'étage applique SGCE (\textit{Structural Grounding for Clinical Knowledge Extraction}), un moteur de réparation développé dans le projet. SGCE répare la forme du graphe, non son contenu factuel : il ne juge pas si une information est vraie, mais si elle est correctement représentée.
 
-\subsection{Motifs d'erreur}
+\subsection{Organisation générale}
 
-SGCE reconnaît des motifs d'erreur typés, résumés dans le tableau~\ref{tab:c5-sgce} et illustrés par la figure~\ref{fig:c5-sgce}.
+SGCE enchaîne quatre phases, chacune lisant la sortie de la précédente :
+\begin{enumerate}
+  \item les \textbf{motifs d'erreur} A, B, C et D, appliqués dans cet ordre, qui traitent les erreurs structurelles les plus fréquentes ;
+  \item la \textbf{réparation des relations}, qui corrige les relations encore mal typées ;
+  \item la \textbf{résolution des orphelins}, qui traite les relations dont une extrémité ne correspond à aucune entité ;
+  \item le \textbf{recours multi-agent}, réservé aux cas que les phases précédentes ont détectés sans pouvoir les corriger avec certitude.
+\end{enumerate}
+L'ordre n'est pas arbitraire. Les motifs A rétablissent d'abord les relations manquantes et découpent les entités composites ; les motifs B rattachent ensuite les relations à leurs entités ; le motif C ne s'applique qu'à un graphe dont les entités et les références sont stabilisées ; le motif D corrige enfin les signatures sur ce graphe consolidé. Chaque phase travaille donc sur un graphe déjà assaini par les précédentes, ce qui évite qu'une correction soit faite sur une structure qui sera modifiée ensuite.
+
+Un principe guide toute l'organisation : \emph{les règles symboliques tranchent d'abord}. Un cas n'est envoyé au recours multi-agent que si un motif a été détecté sans qu'une correction unique et sûre puisse être choisie.
+
+\subsection{Un cycle commun en quatre temps}
+
+Chaque motif, et chaque phase, suit le même cycle :
+\begin{enumerate}
+  \item la \textbf{détection} recherche les candidats, c'est-à-dire les éléments qui présentent le motif, sans modifier le graphe ;
+  \item la \textbf{validation} classe chaque candidat dans une catégorie de décision, en s'appuyant uniquement sur les signatures du schéma, les entités et relations déjà présentes et le texte de la page ;
+  \item la \textbf{correction} n'est appliquée qu'aux candidats classés comme sûrs, sur une copie du graphe ; les fichiers d'entrée ne sont jamais modifiés ;
+  \item la \textbf{post-validation} compare le graphe avant et après la correction, et vérifie qu'elle n'a introduit aucune nouvelle anomalie.
+\end{enumerate}
+Les catégories de décision suivent toujours la même logique : \emph{déjà correct}, l'élément est laissé tel quel ; \emph{confirmé}, la correction est sûre et sera appliquée ; \emph{ambigu}, plusieurs corrections sont possibles et aucune n'est appliquée. Les candidats faibles, détectés sur un indice isolé, restent toujours ambigus. Aucune étape n'utilise de connaissance médicale extérieure au dossier.
+
+\subsection{Les motifs d'erreur}
+
+Le tableau~\ref{tab:c5-sgce} résume les motifs et la figure~\ref{fig:c5-sgce} en illustre quatre.
 
 \begin{table}[H]
 \centering
@@ -239,14 +209,14 @@ SGCE reconnaît des motifs d'erreur typés, résumés dans le tableau~\ref{tab:c
 \toprule
 \textbf{Motif} & \textbf{Erreur détectée} & \textbf{Réparation} \\
 \midrule
-A (A1 à A6) & relation attendue absente entre deux entités présentes, pour six couples de types : traitement et posologie, comorbidité et contexte d'acquisition, imagerie et foyer, imagerie et défaillance, imagerie et comorbidité, patient et symptôme ; pour A1, entité composite qui regroupe le traitement et sa posologie & création de la relation si le texte la soutient ; découpage de l'entité composite en deux entités reliées \\
+A (A1 à A6) & relation attendue absente entre deux entités présentes, pour six couples de types ; pour A1, entité composite qui regroupe le traitement et sa posologie & création de la relation si le texte la soutient ; découpage de l'entité composite en deux entités reliées \\
 B1 & relation qui pointe vers une entité absente de la liste des entités & rattachement à l'entité existante, ou création de l'entité si le texte la contient \\
-B2 & chaîne de deux relations dont l'entité intermédiaire manque & création de l'entité intermédiaire, seulement si elle est explicitement écrite \\
+B2 & chaîne de deux relations dont l'entité intermédiaire manque & réécriture de la chaîne, seulement si l'entité intermédiaire est explicitement écrite \\
 C & lien extrait comme une entité (relation réifiée) & réécriture en relation entre les deux entités concernées \\
-D & relation qui viole sa signature & changement de type de relation, ou redirection vers une entité du bon type \\
+D & relation qui viole sa signature & redirection vers une entité du bon type, retypage de l'entité, ou retrait de la relation isolée \\
 Réparation des relations & relation dont les types observés correspondent à une autre signature & remplacement du type de relation, ou retypage d'une extrémité si le texte le soutient \\
-Résolution des orphelins & relation isolée du reste du graphe & rattachement à une entité correspondante, lorsque le texte le justifie \\
-Multi-agent & cas restés ambigus après les étapes précédentes & vote de trois agents ; abstention en l'absence de consensus \\
+Résolution des orphelins & relation dont une extrémité ne correspond à aucune entité & rattachement à l'unique entité compatible, ou retrait si aucune n'existe \\
+Multi-agent & cas restés ambigus après les phases précédentes & vote de trois agents ; abstention en l'absence de consensus \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -257,19 +227,47 @@ Multi-agent & cas restés ambigus après les étapes précédentes & vote de tro
 \caption{Étage~4 : exemples de réparations structurelles de SGCE (exemples construits)}\label{fig:c5-sgce}
 \end{figure}
 
-\subsection{Un cycle de correction prudent}
+\paragraph{Motif A : relations attendues absentes.} Certains couples de types sont presque toujours reliés lorsqu'ils apparaissent ensemble dans un passage : un traitement et sa posologie, une comorbidité et son contexte d'acquisition, une imagerie et le foyer, la défaillance ou la comorbidité qu'elle objective, le patient et ses symptômes. Le motif A recherche ces six couples (A1 à A6) lorsque la relation attendue manque. Chaque candidat est classé comme \emph{déjà correct} (la relation existe), \emph{relation manquante} (les deux entités sont présentes et le texte permet de les relier sans ambiguïté), \emph{motif confirmé} ou \emph{ambigu}. Une relation manquante est créée seulement si l'appariement entre les deux entités est fiable. Pour le couple traitement--posologie (A1), le motif traite aussi l'entité composite, où le modèle a regroupé le médicament et sa dose dans une seule mention, comme \og Augmentin 1 g x 3 \fg{}. Le découpage n'est appliqué que sous quatre conditions : le signal est moyen ou fort, au moins deux composantes posologiques indépendantes sont reconnues (dose, unité, rythme, voie), ces composantes sont explicitement écrites dans la preuve ou dans le texte, et aucune posologie fiable ne correspond déjà au traitement. L'entité est alors remplacée par un \entite{TRAITEMENT} et une \entite{POSOLOGIE}, reliés par \emph{traitement\_a\_pour\_posologie}.
 
-Chaque motif suit le même cycle en quatre temps : \emph{détection} des candidats, sans modifier le graphe ; \emph{validation}, qui classe chaque candidat comme déjà correct, ambigu ou confirmé ; \emph{correction}, appliquée uniquement aux cas confirmés ; \emph{post-validation}, qui vérifie que la correction n'a pas dégradé la structure. Les cas ambigus ne sont jamais corrigés automatiquement. Par exemple, une entité composite n'est découpée en traitement et posologie (motif~A1) que si au moins deux composantes posologiques indépendantes sont reconnues, si ces composantes sont explicitement écrites dans la preuve ou dans le texte, et si aucune posologie fiable ne correspond déjà au traitement. De même, une entité intermédiaire manquante (motif~B2) n'est créée que si elle est explicitement écrite : la présence des deux autres entités ne suffit jamais.
+\paragraph{Motif B1 : références non résolues.} Une relation peut désigner, par son identifiant, une entité qui n'existe pas dans la liste des entités du document. La détection prouve seulement que la référence ne se résout pas ; la validation distingue ensuite quatre situations. La référence est \emph{résoluble} lorsqu'elle correspond, après normalisation, à une seule entité existante : la relation y est rattachée. L'entité est \emph{confirmée manquante} lorsqu'aucune entité ne correspond, mais que le type attendu peut être déduit avec certitude de la signature de la relation et que la référence contient un texte clinique exploitable : l'entité est créée à partir de ce texte, puis reliée. La référence est \emph{irrésoluble} lorsqu'elle ressemble à un identifiant opaque, sans contenu textuel : reconstruire l'entité reviendrait à l'inventer, et rien n'est fait. Elle est enfin \emph{ambiguë} lorsque plusieurs entités pourraient correspondre.
 
-Les cas restés ambigus sont soumis à un vote multi-agent. Trois agents déterministes examinent chaque décision proposée sous un angle différent : l'agent de \emph{preuve documentaire} vérifie que la décision est explicitement soutenue par le texte source ; l'agent de \emph{structure ontologique} vérifie qu'elle respecte les signatures du schéma et l'état courant du graphe ; l'agent de \emph{cohérence clinique} vérifie qu'elle ne contredit pas le contexte clinique local. En notant $v_1, v_2, v_3 \in \{\textsc{soutien}, \textsc{neutre}, \textsc{veto}\}$ les votes des trois agents et $n_+$ le nombre de soutiens, une décision $a$ est appliquée si
-\begin{equation}
-\mathrm{appliquer}(a) = 1 \iff n_+ = 3 \;\;\text{ou}\;\; \big(n_+ = 2 \;\text{et}\; \forall i,\, v_i \neq \textsc{veto} \;\text{et}\; \mathrm{preuve\_doc}(a) = 1\big),
-\end{equation}
-où $\mathrm{preuve\_doc}(a)$ vaut 1 si le texte source contient explicitement ce qui justifie la décision. Autrement dit, la décision n'est appliquée que si les trois agents la soutiennent, ou si deux d'entre eux la soutiennent sans opposition du troisième et avec une preuve documentaire explicite. Dans tous les autres cas, SGCE s'abstient et laisse l'élément tel quel, selon le principe de la décision sélective~\cite{geifman2017selective} : mieux vaut ne pas corriger que corriger faux, car une correction erronée serait une nouvelle hallucination, créée cette fois par la chaîne elle-même.
+\paragraph{Motif B2 : entités intermédiaires manquantes.} Certaines connaissances passent par une entité intermédiaire : un germe isolé dans un foyer, lui-même localisation d'un diagnostic. Le modèle relie parfois directement les deux extrémités, en sautant l'entité du milieu. Les chaînes candidates $A \rightarrow B \rightarrow C$ sont générées automatiquement à partir des signatures : elles sont possibles lorsque l'image d'une relation est le domaine d'une autre. Une chaîne n'est réécrite que si quatre conditions sont réunies : une relation directe entre $A$ et $C$ existe, cette relation n'est pas une signature valide pour les types de $A$ et $C$, les deux relations proposées $A \rightarrow B$ et $B \rightarrow C$ sont des signatures valides, et l'entité $B$ est explicitement écrite dans le texte. La simple co-occurrence de $A$ et $C$ ne suffit jamais à créer $B$.
+
+\paragraph{Motif C : relations réifiées.} Le modèle extrait parfois un lien comme s'il s'agissait d'une entité, par exemple \og traité par Claforan pour la pneumopathie \fg{} comme une seule mention. Seuls les candidats de signal moyen ou fort sont examinés. La correction exige une hypothèse de relation unique, une seule entité compatible pour chaque extrémité, et l'absence de relation directe déjà valide entre ces deux entités ; dans ce cas, l'entité réifiée est retirée et la relation est créée entre les deux entités existantes. Si une relation valide existe déjà, le cas est déjà relationnel et laissé tel quel ; si plusieurs hypothèses restent possibles, il est ambigu.
+
+\paragraph{Motif D : violations de signature.} Une relation peut avoir le bon type, mais une extrémité du mauvais type : la source ne correspond pas au domaine attendu (D1) ou la cible ne correspond pas à l'image attendue (D2). Trois réparations sont possibles, choisies uniquement à partir des signatures, des entités et relations existantes et de la similarité textuelle avec d'autres entités. La \emph{redirection} est appliquée lorsqu'une autre entité existante, du type attendu, correspond clairement à l'extrémité fautive. Le \emph{retypage} est appliqué lorsque les autres relations de l'entité indiquent, de façon concordante, que c'est son type qui est faux. Le \emph{retrait} de la relation n'est envisagé que si les types des deux extrémités sont fortement confirmés par leurs autres relations, qu'aucune entité de remplacement n'existe et que la relation fautive est isolée. Dans tous les autres cas, rien n'est fait.
+
+\subsection{Réparation des relations et résolution des orphelins}
+
+\paragraph{Réparation des relations.} Cette phase traite les relations dont le type ne convient pas aux entités qu'elles relient. Trois actions sont possibles, par ordre de préférence : \emph{remplacer} le type de relation, lorsque les types observés des deux extrémités correspondent exactement à une seule signature du schéma ; \emph{retyper la source} ou \emph{retyper la cible}, lorsqu'une seule extrémité est incorrecte et que le type attendu est explicitement soutenu par le texte. Si plusieurs interprétations restent possibles, aucune correction n'est faite.
+
+Les corrections acceptées sont ensuite validées de façon transactionnelle. Elles sont appliquées une par une, par ordre de priorité, sur une copie de travail cumulative du document ; après chaque correction, tout le document est réaudité. Une correction n'est conservée que si elle résout au moins une anomalie sans en créer aucune nouvelle ; sinon, elle est annulée et le document revient à son état précédent. Une correction juste en elle-même peut en effet en casser une autre, par exemple lorsqu'un retypage rend invalide une deuxième relation de la même entité ; cette validation cumulative détecte ces effets de bord.
+
+\paragraph{Résolution des orphelins.} Une relation est orpheline lorsque l'une de ses extrémités ne correspond à aucune entité du document. Elle est \emph{rattachée} si une seule entité existante a le type attendu par la signature et correspond textuellement à la référence, ou si elle est l'unique candidate compatible de la page. Elle est \emph{retirée} seulement si aucune entité compatible n'existe et que son autre extrémité est valide : la relation ne peut alors être reliée à rien, et la garder laisserait un lien vide dans le graphe. Dans tous les autres cas, elle est transmise au recours multi-agent.
+
+\subsection{Le recours multi-agent}
+
+Le recours multi-agent est un \emph{second recours} : il ne reçoit que les cas que les phases précédentes ont détectés, mais pour lesquels elles n'ont pas pu choisir une correction unique et sûre. Il se déroule en deux temps.
+
+\paragraph{Les agents spécialisés.} Chaque cas est d'abord replacé dans son contexte textuel, la page et le passage où il apparaît, puis confié à un agent spécialisé selon son motif : un agent par famille de motifs (A, B, C et D) et un agent qui distingue ce qui concerne le patient de ce qui relève d'un texte de référence, comme des valeurs normales du laboratoire ou une explication générale. Chaque agent propose une action, parmi le découpage, le rattachement, la création à partir d'une preuve explicite, la fusion, le retrait d'une relation ou le maintien, avec un niveau de confiance et la preuve textuelle qui la justifie. Les agents sont conservateurs : l'agent des motifs B ne crée jamais une entité sans preuve textuelle explicite, l'agent des motifs C ne propose aucune suppression ni fusion sans preuve documentaire, et l'agent patient--référence ne propose jamais de retrait sur la seule base d'indices lexicaux.
+
+\paragraph{L'arbitrage par consensus.} Chaque action proposée est ensuite soumise à trois votes indépendants :
+\begin{itemize}
+  \item le vote de \textbf{preuve documentaire} : l'action est-elle explicitement soutenue par le texte source ?
+  \item le vote de \textbf{structure ontologique} : respecte-t-elle les signatures du schéma et l'état courant du graphe ?
+  \item le vote de \textbf{cohérence clinique} : est-elle cohérente avec le contexte clinique local, sans contradiction évidente ?
+\end{itemize}
+Chaque vote peut soutenir l'action, rester neutre ou s'y opposer. L'action est appliquée si les trois votes la soutiennent, ou si deux la soutiennent sans opposition du troisième et avec une preuve documentaire explicite. Dans tous les autres cas, le cas reste non résolu et SGCE s'abstient, selon le principe de la décision sélective~\cite{geifman2017selective} : mieux vaut ne pas corriger que corriger faux, car une correction erronée serait une nouvelle hallucination, créée cette fois par la chaîne elle-même. Les actions retenues passent enfin par la même chaîne de garanties que les phases précédentes : correction provisoire sur une copie, validation de leur impact sur l'ensemble du document, correction définitive, puis post-validation.
+
+\subsection{Exemple}
+
+Dans la figure~\ref{fig:c5-sgce}, le traitement composite \og Augmentin 1 g x 3 \fg{} devient un \entite{TRAITEMENT} \og Augmentin \fg{} relié à une \entite{POSOLOGIE} \og 1 g x 3 \fg{} (motif~A1). Une relation \emph{presente\_symptome} qui pointe vers un identifiant inconnu est rattachée au symptôme \og frissons \fg{}, écrit dans le texte (motif~B1). L'entité \og traité par Claforan pour la pneumopathie \fg{} est remplacée par la relation \emph{traitement\_indique\_par\_label\_nosologique} entre Claforan et la pneumopathie (motif~C). Enfin, une relation \emph{traitement\_administre\_a} dirigée vers le biomarqueur \og lactates \fg{} est redirigée vers le patient (motif~D).
 
 \subsection{Justification}
 
 Un F1 calculé élément par élément ne voit pas qu'un graphe est éclaté en morceaux isolés, ou qu'un traitement n'est relié à aucune posologie ; or un graphe clinique doit être connexe et conforme au schéma pour être interrogé, par exemple pour reconstituer la chronologie d'un traitement. Les réparations de SGCE s'inscrivent dans la tradition du raffinement des graphes de connaissances~\cite{paulheim2017refinement} et de la réparation minimale de données sous contraintes~\cite{chu2013holistic,rekatsinas2017holoclean} : modifier le moins possible, et seulement ce que les contraintes et le texte justifient.
+
+Trois garanties encadrent l'ensemble. Aucune correction n'utilise de connaissance médicale extérieure : seuls comptent le schéma, le graphe et le texte du dossier. Aucune entité n'est créée sans que son contenu soit écrit dans la page. Et aucune correction n'est conservée si elle dégrade la structure du document. SGCE préfère donc laisser une erreur que risquer d'en créer une.
 
 SGCE a été développé sur une version antérieure du schéma, et il est utilisé sans modification, dans un espace de travail temporaire. Chaque relation qu'il crée est donc marquée comme telle, puis revérifiée par l'arbitrage avec les contrôles d'ancrage de l'étage~2 et les 34 signatures de la version~2.0 du guideline : aucune réparation n'échappe aux contrôles du reste de la chaîne.
 
@@ -287,11 +285,7 @@ Les étages précédents réduisent les erreurs, mais ne retrouvent pas les él�
   \item \textbf{B2, ordonnances} : dans les sections de traitement habituel et de prescription de sortie, une ligne \og médicament posologie \fg{} est coupée au début de la posologie, repéré par un chiffre, une voie d'administration (PO, SC, IV), une mention comme \og si besoin \fg{}, \og matin \fg{} ou \og soir \fg{}, ou un schéma comme \og 1-0-1 \fg{}. Elle donne un \entite{TRAITEMENT} et une \entite{POSOLOGIE} distincts, par exemple \og Tahor \fg{} et \og 10mg 0-0-1 \fg{} pour la ligne \og Tahor 10mg 0-0-1 \fg{} ;
   \item \textbf{B3, posologie} : sur cette même ligne, le traitement est relié à sa posologie par la relation \emph{traitement\_a\_pour\_posologie}, la ligne entière servant de preuve. La règle s'applique aussi lorsque le traitement ou la posologie avaient déjà été extraits par le modèle.
 \end{itemize}
-Une entité candidate $c$, de type $\tau(c)$ sur la page $P$, n'est ajoutée que si aucune entité existante de même type ne la recouvre déjà :
-\begin{equation}
-\mathrm{ajout}(c) = 1 \iff \nexists\, e \in \mathcal{E} : \pi(e) = P,\; \tau(e) = \tau(c),\; \big(\nu(m(e)) \subseteq \nu(m(c)) \;\text{ou}\; \nu(m(c)) \subseteq \nu(m(e))\big),
-\end{equation}
-pour une mention existante d'au moins trois caractères. Une relation n'est ajoutée que si aucune relation de même type ne relie déjà les mêmes extrémités ; l'étage ne crée donc jamais de doublon.
+Une entité n'est ajoutée que si aucune entité de même type ne la recouvre déjà dans la page, et une relation que si elle n'existe pas déjà ; l'étage ne crée donc jamais de doublon.
 
 \subsection{Justification}
 
@@ -302,14 +296,7 @@ Ces règles décrivent un format de document, non des réponses de la référenc
 
 Le cinquième étage supprime la redondance sans perdre d'information. Un même élément est en effet souvent extrait plusieurs fois, ce qui gonfle le graphe et fausse les comptes.
 
-Il agit à trois niveaux. Il fusionne d'abord les entités strictement identiques, c'est-à-dire de même type, même mention, même page, même preuve, même valeur, même unité, même négation et même date. Formellement, chaque entité reçoit une clé
-\begin{equation}
-\kappa(e) = \big(\tau(e),\, m(e),\, \pi(e),\, \mathrm{pr}(e),\, \mathrm{val}(e),\, \mathrm{unit}(e),\, \mathrm{nie}(e),\, \mathrm{date}(e)\big),
-\end{equation}
-et deux entités sont fusionnées si et seulement si $\kappa(e) = \kappa(e')$ ; les relations qui pointaient vers l'entité supprimée sont reportées sur l'entité conservée. Il retire ensuite les relations strictement identiques, de même sujet, même type et même objet. Il annote enfin, sans les retirer, les relations qui répètent un triplet déjà vu sous d'autres identifiants, par exemple le même traitement relié au patient à partir de deux mentions différentes :
-\begin{equation}
-\mathrm{doublon}(r) = 1 \iff \exists\, r' \text{ antérieure à } r : \big(\nu(m(s')), \rho', \nu(m(o'))\big) = \big(\nu(m(s)), \rho, \nu(m(o))\big).
-\end{equation}
+Il agit à trois niveaux. Il fusionne d'abord les entités strictement identiques, c'est-à-dire de même type, même mention, même page, même preuve, même valeur, même unité, même négation et même date ; les relations qui pointaient vers l'entité supprimée sont reportées sur l'entité conservée. Il retire ensuite les relations strictement identiques, de même sujet, même type et même objet. Il annote enfin, sans les retirer, les relations qui répètent un triplet déjà vu sous d'autres identifiants, par exemple le même traitement relié au patient à partir de deux mentions différentes.
 
 Seul l'identique est retiré, et ce choix est délibéré. Une répétition est souvent une erreur, mais elle peut être légitime, comme une même mesure rapportée deux jours de suite, dont l'évolution a un intérêt clinique. La répétition devient donc un indice, et la décision revient à l'arbitrage, qui apprend en mode précision dans quels cas une répétition est suspecte.
 
@@ -328,21 +315,6 @@ Le sixième étage traite les hallucinations contextuelles et temporelles. Une e
   \item la \textbf{temporalité}, déduite de la section où l'entité est citée : \emph{antérieure} pour les antécédents et le traitement habituel, \emph{de sortie} pour la prescription de sortie, \emph{du séjour} sinon ;
   \item l'\textbf{unité} des valeurs numériques : lorsqu'un biomarqueur, un signe vital, une posologie ou un score contient un nombre suivi d'une unité reconnue (mmol/L, mg/L, mmHg, °C, \%, mg/kg/h\dots), l'unité est renseignée à part. C'est la seule modification de contenu faite par cet étage.
 \end{itemize}
-
-Formellement, en notant $\mathcal{N}$ et $\mathcal{H}$ les listes de déclencheurs de négation et d'hypothèse, et $T_{[x-40,\,x)}$ les 40~caractères qui précèdent la position $x$, les deux premiers attributs s'écrivent
-\begin{align}
-\mathrm{nie}(e) &= 1 \iff \exists\, x \in \mathrm{occ}(e) : T_{[x-40,\,x)} \text{ se termine par un déclencheur de } \mathcal{N}, \;\;\text{ou}\;\; e \text{ marquée niée par l'extraction},\\
-\mathrm{hyp}(e) &= 1 \iff \exists\, x \in \mathrm{occ}(e) : T_{[x-40,\,x)} \text{ se termine par un déclencheur de } \mathcal{H},
-\end{align}
-et la temporalité est une fonction de la section :
-\begin{equation}
-\mathrm{temp}(e) =
-\begin{cases}
-\textsc{antérieure} & \text{si } \mathrm{sec}(e) \in \{\text{antécédents}, \text{traitement habituel}\},\\
-\textsc{sortie} & \text{si } \mathrm{sec}(e) = \text{prescription de sortie},\\
-\textsc{séjour} & \text{sinon.}
-\end{cases}
-\end{equation}
 
 \subsection{Exemple et justification}
 
@@ -382,23 +354,12 @@ En mode standard, les décisions suivent des règles fixées avant toute évalua
   \item \textbf{E3} : une entité à laquelle le modèle lui-même a attribué une confiance moyenne ou faible est retirée. Le modèle signale ainsi ses propres doutes, et la chaîne en tient compte plutôt que de les ignorer.
 \end{itemize}
 
-Ces trois règles se résument par un prédicat de retrait des entités :
-\begin{equation}
-\mathrm{ret}_7(e) = \big(1 - \mathrm{mpm}(e)\big) \;\lor\; \big[\mathrm{conf}_{\mathrm{LLM}}(e) \in \{\text{moyenne}, \text{faible}\}\big],
-\end{equation}
-où $\mathrm{conf}_{\mathrm{LLM}}(e)$ est le niveau de confiance attribué par le modèle ; $\mathrm{nie}(e)$ n'y figure pas, puisqu'une entité niée est conservée.
-
 \paragraph{Relations.}
 \begin{itemize}
   \item \textbf{R2} : une relation qui affirme une entité niée est retirée, par exemple \og le patient présente le symptôme \emph{pas de toux} \fg{}. L'entité niée reste dans le graphe, mais aucune relation ne la donne comme présente, conformément à la convention du guideline.
   \item \textbf{R3} : une relation créée par SGCE qui échoue aux contrôles d'ancrage de l'étage~2 est retirée : une réparation n'est acceptée que si elle reste ancrée dans le texte.
   \item Une entité retirée emporte les relations qui pointent vers elle, afin que le graphe reste cohérent et ne contienne aucune relation orpheline.
 \end{itemize}
-
-En notant $c(r)$ l'extrémité clinique de la relation, c'est-à-dire celle qui n'est pas le patient, et $\mathrm{sgce}(r)$ le fait que la relation ait été créée par SGCE, le retrait des relations s'écrit :
-\begin{equation}
-\mathrm{ret}_7(r) = \mathrm{nie}\big(c(r)\big) \;\lor\; \big(\mathrm{sgce}(r) \land \mathrm{ret}_2(r)\big) \;\lor\; \mathrm{ret}_7(s) \;\lor\; \mathrm{ret}_7(o).
-\end{equation}
 
 \paragraph{Confiance.} Une violation de signature n'est pas un motif de retrait, pour la raison donnée à la section~\ref{sec:c5-etage3}. Elle compte parmi les \textbf{signaux faibles} qui déterminent le niveau de confiance d'une relation :
 \begin{itemize}
@@ -409,16 +370,7 @@ En notant $c(r)$ l'extrémité clinique de la relation, c'est-à-dire celle qui 
   \item indice de négation ou d'hypothèse sur l'entité clinique ;
   \item violation de signature non réparée.
 \end{itemize}
-En notant $\phi_1(r), \dots, \phi_6(r) \in \{0,1\}$ ces six signaux et $n_f(r) = \sum_{i=1}^{6} \phi_i(r)$ leur nombre, le niveau de confiance est
-\begin{equation}
-\mathrm{niveau}(r) =
-\begin{cases}
-\textsc{élevé} & \text{si } n_f(r) = 0,\\
-\textsc{moyen} & \text{si } n_f(r) = 1,\\
-\textsc{faible} & \text{si } n_f(r) \geq 2.
-\end{cases}
-\end{equation}
-Une relation sans signal faible reçoit donc une confiance élevée, avec un signal une confiance moyenne, avec deux signaux ou plus une confiance faible. Ce niveau ne retire rien : il indique au médecin quelles relations vérifier en priorité. Ce n'est pas une probabilité, mais un classement ordinal, explicable par la liste des signaux qui l'ont déterminé.
+Une relation sans signal faible reçoit une confiance élevée, avec un signal une confiance moyenne, avec deux signaux ou plus une confiance faible. Ce niveau ne retire rien : il indique au médecin quelles relations vérifier en priorité. Ce n'est pas une probabilité, mais un classement ordinal, explicable par la liste des signaux qui l'ont déterminé.
 
 \subsection{Mode précision : vote appris des agents}\label{sec:c5-precision}
 
@@ -431,29 +383,13 @@ Le mode standard ne retire que ce que des règles sûres permettent d'écarter :
 \end{itemize}
 Les croisements permettent d'exprimer qu'un même signal n'a pas le même sens selon le contexte : un traitement cité dans la section de biologie est suspect, alors qu'il est attendu dans la section des traitements.
 
-\paragraph{Le modèle.} Chaque élément $i$ est représenté par un vecteur binaire $x_i \in \{0,1\}^D$, où $D$ est le nombre de variables observées sur les dossiers d'apprentissage ; une variable constante $x_{i,0} = 1$ joue le rôle de biais. Une \textbf{régression logistique}~\cite{cox1958regression} associe à chaque variable un poids $w_j$ et fournit un score de fiabilité compris entre 0 et 1 :
+\paragraph{Le modèle.} Une \textbf{régression logistique}~\cite{cox1958regression}, régularisée (pénalité $L_2$), apprend un poids pour chaque variable, puis fournit un score de fiabilité compris entre 0 et 1 :
 \begin{equation}
-p_i = p(\text{juste} \mid x_i) = \sigma\big(w^\top x_i\big) = \frac{1}{1 + \exp\!\big(-\sum_{j=0}^{D} w_j x_{i,j}\big)}.
+p(\text{juste} \mid x) = \frac{1}{1 + e^{-\sum_j w_j x_j}},
 \end{equation}
-Un poids positif augmente la fiabilité des éléments qui portent la variable, un poids négatif la diminue. Sur les $n$ éléments d'apprentissage, d'étiquettes $y_i \in \{0, 1\}$ (1 si l'élément est apparié à la référence), les poids minimisent l'entropie croisée régularisée :
-\begin{equation}
-\mathcal{L}(w) = -\frac{1}{n} \sum_{i=1}^{n} \Big[ y_i \log p_i + (1 - y_i) \log (1 - p_i) \Big] + \frac{\lambda}{2n} \lVert w \rVert_2^2,
-\end{equation}
-avec $\lambda = 1$. La pénalité $L_2$ empêche les variables rares, comme un mot vu une seule fois, de recevoir un poids extrême. La minimisation se fait par descente de gradient, avec un pas $\eta = 0{,}5$ et 3\,000 itérations à partir de poids nuls :
-\begin{equation}
-w \leftarrow w - \frac{\eta}{n} \Big( X^\top (p - y) + \lambda\, w \Big),
-\end{equation}
-où $X$ est la matrice des $x_i$, $p$ le vecteur des scores et $y$ celui des étiquettes. Le problème étant convexe, la solution ne dépend pas de l'initialisation, et l'apprentissage est entièrement déterministe. Deux modèles sont appris, un pour les entités et un pour les relations. Les exemples d'apprentissage sont les éléments de la sortie de l'étage~6, étiquetés comme justes ou faux par comparaison au Gold Standard, uniquement sur les dossiers d'apprentissage.
+où $x_j$ vaut 1 si la variable $j$ est présente et 0 sinon, et $w_j$ est son poids appris. Deux modèles sont appris, un pour les entités et un pour les relations. Les exemples d'apprentissage sont les éléments de la sortie de l'étage~6, étiquetés comme justes ou faux par comparaison au Gold Standard, uniquement sur les dossiers d'apprentissage.
 
-\paragraph{Le curseur $k$.} On conserve la part $k$ des éléments les mieux notés, parmi ceux que les règles du mode standard n'ont pas déjà retirés. Le seuil correspondant à chaque valeur de $k$ est calculé sur les scores $\{p_i\}$ des éléments d'apprentissage :
-\begin{equation}
-\theta_k = Q_{1-k}\big(\{p_i\}_{i \in \text{apprentissage}}\big),
-\end{equation}
-où $Q_q$ désigne le quantile d'ordre $q$, puis appliqué tel quel aux dossiers notés :
-\begin{equation}
-\mathrm{ret}_{\mathrm{préc}}(i) = \mathrm{ret}_7(i) \;\lor\; \big[p_i < \theta_k\big].
-\end{equation}
-Sur les dossiers d'apprentissage, la règle conserve exactement la part $k$ des éléments ; sur les dossiers notés, la part conservée est proche de $k$, mais pas strictement égale, puisque leurs scores ne suivent pas exactement la même distribution. Le paramètre $k$, compris entre 30~\% et 100~\%, agit comme un curseur : une valeur élevée privilégie le rappel, une valeur faible la précision. Le choix de $k$ dépend de l'usage : l'exploration d'un dossier tolère quelques erreurs pour ne rien perdre, un graphe destiné à l'aide à la décision exige au contraire une grande fiabilité.
+\paragraph{Le curseur $k$.} On conserve la part $k$ des éléments les mieux notés, parmi ceux que les règles du mode standard n'ont pas déjà retirés. Concrètement, le seuil de score correspondant à chaque valeur de $k$ est calculé sur les dossiers d'apprentissage, comme le quantile d'ordre $1 - k$ de leurs scores, puis appliqué tel quel aux dossiers notés. Le paramètre $k$, compris entre 30~\% et 100~\%, agit comme un curseur : une valeur élevée privilégie le rappel, une valeur faible la précision. Le choix de $k$ dépend de l'usage : l'exploration d'un dossier tolère quelques erreurs pour ne rien perdre, un graphe destiné à l'aide à la décision exige au contraire une grande fiabilité.
 
 \paragraph{Pourquoi ce modèle.} La régression logistique répond à trois exigences :
 \begin{itemize}
@@ -465,18 +401,7 @@ L'agrégation pondérée de signaux imparfaits reprend l'idée de Snorkel~\cite{
 
 \subsection{Validation croisée du vote}\label{sec:c5-validation}
 
-Le vote est le seul composant de TRACE qui apprend de la référence. Il est donc entraîné et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}). Les 49 dossiers, triés par identifiant $d_1, \dots, d_{49}$, sont séparés selon la parité de leur rang :
-\begin{equation}
-\mathcal{D}_A = \{d_i : i \text{ impair}\}, \qquad \mathcal{D}_B = \{d_i : i \text{ pair}\},
-\end{equation}
-soit 25 et 24 dossiers. Le modèle $f_A$, appris sur $\mathcal{D}_A$ avec ses seuils $\theta_k^A$, note les dossiers de $\mathcal{D}_B$ ; le modèle $f_B$, appris sur $\mathcal{D}_B$, note ceux de $\mathcal{D}_A$. Les deux sorties sont ensuite réunies et évaluées ensemble :
-\begin{equation}
-\hat{G}(d) =
-\begin{cases}
-f_B(G_6(d)) & \text{si } d \in \mathcal{D}_A,\\
-f_A(G_6(d)) & \text{si } d \in \mathcal{D}_B.
-\end{cases}
-\end{equation} Chaque dossier est ainsi noté par un modèle qui ne l'a jamais vu, et les performances mesurées valent pour des dossiers nouveaux.
+Le vote est le seul composant de TRACE qui apprend de la référence. Il est donc entraîné et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}) : les dossiers sont triés, puis séparés en rangs pairs et impairs ; le modèle appris sur une moitié note l'autre, puis l'inverse. Chaque dossier est ainsi noté par un modèle qui ne l'a jamais vu, et les performances mesurées valent pour des dossiers nouveaux.
 
 Ce sont les mêmes plis que ceux des exemples, des règles strictes et du lexique du pipeline d'extraction (section~\ref{sec:c4-exemples}). Utiliser partout les mêmes plis garantit qu'aucune information ne circule d'une moitié à l'autre par un chemin détourné : un dossier n'est jamais traité, à aucune étape, avec ce qui a été appris sur sa propre annotation. Deux plis plutôt que davantage permettent de garder, pour chaque apprentissage, environ 25~dossiers, soit plusieurs milliers d'éléments étiquetés ; ils permettent aussi de vérifier la stabilité des résultats en comparant les deux moitiés.
 
@@ -497,16 +422,6 @@ Le dernier étage est le seul qui lit le Gold Standard ; aucun autre étage ne d
   \item des \textbf{indicateurs de structure}, qui ne demandent pas la référence : nombre de relations orphelines, de violations de signature, de relations identiques et d'éléments absents du texte ;
   \item l'\textbf{entraînement du vote} et l'évaluation du mode précision en validation croisée, pour chaque valeur de $k$.
 \end{itemize}
-
-Pour l'étage $j$, en notant $TP_j$, $FP_j$ et $FN_j$ les vrais positifs, faux positifs et faux négatifs cumulés sur les dossiers (micro-moyenne), les mesures sont
-\begin{equation}
-P_j = \frac{TP_j}{TP_j + FP_j}, \qquad R_j = \frac{TP_j}{TP_j + FN_j}, \qquad F1_j = \frac{2 P_j R_j}{P_j + R_j}, \qquad H_j = 1 - P_j,
-\end{equation}
-et l'apport de l'étage est mesuré par la variation par rapport à l'étage précédent, par exemple $\Delta F1_j = F1_j - F1_{j-1}$ et $\Delta H_j = H_j - H_{j-1}$. La stabilité compare ces mesures sur $\mathcal{D}_A$ et sur $\mathcal{D}_B$ prises séparément. Parmi les indicateurs de structure, une relation est orpheline si l'une de ses extrémités n'appartient pas à l'ensemble des entités du graphe :
-\begin{equation}
-\mathrm{orph}(G) = \big|\{(s, \rho, o) \in \mathcal{R} : s \notin \mathcal{E} \;\text{ou}\; o \notin \mathcal{E}\}\big|,
-\end{equation}
-et le nombre de violations est $\big|\{r \in \mathcal{R} : \mathrm{conf}(r) = 0\}\big|$.
 
 Mesurer après chaque étage montre ce que chacun apporte et vérifie qu'aucun ne dégrade le résultat : c'est la preuve expérimentale de l'architecture. Les indicateurs de structure complètent cette mesure, car ils évaluent des propriétés du graphe, comme sa connexité, que le F1 ne voit pas. Les résultats sont présentés à partir du chapitre~\ref{chap:experimentations}.
 
