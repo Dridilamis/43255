@@ -335,15 +335,24 @@ L'arbitrage est cet étage unique. Pour chaque entité et chaque relation, il r�
 
 L'arbitrage s'appuie sur cinq agents déterministes (figure~\ref{fig:c5-arbitrage}). Chacun examine l'élément sous un seul angle et le résume en signaux à valeurs discrètes. Le tableau~\ref{tab:c5-signaux} indique comment chaque signal est calculé et à quel étage il est produit.
 
-\begin{table}[H]
-\centering
-\caption{Signaux des agents de l'arbitrage et leur calcul}\label{tab:c5-signaux}
-\small
+\begingroup\small
 \renewcommand{\arraystretch}{1.25}
-\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{6.6cm}>{\centering\arraybackslash}p{1.2cm}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{6.6cm}>{\centering\arraybackslash}p{1.2cm}}
+\caption{Signaux des agents de l'arbitrage et leur calcul}\label{tab:c5-signaux}\\
 \toprule
 \textbf{Signal} & \textbf{Valeurs possibles} & \textbf{Calcul} & \textbf{Étage} \\
 \midrule
+\endfirsthead
+\multicolumn{4}{l}{\emph{Tableau~\ref{tab:c5-signaux} (suite)}}\\
+\toprule
+\textbf{Signal} & \textbf{Valeurs possibles} & \textbf{Calcul} & \textbf{Étage} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\emph{Suite page suivante}}\\
+\endfoot
+\bottomrule
+\endlastfoot
 \multicolumn{4}{l}{\textbf{Agent d'ancrage} : l'élément est-il soutenu par le texte ?}\\
 \addlinespace[2pt]
 Mot pour mot (entité) & oui, non & la mention normalisée apparaît comme suite de mots complets dans le texte normalisé de sa page & 2 \\
@@ -368,9 +377,8 @@ Temporalité & antérieure, séjour, sortie & antérieure si l'entité est dans 
 \multicolumn{4}{l}{\textbf{Agent de provenance} : d'où vient l'élément ?}\\
 \addlinespace[2pt]
 Origine & directe, SGCE, inférence & champ d'origine écrit par l'étage qui a créé l'élément : extraction par le modèle, réparation par SGCE ou récupération structurée & 0, 4, 4b \\
-\bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\endgroup
 
 Deux précisions s'imposent. D'abord, l'agent de conformité recalcule la signature au lieu de reprendre le statut de l'étage~3, puisque SGCE a pu changer le type d'une entité ou rediriger une relation entre-temps. Ensuite, une relation créée par SGCE après l'étage~2 n'a pas encore été confrontée au texte : les agents lui appliquent alors les mêmes fonctions de vérification que les étages correspondants, si bien qu'une relation créée tardivement est contrôlée exactement comme les autres.
 
