@@ -86,7 +86,7 @@ Chaque étage écrit ses annotations dans un champ de traçabilité propre à ch
 \begin{verbatim}
 {"identifiant_entite_sujet": "P3_E021", "type_relation": "traitement_administre_a",
  "identifiant_entite_objet": "P3_E001", "preuve": "mise sous Claforan",
- "trace_v2": {
+ "trace": {
    "ancrage":   {"sujet_atteste": true, "objet_atteste": true,
                  "preuve": "ATTESTEE", "distance": "PATIENT",
                  "section": "EVOLUTION", "motifs_retrait": []},
@@ -106,7 +106,7 @@ Cette traçabilité a trois usages. Elle rend chaque décision explicable au mé
 
 Le premier étage ne juge aucun élément : il rend l'entrée propre et uniforme, faute de quoi deux écritures d'un même élément seraient traitées comme deux éléments différents par les étages suivants.
 
-Il effectue trois opérations. D'abord, il met les noms des entités du graphe sous une forme Unicode normalisée (NFKC). Les deux formes du symbole micro, \og µmol/L \fg{} et \og μmol/L \fg{}, ou les différentes formes d'espace et d'apostrophe, désignent ainsi le même nœud du graphe. Les mentions des pages restent en revanche telles qu'elles sont écrites dans le texte, puisque l'arbitrage vérifie qu'elles y figurent mot pour mot. Ensuite, il attribue un identifiant unique à chaque relation qui n'en a pas, pour que chaque élément puisse être suivi d'un étage à l'autre. Enfin, il retire tout élément qui proviendrait d'un post-traitement construit en regardant la référence. La nouvelle extraction n'en contient pas, mais cette garantie protège la chaîne si elle est appliquée à une sortie plus ancienne, et assure que l'évaluation n'est jamais faussée par une règle réglée sur le Gold Standard.
+Il effectue trois opérations. D'abord, il met les noms des entités du graphe sous une forme Unicode normalisée (NFKC). Les deux formes du symbole micro, \og µmol/L \fg{} et \og μmol/L \fg{}, ou les différentes formes d'espace et d'apostrophe, désignent ainsi le même nœud du graphe. Les mentions des pages restent en revanche telles qu'elles sont écrites dans le texte, puisque l'arbitrage vérifie qu'elles y figurent mot pour mot. Ensuite, il attribue un identifiant unique à chaque relation qui n'en a pas, pour que chaque élément puisse être suivi d'un étage à l'autre. Enfin, il écarte tout élément dont la provenance indiquerait une règle construite à partir de la référence : l'évaluation ne peut ainsi jamais être faussée par le Gold Standard.
 
 % ============================================================
 \section{Étage 2 : ancrage documentaire}\label{sec:c5-etage2}
@@ -269,7 +269,7 @@ Un F1 calculé élément par élément ne voit pas qu'un graphe est éclaté en 
 
 Trois garanties encadrent l'ensemble. Aucune correction n'utilise de connaissance médicale extérieure : seuls comptent le schéma, le graphe et le texte du dossier. Aucune entité n'est créée sans que son contenu soit écrit dans la page. Et aucune correction n'est conservée si elle dégrade la structure du document. SGCE préfère donc laisser une erreur que risquer d'en créer une.
 
-SGCE a été développé sur une version antérieure du schéma, et il est utilisé sans modification, dans un espace de travail temporaire. Chaque relation qu'il crée est donc marquée comme telle, puis revérifiée par l'arbitrage avec les contrôles d'ancrage de l'étage~2 et les 34 signatures de la version~2.0 du guideline : aucune réparation n'échappe aux contrôles du reste de la chaîne.
+SGCE s'exécute dans un espace de travail temporaire, sans jamais modifier les fichiers d'entrée. Chaque relation qu'il crée est marquée comme telle, puis revérifiée par l'arbitrage avec les contrôles d'ancrage de l'étage~2 et les 34 signatures du guideline : aucune réparation n'échappe aux contrôles du reste de la chaîne.
 
 % ============================================================
 \section{Étage 4b : récupération structurée}\label{sec:c5-etage4b}
