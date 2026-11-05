@@ -137,29 +137,6 @@ Relations & Strict & 28,60 & 24,40 & 26,33 & 25,86 \\
 
 Le passage du mode Strict au mode Boundary-Relaxed fait gagner plus de 14~points de F1 sur les entités et près de 20~points sur les relations. Une grande partie des écarts avec la référence ne sont donc pas des erreurs de contenu, mais des différences de délimitation : le modèle extrait \og noradrénaline IVSE \fg{} quand la référence annote \og noradrénaline \fg{}, ou l'inverse. Le passage au mode Relaxed n'ajoute ensuite qu'environ un point : les variations d'écriture sont rares, puisque l'extraction recopie la surface de la page. Ces résultats justifient le choix du mode Relaxed comme mode principal, qui juge le contenu sans pénaliser une différence de bornes. Enfin, les micro- et macro-moyennes sont très proches, à moins d'un point d'écart : les performances sont homogènes d'un dossier à l'autre, et ne reposent pas sur quelques dossiers particulièrement faciles.
 
-\subsection{Apport des composantes du pipeline}
-
-Le tableau~\ref{tab:c6-composantes} mesure l'apport des deux corrections apprises sur le Gold Standard (section~\ref{sec:c4-appris}), en partant de la sortie brute du modèle.
-
-\begin{table}[H]
-\centering
-\caption{Apport des corrections apprises, en validation croisée (exécution d'analyse, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-composantes}
-\small
-\begin{tabular}{lcccccccc}
-\toprule
-& \multicolumn{4}{c}{\textbf{Entités}} & \multicolumn{4}{c}{\textbf{Relations}} \\
-\cmidrule(lr){2-5}\cmidrule(lr){6-9}
-\textbf{Sortie} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} \\
-\midrule
-Sortie brute du modèle & 59,69 & 67,62 & 63,41 & 40,3 & 29,63 & 47,36 & 36,45 & 70,4 \\
-+ lexique appris & 60,03 & 69,30 & 64,34 & 40,0 & 30,65 & 47,38 & 37,22 & 69,4 \\
-+ règles strictes & 61,55 & 68,89 & 65,01 & 38,5 & 51,53 & 43,97 & 47,45 & 48,5 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Le lexique appris améliore surtout le rappel des entités (+1,7~point), en ajoutant des termes oubliés par le modèle et en complétant les biomarqueurs sans valeur. Les règles strictes ont un effet beaucoup plus fort sur les relations : la précision passe de 29,6~\% à 51,5~\%, et le taux d'hallucination des relations de 70,4~\% à 48,5~\%, au prix d'une baisse de 3,4~points du rappel. Ces règles interdisent en effet des types de relations presque toujours faux dans l'extraction brute. Par exemple, sur les 490 relations \emph{biomarqueur\_supporte\_defaillance\_organe} produites par le modèle, 52 seulement étaient justes ; sur les 273 relations \emph{biomarqueur\_est\_critere\_de}, 12 seulement. Ce sont des relations d'interprétation clinique, que le modèle tend à déduire de la seule présence des deux entités, alors que le guideline exige qu'elles soient énoncées par le texte.
-
 \subsection{Résultats par type d'entité}
 
 Le tableau~\ref{tab:c6-types-entites} détaille les performances par type d'entité.
@@ -220,7 +197,7 @@ service\_\allowbreak{}medical\_\allowbreak{}accueille & 32,3 & 33,9 & 33,1 \\
 
 Les relations les mieux extraites sont aussi les plus fréquentes et les plus explicites : l'administration d'un traitement au patient et le lien entre un traitement et sa posologie, souvent écrits sur une même ligne d'ordonnance. Les relations qui relient le patient à un symptôme, à un diagnostic ou à une évolution ont une précision plus faible : le modèle relie volontiers au patient toutes les entités d'une page, y compris celles que la référence ne relie pas, par exemple un symptôme cité dans les antécédents.
 
-Les relations d'interprétation clinique, interdites par les règles strictes, n'apparaissent pas dans le tableau : relations entre un biomarqueur ou un signe vital et une défaillance, entre un germe et son site, entre une imagerie et un foyer, entre un diagnostic et sa localisation, entre un traitement et une défaillance ou un diagnostic. Elles représentent environ 13~\% des relations de la référence, que l'extraction ne retrouve donc pas. C'est le prix de la forte réduction des hallucinations relationnelles mesurée au tableau~\ref{tab:c6-composantes} : dans l'extraction brute, ces relations étaient fausses dans la grande majorité des cas.
+Les relations d'interprétation clinique, interdites par les règles strictes, n'apparaissent pas dans le tableau : relations entre un biomarqueur ou un signe vital et une défaillance, entre un germe et son site, entre une imagerie et un foyer, entre un diagnostic et sa localisation, entre un traitement et une défaillance ou un diagnostic. Elles représentent environ 13~\% des relations de la référence, que l'extraction ne retrouve donc pas. C'est un choix assumé : dans l'extraction brute, ces relations étaient fausses dans la grande majorité des cas, et les interdire réduit fortement les hallucinations relationnelles (section~\ref{sec:c4-regles-strictes}).
 
 % ============================================================
 \section{Nature des erreurs}\label{sec:c6-erreurs}
