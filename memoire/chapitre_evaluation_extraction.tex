@@ -40,10 +40,10 @@ Une première comparaison des deux modèles a été menée sur un sous-ensemble 
 \toprule
 & \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} \\
 \midrule
-\multirow{2}{*}{Entités} & Qwen2.5-VL-7B-Instruct & 64,10 & 63,67 & 63,88 \\
+Entités & Qwen2.5-VL-7B-Instruct & 64,10 & 63,67 & 63,88 \\
  & Mistral Small 4 & \textbf{67,38} & \textbf{71,89} & \textbf{69,57} \\
 \midrule
-\multirow{2}{*}{Relations} & Qwen2.5-VL-7B-Instruct & 50,83 & 30,31 & 37,98 \\
+Relations & Qwen2.5-VL-7B-Instruct & 50,83 & 30,31 & 37,98 \\
  & Mistral Small 4 & \textbf{67,42} & \textbf{58,17} & \textbf{62,43} \\
 \bottomrule
 \end{tabular}
@@ -63,10 +63,10 @@ Les deux modèles ont ensuite été évalués avec le pipeline final, sur les 49
 \toprule
 & \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1} & \textbf{H} \\
 \midrule
-\multirow{2}{*}{Entités} & Qwen2.5-VL-7B-Instruct & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+Entités & Qwen2.5-VL-7B-Instruct & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
  & Mistral Small 4 & 66,20 & 68,45 & 67,31 & 33,80 \\
 \midrule
-\multirow{2}{*}{Relations} & Qwen2.5-VL-7B-Instruct & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
+Relations & Qwen2.5-VL-7B-Instruct & \acompleter{} & \acompleter{} & \acompleter{} & \acompleter{} \\
  & Mistral Small 4 & 54,77 & 45,46 & 49,68 & 45,23 \\
 \bottomrule
 \end{tabular}
@@ -120,11 +120,11 @@ Le tableau~\ref{tab:c6-modes} donne les performances selon les trois modes d'app
 \toprule
 & \textbf{Mode} & \textbf{Précision} & \textbf{Rappel} & \textbf{F1 micro} & \textbf{F1 macro} \\
 \midrule
-\multirow{3}{*}{Entités} & Strict & 47,05 & 52,66 & 49,70 & 49,97 \\
+Entités & Strict & 47,05 & 52,66 & 49,70 & 49,97 \\
  & Boundary-Relaxed & 60,63 & 67,87 & 64,05 & 64,50 \\
  & Relaxed & 61,55 & 68,89 & 65,01 & 65,51 \\
 \midrule
-\multirow{3}{*}{Relations} & Strict & 28,60 & 24,40 & 26,33 & 25,86 \\
+Relations & Strict & 28,60 & 24,40 & 26,33 & 25,86 \\
  & Boundary-Relaxed & 50,02 & 42,68 & 46,06 & 45,26 \\
  & Relaxed & 51,53 & 43,97 & 47,45 & 46,61 \\
 \bottomrule
