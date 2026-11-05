@@ -1,12 +1,16 @@
-\chapter{Évaluation de l'extraction multimodale}
+\chapter{Expérimentations et résultats}
 \label{chap:experimentations}
 
 % ============================================================
 \section{Introduction}\label{sec:c6-intro}
 
-Ce chapitre évalue l'extraction multimodale décrite au chapitre~\ref{chap:extraction}, avant toute intervention de TRACE. Cette évaluation poursuit trois objectifs. Le premier est de \textbf{choisir le modèle d'extraction} entre Qwen2.5-VL et Mistral Small~4, selon les critères fixés à la section~\ref{sec:c4-selection}. Le deuxième est d'établir la \textbf{performance de référence} de l'extraction retenue : c'est le point de départ à partir duquel l'apport de chaque étage de TRACE sera mesuré. Le troisième est d'\textbf{analyser les erreurs} de cette extraction, pour savoir lesquelles relèvent des hallucinations que TRACE doit réduire, et lesquelles relèvent d'oublis qu'aucun post-traitement ne pourra corriger.
+Ce chapitre réunit l'ensemble des expérimentations du mémoire. Il évalue successivement les deux composantes du système : l'extraction multimodale décrite au chapitre~\ref{chap:extraction}, puis la chaîne TRACE décrite au chapitre~\ref{chap:architecture}, appliquée à la sortie de cette extraction. Toutes les mesures portent sur les mêmes dossiers, avec le même Gold Standard, les mêmes modes d'appariement et la même validation croisée, si bien que chaque résultat peut être comparé aux autres.
 
-Le chapitre présente d'abord le protocole expérimental (section~\ref{sec:c6-protocole}), puis la comparaison des deux modèles et le choix de Mistral Small~4 (section~\ref{sec:c6-choix}). Il donne ensuite les performances de l'extraction retenue (section~\ref{sec:c6-reference}), avant de les analyser en détail : effet du mode d'appariement, apport des composantes du pipeline, résultats par type d'entité et de relation (section~\ref{sec:c6-analyse}). Il se termine par la nature des erreurs et ce qu'elles impliquent pour TRACE (sections~\ref{sec:c6-erreurs} et~\ref{sec:c6-discussion}).
+La première partie est consacrée à l'extraction. Elle poursuit trois objectifs : \textbf{choisir le modèle d'extraction} entre Qwen2.5-VL et Mistral Small~4, selon les critères fixés à la section~\ref{sec:c4-selection} ; établir la \textbf{performance de référence} de l'extraction retenue, point de départ de toutes les mesures de TRACE ; et \textbf{analyser les erreurs} de cette extraction, pour distinguer les hallucinations que TRACE doit réduire des oublis qu'aucun post-traitement ne peut corriger.
+
+La seconde partie est consacrée à TRACE. Elle mesure l'\textbf{apport de chaque étage}, le résultat du \textbf{mode standard} et le compromis offert par le \textbf{mode précision}, avant de dresser un bilan de la réduction des hallucinations obtenue.
+
+Le chapitre présente d'abord le protocole expérimental (section~\ref{sec:c6-protocole}), puis l'évaluation de l'extraction : choix du modèle (section~\ref{sec:c6-choix}), performance de référence (section~\ref{sec:c6-reference}), analyse détaillée (section~\ref{sec:c6-analyse}), nature des erreurs et conséquences pour TRACE (sections~\ref{sec:c6-erreurs} et~\ref{sec:c6-discussion}). Il présente ensuite l'évaluation de TRACE (sections~\ref{sec:c6-trace-etages} à~\ref{sec:c6-bilan}), puis une discussion d'ensemble (section~\ref{sec:c6-discussion-generale}).
 
 % ============================================================
 \section{Protocole expérimental}\label{sec:c6-protocole}
@@ -23,7 +27,7 @@ Tout ce qui s'appuie sur la référence est appris en \textbf{validation croisé
 
 \subsection{Mesures}
 
-Les extractions sont comparées au Gold Standard avec les trois modes d'appariement définis à la section~\ref{sec:c4-matching} (Strict, Boundary-Relaxed et Relaxed), et les mesures de la section~\ref{sec:c4-metriques} : précision, rappel, F1-score et taux d'hallucination $H = 1 - \text{Précision}$, en micro- et en macro-moyenne. Sauf mention contraire, les résultats sont donnés en mode Relaxed et en micro-moyenne, et exprimés en pourcentage.
+Les extractions sont comparées au Gold Standard avec les trois modes d'appariement définis à la section~\ref{sec:c4-matching} (Strict, Boundary-Relaxed et Relaxed), et les mesures de la section~\ref{sec:c4-metriques} : précision, rappel, F1-score et taux d'hallucination $H = 1 - \text{Précision}$, en micro- et en macro-moyenne. Pour TRACE, ces mesures sont calculées à la sortie de chaque étage, toujours par rapport au même Gold Standard (section~\ref{sec:c5-etage8}). Sauf mention contraire, les résultats sont donnés en mode Relaxed et en micro-moyenne, et exprimés en pourcentage.
 
 % ============================================================
 \section{Choix du modèle d'extraction}\label{sec:c6-choix}
@@ -241,8 +245,127 @@ Le \textbf{rappel}, en revanche, est en grande partie borné par l'extraction. U
 Enfin, la répartition des erreurs justifie l'architecture de TRACE. Les erreurs de type appellent la conformité au guideline et la réparation structurelle ; les éléments de contexte non annotés appellent la qualification de la négation, de l'hypothèse et de la temporalité ; les relations déduites sans appui textuel appellent le contrôle d'ancrage et l'arbitrage. Aucun contrôle unique ne couvre ces situations, ce qui confirme le choix d'une chaîne d'étages spécialisés.
 
 % ============================================================
+% ÉVALUATION DE TRACE
+% ============================================================
+\section{Apport de chaque étage de TRACE}\label{sec:c6-trace-etages}
+
+TRACE est appliquée à la sortie de Mistral Small~4 décrite à la section~\ref{sec:c6-reference}. Le tableau~\ref{tab:c6-etages} donne les performances à la sortie de chaque étage, en mode standard.
+
+\begin{table}[H]
+\centering
+\caption{Performances à la sortie de chaque étage de TRACE (49 dossiers, Gold Standard final, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-etages}
+\small
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{4}{c}{\textbf{Entités}} & \multicolumn{4}{c}{\textbf{Relations}} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+\textbf{Sortie} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} \\
+\midrule
+Extraction (avant TRACE) & 66,20 & 68,45 & 67,31 & 33,8 & 54,77 & 45,46 & 49,68 & 45,2 \\
+Étage 2 · ancrage & 66,20 & 68,45 & 67,31 & 33,8 & 55,76 & 45,36 & 50,02 & 44,2 \\
+Étage 3 · conformité & 66,20 & 68,45 & 67,31 & 33,8 & 55,76 & 45,36 & 50,02 & 44,2 \\
+Étage 4 · SGCE & 66,20 & 68,46 & 67,31 & 33,8 & 55,75 & 45,38 & 50,03 & 44,2 \\
+Étage 4b · récupération & 65,92 & 68,88 & 67,37 & 34,1 & 55,73 & 46,75 & 50,85 & 44,3 \\
+Étage 5 · dédoublonnage & 65,92 & 68,88 & 67,37 & 34,1 & 55,72 & 46,73 & 50,83 & 44,3 \\
+Étage 6 · attributs & 65,92 & 68,88 & 67,37 & 34,1 & 55,72 & 46,73 & 50,83 & 44,3 \\
+Étage 7 · arbitrage standard & 66,32 & 67,96 & 67,13 & 33,7 & 56,31 & 45,56 & 50,37 & 43,7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Chaque étage joue le rôle prévu par l'architecture.
+
+\paragraph{Étage 2 : ancrage.} Les entités ne changent pas : le pipeline d'extraction a déjà écarté toute entité absente de sa page (section~\ref{sec:c4-entites}), si bien qu'aucune entité inventée ne reste à retirer. Sur les relations, en revanche, l'ancrage retire les liens que le texte rend impossibles : preuve inventée, extrémité absente, entités jamais proches. La précision des relations gagne 1,0~point et leur taux d'hallucination passe de 45,2~\% à 44,2~\%, pour une perte de rappel de 0,1~point seulement : presque tout ce qui est retiré était faux.
+
+\paragraph{Étages 3, 5 et 6 : annotation.} Ces étages annotent sans retirer, conformément au principe \og annoter d'abord, un seul étage décide \fg{}. Leurs mesures sont donc identiques à celles de l'étage précédent ; leur apport se mesure à l'étage~7, qui utilise leurs annotations.
+
+\paragraph{Étage 4 : SGCE.} La réparation structurelle modifie peu les mesures, ce qui était attendu : elle répare la forme du graphe, que le F1 calculé élément par élément ne voit pas (section~\ref{sec:c5-etage4}). Surtout, elle ne dégrade aucune mesure, ce qui confirme que ses corrections prudentes n'introduisent pas d'erreurs.
+
+\paragraph{Étage 4b : récupération.} C'est le seul étage qui améliore le rappel. En recopiant les lignes de biologie et d'ordonnance oubliées, il fait gagner 0,4~point de rappel sur les entités et 1,4~point sur les relations, grâce aux liens entre traitements et posologies écrits sur une même ligne. Le F1 des relations gagne 0,8~point. La précision des entités baisse légèrement (0,3~point), certaines lignes recopiées n'étant pas annotées dans la référence.
+
+\paragraph{Étage 7 : arbitrage standard.} Les règles fixées a priori retirent les entités reformulées ou que le modèle lui-même jugeait douteuses, et les relations qui affirment une entité niée. La précision augmente, de 0,4~point sur les entités et de 0,6~point sur les relations, et le taux d'hallucination des relations atteint 43,7~\%. Le rappel baisse en contrepartie d'environ un point : une partie des entités retirées par la règle E1 étaient justes, mais reformulées par le modèle.
+
+\paragraph{Bilan du mode standard.} Par rapport à la sortie de l'extraction, le mode standard réduit le taux d'hallucination des relations de 1,5~point, améliore leur F1 de 0,7~point, et laisse les entités pratiquement inchangées. Ce gain modeste est cohérent avec la prudence de ce mode : il ne retire que des éléments que l'on sait faux ou intraçables, et ne touche à rien de ce qui pourrait être juste.
+
+% ============================================================
+\section{Mode précision}\label{sec:c6-precision}
+
+Le mode précision ajoute à l'arbitrage le vote appris des agents (section~\ref{sec:c5-precision}). Le tableau~\ref{tab:c6-precision} donne ses performances en validation croisée, pour chaque part $k$ d'éléments conservés : chaque dossier est noté par un modèle appris uniquement sur l'autre moitié du corpus.
+
+\begin{table}[H]
+\centering
+\caption{Mode précision de TRACE en validation croisée, selon la part $k$ d'éléments conservés (49 dossiers, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-precision}
+\small
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{4}{c}{\textbf{Entités}} & \multicolumn{4}{c}{\textbf{Relations}} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+\textbf{$k$} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} \\
+\midrule
+\emph{Avant TRACE} & \emph{66,20} & \emph{68,45} & \emph{67,31} & \emph{33,8} & \emph{54,77} & \emph{45,46} & \emph{49,68} & \emph{45,2} \\
+98~\% & 66,82 & 67,79 & 67,30 & 33,2 & 56,89 & 45,36 & 50,47 & 43,1 \\
+95~\% & 68,01 & 67,22 & 67,62 & 32,0 & 57,70 & 45,15 & \textbf{50,66} & 42,3 \\
+90~\% & 69,83 & 66,30 & 68,02 & 30,2 & 58,98 & 44,27 & 50,58 & 41,0 \\
+80~\% & 74,10 & 62,92 & \textbf{68,05} & 25,9 & 62,19 & 41,47 & 49,76 & 37,8 \\
+70~\% & 78,15 & 58,03 & 66,60 & 21,9 & 65,49 & 37,57 & 47,75 & 34,5 \\
+60~\% & 83,37 & 51,64 & 63,77 & 16,6 & 68,76 & 30,43 & 42,19 & 31,2 \\
+50~\% & 86,98 & 44,51 & 58,89 & 13,0 & 72,98 & 21,82 & 33,60 & 27,0 \\
+40~\% & 89,91 & 35,86 & 51,27 & 10,1 & 77,01 & 12,33 & 21,26 & 23,0 \\
+30~\% & \textbf{91,60} & 27,81 & 42,66 & \textbf{8,4} & \textbf{79,11} & 6,20 & 11,49 & \textbf{20,9} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Le compromis entre précision et rappel.} Le tableau montre le comportement attendu d'un mécanisme de décision avec rejet~\cite{chow1970reject,geifman2017selective}. Plus $k$ diminue, plus la précision augmente et plus le taux d'hallucination diminue, de façon régulière : de 33,8~\% à 8,4~\% pour les entités, de 45,2~\% à 20,9~\% pour les relations. Le rappel diminue en contrepartie, puisque le vote retire aussi des éléments justes. Cette progression régulière, sans inversion d'une ligne à l'autre, montre que le score appris ordonne correctement les éléments : les éléments retirés en premier sont bien, en moyenne, les plus souvent faux.
+
+\paragraph{Les réglages utiles.} Trois zones se distinguent.
+\begin{itemize}
+  \item \textbf{De 95~\% à 80~\%}, le vote améliore à la fois la précision et le F1. Le meilleur F1 des entités est atteint à 80~\% (68,05~\%, contre 67,31~\% avant TRACE), avec un taux d'hallucination de 25,9~\% au lieu de 33,8~\%, soit près d'un quart d'entités non justifiées en moins. Le meilleur F1 des relations est atteint à 95~\% (50,66~\%, contre 49,68~\%). Dans cette zone, TRACE réduit les hallucinations sans dégrader la qualité globale du graphe.
+  \item \textbf{De 70~\% à 50~\%}, la précision continue de monter (jusqu'à 87,0~\% pour les entités et 73,0~\% pour les relations), mais le F1 baisse : chaque point d'hallucination en moins coûte davantage de rappel. Ces réglages conviennent à un usage où la fiabilité prime sur l'exhaustivité.
+  \item \textbf{À 40~\% et 30~\%}, le graphe devient très fiable, avec 91,6~\% de précision sur les entités, mais très incomplet : il ne retrouve plus que 27,8~\% des entités et 6,2~\% des relations de la référence. Ce réglage n'a d'intérêt que pour extraire un petit noyau d'informations très sûres.
+\end{itemize}
+
+\paragraph{Entités et relations.} La réduction des hallucinations est plus facile sur les entités que sur les relations. À 80~\%, le taux d'hallucination baisse de 7,9~points pour les entités et de 7,4~points pour les relations, mais le rappel des relations baisse proportionnellement plus vite. Une relation dépend en effet de deux entités et d'un lien : ses signaux sont plus nombreux et plus ambigus, et le vote les sépare moins nettement.
+
+% ============================================================
+\section{Bilan de la réduction des hallucinations}\label{sec:c6-bilan}
+
+Le tableau~\ref{tab:c6-bilan} résume les résultats de TRACE pour trois réglages représentatifs.
+
+\begin{table}[H]
+\centering
+\caption{Synthèse : extraction seule et TRACE selon trois réglages (49 dossiers, validation croisée, mode Relaxed, micro-moyenne, en \%)}\label{tab:c6-bilan}
+\small
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{\textbf{Entités}} & \multicolumn{2}{c}{\textbf{Relations}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Sortie} & \textbf{F1} & \textbf{H} & \textbf{F1} & \textbf{H} \\
+\midrule
+Extraction seule (avant TRACE) & 67,31 & 33,8 & 49,68 & 45,2 \\
+TRACE, mode standard & 67,13 & 33,7 & 50,37 & 43,7 \\
+TRACE, mode précision $k = 80~\%$ & 68,05 & 25,9 & 49,76 & 37,8 \\
+TRACE, mode précision $k = 30~\%$ & 42,66 & 8,4 & 11,49 & 20,9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Trois enseignements s'en dégagent. D'abord, TRACE réduit les hallucinations sans dégrader le graphe lorsque le réglage est modéré : à $k = 80~\%$, le taux d'hallucination baisse de 7,9~points sur les entités et de 7,4~points sur les relations, à F1 égal ou supérieur. Ensuite, TRACE donne le choix du niveau d'exigence : le même système produit, selon le réglage, un graphe quasi exhaustif ou un noyau d'informations très fiables, ce qu'aucun réglage de l'extraction seule ne permet. Enfin, chaque décision reste traçable, puisque chaque élément retiré porte la règle ou le score qui l'a écarté (section~\ref{sec:c5-principes}).
+
+% ============================================================
+\section{Discussion}\label{sec:c6-discussion-generale}
+
+\paragraph{Un plafond fixé par l'extraction.} Les gains de F1 de TRACE restent modestes, et ce n'est pas un défaut de conception : un post-traitement ne peut pas retrouver ce que le modèle n'a jamais extrait. En dehors des blocs à forme fixe, que récupère l'étage~4b, le rappel ne peut que baisser lorsque TRACE retire des éléments. Le F1 de la chaîne est donc borné par le rappel de l'extraction, et sa marge d'amélioration porte avant tout sur la précision, c'est-à-dire sur la réduction des hallucinations. C'est précisément sur ce critère que TRACE obtient ses résultats les plus nets.
+
+\paragraph{Des gains mesurés honnêtement.} Toutes les composantes qui s'appuient sur la référence, des exemples de l'extraction au vote de l'arbitrage, sont apprises et évaluées en validation croisée, sur les mêmes moitiés du corpus (section~\ref{sec:c5-validation}). Un vote appris et évalué sur les mêmes dossiers produirait des résultats nettement plus élevés, mais trompeurs, puisque l'erreur mesurée sur les données d'apprentissage sous-estime l'erreur sur des données nouvelles~\cite{hastie2009elements}. Les résultats présentés ici valent donc pour des dossiers que le système n'a jamais vus.
+
+\paragraph{La part des hallucinations qui reste.} Même au réglage le plus exigeant, une partie des éléments conservés n'est pas justifiée par la référence. Une part de ces faux positifs n'est pas faite de véritables inventions : ce sont des éléments écrits dans le dossier mais non annotés, des différences de délimitation au-delà de la tolérance de l'appariement, ou des choix de type entre catégories voisines (section~\ref{sec:c6-erreurs}). Le taux d'hallucination mesuré, défini comme la part des éléments sans correspondance dans la référence, est donc une borne supérieure de la proportion d'informations réellement inventées (section~\ref{sec:c4-metriques}).
+
+\paragraph{Les limites de l'évaluation.} Ces résultats portent sur 49 dossiers d'un même service, annotés par une seule annotatrice et validés par un seul médecin (section~\ref{sec:c3-3-12}). Les catégories rares ou absentes de la référence ne peuvent pas être évaluées, et la comparaison avec le pipeline final reste à compléter pour Qwen2.5-VL. Une évaluation sur un corpus plus large et multicentrique permettrait de confirmer la stabilité des poids appris par le vote.
+
+% ============================================================
 \section{Conclusion}\label{sec:c6-conclusion}
 
-Ce chapitre a évalué l'extraction multimodale avant TRACE. La comparaison des deux modèles a conduit à retenir Mistral Small~4, meilleur que Qwen2.5-VL sur les entités et surtout sur les relations, le critère principal fixé avant l'expérience. Avec le pipeline final et en validation croisée, l'extraction retenue atteint un F1 de 67,3~\% sur les entités et de 49,7~\% sur les relations, avec des taux d'hallucination de 33,8~\% et de 45,2~\%.
+Ce chapitre a réuni l'ensemble des expérimentations du mémoire. L'évaluation de l'extraction a conduit à retenir Mistral Small~4, meilleur que Qwen2.5-VL sur les entités et surtout sur les relations, le critère principal fixé avant l'expérience. Avec le pipeline final et en validation croisée, l'extraction atteint un F1 de 67,3~\% sur les entités et de 49,7~\% sur les relations, avec des taux d'hallucination de 33,8~\% et de 45,2~\%. L'analyse détaillée a montré que les entités à forme régulière sont bien extraites, alors que les entités d'interprétation clinique et les relations restent difficiles, et que les erreurs restantes relèvent de plusieurs types d'hallucinations.
 
-L'analyse détaillée montre que les entités à forme régulière, comme les biomarqueurs et les traitements, sont bien extraites, alors que les entités d'interprétation clinique et les relations restent difficiles. Les règles strictes apprises réduisent fortement les hallucinations relationnelles, au prix des relations d'interprétation clinique. Les erreurs restantes relèvent de plusieurs types d'hallucinations de la taxonomie, ce qui justifie une chaîne de vérification à plusieurs étages. Le chapitre suivant mesure l'apport de chacun de ces étages, à partir de la performance de référence établie ici.
+L'évaluation de TRACE a montré que chaque étage joue le rôle prévu, sans dégrader le résultat : l'ancrage retire les relations impossibles, la récupération retrouve des éléments oubliés, et l'arbitrage décide à partir de l'ensemble des signaux. Le mode standard réduit légèrement les hallucinations des relations en préservant le reste du graphe. Le mode précision offre un compromis réglable : à $k = 80~\%$, il réduit le taux d'hallucination de 33,8~\% à 25,9~\% sur les entités et de 45,2~\% à 37,8~\% sur les relations, à F1 égal ou supérieur ; au réglage le plus exigeant, il descend à 8,4~\% d'entités non justifiées, au prix d'une forte perte de rappel. Ces résultats, tous obtenus sur des dossiers non vus, confirment que la fiabilité d'un graphe de connaissances clinique peut être nettement améliorée par une chaîne de vérification déterministe et traçable, dans la limite fixée par ce que l'extraction a retrouvé.
