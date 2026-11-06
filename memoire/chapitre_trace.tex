@@ -177,12 +177,12 @@ Le quatrième étage traite les hallucinations structurelles : un graphe mal for
 
 SGCE enchaîne quatre phases, chacune lisant la sortie de la précédente :
 \begin{enumerate}
-  \item les \textbf{motifs d'erreur} A, B, C et D, appliqués dans cet ordre, qui traitent les erreurs structurelles les plus fréquentes ;
+  \item les \textbf{motifs d'erreur}, quatre familles d'erreurs structurelles fréquentes, désignées par les lettres A à D et appliquées dans cet ordre : les relations attendues mais absentes (motif A), les relations qui pointent vers une entité inexistante ou qui sautent une entité intermédiaire (motif B), les liens extraits à tort comme des entités (motif C) et les relations qui ne respectent pas leur signature (motif D). Ils sont détaillés à la section~\ref{sec:c5-motifs} ;
   \item la \textbf{réparation des relations}, qui corrige les relations encore mal typées ;
   \item la \textbf{résolution des orphelins}, qui traite les relations dont une extrémité ne correspond à aucune entité ;
   \item le \textbf{recours multi-agent}, réservé aux cas que les phases précédentes ont détectés sans pouvoir les corriger avec certitude.
 \end{enumerate}
-L'ordre n'est pas arbitraire. Les motifs A rétablissent d'abord les relations manquantes et découpent les entités composites ; les motifs B rattachent ensuite les relations à leurs entités ; le motif C ne s'applique qu'à un graphe dont les entités et les références sont stabilisées ; le motif D corrige enfin les signatures sur ce graphe consolidé. Chaque phase travaille donc sur un graphe déjà assaini par les précédentes, ce qui évite qu'une correction soit faite sur une structure qui sera modifiée ensuite.
+L'ordre n'est pas arbitraire. Les motifs A rétablissent d'abord les relations manquantes et découpent les entités composites ; les motifs B rattachent ensuite les relations à leurs entités ; le motif C, qui transforme une fausse entité en relation, ne s'applique qu'à un graphe dont les entités et les références sont stabilisées ; le motif D corrige enfin les signatures sur ce graphe consolidé. Chaque phase travaille donc sur un graphe déjà assaini par les précédentes, ce qui évite qu'une correction soit faite sur une structure qui sera modifiée ensuite.
 
 Un principe guide toute l'organisation : \emph{les règles symboliques tranchent d'abord}. Un cas n'est envoyé au recours multi-agent que si un motif a été détecté sans qu'une correction unique et sûre puisse être choisie.
 
@@ -197,7 +197,7 @@ Chaque motif, et chaque phase, suit le même cycle :
 \end{enumerate}
 Les catégories de décision suivent toujours la même logique : \emph{déjà correct}, l'élément est laissé tel quel ; \emph{confirmé}, la correction est sûre et sera appliquée ; \emph{ambigu}, plusieurs corrections sont possibles et aucune n'est appliquée. Les candidats faibles, détectés sur un indice isolé, restent toujours ambigus. Aucune étape n'utilise de connaissance médicale extérieure au dossier.
 
-\subsection{Les motifs d'erreur}
+\subsection{Les motifs d'erreur}\label{sec:c5-motifs}
 
 Le tableau~\ref{tab:c5-sgce} résume les motifs et la figure~\ref{fig:c5-sgce} en illustre quatre.
 
