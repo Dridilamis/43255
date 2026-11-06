@@ -48,7 +48,7 @@ Ces types n'appellent pas les mêmes vérifications. Les hallucinations factuell
 
 TRACE est une chaîne de huit étages appliquée à la sortie de l'extraction ; chaque étage lit la sortie du précédent et écrit la sienne. La figure~\ref{fig:c5-architecture} la présente dans son ensemble : pour chaque étage, la question qu'il pose, ce qu'il fait, son action sur le graphe, un exemple et le type d'hallucination qu'il traite. Les étages sont regroupés en quatre temps :
 \begin{itemize}
-  \item \textbf{contrôler} chaque élément contre le texte et le guideline : préparation (étage~1), ancrage documentaire (étage~2) et conformité au guideline (étage~3) ;
+  \item \textbf{vérifier} chaque élément en le confrontant au texte et au guideline : préparation (étage~1), ancrage documentaire (étage~2) et conformité au guideline (étage~3) ;
   \item \textbf{réparer} le graphe et compléter les oublis : réparation structurelle (étage~4), récupération structurée (étage~4b) et dédoublonnage (étage~5) ;
   \item \textbf{qualifier} le contexte clinique de chaque entité : attributs cliniques (étage~6) ;
   \item \textbf{décider}, pour chaque élément, de le garder ou de le retirer : arbitrage (étage~7).
