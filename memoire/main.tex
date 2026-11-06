@@ -1,0 +1,225 @@
+\documentclass[12pt,a4paper]{report}
+
+% ==================================================
+% ENCODAGE ET LANGUE
+% ==================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+% ==================================================
+% MISE EN PAGE
+% ==================================================
+\usepackage[
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+]{geometry}
+
+% ==================================================
+% POLICE ET ESPACEMENT
+% ==================================================
+\usepackage{lmodern}
+\usepackage{setspace}
+
+\onehalfspacing
+
+% ==================================================
+% MATHEMATIQUES
+% ==================================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ==================================================
+% IMAGES
+% ==================================================
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{url}
+\graphicspath{
+    {figures/}
+    {figures/chapitre1/}
+    {figures/chapitre2/}
+    {figures/chapitre3/}
+    {figures/chapitre4/}
+    {figures/chapitre5/}
+    {figures/chapitre6/}
+}
+
+% ==================================================
+% TABLEAUX
+% ==================================================
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+
+% ==================================================
+% FIGURES
+% ==================================================
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ==================================================
+% LISTES
+% ==================================================
+\usepackage{enumitem}
+
+% ==================================================
+% LIENS
+% ==================================================
+\usepackage[
+    hidelinks
+]{hyperref}
+
+% ==================================================
+% BIBLIOGRAPHIE
+% ==================================================
+\usepackage[numbers,sort&compress]{natbib}
+\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+\newcommand{\acompleter}[1]{\textcolor{red}{\textbf{[#1]}}}
+\newcommand{\entite}[1]{\texttt{\small #1}}
+\newcommand{\noteauteur}[1]{\par\noindent\textcolor{red}{\itshape [#1]}\par}
+% ==================================================
+% DOCUMENT
+% ==================================================
+
+\begin{document}
+
+% ==================================================
+% PAGE DE GARDE
+% ==================================================
+
+\input{page_de_garde}
+
+% ==================================================
+% PAGES LIMINAIRES (numérotées en chiffres romains)
+% ==================================================
+
+\pagenumbering{roman}
+
+% --------------------------------------------------
+% DEDICACES
+% --------------------------------------------------
+
+\input{tex/dedicaces}
+
+% --------------------------------------------------
+% REMERCIEMENTS
+% --------------------------------------------------
+
+\input{tex/remerciements}
+
+% --------------------------------------------------
+% AVANT-PROPOS
+% --------------------------------------------------
+
+\input{tex/avant_propos}
+
+% --------------------------------------------------
+% RESUME / ABSTRACT (à ajouter)
+% --------------------------------------------------
+
+% \input{tex/resume}
+
+% ==================================================
+% TABLE DES MATIERES
+% ==================================================
+
+\tableofcontents
+\clearpage
+
+% ==================================================
+% LISTE DES FIGURES
+% ==================================================
+
+\listoffigures
+\clearpage
+
+% ==================================================
+% LISTE DES TABLEAUX
+% ==================================================
+
+\listoftables
+\clearpage
+
+% ==================================================
+% CORPS DU MEMOIRE (numéroté en chiffres arabes)
+% ==================================================
+
+\pagenumbering{arabic}
+
+% ==================================================
+% INTRODUCTION GENERALE
+% ==================================================
+
+\input{tex/introduction_generale}
+
+% ==================================================
+% CHAPITRE 1
+% Contexte clinique et problématique de recherche
+% ==================================================
+
+\input{tex/chapitre1}
+
+% ==================================================
+% CHAPITRE 2
+% Etat de l'art
+% ==================================================
+
+\input{tex/chapitre2}
+
+% ==================================================
+% CHAPITRE 3
+% Données, annotation et Gold Standard
+% ==================================================
+\input{tex/chapitre3}
+
+% ==================================================
+% CHAPITRE 4
+% Extraction multimodale
+% ==================================================
+
+ \input{tex/chapitre4}
+
+% ==================================================
+% CHAPITRE 5
+% TRACE
+% ==================================================
+
+\input{tex/chapitre5}
+
+% ==================================================
+% CHAPITRE 6
+% Expérimentations et résultats
+% ==================================================
+
+ \input{tex/chapitre6}
+
+% ==================================================
+% CHAPITRE 7
+% Discussion
+% ==================================================
+
+% \input{tex/chapitre7}
+
+% ==================================================
+% CONCLUSION GENERALE
+% ==================================================
+
+\input{tex/conclusion_generale}
+
+% ==================================================
+% BIBLIOGRAPHIE
+% ==================================================
+
+\clearpage
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\appendix
+\input{annexes}
+\end{document}
