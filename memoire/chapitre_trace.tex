@@ -177,7 +177,7 @@ Le quatrième étage traite les hallucinations structurelles : un graphe mal for
 
 SGCE enchaîne quatre phases, chacune lisant la sortie de la précédente :
 \begin{enumerate}
-  \item les \textbf{motifs d'erreur}, quatre familles d'erreurs structurelles fréquentes, désignées par les lettres A à D et appliquées dans cet ordre : les relations attendues mais absentes (motif A), les relations qui pointent vers une entité inexistante ou qui sautent une entité intermédiaire (motif B), les liens extraits à tort comme des entités (motif C) et les relations qui ne respectent pas leur signature (motif D). Ils sont détaillés à la section~\ref{sec:c5-motifs} ;
+  \item les \textbf{motifs d'erreur}, quatre familles d'erreurs structurelles fréquentes, désignées par les lettres A à D et appliquées dans cet ordre : les relations attendues mais absentes, ainsi que les entités composites qui regroupent un traitement et sa posologie (motif A), les relations qui pointent vers une entité inexistante ou qui sautent une entité intermédiaire (motif B), les liens extraits à tort comme des entités (motif C) et les relations qui ne respectent pas leur signature (motif D). Ils sont détaillés à la section~\ref{sec:c5-motifs} ;
   \item la \textbf{réparation des relations}, qui corrige les relations encore mal typées ;
   \item la \textbf{résolution des orphelins}, qui traite les relations dont une extrémité ne correspond à aucune entité ;
   \item le \textbf{recours multi-agent}, réservé aux cas que les phases précédentes ont détectés sans pouvoir les corriger avec certitude.
