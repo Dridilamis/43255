@@ -205,15 +205,20 @@ Le tableau~\ref{tab:c5-sgce} résume les motifs et la figure~\ref{fig:c5-sgce} e
 \centering
 \caption{Motifs d'erreur de SGCE et réparations associées}\label{tab:c5-sgce}
 \small
-\begin{tabular}{p{2.9cm}p{5.4cm}p{5.2cm}}
+\begin{tabular}{p{2.3cm}p{5.9cm}p{5.3cm}}
 \toprule
 \textbf{Motif} & \textbf{Erreur détectée} & \textbf{Réparation} \\
 \midrule
-A (A1 à A6) & relation attendue absente entre deux entités présentes, pour six couples de types ; pour A1, entité composite qui regroupe le traitement et sa posologie & création de la relation si le texte la soutient ; découpage de l'entité composite en deux entités reliées \\
-B1 & relation qui pointe vers une entité absente de la liste des entités & rattachement à l'entité existante, ou création de l'entité si le texte la contient \\
-B2 & chaîne de deux relations dont l'entité intermédiaire manque & réécriture de la chaîne, seulement si l'entité intermédiaire est explicitement écrite \\
-C & lien extrait comme une entité (relation réifiée) & réécriture en relation entre les deux entités concernées \\
-D & relation qui viole sa signature & redirection vers une entité du bon type, retypage de l'entité, ou retrait de la relation isolée \\
+A (A1 à A6) & Deux entités qui devraient être reliées ont été extraites, mais la relation entre elles manque. Six couples de types sont concernés, par exemple un traitement et sa posologie. Cas particulier de A1 : le traitement et sa dose ont été extraits en une seule entité, \og Augmentin 1 g x 3 \fg{}. & Ajout de la relation manquante, si le texte relie les deux entités sans ambiguïté. Pour A1 : découpage en un \entite{TRAITEMENT} \og Augmentin \fg{} et une \entite{POSOLOGIE} \og 1 g x 3 \fg{}, reliés entre eux. \\
+\addlinespace
+B1 & Une relation désigne une entité qui n'existe pas dans le graphe, par exemple un lien \emph{presente\_symptome} vers \og fièvre \fg{} alors qu'aucune entité \og fièvre \fg{} ne figure dans la liste des entités. & Si une seule entité existante correspond, la relation lui est rattachée. Sinon, l'entité est créée à partir du texte de la référence, à condition que ce texte soit exploitable et que la signature donne son type. Dans les autres cas, rien n'est fait. \\
+\addlinespace
+B2 & Le modèle relie directement deux entités en sautant l'entité du milieu, par exemple un germe relié au diagnostic sans passer par le foyer infectieux. & Réécriture en deux relations passant par l'entité intermédiaire, seulement si celle-ci est écrite dans le texte. \\
+\addlinespace
+C & Un lien a été extrait comme une entité, par exemple \og traité par Claforan pour la pneumopathie \fg{} en une seule mention. & L'entité est retirée et remplacée par une relation entre les deux entités concernées. \\
+\addlinespace
+D & La relation existe, mais l'une de ses extrémités n'a pas le type attendu, par exemple un traitement \og administré à \fg{} un biomarqueur au lieu du patient. & Redirection vers une entité du bon type, correction du type de l'entité, ou, en dernier recours, retrait de la relation. \\
+\addlinespace
 Réparation des relations & relation dont les types observés correspondent à une autre signature & remplacement du type de relation, ou retypage d'une extrémité si le texte le soutient \\
 Résolution des orphelins & relation dont une extrémité ne correspond à aucune entité & rattachement à l'unique entité compatible, ou retrait si aucune n'existe \\
 Multi-agent & cas restés ambigus après les phases précédentes & vote de trois agents ; abstention en l'absence de consensus \\
