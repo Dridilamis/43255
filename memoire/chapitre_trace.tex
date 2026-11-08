@@ -201,14 +201,23 @@ Les catégories de décision suivent toujours la même logique : \emph{déjà co
 
 Le tableau~\ref{tab:c5-sgce} résume les motifs et la figure~\ref{fig:c5-sgce} en illustre quatre.
 
-\begin{table}[H]
-\centering
-\caption{Motifs d'erreur de SGCE et réparations associées}\label{tab:c5-sgce}
-\small
-\begin{tabular}{p{2.3cm}p{5.9cm}p{5.3cm}}
+\begingroup\small
+\begin{longtable}{p{2.3cm}p{5.9cm}p{5.3cm}}
+\caption{Motifs d'erreur de SGCE et réparations associées}\label{tab:c5-sgce}\\
 \toprule
 \textbf{Motif} & \textbf{Erreur détectée} & \textbf{Réparation} \\
 \midrule
+\endfirsthead
+\multicolumn{3}{l}{\emph{Tableau~\ref{tab:c5-sgce} (suite)}}\\
+\toprule
+\textbf{Motif} & \textbf{Erreur détectée} & \textbf{Réparation} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\emph{Suite page suivante}}\\
+\endfoot
+\bottomrule
+\endlastfoot
 A (A1 à A6) & Deux entités qui devraient être reliées ont été extraites, mais la relation entre elles manque. Six couples de types sont concernés, par exemple un traitement et sa posologie. Cas particulier de A1 : le traitement et sa dose ont été extraits en une seule entité, \og Augmentin 1 g x 3 \fg{}. & Ajout de la relation manquante, si le texte relie les deux entités sans ambiguïté. Pour A1 : découpage en un \entite{TRAITEMENT} \og Augmentin \fg{} et une \entite{POSOLOGIE} \og 1 g x 3 \fg{}, reliés entre eux. \\
 \addlinespace
 B1 & Une relation désigne une entité qui n'existe pas dans le graphe, par exemple un lien \emph{presente\_symptome} vers \og fièvre \fg{} alors qu'aucune entité \og fièvre \fg{} ne figure dans la liste des entités. & Si une seule entité existante correspond, la relation lui est rattachée. Sinon, l'entité est créée à partir du texte de la référence, à condition que ce texte soit exploitable et que la signature donne son type. Dans les autres cas, rien n'est fait. \\
@@ -219,12 +228,13 @@ C & Un lien a été extrait comme une entité, par exemple \og traité par Clafo
 \addlinespace
 D & La relation existe, mais l'une de ses extrémités n'a pas le type attendu, par exemple un traitement \og administré à \fg{} un biomarqueur au lieu du patient. & Redirection vers une entité du bon type, correction du type de l'entité, ou, en dernier recours, retrait de la relation. \\
 \addlinespace
-Réparation des relations & relation dont les types observés correspondent à une autre signature & remplacement du type de relation, ou retypage d'une extrémité si le texte le soutient \\
-Résolution des orphelins & relation dont une extrémité ne correspond à aucune entité & rattachement à l'unique entité compatible, ou retrait si aucune n'existe \\
-Multi-agent & cas restés ambigus après les phases précédentes & vote de trois agents ; abstention en l'absence de consensus \\
-\bottomrule
-\end{tabular}
-\end{table}
+Réparation des relations & Une relation dont les types observés correspondent à une autre signature. & Remplacement du type de relation, ou retypage d'une extrémité si le texte le soutient. \\
+\addlinespace
+Résolution des orphelins & Une relation dont une extrémité ne correspond à aucune entité. & Rattachement à l'unique entité compatible, ou retrait si aucune n'existe. \\
+\addlinespace
+Multi-agent & Les cas restés ambigus après les phases précédentes. & Vote de trois agents ; abstention en l'absence de consensus. \\
+\end{longtable}
+\endgroup
 
 \begin{figure}[H]
 \centering
