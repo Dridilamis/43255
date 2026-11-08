@@ -23,7 +23,7 @@ Toutes les évaluations portent sur les 49 dossiers du Gold Standard (291 pages)
 
 L'extraction suit le pipeline du chapitre~\ref{chap:extraction} : conversion des pages en images à 500~dpi, transcription par le modèle, extraction des entités avec une seconde passe sur les médicaments, puis extraction des relations, toutes à température~0. Les consignes sont générées à partir du guideline v2.0 et complétées par trois exemples annotés semblables et par les règles strictes apprises ; la sortie passe ensuite par les corrections apprises sur le Gold Standard.
 
-Tout ce qui s'appuie sur la référence est appris en \textbf{validation croisée à deux plis} : les dossiers sont triés, puis séparés en rangs pairs et impairs, et chaque moitié est traitée avec ce qui a été appris sur l'autre. Aucun dossier n'est donc extrait ni corrigé à l'aide de sa propre annotation, et les performances rapportées valent pour des dossiers non vus.
+Tout ce qui s'appuie sur la référence est appris en \textbf{validation croisée à deux plis} : les 49 dossiers sont triés par ordre alphabétique de leur identifiant, c'est-à-dire du nom de leur fichier pseudonymisé, puis répartis en alternance dans cette liste : le premier, le troisième, le cinquième, etc. forment une moitié (25 dossiers), le deuxième, le quatrième, etc. forment l'autre (24 dossiers). Chaque moitié est ensuite traitée avec ce qui a été appris sur l'autre. Ce critère a été fixé avant toute expérience et ne dépend ni du contenu des dossiers ni des résultats obtenus ; il rend le découpage reproductible à l'identique (section~\ref{sec:c5-validation}). Aucun dossier n'est donc extrait ni corrigé à l'aide de sa propre annotation, et les performances rapportées valent pour des dossiers non vus.
 
 \subsection{Mesures}
 
