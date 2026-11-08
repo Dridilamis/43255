@@ -156,7 +156,7 @@ Tous les appels sont faits à température~0, afin que le modèle choisisse à c
 % ------------------------------------------------------------
 \section{Modèles multimodaux évalués}\label{sec:c4-modeles}
 
-Deux modèles multimodaux ont été comparés. Tous deux acceptent en entrée une image et une consigne textuelle, et tous deux sont publiés avec leurs poids, ce qui permet de les exécuter sur une infrastructure maîtrisée. Dans ce travail, seul Qwen2.5-VL a été exécuté de cette façon ; Mistral Small~4 a été utilisé par une API externe, avec les conséquences pour la protection des données discutées à la section~\ref{sec:c4-donnees}.
+Deux modèles multimodaux ont été comparés. Tous deux acceptent en entrée une image et une consigne textuelle, et tous deux sont publiés avec leurs poids, ce qui permet de les exécuter sur une infrastructure maîtrisée. Dans ce travail, seul Qwen2.5-VL a été exécuté de cette façon ; Mistral Small~4 a été utilisé par l'API de Mistral AI, dans les conditions décrites à la section~\ref{sec:c4-donnees}.
 
 \subsection{Qwen2.5-VL}\label{sec:c4-qwen}
 
@@ -164,13 +164,13 @@ Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts
 
 \subsection{Mistral Small 4}\label{sec:c4-mistral}
 
-Mistral Small 4 (\texttt{mistral-small-2603})~\cite{mistralsmall4} réunit dans un seul modèle des capacités de vision, de raisonnement et de génération, et accepte en entrée du texte et des images. Il a été utilisé par l'intermédiaire de l'offre payante de l'API de Mistral AI, à température~0. Ses poids étant publiés sous licence ouverte, il peut aussi être exécuté localement ; les conséquences de l'utilisation de l'API pour la protection des données sont discutées à la section~\ref{sec:c4-donnees}.
+Mistral Small 4 (\texttt{mistral-small-2603})~\cite{mistralsmall4} réunit dans un seul modèle des capacités de vision, de raisonnement et de génération, et accepte en entrée du texte et des images. Il a été utilisé par l'intermédiaire de l'offre payante de l'API de Mistral AI, à température~0. Ses poids étant publiés sous licence ouverte, il peut aussi être exécuté localement. Les mesures de protection des données appliquées sont décrites à la section~\ref{sec:c4-donnees}.
 
 \subsection{Protection des données}\label{sec:c4-donnees}
 
 Les dossiers traités contiennent des données de santé. Leur protection a donc guidé la mise en œuvre des deux modèles, dans le respect des principes rappelés à la section~\ref{sec:c3-3-2-4} : minimisation, limitation des finalités, intégrité et confidentialité.
 
-\paragraph{Des données préparées avant tout traitement.} Les pages soumises aux modèles ont fait l'objet d'une double pseudonymisation : un masquage manuel des noms par l'AP-HP avant la numérisation, puis un effacement automatique des noms et des coordonnées dans les textes transcrits et les annotations (section~\ref{sec:c3-3-2-4}). Le schéma d'extraction applique en outre le principe de minimisation : seules les informations cliniques utiles sont demandées au modèle, et aucune donnée directement identifiante n'est extraite.
+\paragraph{Des données préparées avant tout traitement.} Les données ont fait l'objet d'une double pseudonymisation : un masquage manuel des noms sur les documents papier par l'AP-HP, avant la numérisation, puis un effacement automatique des noms et des coordonnées dans les textes transcrits et les annotations (section~\ref{sec:c3-3-2-4}). Le schéma d'extraction applique en outre le principe de minimisation : seules les informations cliniques utiles sont demandées au modèle, et aucune donnée directement identifiante n'est extraite.
 
 \paragraph{Qwen2.5-VL : une exécution locale.} Qwen2.5-VL a été exécuté sur un GPU de l'université. Les images des dossiers traitées par ce modèle n'ont jamais quitté l'infrastructure universitaire.
 
@@ -194,7 +194,7 @@ Pour que la comparaison soit équitable, les deux modèles ont été évalués a
   \item la même validation déterministe et les mêmes corrections apprises sur le Gold Standard ;
   \item la même évaluation, par rapport au même Gold Standard, avec les mêmes modes d'appariement et les mêmes métriques (sections~\ref{sec:c4-matching} et~\ref{sec:c4-metriques}).
 \end{itemize}
-Les paramètres de génération sont eux aussi identiques : température~0 pour tous les appels, et une même longueur maximale de réponse pour chaque étape, de 4\,000~jetons pour la transcription, 8\,000 pour les entités et les relations, et 12\,000 pour la seconde passe sur les médicaments. Seul le modèle change, ainsi que ses conditions d'exécution : Qwen2.5-VL est exécuté localement sur le GPU de l'université, Mistral Small~4 par l'API de Mistral AI, avec les conséquences pour la protection des données discutées à la section~\ref{sec:c4-donnees}.
+Les paramètres de génération sont eux aussi identiques : température~0 pour tous les appels, et une même longueur maximale de réponse pour chaque étape, de 4\,000~jetons pour la transcription, 8\,000 pour les entités et les relations, et 12\,000 pour la seconde passe sur les médicaments. Seul le modèle change, ainsi que ses conditions d'exécution : Qwen2.5-VL est exécuté localement sur le GPU de l'université, Mistral Small~4 par l'API de Mistral AI, avec les mesures de protection décrites à la section~\ref{sec:c4-donnees}.
 
 % ------------------------------------------------------------
 \section{Extraction des entités}\label{sec:c4-entites}
@@ -338,7 +338,7 @@ Les deux modèles sont comparés sur la sortie du pipeline d'extraction, avant T
   \item la qualité de l'extraction des \textbf{entités}, mesurée de la même façon ;
   \item le \textbf{taux d'hallucination} des entités et des relations, qui indique la part des éléments extraits que la référence ne justifie pas.
 \end{itemize}
-Les modes Strict et Boundary-Relaxed et la macro-moyenne servent à vérifier que la conclusion ne dépend pas du mode d'appariement ni de quelques dossiers. Les conditions d'exécution entrent aussi en compte : Qwen2.5-VL tourne sur l'infrastructure de l'université, tandis que Mistral Small~4 a été utilisé ici par une API externe, ce qui pose les questions de protection des données discutées à la section~\ref{sec:c4-donnees}.
+Les modes Strict et Boundary-Relaxed et la macro-moyenne servent à vérifier que la conclusion ne dépend pas du mode d'appariement ni de quelques dossiers. Les conditions d'exécution entrent aussi en compte : Qwen2.5-VL tourne sur l'infrastructure de l'université, tandis que Mistral Small~4 a été utilisé par l'API de Mistral AI, avec les mesures de protection décrites à la section~\ref{sec:c4-donnees}.
 
 Les résultats de cette comparaison sont présentés au chapitre~\ref{chap:experimentations}. Le modèle retenu fournit l'extraction à partir de laquelle TRACE est évaluée : chaque étage de la chaîne est mesuré par rapport à cette sortie de départ.
 
