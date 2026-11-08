@@ -518,10 +518,11 @@ Avec $k = 80~\%$, par exemple, on retire les éléments dont le score est infér
 
 Le vote est le seul composant de TRACE qui apprend de la référence. Il faut donc s'assurer qu'il ne \og triche \fg{} pas : un modèle évalué sur les dossiers qui ont servi à l'entraîner obtiendrait des résultats flatteurs mais trompeurs, puisque l'erreur mesurée sur les données d'apprentissage sous-estime systématiquement l'erreur sur des données nouvelles~\cite{hastie2009elements}.
 
-Le vote est donc entraîné et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}). Les 49 dossiers sont triés par identifiant, puis séparés selon la parité de leur rang en deux moitiés fixes, $A$ (25 dossiers) et $B$ (24 dossiers). Pour chaque moitié, les deux modèles et leurs seuils $\theta_k$ sont appris sur l'autre moitié, puis appliqués à celle-ci :
-\begin{equation}
-\text{dossiers de } B \;\xleftarrow{\;\text{notés par}\;}\; \text{modèle appris sur } A, \qquad \text{dossiers de } A \;\xleftarrow{\;\text{notés par}\;}\; \text{modèle appris sur } B.
-\end{equation}
+Le vote est donc entraîné et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}). Les 49 dossiers sont triés par ordre alphabétique de leur identifiant, puis répartis un sur deux en deux moitiés fixes, $A$ (25 dossiers) et $B$ (24 dossiers). Pour chaque moitié, les deux modèles et leurs seuils $\theta_k$ sont appris sur l'autre moitié, puis appliqués à celle-ci :
+\begin{align}
+\text{dossiers de } B &\;\xleftarrow{\;\text{notés par}\;}\; \text{modèle appris sur } A, \nonumber\\
+\text{dossiers de } A &\;\xleftarrow{\;\text{notés par}\;}\; \text{modèle appris sur } B.
+\end{align}
 Les vrais positifs, faux positifs et faux négatifs des deux moitiés sont ensuite additionnés, et la précision, le rappel et le F1-score sont calculés sur l'ensemble (section~\ref{sec:c4-metriques}). Chaque dossier est ainsi noté par un modèle qui ne l'a jamais vu, et les performances mesurées valent pour des dossiers nouveaux. Une fois cette mesure faite, un modèle final est appris sur les 49 dossiers : c'est lui qui serait appliqué à un nouveau dossier, la validation croisée servant uniquement à estimer ses performances~\cite{hastie2009elements}.
 
 Ce sont les mêmes moitiés que celles des exemples, des règles strictes et du lexique du pipeline d'extraction (section~\ref{sec:c4-exemples}). Utiliser partout le même découpage garantit qu'aucune information ne circule d'une moitié à l'autre par un chemin détourné : un dossier n'est jamais traité, à aucune étape, avec ce qui a été appris sur sa propre annotation. Deux plis plutôt que davantage permettent de garder, pour chaque apprentissage, environ 25 dossiers, soit plusieurs milliers d'éléments étiquetés ; ils permettent aussi de vérifier la stabilité des résultats, en comparant ce que l'on obtient sur chacune des deux moitiés.
