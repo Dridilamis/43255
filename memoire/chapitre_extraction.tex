@@ -174,7 +174,7 @@ Les deux modèles n'ont pas été utilisés dans les mêmes conditions, et cette
 
 \paragraph{Mistral Small~4 : une API externe.} Mistral Small~4 a été utilisé par l'intermédiaire de l'offre payante de l'API de Mistral AI. Les images des pages, leur transcription et les consignes d'extraction, qui contiennent aussi trois pages annotées d'autres dossiers, ont donc été transmises à un prestataire extérieur. Quelques réglages ont été appliqués pour limiter ce qui pouvait en être fait :
 \begin{itemize}
-  \item l'option d'amélioration des modèles à partir des données des utilisateurs (\emph{Anonymous improvement data}) a été désactivée dans la console d'administration, afin que les pages envoyées ne servent pas à entraîner les modèles de Mistral AI~\cite{mistral_retention} ;
+  \item l'option d'amélioration des modèles à partir des données des utilisateurs (\emph{Anonymous improvement data}) a été désactivée dans les paramètres de confidentialité de la console d'administration. Les pages envoyées ne peuvent donc pas être réutilisées pour entraîner ou améliorer les modèles de Mistral AI~\cite{mistral_retention}. Ce réglage porte sur la \emph{réutilisation} des données, et non sur leur \emph{conservation} : il n'empêche pas le prestataire de garder les requêtes pendant une durée limitée, comme expliqué ci-dessous ;
   \item seul le point d'accès standard de génération a été appelé, sans recourir aux services qui conservent des données sur les serveurs du prestataire, comme les agents, les fichiers ou l'affinage de modèles ;
   \item la clé d'accès à l'API est fournie au moment de l'exécution et n'est jamais enregistrée dans le code ni dans les fichiers du projet.
 \end{itemize}
