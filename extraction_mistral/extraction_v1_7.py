@@ -21,6 +21,12 @@ Usage (depuis Reduction_hallucinations) :
     python extraction_mistral\\extraction_v1_7.py --guideline guideline\\Guideline_TRACE_Sepsis_v1.7.json
 
 La cle API est lue dans MISTRAL_API_KEY, sinon demandee au clavier (jamais ecrite sur disque).
+
+Execution LOCALE (aucune donnee ne quitte la machine) : lancer un serveur compatible OpenAI
+(par ex. vLLM) sur le GPU, puis
+    python extraction_mistral/extraction_v1_7.py --url http://localhost:8000/v1/chat/completions \
+        --modele <nom servi par vLLM> --sortie extraction_mistral/extraction_locale
+Aucune cle n'est alors demandee ni envoyee, et le cache est distinct de celui de l'API.
 Toutes les reponses de Mistral sont mises en cache : une relance ne repaie pas les appels faits.
 """
 import argparse
@@ -44,6 +50,7 @@ GUIDELINE = PROJECT / "guideline" / "Guideline_TRACE_Sepsis_v2.0.json"
 DEFAULT_PDFS = PROJECT.parent / "suite pdfs annotés"
 DEFAULT_OUT = HERE / "extraction_v2_0"
 URL = "https://api.mistral.ai/v1/chat/completions"
+API_MISTRAL = URL
 MODEL = "mistral-small-2603"
 VERSION = "extraction_guideline_seul"
 
@@ -97,11 +104,16 @@ class Mistral:
         self.pause, self.last, self.calls = pause, 0.0, 0
 
     def ask(self, content, json_mode, max_tokens):
-        key = hashlib.sha256(f"{MODEL}|{json_mode}|{json.dumps(content, ensure_ascii=False)}".encode()).hexdigest()
+        local = URL != API_MISTRAL
+        if local:   # serveur local compatible OpenAI : image au format {"url": ...}
+            content = [dict(c, image_url={"url": c["image_url"]}) if c.get("type") == "image_url"
+                       and isinstance(c.get("image_url"), str) else c for c in content]
+        prefixe = f"{URL}|" if local else ""
+        key = hashlib.sha256(f"{prefixe}{MODEL}|{json_mode}|{json.dumps(content, ensure_ascii=False)}".encode()).hexdigest()
         cached = self.cache / f"{key}.json"
         if cached.exists():
             return json.loads(cached.read_text(encoding="utf-8"))["reponse"]
-        if not self.key:
+        if not self.key and not local:
             raise RuntimeError("MISTRAL_API_KEY absente.")
         payload = {"model": MODEL, "temperature": 0, "max_tokens": max_tokens,
                    "messages": [{"role": "user", "content": content}]}
@@ -114,7 +126,8 @@ class Mistral:
             self.last = time.monotonic()
             try:
                 r = self.session.post(URL, json=payload, timeout=(30, 300),
-                                      headers={"Authorization": f"Bearer {self.key}", "Content-Type": "application/json"})
+                                      headers={"Content-Type": "application/json"} if local else
+                                      {"Authorization": f"Bearer {self.key}", "Content-Type": "application/json"})
             except requests.RequestException as exc:
                 time.sleep(min(60, 2 ** attempt))
                 print(f"    reseau : {exc} - nouvel essai")
@@ -755,7 +768,7 @@ def traiter_pdf(api, g, pdf, out_dir, c):
 
 
 def main():
-    global GUIDELINE, MODEL
+    global GUIDELINE, MODEL, URL
     ap = argparse.ArgumentParser(description="Extraction Mistral selon le guideline TRACE-Sepsis")
     ap.add_argument("--guideline", default=str(GUIDELINE))
     ap.add_argument("--gold-exemples", default="", help="gold converti (dossier gold_v2_0) : active les exemples annotes")
@@ -763,6 +776,8 @@ def main():
     ap.add_argument("--guide", default="", help="regles strictes apprises (apprendre_guide.py), par moitie de corpus")
     ap.add_argument("--modele", default=MODEL,
                     help="modele Mistral (defaut mistral-small-2603 ; ex. mistral-medium-latest, mistral-large-latest)")
+    ap.add_argument("--url", default=URL,
+                    help="point d'acces ; ex. http://localhost:8000/v1/chat/completions pour un serveur local (vLLM)")
     ap.add_argument("--par-familles", action="store_true",
                     help="une consigne par famille d'entites au lieu de la consigne generale (moins bon a l'essai)")
     ap.add_argument("--pdfs", default=str(DEFAULT_PDFS))
@@ -780,7 +795,10 @@ def main():
         pdfs = pdfs[:1]
     elif args.docs:
         pdfs = pdfs[:args.docs]
-    if not os.getenv("MISTRAL_API_KEY", "").strip():
+    URL = args.url
+    if URL != API_MISTRAL:
+        print(f"Execution LOCALE : {URL} (aucune cle, aucune donnee envoyee a l'exterieur)")
+    elif not os.getenv("MISTRAL_API_KEY", "").strip():
         os.environ["MISTRAL_API_KEY"] = getpass.getpass("Cle API Mistral (rien ne s'affiche) : ").strip()
     out = Path(args.sortie)
     out.mkdir(parents=True, exist_ok=True)
