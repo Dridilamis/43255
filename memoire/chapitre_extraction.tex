@@ -160,7 +160,7 @@ Deux modèles multimodaux ont été comparés. Tous deux acceptent en entrée un
 
 \subsection{Qwen2.5-VL}\label{sec:c4-qwen}
 
-Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version à 7~milliards de paramètres ajustée pour suivre des instructions, Qwen2.5-VL-7B-Instruct, exécutée localement sur un GPU de l'infrastructure de l'université, à température~0. Les conditions de protection des données sont décrites à la section~\ref{sec:c4-donnees}.
+Qwen2.5-VL~\cite{bai2025qwen25vl} est un modèle vision-langage à poids ouverts. Il figure parmi les modèles compacts qui obtiennent les meilleurs taux d'erreur de transcription face aux OCR classiques et neuronaux sur des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Nous avons utilisé sa version à 7~milliards de paramètres ajustée pour suivre des instructions, Qwen2.5-VL-7B-Instruct, exécutée localement avec Ollama~\cite{ollama} sur un GPU de l'infrastructure de l'université, à température~0. Les conditions de protection des données sont décrites à la section~\ref{sec:c4-donnees}.
 
 \subsection{Mistral Small 4}\label{sec:c4-mistral}
 
@@ -170,9 +170,9 @@ Mistral Small 4 (\texttt{mistral-small-2603})~\cite{mistralsmall4} réunit dans 
 
 Les dossiers traités contiennent des données de santé, qui relèvent d'une protection renforcée au titre de l'article~9 du RGPD~\cite{rgpd2016}. Les deux modèles n'ont pas été utilisés dans les mêmes conditions, et cette différence est déterminante pour la protection de ces données.
 
-\paragraph{Qwen2.5-VL : une exécution locale.} Qwen2.5-VL a été exécuté sur un GPU de l'université. Les images des dossiers traitées par ce modèle n'ont jamais quitté l'infrastructure universitaire.
+\paragraph{Qwen2.5-VL : une exécution locale.} Qwen2.5-VL a été exécuté avec Ollama~\cite{ollama} sur un GPU de l'université. Les images des dossiers traitées par ce modèle n'ont jamais quitté l'infrastructure universitaire.
 
-\paragraph{Mistral Small~4 : une API externe.} Mistral Small~4 a été utilisé par l'offre payante de l'API de Mistral AI. Les images des pages, leur transcription et les consignes d'extraction, qui contiennent aussi trois pages annotées d'autres dossiers, ont donc été transmises à ce prestataire. Trois précautions ont été prises :
+\paragraph{Mistral Small~4 : une API externe.} Les premières versions de l'extraction avec Mistral Small~4 ont elles aussi été exécutées localement, avec Ollama, sur le GPU de l'université. L'accès à ce GPU n'étant plus disponible à partir d'octobre~2026, au moment où l'extraction devait être relancée pour suivre la validation médicale du Gold Standard, la version finale de l'extraction, présentée dans ce mémoire, a été obtenue par l'offre payante de l'API de Mistral AI. Les images des pages, leur transcription et les consignes d'extraction, qui contiennent aussi trois pages annotées d'autres dossiers, ont donc été transmises à ce prestataire. Trois précautions ont été prises :
 \begin{itemize}
   \item l'option \emph{Anonymous improvement data} a été désactivée dans la console d'administration, afin que les données envoyées ne soient pas réutilisées pour entraîner ou améliorer les modèles de Mistral AI~\cite{mistral_retention} ;
   \item seul le point d'accès de génération a été appelé, sans recourir aux agents, aux fichiers ni à l'affinage de modèles ;
