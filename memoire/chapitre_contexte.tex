@@ -1,0 +1,52 @@
+\chapter{Contexte et problématique}\label{chap:contexte}
+
+\section{Introduction}
+
+Les dossiers de réanimation de la cohorte APROCCHSS~\cite{annane2018aprocchss} illustrent bien ce qui rend difficile l'exploitation automatique des données cliniques : ils n'existent que sous forme d'images, et les informations utiles au diagnostic du sepsis y sont réparties entre comptes rendus, tableaux de biologie et ordonnances. Construire à partir d'eux un graphe de connaissances, comme le proposait le cadre KG-EDS~\cite{kgeds}, suppose de lire chaque page, d'y repérer les informations cliniques et de les relier entre elles. Les grands modèles de langage multimodaux (MLLMs) savent aujourd'hui faire cette lecture directement à partir de l'image, mais ce qu'ils produisent n'est pas toujours fidèle à la page~\cite{bai2025survey}.
+
+Ce chapitre présente le contexte clinique du sepsis, les difficultés propres aux dossiers scannés et les limites des modèles multimodaux, pour aboutir à la problématique à laquelle répond l'approche TRACE.
+
+\section{Contexte clinique : le sepsis}
+
+\subsection{Définition et enjeux}
+
+Le sepsis est une dysfonction d'organe potentiellement mortelle, causée par une réponse dérégulée de l'organisme à une infection. Selon le consensus international Sepsis-3, cette dysfonction se traduit par une augmentation aiguë d'au moins deux points du score SOFA (\textit{Sequential Organ Failure Assessment})~\cite{singer2016third,vincent1996sofa}. Le \textbf{choc septique} en est la forme la plus grave : malgré un remplissage vasculaire adéquat, le patient a besoin de vasopresseurs pour maintenir une pression artérielle moyenne d'au moins 65~mmHg, et son lactate dépasse 2~mmol/L~\cite{singer2016third}.
+
+La reconnaissance et la prise en charge du sepsis reposent sur plusieurs éléments à la fois, cliniques, biologiques et thérapeutiques~\cite{evans2021ssc}, dont aucun ne suffit seul : un lactate élevé, par exemple, ne prend son sens qu'au regard de la pression artérielle, du foyer infectieux et des traitements en cours. Les dossiers étudiés, rédigés entre 2008 et 2015, sont pour la plupart antérieurs à Sepsis-3 et emploient le vocabulaire de Sepsis-2~\cite{levy2003sccm}, comme \og sepsis sévère \fg{}.
+
+\subsection{Informations cliniques pertinentes}
+
+Le diagnostic et le suivi d'un sepsis mobilisent des informations de nature variée~\cite{singer2016third,evans2021ssc}. On retrouve notamment dans les dossiers :
+\begin{itemize}
+    \item les \textbf{signes vitaux}, comme la pression artérielle, la fréquence cardiaque ou la température ;
+    \item les \textbf{biomarqueurs}, comme le lactate, la CRP ou la créatinine ;
+    \item le \textbf{foyer infectieux}, suspecté ou confirmé, et le germe isolé ;
+    \item les \textbf{traitements}, en particulier les antibiotiques et les vasopresseurs, avec leur posologie ;
+    \item les \textbf{défaillances d'organes}, que résume le score SOFA ;
+    \item les \textbf{repères temporels}, qui situent chaque observation dans l'évolution du patient.
+\end{itemize}
+Ces informations sont dispersées : une valeur de lactate figure dans un tableau de biologie, la noradrénaline dans une ordonnance, le foyer dans le compte rendu d'entrée. C'est leur mise en relation, plus que chacune prise isolément, qui permet de reconstituer l'épisode septique.
+
+\subsection{Intérêt de la structuration des connaissances}
+
+Structurer ces informations consiste à les représenter sous forme d'\textbf{entités cliniques} typées (un biomarqueur, un traitement, un germe) et de \textbf{relations} entre elles (un traitement administré au patient, une posologie rattachée à un traitement). Réunies, ces entités et ces relations forment un \textbf{graphe de connaissances}~\cite{hogan2021knowledge}, que des outils d'aide à la décision peuvent ensuite interroger : une ligne \og CRP 120~mg/L \fg{} devient une entité de type biomarqueur, avec sa valeur et son unité.
+
+Ce gain a une contrepartie : le graphe n'est utile que s'il reflète fidèlement le dossier. Une valeur attribuée au mauvais biomarqueur, ou une relation que le document n'énonce pas, y introduit une connaissance fausse que rien ne distingue d'une connaissance juste.
+
+\section{Des dossiers qui n'existent qu'en images}
+
+Les dossiers ont été imprimés, partiellement masqués au stylo, puis scannés : ils n'ont aucune couche texte, et chaque information doit être lue sur l'image de la page. D'une page à l'autre, la mise en page, la densité du texte et la qualité du scan changent ; le texte libre côtoie des tableaux, des listes d'ordonnance et des résultats alignés sur une même ligne (\og Leucocytes 40,8 4,0--10,0 G/L \fg{}), où la position d'un nombre détermine son sens. Les logiciels de reconnaissance optique de caractères (OCR) se dégradent sur ce type de documents, et leurs erreurs se propagent aux étapes suivantes~\cite{zhang2025ocrhindersrag}.
+
+\section{Les limites des modèles multimodaux}
+
+Les MLLMs lisent directement l'image et transcrivent mieux que les OCR classiques des comptes rendus médicaux photographiés~\cite{neveditsin2026compact}. Mais ils peuvent produire des informations plausibles absentes du document~\cite{bai2025survey}, en particulier lorsque l'image est dégradée~\cite{he2025seeing}, et une bonne lecture ne garantit pas que chaque valeur extraite soit ancrée dans le document~\cite{raptorplus2026}. Dans un dossier médical, ces \textbf{hallucinations}, qu'il s'agisse d'une valeur inventée, d'un symptôme nié présenté comme présent ou d'un lien que le texte n'énonce pas, peuvent fausser une décision. Or, sur ce corpus, aucune référence annotée ne permettait jusqu'ici de les mesurer.
+
+\section{Problématique}
+
+Ce mémoire répond à la question suivante : \emph{comment extraire de façon fiable des entités et des relations cliniques à partir de dossiers scannés de patients septiques, tout en identifiant, caractérisant et réduisant les hallucinations des modèles multimodaux ?} Elle se décompose en trois sous-questions :
+\begin{enumerate}
+    \item \textbf{que faut-il extraire, et comment le mesurer ?} C'est l'objet du guideline et du Gold Standard (chapitre~\ref{chap:donnees-gold}) ;
+    \item \textbf{comment extraire ces informations à partir des images ?} C'est l'objet du pipeline d'extraction multimodale (chapitre~\ref{chap:extraction}) ;
+    \item \textbf{comment détecter et réduire les hallucinations sans en introduire de nouvelles ?} C'est l'objet de la chaîne TRACE (chapitre~\ref{chap:architecture}), évaluée au chapitre~\ref{chap:experimentations}.
+\end{enumerate}
+Le chapitre suivant présente les travaux sur lesquels s'appuie cette démarche.
