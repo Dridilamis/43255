@@ -21,7 +21,13 @@ La transcription est faite par le même modèle multimodal et fixe une fois pour
 
 \section{Conception des consignes}\label{sec:c4-prompt}
 
-\paragraph{Consignes guidées par le guideline.} Les consignes sont générées automatiquement à partir du fichier du guideline v2.0 : types d'entités, définitions et valeurs autorisées, règles générales et de typage, synonymes et signatures des relations. Intégrer les guidelines dans la consigne améliore la reconnaissance d'entités cliniques par un LLM~\cite{hu2024clinicalner} et la généralisation à de nouveaux schémas~\cite{sainz2024gollie}. Une consigne d'extraction des entités comprend : le rôle et la mission du modèle ; des règles absolues (surface exacte, un seul type par mention, aucune inférence, posologie séparée du traitement, absences) ; les règles et définitions du guideline ; les règles strictes apprises ; trois exemples annotés ; le format JSON attendu ; le texte de la page. La transcription a sa propre consigne, volontairement simple : recopier fidèlement le texte visible, sans résumer ni corriger, en notant \texttt{[?]} une zone illisible.
+\paragraph{Consignes guidées par le guideline.} Les consignes sont générées automatiquement à partir du fichier du guideline v2.0 : types d'entités, définitions et valeurs autorisées, règles générales et de typage, synonymes et signatures des relations. Intégrer les guidelines dans la consigne améliore la reconnaissance d'entités cliniques par un LLM~\cite{hu2024clinicalner} et la généralisation à de nouveaux schémas~\cite{sainz2024gollie}. Une consigne d'extraction des entités comprend (figure~\ref{fig:c4-prompt}) : le rôle et la mission du modèle ; des règles absolues (surface exacte, un seul type par mention, aucune inférence, posologie séparée du traitement, absences) ; les règles et définitions du guideline ; les règles strictes apprises ; trois exemples annotés ; le format JSON attendu ; le texte de la page. La transcription a sa propre consigne, volontairement simple : recopier fidèlement le texte visible, sans résumer ni corriger, en notant \texttt{[?]} une zone illisible.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/prompt.png}
+\caption{Structure d'une consigne d'extraction des entités}\label{fig:c4-prompt}
+\end{figure}
 
 \paragraph{Exemples choisis par similarité.}\label{sec:c4-exemples} Le modèle n'est pas entraîné : il apprend la tâche à partir des exemples de sa consigne (apprentissage en contexte)~\cite{agrawal2022fewshot}. Pour chaque page, on retient les trois pages annotées dont le vocabulaire est le plus proche (similarité cosinus de vecteurs TF-IDF) : une page de biologie reçoit des exemples de biologie, une ordonnance des exemples d'ordonnance, ce qui améliore nettement l'apprentissage en contexte~\cite{liu2022incontext}. Ces exemples sont choisis en validation croisée à deux plis : un dossier ne reçoit que des pages de l'autre moitié du corpus.
 

@@ -48,13 +48,39 @@ TRACE enchaîne huit étages, regroupés en quatre temps (figure~\ref{fig:c5-arc
 
 \paragraph{Le Gold Standard n'est lu que par l'évaluation.} Toutes les règles ont été fixées à partir du guideline et du format des documents. Le seul composant appris, le vote du mode précision, l'est en validation croisée (section~\ref{sec:c5-validation}).
 
-Chaque étage écrit ses annotations dans un champ de traçabilité propre à chaque élément, sans effacer celles des précédents. À la sortie, on sait pour tout élément quels signaux ont été relevés et quelle règle a décidé de son sort : le médecin peut savoir pourquoi une relation a été retirée, et ces signaux servent de variables au vote appris.
+Chaque étage écrit ses annotations dans un champ de traçabilité propre à chaque élément, sans effacer celles des précédents. À la sortie, on sait pour tout élément quels signaux ont été relevés et quelle règle a décidé de son sort : le médecin peut savoir pourquoi une relation a été retirée, et ces signaux servent de variables au vote appris (figure~\ref{fig:c5-trace}).
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.92\linewidth}
+\footnotesize
+\begin{verbatim}
+{"identifiant_entite_sujet": "P3_E021", "type_relation": "traitement_administre_a",
+ "identifiant_entite_objet": "P3_E001", "preuve": "mise sous Claforan",
+ "trace": {
+   "ancrage":   {"sujet_atteste": true, "objet_atteste": true,
+                 "preuve": "ATTESTEE", "distance": "PATIENT",
+                 "section": "EVOLUTION", "motifs_retrait": []},
+   "ontologie": {"statut": "CONFORME"},
+   "doublon":   false,
+   "arbitrage": {"decision": "GARDEE", "motifs": [], "niveau_confiance": "HIGH",
+                 "signaux_faibles": [], "mode": "standard"}}}
+\end{verbatim}
+\end{minipage}
+\caption{Trace d'une relation à la sortie de l'arbitrage (exemple construit, sans donnée patient)}\label{fig:c5-trace}
+\end{figure}
 
 \section{Vérifier : préparation, ancrage et conformité}\label{sec:c5-verifier}
 
-\paragraph{Étage 1 : préparation.}\label{sec:c5-etage1} Cet étage met les noms d'entités sous forme Unicode normalisée (NFKC), pour que \og µmol/L \fg{} et \og μmol/L \fg{} désignent le même nœud, attribue un identifiant à chaque relation et écarte tout élément dont la provenance indiquerait une règle construite sur la référence.
+\paragraph{Étage 1 : préparation.}\label{sec:c5-etage1} Cet étage met les noms d'entités sous forme Unicode normalisée (NFKC), pour que \og µmol/L \fg{} et \og $\mu$mol/L \fg{} désignent le même nœud, attribue un identifiant à chaque relation et écarte tout élément dont la provenance indiquerait une règle construite sur la référence.
 
-\paragraph{Étage 2 : ancrage documentaire.}\label{sec:c5-etage2} Cet étage traite les hallucinations factuelles et relationnelles en confrontant chaque élément au texte, après normalisation de la casse, des accents, de la ponctuation et des espaces. Une entité est \emph{attestée} si sa mention figure dans le dossier, ou si au moins la moitié de ses mots porteurs de sens y figurent et que \emph{tous} ses nombres y sont écrits ; l'étage note aussi si elle figure mot pour mot dans sa page. Pour chaque relation, il relève la présence des deux extrémités, le statut de la preuve citée (attestée, inventée, absente), la distance entre les extrémités (même ligne sous 80~caractères, même paragraphe sous 300, éloignées) et la section du compte rendu (antécédents, traitement habituel, biologie, évolution, sortie\dots). Il ne retire que ce que le document rend impossible : une entité absente de tout le dossier, une relation dont une extrémité ou la preuve n'existe pas, ou dont les extrémités ne sont jamais dans un même paragraphe. Exiger tous les nombres répond au risque le plus grave en médecine : une mention peut perdre un mot sans changer de sens, pas un chiffre. Ce contrôle correspond à ce que RAPTOR+ appelle les extractions non ancrées~\cite{raptorplus2026}.
+\paragraph{Étage 2 : ancrage documentaire.}\label{sec:c5-etage2} Cet étage traite les hallucinations factuelles et relationnelles en confrontant chaque élément au texte, après normalisation de la casse, des accents, de la ponctuation et des espaces. Une entité est \emph{attestée} si sa mention figure dans le dossier, ou si au moins la moitié de ses mots porteurs de sens y figurent et que \emph{tous} ses nombres y sont écrits ; l'étage note aussi si elle figure mot pour mot dans sa page. Pour chaque relation, il relève la présence des deux extrémités, le statut de la preuve citée (attestée, inventée, absente), la distance entre les extrémités (même ligne sous 80~caractères, même paragraphe sous 300, éloignées) et la section du compte rendu (antécédents, traitement habituel, biologie, évolution, sortie\dots). Il ne retire que ce que le document rend impossible : une entité absente de tout le dossier, une relation dont une extrémité ou la preuve n'existe pas, ou dont les extrémités ne sont jamais dans un même paragraphe. Exiger tous les nombres répond au risque le plus grave en médecine : une mention peut perdre un mot sans changer de sens, pas un chiffre. Ce contrôle correspond à ce que RAPTOR+ appelle les extractions non ancrées~\cite{raptorplus2026}. La figure~\ref{fig:c5-ancrage} en donne un exemple : \og CRP 186 mg/L \fg{} est retirée, la page indiquant \og CRP 86 mg/L \fg{}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/ancrage.png}
+\caption{Étage~2 : confrontation des entités et des relations au texte de la page (exemple construit)}\label{fig:c5-ancrage}
+\end{figure}
 
 \paragraph{Étage 3 : conformité au guideline.}\label{sec:c5-etage3} Cet étage traite les hallucinations terminologiques. Chaque relation est confrontée aux 34 signatures du guideline (annexe~\ref{annexe:relations}) et reçoit le statut \emph{conforme}, \emph{violation de domaine} ou \emph{violation d'image}. L'étage n'en retire aucune : lors de la mise au point, la plupart des relations en violation étaient justes, c'est le type d'une de leurs entités qui était faux. La violation devient un indice pour la réparation et l'arbitrage. Cette approche rejoint la validation par contraintes~\cite{shacl2017,tran2025aspworkflow}, dont elle partage la limite : un graphe conforme n'est pas forcément fidèle.
 
@@ -84,7 +110,13 @@ Chaque motif suit le même cycle : \emph{détection} des candidats sans modifier
 
 Les cas détectés mais restés ambigus passent par un \textbf{recours multi-agent}. Un agent spécialisé par motif propose une action avec sa preuve textuelle ; trois votes indépendants l'examinent ensuite : preuve documentaire, conformité au schéma et cohérence clinique locale. L'action n'est appliquée que si les trois la soutiennent, ou deux sans opposition du troisième et avec une preuve explicite. Sinon, SGCE s'abstient~\cite{geifman2017selective} : une correction erronée serait une nouvelle hallucination, créée par la chaîne elle-même.
 
-Ces réparations s'inscrivent dans la tradition de la réparation minimale sous contraintes~\cite{chu2013holistic,rekatsinas2017holoclean,paulheim2017refinement}, avec trois garanties : aucune connaissance médicale extérieure, aucune entité créée sans que son contenu soit écrit dans la page, aucune correction conservée si elle dégrade la structure. Toute relation créée par SGCE est en outre revérifiée par l'arbitrage avec les contrôles de l'étage~2.
+Ces réparations s'inscrivent dans la tradition de la réparation minimale sous contraintes~\cite{chu2013holistic,rekatsinas2017holoclean,paulheim2017refinement}, avec trois garanties : aucune connaissance médicale extérieure, aucune entité créée sans que son contenu soit écrit dans la page, aucune correction conservée si elle dégrade la structure. Toute relation créée par SGCE est en outre revérifiée par l'arbitrage avec les contrôles de l'étage~2. La figure~\ref{fig:c5-sgce} illustre une réparation de chaque motif.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/SGCE.png}
+\caption{Étage~4 : exemples de réparations structurelles de SGCE (exemples construits)}\label{fig:c5-sgce}
+\end{figure}
 
 \subsection{Étage 4b : récupération structurée}\label{sec:c5-etage4b}
 
@@ -150,7 +182,13 @@ La régression logistique répond à trois exigences du contexte clinique : elle
 
 \subsection{Validation croisée}\label{sec:c5-validation}
 
-Évaluer le vote sur les dossiers qui l'ont entraîné donnerait des résultats flatteurs mais trompeurs~\cite{hastie2009elements}. Le vote est donc appris et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} : les 49 dossiers, triés par identifiant, sont répartis un sur deux en deux moitiés fixes (25 et 24 dossiers). Chaque moitié est notée par les modèles et les seuils appris sur l'autre, puis les vrais et faux positifs des deux moitiés sont additionnés. Ce sont les mêmes moitiés que pour les exemples, les règles strictes et le lexique de l'extraction (section~\ref{sec:c4-exemples}) : aucun dossier n'est jamais traité, à aucune étape, avec ce qui a été appris sur sa propre annotation.
+Évaluer le vote sur les dossiers qui l'ont entraîné donnerait des résultats flatteurs mais trompeurs~\cite{hastie2009elements}. Le vote est donc appris et évalué en validation croisée à deux plis~\cite{stone1974crossvalidation} (figure~\ref{fig:c5-validation}) : les 49 dossiers, triés par identifiant, sont répartis un sur deux en deux moitiés fixes (25 et 24 dossiers). Chaque moitié est notée par les modèles et les seuils appris sur l'autre, puis les vrais et faux positifs des deux moitiés sont additionnés. Ce sont les mêmes moitiés que pour les exemples, les règles strictes et le lexique de l'extraction (section~\ref{sec:c4-exemples}) : aucun dossier n'est jamais traité, à aucune étape, avec ce qui a été appris sur sa propre annotation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/Validation_croisee.png}
+\caption{Validation croisée à deux plis, commune à l'extraction et au vote de l'étage~7}\label{fig:c5-validation}
+\end{figure}
 
 \section{Évaluation (étage 8) et mise en œuvre}\label{sec:c5-etage8}\label{sec:c5-choix}\label{sec:c5-mise-en-oeuvre}
 
