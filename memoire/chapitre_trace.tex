@@ -124,8 +124,8 @@ Le mode standard ne retire que ce que l'on sait faux ou impossible à justifier.
   \item \textbf{E1} : une entité dont la mention n'est pas écrite mot pour mot dans sa page est retirée. C'est une reformulation du modèle, qu'on ne peut ni montrer dans le document ni comparer à la référence ; le guideline impose de conserver la mention telle qu'elle est écrite (annexe~\ref{annexe:regles}).
   \item \textbf{E2} : une entité niée est \emph{conservée} et marquée comme telle, car une absence est une information clinique.
   \item \textbf{E3} : une entité à laquelle le modèle a lui-même attribué une confiance moyenne ou faible (section~\ref{sec:c4-json}) est retirée.
-  \item \textbf{R2} : une relation qui donne comme présente une entité niée est retirée ; l'entité niée reste dans le graphe.
-  \item \textbf{R3} : une relation créée par SGCE qui échoue au contrôle d'ancrage de l'étage~2 est retirée.
+  \item \textbf{R1} : une relation qui donne comme présente une entité niée est retirée ; l'entité niée reste dans le graphe.
+  \item \textbf{R2} : une relation créée par SGCE qui échoue au contrôle d'ancrage de l'étage~2 est retirée.
   \item \textbf{Cascade} : une entité retirée emporte ses relations, pour qu'aucune relation ne reste orpheline.
 \end{itemize}
 Les relations conservées reçoivent un niveau de confiance selon le nombre $n_f$ de \emph{signaux faibles} présents parmi six : preuve absente, extrémités éloignées, origine autre que l'extraction, doublon, indice de négation ou d'hypothèse, signature non conforme. La confiance est élevée si $n_f = 0$, moyenne si $n_f = 1$, faible au-delà. Ce niveau ne retire rien : il indique au médecin quelles relations vérifier en priorité, avec la liste des signaux qui l'expliquent.
