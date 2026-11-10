@@ -1,54 +1,31 @@
 \chapter*{Introduction générale}
 \addcontentsline{toc}{chapter}{Introduction générale}
 
-Les données de santé sont de plus en plus numérisées, ce qui ouvre la voie à leur exploitation automatique. Une grande partie de l’information clinique reste pourtant enfermée dans des documents peu ou pas structurés : comptes rendus d’hospitalisation, prescriptions, résultats biologiques, ou dossiers papier qui ont simplement été scannés.
-
-Le sepsis en est un bon exemple. Le consensus Sepsis-3 le définit comme une dysfonction d’organe menaçant le pronostic vital, causée par une réponse dérégulée de l’hôte à une infection~\cite{singer2016third}. Dans ses formes les plus sévères, il évolue vers le choc septique, marqué par des anomalies circulatoires et métaboliques profondes (figure~\ref{fig:progression_sepsis}). Comprendre un épisode de sepsis demande de réunir des informations de nature très différente, souvent réparties sur plusieurs pages du dossier : signes vitaux, biomarqueurs, foyer infectieux, germe isolé, traitements, défaillances d’organes, évolution.
+Une grande partie de l’information clinique reste enfermée dans des documents peu structurés : comptes rendus, prescriptions, résultats biologiques, ou dossiers papier simplement scannés. Le sepsis en est un bon exemple. Défini par le consensus Sepsis-3 comme une dysfonction d’organe menaçant le pronostic vital, causée par une réponse dérégulée de l’hôte à une infection~\cite{singer2016third}, il peut évoluer vers le choc septique (figure~\ref{fig:progression_sepsis}). Comprendre un épisode demande de réunir des informations dispersées sur plusieurs pages : signes vitaux, biomarqueurs, foyer, germe, traitements, défaillances d’organes, évolution.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/Infection.png}
+    \includegraphics[width=0.9\textwidth]{images/Infection.png}
     \caption{Progression clinique de l’infection vers le sepsis puis le choc septique, d’après les définitions Sepsis-3~\cite{singer2016third}.}
     \label{fig:progression_sepsis}
 \end{figure}
 
-\section*{Contexte du travail}
-
-Ce mémoire a été réalisé au sein de l’IHU PROMETHEUS, dans le Work Package 6 consacré au sepsis. Il porte sur des dossiers de réanimation de la cohorte APROCCHSS~\cite{annane2018aprocchss}, pris en charge entre 2008 et 2015 dans le service de médecine intensive--réanimation de l’Hôpital Raymond-Poincaré (AP-HP). Ces dossiers ont été imprimés, partiellement pseudonymisés à la main, puis scannés : ils n’existent que sous forme d’images, sans couche texte. Le corpus réunit 246 dossiers.
-
-Le travail prolonge le cadre KG-EDS (\textit{Knowledge Graph for Early Diagnosis of Sepsis})~\cite{kgeds}, qui construisait un graphe de connaissances à partir de ces dossiers par apprentissage en contexte. Faute de corpus annoté, la qualité de ses extractions n’avait pas pu être mesurée finement, et les erreurs du modèle restaient difficiles à repérer.
-
-Les grands modèles de langage multimodaux (\textit{Multimodal Large Language Models}, \textbf{MLLMs}) sont bien adaptés à ce type de documents, car ils lisent directement la page scannée en combinant l’image et le texte. Ils ont toutefois un défaut connu : ils peuvent produire des informations plausibles mais absentes du document, ou inexactes. C’est ce qu’on appelle une \textbf{hallucination}. Dans un dossier médical, une valeur attribuée au mauvais biomarqueur, un traitement relié au mauvais germe ou un fait nié présenté comme présent suffisent à fausser le graphe de connaissances construit en aval.
-
-Ce mémoire part donc de la question suivante :
+\paragraph{Contexte.} Ce mémoire a été réalisé au sein de l’IHU SEPSIS (Work Package~6). Il porte sur 246 dossiers de réanimation de la cohorte APROCCHSS~\cite{annane2018aprocchss}, pris en charge entre 2008 et 2015 à l’Hôpital Raymond-Poincaré (AP-HP), pseudonymisés à la main puis scannés : ils n’existent que sous forme d’images. Il prolonge le cadre KG-EDS~\cite{kgeds}, développé par Eya Ben Dhiaf, qui construisait un graphe de connaissances à partir de ces dossiers sans corpus annoté pour mesurer la qualité des extractions. Les grands modèles de langage multimodaux (MLLMs) lisent directement la page scannée, mais peuvent produire des informations plausibles absentes du document : des \textbf{hallucinations}. Une valeur attribuée au mauvais biomarqueur ou un fait nié présenté comme présent suffisent à fausser le graphe construit en aval. D’où la question :
 
 \begin{quote}
 \centering
-\textbf{\textit{
-Comment extraire de manière fiable des entités et des relations cliniques à partir de dossiers médicaux scannés dans le contexte du sepsis, tout en identifiant, caractérisant et réduisant les hallucinations produites par les modèles multimodaux ?
-}}
+\textbf{\textit{Comment extraire de manière fiable des entités et des relations cliniques à partir de dossiers médicaux scannés dans le contexte du sepsis, tout en identifiant, caractérisant et réduisant les hallucinations produites par les modèles multimodaux ?}}
 \end{quote}
 
-\section*{Démarche et contributions}
-
-Pour y répondre, nous proposons l’approche \textbf{TRACE} (\textit{Taxonomy and Reduction of hAllucinations in Clinical knowledge Extraction}). Le travail s’est organisé autour de quatre contributions.
-
+\paragraph{Contributions.} Nous proposons l’approche \textbf{TRACE} (\textit{Taxonomy and Reduction of hAllucinations in Clinical knowledge Extraction}), qui repose sur quatre contributions :
 \begin{itemize}
-    \item \textbf{Un référentiel d’annotation et un Gold Standard.} Nous avons rédigé le TRACE-Sepsis Annotation Guideline, qui définit 20 types d’entités cliniques, 34 relations et les règles pour les annoter. Sa version 2.0 a été validée par le Pr Nicholas Heming, médecin réanimateur. 49 dossiers (291 pages) ont été annotés à la main selon ce guideline, puis revus par le même médecin. Le Gold Standard obtenu, qui conserve aussi les absences explicitement mentionnées dans les dossiers, compte 12\,396 entités et 5\,546 relations et a été construit sans aucun modèle.
-    \item \textbf{Une taxonomie des hallucinations} propre à l’extraction clinique multimodale, qui distingue les informations inventées, les erreurs de type, de valeur ou d’unité, les relations mal rattachées et les incohérences structurelles.
-    \item \textbf{Une extraction multimodale des dossiers.} Plusieurs modèles vision-langage ont été étudiés, et Mistral Small 4 a été retenu pour extraire les entités et les relations page par page. Une seconde passe filtrée lui demande ensuite les éléments oubliés.
-    \item \textbf{La chaîne TRACE de réduction des hallucinations}, organisée en étages qui ont chacun une seule responsabilité : ancrage de chaque élément dans le texte de sa page, conformité aux signatures du guideline, réparation structurelle du graphe (\textit{Structural Grounding}, avec une validation multi-agent), récupération des éléments oubliés dans les blocs de biologie et d’ordonnance, dédoublonnage, qualification des entités (unité, temporalité, négation), puis arbitrage. L’arbitrage propose un mode standard, fondé sur des règles fixées à l’avance, et un mode précision, qui ne garde que les éléments les mieux notés par les agents. Le Gold Standard n’est lu que par le dernier étage, l’évaluation, pour que la mesure reste indépendante des corrections.
+    \item \textbf{un guideline et un Gold Standard} : le TRACE-Sepsis Annotation Guideline (20 types d’entités, 34 relations), validé par le Pr Nicholas Heming, et un Gold Standard de 49 dossiers (291 pages, 12\,396 entités et 5\,546 relations) annoté à la main sans aucun modèle, puis revu par le même médecin ;
+    \item \textbf{un pipeline d’extraction multimodale} guidé par le guideline, avec lequel Qwen2.5-VL et Mistral Small~4 ont été comparés ; Mistral Small~4 a été retenu ;
+    \item \textbf{une taxonomie} des hallucinations propre à l’extraction clinique multimodale ;
+    \item \textbf{la chaîne TRACE}, dont les étages annotent chaque élément (ancrage dans le texte, conformité au guideline, réparation structurelle, récupération, dédoublonnage, négation et temporalité) avant qu’un arbitrage unique décide, selon un mode standard à règles fixées a priori ou un mode précision appris en validation croisée.
 \end{itemize}
+Évaluée sur des dossiers non vus, TRACE réduit le taux d’hallucination des entités de 33,8 à 25,9~\% et celui des relations de 45,2 à 37,8~\%, à F1 égal ou supérieur, et permet de régler le niveau d’exigence selon l’usage.
 
-\section*{Valorisation scientifique}
+\paragraph{Valorisation.} Ce travail a donné lieu à un article présenté oralement à la 11\textsuperscript{e} \emph{Junior Conference on Data Science and Engineering} (JDSE~2026, Université Paris-Saclay)~\cite{dridi2026jdse}, qui compare les deux modèles sur un Gold Standard préliminaire, et à une présentation orale à PFIA~2026 (Université d’Artois), consacrée aux travaux d’Eya Ben Dhiaf sur KG-EDS et à une grande partie de ce mémoire. Nous avons également présenté le poster consacré à KG-EDS lors de la Journée des doctorants de l’IHU SEPSIS et de l’OI MICROBES (avril 2026).
 
-Ce travail s'inscrit dans un projet mené en équipe au sein du WP6. Il prolonge et améliore les travaux d'Eya Ben Dhiaf sur la construction d'un graphe de connaissances à partir des mêmes dossiers (cadre KG-EDS~\cite{kgeds}). Il a donné lieu à deux communications, et nous avons également présenté les travaux de l'équipe lors d'une troisième :
-\begin{itemize}
-    \item un \textbf{article}, « Multimodal Extraction of Clinical Information from Digitized Patient Records and Gold Standard Evaluation in the Context of Sepsis »~\cite{dridi2026jdse}, présenté à la 11\textsuperscript{e} \emph{Junior Conference on Data Science and Engineering} (JDSE~2026), le 24 septembre 2026 à l'Université Paris-Saclay, où il a fait l'objet d'une \textbf{présentation orale}. Il compare Qwen2.5-VL et Mistral Small~4 sur un Gold Standard préliminaire ;
-    \item une \textbf{présentation orale} à la Plate-Forme Intelligence Artificielle (PFIA~2026), le 1\textsuperscript{er} juillet 2026 à l'Université d'Artois (Arras). Nous y avons présenté les travaux d'Eya Ben Dhiaf sur le cadre KG-EDS, ainsi qu'une grande partie de ce mémoire ;
-    \item un \textbf{poster} consacré aux travaux d'Eya Ben Dhiaf sur le cadre KG-EDS, que nous avons présenté le 28 avril 2026, dès la première semaine du stage, à la Journée des Doctorants \& Post-doctorants organisée par l'IHU SEPSIS et l'OI MICROBES, à la Faculté de Médecine Paris-Saclay (Le Kremlin-Bicêtre).
-\end{itemize}
-
-\section*{Organisation du mémoire}
-
-Le chapitre~1 présente le contexte clinique du sepsis et les difficultés propres à l’extraction d’informations depuis des dossiers médicaux scannés. Le chapitre~2 dresse l’état de l’art : extraction documentaire, extraction d’entités et de relations (des méthodes classiques aux MLLMs), annotation clinique, puis détection et réduction des hallucinations. Le chapitre~3 décrit le corpus, le guideline d’annotation et la construction du Gold Standard. Le chapitre~4 expose l’étude des modèles et l’extraction multimodale avec Mistral Small 4. Le chapitre~5 détaille la chaîne TRACE, étage par étage, et le chapitre~6 en présente les expérimentations et les résultats. Le chapitre~7, enfin, discute ces résultats, les limites du travail et ses perspectives.
+\paragraph{Organisation.} Le chapitre~\ref{chap:contexte} présente le contexte clinique et la problématique, le chapitre~\ref{chap:etat-art} l’état de l’art, le chapitre~\ref{chap:donnees-gold} le corpus, le guideline et le Gold Standard, le chapitre~\ref{chap:extraction} le pipeline d’extraction, le chapitre~\ref{chap:architecture} la chaîne TRACE et le chapitre~\ref{chap:experimentations} les résultats. La conclusion générale discute les limites et les perspectives.
