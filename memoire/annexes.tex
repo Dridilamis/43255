@@ -27,17 +27,17 @@ Ce tableau complète le chapitre~\ref{chap:etat-art} : il recense, pour chaque t
 \endlastfoot
 Hallucination visuelle et de lecture &
 Le modèle génère des informations absentes du document ou interprète incorrectement les éléments visuels, en particulier lorsque la qualité de l'image est dégradée. &
-CHAIR \cite{rohrbach2018chair}, POPE \cite{li2023pope}, KIE-HVQA \cite{he2025seeing}, Woodpecker \cite{woodpecker2023}, MedSIGHT \cite{chang2026medsight}, RAPTOR+ \cite{raptorplus2026} &
+CHAIR \cite{rohrbach2018chair}, POPE \cite{li2023pope}, KIE-HVQA \cite{he2025seeing}, RAPTOR+ \cite{raptorplus2026} &
 Ancrage visuel, boîtes englobantes, segmentation, abstention sur les caractères illisibles et vérification après génération.\\
 \hline
 Hallucination d'entité &
 Erreur sur la valeur d'une entité ou sur son type. &
-LATTE \cite{zhang2026latte}, Wang et al. \cite{wang2024feature}, FAVA \cite{mishra2024fava} &
+Wang et al. \cite{wang2024feature}, FAVA \cite{mishra2024fava} &
 Amélioration de l'extraction, stabilisation des frontières de décision, détection au niveau des segments, validation des entités extraites.\\
 \hline
 Hallucination de relation &
 Relation incorrecte entre deux entités ou mauvaise association entre les concepts extraits. &
-LATTE \cite{zhang2026latte}, FAVA \cite{mishra2024fava} &
+FAVA \cite{mishra2024fava} &
 Extraction conjointe entité--relation, amélioration de la stabilité des frontières et détection des relations erronées.\\
 \hline
 Hallucination contextuelle &
@@ -52,7 +52,7 @@ Détermination du statut temporel de la mention, vérification de la cohérence 
 \hline
 Hallucination terminologique &
 Entité rangée dans un type que le schéma ne lui attribue pas, ou relation reliant deux types que sa signature n'autorise pas. &
-Tran et al. \cite{tran2025aspworkflow}, SHACL \cite{shacl2017}, Sadowski et Chudziak \cite{sadowski2026structured} &
+Tran et al. \cite{tran2025aspworkflow}, SHACL \cite{shacl2017} &
 Vérification de la compatibilité entre types et relations par des règles logiques, des contraintes déclaratives ou un raisonneur.\\
 \hline
 Erreur de normalisation &
@@ -62,17 +62,17 @@ Normalisation explicite vers une terminologie, vérification des codes dans une 
 \hline
 Hallucination de raisonnement &
 Erreur apparaissant lors du raisonnement clinique ou de l'intégration des informations. &
-Med-HALT \cite{pal2023medhalt}, ClinHallu \cite{yang2026clinhallu}, Dialectic-Med \cite{lu2026dialectic} &
+Med-HALT \cite{pal2023medhalt}, CuraView \cite{ye2026curaview} &
 Débat multi-agents et évaluation étape par étape du raisonnement.\\
 \hline
 Hallucination factuelle &
 Production de faits médicaux inexacts ou absents de la source, malgré un texte cohérent. &
-BN et al. \cite{bn2025fact}, Zeba et al. \cite{zeba2026mitigating}, Wang et al. \cite{wang2024feature}, FActScore \cite{min2023factscore}, SelfCheckGPT \cite{manakul2023selfcheckgpt}, entropie sémantique \cite{farquhar2024semantic} &
+BN et al. \cite{bn2025fact}, Zeba et al. \cite{zeba2026mitigating}, Wang et al. \cite{wang2024feature}, SelfCheckGPT \cite{manakul2023selfcheckgpt} &
 Atomisation des faits, extraction modulaire, vérification factuelle déterministe et cohérence entre générations.\\
 \hline
 Hallucination structurelle &
 Graphe mal formé : élément composite, doublon, relation orpheline dont une extrémité manque. &
-Paulheim \cite{paulheim2017refinement}, HoloClean \cite{rekatsinas2017holoclean}, Ghanem et Cruz \cite{ghanem2024enhancing} &
+Paulheim \cite{paulheim2017refinement}, HoloClean \cite{rekatsinas2017holoclean} &
 Détection et réparation des erreurs du graphe, réparation minimale sous contraintes, mesure de similarité entre graphes.\\
 \end{longtable}
 }
