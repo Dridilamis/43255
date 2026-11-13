@@ -342,10 +342,14 @@ def ecrire_rdf(out, base, noeuds, aretes, dossiers, chemin=None, avant=""):
             p.append(f':hypothese "{str(n["hypothese"]).lower()}"^^xsd:boolean')
         L.append(" ;\n    ".join(p) + " .")
     L.append("")
+    etiquette = {n["id"]: n["label"] for n in noeuds}
     for a in aretes:
         s, o, rel = f"g:{nom_local(a['source'])}", f"g:{nom_local(a['cible'])}", f":{nom_local(a['type'])}"
         L.append(f"{s} {rel} {o} .")
-        p = [f"g:{nom_local('assertion__' + a['id'])} a owl:NamedIndividual , :AssertionRelation", f":assertionSujet {s}",
+        titre = (f"{etiquette.get(a['source'], '?')[:40]} -- {a['type']} --> "
+                 f"{etiquette.get(a['cible'], '?')[:40]}")
+        p = [f"g:{nom_local('assertion__' + a['id'])} a owl:NamedIndividual , :AssertionRelation",
+             f"rdfs:label {lit(titre)}", f":assertionSujet {s}",
              f":typeRelation {rel}", f":assertionObjet {o}", f":issuDuDossier g:{nom_local(a['dossier'])}"]
         for k, prop in (("preuve", "preuve"), ("niveau_confiance", "niveauConfiance"),
                         ("confiance_modele", "confianceModele"), ("origine", "origine"),
