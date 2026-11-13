@@ -41,6 +41,22 @@ SELECT ?dossier (GROUP_CONCAT(DISTINCT ?germe; separator=", ") AS ?germes) WHERE
   ?d rdfs:label ?dossier .
 } GROUP BY ?dossier ORDER BY ?dossier
 
+# --- Germes et foyers (relations récupérées par relations_interpretation.py)
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dossier ?germe ?foyer WHERE {
+  ?g :micro_organisme_isole_dans ?f ; rdfs:label ?germe ; :issuDuDossier ?d .
+  ?f rdfs:label ?foyer . ?d rdfs:label ?dossier .
+} ORDER BY ?dossier
+
+# --- Diagnostics et localisation (relations récupérées par relations_interpretation.py)
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dossier ?diagnostic ?localisation WHERE {
+  ?x :label_nosologique_a_pour_foyer ?f ; rdfs:label ?diagnostic ; :issuDuDossier ?d .
+  ?f rdfs:label ?localisation . ?d rdfs:label ?dossier .
+} ORDER BY ?dossier
+
 # --- Types de relations présents dans le graphe
 PREFIX : <http://example.org/trace-sepsis/onto#>
 SELECT ?relation (COUNT(?a) AS ?n) WHERE {

@@ -66,6 +66,39 @@ de dossiers : il est dans `sorties/` et n'est pas versionné.
 | `graphe/graphe.html` | visualisation d'un dossier à la fois, autonome (fonctionne hors ligne) | navigateur |
 | `resume.json` | effectifs, relations ignorées, relations hors signature | — |
 
+## Relations d'interprétation (germes, foyers, localisations)
+
+Les règles strictes apprises (`extraction_mistral/guide_appris_v2_0.json`) interdisent à
+l'extraction 18 à 19 types de relations d'interprétation, trop rarement justes : le graphe ne
+relie alors ni les germes ni les localisations. `relations_interpretation.py` les retrouve a
+posteriori par des règles déterministes, ancrées dans une phrase du dossier, sans appel au modèle :
+
+- `micro_organisme_isole_dans` : germe et foyer cités dans la même phrase (moins de 80 caractères),
+  ou germe écrit dans la mention du foyer ; chaque germe est relié au foyer le plus proche ;
+- `label_nosologique_a_pour_foyer` : diagnostic et localisation dans la même phrase (moins de
+  40 caractères) ; chaque localisation est reliée au diagnostic le plus proche ;
+- `imagerie_objective_foyer` (option `--imagerie`, désactivée par défaut, voir ci-dessous).
+
+```
+python graphe_connaissances/relations_interpretation.py --entree TRACE_v2/sorties_v2_0/07_arbitrage --gold gold_v2_0
+python graphe_connaissances/construire_graphe.py --entree graphe_connaissances/sorties/avec_interpretation
+```
+
+Chaque relation ajoutée porte sa phrase comme preuve, l'origine `regle_interpretation` et une
+confiance moyenne. Mesure sur le Gold Standard v1.6 (43 dossiers), en retirant d'abord les
+relations du modèle pour simuler l'interdiction :
+
+| Relation | Ajoutées | Justes | Précision | Rappel | Modèle (run v1.6) |
+|---|---|---|---|---|---|
+| `micro_organisme_isole_dans` | 37 | 24 | 64,9 % | 20,0 % | 65,7 % / 19,2 % |
+| `imagerie_objective_foyer` | 18 | 7 | 38,9 % | 8,9 % | 66,7 % / 12,7 % |
+
+La règle germe → foyer fait aussi bien que le modèle. Le rappel est borné par l'extraction : sur
+les 120 relations de référence, 40 seulement ont leurs deux extrémités extraites sur la même page.
+La règle d'imagerie fait moins bien que le modèle et reste désactivée.
+`label_nosologique_a_pour_foyer` n'existe pas dans le gold v1.6 : sa précision doit être mesurée
+avec `--gold gold_v2_0`, comme celle des deux autres règles sur le schéma v2.0.
+
 ## Choix de modélisation
 
 - **Un nœud patient par dossier.** Les mentions « le patient », « la patiente »… sont fusionnées
