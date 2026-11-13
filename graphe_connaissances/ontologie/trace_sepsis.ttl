@@ -1,0 +1,559 @@
+@prefix : <http://example.org/trace-sepsis/onto#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://example.org/trace-sepsis/onto> a owl:Ontology ;
+    rdfs:label "Ontologie TRACE-Sepsis v2.0"@fr ;
+    owl:versionInfo "2.0" ;
+    rdfs:comment "Ontologie générée à partir du TRACE-Sepsis Annotation Guideline : types d'entités, signatures des relations et règles dérivées."@fr ;
+    dcterms:source "Sepsis-2 (Levy et al., 2003, International Sepsis Definitions Conference)" ;
+    dcterms:source "Sepsis-3 (Singer et al., 2016)" ;
+    dcterms:source "Surviving Sepsis Campaign (SSC 2021)" ;
+    dcterms:source "KDIGO AKI Guidelines 2012" ;
+    dcterms:source "EUCAST v14.0 (2024)" ;
+    dcterms:source "Vincent et al., 1996 (score SOFA)" .
+
+:Dossier a owl:Class ; rdfs:label "Dossier"@fr ;
+    rdfs:comment "Dossier médical scanné (identifiant pseudonymisé)."@fr .
+:EntiteClinique a owl:Class ; rdfs:label "Entité clinique"@fr .
+:Patient a owl:Class ; rdfs:subClassOf :DONNEE_PATIENT ; rdfs:label "Patient"@fr ;
+    rdfs:comment "Nœud unique du patient d'un dossier, qui réunit ses mentions (\"le patient\", \"la patiente\"...)."@fr .
+:AssertionRelation a owl:Class ; rdfs:subClassOf rdf:Statement ;
+    rdfs:label "Assertion de relation"@fr ;
+    rdfs:comment "Réification d'une relation extraite, qui porte sa preuve, sa page et sa confiance."@fr .
+
+:DONNEE_PATIENT a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "donnee patient"@fr ;
+    rdfs:comment "Donnees demographiques et administratives non identifiantes du patient (cardinalite : unique par dossier)."@fr .
+:LABEL_NOSOLOGIQUE a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "label nosologique"@fr ;
+    skos:example "sepsis" ;
+    skos:example "sepsis_severe" ;
+    skos:example "choc_septique" ;
+    skos:example "choc_septique_refractaire" ;
+    skos:example "sepsis_sans_choc" ;
+    skos:example "bacteriemie_isolee" ;
+    skos:example "suspicion_infection" ;
+    skos:example "infection_documentee_sans_dysfonction_organe" ;
+    skos:example "pneumopathie" ;
+    skos:example "pneumonie" ;
+    skos:example "pneumopathie_communautaire" ;
+    skos:example "pneumopathie_nosocomiale" ;
+    skos:example "pneumopathie_inhalation" ;
+    skos:example "PAVM" ;
+    skos:example "SDRA" ;
+    skos:example "CIVD" ;
+    skos:example "syndrome_activation_macrophagique" ;
+    skos:example "IRA" ;
+    skos:example "abces" ;
+    skos:example "pyelonephrite" ;
+    skos:example "erysipele" ;
+    skos:example "sinusite" ;
+    skos:example "gangrene_gazeuse" ;
+    rdfs:comment "Diagnostic nosologique principal ou diagnostic clinique majeur explicitement mentionne dans le dossier, avec priorite aux diagnostics lies au sepsis et a ses complications. Il decrit en premier lieu l'episode d'hospitalisation actuel. Un diagnostic de la liste valeurs_autorisees (ex. pneumopathie, choc septique) reste toujours un LABEL_NOSOLOGIQUE, meme s'il est rapporte a un episode anterieur : le texte porte la temporalite."@fr .
+:SIGNE_VITAL a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "signe vital"@fr ;
+    skos:example "frequence_cardiaque" ;
+    skos:example "pression_arterielle_systolique" ;
+    skos:example "pression_arterielle_diastolique" ;
+    skos:example "pression_arterielle_moyenne" ;
+    skos:example "frequence_respiratoire" ;
+    skos:example "temperature_corporelle" ;
+    skos:example "SpO2" ;
+    skos:example "debit_cardiaque" ;
+    skos:example "index_cardiaque" ;
+    skos:example "pression_veineuse_centrale" ;
+    skos:example "saturation_veineuse_centrale_O2" ;
+    skos:example "diurese_horaire" ;
+    skos:example "diurese_24h" ;
+    skos:example "temps_recoloration_cutanee" ;
+    skos:example "FiO2" ;
+    skos:example "PEEP" ;
+    skos:example "pression_plateau" ;
+    skos:example "poids" ;
+    skos:example "IMC" ;
+    rdfs:comment "Parametres physiologiques, hemodynamiques et ventilatoires mesures ponctuellement chez le patient."@fr .
+:BIOMARQUEUR a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "biomarqueur"@fr ;
+    skos:example "lactate" ;
+    skos:example "proteine_C_reactive" ;
+    skos:example "procalcitonine" ;
+    skos:example "creatinine" ;
+    skos:example "uree" ;
+    skos:example "DFG" ;
+    skos:example "sodium" ;
+    skos:example "potassium" ;
+    skos:example "chlorure" ;
+    skos:example "calcium" ;
+    skos:example "phosphate" ;
+    skos:example "magnesium" ;
+    skos:example "glycemie" ;
+    skos:example "bilirubine_totale" ;
+    skos:example "bilirubine_conjuguee" ;
+    skos:example "ASAT" ;
+    skos:example "ALAT" ;
+    skos:example "gamma_GT" ;
+    skos:example "phosphatases_alcalines" ;
+    skos:example "LDH" ;
+    skos:example "CPK" ;
+    skos:example "lipase" ;
+    skos:example "amylase" ;
+    skos:example "albumine" ;
+    skos:example "prealbumine" ;
+    skos:example "protides" ;
+    skos:example "globules_blancs" ;
+    skos:example "polynucleaires_neutrophiles" ;
+    skos:example "lymphocytes" ;
+    skos:example "monocytes" ;
+    skos:example "eosinophiles" ;
+    skos:example "basophiles" ;
+    skos:example "hemoglobine" ;
+    skos:example "hematocrite" ;
+    skos:example "hematies" ;
+    skos:example "VGM" ;
+    skos:example "plaquettes" ;
+    skos:example "TP" ;
+    skos:example "TCA" ;
+    skos:example "fibrinogene" ;
+    skos:example "D_dimeres" ;
+    skos:example "facteur_II" ;
+    skos:example "facteur_V" ;
+    skos:example "facteur_VII" ;
+    skos:example "facteur_X" ;
+    skos:example "pH_arteriel" ;
+    skos:example "PaO2" ;
+    skos:example "PaCO2" ;
+    skos:example "bicarbonates" ;
+    skos:example "CO2_total" ;
+    skos:example "saturation_arterielle_O2" ;
+    skos:example "rapport_PaO2_FiO2" ;
+    skos:example "troponine" ;
+    skos:example "BNP" ;
+    skos:example "cortisol" ;
+    skos:example "TSH" ;
+    skos:example "ferritine" ;
+    skos:example "triglycerides" ;
+    skos:example "haptoglobine" ;
+    skos:example "schizocytes" ;
+    skos:example "reticulocytes" ;
+    skos:example "proteinurie" ;
+    skos:example "natriurese" ;
+    skos:example "FeNa" ;
+    skos:example "ammoniemie" ;
+    skos:example "antigenemie" ;
+    skos:example "antigenurie" ;
+    skos:example "charge_microbiologique" ;
+    rdfs:comment "Resultats biologiques, gazometriques, hematologiques, biochimiques et microbiologiques quantitatifs."@fr .
+:SCORE_SOFA a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "score sofa"@fr ;
+    rdfs:comment "Score SOFA total et ses 6 composantes (evaluation centrale de la dysfonction d'organe)."@fr .
+:SCORE_qSOFA a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "score qsofa"@fr ;
+    rdfs:comment "Outil de reperage rapide hors reanimation (score de 0 a 3)."@fr .
+:SCORE_NEUROLOGIQUE a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "score neurologique"@fr ;
+    skos:example "Glasgow" ;
+    skos:example "RASS" ;
+    skos:example "FOUR_score" ;
+    skos:example "MMS" ;
+    skos:example "testing_musculaire" ;
+    rdfs:comment "Score neurologique explicitement rapporte dans le dossier clinique."@fr .
+:STADE_IRA a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "stade ira"@fr ;
+    skos:example "1" ;
+    skos:example "2" ;
+    skos:example "3" ;
+    rdfs:comment "Stadification de la gravite de l'insuffisance renale aigue (variations relatives de creatinine et de diurese)."@fr .
+:FOYER_INFECTIEUX a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "foyer infectieux"@fr ;
+    rdfs:comment "Localisation anatomique de l'infection (organe, region, site), suspectee ou confirmee. C'est UNIQUEMENT une localisation, toujours celle d'un diagnostic : le nom d'un diagnostic infectieux (pneumopathie, PAVM...) n'est jamais un FOYER_INFECTIEUX mais un LABEL_NOSOLOGIQUE. FOYER_INFECTIEUX est RESERVE a la localisation d'un LABEL_NOSOLOGIQUE, auquel il est relie par label_nosologique_a_pour_foyer ; la localisation d'une COMORBIDITE_ANTECEDENT n'est pas un FOYER_INFECTIEUX."@fr .
+:MICRO_ORGANISME a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "micro organisme"@fr ;
+    rdfs:comment "Agent pathogene identifie lors d'un prelevement microbiologique."@fr .
+:DEFAILLANCE_ORGANE a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "defaillance organe"@fr ;
+    rdfs:comment "Dysfonction d'un ou plusieurs systemes physiologiques."@fr .
+:TRAITEMENT a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "traitement"@fr ;
+    skos:example "antibiotique" ;
+    skos:example "antifongique" ;
+    skos:example "antiviral" ;
+    skos:example "vasopresseur" ;
+    skos:example "inotrope" ;
+    skos:example "antiarythmique" ;
+    skos:example "remplissage_vasculaire" ;
+    skos:example "cristalloide" ;
+    skos:example "colloide" ;
+    skos:example "albumine" ;
+    skos:example "ventilation_mecanique" ;
+    skos:example "VNI" ;
+    skos:example "oxygenotherapie" ;
+    skos:example "NO_inhale" ;
+    skos:example "curarisation" ;
+    skos:example "intubation" ;
+    skos:example "extubation" ;
+    skos:example "tracheotomie" ;
+    skos:example "epuration_extra_renale" ;
+    skos:example "hemodialyse" ;
+    skos:example "hemofiltration" ;
+    skos:example "corticoide" ;
+    skos:example "sedatif" ;
+    skos:example "analgesique" ;
+    skos:example "insuline" ;
+    skos:example "transfusion_CGR" ;
+    skos:example "transfusion_plaquettes" ;
+    skos:example "transfusion_PFC" ;
+    skos:example "nutrition_enterale" ;
+    skos:example "nutrition_parenterale" ;
+    skos:example "drainage" ;
+    skos:example "drain_thoracique" ;
+    skos:example "ponction_evacuatrice" ;
+    skos:example "chirurgie" ;
+    skos:example "amputation" ;
+    skos:example "decubitus_ventral" ;
+    skos:example "ecmo" ;
+    skos:example "autre" ;
+    rdfs:comment "Interventions therapeutiques administrees au patient, medicamenteuses ou de support."@fr .
+:POSOLOGIE a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "posologie"@fr ;
+    rdfs:comment "Detail d'administration d'un traitement. Justifiee comme entite (et non attribut) car : (1) structure interne multi-champs (dose, unite, schema horaire), (2) temporalite propre distincte du TRAITEMENT parent (une posologie peut etre modifiee en cours de sejour, ex. ajustement renal, sans changer la nature du traitement), (3) notation heterogene observee en pratique (schema par moments de la journee type '1-0-1' vs schema par intervalle type '1 amp/8h') necessitant une decomposition structuree."@fr .
+:CONTEXTE_ACQUISITION a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "contexte acquisition"@fr ;
+    rdfs:comment "Mode et circonstances d'acquisition d'une comorbidite ou d'une exposition, anciennement attribut isole de COMORBIDITE_ANTECEDENT, promu en entite car il porte sa propre relation vers MICRO_ORGANISME."@fr .
+:COMORBIDITE_ANTECEDENT a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "comorbidite antecedent"@fr ;
+    rdfs:comment "Antecedents medicaux, comorbidites chroniques et diagnostics d'EPISODES ANTERIEURS dont le nom n'est pas dans la liste valeurs_autorisees de LABEL_NOSOLOGIQUE (y compris les antecedents infectieux hors liste, ex. tuberculose ancienne), influencant le terrain de risque infectieux."@fr .
+:EVENEMENT_TEMPOREL a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "evenement temporel"@fr ;
+    skos:example "debut_symptomes" ;
+    skos:example "admission_urgences_ou_service" ;
+    skos:example "admission_reanimation" ;
+    skos:example "premier_prelevement_microbiologique" ;
+    skos:example "premiere_dose_antibiotique" ;
+    skos:example "adaptation_antibiotherapie" ;
+    skos:example "arret_antibiotherapie" ;
+    skos:example "debut_remplissage_vasculaire" ;
+    skos:example "debut_vasopresseurs" ;
+    skos:example "sevrage_vasopresseurs" ;
+    skos:example "mesure_lactate_T0" ;
+    skos:example "mesure_lactate_T2h" ;
+    skos:example "controle_source" ;
+    skos:example "intubation_orotracheale" ;
+    skos:example "extubation" ;
+    skos:example "reintubation" ;
+    skos:example "tracheotomie" ;
+    skos:example "debut_epuration_extra_renale" ;
+    skos:example "arret_epuration_extra_renale" ;
+    skos:example "transfusion" ;
+    skos:example "intervention_chirurgicale" ;
+    skos:example "transfert_service" ;
+    skos:example "sortie_reanimation" ;
+    skos:example "sortie_hopital" ;
+    skos:example "arret_cardiorespiratoire" ;
+    skos:example "deces" ;
+    rdfs:comment "Evenements horodates cles de la trajectoire clinique et therapeutique, incluant les jalons SSC et les evenements majeurs du sejour."@fr .
+:EVOLUTION_PRONOSTIC a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "evolution pronostic"@fr ;
+    rdfs:comment "Evolution clinique, devenir du patient et mesures de sejour."@fr .
+:SERVICE_MEDICAL a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "service medical"@fr ;
+    rdfs:comment "Unites ou services de prise en charge successifs au cours de l'hospitalisation."@fr .
+:IMAGERIE_PROCEDURE a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "imagerie procedure"@fr ;
+    skos:example "radiographie" ;
+    skos:example "scanner" ;
+    skos:example "tomodensitometrie" ;
+    skos:example "TDM" ;
+    skos:example "angioscanner" ;
+    skos:example "IRM" ;
+    skos:example "echographie" ;
+    skos:example "echographie_abdominale" ;
+    skos:example "echographie_renale" ;
+    skos:example "echographie_pleurale" ;
+    skos:example "echocardiographie" ;
+    skos:example "ETT" ;
+    skos:example "ECG" ;
+    skos:example "EEG" ;
+    skos:example "EMG" ;
+    skos:example "EFR" ;
+    skos:example "fibroscopie" ;
+    skos:example "fibroscopie_bronchique" ;
+    skos:example "fibroscopie_oesogastroduodenale" ;
+    skos:example "endoscopie" ;
+    skos:example "angiographie" ;
+    skos:example "ponction_lombaire" ;
+    skos:example "ponction_pleurale" ;
+    skos:example "ponction_ascite" ;
+    skos:example "biopsie" ;
+    skos:example "PDP" ;
+    skos:example "LBA" ;
+    skos:example "ECBU" ;
+    skos:example "hemoculture" ;
+    skos:example "ECBC" ;
+    skos:example "aspiration_tracheale" ;
+    skos:example "autre" ;
+    rdfs:comment "Examen d'imagerie ou procedure diagnostique explicitement mentionne dans le document."@fr .
+:SYMPTOME a owl:Class ; rdfs:subClassOf :EntiteClinique ;
+    rdfs:label "symptome"@fr ;
+    skos:example "fievre" ;
+    skos:example "frissons" ;
+    skos:example "cephalees" ;
+    skos:example "toux" ;
+    skos:example "dyspnee" ;
+    skos:example "orthopnee" ;
+    skos:example "polypnee" ;
+    skos:example "expectoration" ;
+    skos:example "douleur_thoracique" ;
+    skos:example "douleur_abdominale" ;
+    skos:example "douleur_lombaire" ;
+    skos:example "myalgies" ;
+    skos:example "nausees" ;
+    skos:example "vomissements" ;
+    skos:example "diarrhee" ;
+    skos:example "fatigue" ;
+    skos:example "asthenie" ;
+    skos:example "anorexie" ;
+    skos:example "confusion" ;
+    skos:example "agitation" ;
+    skos:example "somnolence" ;
+    skos:example "desorientation" ;
+    skos:example "ralentissement_psychomoteur" ;
+    skos:example "trouble_deglutition" ;
+    skos:example "fausse_route" ;
+    skos:example "cyanose" ;
+    skos:example "marbrures" ;
+    skos:example "extremites_froides" ;
+    skos:example "tirage" ;
+    skos:example "crepitants" ;
+    skos:example "ronchis" ;
+    skos:example "sibilants" ;
+    skos:example "encombrement" ;
+    skos:example "malaise" ;
+    skos:example "syncope" ;
+    skos:example "photophobie" ;
+    skos:example "raideur_nuque" ;
+    skos:example "urines_foncees" ;
+    skos:example "hematurie" ;
+    skos:example "oligurie" ;
+    skos:example "anurie" ;
+    skos:example "ictere" ;
+    skos:example "purpura" ;
+    skos:example "alteration_etat_general" ;
+    skos:example "perte_poids" ;
+    rdfs:comment "Manifestation clinique rapportée par le patient ou observée lors de l'examen clinique. Un symptôme ne constitue pas un diagnostic, une défaillance d'organe ni un résultat biologique."@fr .
+
+[] a owl:AllDisjointClasses ; owl:members ( :DONNEE_PATIENT :LABEL_NOSOLOGIQUE :SIGNE_VITAL :BIOMARQUEUR :SCORE_SOFA :SCORE_qSOFA :SCORE_NEUROLOGIQUE :STADE_IRA :FOYER_INFECTIEUX :MICRO_ORGANISME :DEFAILLANCE_ORGANE :TRAITEMENT :POSOLOGIE :CONTEXTE_ACQUISITION :COMORBIDITE_ANTECEDENT :EVENEMENT_TEMPOREL :EVOLUTION_PRONOSTIC :SERVICE_MEDICAL :IMAGERIE_PROCEDURE :SYMPTOME ) .
+
+:issuDuDossier a owl:ObjectProperty ; rdfs:domain :EntiteClinique ; rdfs:range :Dossier ;
+    rdfs:label "issu du dossier"@fr .
+:aPourPatient a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :Dossier ; rdfs:range :Patient ;
+    rdfs:label "a pour patient"@fr .
+:relationClinique a owl:ObjectProperty ; rdfs:domain :EntiteClinique ; rdfs:range :EntiteClinique ;
+    rdfs:label "relation clinique"@fr .
+
+:RELATIONS_DIAGNOSTIQUES a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation diagnostique"@fr .
+:RELATIONS_THERAPEUTIQUES a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation thérapeutique"@fr .
+:RELATIONS_SIGNES_VITAUX a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation des signes vitaux"@fr .
+:RELATIONS_BIOMARQUEURS_ET_MICROBIO a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation des biomarqueurs et de la microbiologie"@fr .
+:RELATIONS_TERRAIN_ET_RISQUE a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation du terrain et du risque"@fr .
+:RELATIONS_TEMPORELLES_ET_PRONOSTIC a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation temporelle et pronostique"@fr .
+:RELATIONS_IMAGERIE a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation d'imagerie"@fr .
+:RELATIONS_SYMPTOMES a owl:ObjectProperty ; rdfs:subPropertyOf :relationClinique ; rdfs:label "relation des symptômes"@fr .
+
+:a_pour_label_nosologique a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :DONNEE_PATIENT ; rdfs:range :LABEL_NOSOLOGIQUE ;
+    rdfs:label "a pour label nosologique"@fr ;
+    rdfs:comment "Lien entre le patient et son diagnostic (LABEL_NOSOLOGIQUE)."@fr .
+:label_nosologique_a_pour_foyer a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :LABEL_NOSOLOGIQUE ; rdfs:range :FOYER_INFECTIEUX ;
+    rdfs:label "label nosologique a pour foyer"@fr ;
+    rdfs:comment "Relie un diagnostic (LABEL_NOSOLOGIQUE) a sa localisation (ex. 'choc septique' -> 'point de depart pulmonaire', 'pyelonephrite' -> 'droite'). Remplace presente_suspicion_infection : le foyer n'est plus relie directement au patient. Creee seulement si la localisation est ecrite."@fr .
+:presente_dysfonction_organe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :DONNEE_PATIENT ; rdfs:range :DEFAILLANCE_ORGANE ;
+    rdfs:label "presente dysfonction organe"@fr ;
+    rdfs:comment "Dysfonction d'organe induite par la reponse dysreguleee."@fr .
+:score_sofa_calcule_pour a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :SCORE_SOFA ; rdfs:range :DONNEE_PATIENT ;
+    rdfs:label "score sofa calcule pour"@fr .
+:score_sofa_inclut_biomarqueur a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :SCORE_SOFA ; rdfs:range :BIOMARQUEUR ;
+    rdfs:label "score sofa inclut biomarqueur"@fr .
+:score_sofa_inclut_signe_vital a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :SCORE_SOFA ; rdfs:range :SIGNE_VITAL ;
+    rdfs:label "score sofa inclut signe vital"@fr .
+:score_sofa_inclut_score_neurologique a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :SCORE_SOFA ; rdfs:range :SCORE_NEUROLOGIQUE ;
+    rdfs:label "score sofa inclut score neurologique"@fr ;
+    rdfs:comment "Le SOFA inclut le score neurologique, specifiquement sa composante neurologique (Glasgow). Validee par le medecin."@fr .
+:score_qsofa_calcule_pour a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :SCORE_qSOFA ; rdfs:range :DONNEE_PATIENT ;
+    rdfs:label "score qsofa calcule pour"@fr ;
+    rdfs:comment "Lien entre le score qSOFA et le patient evalue."@fr .
+:score_qsofa_inclut_score_neurologique a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :SCORE_qSOFA ; rdfs:range :SCORE_NEUROLOGIQUE ;
+    rdfs:label "score qsofa inclut score neurologique"@fr ;
+    rdfs:comment "Le qSOFA inclut le critere neurologique (confusion ou Glasgow < 15, voir R4bis). Validee par le medecin."@fr .
+:stade_ira_calcule_pour a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :STADE_IRA ; rdfs:range :DONNEE_PATIENT ;
+    rdfs:label "stade ira calcule pour"@fr ;
+    rdfs:comment "Lien entre le stade d'insuffisance renale aigue (calcule selon KDIGO 2012) et le patient concerne."@fr .
+:ira_a_pour_stade a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_DIAGNOSTIQUES ;
+    rdfs:domain :DEFAILLANCE_ORGANE ; rdfs:range :STADE_IRA ;
+    rdfs:label "ira a pour stade"@fr ;
+    rdfs:comment "Relie une IRA (DEFAILLANCE_ORGANE, manifestation IRA) a son stade KDIGO 2012 (STADE_IRA). Creee uniquement si le stade est explicitement ecrit dans le document (regle R8_inference)."@fr .
+:traitement_administre_a a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_THERAPEUTIQUES ;
+    rdfs:domain :TRAITEMENT ; rdfs:range :DONNEE_PATIENT ;
+    rdfs:label "traitement administre a"@fr .
+:traitement_a_pour_posologie a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_THERAPEUTIQUES ;
+    rdfs:domain :TRAITEMENT ; rdfs:range :POSOLOGIE ;
+    rdfs:label "traitement a pour posologie"@fr .
+:antibiotique_adequat_pour a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_THERAPEUTIQUES ;
+    rdfs:domain :TRAITEMENT ; rdfs:range :MICRO_ORGANISME ;
+    rdfs:label "antibiotique adequat pour"@fr ;
+    rdfs:comment "Conformite selon l'antibiogramme EUCAST."@fr .
+:antibiotique_inadequat_pour a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_THERAPEUTIQUES ;
+    rdfs:domain :TRAITEMENT ; rdfs:range :MICRO_ORGANISME ;
+    rdfs:label "antibiotique inadequat pour"@fr .
+:traitement_cible_defaillance a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_THERAPEUTIQUES ;
+    rdfs:domain :TRAITEMENT ; rdfs:range :DEFAILLANCE_ORGANE ;
+    rdfs:label "traitement cible defaillance"@fr .
+:traitement_indique_par_label_nosologique a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_THERAPEUTIQUES ;
+    rdfs:domain :TRAITEMENT ; rdfs:range :LABEL_NOSOLOGIQUE ;
+    rdfs:label "traitement indique par label nosologique"@fr ;
+    rdfs:comment "Relation generique remplacant corticoide_indique_par_choc_refractaire. La condition specifique (corticoides <-> choc_septique_refractaire) est portee par regles_derivees.R5, pas par le nom de la relation."@fr .
+:signe_vital_supporte_defaillance_organe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_SIGNES_VITAUX ;
+    rdfs:domain :SIGNE_VITAL ; rdfs:range :DEFAILLANCE_ORGANE ;
+    rdfs:label "signe vital supporte defaillance organe"@fr ;
+    rdfs:comment "Un paramètre physiologique anormal contribue à identifier une défaillance d'organe."@fr .
+:biomarqueur_obtenu_a a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_BIOMARQUEURS_ET_MICROBIO ;
+    rdfs:domain :BIOMARQUEUR ; rdfs:range :EVENEMENT_TEMPOREL ;
+    rdfs:label "biomarqueur obtenu a"@fr .
+:biomarqueur_supporte_defaillance_organe a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_BIOMARQUEURS_ET_MICROBIO ;
+    rdfs:domain :BIOMARQUEUR ; rdfs:range :DEFAILLANCE_ORGANE ;
+    rdfs:label "biomarqueur supporte defaillance organe"@fr ;
+    rdfs:comment "Voir BIOMARQUEUR.orientation_clinique pour les biomarqueurs propres a chaque defaillance."@fr .
+:biomarqueur_est_critere_de a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_BIOMARQUEURS_ET_MICROBIO ;
+    rdfs:domain :BIOMARQUEUR ; rdfs:range :LABEL_NOSOLOGIQUE ;
+    rdfs:label "biomarqueur est critere de"@fr ;
+    rdfs:comment "Relation generique remplacant biomarqueur_est_composante_choc_septique. Le seuil (ex. lactate >= 2 mmol/L) est porte par regles_derivees.R1, pas par le nom de la relation."@fr .
+:micro_organisme_isole_dans a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_BIOMARQUEURS_ET_MICROBIO ;
+    rdfs:domain :MICRO_ORGANISME ; rdfs:range :FOYER_INFECTIEUX ;
+    rdfs:label "micro organisme isole dans"@fr ;
+    rdfs:comment "Site ou le pathogene a ete preleve ou isole (ex. hemoculture, LBA)."@fr .
+:comorbidite_est_facteur_risque_de a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_TERRAIN_ET_RISQUE ;
+    rdfs:domain :COMORBIDITE_ANTECEDENT ; rdfs:range :LABEL_NOSOLOGIQUE ;
+    rdfs:label "comorbidite est facteur risque de"@fr .
+:a_pour_contexte_acquisition a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_TERRAIN_ET_RISQUE ;
+    rdfs:domain :COMORBIDITE_ANTECEDENT ; rdfs:range :CONTEXTE_ACQUISITION ;
+    rdfs:label "a pour contexte acquisition"@fr ;
+    rdfs:comment "Relation structurelle remplacant l'ancien attribut contexte_acquisition, desormais entite autonome."@fr .
+:contexte_acquisition_influence_risque_resistance a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_TERRAIN_ET_RISQUE ;
+    rdfs:domain :CONTEXTE_ACQUISITION ; rdfs:range :MICRO_ORGANISME ;
+    rdfs:label "contexte acquisition influence risque resistance"@fr ;
+    rdfs:comment "Relation generique remplacant contexte_acquisition_augmente_risque_BMR. Le niveau de risque specifique (ex. BMR) est porte par regles_derivees.R7, pas par le nom de la relation."@fr .
+:precede a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_TEMPORELLES_ET_PRONOSTIC ;
+    rdfs:domain :EVENEMENT_TEMPOREL ; rdfs:range :EVENEMENT_TEMPOREL ;
+    rdfs:label "precede"@fr ;
+    rdfs:comment "Relation chronologique generique remplacant ordre_chronologique_prelevement_precede_ATB, delai_admission_vers_premier_ATB et delai_T0_vers_lactate_T2h. Chaque instance relie deux valeurs de EVENEMENT_TEMPOREL.valeurs_autorisees deja definies ; aucune paire specifique n'est plus figee dans le nom."@fr .
+:patient_a_pour_evolution a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_TEMPORELLES_ET_PRONOSTIC ;
+    rdfs:domain :DONNEE_PATIENT ; rdfs:range :EVOLUTION_PRONOSTIC ;
+    rdfs:label "patient a pour evolution"@fr .
+:evenement_associe_evolution a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_TEMPORELLES_ET_PRONOSTIC ;
+    rdfs:domain :EVENEMENT_TEMPOREL ; rdfs:range :EVOLUTION_PRONOSTIC ;
+    rdfs:label "evenement associe evolution"@fr ;
+    rdfs:comment "Relation generique remplacant delai_ATB_superieur_60min_associe_mortalite. Le seuil (60 min) est porte par regles_derivees.R2, pas par le nom de la relation."@fr .
+:service_medical_accueille a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_TEMPORELLES_ET_PRONOSTIC ;
+    rdfs:domain :SERVICE_MEDICAL ; rdfs:range :DONNEE_PATIENT ;
+    rdfs:label "service medical accueille"@fr ;
+    rdfs:comment "Lien entre un service de prise en charge et le patient qui y est hospitalise."@fr .
+:imagerie_objective_foyer a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_IMAGERIE ;
+    rdfs:domain :IMAGERIE_PROCEDURE ; rdfs:range :FOYER_INFECTIEUX ;
+    rdfs:label "imagerie objective foyer"@fr ;
+    rdfs:comment "L'examen d'imagerie objective un foyer infectieux."@fr .
+:presente_symptome a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_SYMPTOMES ;
+    rdfs:domain :DONNEE_PATIENT ; rdfs:range :SYMPTOME ;
+    rdfs:label "presente symptome"@fr ;
+    rdfs:comment "Relie le patient aux symptômes explicitement mentionnés dans le dossier clinique."@fr .
+:micro_organisme_infecte_site a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_BIOMARQUEURS_ET_MICROBIO ;
+    rdfs:domain :MICRO_ORGANISME ; rdfs:range :FOYER_INFECTIEUX ;
+    rdfs:label "micro organisme infecte site"@fr ;
+    rdfs:comment "Le pathogene est responsable de l'infection de ce site (site d'infection), a distinguer de micro_organisme_isole_dans (site ou il a ete preleve ou isole). Creee uniquement si le document relie explicitement le pathogene au site infecte."@fr .
+:symptome_oriente_foyer a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_SYMPTOMES ;
+    rdfs:domain :SYMPTOME ; rdfs:range :FOYER_INFECTIEUX ;
+    rdfs:label "symptome oriente foyer"@fr ;
+    rdfs:comment "Le symptome oriente vers un foyer infectieux (ex. toux, expectoration -> pulmonaire ; brulures mictionnelles -> voies urinaires). Creee seulement si le document relie explicitement le symptome au foyer."@fr .
+:symptome_associe_gravite_initiale a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RELATIONS_SYMPTOMES ;
+    rdfs:domain :SYMPTOME ; rdfs:range :SCORE_SOFA ;
+    rdfs:label "symptome associe gravite initiale"@fr ;
+    rdfs:comment "Le symptome participe a la gravite initiale du patient, evaluee par le score SOFA (ex. confusion -> composante neurologique). Creee seulement si le document l'etablit."@fr .
+
+:mention a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "mention"@fr ; rdfs:comment "Mention telle qu'elle est écrite dans la page."@fr .
+:parametre a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "paramètre"@fr ; rdfs:comment "Forme canonique du concept (guideline)."@fr .
+:valeur a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "valeur"@fr ; rdfs:comment "Valeur écrite (texte)."@fr .
+:valeurNumerique a owl:DatatypeProperty ; rdfs:range xsd:decimal ; rdfs:label "valeur numérique"@fr ; rdfs:comment "Valeur convertie en nombre lorsque c'est possible."@fr .
+:unite a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "unité"@fr ; rdfs:comment "Unité de la valeur."@fr .
+:horodatage a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "horodatage"@fr ; rdfs:comment "Date ou heure écrite avec l'entité."@fr .
+:page a owl:DatatypeProperty ; rdfs:range xsd:integer ; rdfs:label "page"@fr ; rdfs:comment "Page du dossier où l'élément est écrit."@fr .
+:preuve a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "preuve"@fr ; rdfs:comment "Passage du dossier qui justifie l'élément."@fr .
+:nie a owl:DatatypeProperty ; rdfs:range xsd:boolean ; rdfs:label "niée"@fr ; rdfs:comment "Vrai si l'entité est explicitement niée (absence conservée comme information)."@fr .
+:hypothese a owl:DatatypeProperty ; rdfs:range xsd:boolean ; rdfs:label "hypothèse"@fr ; rdfs:comment "Vrai si l'entité est seulement suspectée ou évoquée."@fr .
+:temporalite a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "temporalité"@fr ; rdfs:comment "ANTERIEUR, SEJOUR ou SORTIE (étage 6 de TRACE)."@fr .
+:section a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "section"@fr ; rdfs:comment "Section du compte rendu où l'élément est cité."@fr .
+:confianceModele a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "confiance du modèle"@fr ; rdfs:comment "Confiance déclarée par le modèle à l'extraction."@fr .
+:niveauConfiance a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "niveau de confiance TRACE"@fr ; rdfs:comment "HIGH, MEDIUM ou LOW (arbitrage de TRACE)."@fr .
+:signalFaible a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "signal faible"@fr ; rdfs:comment "Signal faible relevé par l'arbitrage."@fr .
+:origine a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "origine"@fr ; rdfs:comment "extraction directe, réparation SGCE ou récupération structurée."@fr .
+:identifiantSource a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "identifiant source"@fr ; rdfs:comment "Identifiant de l'élément dans le JSON TRACE."@fr .
+
+:assertionSujet a owl:ObjectProperty ; rdfs:subPropertyOf rdf:subject ; rdfs:domain :AssertionRelation .
+:assertionObjet a owl:ObjectProperty ; rdfs:subPropertyOf rdf:object ; rdfs:domain :AssertionRelation .
+
+:regle_R1_lactate_critere_choc_septique a owl:NamedIndividual ; rdfs:label "R1_lactate_critere_choc_septique" ; rdfs:comment "Definition Sepsis-3 du choc septique : presence de vasopresseurs ET BIOMARQUEUR(type=lactate, valeur >= 2, unite=mmol/L) -> biomarqueur_est_critere_de(LABEL_NOSOLOGIQUE=choc_septique)."@fr .
+:regle_R2_delai_ATB_mortalite a owl:NamedIndividual ; rdfs:label "R2_delai_ATB_mortalite" ; rdfs:comment "EVENEMENT_TEMPOREL(type=premiere_dose_antibiotique, delai_depuis_admission_minutes > 60) -> evenement_associe_evolution(EVOLUTION_PRONOSTIC, risque=eleve)"@fr .
+:regle_R3_qsofa_critere_frequence_respiratoire a owl:NamedIndividual ; rdfs:label "R3_qsofa_critere_frequence_respiratoire" ; rdfs:comment "SIGNE_VITAL(type=frequence_respiratoire, valeur >= 22) -> SCORE_qSOFA.critere_frequence_respiratoire = true"@fr .
+:regle_R4_qsofa_critere_pression_arterielle a owl:NamedIndividual ; rdfs:label "R4_qsofa_critere_pression_arterielle" ; rdfs:comment "SIGNE_VITAL(type=pression_arterielle_systolique, valeur <= 100) -> SCORE_qSOFA.critere_pression_arterielle_systolique = true"@fr .
+:regle_R5_indication_corticoides a owl:NamedIndividual ; rdfs:label "R5_indication_corticoides" ; rdfs:comment "LABEL_NOSOLOGIQUE = choc_septique_refractaire -> traitement_indique_par_label_nosologique(TRAITEMENT=corticoides)"@fr .
+:regle_R7_contexte_acquisition_risque_BMR a owl:NamedIndividual ; rdfs:label "R7_contexte_acquisition_risque_BMR" ; rdfs:comment "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true OU voyage recent a l'etranger dans un pays a forte prevalence de BMR) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR)."@fr .
+:regle_R8_IMAGERIE_PROCEDURE a owl:NamedIndividual ; rdfs:label "R8_IMAGERIE_PROCEDURE" ; rdfs:comment "Une relation d'imagerie est creee uniquement si l'examen et l'entite cible sont presents dans le document. Aucune inference n'est autorisee."@fr .
+:regle_R9_SYMPTOME a owl:NamedIndividual ; rdfs:label "R9_SYMPTOME" ; rdfs:comment "Une relation presente_symptome est créée uniquement si le symptôme est explicitement mentionné dans le document. Aucune inférence diagnostique n'est autorisée à partir d'un symptôme seul."@fr .
+:regle_R10_stade_IRA a owl:NamedIndividual ; rdfs:label "R10_stade_IRA" ; rdfs:comment "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine)."@fr .
+:regle_R11_site_infection_pathogene a owl:NamedIndividual ; rdfs:label "R11_site_infection_pathogene" ; rdfs:comment "Le site d'infection ne se deduit jamais de l'espece du pathogene : un pneumocoque (Streptococcus pneumoniae, synonymes : pneumocoque, S. pneumoniae) n'est pas uniquement pulmonaire (meninges, sang, oreille, sinus...). micro_organisme_infecte_site n'est cree que si le document nomme explicitement le site infecte."@fr .
+:regle_R4bis_qsofa_critere_neurologique a owl:NamedIndividual ; rdfs:label "R4bis_qsofa_critere_neurologique" ; rdfs:comment "Existence d'une confusion ou d'un score de Glasgow < 15 -> SCORE_qSOFA.critere_alteration_etat_mental = true."@fr .

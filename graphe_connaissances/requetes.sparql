@@ -1,0 +1,53 @@
+# Effectifs du graphe par classe d'entité
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?classe (COUNT(?e) AS ?n) WHERE {
+  ?e a ?classe . ?classe rdfs:subClassOf :EntiteClinique .
+} GROUP BY ?classe ORDER BY DESC(?n)
+
+# --- Diagnostics de chaque patient (diagnostics niés exclus)
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dossier ?diagnostic WHERE {
+  ?d a :Dossier ; rdfs:label ?dossier ; :aPourPatient ?p .
+  ?p :a_pour_label_nosologique ?x . ?x rdfs:label ?diagnostic ; :nie false .
+} ORDER BY ?dossier
+
+# --- Patients en choc septique et traitements qu'ils ont reçus pendant le séjour
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dossier ?traitement WHERE {
+  ?d rdfs:label ?dossier ; :aPourPatient ?p .
+  ?p :a_pour_label_nosologique ?x . ?x :mention ?m ; :nie false .
+  FILTER(CONTAINS(LCASE(STR(?m)), "choc"))
+  ?t :traitement_administre_a ?p ; rdfs:label ?traitement .
+  FILTER NOT EXISTS { ?t :temporalite "ANTERIEUR" }
+} ORDER BY ?dossier
+
+# --- Règle dérivée D1 (Sepsis-3) : lactates d'au moins 2 mmol/L
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dossier ?mention ?valeur WHERE {
+  ?b a :BIOMARQUEUR ; :mention ?mention ; :valeurNumerique ?valeur ; :issuDuDossier ?d .
+  ?d rdfs:label ?dossier .
+  FILTER(CONTAINS(LCASE(STR(?mention)), "lact") && ?valeur >= 2)
+} ORDER BY DESC(?valeur)
+
+# --- Germes isolés et foyers associés
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dossier ?germe ?foyer WHERE {
+  ?g :micro_organisme_isole_dans ?f ; rdfs:label ?germe ; :issuDuDossier ?d .
+  ?f rdfs:label ?foyer . ?d rdfs:label ?dossier .
+}
+
+# --- Relations à vérifier en priorité (confiance TRACE faible), avec leur preuve
+PREFIX : <http://example.org/trace-sepsis/onto#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?relation ?sujet ?objet ?preuve WHERE {
+  ?a a :AssertionRelation ; :niveauConfiance "LOW" ; rdf:predicate ?relation ;
+     rdf:subject ?s ; rdf:object ?o .
+  OPTIONAL { ?a :preuve ?preuve }
+  ?s rdfs:label ?sujet . ?o rdfs:label ?objet .
+}

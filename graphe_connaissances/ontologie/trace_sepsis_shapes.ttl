@@ -1,0 +1,240 @@
+@prefix : <http://example.org/trace-sepsis/onto#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+:Forme_a_pour_label_nosologique a sh:NodeShape ;
+    sh:targetSubjectsOf :a_pour_label_nosologique ;
+    sh:class :DONNEE_PATIENT ;
+    sh:message "Le sujet de a_pour_label_nosologique doit etre un DONNEE_PATIENT" ;
+    sh:property [ sh:path :a_pour_label_nosologique ; sh:class :LABEL_NOSOLOGIQUE ;
+                  sh:message "L objet de a_pour_label_nosologique doit etre un LABEL_NOSOLOGIQUE" ] .
+
+:Forme_label_nosologique_a_pour_foyer a sh:NodeShape ;
+    sh:targetSubjectsOf :label_nosologique_a_pour_foyer ;
+    sh:class :LABEL_NOSOLOGIQUE ;
+    sh:message "Le sujet de label_nosologique_a_pour_foyer doit etre un LABEL_NOSOLOGIQUE" ;
+    sh:property [ sh:path :label_nosologique_a_pour_foyer ; sh:class :FOYER_INFECTIEUX ;
+                  sh:message "L objet de label_nosologique_a_pour_foyer doit etre un FOYER_INFECTIEUX" ] .
+
+:Forme_presente_dysfonction_organe a sh:NodeShape ;
+    sh:targetSubjectsOf :presente_dysfonction_organe ;
+    sh:class :DONNEE_PATIENT ;
+    sh:message "Le sujet de presente_dysfonction_organe doit etre un DONNEE_PATIENT" ;
+    sh:property [ sh:path :presente_dysfonction_organe ; sh:class :DEFAILLANCE_ORGANE ;
+                  sh:message "L objet de presente_dysfonction_organe doit etre un DEFAILLANCE_ORGANE" ] .
+
+:Forme_score_sofa_calcule_pour a sh:NodeShape ;
+    sh:targetSubjectsOf :score_sofa_calcule_pour ;
+    sh:class :SCORE_SOFA ;
+    sh:message "Le sujet de score_sofa_calcule_pour doit etre un SCORE_SOFA" ;
+    sh:property [ sh:path :score_sofa_calcule_pour ; sh:class :DONNEE_PATIENT ;
+                  sh:message "L objet de score_sofa_calcule_pour doit etre un DONNEE_PATIENT" ] .
+
+:Forme_score_sofa_inclut_biomarqueur a sh:NodeShape ;
+    sh:targetSubjectsOf :score_sofa_inclut_biomarqueur ;
+    sh:class :SCORE_SOFA ;
+    sh:message "Le sujet de score_sofa_inclut_biomarqueur doit etre un SCORE_SOFA" ;
+    sh:property [ sh:path :score_sofa_inclut_biomarqueur ; sh:class :BIOMARQUEUR ;
+                  sh:message "L objet de score_sofa_inclut_biomarqueur doit etre un BIOMARQUEUR" ] .
+
+:Forme_score_sofa_inclut_signe_vital a sh:NodeShape ;
+    sh:targetSubjectsOf :score_sofa_inclut_signe_vital ;
+    sh:class :SCORE_SOFA ;
+    sh:message "Le sujet de score_sofa_inclut_signe_vital doit etre un SCORE_SOFA" ;
+    sh:property [ sh:path :score_sofa_inclut_signe_vital ; sh:class :SIGNE_VITAL ;
+                  sh:message "L objet de score_sofa_inclut_signe_vital doit etre un SIGNE_VITAL" ] .
+
+:Forme_score_sofa_inclut_score_neurologique a sh:NodeShape ;
+    sh:targetSubjectsOf :score_sofa_inclut_score_neurologique ;
+    sh:class :SCORE_SOFA ;
+    sh:message "Le sujet de score_sofa_inclut_score_neurologique doit etre un SCORE_SOFA" ;
+    sh:property [ sh:path :score_sofa_inclut_score_neurologique ; sh:class :SCORE_NEUROLOGIQUE ;
+                  sh:message "L objet de score_sofa_inclut_score_neurologique doit etre un SCORE_NEUROLOGIQUE" ] .
+
+:Forme_score_qsofa_calcule_pour a sh:NodeShape ;
+    sh:targetSubjectsOf :score_qsofa_calcule_pour ;
+    sh:class :SCORE_qSOFA ;
+    sh:message "Le sujet de score_qsofa_calcule_pour doit etre un SCORE_qSOFA" ;
+    sh:property [ sh:path :score_qsofa_calcule_pour ; sh:class :DONNEE_PATIENT ;
+                  sh:message "L objet de score_qsofa_calcule_pour doit etre un DONNEE_PATIENT" ] .
+
+:Forme_score_qsofa_inclut_score_neurologique a sh:NodeShape ;
+    sh:targetSubjectsOf :score_qsofa_inclut_score_neurologique ;
+    sh:class :SCORE_qSOFA ;
+    sh:message "Le sujet de score_qsofa_inclut_score_neurologique doit etre un SCORE_qSOFA" ;
+    sh:property [ sh:path :score_qsofa_inclut_score_neurologique ; sh:class :SCORE_NEUROLOGIQUE ;
+                  sh:message "L objet de score_qsofa_inclut_score_neurologique doit etre un SCORE_NEUROLOGIQUE" ] .
+
+:Forme_stade_ira_calcule_pour a sh:NodeShape ;
+    sh:targetSubjectsOf :stade_ira_calcule_pour ;
+    sh:class :STADE_IRA ;
+    sh:message "Le sujet de stade_ira_calcule_pour doit etre un STADE_IRA" ;
+    sh:property [ sh:path :stade_ira_calcule_pour ; sh:class :DONNEE_PATIENT ;
+                  sh:message "L objet de stade_ira_calcule_pour doit etre un DONNEE_PATIENT" ] .
+
+:Forme_ira_a_pour_stade a sh:NodeShape ;
+    sh:targetSubjectsOf :ira_a_pour_stade ;
+    sh:class :DEFAILLANCE_ORGANE ;
+    sh:message "Le sujet de ira_a_pour_stade doit etre un DEFAILLANCE_ORGANE" ;
+    sh:property [ sh:path :ira_a_pour_stade ; sh:class :STADE_IRA ;
+                  sh:message "L objet de ira_a_pour_stade doit etre un STADE_IRA" ] .
+
+:Forme_traitement_administre_a a sh:NodeShape ;
+    sh:targetSubjectsOf :traitement_administre_a ;
+    sh:class :TRAITEMENT ;
+    sh:message "Le sujet de traitement_administre_a doit etre un TRAITEMENT" ;
+    sh:property [ sh:path :traitement_administre_a ; sh:class :DONNEE_PATIENT ;
+                  sh:message "L objet de traitement_administre_a doit etre un DONNEE_PATIENT" ] .
+
+:Forme_traitement_a_pour_posologie a sh:NodeShape ;
+    sh:targetSubjectsOf :traitement_a_pour_posologie ;
+    sh:class :TRAITEMENT ;
+    sh:message "Le sujet de traitement_a_pour_posologie doit etre un TRAITEMENT" ;
+    sh:property [ sh:path :traitement_a_pour_posologie ; sh:class :POSOLOGIE ;
+                  sh:message "L objet de traitement_a_pour_posologie doit etre un POSOLOGIE" ] .
+
+:Forme_antibiotique_adequat_pour a sh:NodeShape ;
+    sh:targetSubjectsOf :antibiotique_adequat_pour ;
+    sh:class :TRAITEMENT ;
+    sh:message "Le sujet de antibiotique_adequat_pour doit etre un TRAITEMENT" ;
+    sh:property [ sh:path :antibiotique_adequat_pour ; sh:class :MICRO_ORGANISME ;
+                  sh:message "L objet de antibiotique_adequat_pour doit etre un MICRO_ORGANISME" ] .
+
+:Forme_antibiotique_inadequat_pour a sh:NodeShape ;
+    sh:targetSubjectsOf :antibiotique_inadequat_pour ;
+    sh:class :TRAITEMENT ;
+    sh:message "Le sujet de antibiotique_inadequat_pour doit etre un TRAITEMENT" ;
+    sh:property [ sh:path :antibiotique_inadequat_pour ; sh:class :MICRO_ORGANISME ;
+                  sh:message "L objet de antibiotique_inadequat_pour doit etre un MICRO_ORGANISME" ] .
+
+:Forme_traitement_cible_defaillance a sh:NodeShape ;
+    sh:targetSubjectsOf :traitement_cible_defaillance ;
+    sh:class :TRAITEMENT ;
+    sh:message "Le sujet de traitement_cible_defaillance doit etre un TRAITEMENT" ;
+    sh:property [ sh:path :traitement_cible_defaillance ; sh:class :DEFAILLANCE_ORGANE ;
+                  sh:message "L objet de traitement_cible_defaillance doit etre un DEFAILLANCE_ORGANE" ] .
+
+:Forme_traitement_indique_par_label_nosologique a sh:NodeShape ;
+    sh:targetSubjectsOf :traitement_indique_par_label_nosologique ;
+    sh:class :TRAITEMENT ;
+    sh:message "Le sujet de traitement_indique_par_label_nosologique doit etre un TRAITEMENT" ;
+    sh:property [ sh:path :traitement_indique_par_label_nosologique ; sh:class :LABEL_NOSOLOGIQUE ;
+                  sh:message "L objet de traitement_indique_par_label_nosologique doit etre un LABEL_NOSOLOGIQUE" ] .
+
+:Forme_signe_vital_supporte_defaillance_organe a sh:NodeShape ;
+    sh:targetSubjectsOf :signe_vital_supporte_defaillance_organe ;
+    sh:class :SIGNE_VITAL ;
+    sh:message "Le sujet de signe_vital_supporte_defaillance_organe doit etre un SIGNE_VITAL" ;
+    sh:property [ sh:path :signe_vital_supporte_defaillance_organe ; sh:class :DEFAILLANCE_ORGANE ;
+                  sh:message "L objet de signe_vital_supporte_defaillance_organe doit etre un DEFAILLANCE_ORGANE" ] .
+
+:Forme_biomarqueur_obtenu_a a sh:NodeShape ;
+    sh:targetSubjectsOf :biomarqueur_obtenu_a ;
+    sh:class :BIOMARQUEUR ;
+    sh:message "Le sujet de biomarqueur_obtenu_a doit etre un BIOMARQUEUR" ;
+    sh:property [ sh:path :biomarqueur_obtenu_a ; sh:class :EVENEMENT_TEMPOREL ;
+                  sh:message "L objet de biomarqueur_obtenu_a doit etre un EVENEMENT_TEMPOREL" ] .
+
+:Forme_biomarqueur_supporte_defaillance_organe a sh:NodeShape ;
+    sh:targetSubjectsOf :biomarqueur_supporte_defaillance_organe ;
+    sh:class :BIOMARQUEUR ;
+    sh:message "Le sujet de biomarqueur_supporte_defaillance_organe doit etre un BIOMARQUEUR" ;
+    sh:property [ sh:path :biomarqueur_supporte_defaillance_organe ; sh:class :DEFAILLANCE_ORGANE ;
+                  sh:message "L objet de biomarqueur_supporte_defaillance_organe doit etre un DEFAILLANCE_ORGANE" ] .
+
+:Forme_biomarqueur_est_critere_de a sh:NodeShape ;
+    sh:targetSubjectsOf :biomarqueur_est_critere_de ;
+    sh:class :BIOMARQUEUR ;
+    sh:message "Le sujet de biomarqueur_est_critere_de doit etre un BIOMARQUEUR" ;
+    sh:property [ sh:path :biomarqueur_est_critere_de ; sh:class :LABEL_NOSOLOGIQUE ;
+                  sh:message "L objet de biomarqueur_est_critere_de doit etre un LABEL_NOSOLOGIQUE" ] .
+
+:Forme_micro_organisme_isole_dans a sh:NodeShape ;
+    sh:targetSubjectsOf :micro_organisme_isole_dans ;
+    sh:class :MICRO_ORGANISME ;
+    sh:message "Le sujet de micro_organisme_isole_dans doit etre un MICRO_ORGANISME" ;
+    sh:property [ sh:path :micro_organisme_isole_dans ; sh:class :FOYER_INFECTIEUX ;
+                  sh:message "L objet de micro_organisme_isole_dans doit etre un FOYER_INFECTIEUX" ] .
+
+:Forme_comorbidite_est_facteur_risque_de a sh:NodeShape ;
+    sh:targetSubjectsOf :comorbidite_est_facteur_risque_de ;
+    sh:class :COMORBIDITE_ANTECEDENT ;
+    sh:message "Le sujet de comorbidite_est_facteur_risque_de doit etre un COMORBIDITE_ANTECEDENT" ;
+    sh:property [ sh:path :comorbidite_est_facteur_risque_de ; sh:class :LABEL_NOSOLOGIQUE ;
+                  sh:message "L objet de comorbidite_est_facteur_risque_de doit etre un LABEL_NOSOLOGIQUE" ] .
+
+:Forme_a_pour_contexte_acquisition a sh:NodeShape ;
+    sh:targetSubjectsOf :a_pour_contexte_acquisition ;
+    sh:class :COMORBIDITE_ANTECEDENT ;
+    sh:message "Le sujet de a_pour_contexte_acquisition doit etre un COMORBIDITE_ANTECEDENT" ;
+    sh:property [ sh:path :a_pour_contexte_acquisition ; sh:class :CONTEXTE_ACQUISITION ;
+                  sh:message "L objet de a_pour_contexte_acquisition doit etre un CONTEXTE_ACQUISITION" ] .
+
+:Forme_contexte_acquisition_influence_risque_resistance a sh:NodeShape ;
+    sh:targetSubjectsOf :contexte_acquisition_influence_risque_resistance ;
+    sh:class :CONTEXTE_ACQUISITION ;
+    sh:message "Le sujet de contexte_acquisition_influence_risque_resistance doit etre un CONTEXTE_ACQUISITION" ;
+    sh:property [ sh:path :contexte_acquisition_influence_risque_resistance ; sh:class :MICRO_ORGANISME ;
+                  sh:message "L objet de contexte_acquisition_influence_risque_resistance doit etre un MICRO_ORGANISME" ] .
+
+:Forme_precede a sh:NodeShape ;
+    sh:targetSubjectsOf :precede ;
+    sh:class :EVENEMENT_TEMPOREL ;
+    sh:message "Le sujet de precede doit etre un EVENEMENT_TEMPOREL" ;
+    sh:property [ sh:path :precede ; sh:class :EVENEMENT_TEMPOREL ;
+                  sh:message "L objet de precede doit etre un EVENEMENT_TEMPOREL" ] .
+
+:Forme_patient_a_pour_evolution a sh:NodeShape ;
+    sh:targetSubjectsOf :patient_a_pour_evolution ;
+    sh:class :DONNEE_PATIENT ;
+    sh:message "Le sujet de patient_a_pour_evolution doit etre un DONNEE_PATIENT" ;
+    sh:property [ sh:path :patient_a_pour_evolution ; sh:class :EVOLUTION_PRONOSTIC ;
+                  sh:message "L objet de patient_a_pour_evolution doit etre un EVOLUTION_PRONOSTIC" ] .
+
+:Forme_evenement_associe_evolution a sh:NodeShape ;
+    sh:targetSubjectsOf :evenement_associe_evolution ;
+    sh:class :EVENEMENT_TEMPOREL ;
+    sh:message "Le sujet de evenement_associe_evolution doit etre un EVENEMENT_TEMPOREL" ;
+    sh:property [ sh:path :evenement_associe_evolution ; sh:class :EVOLUTION_PRONOSTIC ;
+                  sh:message "L objet de evenement_associe_evolution doit etre un EVOLUTION_PRONOSTIC" ] .
+
+:Forme_service_medical_accueille a sh:NodeShape ;
+    sh:targetSubjectsOf :service_medical_accueille ;
+    sh:class :SERVICE_MEDICAL ;
+    sh:message "Le sujet de service_medical_accueille doit etre un SERVICE_MEDICAL" ;
+    sh:property [ sh:path :service_medical_accueille ; sh:class :DONNEE_PATIENT ;
+                  sh:message "L objet de service_medical_accueille doit etre un DONNEE_PATIENT" ] .
+
+:Forme_imagerie_objective_foyer a sh:NodeShape ;
+    sh:targetSubjectsOf :imagerie_objective_foyer ;
+    sh:class :IMAGERIE_PROCEDURE ;
+    sh:message "Le sujet de imagerie_objective_foyer doit etre un IMAGERIE_PROCEDURE" ;
+    sh:property [ sh:path :imagerie_objective_foyer ; sh:class :FOYER_INFECTIEUX ;
+                  sh:message "L objet de imagerie_objective_foyer doit etre un FOYER_INFECTIEUX" ] .
+
+:Forme_presente_symptome a sh:NodeShape ;
+    sh:targetSubjectsOf :presente_symptome ;
+    sh:class :DONNEE_PATIENT ;
+    sh:message "Le sujet de presente_symptome doit etre un DONNEE_PATIENT" ;
+    sh:property [ sh:path :presente_symptome ; sh:class :SYMPTOME ;
+                  sh:message "L objet de presente_symptome doit etre un SYMPTOME" ] .
+
+:Forme_micro_organisme_infecte_site a sh:NodeShape ;
+    sh:targetSubjectsOf :micro_organisme_infecte_site ;
+    sh:class :MICRO_ORGANISME ;
+    sh:message "Le sujet de micro_organisme_infecte_site doit etre un MICRO_ORGANISME" ;
+    sh:property [ sh:path :micro_organisme_infecte_site ; sh:class :FOYER_INFECTIEUX ;
+                  sh:message "L objet de micro_organisme_infecte_site doit etre un FOYER_INFECTIEUX" ] .
+
+:Forme_symptome_oriente_foyer a sh:NodeShape ;
+    sh:targetSubjectsOf :symptome_oriente_foyer ;
+    sh:class :SYMPTOME ;
+    sh:message "Le sujet de symptome_oriente_foyer doit etre un SYMPTOME" ;
+    sh:property [ sh:path :symptome_oriente_foyer ; sh:class :FOYER_INFECTIEUX ;
+                  sh:message "L objet de symptome_oriente_foyer doit etre un FOYER_INFECTIEUX" ] .
+
+:Forme_symptome_associe_gravite_initiale a sh:NodeShape ;
+    sh:targetSubjectsOf :symptome_associe_gravite_initiale ;
+    sh:class :SYMPTOME ;
+    sh:message "Le sujet de symptome_associe_gravite_initiale doit etre un SYMPTOME" ;
+    sh:property [ sh:path :symptome_associe_gravite_initiale ; sh:class :SCORE_SOFA ;
+                  sh:message "L objet de symptome_associe_gravite_initiale doit etre un SCORE_SOFA" ] .
