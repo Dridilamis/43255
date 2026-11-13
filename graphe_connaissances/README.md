@@ -49,7 +49,8 @@ Pour voir aussi des **individus** (patients, entités, relations), ouvrir
 l'ontologie et les individus de 3 dossiers (option `--protege N` pour en mettre plus ; au-delà
 d'une dizaine, Protégé devient lent). Les relations hors signature en sont exclues : avec les
 domaines, les images et les classes disjointes, le raisonneur les jugerait incohérentes ; elles
-restent dans le graphe complet, où la validation SHACL les liste. Ce fichier contient des données
+restent dans le graphe complet, où la validation SHACL les liste. Les fiches des relations (`AssertionRelation` : preuve, page, confiance) n'y sont pas, car elles
+encombrent OntoGraf ; option `--protege-assertions` pour les ajouter. Ce fichier contient des données
 de dossiers : il est dans `sorties/` et n'est pas versionné.
 
 ## Ce qui est produit (`graphe_connaissances/sorties/`)

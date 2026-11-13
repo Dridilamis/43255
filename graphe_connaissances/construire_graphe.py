@@ -309,7 +309,7 @@ def construire(docs, types_valides, signatures):
     return noeuds, aretes, stats, hors_signature
 
 
-def ecrire_rdf(out, base, noeuds, aretes, dossiers, chemin=None, avant=""):
+def ecrire_rdf(out, base, noeuds, aretes, dossiers, chemin=None, avant="", assertions=True):
     O, G = f"{base}onto#", f"{base}graphe/"
     L = [f"@prefix : <{O}> .", f"@prefix g: <{G}> .",
          "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .",
@@ -346,6 +346,8 @@ def ecrire_rdf(out, base, noeuds, aretes, dossiers, chemin=None, avant=""):
     for a in aretes:
         s, o, rel = f"g:{nom_local(a['source'])}", f"g:{nom_local(a['cible'])}", f":{nom_local(a['type'])}"
         L.append(f"{s} {rel} {o} .")
+        if not assertions:
+            continue
         titre = (f"{etiquette.get(a['source'], '?')[:40]} -- {a['type']} --> "
                  f"{etiquette.get(a['cible'], '?')[:40]}")
         p = [f"g:{nom_local('assertion__' + a['id'])} a owl:NamedIndividual , :AssertionRelation",
@@ -366,12 +368,14 @@ def ecrire_rdf(out, base, noeuds, aretes, dossiers, chemin=None, avant=""):
     chemin.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
-def ecrire_protege(out, base, noeuds, aretes, dossiers, n):
+def ecrire_protege(out, base, noeuds, aretes, dossiers, n, assertions=False):
     """Fichier unique ontologie + individus de n dossiers, a ouvrir dans Protege.
 
     Les relations hors signature sont exclues : avec rdfs:domain/range et les classes
     disjointes, elles rendraient l'ontologie incoherente pour le raisonneur (HermiT, Pellet).
-    La validation SHACL les liste a part."""
+    La validation SHACL les liste a part. Les fiches des relations (AssertionRelation) ne
+    sont ajoutees qu'avec --protege-assertions : elles encombrent OntoGraf ; elles restent
+    dans graphe_trace_sepsis.ttl."""
     choix = set(dossiers[:n])
     onto = (out / "ontologie" / "trace_sepsis.ttl").read_text(encoding="utf-8")
     onto = onto.replace(f"<{base}onto> a owl:Ontology ;",
@@ -380,7 +384,8 @@ def ecrire_protege(out, base, noeuds, aretes, dossiers, n):
     ns = [x for x in noeuds if x["dossier"] in choix]
     ar = [a for a in aretes if a["dossier"] in choix and not a.get("hors_signature")]
     chemin = out / "protege" / f"trace_sepsis_{len(choix)}_dossiers.ttl"
-    ecrire_rdf(out, base, ns, ar, [d for d in dossiers if d in choix], chemin=chemin, avant=onto)
+    ecrire_rdf(out, base, ns, ar, [d for d in dossiers if d in choix], chemin=chemin, avant=onto,
+               assertions=assertions)
     return chemin, len(ns), len(ar)
 
 
@@ -533,6 +538,8 @@ def main():
     ap.add_argument("--sortie", default=str(SORTIE_DEFAUT))
     ap.add_argument("--base", default=BASE_DEFAUT)
     ap.add_argument("--ontologie-seule", action="store_true", help="ne produit que l'ontologie et SHACL")
+    ap.add_argument("--protege-assertions", action="store_true",
+                    help="ajoute au fichier Protege les fiches des relations (preuve, confiance)")
     ap.add_argument("--protege", type=int, default=3, metavar="N",
                     help="nombre de dossiers dans le fichier Protege ontologie + individus (0 : aucun)")
     a = ap.parse_args()
@@ -557,7 +564,7 @@ def main():
     ecrire_neo4j(out, noeuds, aretes)
     ecrire_html(out, noeuds, aretes)
     if a.protege > 0:
-        chemin, nn, na = ecrire_protege(out, base, noeuds, aretes, dossiers, a.protege)
+        chemin, nn, na = ecrire_protege(out, base, noeuds, aretes, dossiers, a.protege, a.protege_assertions)
         print(f"Protege : {chemin} ({nn} individus, {na} relations)")
 
     resume = {
