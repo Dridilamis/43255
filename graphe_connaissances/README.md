@@ -27,6 +27,20 @@ SPARQL demandent `pip install rdflib pyshacl` :
 python graphe_connaissances/valider_graphe.py
 ```
 
+## Figure de l'ontologie (mémoire, soutenance)
+
+```
+python graphe_connaissances/figure_ontologie.py
+python graphe_connaissances/figure_ontologie.py --resume graphe_connaissances/sorties/resume.json
+```
+
+`figures/ontologie_trace_sepsis.*` : les 20 classes, colorées par famille, et les 34 relations du
+guideline, colorées par groupe, le Patient à gauche. Avec `--resume`,
+`figures/ontologie_relations_observees.*` montre en trait plein, avec leur effectif, les relations
+présentes dans le graphe, et en pointillé gris les autres. Formats `.svg`, `.pdf` (pour LaTeX) et
+`.png`, si Graphviz est installé (Windows : `winget install graphviz`) ; sinon seul le `.dot` est
+écrit. Les figures versionnées correspondent au run final v2.0 (49 dossiers).
+
 ## Ouvrir l'ontologie dans Protégé
 
 1. Installer Protégé (protege.stanford.edu, version 5.6 ou plus récente).
