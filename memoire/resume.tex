@@ -1,0 +1,16 @@
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé -- Abstract}
+
+Les grands modèles de langage multimodaux (MLLMs) peuvent lire directement des dossiers médicaux scannés, mais produisent des \emph{hallucinations} : des informations plausibles que le document ne contient pas. Ce mémoire, réalisé au sein de l'IHU SEPSIS sur les dossiers de réanimation de la cohorte APROCCHSS, propose TRACE (\textit{Taxonomy and Reduction of hAllucinations in Clinical knowledge Extraction}), une approche pour extraire de ces dossiers un graphe de connaissances fiable. Elle comprend un guideline d'annotation propre au sepsis (20 types d'entités, 34 relations), validé par un médecin, et un Gold Standard de 49 dossiers (291 pages, 12\,396 entités et 5\,546 relations) annoté à la main ; un pipeline d'extraction multimodale guidé par ce guideline, avec lequel Mistral Small~4 a été retenu face à Qwen2.5-VL ; une taxonomie de sept types d'hallucinations ; et une chaîne de vérification déterministe, sans LLM juge, dont les étages annotent chaque élément (ancrage dans le texte, conformité au schéma, réparation structurelle, négation et temporalité) avant qu'un arbitrage unique décide. Évaluée en validation croisée sur des dossiers non vus, TRACE réduit le taux d'hallucination de 33,8 à 25,9~\% sur les entités et de 45,2 à 37,8~\% sur les relations, à F1 égal ou supérieur, et permet de régler le niveau d'exigence selon l'usage.
+
+\medskip
+\noindent\textbf{Mots-clés :} extraction d'information clinique, modèles de langage multimodaux, hallucinations, graphe de connaissances, Gold Standard, sepsis, documents scannés.
+
+\vspace{1.5cm}
+
+\section*{Abstract}
+
+Multimodal large language models (MLLMs) can read scanned medical records directly, but they produce \emph{hallucinations}: plausible information that the document does not contain. This thesis, carried out within IHU SEPSIS on intensive care records from the APROCCHSS cohort, proposes TRACE (\textit{Taxonomy and Reduction of hAllucinations in Clinical knowledge Extraction}), an approach to extract a reliable knowledge graph from these records. It includes a sepsis-specific annotation guideline (20 entity types, 34 relations) validated by a physician, and a manually annotated Gold Standard of 49 records (291 pages, 12,396 entities and 5,546 relations); a guideline-driven multimodal extraction pipeline, with which Mistral Small~4 was selected over Qwen2.5-VL; a taxonomy of seven hallucination types; and a deterministic verification chain, with no LLM judge, whose stages annotate each element (grounding in the text, schema compliance, structural repair, negation and temporality) before a single arbitration stage decides. Evaluated with cross-validation on unseen records, TRACE reduces the hallucination rate from 33.8\% to 25.9\% for entities and from 45.2\% to 37.8\% for relations, at equal or higher F1, and lets the level of strictness be tuned to the intended use.
+
+\medskip
+\noindent\textbf{Keywords:} clinical information extraction, multimodal language models, hallucinations, knowledge graph, Gold Standard, sepsis, scanned documents.
