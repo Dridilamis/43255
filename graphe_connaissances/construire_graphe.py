@@ -368,7 +368,7 @@ def ecrire_rdf(out, base, noeuds, aretes, dossiers, chemin=None, avant="", asser
     chemin.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
-def ecrire_protege(out, base, noeuds, aretes, dossiers, n, assertions=False):
+def ecrire_protege(out, base, noeuds, aretes, dossiers, n, assertions=False, seul=None):
     """Fichier unique ontologie + individus de n dossiers, a ouvrir dans Protege.
 
     Les relations hors signature sont exclues : avec rdfs:domain/range et les classes
@@ -376,14 +376,15 @@ def ecrire_protege(out, base, noeuds, aretes, dossiers, n, assertions=False):
     La validation SHACL les liste a part. Les fiches des relations (AssertionRelation) ne
     sont ajoutees qu'avec --protege-assertions : elles encombrent OntoGraf ; elles restent
     dans graphe_trace_sepsis.ttl."""
-    choix = set(dossiers[:n])
+    choix = {seul} if seul else set(dossiers[:n])
     onto = (out / "ontologie" / "trace_sepsis.ttl").read_text(encoding="utf-8")
     onto = onto.replace(f"<{base}onto> a owl:Ontology ;",
                         f"<{base}protege> a owl:Ontology ;\n    rdfs:seeAlso <{base}onto> ;", 1)
     onto = f"@prefix g: <{base}graphe/> .\n" + onto
     ns = [x for x in noeuds if x["dossier"] in choix]
     ar = [a for a in aretes if a["dossier"] in choix and not a.get("hors_signature")]
-    chemin = out / "protege" / f"trace_sepsis_{len(choix)}_dossiers.ttl"
+    chemin = out / "protege" / (f"trace_sepsis_dossier_{seul}.ttl" if seul
+                                else f"trace_sepsis_{len(choix)}_dossiers.ttl")
     ecrire_rdf(out, base, ns, ar, [d for d in dossiers if d in choix], chemin=chemin, avant=onto,
                assertions=assertions)
     return chemin, len(ns), len(ar)
@@ -540,6 +541,8 @@ def main():
     ap.add_argument("--ontologie-seule", action="store_true", help="ne produit que l'ontologie et SHACL")
     ap.add_argument("--protege-assertions", action="store_true",
                     help="ajoute au fichier Protege les fiches des relations (preuve, confiance)")
+    ap.add_argument("--protege-dossier", metavar="RANG|ID",
+                    help="fichier Protege d'un seul dossier : son rang (1 = premier, ordre alphabetique) ou son identifiant")
     ap.add_argument("--protege", type=int, default=3, metavar="N",
                     help="nombre de dossiers dans le fichier Protege ontologie + individus (0 : aucun)")
     a = ap.parse_args()
@@ -563,6 +566,13 @@ def main():
     ecrire_rdf(out, base, noeuds, aretes, dossiers)
     ecrire_neo4j(out, noeuds, aretes)
     ecrire_html(out, noeuds, aretes)
+    if a.protege_dossier:
+        x = a.protege_dossier.strip()
+        seul = dossiers[int(x) - 1] if x.isdigit() and 1 <= int(x) <= len(dossiers) else x
+        if seul not in dossiers:
+            sys.exit(f"Dossier inconnu : {x} (rang de 1 a {len(dossiers)}, ou identifiant)")
+        chemin, nn, na = ecrire_protege(out, base, noeuds, aretes, dossiers, 1, a.protege_assertions, seul)
+        print(f"Protege, dossier {seul} : {chemin} ({nn} individus, {na} relations)")
     if a.protege > 0:
         chemin, nn, na = ecrire_protege(out, base, noeuds, aretes, dossiers, a.protege, a.protege_assertions)
         print(f"Protege : {chemin} ({nn} individus, {na} relations)")
