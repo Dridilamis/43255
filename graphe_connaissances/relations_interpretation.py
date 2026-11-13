@@ -184,8 +184,8 @@ def sim(a, b):
     return max(r, 0.85) if len(court) >= 4 and contient(long_, court) else r
 
 
-def mesurer(ajout_par_doc, gold_dir, types):
-    tp, prod, ref = Counter(), Counter(), Counter()
+def mesurer(ajout_par_doc, gold_dir, types, entites_par_doc=None):
+    tp, prod, ref, atteignable = Counter(), Counter(), Counter(), Counter()
     for doc, ajout in ajout_par_doc.items():
         f = Path(gold_dir) / f"{doc}.json"
         if not f.exists():
@@ -193,8 +193,14 @@ def mesurer(ajout_par_doc, gold_dir, types):
         g = json.loads(f.read_text(encoding="utf-8-sig"))
         gold = [(r.get("relation"), r.get("subject"), r.get("object")) for r in g.get("global_relations") or []
                 if r.get("relation") in types]
-        for t, *_ in gold:
+        ents = (entites_par_doc or {}).get(doc, [])
+        for t, gs, go in gold:
             ref[t] += 1
+            ts, to = REGLES[t][0], REGLES[t][1]
+            # plafond : les deux extremites ont-elles ete extraites (bon type, meme dossier) ?
+            if any(type_entite(e) == ts and sim(nom(e), gs) >= 0.8 for e in ents) and \
+               any(type_entite(e) == to and sim(nom(e), go) >= 0.8 for e in ents):
+                atteignable[t] += 1
         pris = set()
         for r in ajout:
             t = r["type_relation"]
@@ -215,6 +221,9 @@ def mesurer(ajout_par_doc, gold_dir, types):
         r = tp[t] / ref[t] if ref[t] else 0
         print(f"  {t:32s} ajoutees {prod[t]:4d} | justes {tp[t]:4d} | reference {ref[t]:4d}"
               f" | precision {p:6.1%} | rappel {r:6.1%}")
+        if entites_par_doc is not None:
+            print(f"  {'':32s} plafond : {atteignable[t]} relation(s) de reference sur {ref[t]} ont leurs"
+                  f" deux extremites extraites avec le bon type")
     return tp, prod, ref
 
 
@@ -232,7 +241,7 @@ def main():
 
     out = Path(a.sortie)
     out.mkdir(parents=True, exist_ok=True)
-    total, par_doc = Counter(), {}
+    total, par_doc, entites = Counter(), {}, {}
     fichiers = [f for f in sorted(Path(a.entree).glob("*.json")) if not f.name.startswith("_")]
     if not fichiers:
         sys.exit(f"Aucun JSON dans {a.entree}")
@@ -242,13 +251,18 @@ def main():
             continue
         ajout, n = traiter(data, types)
         total.update(n)
-        par_doc[re.split(r"_trace_sepsis", f.stem)[0]] = ajout
+        doc = re.split(r"_trace_sepsis", f.stem)[0]
+        par_doc[doc] = ajout
+        entites[doc] = [e for e in data.get("global_entities") or [] if not e.get("nie")]
         (out / f.name).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"{len(par_doc)} dossiers -> {out}")
     for t in types:
         print(f"  {t:32s} {total[t]:4d} relation(s) ajoutee(s)")
     if a.gold:
-        mesurer(par_doc, a.gold, types)
+        mesurer(par_doc, a.gold, types, entites)
+        compte = Counter(type_entite(e) for es in entites.values() for e in es)
+        print(f"\nEntites extraites (non niees) : MICRO_ORGANISME {compte['MICRO_ORGANISME']}, "
+              f"FOYER_INFECTIEUX {compte['FOYER_INFECTIEUX']}, LABEL_NOSOLOGIQUE {compte['LABEL_NOSOLOGIQUE']}")
     return 0
 
 

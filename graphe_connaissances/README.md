@@ -99,6 +99,15 @@ La règle d'imagerie fait moins bien que le modèle et reste désactivée.
 `label_nosologique_a_pour_foyer` n'existe pas dans le gold v1.6 : sa précision doit être mesurée
 avec `--gold gold_v2_0`, comme celle des deux autres règles sur le schéma v2.0.
 
+**Sur le run final v2.0 (49 dossiers, gold v2.0), ces règles ne fonctionnent pas** : 5 relations
+germe → foyer ajoutées, aucune juste (87 dans la référence) ; 10 relations diagnostic →
+localisation, 2 justes (74 dans la référence). En v2.0, `FOYER_INFECTIEUX` ne désigne plus
+qu'une localisation, rarement extraite comme entité distincte : les règles n'ont presque rien à
+relier, et les « foyers » restants sont souvent mal typés (des dates). La limite est en amont,
+dans l'extraction des localisations, pas dans la liaison. Ne pas utiliser ces relations dans le
+graphe v2.0 ; la ligne « plafond » de `--gold` indique combien de relations de référence
+auraient pu être retrouvées.
+
 ## Choix de modélisation
 
 - **Un nœud patient par dossier.** Les mentions « le patient », « la patiente »… sont fusionnées
