@@ -152,9 +152,15 @@ def ecrire_ontologie(out, base, g, entites, signatures, desc_rel):
           ":EntiteClinique a owl:Class ; rdfs:label \"Entité clinique\"@fr .",
           ":Patient a owl:Class ; rdfs:subClassOf :DONNEE_PATIENT ; rdfs:label \"Patient\"@fr ;",
           "    rdfs:comment \"Nœud unique du patient d'un dossier, qui réunit ses mentions (\\\"le patient\\\", \\\"la patiente\\\"...).\"@fr .",
-          ":AssertionRelation a owl:Class ; rdfs:subClassOf rdf:Statement ;",
+          ":AssertionRelation a owl:Class ;",
           "    rdfs:label \"Assertion de relation\"@fr ;",
           "    rdfs:comment \"Réification d'une relation extraite, qui porte sa preuve, sa page et sa confiance.\"@fr .",
+          ":RegleDerivee a owl:Class ; rdfs:label \"Règle dérivée\"@fr ;",
+          "    rdfs:comment \"Règle clinique dérivée du guideline, à formaliser en SWRL ou SHACL-SPARQL.\"@fr .",
+          "skos:example a owl:AnnotationProperty .",
+          "dcterms:source a owl:AnnotationProperty .",
+          ":typeRelation a owl:AnnotationProperty ; rdfs:label \"type de relation\"@fr ;",
+          "    rdfs:comment \"Propriété (relation du guideline) portée par une assertion.\"@fr .",
           ""]
     # classes d'entites
     for nom, e in entites.items():
@@ -168,7 +174,7 @@ def ecrire_ontologie(out, base, g, entites, signatures, desc_rel):
     o += ["", "[] a owl:AllDisjointClasses ; owl:members ( " + " ".join(noms) + " ) .", ""]
 
     # proprietes de structure
-    o += [":issuDuDossier a owl:ObjectProperty ; rdfs:domain :EntiteClinique ; rdfs:range :Dossier ;",
+    o += [":issuDuDossier a owl:ObjectProperty ; rdfs:range :Dossier ;",
           "    rdfs:label \"issu du dossier\"@fr .",
           ":aPourPatient a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :Dossier ; rdfs:range :Patient ;",
           "    rdfs:label \"a pour patient\"@fr .",
@@ -190,15 +196,17 @@ def ecrire_ontologie(out, base, g, entites, signatures, desc_rel):
         rng = {"valeurNumerique": "xsd:decimal", "page": "xsd:integer", "nie": "xsd:boolean",
                "hypothese": "xsd:boolean"}.get(p, "xsd:string")
         o.append(f":{p} a owl:DatatypeProperty ; rdfs:range {rng} ; rdfs:label {lit(label)}@fr ; rdfs:comment {lit(com)}@fr .")
-    o += ["", ":assertionSujet a owl:ObjectProperty ; rdfs:subPropertyOf rdf:subject ; rdfs:domain :AssertionRelation .",
-          ":assertionObjet a owl:ObjectProperty ; rdfs:subPropertyOf rdf:object ; rdfs:domain :AssertionRelation .", ""]
+    o += ["", ":assertionSujet a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :AssertionRelation ;",
+          "    rdfs:range :EntiteClinique ; rdfs:label \"sujet de l'assertion\"@fr .",
+          ":assertionObjet a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :AssertionRelation ;",
+          "    rdfs:range :EntiteClinique ; rdfs:label \"objet de l'assertion\"@fr .", ""]
 
     # regles derivees, gardees comme annotations (a formaliser en SWRL / SHACL-SPARQL)
     rd = g.get("regles_derivees") or {}
     for k, v in rd.items():
         if k == "description" or not isinstance(v, str):
             continue
-        o.append(f":regle_{nom_local(k)} a owl:NamedIndividual ; rdfs:label {lit(k)} ; rdfs:comment {lit(v)}@fr .")
+        o.append(f":regle_{nom_local(k)} a owl:NamedIndividual , :RegleDerivee ; rdfs:label {lit(k)} ; rdfs:comment {lit(v)}@fr .")
 
     (out / "ontologie").mkdir(parents=True, exist_ok=True)
     (out / "ontologie" / "trace_sepsis.ttl").write_text("\n".join(o) + "\n", encoding="utf-8")
@@ -301,19 +309,22 @@ def construire(docs, types_valides, signatures):
     return noeuds, aretes, stats, hors_signature
 
 
-def ecrire_rdf(out, base, noeuds, aretes, dossiers):
+def ecrire_rdf(out, base, noeuds, aretes, dossiers, chemin=None, avant=""):
     O, G = f"{base}onto#", f"{base}graphe/"
     L = [f"@prefix : <{O}> .", f"@prefix g: <{G}> .",
          "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .",
          "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .",
+         "@prefix owl: <http://www.w3.org/2002/07/owl#> .",
          "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .", ""]
+    if avant:
+        L = [avant, ""]                     # ontologie + individus dans un seul fichier (Protege)
     for doc in dossiers:
-        L.append(f"g:{nom_local(doc)} a :Dossier ; rdfs:label {lit(doc)} ; :aPourPatient g:{nom_local(doc + '__patient')} .")
+        L.append(f"g:{nom_local(doc)} a owl:NamedIndividual , :Dossier ; rdfs:label {lit(doc)} ; :aPourPatient g:{nom_local(doc + '__patient')} .")
     L.append("")
     for n in noeuds:
         iri = f"g:{nom_local(n['id'])}"
         cls = ":Patient" if n["type"] == "Patient" else f":{nom_local(n['classe'])}"
-        p = [f"{iri} a {cls}", f"rdfs:label {lit(n['label'])}", f":issuDuDossier g:{nom_local(n['dossier'])}"]
+        p = [f"{iri} a owl:NamedIndividual , {cls}", f"rdfs:label {lit(n['label'])}", f":issuDuDossier g:{nom_local(n['dossier'])}"]
         if n["type"] != "Patient":
             p.append(f":mention {lit(n['label'])}")
             for k, prop in (("parametre", "parametre"), ("valeur", "valeur"), ("unite", "unite"),
@@ -334,8 +345,8 @@ def ecrire_rdf(out, base, noeuds, aretes, dossiers):
     for a in aretes:
         s, o, rel = f"g:{nom_local(a['source'])}", f"g:{nom_local(a['cible'])}", f":{nom_local(a['type'])}"
         L.append(f"{s} {rel} {o} .")
-        p = [f"g:{nom_local('assertion__' + a['id'])} a :AssertionRelation", f"rdf:subject {s}",
-             f"rdf:predicate {rel}", f"rdf:object {o}", f":issuDuDossier g:{nom_local(a['dossier'])}"]
+        p = [f"g:{nom_local('assertion__' + a['id'])} a owl:NamedIndividual , :AssertionRelation", f":assertionSujet {s}",
+             f":typeRelation {rel}", f":assertionObjet {o}", f":issuDuDossier g:{nom_local(a['dossier'])}"]
         for k, prop in (("preuve", "preuve"), ("niveau_confiance", "niveauConfiance"),
                         ("confiance_modele", "confianceModele"), ("origine", "origine"),
                         ("identifiant_source", "identifiantSource")):
@@ -346,8 +357,40 @@ def ecrire_rdf(out, base, noeuds, aretes, dossiers):
         if isinstance(a.get("page"), int):
             p.append(f':page "{a["page"]}"^^xsd:integer')
         L.append(" ;\n    ".join(p) + " .")
-    (out / "graphe").mkdir(parents=True, exist_ok=True)
-    (out / "graphe" / "graphe_trace_sepsis.ttl").write_text("\n".join(L) + "\n", encoding="utf-8")
+    chemin = Path(chemin or out / "graphe" / "graphe_trace_sepsis.ttl")
+    chemin.parent.mkdir(parents=True, exist_ok=True)
+    chemin.write_text("\n".join(L) + "\n", encoding="utf-8")
+
+
+def ecrire_protege(out, base, noeuds, aretes, dossiers, n):
+    """Fichier unique ontologie + individus de n dossiers, a ouvrir dans Protege.
+
+    Les relations hors signature sont exclues : avec rdfs:domain/range et les classes
+    disjointes, elles rendraient l'ontologie incoherente pour le raisonneur (HermiT, Pellet).
+    La validation SHACL les liste a part."""
+    choix = set(dossiers[:n])
+    onto = (out / "ontologie" / "trace_sepsis.ttl").read_text(encoding="utf-8")
+    onto = onto.replace(f"<{base}onto> a owl:Ontology ;",
+                        f"<{base}protege> a owl:Ontology ;\n    rdfs:seeAlso <{base}onto> ;", 1)
+    onto = f"@prefix g: <{base}graphe/> .\n" + onto
+    ns = [x for x in noeuds if x["dossier"] in choix]
+    ar = [a for a in aretes if a["dossier"] in choix and not a.get("hors_signature")]
+    chemin = out / "protege" / f"trace_sepsis_{len(choix)}_dossiers.ttl"
+    ecrire_rdf(out, base, ns, ar, [d for d in dossiers if d in choix], chemin=chemin, avant=onto)
+    return chemin, len(ns), len(ar)
+
+
+def ecrire_owl_xml(out):
+    """Copie RDF/XML (.owl) de l'ontologie, si rdflib est installe."""
+    try:
+        import rdflib
+    except ImportError:
+        return None
+    g = rdflib.Graph()
+    g.parse(out / "ontologie" / "trace_sepsis.ttl", format="turtle")
+    chemin = out / "ontologie" / "trace_sepsis.owl"
+    g.serialize(chemin, format="xml")
+    return chemin
 
 
 def ecrire_neo4j(out, noeuds, aretes):
@@ -486,6 +529,8 @@ def main():
     ap.add_argument("--sortie", default=str(SORTIE_DEFAUT))
     ap.add_argument("--base", default=BASE_DEFAUT)
     ap.add_argument("--ontologie-seule", action="store_true", help="ne produit que l'ontologie et SHACL")
+    ap.add_argument("--protege", type=int, default=3, metavar="N",
+                    help="nombre de dossiers dans le fichier Protege ontologie + individus (0 : aucun)")
     a = ap.parse_args()
     base = a.base if a.base.endswith("/") else a.base + "/"
     out = Path(a.sortie)
@@ -494,6 +539,8 @@ def main():
     g, entites, signatures, desc_rel = lire_guideline(a.guideline)
     ecrire_ontologie(out, base, g, entites, signatures, desc_rel)
     print(f"Ontologie : {len(entites)} classes d'entites, {len(signatures)} relations -> {out / 'ontologie'}")
+    owl = ecrire_owl_xml(out)
+    print(f"  copie RDF/XML : {owl}" if owl else "  (pip install rdflib pour une copie RDF/XML .owl)")
     if a.ontologie_seule:
         return 0
 
@@ -505,6 +552,9 @@ def main():
     ecrire_rdf(out, base, noeuds, aretes, dossiers)
     ecrire_neo4j(out, noeuds, aretes)
     ecrire_html(out, noeuds, aretes)
+    if a.protege > 0:
+        chemin, nn, na = ecrire_protege(out, base, noeuds, aretes, dossiers, a.protege)
+        print(f"Protege : {chemin} ({nn} individus, {na} relations)")
 
     resume = {
         "entree": str(a.entree), "guideline": str(a.guideline), "dossiers": len(dossiers),

@@ -22,9 +22,15 @@
 :EntiteClinique a owl:Class ; rdfs:label "Entité clinique"@fr .
 :Patient a owl:Class ; rdfs:subClassOf :DONNEE_PATIENT ; rdfs:label "Patient"@fr ;
     rdfs:comment "Nœud unique du patient d'un dossier, qui réunit ses mentions (\"le patient\", \"la patiente\"...)."@fr .
-:AssertionRelation a owl:Class ; rdfs:subClassOf rdf:Statement ;
+:AssertionRelation a owl:Class ;
     rdfs:label "Assertion de relation"@fr ;
     rdfs:comment "Réification d'une relation extraite, qui porte sa preuve, sa page et sa confiance."@fr .
+:RegleDerivee a owl:Class ; rdfs:label "Règle dérivée"@fr ;
+    rdfs:comment "Règle clinique dérivée du guideline, à formaliser en SWRL ou SHACL-SPARQL."@fr .
+skos:example a owl:AnnotationProperty .
+dcterms:source a owl:AnnotationProperty .
+:typeRelation a owl:AnnotationProperty ; rdfs:label "type de relation"@fr ;
+    rdfs:comment "Propriété (relation du guideline) portée par une assertion."@fr .
 
 :DONNEE_PATIENT a owl:Class ; rdfs:subClassOf :EntiteClinique ;
     rdfs:label "donnee patient"@fr ;
@@ -348,7 +354,7 @@
 
 [] a owl:AllDisjointClasses ; owl:members ( :DONNEE_PATIENT :LABEL_NOSOLOGIQUE :SIGNE_VITAL :BIOMARQUEUR :SCORE_SOFA :SCORE_qSOFA :SCORE_NEUROLOGIQUE :STADE_IRA :FOYER_INFECTIEUX :MICRO_ORGANISME :DEFAILLANCE_ORGANE :TRAITEMENT :POSOLOGIE :CONTEXTE_ACQUISITION :COMORBIDITE_ANTECEDENT :EVENEMENT_TEMPOREL :EVOLUTION_PRONOSTIC :SERVICE_MEDICAL :IMAGERIE_PROCEDURE :SYMPTOME ) .
 
-:issuDuDossier a owl:ObjectProperty ; rdfs:domain :EntiteClinique ; rdfs:range :Dossier ;
+:issuDuDossier a owl:ObjectProperty ; rdfs:range :Dossier ;
     rdfs:label "issu du dossier"@fr .
 :aPourPatient a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :Dossier ; rdfs:range :Patient ;
     rdfs:label "a pour patient"@fr .
@@ -543,17 +549,19 @@
 :origine a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "origine"@fr ; rdfs:comment "extraction directe, réparation SGCE ou récupération structurée."@fr .
 :identifiantSource a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:label "identifiant source"@fr ; rdfs:comment "Identifiant de l'élément dans le JSON TRACE."@fr .
 
-:assertionSujet a owl:ObjectProperty ; rdfs:subPropertyOf rdf:subject ; rdfs:domain :AssertionRelation .
-:assertionObjet a owl:ObjectProperty ; rdfs:subPropertyOf rdf:object ; rdfs:domain :AssertionRelation .
+:assertionSujet a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :AssertionRelation ;
+    rdfs:range :EntiteClinique ; rdfs:label "sujet de l'assertion"@fr .
+:assertionObjet a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain :AssertionRelation ;
+    rdfs:range :EntiteClinique ; rdfs:label "objet de l'assertion"@fr .
 
-:regle_R1_lactate_critere_choc_septique a owl:NamedIndividual ; rdfs:label "R1_lactate_critere_choc_septique" ; rdfs:comment "Definition Sepsis-3 du choc septique : presence de vasopresseurs ET BIOMARQUEUR(type=lactate, valeur >= 2, unite=mmol/L) -> biomarqueur_est_critere_de(LABEL_NOSOLOGIQUE=choc_septique)."@fr .
-:regle_R2_delai_ATB_mortalite a owl:NamedIndividual ; rdfs:label "R2_delai_ATB_mortalite" ; rdfs:comment "EVENEMENT_TEMPOREL(type=premiere_dose_antibiotique, delai_depuis_admission_minutes > 60) -> evenement_associe_evolution(EVOLUTION_PRONOSTIC, risque=eleve)"@fr .
-:regle_R3_qsofa_critere_frequence_respiratoire a owl:NamedIndividual ; rdfs:label "R3_qsofa_critere_frequence_respiratoire" ; rdfs:comment "SIGNE_VITAL(type=frequence_respiratoire, valeur >= 22) -> SCORE_qSOFA.critere_frequence_respiratoire = true"@fr .
-:regle_R4_qsofa_critere_pression_arterielle a owl:NamedIndividual ; rdfs:label "R4_qsofa_critere_pression_arterielle" ; rdfs:comment "SIGNE_VITAL(type=pression_arterielle_systolique, valeur <= 100) -> SCORE_qSOFA.critere_pression_arterielle_systolique = true"@fr .
-:regle_R5_indication_corticoides a owl:NamedIndividual ; rdfs:label "R5_indication_corticoides" ; rdfs:comment "LABEL_NOSOLOGIQUE = choc_septique_refractaire -> traitement_indique_par_label_nosologique(TRAITEMENT=corticoides)"@fr .
-:regle_R7_contexte_acquisition_risque_BMR a owl:NamedIndividual ; rdfs:label "R7_contexte_acquisition_risque_BMR" ; rdfs:comment "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true OU voyage recent a l'etranger dans un pays a forte prevalence de BMR) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR)."@fr .
-:regle_R8_IMAGERIE_PROCEDURE a owl:NamedIndividual ; rdfs:label "R8_IMAGERIE_PROCEDURE" ; rdfs:comment "Une relation d'imagerie est creee uniquement si l'examen et l'entite cible sont presents dans le document. Aucune inference n'est autorisee."@fr .
-:regle_R9_SYMPTOME a owl:NamedIndividual ; rdfs:label "R9_SYMPTOME" ; rdfs:comment "Une relation presente_symptome est créée uniquement si le symptôme est explicitement mentionné dans le document. Aucune inférence diagnostique n'est autorisée à partir d'un symptôme seul."@fr .
-:regle_R10_stade_IRA a owl:NamedIndividual ; rdfs:label "R10_stade_IRA" ; rdfs:comment "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine)."@fr .
-:regle_R11_site_infection_pathogene a owl:NamedIndividual ; rdfs:label "R11_site_infection_pathogene" ; rdfs:comment "Le site d'infection ne se deduit jamais de l'espece du pathogene : un pneumocoque (Streptococcus pneumoniae, synonymes : pneumocoque, S. pneumoniae) n'est pas uniquement pulmonaire (meninges, sang, oreille, sinus...). micro_organisme_infecte_site n'est cree que si le document nomme explicitement le site infecte."@fr .
-:regle_R4bis_qsofa_critere_neurologique a owl:NamedIndividual ; rdfs:label "R4bis_qsofa_critere_neurologique" ; rdfs:comment "Existence d'une confusion ou d'un score de Glasgow < 15 -> SCORE_qSOFA.critere_alteration_etat_mental = true."@fr .
+:regle_R1_lactate_critere_choc_septique a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R1_lactate_critere_choc_septique" ; rdfs:comment "Definition Sepsis-3 du choc septique : presence de vasopresseurs ET BIOMARQUEUR(type=lactate, valeur >= 2, unite=mmol/L) -> biomarqueur_est_critere_de(LABEL_NOSOLOGIQUE=choc_septique)."@fr .
+:regle_R2_delai_ATB_mortalite a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R2_delai_ATB_mortalite" ; rdfs:comment "EVENEMENT_TEMPOREL(type=premiere_dose_antibiotique, delai_depuis_admission_minutes > 60) -> evenement_associe_evolution(EVOLUTION_PRONOSTIC, risque=eleve)"@fr .
+:regle_R3_qsofa_critere_frequence_respiratoire a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R3_qsofa_critere_frequence_respiratoire" ; rdfs:comment "SIGNE_VITAL(type=frequence_respiratoire, valeur >= 22) -> SCORE_qSOFA.critere_frequence_respiratoire = true"@fr .
+:regle_R4_qsofa_critere_pression_arterielle a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R4_qsofa_critere_pression_arterielle" ; rdfs:comment "SIGNE_VITAL(type=pression_arterielle_systolique, valeur <= 100) -> SCORE_qSOFA.critere_pression_arterielle_systolique = true"@fr .
+:regle_R5_indication_corticoides a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R5_indication_corticoides" ; rdfs:comment "LABEL_NOSOLOGIQUE = choc_septique_refractaire -> traitement_indique_par_label_nosologique(TRAITEMENT=corticoides)"@fr .
+:regle_R7_contexte_acquisition_risque_BMR a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R7_contexte_acquisition_risque_BMR" ; rdfs:comment "CONTEXTE_ACQUISITION(type_acquisition=nosocomiale OU exposition_antibiotique_recente=true OU voyage recent a l'etranger dans un pays a forte prevalence de BMR) -> contexte_acquisition_influence_risque_resistance(MICRO_ORGANISME, niveau=eleve_BMR)."@fr .
+:regle_R8_IMAGERIE_PROCEDURE a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R8_IMAGERIE_PROCEDURE" ; rdfs:comment "Une relation d'imagerie est creee uniquement si l'examen et l'entite cible sont presents dans le document. Aucune inference n'est autorisee."@fr .
+:regle_R9_SYMPTOME a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R9_SYMPTOME" ; rdfs:comment "Une relation presente_symptome est créée uniquement si le symptôme est explicitement mentionné dans le document. Aucune inférence diagnostique n'est autorisée à partir d'un symptôme seul."@fr .
+:regle_R10_stade_IRA a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R10_stade_IRA" ; rdfs:comment "DEFAILLANCE_ORGANE(IRA) -> ira_a_pour_stade(STADE_IRA) uniquement si le stade est explicitement ecrit dans le document (pas de calcul a partir de la creatinine)."@fr .
+:regle_R11_site_infection_pathogene a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R11_site_infection_pathogene" ; rdfs:comment "Le site d'infection ne se deduit jamais de l'espece du pathogene : un pneumocoque (Streptococcus pneumoniae, synonymes : pneumocoque, S. pneumoniae) n'est pas uniquement pulmonaire (meninges, sang, oreille, sinus...). micro_organisme_infecte_site n'est cree que si le document nomme explicitement le site infecte."@fr .
+:regle_R4bis_qsofa_critere_neurologique a owl:NamedIndividual , :RegleDerivee ; rdfs:label "R4bis_qsofa_critere_neurologique" ; rdfs:comment "Existence d'une confusion ou d'un score de Glasgow < 15 -> SCORE_qSOFA.critere_alteration_etat_mental = true."@fr .

@@ -46,8 +46,8 @@ PREFIX : <http://example.org/trace-sepsis/onto#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?relation ?sujet ?objet ?preuve WHERE {
-  ?a a :AssertionRelation ; :niveauConfiance "LOW" ; rdf:predicate ?relation ;
-     rdf:subject ?s ; rdf:object ?o .
+  ?a a :AssertionRelation ; :niveauConfiance "LOW" ; :typeRelation ?relation ;
+     :assertionSujet ?s ; :assertionObjet ?o .
   OPTIONAL { ?a :preuve ?preuve }
   ?s rdfs:label ?sujet . ?o rdfs:label ?objet .
 }

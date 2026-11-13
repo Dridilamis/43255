@@ -27,15 +27,42 @@ SPARQL demandent `pip install rdflib pyshacl` :
 python graphe_connaissances/valider_graphe.py
 ```
 
+## Ouvrir l'ontologie dans Protégé
+
+1. Installer Protégé (protege.stanford.edu, version 5.6 ou plus récente).
+2. **File → Open…** et choisir `graphe_connaissances/ontologie/trace_sepsis.owl`
+   (ou `trace_sepsis.ttl` : Protégé lit les deux).
+3. Onglets utiles :
+   - **Entities → Classes** : `EntiteClinique` et ses 20 sous-classes (une par type du guideline),
+     `Patient` sous `DONNEE_PATIENT`, `Dossier`, `AssertionRelation`, `RegleDerivee` ;
+   - **Entities → Object properties** : `relationClinique`, ses 8 familles et les 34 relations,
+     chacune avec son domaine et son image (*Domains*, *Ranges*) ;
+   - **Entities → Annotation properties** : descriptions du guideline (`rdfs:comment`),
+     valeurs autorisées (`skos:example`), sources (`dcterms:source`) ;
+   - **Individuals by class → RegleDerivee** : les règles dérivées D1 à D11 ;
+   - **OntoGraf** (Window → Tabs → OntoGraf) : vue graphique des classes et des relations.
+4. **Reasoner → HermiT → Start reasoner** : l'ontologie est cohérente, sans classe insatisfiable
+   (vérifié avec HermiT).
+
+Pour voir aussi des **individus** (patients, entités, relations), ouvrir
+`sorties/protege/trace_sepsis_3_dossiers.ttl`, produit par `construire_graphe.py`. Ce fichier contient
+l'ontologie et les individus de 3 dossiers (option `--protege N` pour en mettre plus ; au-delà
+d'une dizaine, Protégé devient lent). Les relations hors signature en sont exclues : avec les
+domaines, les images et les classes disjointes, le raisonneur les jugerait incohérentes ; elles
+restent dans le graphe complet, où la validation SHACL les liste. Ce fichier contient des données
+de dossiers : il est dans `sorties/` et n'est pas versionné.
+
 ## Ce qui est produit (`graphe_connaissances/sorties/`)
 
 | Fichier | Contenu | Outil |
 |---|---|---|
+| `ontologie/trace_sepsis.owl` | la même ontologie en RDF/XML (si `rdflib` est installé) | Protégé |
 | `ontologie/trace_sepsis.ttl` | 20 classes d'entités (disjointes), 34 propriétés d'objet avec domaine et image, regroupées en 8 familles, propriétés de données, règles dérivées en annotation | Protégé, GraphDB |
 | `ontologie/trace_sepsis_shapes.ttl` | une forme SHACL par signature | pySHACL, GraphDB, TopBraid |
 | `graphe/graphe_trace_sepsis.ttl` | dossiers, un nœud patient par dossier, entités, relations, et pour chaque relation une assertion réifiée (preuve, page, confiance TRACE, signaux faibles) | GraphDB, Jena, rdflib |
 | `neo4j/import_neo4j.cypher` | import complet dans Neo4j, sans APOC | Neo4j Browser, cypher-shell |
 | `neo4j/noeuds.csv`, `relations.csv` | le même graphe en tables | Gephi, pandas, Excel |
+| `protege/trace_sepsis_3_dossiers.ttl` | ontologie + individus de 3 dossiers, cohérent pour HermiT | Protégé |
 | `graphe/graphe.html` | visualisation d'un dossier à la fois, autonome (fonctionne hors ligne) | navigateur |
 | `resume.json` | effectifs, relations ignorées, relations hors signature | — |
 
