@@ -6,6 +6,8 @@ Entrees
   --guideline  fichier du guideline (ontologie_sepsis_graph), par defaut v2.0 valide medecin
   --entree     dossier des JSON a convertir, par defaut la sortie de l'arbitrage
                (TRACE_v2/sorties/07_arbitrage) ; tout JSON au format de l'extraction convient
+               ; le Gold Standard (format de l evaluateur, ex. gold_v2_0) est aussi accepte :
+               chaque relation y porte alors la confiance GOLD
   --sortie     dossier de sortie, par defaut graphe_connaissances/sorties
   --base       espace de noms des IRI (par defaut http://example.org/trace-sepsis/)
 
@@ -234,6 +236,39 @@ def nom_dossier(path):
     return re.split(r"_trace_sepsis", Path(path).stem)[0]
 
 
+NEGATION_RE = re.compile(r"^(pas d|absence d|sans |aucun|aucune|non |negati|ni )")
+
+
+def depuis_gold(d):
+    """Convertit un dossier du Gold Standard (format de l'evaluateur : entites et relations
+    designees par leur mention) au format des JSON TRACE (identifiants)."""
+    premiere_page, position = {}, {}
+    for p in d.get("pages") or []:
+        for e in p.get("entities") or []:
+            k = (e.get("normalized_name") or norm(e.get("name")), e.get("type"))
+            premiere_page.setdefault(k, p.get("page"))
+    ents, ids = [], {}
+    for i, e in enumerate(d.get("global_entities") or [], 1):
+        k = (e.get("normalized_name") or norm(e.get("name")), e.get("type"))
+        if k in ids:
+            continue
+        eid = f"G_E{i:05d}"
+        ids[k] = eid
+        ents.append({"identifiant_entite": eid, "name": e.get("name"), "type": e.get("type"),
+                     "page": premiere_page.get(k), "nie": bool(NEGATION_RE.match(norm(e.get("name")))),
+                     "type_inference": "gold_standard", "confiance": "validee"})
+    rels = []
+    for j, r in enumerate(d.get("global_relations") or [], 1):
+        s = ids.get((r.get("subject_normalized") or norm(r.get("subject")), r.get("subject_type")))
+        o = ids.get((r.get("object_normalized") or norm(r.get("object")), r.get("object_type")))
+        if s and o:
+            rels.append({"identifiant_relation": f"G_R{j:05d}", "identifiant_entite_sujet": s,
+                         "identifiant_entite_objet": o, "type_relation": r.get("relation"),
+                         "type_inference": "gold_standard", "confiance": "validee",
+                         "trace_confidence": {"level": "GOLD"}})
+    return {"global_entities": ents, "global_relations": rels}
+
+
 def charger(entree):
     docs = []
     for path in sorted(Path(entree).glob("*.json")):
@@ -245,6 +280,9 @@ def charger(entree):
             print(f"  ignore {path.name} : {exc}")
             continue
         if isinstance(d, dict) and isinstance(d.get("global_entities"), list):
+            ents = d["global_entities"]
+            if ents and "identifiant_entite" not in ents[0] and "normalized_name" in ents[0]:
+                d = depuis_gold(d)          # Gold Standard valide par le medecin
             docs.append((nom_dossier(path), d))
     return docs
 
